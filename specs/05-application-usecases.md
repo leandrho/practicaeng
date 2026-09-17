@@ -1,6 +1,6 @@
 # SPEC 05 — Casos de uso de sesión y evaluación
 
-> **Status:** Draft
+> **Status:** Implementado
 > **Depends on:** SPEC 01, SPEC 02
 > **Date:** 2026-09-17
 > **Objective:** Implementar la lógica pura de sesión flashcards (frente/revelado, anterior/siguiente) más filtros y evaluación de gap-fill, sin UI ni persistencia.
@@ -46,15 +46,15 @@ Convenciones:
 
 ## Acceptance criteria
 
-- [ ] `reveal()` en `index 0` no cambia `index` ni `cards`, solo `revealed`.
-- [ ] `next()` en la última tarjeta mantiene `index` y marca `atEnd === true`.
-- [ ] `prev()` en la primera mantiene `index` y marca `atStart === true`.
-- [ ] `goTo(-1)` y `goTo(cards.length)` lanzan error.
-- [ ] Ninguna transición muta el estado de entrada (`Object.isFrozen` o comparación de referencia en tests).
-- [ ] `filterCards` con `{ level: "B1-B2" }` devuelve todas; con `{ category: "NOPE" }` devuelve `[]`.
-- [ ] `checkGapFill("  DECISION ", "decision")` → `{ correct: true }`.
-- [ ] `shuffle` no muta el input y con semilla fija es determinístico.
-- [ ] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
+- [x] `reveal()` en `index 0` no cambia `index` ni `cards`, solo `revealed`.
+- [x] `next()` en la última tarjeta mantiene `index` y marca `atEnd === true`.
+- [x] `prev()` en la primera mantiene `index` y marca `atStart === true`.
+- [x] `goTo(-1)` y `goTo(cards.length)` lanzan error.
+- [x] Ninguna transición muta el estado de entrada (`Object.isFrozen` o comparación de referencia en tests).
+- [x] `filterCards` con `{ level: "B1-B2" }` devuelve todas; con `{ category: "NOPE" }` devuelve `[]`.
+- [x] `checkGapFill("  DECISION ", "decision")` → `{ correct: true }`.
+- [x] `shuffle` no muta el input y con semilla fija es determinístico.
+- [x] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
 
 ## Decisions
 
