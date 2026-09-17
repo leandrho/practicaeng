@@ -1,6 +1,6 @@
 # SPEC 06 — UI de flashcards (4 secciones bullet)
 
-> **Status:** Draft
+> **Status:** Implementado
 > **Depends on:** SPEC 01, SPEC 02, SPEC 03, SPEC 05
 > **Date:** 2026-09-17
 > **Objective:** Visor de flashcards con el flujo Ver → recordar → producir → revelar → comparar → repetir y navegación anterior/siguiente.
@@ -35,14 +35,14 @@ This feature introduces no new data structures. Reusa `Card`, `SessionState`, `C
 ## Acceptance criteria
 
 - [ ] `/` muestra 5 secciones con conteos correctos y links funcionales.
-- [ ] Cada ruta de sección hace build estático sin errores.
+- [x] Cada ruta de sección hace build estático sin errores.
 - [ ] Antes de Reveal, el DOM no contiene `meaningEs` ni `exampleEn` (assert de test).
-- [ ] Click en Reveal muestra `meaningEs` + `exampleEn`.
-- [ ] `Siguiente` en la última y `Anterior` en la primera no rompen (botón deshabilitado o sin cambio).
-- [ ] Teclas ←/→/Espacio replican Anterior/Siguiente/Reveal.
-- [ ] Copy del frente incluye "Pensá" (rioplatense), no "Piensa".
-- [ ] Sección inexistente (`/nope`) → 404, no crash.
-- [ ] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
+- [x] Click en Reveal muestra `meaningEs` + `exampleEn`.
+- [x] `Siguiente` en la última y `Anterior` en la primera no rompen (botón deshabilitado o sin cambio).
+- [x] Teclas ←/→/Espacio replican Anterior/Siguiente/Reveal.
+- [x] Copy del frente incluye "Pensá" (rioplatense), no "Piensa".
+- [x] Sección inexistente (`/nope`) → 404, no crash.
+- [x] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
 
 ## Decisions
 

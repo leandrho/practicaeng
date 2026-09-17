@@ -10,6 +10,6 @@ export default defineConfig({
       ),
     },
     environment: "node",
-    include: ["src/**/*.test.ts"],
+    include: ["src/**/*.test.ts", "app/**/*.test.tsx"],
   },
 });
