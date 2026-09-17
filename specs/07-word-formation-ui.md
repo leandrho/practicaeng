@@ -1,6 +1,6 @@
 # SPEC 07 — UI de word-formation con gap-fill
 
-> **Status:** Draft
+> **Status:** Implementado
 > **Depends on:** SPEC 01, SPEC 02, SPEC 04, SPEC 05
 > **Date:** 2026-09-17
 > **Objective:** Modo word-formation completo: frente con base para producir formas, ejercicio gap-fill con input y reverso con la familia.
@@ -39,13 +39,13 @@ type WFState = { index: number; revealed: boolean; guess: string; checked: "idle
 
 ## Acceptance criteria
 
-- [ ] Frente muestra `BASE` y no muestra las formas antes de revelar (assert DOM).
-- [ ] Escribir `decision` y Comprobar → feedback "correcto" en texto.
-- [ ] Escribir `decisions` y Comprobar → feedback "incorrecto" en texto (no solo color rojo).
-- [ ] Revelar muestra las formas presentes y "—" en las ausentes.
-- [ ] Cambiar de tarjeta resetea input, feedback y revelado.
-- [ ] Enter en el input comprueba; Espacio en el input escribe espacio (no revela).
-- [ ] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
+- [x] Frente muestra `BASE` y no muestra las formas antes de revelar (assert DOM).
+- [x] Escribir `decision` y Comprobar → feedback "correcto" en texto.
+- [x] Escribir `decisions` y Comprobar → feedback "incorrecto" en texto (no solo color rojo).
+- [x] Revelar muestra las formas presentes y "—" en las ausentes.
+- [x] Cambiar de tarjeta resetea input, feedback y revelado.
+- [x] Enter en el input comprueba; Espacio en el input escribe espacio (no revela).
+- [x] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
 
 ## Decisions
 
