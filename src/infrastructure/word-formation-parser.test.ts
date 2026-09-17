@@ -1,0 +1,103 @@
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+import { parseWordFamilies } from "./word-formation-parser";
+
+function fixedRow(
+  base: string,
+  noun: string,
+  adjective: string,
+  adverb: string,
+  meaning: string,
+): string {
+  return `${base.padEnd(6)}${noun.padEnd(15)}${adjective.padEnd(16)}${adverb.padEnd(16)}${meaning}`;
+}
+
+const fixture = [
+  "Base  Sustantivo     Adjetivo        Adverbio        Significado orientativo",
+  "----  -------------  --------------  --------------  -----------------------",
+  fixedRow("act", "action", "active", "actively", "actuar / acción / activo /"),
+  "".padEnd(53) + "activamente",
+  fixedRow("amaze", "amazement", "amazing /", "amazingly", "asombrar / asombro /"),
+  "".padEnd(21) + "amazed".padEnd(32) + "increíble-asombrado",
+  fixedRow("apply", "application /", "applicable", "---", "solicitar-aplicar /"),
+  "".padEnd(6) + "applicant".padEnd(47) + "solicitud-solicitante /",
+  "".padEnd(53) + "aplicable",
+  "--------------------------------------------------------------------------------",
+  "## Ejemplos para practicar en contexto",
+  "- **act → action → active → actively:** *Act now.* / *Action matters.*",
+  "## Idea de tarjeta para la app",
+  "**Frente:** `ACT`",
+].join("\n");
+
+describe("parseWordFamilies", () => {
+  it("parsea filas de ancho fijo, celdas multilínea y formas alternativas", () => {
+    expect(parseWordFamilies(fixture, "data/word-formation-b1-b2.md")).toEqual([
+      {
+        base: "act",
+        noun: "action",
+        adjective: "active",
+        adverb: "actively",
+        meaningHint: "actuar / acción / activo / activamente",
+        examples: ["Act now.", "Action matters."],
+      },
+      {
+        base: "amaze",
+        noun: "amazement",
+        adjective: "amazing / amazed",
+        adverb: "amazingly",
+        meaningHint: "asombrar / asombro / increíble-asombrado",
+        examples: [],
+      },
+      {
+        base: "apply",
+        noun: "application / applicant",
+        adjective: "applicable",
+        meaningHint: "solicitar-aplicar / solicitud-solicitante / aplicable",
+        examples: [],
+      },
+    ]);
+  });
+
+  it("convierte --- a undefined", () => {
+    const [family] = parseWordFamilies(
+      `Base | Sustantivo | Adjetivo | Adverbio | Significado orientativo
+| --- | --- | --- | --- | --- |
+| announce | announcement | --- | --- | anunciar / anuncio |`,
+      "data/word-formation-b1-b2.md",
+    );
+
+    expect(family).toMatchObject({
+      base: "announce",
+      noun: "announcement",
+      adjective: undefined,
+      adverb: undefined,
+    });
+  });
+
+  it("informa archivo y línea cuando una familia no tiene formas", () => {
+    let error: unknown;
+    try {
+      parseWordFamilies(
+        `Base | Sustantivo | Adjetivo | Adverbio | Significado orientativo
+| --- | --- | --- | --- | --- |
+| invalid | --- | --- | --- | sin formas |`,
+        "data/word-formation-b1-b2.md",
+      );
+    } catch (caught) {
+      error = caught;
+    }
+
+    expect(error).toMatchObject({
+      file: "data/word-formation-b1-b2.md",
+      line: 3,
+      reason: expect.any(String),
+    });
+  });
+
+  it("ignora la cola real del archivo fuera de la tabla", () => {
+    const markdown = readFileSync("data/word-formation-b1-b2.md", "utf8");
+    const finalSections = markdown.slice(markdown.indexOf("## Ejemplos para practicar"));
+
+    expect(parseWordFamilies(finalSections, "data/word-formation-b1-b2.md")).toEqual([]);
+  });
+});

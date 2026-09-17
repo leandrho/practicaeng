@@ -5,3 +5,4 @@ export {
   type ContentRepository,
   type ContentSection,
 } from "./content-loader";
+export { buildGapFills, getWordFamilies } from "./word-formation-loader";
