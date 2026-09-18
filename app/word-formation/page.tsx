@@ -17,11 +17,12 @@ export default async function WordFormationPage({
   };
 
   return (
-    <main className="practice-page">
+    <main className="practice-page" id="contenido">
       <Filters cards={families} filter={filter} pathname="/word-formation" />
       <WordFormationClient
         clearFiltersPath="/word-formation"
         families={filterCards(families, filter)}
+        accent="var(--accent-word-formation)"
         key={`${filter.level ?? ""}:${filter.category ?? ""}`}
       />
     </main>

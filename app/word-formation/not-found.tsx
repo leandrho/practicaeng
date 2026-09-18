@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function NotFound() {
+export default function WordFormationNotFound() {
   return (
     <main className="status-page" id="contenido">
       <p className="status-page__eyebrow">Error 404</p>

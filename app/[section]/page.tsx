@@ -10,6 +10,13 @@ import { Filters } from "../components/Filters";
 
 export const dynamicParams = false;
 
+const SECTION_ACCENTS: Record<ContentSection, string> = {
+  "phrasal-verbs": "var(--accent-phrasal)",
+  collocations: "var(--accent-collocations)",
+  prepositions: "var(--accent-prepositions)",
+  idioms: "var(--accent-idioms)",
+};
+
 export function generateStaticParams() {
   return CONTENT_SECTIONS.map((section) => ({ section }));
 }
@@ -43,11 +50,12 @@ export default async function SectionPage({
   };
 
   return (
-    <main className="practice-page">
+    <main className="practice-page" id="contenido">
       <Filters cards={cards} filter={filter} pathname={`/${section}`} />
       <Flashcard
         cards={filterCards(cards, filter)}
         clearFiltersPath={`/${section}`}
+        accent={SECTION_ACCENTS[section]}
         key={`${filter.level ?? ""}:${filter.category ?? ""}`}
       />
     </main>

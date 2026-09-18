@@ -3,15 +3,21 @@
 import { useEffect, useState } from "react";
 import { init, next, prev, reveal } from "../../src/application/session";
 import type { Card } from "../../src/domain/card";
+import { EmptyState } from "./EmptyState";
+import { Button } from "./ui/Button";
 
 type FlashcardClientProps = {
   cards: Card[];
   clearFiltersPath: string;
+  accent?: string;
 };
 
-export default function FlashcardClient({ cards, clearFiltersPath }: FlashcardClientProps) {
+export default function FlashcardClient({ cards, clearFiltersPath, accent }: FlashcardClientProps) {
   const [session, setSession] = useState(() => init(cards));
   const card = session.current;
+  const total = session.cards.length;
+  const position = total === 0 ? 0 : session.index + 1;
+  const progress = total === 0 ? 0 : (position / total) * 100;
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -40,21 +46,29 @@ export default function FlashcardClient({ cards, clearFiltersPath }: FlashcardCl
   }, []);
 
   if (card === null) {
-    return (
-      <section className="flashcard-empty">
-        <p>No hay tarjetas con estos filtros.</p>
-        <form action={clearFiltersPath}>
-          <button type="submit">Limpiar filtros</button>
-        </form>
-      </section>
-    );
+    return <EmptyState clearFiltersPath={clearFiltersPath} />;
   }
 
   return (
-    <section className="flashcard">
-      <h1>{card.expression}</h1>
+    <section
+      className="flashcard"
+      style={accent === undefined ? undefined : ({ "--card-accent": accent } as React.CSSProperties)}
+    >
+      <div className="flashcard__top">
+        <p className="flashcard__progress" aria-live="polite">
+          Tarjeta {position} de {total}
+        </p>
+        <div className="flashcard__meter" aria-hidden="true">
+          <span style={{ width: `${progress}%` }} />
+        </div>
+      </div>
+      <h1 key={card.expression}>{card.expression}</h1>
       {session.revealed ? (
-        <div className="flashcard__answer" aria-live="polite">
+        <div
+          key={`${card.expression}:dorso`}
+          className="flashcard__answer flashcard__face"
+          aria-live="polite"
+        >
           <p>
             <strong>Significado:</strong> {card.meaningEs}
           </p>
@@ -67,28 +81,28 @@ export default function FlashcardClient({ cards, clearFiltersPath }: FlashcardCl
             </p>
           )}
           <nav className="flashcard__navigation" aria-label="Navegación de tarjetas">
-            <button
-              type="button"
+            <Button
+              className="btn btn--ghost"
               disabled={session.atStart}
               onClick={() => setSession(prev)}
             >
               Anterior
-            </button>
-            <button
-              type="button"
+            </Button>
+            <Button
+              className="btn btn--primary"
               disabled={session.atEnd}
               onClick={() => setSession(next)}
             >
               Siguiente
-            </button>
+            </Button>
           </nav>
         </div>
       ) : (
-        <div className="flashcard__front">
+        <div key={`${card.expression}:frente`} className="flashcard__front flashcard__face">
           <p>¿Qué significa? Pensá un ejemplo con esta expresión.</p>
-          <button type="button" onClick={() => setSession(reveal)}>
+          <Button className="btn btn--primary" onClick={() => setSession(reveal)}>
             Reveal
-          </button>
+          </Button>
         </div>
       )}
     </section>

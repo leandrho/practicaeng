@@ -62,6 +62,17 @@ describe("Flashcard", () => {
     expect(screen.getByText(secondCard.expression)).not.toBeNull();
   });
 
+  it("muestra el progreso x/y de la sesión", () => {
+    render(<Flashcard cards={[card, secondCard]} clearFiltersPath="/phrasal-verbs" />);
+
+    expect(screen.getByText("Tarjeta 1 de 2")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+    fireEvent.click(screen.getByRole("button", { name: "Siguiente" }));
+
+    expect(screen.getByText("Tarjeta 2 de 2")).not.toBeNull();
+  });
+
   it("muestra el estado vacío de filtros y permite limpiarlos", () => {
     render(<Flashcard cards={[]} clearFiltersPath="/collocations" />);
 
