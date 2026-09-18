@@ -490,6 +490,43 @@ a {
   padding: 0.45rem 1rem;
 }
 
+/* ——— View Transitions entre páginas (solo contenido, header fijo) ——— */
+::view-transition-old(page) {
+  animation:
+    150ms ease-out both vt-fade-out,
+    150ms ease-out both vt-slide-out;
+}
+
+::view-transition-new(page) {
+  animation:
+    210ms ease-in both vt-fade-in,
+    210ms ease-out both vt-slide-in;
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-slide-out {
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes vt-slide-in {
+  from {
+    transform: translateY(10px);
+  }
+}
+
 .status-page {
   display: grid;
   gap: 1rem;
@@ -684,13 +721,44 @@ a {
 }
 
 .flashcard__face {
-  animation: card-in 260ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  animation: card-in 220ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+.flashcard__body {
+  display: grid;
+  animation: card-body-in-next 260ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+.flashcard[data-dir="prev"] .flashcard__body {
+  animation-name: card-body-in-prev;
+}
+
+@keyframes card-body-in-next {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes card-body-in-prev {
+  from {
+    opacity: 0;
+    transform: translateX(-22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes card-in {
   from {
     opacity: 0;
-    transform: translateY(14px) rotateX(5deg);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -750,6 +818,11 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(page),
+  ::view-transition-new(page) {
+    animation: none;
+  }
+
   .section-card,
   .btn,
   .flashcard-empty button,

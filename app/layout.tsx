@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { ViewTransition } from "react";
 import { FilterDrawerProvider, HeaderFilterButton } from "./components/FilterDrawerProvider";
 import { ThemeToggle } from "./components/ThemeToggle";
 import "./globals.css";
@@ -54,7 +55,7 @@ export default function RootLayout({
               <ThemeToggle />
             </div>
           </header>
-          {children}
+          <ViewTransition name="page">{children}</ViewTransition>
         </FilterDrawerProvider>
       </body>
     </html>

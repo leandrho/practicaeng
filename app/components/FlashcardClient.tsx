@@ -14,6 +14,7 @@ type FlashcardClientProps = {
 
 export default function FlashcardClient({ cards, clearFiltersPath, accent }: FlashcardClientProps) {
   const [session, setSession] = useState(() => init(cards));
+  const [dir, setDir] = useState<1 | -1>(1);
   const card = session.current;
   const total = session.cards.length;
   const position = total === 0 ? 0 : session.index + 1;
@@ -28,10 +29,12 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
       switch (event.key) {
         case "ArrowLeft":
           event.preventDefault();
+          setDir(-1);
           setSession(prev);
           break;
         case "ArrowRight":
           event.preventDefault();
+          setDir(1);
           setSession(next);
           break;
         case " ":
@@ -52,6 +55,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
   return (
     <section
       className="flashcard"
+      data-dir={dir === 1 ? "next" : "prev"}
       style={accent === undefined ? undefined : ({ "--card-accent": accent } as React.CSSProperties)}
     >
       <div className="flashcard__top">
@@ -62,8 +66,9 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
           <span style={{ width: `${progress}%` }} />
         </div>
       </div>
-      <h1 key={card.expression}>{card.expression}</h1>
-      {session.revealed ? (
+      <div key={card.expression} className="flashcard__body">
+        <h1>{card.expression}</h1>
+        {session.revealed ? (
         <div
           key={`${card.expression}:dorso`}
           className="flashcard__answer flashcard__face"
@@ -84,14 +89,20 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
             <Button
               className="btn btn--ghost"
               disabled={session.atStart}
-              onClick={() => setSession(prev)}
+              onClick={() => {
+                setDir(-1);
+                setSession(prev);
+              }}
             >
               Anterior
             </Button>
             <Button
               className="btn btn--primary"
               disabled={session.atEnd}
-              onClick={() => setSession(next)}
+              onClick={() => {
+                setDir(1);
+                setSession(next);
+              }}
             >
               Siguiente
             </Button>
@@ -105,6 +116,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
           </Button>
         </div>
       )}
+      </div>
     </section>
   );
 }
