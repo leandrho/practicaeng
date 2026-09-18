@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { init, next, prev, reveal } from "../../src/application/session";
 import type { Card } from "../../src/domain/card";
+import { resolveHint } from "../../src/domain/hints";
+import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
 
@@ -11,6 +13,38 @@ type FlashcardClientProps = {
   clearFiltersPath: string;
   accent?: string;
 };
+
+type FlashcardFrontProps = {
+  card: Card;
+  onReveal: () => void;
+};
+
+function FlashcardFront({ card, onReveal }: FlashcardFrontProps) {
+  const [showHint, setShowHint] = useState(false);
+  const hintId = resolveHint(card.expression, card.type, card.category);
+
+  return (
+    <div key={`${card.expression}:frente`} className="flashcard__front flashcard__face">
+      <p>What does it mean? Think of an example with this expression.</p>
+      <Button className="btn btn--primary" onClick={onReveal}>
+        Reveal
+      </Button>
+      <Button
+        className="btn btn--ghost"
+        aria-pressed={showHint}
+        aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
+        onClick={() => setShowHint((current) => !current)}
+      >
+        Ver pista
+      </Button>
+      {showHint ? (
+        <div aria-live="polite">
+          <HintGallery hintId={hintId} />
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
 export default function FlashcardClient({ cards, clearFiltersPath, accent }: FlashcardClientProps) {
   const [session, setSession] = useState(() => init(cards));
@@ -123,12 +157,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
           </nav>
         </div>
       ) : (
-        <div key={`${card.expression}:frente`} className="flashcard__front flashcard__face">
-          <p>What does it mean? Think of an example with this expression.</p>
-          <Button className="btn btn--primary" onClick={() => setSession(reveal)}>
-            Reveal
-          </Button>
-        </div>
+        <FlashcardFront card={card} onReveal={() => setSession(reveal)} />
       )}
       </div>
     </section>

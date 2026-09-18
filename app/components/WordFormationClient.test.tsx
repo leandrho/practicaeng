@@ -50,6 +50,35 @@ describe("WordFormationClient", () => {
     expect(screen.queryByText("decisively")).toBeNull();
   });
 
+  it("shows, hides, and resets the visual hint", () => {
+    render(
+      <WordFormationClient
+        clearFiltersPath="/word-formation"
+        families={[family, secondFamily]}
+      />,
+    );
+
+    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+
+    const hintButton = screen.getByRole("button", { name: "Show visual hint" });
+    fireEvent.click(hintButton);
+
+    expect(hintButton.getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("img", { name: "Pista visual animada" })).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Hide visual hint" }));
+
+    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(hintButton.getAttribute("aria-pressed")).toBe("false");
+
+    fireEvent.click(hintButton);
+    fireEvent.click(screen.getByRole("button", { name: "Reveal family" }));
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(screen.getByRole("button", { name: "Show visual hint" }).getAttribute("aria-pressed")).toBe("false");
+  });
+
   it("reports when the answer is correct", () => {
     render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 

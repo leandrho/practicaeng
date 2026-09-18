@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { checkGapFill } from "../../src/application/checkGapFill";
+import { resolveHint } from "../../src/domain/hints";
 import type { WordFamily } from "../../src/domain/word-formation";
+import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
 
@@ -10,6 +12,7 @@ type WFState = {
   index: number;
   revealed: boolean;
   showEs: boolean;
+  showHint: boolean;
   guess: string;
   checked: "idle" | "correct" | "incorrect";
 };
@@ -29,6 +32,7 @@ export default function WordFormationClient({
     index: 0,
     revealed: false,
     showEs: false,
+    showHint: false,
     guess: "",
     checked: "idle",
   });
@@ -67,6 +71,7 @@ export default function WordFormationClient({
   }
 
   const gapFillAnswer = answer;
+  const hintId = resolveHint(family.base, "word-formation", family.category);
 
   function checkAnswer() {
     const { correct } = checkGapFill(state.guess, gapFillAnswer);
@@ -87,6 +92,7 @@ export default function WordFormationClient({
       index: current.index + offset,
       revealed: false,
       showEs: false,
+      showHint: false,
       guess: "",
       checked: "idle",
     }));
@@ -190,6 +196,19 @@ export default function WordFormationClient({
             {state.checked === "incorrect" ? <p>Not yet: try again.</p> : null}
           </div>
           <div>
+            <Button
+              className="btn btn--ghost"
+              aria-pressed={state.showHint}
+              aria-label={state.showHint ? "Hide visual hint" : "Show visual hint"}
+              onClick={() => setState((current) => ({ ...current, showHint: !current.showHint }))}
+            >
+              Ver pista
+            </Button>
+            {state.showHint ? (
+              <div aria-live="polite">
+                <HintGallery hintId={hintId} />
+              </div>
+            ) : null}
             <Button
               className="btn btn--ghost"
               onClick={() => setState((current) => ({ ...current, revealed: true }))}

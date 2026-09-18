@@ -805,6 +805,108 @@ a {
   margin-top: 0.25rem;
 }
 
+/* ——— SPEC 14 · pistas visuales ——— */
+.visual-hint {
+  --hint-accent: var(--card-accent);
+  --hint-secondary: color-mix(in srgb, var(--hint-accent) 42%, transparent);
+  width: min(100%, 22rem);
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--hint-accent) 38%, var(--line));
+  border-radius: var(--radius);
+  background:
+    linear-gradient(120deg, color-mix(in srgb, var(--hint-accent) 13%, transparent), transparent 62%),
+    var(--surface);
+}
+
+.visual-hint__motion {
+  padding: 0.75rem 1rem;
+  animation: hint-drift 3.8s ease-in-out infinite alternate;
+}
+
+.visual-hint svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.visual-hint__path {
+  fill: none;
+  stroke: var(--hint-accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 5 7;
+}
+
+.visual-hint__orb {
+  fill: var(--hint-secondary);
+  stroke: var(--hint-accent);
+  stroke-width: 3;
+}
+
+.visual-hint__frame {
+  fill: none;
+  stroke: var(--hint-accent);
+  stroke-width: 3;
+}
+
+.visual-hint[data-hint="collocation"],
+.visual-hint[data-hint="check-in-gate"] {
+  --hint-accent: var(--accent-collocations);
+}
+
+.visual-hint[data-hint="preposition"] {
+  --hint-accent: var(--accent-prepositions);
+}
+
+.visual-hint[data-hint="idiom"] {
+  --hint-accent: var(--accent-idioms);
+}
+
+.visual-hint[data-hint="word-formation"] {
+  --hint-accent: var(--accent-word-formation);
+}
+
+.visual-hint[data-hint="break-down-split"] .visual-hint__motion,
+.visual-hint[data-hint="call-off-cross"] .visual-hint__motion {
+  animation-name: hint-pulse;
+}
+
+.visual-hint[data-hint="catch-up-steps"] .visual-hint__motion,
+.visual-hint[data-hint="carry-on-path"] .visual-hint__motion {
+  animation-name: hint-forward;
+}
+
+.visual-hint[data-hint="cheer-up-sun"] .visual-hint__motion,
+.visual-hint[data-hint="bring-back-orbit"] .visual-hint__motion {
+  animation-name: hint-lift;
+}
+
+@keyframes hint-drift {
+  to {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes hint-pulse {
+  50% {
+    transform: scale(1.035);
+  }
+}
+
+@keyframes hint-forward {
+  to {
+    transform: translateX(9px);
+  }
+}
+
+@keyframes hint-lift {
+  to {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+}
+
 .empty-state {
   display: grid;
   gap: 1rem;
@@ -854,6 +956,10 @@ a {
 
   .flashcard__meter > span {
     transition: none;
+  }
+
+  .visual-hint__motion {
+    animation: none;
   }
 
   *,
