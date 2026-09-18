@@ -36,6 +36,30 @@ describe("Flashcard", () => {
     expect(screen.queryByText(card.translationEs!)).toBeNull();
   });
 
+  it("shows, hides, and resets the visual hint", () => {
+    render(<Flashcard cards={[card, secondCard]} clearFiltersPath="/phrasal-verbs" />);
+
+    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+
+    const hintButton = screen.getByRole("button", { name: "Show visual hint" });
+    fireEvent.click(hintButton);
+
+    expect(hintButton.getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("img", { name: "Pista visual animada" })).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Hide visual hint" }));
+
+    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(hintButton.getAttribute("aria-pressed")).toBe("false");
+
+    fireEvent.click(hintButton);
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(screen.getByRole("button", { name: "Show visual hint" }).getAttribute("aria-pressed")).toBe("false");
+  });
+
   it("switches the complete explanation between English and Spanish", () => {
     render(<Flashcard cards={[card]} clearFiltersPath="/phrasal-verbs" />);
 
