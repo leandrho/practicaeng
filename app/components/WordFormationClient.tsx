@@ -113,7 +113,23 @@ export default function WordFormationClient({
         </div>
       </div>
       <p className="flashcard__kicker">Base</p>
-      <h2>{family.base.toUpperCase()}</h2>
+      <div className="flashcard__head">
+        <h2>{family.base.toUpperCase()}</h2>
+        <Button
+          className="btn btn--ghost btn--hint"
+          aria-pressed={state.showHint}
+          aria-label={state.showHint ? "Hide visual hint" : "Show visual hint"}
+          title="Ver pista"
+          onClick={() => setState((current) => ({ ...current, showHint: !current.showHint }))}
+        >
+          <HintIcon />
+        </Button>
+      </div>
+      {state.showHint ? (
+        <div className="flashcard__hint-panel" aria-live="polite">
+          <HintGallery hintId={hintId} />
+        </div>
+      ) : null}
       {state.revealed ? (
         <div key={`${family.base}:dorso`} className="flashcard__answer flashcard__face" aria-live="polite">
           <p>
@@ -147,22 +163,6 @@ export default function WordFormationClient({
               <li key={example}>{example}</li>
             ))}
           </ul>
-          <div className="flashcard__hint">
-            <Button
-              className="btn btn--ghost btn--hint"
-              aria-pressed={state.showHint}
-              aria-label={state.showHint ? "Hide visual hint" : "Show visual hint"}
-              title="Ver pista"
-              onClick={() => setState((current) => ({ ...current, showHint: !current.showHint }))}
-            >
-              <HintIcon />
-            </Button>
-            {state.showHint ? (
-              <div aria-live="polite">
-                <HintGallery hintId={hintId} />
-              </div>
-            ) : null}
-          </div>
         </div>
       ) : (
         <div key={`${family.base}:frente`} className="flashcard__front flashcard__face">
@@ -200,20 +200,6 @@ export default function WordFormationClient({
             {state.checked === "incorrect" ? <p>Not yet: try again.</p> : null}
           </div>
           <div>
-            <Button
-              className="btn btn--ghost btn--hint"
-              aria-pressed={state.showHint}
-              aria-label={state.showHint ? "Hide visual hint" : "Show visual hint"}
-              title="Ver pista"
-              onClick={() => setState((current) => ({ ...current, showHint: !current.showHint }))}
-            >
-              <HintIcon />
-            </Button>
-            {state.showHint ? (
-              <div aria-live="polite">
-                <HintGallery hintId={hintId} />
-              </div>
-            ) : null}
             <Button
               className="btn btn--ghost"
               onClick={() => setState((current) => ({ ...current, revealed: true }))}

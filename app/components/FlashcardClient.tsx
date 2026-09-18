@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { init, next, prev, reveal } from "../../src/application/session";
 import type { Card } from "../../src/domain/card";
-import { resolveHint, type HintId } from "../../src/domain/hints";
+import { resolveHint } from "../../src/domain/hints";
 import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
@@ -17,46 +17,26 @@ type FlashcardClientProps = {
 
 type FlashcardFrontProps = {
   card: Card;
-  hintId: HintId;
-  showHint: boolean;
-  onToggleHint: () => void;
   onReveal: () => void;
 };
 
-function FlashcardFront({ card, hintId, showHint, onToggleHint, onReveal }: FlashcardFrontProps) {
+function FlashcardFront({ card, onReveal }: FlashcardFrontProps) {
   return (
     <div key={`${card.expression}:frente`} className="flashcard__front flashcard__face">
       <Button className="btn btn--primary" onClick={onReveal}>
         Reveal
       </Button>
-      <Button
-        className="btn btn--ghost btn--hint"
-        aria-pressed={showHint}
-        aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
-        title="Ver pista"
-        onClick={onToggleHint}
-      >
-        <HintIcon />
-      </Button>
-      {showHint ? (
-        <div aria-live="polite">
-          <HintGallery hintId={hintId} />
-        </div>
-      ) : null}
     </div>
   );
 }
 
 type FlashcardAnswerProps = {
   card: Card;
-  hintId: HintId;
   showEs: boolean;
-  showHint: boolean;
   onToggleEs: () => void;
-  onToggleHint: () => void;
 };
 
-function FlashcardAnswer({ card, hintId, showEs, showHint, onToggleEs, onToggleHint }: FlashcardAnswerProps) {
+function FlashcardAnswer({ card, showEs, onToggleEs }: FlashcardAnswerProps) {
   return (
     <div
       key={`${card.expression}:dorso`}
@@ -92,22 +72,6 @@ function FlashcardAnswer({ card, hintId, showEs, showHint, onToggleEs, onToggleH
             {showEs ? "EN" : "ES"}
           </Button>
         </div>
-      </div>
-      <div className="flashcard__hint">
-        <Button
-          className="btn btn--ghost btn--hint"
-          aria-pressed={showHint}
-          aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
-          title="Ver pista"
-          onClick={onToggleHint}
-        >
-          <HintIcon />
-        </Button>
-        {showHint ? (
-          <div aria-live="polite">
-            <HintGallery hintId={hintId} />
-          </div>
-        ) : null}
       </div>
     </div>
   );
@@ -184,24 +148,31 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
         </div>
       </div>
       <div key={card.expression} className="flashcard__body">
-        <h2>{card.expression}</h2>
+        <div className="flashcard__head">
+          <h2>{card.expression}</h2>
+          <Button
+            className="btn btn--ghost btn--hint"
+            aria-pressed={showHint}
+            aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
+            title="Ver pista"
+            onClick={() => setShowHint((current) => !current)}
+          >
+            <HintIcon />
+          </Button>
+        </div>
+        {showHint ? (
+          <div className="flashcard__hint-panel" aria-live="polite">
+            <HintGallery hintId={hintId} />
+          </div>
+        ) : null}
         {session.revealed ? (
           <FlashcardAnswer
             card={card}
-            hintId={hintId}
             showEs={showEs}
-            showHint={showHint}
             onToggleEs={() => setShowEs((current) => !current)}
-            onToggleHint={() => setShowHint((current) => !current)}
           />
         ) : (
-          <FlashcardFront
-            card={card}
-            hintId={hintId}
-            showHint={showHint}
-            onToggleHint={() => setShowHint((current) => !current)}
-            onReveal={() => setSession(reveal)}
-          />
+          <FlashcardFront card={card} onReveal={() => setSession(reveal)} />
         )}
       </div>
       <nav className="flashcard__navigation flashcard__navigation--footer" aria-label="Card navigation">

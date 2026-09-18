@@ -616,7 +616,8 @@ a {
   text-transform: uppercase;
 }
 
-.flashcard .flashcard__kicker + h2 {
+.flashcard .flashcard__kicker + h2,
+.flashcard .flashcard__kicker + .flashcard__head {
   margin-top: 0.25rem;
 }
 
@@ -825,6 +826,31 @@ a {
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 1.05;
+}
+
+.flashcard__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.flashcard__head h2 {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.flashcard__head .btn--hint {
+  flex-shrink: 0;
+}
+
+.flashcard__hint-panel {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  margin-bottom: 0.25rem;
 }
 
 .flashcard__front,
