@@ -261,19 +261,37 @@ a {
 
 .section-card {
   --card-accent: var(--action);
+  position: relative;
   display: grid;
   gap: 0.35rem;
   align-content: start;
   min-height: 100%;
   padding: 1.25rem 1.25rem 1.4rem;
   border: 1px solid var(--line);
-  border-top: 0.35rem solid var(--card-accent);
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
   text-decoration: none;
   transition: transform 150ms ease, box-shadow 150ms ease,
     border-color 150ms ease;
+}
+
+/* Misma esquina doblada que la flashcard: el acento de la sección
+   vive en el pliegue, sin barra superior. */
+.section-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: linear-gradient(
+    225deg,
+    var(--card-accent) 0 50%,
+    transparent 50% 100%
+  );
+  pointer-events: none;
 }
 
 .section-card:hover {
@@ -678,6 +696,31 @@ a {
   transform: translateY(-1px);
 }
 
+/* Botones en armonía con la sección: mismo acento que la esquina
+   doblada y la barra de progreso. Contrastes medidos (texto/fondo):
+   CLARO blanco/acento 5.02–7.90 · acento/surface 5.02–7.90
+   OSCURO tinta/acento 7.02–12.38 · acento/surface 5.75–10.15.
+   --action-ink acompaña al tema (blanco en claro, oscuro en dark),
+   igual que --card-accent. Todo ≥4.5. */
+.flashcard .btn--primary {
+  background: var(--card-accent);
+  border-color: var(--card-accent);
+  color: var(--action-ink);
+}
+
+.flashcard .btn--ghost {
+  border-color: color-mix(in srgb, var(--card-accent) 45%, var(--line));
+}
+
+.flashcard .btn--ghost:hover:not(:disabled) {
+  border-color: var(--card-accent);
+  color: var(--card-accent);
+}
+
+.flashcard :focus-visible {
+  outline-color: var(--card-accent);
+}
+
 /* Botón de pista: solo icono amarillo (lamparita de ayuda). */
 .btn--hint {
   min-width: 3rem;
@@ -714,15 +757,34 @@ a {
 /* ——— SPEC 10 · flashcard ——— */
 .flashcard {
   --card-accent: var(--action);
+  position: relative;
   width: min(100% - 2rem, 44rem);
   margin: clamp(1.5rem, 5vh, 3rem) auto 3rem;
   padding: clamp(1.5rem, 5vw, 2.75rem);
   border: 1px solid var(--line);
-  border-top: 0.45rem solid var(--card-accent);
   border-radius: var(--radius-lg);
   background: var(--surface);
   box-shadow: var(--shadow);
+  overflow: hidden;
   perspective: 900px;
+}
+
+/* Esquina doblada: la sección se codifica con el pliegue de acento
+   en la esquina superior derecha, sin barra superior. Decorativo
+   (los lectores de pantalla ignoran los pseudo-elementos). */
+.flashcard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(
+    225deg,
+    var(--card-accent) 0 50%,
+    transparent 50% 100%
+  );
+  pointer-events: none;
 }
 
 .flashcard__top {
