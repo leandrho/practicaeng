@@ -8,6 +8,7 @@ const card: Card = {
   expression: "give up",
   type: "phrasal-verb",
   level: "B1-B2",
+  meaningEn: "to stop trying",
   meaningEs: "rendirse",
   exampleEn: "Don't give up.",
   translationEs: "No te rindas.",
@@ -18,6 +19,7 @@ const card: Card = {
 const secondCard: Card = {
   ...card,
   expression: "take off",
+  meaningEn: "to leave the ground and begin flying",
   meaningEs: "despegar",
   exampleEn: "The plane takes off at noon.",
 };
@@ -34,14 +36,34 @@ describe("Flashcard", () => {
     expect(screen.queryByText(card.translationEs!)).toBeNull();
   });
 
-  it("shows the back when revealed", () => {
+  it("switches the complete explanation between English and Spanish", () => {
     render(<Flashcard cards={[card]} clearFiltersPath="/phrasal-verbs" />);
 
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
 
-    expect(screen.getByText(card.meaningEs)).not.toBeNull();
+    expect(screen.getByText(card.meaningEn)).not.toBeNull();
     expect(screen.getByText(card.exampleEn)).not.toBeNull();
-    expect(screen.getByText(card.translationEs!)).not.toBeNull();
+    expect(screen.queryByText(card.meaningEs)).toBeNull();
+    expect(screen.queryByText(card.translationEs!)).toBeNull();
+
+    const esButton = screen.getByRole("button", { name: "Show Spanish translation" });
+    fireEvent.click(esButton);
+
+    expect(esButton.getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByText(card.meaningEs)).not.toBeNull();
+    expect(screen.getByText(card.translationEs)).not.toBeNull();
+    expect(screen.getByText("Meaning:")).not.toBeNull();
+    expect(screen.getByText("Example:")).not.toBeNull();
+    expect(screen.queryByText(card.meaningEn)).toBeNull();
+    expect(screen.queryByText(card.exampleEn)).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Show English explanation" }));
+
+    expect(screen.queryByText(card.meaningEs)).toBeNull();
+    expect(screen.queryByText(card.translationEs)).toBeNull();
+    expect(screen.getByText(card.meaningEn)).not.toBeNull();
+    expect(screen.getByText(card.exampleEn)).not.toBeNull();
+    expect(esButton.getAttribute("aria-pressed")).toBe("false");
   });
 
   it("navigates with buttons and shortcuts without exceeding boundaries", () => {
@@ -50,12 +72,19 @@ describe("Flashcard", () => {
     fireEvent.keyDown(window, { key: "ArrowLeft" });
     fireEvent.keyDown(window, { key: " " });
     expect((screen.getByRole("button", { name: "Previous" }) as HTMLButtonElement).disabled).toBe(true);
+    fireEvent.click(screen.getByRole("button", { name: "Show Spanish translation" }));
 
     fireEvent.click(screen.getByRole("button", { name: "Next" }));
     expect(screen.getByText(secondCard.expression)).not.toBeNull();
+    expect(screen.queryByText(secondCard.meaningEn)).toBeNull();
     expect(screen.queryByText(secondCard.meaningEs)).toBeNull();
 
     fireEvent.keyDown(window, { key: " " });
+    expect(screen.getByText(secondCard.meaningEn)).not.toBeNull();
+    expect(screen.queryByText(secondCard.meaningEs)).toBeNull();
+    expect(screen.getByRole("button", { name: "Show Spanish translation" }).getAttribute("aria-pressed")).toBe(
+      "false",
+    );
     expect((screen.getByRole("button", { name: "Next" }) as HTMLButtonElement).disabled).toBe(true);
 
     fireEvent.keyDown(window, { key: "ArrowRight" });

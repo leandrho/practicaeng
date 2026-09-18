@@ -10,9 +10,9 @@ const realWordFamilyCountTolerance = 0;
 describe("buildGapFills", () => {
   it("deriva una actividad por forma presente, en orden noun, adjective y adverb", () => {
     const [family] = parseWordFamilies(
-      `Base | Sustantivo | Adjetivo | Adverbio | Significado orientativo
-| --- | --- | --- | --- | --- |
-| amaze | amazement | amazing / amazed | amazingly | asombrar |`,
+      `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| amaze | amazement | amazing / amazed | amazingly | to surprise | asombrar |`,
       "data/word-formation-b1-b2.md",
     );
     if (family === undefined) {
@@ -47,6 +47,8 @@ describe("buildGapFills", () => {
       base: "announce",
       category: "A",
       noun: "announcement",
+      meaningHintEn: "to make something public",
+      meaningHint: "anunciar",
     });
 
     expect(buildGapFills(family)).toEqual([

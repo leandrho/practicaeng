@@ -15,6 +15,7 @@ type FlashcardClientProps = {
 export default function FlashcardClient({ cards, clearFiltersPath, accent }: FlashcardClientProps) {
   const [session, setSession] = useState(() => init(cards));
   const [dir, setDir] = useState<1 | -1>(1);
+  const [showEs, setShowEs] = useState(false);
   const card = session.current;
   const total = session.cards.length;
   const position = total === 0 ? 0 : session.index + 1;
@@ -30,11 +31,13 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
         case "ArrowLeft":
           event.preventDefault();
           setDir(-1);
+          setShowEs(false);
           setSession(prev);
           break;
         case "ArrowRight":
           event.preventDefault();
           setDir(1);
+          setShowEs(false);
           setSession(next);
           break;
         case " ":
@@ -74,23 +77,33 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
           className="flashcard__answer flashcard__face"
           aria-live="polite"
         >
-          <p>
-            <strong>Meaning:</strong> {card.meaningEs}
-          </p>
-          <p>
-            <strong>Example:</strong> {card.exampleEn}
-          </p>
-          {card.translationEs === undefined ? null : (
-            <p>
-              <strong>Translation:</strong> {card.translationEs}
-            </p>
-          )}
+          <div aria-live="polite">
+            <div className="flashcard__answer-row">
+              <div className="flashcard__answer-copy">
+                <p>
+                  <strong>Meaning:</strong> {showEs ? card.meaningEs : card.meaningEn}
+                </p>
+                <p>
+                  <strong>Example:</strong> {showEs ? card.translationEs : card.exampleEn}
+                </p>
+              </div>
+              <Button
+                className="btn btn--ghost flashcard__language-toggle"
+                aria-pressed={showEs}
+                aria-label={showEs ? "Show English explanation" : "Show Spanish translation"}
+                onClick={() => setShowEs((current) => !current)}
+              >
+                {showEs ? "EN" : "ES"}
+              </Button>
+            </div>
+          </div>
           <nav className="flashcard__navigation" aria-label="Card navigation">
             <Button
               className="btn btn--ghost"
               disabled={session.atStart}
               onClick={() => {
                 setDir(-1);
+                setShowEs(false);
                 setSession(prev);
               }}
             >
@@ -101,6 +114,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
               disabled={session.atEnd}
               onClick={() => {
                 setDir(1);
+                setShowEs(false);
                 setSession(next);
               }}
             >

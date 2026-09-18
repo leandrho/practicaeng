@@ -2,7 +2,7 @@ import { WordFamilySchema, type WordFamily } from "../domain/word-formation";
 
 export type WordFormationParseError = { file: string; line: number; reason: string };
 
-type WordFamilyField = "base" | "noun" | "adjective" | "adverb" | "meaningHint";
+type WordFamilyField = "base" | "noun" | "adjective" | "adverb" | "meaningHintEn" | "meaningHint";
 type WordFamilyRow = Record<WordFamilyField, string>;
 
 const fields: readonly WordFamilyField[] = [
@@ -10,6 +10,7 @@ const fields: readonly WordFamilyField[] = [
   "noun",
   "adjective",
   "adverb",
+  "meaningHintEn",
   "meaningHint",
 ];
 
@@ -40,6 +41,15 @@ export function parseWordFamilies(markdown: string, file: string): WordFamily[] 
     }
 
     try {
+      const meaningHintEn = normalizeOptionalCell(row.meaningHintEn);
+      if (meaningHintEn === undefined) {
+        throwParseError(file, rowLine, "familia sin Hint (EN)");
+      }
+      const meaningHint = normalizeOptionalCell(row.meaningHint);
+      if (meaningHint === undefined) {
+        throwParseError(file, rowLine, "familia sin Significado (ES)");
+      }
+
       families.push(
         WordFamilySchema.parse({
           base: normalizeRequiredCell(row.base),
@@ -48,7 +58,8 @@ export function parseWordFamilies(markdown: string, file: string): WordFamily[] 
           noun: normalizeOptionalCell(row.noun),
           adjective: normalizeOptionalCell(row.adjective),
           adverb: normalizeOptionalCell(row.adverb),
-          meaningHint: normalizeOptionalCell(row.meaningHint),
+          meaningHintEn,
+          meaningHint,
           examples: examplesByBase.get(normalizeRequiredCell(row.base).toLowerCase()) ?? [],
         }),
       );
