@@ -24,6 +24,7 @@
   --accent-collocations: #4338ca;
   --accent-prepositions: #b45309;
   --accent-idioms: #be123c;
+  --accent-irregular-verbs: #a21caf;
   --accent-word-formation: #1d4ed8;
   --hint-icon: #ca8a04;
 
@@ -57,6 +58,7 @@
   --accent-collocations: #a5b4fc;
   --accent-prepositions: #fcd34d;
   --accent-idioms: #fda4af;
+  --accent-irregular-verbs: #f0abfc;
   --accent-word-formation: #60a5fa;
   --hint-icon: #facc15;
 
@@ -1008,6 +1010,10 @@ a {
 
 .visual-hint[data-hint="idiom"] {
   --hint-accent: var(--accent-idioms);
+}
+
+.visual-hint[data-hint="irregular-verb"] {
+  --hint-accent: var(--accent-irregular-verbs);
 }
 
 .visual-hint[data-hint="word-formation"] {

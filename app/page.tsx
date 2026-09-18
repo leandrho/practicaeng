@@ -36,6 +36,14 @@ const sections = [
     accent: "var(--accent-idioms)",
   },
   {
+    href: "/irregular-verbs",
+    name: "Irregular Verbs",
+    detail: "Base, past and participle",
+    count: contentRepository.getCards("irregular-verbs").length,
+    unit: "cards",
+    accent: "var(--accent-irregular-verbs)",
+  },
+  {
     href: "/word-formation",
     name: "Word Formation",
     detail: "Word families",

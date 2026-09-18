@@ -22,6 +22,7 @@ export function resolveHint(
     case "collocation":
     case "preposition":
     case "idiom":
+    case "irregular-verb":
       return `fallback:${type}`;
     default:
       return "fallback:word-formation";

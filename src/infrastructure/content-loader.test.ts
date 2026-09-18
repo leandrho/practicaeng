@@ -17,6 +17,7 @@ const realContentCounts: Record<ContentSection, number> = {
   collocations: 50,
   prepositions: 49,
   idioms: 35,
+  "irregular-verbs": 100,
 };
 
 // The versioned Markdown is a fixed baseline, so content changes must update it explicitly.
@@ -43,6 +44,7 @@ describe("ContentRepository", () => {
       collocations: "collocation",
       prepositions: "preposition",
       idioms: "idiom",
+      "irregular-verbs": "irregular-verb",
     };
 
     for (const section of CONTENT_SECTIONS) {
@@ -74,5 +76,18 @@ describe("ContentRepository", () => {
 
     expect(doHomework?.category).toBe("DO");
     expect(repository.getCards("phrasal-verbs")[0]?.category).toBe("general");
+  });
+
+  it("expone solo la base en expression y el pasado por separado", () => {
+    const repository = createContentRepository();
+    const be = repository
+      .getCards("irregular-verbs")
+      .find((card) => card.expression === "be");
+
+    expect(be).toMatchObject({
+      type: "irregular-verb",
+      pastSimple: "was/were",
+      pastParticiple: "been",
+    });
   });
 });

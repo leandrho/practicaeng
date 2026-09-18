@@ -8,7 +8,7 @@ import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 afterEach(cleanup);
 
 describe("HomePage", () => {
-  it("shows the hero, five sections with correct counts, and working links", () => {
+  it("shows the hero, six sections with correct counts, and working links", () => {
     render(<HomePage />);
 
     expect(
@@ -20,11 +20,12 @@ describe("HomePage", () => {
       ["Collocations", contentRepository.getCards("collocations").length],
       ["Prepositions", contentRepository.getCards("prepositions").length],
       ["Idioms & Expressions", contentRepository.getCards("idioms").length],
+      ["Irregular Verbs", contentRepository.getCards("irregular-verbs").length],
       ["Word Formation", getWordFamilies().length],
     ];
 
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(5);
+    expect(links).toHaveLength(6);
 
     for (const [name, count] of expected) {
       const link = screen.getByRole("link", {
@@ -45,6 +46,7 @@ describe("HomePage", () => {
       contentRepository.getCards("collocations").length +
       contentRepository.getCards("prepositions").length +
       contentRepository.getCards("idioms").length +
+      contentRepository.getCards("irregular-verbs").length +
       getWordFamilies().length;
 
     expect(screen.getByText(new RegExp(`${total} cards`))).not.toBeNull();

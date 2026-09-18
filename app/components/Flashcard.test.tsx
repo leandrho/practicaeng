@@ -29,6 +29,20 @@ const fallbackCard: Card = {
   expression: "run into",
 };
 
+const irregularCard: Card = {
+  expression: "go",
+  type: "irregular-verb",
+  level: "B1-B2",
+  meaningEn: "move or travel",
+  meaningEs: "ir",
+  exampleEn: "We went to the beach.",
+  translationEs: "Fuimos a la playa.",
+  category: "A–B",
+  sourceFile: "data/irregular-verbs-b1-b2.md",
+  pastSimple: "went",
+  pastParticiple: "gone",
+};
+
 afterEach(cleanup);
 
 describe("Flashcard", () => {
@@ -155,8 +169,22 @@ describe("Flashcard", () => {
     expect(screen.getByText(secondCard.expression)).not.toBeNull();
   });
 
-  it("shows session progress", () => {
-    render(<Flashcard cards={[card, secondCard]} clearFiltersPath="/phrasal-verbs" />);
+  it("hides past forms before Reveal and shows them after", () => {
+    render(<Flashcard cards={[irregularCard]} clearFiltersPath="/irregular-verbs" />);
+
+    expect(screen.getByRole("heading", { name: "go" })).not.toBeNull();
+    expect(screen.queryByText("went")).toBeNull();
+    expect(screen.queryByText("gone")).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+
+    expect(screen.getByText("went")).not.toBeNull();
+    expect(screen.getByText("gone")).not.toBeNull();
+    expect(screen.getByText("Past simple:")).not.toBeNull();
+    expect(screen.getByText("Past participle:")).not.toBeNull();
+  });
+
+  it("shows session progress", () => {    render(<Flashcard cards={[card, secondCard]} clearFiltersPath="/phrasal-verbs" />);
 
     expect(screen.getByText("Card 1 of 2")).not.toBeNull();
 

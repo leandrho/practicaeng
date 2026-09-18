@@ -15,6 +15,7 @@ const SECTION_ACCENTS: Record<ContentSection, string> = {
   collocations: "var(--accent-collocations)",
   prepositions: "var(--accent-prepositions)",
   idioms: "var(--accent-idioms)",
+  "irregular-verbs": "var(--accent-irregular-verbs)",
 };
 
 const SECTION_TITLES: Record<ContentSection, string> = {
@@ -22,6 +23,16 @@ const SECTION_TITLES: Record<ContentSection, string> = {
   collocations: "Collocations",
   prepositions: "Prepositions",
   idioms: "Idioms & Expressions",
+  "irregular-verbs": "Irregular Verbs",
+};
+
+const SECTION_PROMPTS: Record<ContentSection, string> = {
+  "phrasal-verbs": "What does it mean? Think of an example with this expression.",
+  collocations: "What does it mean? Think of an example with this expression.",
+  prepositions: "What does it mean? Think of an example with this expression.",
+  idioms: "What does it mean? Think of an example with this expression.",
+  "irregular-verbs":
+    "Say the past simple and past participle aloud. Then reveal and compare.",
 };
 
 export function generateStaticParams() {
@@ -62,7 +73,7 @@ export default async function SectionPage({
         <RegisterPracticeFilters cards={cards} filter={filter} pathname={`/${section}`} />
         <header className="practice-header">
           <h1>{SECTION_TITLES[section]}</h1>
-          <p>What does it mean? Think of an example with this expression.</p>
+          <p>{SECTION_PROMPTS[section]}</p>
         </header>
         <Flashcard
           cards={filterCards(cards, filter)}

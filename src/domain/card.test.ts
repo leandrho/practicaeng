@@ -51,4 +51,21 @@ describe("CardSchema", () => {
       CardSchema.parse({ ...validCard, translationEs: "" }),
     ).toThrow();
   });
+
+  it("irregular-verb sin pasado falla", () => {
+    expect(() =>
+      CardSchema.parse({ ...validCard, type: "irregular-verb" }),
+    ).toThrow();
+  });
+
+  it("irregular-verb con pasado pasa", () => {
+    const parsed = CardSchema.parse({
+      ...validCard,
+      type: "irregular-verb",
+      pastSimple: "went",
+      pastParticiple: "gone",
+    });
+    expect(parsed.pastSimple).toBe("went");
+    expect(parsed.pastParticiple).toBe("gone");
+  });
 });

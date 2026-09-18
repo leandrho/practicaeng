@@ -66,6 +66,16 @@ function FlashcardAnswer({ card, hintId, showEs, showHint, onToggleEs, onToggleH
       <div aria-live="polite">
         <div className="flashcard__answer-row">
           <div className="flashcard__answer-copy">
+            {card.pastSimple !== undefined && card.pastParticiple !== undefined ? (
+              <>
+                <p>
+                  <strong>Past simple:</strong> {card.pastSimple}
+                </p>
+                <p>
+                  <strong>Past participle:</strong> {card.pastParticiple}
+                </p>
+              </>
+            ) : null}
             <p>
               <strong>Meaning:</strong> {showEs ? card.meaningEs : card.meaningEn}
             </p>

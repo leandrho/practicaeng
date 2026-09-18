@@ -4,13 +4,14 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Card } from "../domain/card";
 import { SECTION_FILES } from "../domain/sections";
-import { parseBulletCards, parsePhrasalVerbCards } from "./markdown-parser";
+import { parseBulletCards, parseIrregularVerbCards, parsePhrasalVerbCards } from "./markdown-parser";
 
 export const CONTENT_SECTIONS = [
   "phrasal-verbs",
   "collocations",
   "prepositions",
   "idioms",
+  "irregular-verbs",
 ] as const;
 
 export type ContentSection = (typeof CONTENT_SECTIONS)[number];
@@ -48,5 +49,7 @@ function parseCards(markdown: string, section: ContentSection, file: string): Ca
       return parseBulletCards(markdown, { file, type: "preposition" });
     case "idioms":
       return parseBulletCards(markdown, { file, type: "idiom" });
+    case "irregular-verbs":
+      return parseIrregularVerbCards(markdown, file);
   }
 }

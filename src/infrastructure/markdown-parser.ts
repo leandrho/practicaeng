@@ -88,6 +88,98 @@ export function parseBulletCards(
   return cards;
 }
 
+export function parseIrregularVerbCards(markdown: string, file: string): Card[] {
+  const lines = markdown.split(/\r?\n/);
+  const cards: Card[] = [];
+  let category = "general";
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (line === undefined) {
+      continue;
+    }
+
+    const header = /^##\s+(.+?)\s*$/.exec(line);
+    if (header?.[1] !== undefined) {
+      category = header[1];
+      continue;
+    }
+
+    if (!/^\s*-\s+/.test(line)) {
+      continue;
+    }
+
+    const startLine = index + 1;
+    let bullet = line.trim();
+
+    while (!/\*\s*$/.test(bullet)) {
+      const continuation = lines[index + 1];
+      if (
+        continuation === undefined ||
+        !/^\s+/.test(continuation) ||
+        /^\s*-\s+/.test(continuation)
+      ) {
+        throwParseError(file, startLine, "bullet sin ejemplo en cursiva cerrado");
+      }
+
+      index += 1;
+      bullet = `${bullet} ${continuation.trim()}`;
+    }
+
+    const match = /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+)\*\s*$/.exec(
+      bullet,
+    );
+    if (
+      match?.[1] === undefined ||
+      match[2] === undefined ||
+      match[3] === undefined ||
+      match[4] === undefined ||
+      match[5] === undefined
+    ) {
+      throwParseError(
+        file,
+        startLine,
+        "bullet debe tener formas, meaningEn, meaningEs, exampleEn y translationEs",
+      );
+    }
+
+    const forms = match[1]
+      .split(/\s+[–—-]\s+/)
+      .map((form) => form.trim())
+      .filter((form) => form.length > 0);
+    if (forms.length !== 3) {
+      throwParseError(
+        file,
+        startLine,
+        "forma irregular debe tener base, pasado y participio separados por –",
+      );
+    }
+
+    const [base, pastSimple, pastParticiple] = forms as [string, string, string];
+
+    cards.push(
+      parseCard(
+        {
+          expression: base,
+          type: "irregular-verb",
+          meaningEn: match[2],
+          meaningEs: match[3],
+          exampleEn: match[4],
+          translationEs: match[5],
+          category,
+          sourceFile: file,
+          pastSimple,
+          pastParticiple,
+        },
+        file,
+        startLine,
+      ),
+    );
+  }
+
+  return cards;
+}
+
 export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
   const cards: Card[] = [];
   const lines = markdown.split(/\r?\n/);
