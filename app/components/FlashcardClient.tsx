@@ -60,7 +60,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
     >
       <div className="flashcard__top">
         <p className="flashcard__progress" aria-live="polite">
-          Tarjeta {position} de {total}
+          Card {position} of {total}
         </p>
         <div className="flashcard__meter" aria-hidden="true">
           <span style={{ width: `${progress}%` }} />
@@ -75,17 +75,17 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
           aria-live="polite"
         >
           <p>
-            <strong>Significado:</strong> {card.meaningEs}
+            <strong>Meaning:</strong> {card.meaningEs}
           </p>
           <p>
-            <strong>Ejemplo:</strong> {card.exampleEn}
+            <strong>Example:</strong> {card.exampleEn}
           </p>
           {card.translationEs === undefined ? null : (
             <p>
-              <strong>Traducción:</strong> {card.translationEs}
+              <strong>Translation:</strong> {card.translationEs}
             </p>
           )}
-          <nav className="flashcard__navigation" aria-label="Navegación de tarjetas">
+          <nav className="flashcard__navigation" aria-label="Card navigation">
             <Button
               className="btn btn--ghost"
               disabled={session.atStart}
@@ -94,7 +94,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
                 setSession(prev);
               }}
             >
-              Anterior
+              Previous
             </Button>
             <Button
               className="btn btn--primary"
@@ -104,13 +104,13 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
                 setSession(next);
               }}
             >
-              Siguiente
+              Next
             </Button>
           </nav>
         </div>
       ) : (
         <div key={`${card.expression}:frente`} className="flashcard__front flashcard__face">
-          <p>¿Qué significa? Pensá un ejemplo con esta expresión.</p>
+          <p>What does it mean? Think of an example with this expression.</p>
           <Button className="btn btn--primary" onClick={() => setSession(reveal)}>
             Reveal
           </Button>

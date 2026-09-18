@@ -25,10 +25,10 @@ export function EmptyState({ clearFiltersPath }: EmptyStateProps) {
         <rect x="3" y="4" width="18" height="14" rx="2" />
         <path d="M3 9h18M8 21h8" />
       </svg>
-      <p>No hay tarjetas con estos filtros.</p>
+      <p>No cards match these filters.</p>
       <form action={clearFiltersPath}>
         <Button className="btn btn--primary" type="submit">
-          Limpiar filtros
+          Clear filters
         </Button>
       </form>
     </section>

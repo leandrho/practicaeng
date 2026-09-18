@@ -8,19 +8,19 @@ import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 afterEach(cleanup);
 
 describe("HomePage", () => {
-  it("muestra hero, 5 secciones con conteos correctos y links funcionales", () => {
+  it("shows the hero, five sections with correct counts, and working links", () => {
     render(<HomePage />);
 
     expect(
-      screen.getByRole("heading", { name: "Practicá inglés" }),
+      screen.getByRole("heading", { name: "Practice English" }),
     ).not.toBeNull();
 
     const expected: Array<[string, number]> = [
       ["Phrasal verbs", contentRepository.getCards("phrasal-verbs").length],
-      ["Colocaciones", contentRepository.getCards("collocations").length],
-      ["Preposiciones", contentRepository.getCards("prepositions").length],
-      ["Modismos y expresiones", contentRepository.getCards("idioms").length],
-      ["Formación de palabras", getWordFamilies().length],
+      ["Collocations", contentRepository.getCards("collocations").length],
+      ["Prepositions", contentRepository.getCards("prepositions").length],
+      ["Idioms & Expressions", contentRepository.getCards("idioms").length],
+      ["Word Formation", getWordFamilies().length],
     ];
 
     const links = screen.getAllByRole("link");
@@ -28,7 +28,7 @@ describe("HomePage", () => {
 
     for (const [name, count] of expected) {
       const link = screen.getByRole("link", {
-        name: new RegExp(`Practicar ${name}, ${count}`),
+        name: new RegExp(`Practice ${name}, ${count}`),
       });
       expect(link.getAttribute("href")).toMatch(/^\/[a-z-]+$/);
       const scope = within(link);
@@ -37,7 +37,7 @@ describe("HomePage", () => {
     }
   });
 
-  it("muestra la barra de sesión con el total de tarjetas", () => {
+  it("shows the session bar with the total number of cards", () => {
     render(<HomePage />);
 
     const total =
@@ -47,9 +47,9 @@ describe("HomePage", () => {
       contentRepository.getCards("idioms").length +
       getWordFamilies().length;
 
-    expect(screen.getByText(new RegExp(`${total} tarjetas`))).not.toBeNull();
+    expect(screen.getByText(new RegExp(`${total} cards`))).not.toBeNull();
     expect(
-      screen.getByRole("img", { name: /Distribución de tarjetas/ }),
+      screen.getByRole("img", { name: /Card distribution by section/ }),
     ).not.toBeNull();
   });
 });

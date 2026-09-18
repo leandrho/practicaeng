@@ -95,7 +95,7 @@ export function ThemeToggle() {
   }, []);
 
   const label =
-    theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro";
+    theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
 
   return (
     <Button

@@ -6,17 +6,17 @@ import SectionError from "./error";
 afterEach(cleanup);
 
 describe("SectionError", () => {
-  it("muestra el error en español rioplatense y reintenta", () => {
+  it("shows the error in English and retries", () => {
     const retry = vi.fn();
     render(<SectionError retry={retry} />);
 
-    expect(screen.getByText("No pudimos cargar esta sección")).not.toBeNull();
-    expect(screen.getByText("Algo salió mal.")).not.toBeNull();
+    expect(screen.getByText("We couldn't load this section")).not.toBeNull();
+    expect(screen.getByText("Something went wrong.")).not.toBeNull();
     expect(
-      screen.getByText("Probá de nuevo. Si el problema sigue, volvé más tarde."),
+      screen.getByText("Try again. If the problem persists, come back later."),
     ).not.toBeNull();
 
-    fireEvent.click(screen.getByRole("button", { name: "Reintentar" }));
+    fireEvent.click(screen.getByRole("button", { name: "Retry" }));
     expect(retry).toHaveBeenCalledOnce();
   });
 });

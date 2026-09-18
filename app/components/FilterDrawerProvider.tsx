@@ -38,7 +38,7 @@ function useFilterDrawerContext(): FilterDrawerContextValue {
   const value = useContext(FilterDrawerContext);
   if (value === null) {
     throw new Error(
-      "useFilterDrawerContext debe usarse dentro de FilterDrawerProvider",
+      "useFilterDrawerContext must be used within FilterDrawerProvider",
     );
   }
   return value;
@@ -132,7 +132,7 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
               type="button"
               tabIndex={-1}
               className="filters-drawer__overlay"
-              aria-label="Cerrar panel de filtros"
+              aria-label="Close filters panel"
               onClick={closeDrawer}
             />
           )}
@@ -141,18 +141,18 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
             className="filters-drawer__panel"
             role="dialog"
             aria-modal="true"
-            aria-label="Filtros"
+            aria-label="Filters"
             data-open={open}
             aria-hidden={!open}
             inert={!open}
           >
             <div className="filters-drawer__header">
-              <h2 className="filters-drawer__title">Filtros</h2>
+              <h2 className="filters-drawer__title">Filters</h2>
               <button
                 type="button"
                 ref={closeRef}
                 className="btn btn--ghost"
-                aria-label="Cerrar filtros"
+                aria-label="Close filters"
                 onClick={closeDrawer}
               >
                 ✕
@@ -188,7 +188,7 @@ export function HeaderFilterButton() {
       aria-controls={panelId}
       onClick={openDrawer}
     >
-      Filtros
+      Filters
     </button>
   );
 }

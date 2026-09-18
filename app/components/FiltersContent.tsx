@@ -26,9 +26,9 @@ export function FiltersContent({ cards, filter, pathname, onNavigate }: FiltersC
   const categories = [...new Set(cards.map((card) => card.category))];
 
   return (
-    <nav className="filters" aria-label="Filtros">
+    <nav className="filters" aria-label="Filters">
       <div className="filters__group">
-        <span className="filters__label">Nivel</span>
+        <span className="filters__label">Level</span>
         <div className="filters__options">
           <a
             className="chip"
@@ -36,7 +36,7 @@ export function FiltersContent({ cards, filter, pathname, onNavigate }: FiltersC
             href={createFilterHref(pathname, { category: filter.category })}
             onClick={onNavigate}
           >
-            Todos
+            All
           </a>
           {levels.map((level) => (
             <a
@@ -52,7 +52,7 @@ export function FiltersContent({ cards, filter, pathname, onNavigate }: FiltersC
         </div>
       </div>
       <div className="filters__group">
-        <span className="filters__label">Categoría</span>
+        <span className="filters__label">Category</span>
         <div className="filters__options">
           <a
             className="chip"
@@ -60,7 +60,7 @@ export function FiltersContent({ cards, filter, pathname, onNavigate }: FiltersC
             href={createFilterHref(pathname, { level: filter.level })}
             onClick={onNavigate}
           >
-            Todas
+            All
           </a>
           {categories.map((category) => (
             <a
@@ -76,7 +76,7 @@ export function FiltersContent({ cards, filter, pathname, onNavigate }: FiltersC
         </div>
       </div>
       <a className="btn btn--ghost filters__clear" href={pathname} onClick={onNavigate}>
-        Limpiar filtros
+        Clear filters
       </a>
     </nav>
   );

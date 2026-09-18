@@ -61,7 +61,7 @@ export default function WordFormationClient({
   const answer = family.noun ?? family.adjective ?? family.adverb;
 
   if (answer === undefined) {
-    return <p className="flashcard-empty">Esta familia no tiene ejercicios disponibles.</p>;
+    return <p className="flashcard-empty">This family has no exercises available.</p>;
   }
 
   const gapFillAnswer = answer;
@@ -96,7 +96,7 @@ export default function WordFormationClient({
     >
       <div className="flashcard__top">
         <p className="flashcard__progress" aria-live="polite">
-          Familia {position} de {total}
+          Family {position} of {total}
         </p>
         <div className="flashcard__meter" aria-hidden="true">
           <span style={{ width: `${progress}%` }} />
@@ -117,7 +117,7 @@ export default function WordFormationClient({
           </p>
           {family.meaningHint === undefined ? null : (
             <p>
-              <strong>Pista:</strong> {family.meaningHint}
+              <strong>Hint:</strong> {family.meaningHint}
             </p>
           )}
           <ul className="flashcard__list">
@@ -125,22 +125,22 @@ export default function WordFormationClient({
               <li key={example}>{example}</li>
             ))}
           </ul>
-          <nav className="flashcard__navigation" aria-label="Navegación de familias">
+          <nav className="flashcard__navigation" aria-label="Family navigation">
             <Button className="btn btn--ghost" disabled={state.index === 0} onClick={() => move(-1)}>
-              Anterior
+              Previous
             </Button>
             <Button
               className="btn btn--primary"
               disabled={state.index === families.length - 1}
               onClick={() => move(1)}
             >
-              Siguiente
+              Next
             </Button>
           </nav>
         </div>
       ) : (
         <div key={`${family.base}:frente`} className="flashcard__front flashcard__face">
-          <p>Producí: noun / adjective / adverb.</p>
+          <p>Produce: noun / adjective / adverb.</p>
           <form className="flashcard__form" onSubmit={handleSubmit}>
             <label htmlFor="word-formation-guess">
               Complete with the correct form of &quot;{family.base.toUpperCase()}&quot;: ______ ({family.base.toUpperCase()})
@@ -164,22 +164,22 @@ export default function WordFormationClient({
                 }
               }}
               className="field"
-              placeholder="Escribí la primera forma si hay alternativas…"
+              placeholder="Type the first form if there are alternatives…"
             />
             <Button className="btn btn--primary" type="submit">
-              Comprobar
+              Check
             </Button>
           </form>
           <div aria-live="polite">
-            {state.checked === "correct" ? <p>Correcto: {gapFillAnswer}</p> : null}
-            {state.checked === "incorrect" ? <p>Todavía no: probá de nuevo.</p> : null}
+            {state.checked === "correct" ? <p>Correct: {gapFillAnswer}</p> : null}
+            {state.checked === "incorrect" ? <p>Not yet: try again.</p> : null}
           </div>
           <div>
             <Button
               className="btn btn--ghost"
               onClick={() => setState((current) => ({ ...current, revealed: true }))}
             >
-              Revelar familia
+              Reveal family
             </Button>
           </div>
         </div>

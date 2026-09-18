@@ -33,32 +33,32 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe("ThemeToggle", () => {
-  it("respeta al SO en primera visita (oscuro)", () => {
+  it("respects the OS on the first visit (dark)", () => {
     mockMatchMedia(true);
     render(<ThemeToggle />);
 
     expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
     expect(
-      screen.getByRole("button", { name: "Cambiar a tema claro" }),
+      screen.getByRole("button", { name: "Switch to light theme" }),
     ).not.toBeNull();
   });
 
-  it("respeta al SO en primera visita (claro)", () => {
+  it("respects the OS on the first visit (light)", () => {
     mockMatchMedia(false);
     render(<ThemeToggle />);
 
     expect(document.documentElement.getAttribute("data-theme")).toBe("light");
     expect(
-      screen.getByRole("button", { name: "Cambiar a tema oscuro" }),
+      screen.getByRole("button", { name: "Switch to dark theme" }),
     ).not.toBeNull();
   });
 
-  it("el toggle cambia data-theme y persiste tras reload", () => {
+  it("changes data-theme and persists after reload", () => {
     mockMatchMedia(false);
     render(<ThemeToggle />);
 
     fireEvent.click(
-      screen.getByRole("button", { name: "Cambiar a tema oscuro" }),
+      screen.getByRole("button", { name: "Switch to dark theme" }),
     );
 
     expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
@@ -69,11 +69,11 @@ describe("ThemeToggle", () => {
 
     expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
     expect(
-      screen.getByRole("button", { name: "Cambiar a tema claro" }),
+      screen.getByRole("button", { name: "Switch to light theme" }),
     ).not.toBeNull();
   });
 
-  it("usa el valor guardado en vez del SO", () => {
+  it("uses the stored value instead of the OS value", () => {
     mockMatchMedia(true);
     localStorage.setItem(THEME_STORAGE_KEY, "light");
     document.documentElement.setAttribute("data-theme", "light");

@@ -13,9 +13,9 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PracticaEng — Practicá vocabulario en inglés",
+  title: "PracticaEng — Practice English vocabulary",
   description:
-    "Aplicación para practicar vocabulario y estructuras frecuentes del inglés con tarjetas de active recall.",
+    "Practice frequent English vocabulary and structures with active recall flashcards.",
   icons: { icon: "/icon.svg" },
 };
 
@@ -37,14 +37,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={sans.variable} suppressHydrationWarning>
+    <html lang="en" className={sans.variable} suppressHydrationWarning>
       <body>
         {/* Anti-flash de tema: corre durante el parseo, antes del primer
             paint. Va primero en <body> a propósito (ver SPEC 10 paso 1). */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <FilterDrawerProvider>
           <a className="skip-link" href="#contenido">
-            Saltar al contenido
+            Skip to content
           </a>
           <header className="site-header">
             <Link className="site-header__brand" href="/">
