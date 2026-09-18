@@ -26,7 +26,8 @@ const secondCard: Card = {
 
 const fallbackCard: Card = {
   ...card,
-  expression: "run into",
+  // Expresión inexistente en data/ y en curated.ts: ejerce la rama fallback.
+  expression: "zz-fallback-probe",
 };
 
 const irregularCard: Card = {

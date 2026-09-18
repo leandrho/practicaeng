@@ -38,6 +38,27 @@ const familyWithMissingForms: WordFamily = {
   examples: [],
 };
 
+// Bases inexistentes en data/ y en curated.ts: ejercen la rama fallback.
+const fallbackFamily: WordFamily = {
+  base: "zzfallback",
+  level: "B1-B2",
+  category: "A",
+  noun: "zzfallbackness",
+  meaningHintEn: "to do something uncurated",
+  meaningHint: "hacer algo no curado",
+  examples: [],
+};
+
+const secondFallbackFamily: WordFamily = {
+  base: "zzsecond",
+  level: "B1-B2",
+  category: "A",
+  noun: "zzsecondness",
+  meaningHintEn: "to do another uncurated thing",
+  meaningHint: "hacer otra cosa no curada",
+  examples: [],
+};
+
 afterEach(cleanup);
 
 describe("WordFormationClient", () => {
@@ -66,7 +87,7 @@ describe("WordFormationClient", () => {
     render(
       <WordFormationClient
         clearFiltersPath="/word-formation"
-        families={[family, secondFamily]}
+        families={[fallbackFamily, secondFallbackFamily]}
       />,
     );
 
