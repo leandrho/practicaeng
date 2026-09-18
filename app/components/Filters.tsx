@@ -27,9 +27,10 @@ export function Filters({ cards, filter, pathname }: FiltersProps) {
   return (
     <nav className="filters" aria-label="Filtros">
       <div className="filters__group">
-        <span>Nivel</span>
+        <span className="filters__label">Nivel</span>
         <div className="filters__options">
           <a
+            className="chip"
             aria-current={filter.level === undefined ? "page" : undefined}
             href={createFilterHref(pathname, { category: filter.category })}
           >
@@ -37,6 +38,7 @@ export function Filters({ cards, filter, pathname }: FiltersProps) {
           </a>
           {levels.map((level) => (
             <a
+              className="chip"
               aria-current={filter.level === level ? "page" : undefined}
               href={createFilterHref(pathname, { ...filter, level })}
               key={level}
@@ -47,9 +49,10 @@ export function Filters({ cards, filter, pathname }: FiltersProps) {
         </div>
       </div>
       <div className="filters__group">
-        <span>Categoría</span>
+        <span className="filters__label">Categoría</span>
         <div className="filters__options">
           <a
+            className="chip"
             aria-current={filter.category === undefined ? "page" : undefined}
             href={createFilterHref(pathname, { level: filter.level })}
           >
@@ -57,6 +60,7 @@ export function Filters({ cards, filter, pathname }: FiltersProps) {
           </a>
           {categories.map((category) => (
             <a
+              className="chip"
               aria-current={filter.category === category ? "page" : undefined}
               href={createFilterHref(pathname, { ...filter, category })}
               key={category}
@@ -66,7 +70,7 @@ export function Filters({ cards, filter, pathname }: FiltersProps) {
           ))}
         </div>
       </div>
-      <a className="filters__clear" href={pathname}>
+      <a className="btn btn--ghost filters__clear" href={pathname}>
         Limpiar filtros
       </a>
     </nav>

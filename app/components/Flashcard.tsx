@@ -4,8 +4,9 @@ import FlashcardClient from "./FlashcardClient";
 type FlashcardProps = {
   cards: Card[];
   clearFiltersPath: string;
+  accent?: string;
 };
 
-export function Flashcard({ cards, clearFiltersPath }: FlashcardProps) {
-  return <FlashcardClient cards={cards} clearFiltersPath={clearFiltersPath} />;
+export function Flashcard({ cards, clearFiltersPath, accent }: FlashcardProps) {
+  return <FlashcardClient cards={cards} clearFiltersPath={clearFiltersPath} accent={accent} />;
 }

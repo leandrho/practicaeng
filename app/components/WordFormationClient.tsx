@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { checkGapFill } from "../../src/application/checkGapFill";
 import type { WordFamily } from "../../src/domain/word-formation";
+import { EmptyState } from "./EmptyState";
+import { Button } from "./ui/Button";
 
 type WFState = {
   index: number;
@@ -14,11 +16,13 @@ type WFState = {
 type WordFormationClientProps = {
   families: WordFamily[];
   clearFiltersPath: string;
+  accent?: string;
 };
 
 export default function WordFormationClient({
   families,
   clearFiltersPath,
+  accent,
 }: WordFormationClientProps) {
   const [state, setState] = useState<WFState>({
     index: 0,
@@ -46,16 +50,12 @@ export default function WordFormationClient({
   }, []);
 
   const family = families[state.index];
+  const total = families.length;
+  const position = total === 0 ? 0 : state.index + 1;
+  const progress = total === 0 ? 0 : (position / total) * 100;
 
   if (family === undefined) {
-    return (
-      <section className="flashcard-empty">
-        <p>No hay tarjetas con estos filtros.</p>
-        <form action={clearFiltersPath}>
-          <button type="submit">Limpiar filtros</button>
-        </form>
-      </section>
-    );
+    return <EmptyState clearFiltersPath={clearFiltersPath} />;
   }
 
   const answer = family.noun ?? family.adjective ?? family.adverb;
@@ -90,11 +90,22 @@ export default function WordFormationClient({
   }
 
   return (
-    <section className="flashcard">
-      <p className="mb-3 text-sm font-semibold tracking-wide text-[var(--muted-ink)]">Base</p>
+    <section
+      className="flashcard"
+      style={accent === undefined ? undefined : ({ "--card-accent": accent } as React.CSSProperties)}
+    >
+      <div className="flashcard__top">
+        <p className="flashcard__progress" aria-live="polite">
+          Familia {position} de {total}
+        </p>
+        <div className="flashcard__meter" aria-hidden="true">
+          <span style={{ width: `${progress}%` }} />
+        </div>
+      </div>
+      <p className="flashcard__kicker">Base</p>
       <h1>{family.base.toUpperCase()}</h1>
       {state.revealed ? (
-        <div className="flashcard__answer">
+        <div key={`${family.base}:dorso`} className="flashcard__answer flashcard__face">
           <p>
             <strong>Noun:</strong> {family.noun ?? "—"}
           </p>
@@ -109,33 +120,35 @@ export default function WordFormationClient({
               <strong>Pista:</strong> {family.meaningHint}
             </p>
           )}
-          <ul className="grid gap-2 pl-5">
+          <ul className="flashcard__list">
             {family.examples.map((example) => (
               <li key={example}>{example}</li>
             ))}
           </ul>
-          <nav className="flashcard__navigation sm:justify-between" aria-label="Navegación de familias">
-            <button type="button" disabled={state.index === 0} onClick={() => move(-1)}>
+          <nav className="flashcard__navigation" aria-label="Navegación de familias">
+            <Button className="btn btn--ghost" disabled={state.index === 0} onClick={() => move(-1)}>
               Anterior
-            </button>
-            <button
-              type="button"
+            </Button>
+            <Button
+              className="btn btn--primary"
               disabled={state.index === families.length - 1}
               onClick={() => move(1)}
             >
               Siguiente
-            </button>
+            </Button>
           </nav>
         </div>
       ) : (
-        <div className="flashcard__front grid gap-6 sm:gap-8">
+        <div key={`${family.base}:frente`} className="flashcard__front flashcard__face">
           <p>Producí: noun / adjective / adverb.</p>
-          <form className="grid gap-3" onSubmit={handleSubmit}>
+          <form className="flashcard__form" onSubmit={handleSubmit}>
             <label htmlFor="word-formation-guess">
               Complete with the correct form of &quot;{family.base.toUpperCase()}&quot;: ______ ({family.base.toUpperCase()})
             </label>
             <input
               id="word-formation-guess"
+              name="guess"
+              autoComplete="off"
               value={state.guess}
               onChange={(event) =>
                 setState((current) => ({
@@ -150,24 +163,25 @@ export default function WordFormationClient({
                   checkAnswer();
                 }
               }}
-              className="min-h-12 border border-[var(--line)] bg-white px-3 py-2 text-lg text-[var(--ink)]"
-              placeholder="Escribí la primera forma si hay alternativas"
+              className="field"
+              placeholder="Escribí la primera forma si hay alternativas…"
             />
-            <button className="w-full sm:w-fit" type="submit">
+            <Button className="btn btn--primary" type="submit">
               Comprobar
-            </button>
+            </Button>
           </form>
           <div aria-live="polite">
             {state.checked === "correct" ? <p>Correcto: {gapFillAnswer}</p> : null}
             {state.checked === "incorrect" ? <p>Todavía no: probá de nuevo.</p> : null}
           </div>
-          <button
-            className="w-full sm:w-fit"
-            type="button"
-            onClick={() => setState((current) => ({ ...current, revealed: true }))}
-          >
-            Revelar familia
-          </button>
+          <div>
+            <Button
+              className="btn btn--ghost"
+              onClick={() => setState((current) => ({ ...current, revealed: true }))}
+            >
+              Revelar familia
+            </Button>
+          </div>
         </div>
       )}
     </section>
