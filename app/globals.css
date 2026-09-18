@@ -24,7 +24,7 @@
   --accent-collocations: #4338ca;
   --accent-prepositions: #b45309;
   --accent-idioms: #be123c;
-  --accent-word-formation: #047857;
+  --accent-word-formation: #1d4ed8;
 
   --radius-sm: 0.5rem;
   --radius: 0.9rem;
@@ -56,7 +56,7 @@
   --accent-collocations: #a5b4fc;
   --accent-prepositions: #fcd34d;
   --accent-idioms: #fda4af;
-  --accent-word-formation: #6ee7b7;
+  --accent-word-formation: #60a5fa;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.6);
@@ -131,6 +131,7 @@ a {
   width: min(100% - 2rem, 72rem);
   margin: 0 auto;
   padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(8px);
 }
@@ -407,11 +408,8 @@ a {
   min-width: 0;
   gap: 1.25rem;
   justify-items: stretch;
-  /* SPEC 11 paso 6: centrada en ambos ejes cuando sobra espacio;
-     si el contenido excede, crece y la página scrollea normal. */
-  min-height: calc(100vh - 9rem);
-  min-height: calc(100dvh - 9rem);
-  align-content: center;
+  align-content: start;
+  padding-top: clamp(1rem, 4vh, 2.5rem);
 }
 
 .practice-layout__content .flashcard,
