@@ -28,26 +28,26 @@ function renderWithFilters() {
 afterEach(cleanup);
 
 describe("FilterDrawerProvider", () => {
-  it("no muestra el botón en páginas sin filtros (home)", () => {
+  it("does not show the button on pages without filters (home)", () => {
     render(
       <FilterDrawerProvider>
         <HeaderFilterButton />
       </FilterDrawerProvider>,
     );
 
-    expect(screen.queryByRole("button", { name: "Filtros" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Filters" })).toBeNull();
     expect(screen.queryByRole("dialog")).toBeNull();
   });
 
-  it("muestra el botón al registrar filtros y abre/cierra con Esc devolviendo el foco", () => {
+  it("shows the button after filters register and opens and closes with Escape", () => {
     renderWithFilters();
 
-    const trigger = screen.getByRole("button", { name: "Filtros" });
+    const trigger = screen.getByRole("button", { name: "Filters" });
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
 
     fireEvent.click(trigger);
     expect(trigger.getAttribute("aria-expanded")).toBe("true");
-    expect(screen.getByRole("dialog", { name: "Filtros" })).not.toBeNull();
+    expect(screen.getByRole("dialog", { name: "Filters" })).not.toBeNull();
     expect(
       screen.getByRole("link", { name: "MAKE" }).getAttribute("href"),
     ).toBe("/collocations?category=MAKE");
@@ -57,17 +57,17 @@ describe("FilterDrawerProvider", () => {
     expect(document.activeElement).toBe(trigger);
   });
 
-  it("cierra con botón cerrar, overlay y click en un chip", () => {
+  it("closes with the close button, overlay, and a chip click", () => {
     renderWithFilters();
 
-    const trigger = screen.getByRole("button", { name: "Filtros" });
+    const trigger = screen.getByRole("button", { name: "Filters" });
     fireEvent.click(trigger);
-    fireEvent.click(screen.getByRole("button", { name: "Cerrar filtros" }));
+    fireEvent.click(screen.getByRole("button", { name: "Close filters" }));
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
 
     fireEvent.click(trigger);
     fireEvent.click(
-      screen.getByRole("button", { name: "Cerrar panel de filtros" }),
+      screen.getByRole("button", { name: "Close filters panel" }),
     );
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
 
@@ -76,9 +76,9 @@ describe("FilterDrawerProvider", () => {
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
   });
 
-  it("oculta el botón al desmontar el registro", () => {
+  it("hides the button when registration unmounts", () => {
     const { unmount } = renderWithFilters();
-    expect(screen.getByRole("button", { name: "Filtros" })).not.toBeNull();
+    expect(screen.getByRole("button", { name: "Filters" })).not.toBeNull();
 
     unmount();
     cleanup();
@@ -87,6 +87,6 @@ describe("FilterDrawerProvider", () => {
         <HeaderFilterButton />
       </FilterDrawerProvider>,
     );
-    expect(screen.queryByRole("button", { name: "Filtros" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Filters" })).toBeNull();
   });
 });

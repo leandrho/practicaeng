@@ -6,7 +6,7 @@ import { FiltersContent } from "./FiltersContent";
 afterEach(cleanup);
 
 describe("FiltersContent", () => {
-  it("muestra los niveles y categorías recibidos y preserva el otro filtro", () => {
+  it("shows received levels and categories while preserving the other filter", () => {
     render(
       <FiltersContent
         cards={[

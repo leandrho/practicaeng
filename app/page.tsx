@@ -6,41 +6,41 @@ const sections = [
   {
     href: "/phrasal-verbs",
     name: "Phrasal verbs",
-    detail: "Verbos con partícula",
+    detail: "Verbs with particles",
     count: contentRepository.getCards("phrasal-verbs").length,
-    unit: "tarjetas",
+    unit: "cards",
     accent: "var(--accent-phrasal)",
   },
   {
     href: "/collocations",
-    name: "Colocaciones",
-    detail: "Combinaciones naturales",
+    name: "Collocations",
+    detail: "Natural word combinations",
     count: contentRepository.getCards("collocations").length,
-    unit: "tarjetas",
+    unit: "cards",
     accent: "var(--accent-collocations)",
   },
   {
     href: "/prepositions",
-    name: "Preposiciones",
-    detail: "Preposiciones fijas",
+    name: "Prepositions",
+    detail: "Fixed prepositions",
     count: contentRepository.getCards("prepositions").length,
-    unit: "tarjetas",
+    unit: "cards",
     accent: "var(--accent-prepositions)",
   },
   {
     href: "/idioms",
-    name: "Modismos y expresiones",
-    detail: "Expresiones idiomáticas",
+    name: "Idioms & Expressions",
+    detail: "Idiomatic expressions",
     count: contentRepository.getCards("idioms").length,
-    unit: "tarjetas",
+    unit: "cards",
     accent: "var(--accent-idioms)",
   },
   {
     href: "/word-formation",
-    name: "Formación de palabras",
-    detail: "Familias de palabras",
+    name: "Word Formation",
+    detail: "Word families",
     count: getWordFamilies().length,
-    unit: "familias",
+    unit: "families",
     accent: "var(--accent-word-formation)",
   },
 ];
@@ -51,18 +51,18 @@ export default function HomePage() {
   return (
     <main className="home" id="contenido">
       <section className="home-hero" aria-labelledby="home-title">
-        <h1 id="home-title">Practicá inglés</h1>
+        <h1 id="home-title">Practice English</h1>
         <p>
-          Elegí una sección y practicá con tarjetas: ver, recordar, producir,
-          revelar, comparar, repetir.
+          Pick a section and practice with flashcards: see, recall, produce,
+          reveal, compare, repeat.
         </p>
         <p className="home-hero__meta">
-          {total} tarjetas · {sections.length} secciones
+          {total} cards · {sections.length} sections
         </p>
         <div
           className="session-bar"
           role="img"
-          aria-label={`Distribución de tarjetas por sección, ${total} en total`}
+          aria-label={`Card distribution by section, ${total} total`}
         >
           {sections.map((section) => (
             <span
@@ -82,7 +82,7 @@ export default function HomePage() {
               className="section-card"
               style={{ "--card-accent": section.accent } as React.CSSProperties}
               href={section.href}
-              aria-label={`Practicar ${section.name}, ${section.count} ${section.unit}`}
+              aria-label={`Practice ${section.name}, ${section.count} ${section.unit}`}
             >
               <span className="section-card__name">{section.name}</span>
               <span className="section-card__detail">{section.detail}</span>

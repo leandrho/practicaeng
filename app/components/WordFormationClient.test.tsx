@@ -38,7 +38,7 @@ const familyWithMissingForms: WordFamily = {
 afterEach(cleanup);
 
 describe("WordFormationClient", () => {
-  it("muestra la base sin las formas antes de revelar", () => {
+  it("shows the base without forms before reveal", () => {
     render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     expect(screen.getByRole("heading", { name: "DECIDE" })).not.toBeNull();
@@ -47,29 +47,29 @@ describe("WordFormationClient", () => {
     expect(screen.queryByText("decisively")).toBeNull();
   });
 
-  it("informa cuando la respuesta es correcta", () => {
+  it("reports when the answer is correct", () => {
     render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     fireEvent.change(screen.getByLabelText(/complete with the correct form/i), {
       target: { value: "decision" },
     });
-    fireEvent.click(screen.getByRole("button", { name: "Comprobar" }));
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
 
-    expect(screen.getByText("Correcto: decision")).not.toBeNull();
+    expect(screen.getByText("Correct: decision")).not.toBeNull();
   });
 
-  it("informa cuando la respuesta es incorrecta", () => {
+  it("reports when the answer is incorrect", () => {
     render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     fireEvent.change(screen.getByLabelText(/complete with the correct form/i), {
       target: { value: "decisions" },
     });
-    fireEvent.click(screen.getByRole("button", { name: "Comprobar" }));
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
 
-    expect(screen.getByText("Todavía no: probá de nuevo.")).not.toBeNull();
+    expect(screen.getByText("Not yet: try again.")).not.toBeNull();
   });
 
-  it("resetea el frente al cambiar de familia", () => {
+  it("resets the front when changing family", () => {
     render(
       <WordFormationClient
         clearFiltersPath="/word-formation"
@@ -80,26 +80,26 @@ describe("WordFormationClient", () => {
     fireEvent.change(screen.getByLabelText(/complete with the correct form/i), {
       target: { value: "decision" },
     });
-    fireEvent.click(screen.getByRole("button", { name: "Comprobar" }));
-    fireEvent.click(screen.getByRole("button", { name: "Revelar familia" }));
-    fireEvent.click(screen.getByRole("button", { name: "Siguiente" }));
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
+    fireEvent.click(screen.getByRole("button", { name: "Reveal family" }));
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
 
     expect((screen.getByRole("textbox") as HTMLInputElement).value).toBe("");
-    expect(screen.queryByText("Correcto: decision")).toBeNull();
+    expect(screen.queryByText("Correct: decision")).toBeNull();
     expect(screen.queryByText("action")).toBeNull();
   });
 
-  it("comprueba con Enter dentro del input", () => {
+  it("checks with Enter in the input", () => {
     render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     const input = screen.getByRole("textbox");
     fireEvent.change(input, { target: { value: "decision" } });
     fireEvent.keyDown(input, { key: "Enter" });
 
-    expect(screen.getByText("Correcto: decision")).not.toBeNull();
+    expect(screen.getByText("Correct: decision")).not.toBeNull();
   });
 
-  it("no revela cuando Espacio se usa en el input", () => {
+  it("does not reveal when Space is used in the input", () => {
     render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     const input = screen.getByRole("textbox");
@@ -110,7 +110,7 @@ describe("WordFormationClient", () => {
     expect(screen.queryByText("Noun:")).toBeNull();
   });
 
-  it("revela con Espacio fuera del input", () => {
+  it("reveals with Space outside the input", () => {
     render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     fireEvent.keyDown(window, { key: " " });
@@ -121,7 +121,7 @@ describe("WordFormationClient", () => {
     expect(screen.getByText("decisively")).not.toBeNull();
   });
 
-  it("muestra las formas ausentes como un guion al revelar", () => {
+  it("shows missing forms as dashes when revealed", () => {
     render(
       <WordFormationClient
         clearFiltersPath="/word-formation"
@@ -129,16 +129,16 @@ describe("WordFormationClient", () => {
       />,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "Revelar familia" }));
+    fireEvent.click(screen.getByRole("button", { name: "Reveal family" }));
 
     expect(screen.getByText("announcement")).not.toBeNull();
     expect(screen.getAllByText("—")).toHaveLength(2);
   });
 
-  it("muestra el estado vacío de filtros y permite limpiarlos", () => {
+  it("shows the empty filters state and allows clearing them", () => {
     render(<WordFormationClient clearFiltersPath="/word-formation" families={[]} />);
 
-    expect(screen.getByText("No hay tarjetas con estos filtros.")).not.toBeNull();
-    expect(screen.getByRole("button", { name: "Limpiar filtros" })).not.toBeNull();
+    expect(screen.getByText("No cards match these filters.")).not.toBeNull();
+    expect(screen.getByRole("button", { name: "Clear filters" })).not.toBeNull();
   });
 });
