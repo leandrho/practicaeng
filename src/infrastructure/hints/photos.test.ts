@@ -19,8 +19,8 @@ describe("hintPhotos", () => {
     }
   });
 
-  it("covers every curated hint except the deferred look after photo", () => {
-    const expectedHintIds = Object.values(curatedHints).filter((hintId) => hintId !== "look-after-orbit");
+  it("covers every curated hint", () => {
+    const expectedHintIds = Object.values(curatedHints);
 
     expect(Object.keys(hintPhotos).sort()).toEqual(expectedHintIds.sort());
   });

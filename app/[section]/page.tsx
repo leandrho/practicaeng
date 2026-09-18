@@ -17,6 +17,13 @@ const SECTION_ACCENTS: Record<ContentSection, string> = {
   idioms: "var(--accent-idioms)",
 };
 
+const SECTION_TITLES: Record<ContentSection, string> = {
+  "phrasal-verbs": "Phrasal verbs",
+  collocations: "Collocations",
+  prepositions: "Prepositions",
+  idioms: "Idioms & Expressions",
+};
+
 export function generateStaticParams() {
   return CONTENT_SECTIONS.map((section) => ({ section }));
 }
@@ -53,6 +60,10 @@ export default async function SectionPage({
     <main className="practice-layout" id="contenido">
       <div className="practice-layout__content">
         <RegisterPracticeFilters cards={cards} filter={filter} pathname={`/${section}`} />
+        <header className="practice-header">
+          <h1>{SECTION_TITLES[section]}</h1>
+          <p>What does it mean? Think of an example with this expression.</p>
+        </header>
         <Flashcard
           cards={filterCards(cards, filter)}
           clearFiltersPath={`/${section}`}

@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import { init, next, prev, reveal } from "../../src/application/session";
 import type { Card } from "../../src/domain/card";
-import { resolveHint } from "../../src/domain/hints";
+import { resolveHint, type HintId } from "../../src/domain/hints";
 import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
+import { HintIcon } from "./ui/HintIcon";
 
 type FlashcardClientProps = {
   cards: Card[];
@@ -16,26 +17,26 @@ type FlashcardClientProps = {
 
 type FlashcardFrontProps = {
   card: Card;
+  hintId: HintId;
+  showHint: boolean;
+  onToggleHint: () => void;
   onReveal: () => void;
 };
 
-function FlashcardFront({ card, onReveal }: FlashcardFrontProps) {
-  const [showHint, setShowHint] = useState(false);
-  const hintId = resolveHint(card.expression, card.type, card.category);
-
+function FlashcardFront({ card, hintId, showHint, onToggleHint, onReveal }: FlashcardFrontProps) {
   return (
     <div key={`${card.expression}:frente`} className="flashcard__front flashcard__face">
-      <p>What does it mean? Think of an example with this expression.</p>
       <Button className="btn btn--primary" onClick={onReveal}>
         Reveal
       </Button>
       <Button
-        className="btn btn--ghost"
+        className="btn btn--ghost btn--hint"
         aria-pressed={showHint}
         aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
-        onClick={() => setShowHint((current) => !current)}
+        title="Ver pista"
+        onClick={onToggleHint}
       >
-        Ver pista
+        <HintIcon />
       </Button>
       {showHint ? (
         <div aria-live="polite">
@@ -46,14 +47,85 @@ function FlashcardFront({ card, onReveal }: FlashcardFrontProps) {
   );
 }
 
+type FlashcardAnswerProps = {
+  card: Card;
+  hintId: HintId;
+  showEs: boolean;
+  showHint: boolean;
+  onToggleEs: () => void;
+  onToggleHint: () => void;
+};
+
+function FlashcardAnswer({ card, hintId, showEs, showHint, onToggleEs, onToggleHint }: FlashcardAnswerProps) {
+  return (
+    <div
+      key={`${card.expression}:dorso`}
+      className="flashcard__answer flashcard__face"
+      aria-live="polite"
+    >
+      <div aria-live="polite">
+        <div className="flashcard__answer-row">
+          <div className="flashcard__answer-copy">
+            <p>
+              <strong>Meaning:</strong> {showEs ? card.meaningEs : card.meaningEn}
+            </p>
+            <p>
+              <strong>Example:</strong> {showEs ? card.translationEs : card.exampleEn}
+            </p>
+          </div>
+          <Button
+            className="btn btn--ghost flashcard__language-toggle"
+            aria-pressed={showEs}
+            aria-label={showEs ? "Show English explanation" : "Show Spanish translation"}
+            onClick={onToggleEs}
+          >
+            {showEs ? "EN" : "ES"}
+          </Button>
+        </div>
+      </div>
+      <div className="flashcard__hint">
+        <Button
+          className="btn btn--ghost btn--hint"
+          aria-pressed={showHint}
+          aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
+          title="Ver pista"
+          onClick={onToggleHint}
+        >
+          <HintIcon />
+        </Button>
+        {showHint ? (
+          <div aria-live="polite">
+            <HintGallery hintId={hintId} />
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
 export default function FlashcardClient({ cards, clearFiltersPath, accent }: FlashcardClientProps) {
   const [session, setSession] = useState(() => init(cards));
   const [dir, setDir] = useState<1 | -1>(1);
   const [showEs, setShowEs] = useState(false);
+  const [showHint, setShowHint] = useState(false);
   const card = session.current;
   const total = session.cards.length;
   const position = total === 0 ? 0 : session.index + 1;
   const progress = total === 0 ? 0 : (position / total) * 100;
+
+  function goPrev() {
+    setDir(-1);
+    setShowEs(false);
+    setShowHint(false);
+    setSession(prev);
+  }
+
+  function goNext() {
+    setDir(1);
+    setShowEs(false);
+    setShowHint(false);
+    setSession(next);
+  }
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -64,15 +136,11 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
       switch (event.key) {
         case "ArrowLeft":
           event.preventDefault();
-          setDir(-1);
-          setShowEs(false);
-          setSession(prev);
+          goPrev();
           break;
         case "ArrowRight":
           event.preventDefault();
-          setDir(1);
-          setShowEs(false);
-          setSession(next);
+          goNext();
           break;
         case " ":
           event.preventDefault();
@@ -89,6 +157,8 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
     return <EmptyState clearFiltersPath={clearFiltersPath} />;
   }
 
+  const hintId = resolveHint(card.expression, card.type, card.category);
+
   return (
     <section
       className="flashcard"
@@ -104,62 +174,34 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
         </div>
       </div>
       <div key={card.expression} className="flashcard__body">
-        <h1>{card.expression}</h1>
+        <h2>{card.expression}</h2>
         {session.revealed ? (
-        <div
-          key={`${card.expression}:dorso`}
-          className="flashcard__answer flashcard__face"
-          aria-live="polite"
-        >
-          <div aria-live="polite">
-            <div className="flashcard__answer-row">
-              <div className="flashcard__answer-copy">
-                <p>
-                  <strong>Meaning:</strong> {showEs ? card.meaningEs : card.meaningEn}
-                </p>
-                <p>
-                  <strong>Example:</strong> {showEs ? card.translationEs : card.exampleEn}
-                </p>
-              </div>
-              <Button
-                className="btn btn--ghost flashcard__language-toggle"
-                aria-pressed={showEs}
-                aria-label={showEs ? "Show English explanation" : "Show Spanish translation"}
-                onClick={() => setShowEs((current) => !current)}
-              >
-                {showEs ? "EN" : "ES"}
-              </Button>
-            </div>
-          </div>
-          <nav className="flashcard__navigation" aria-label="Card navigation">
-            <Button
-              className="btn btn--ghost"
-              disabled={session.atStart}
-              onClick={() => {
-                setDir(-1);
-                setShowEs(false);
-                setSession(prev);
-              }}
-            >
-              Previous
-            </Button>
-            <Button
-              className="btn btn--primary"
-              disabled={session.atEnd}
-              onClick={() => {
-                setDir(1);
-                setShowEs(false);
-                setSession(next);
-              }}
-            >
-              Next
-            </Button>
-          </nav>
-        </div>
-      ) : (
-        <FlashcardFront card={card} onReveal={() => setSession(reveal)} />
-      )}
+          <FlashcardAnswer
+            card={card}
+            hintId={hintId}
+            showEs={showEs}
+            showHint={showHint}
+            onToggleEs={() => setShowEs((current) => !current)}
+            onToggleHint={() => setShowHint((current) => !current)}
+          />
+        ) : (
+          <FlashcardFront
+            card={card}
+            hintId={hintId}
+            showHint={showHint}
+            onToggleHint={() => setShowHint((current) => !current)}
+            onReveal={() => setSession(reveal)}
+          />
+        )}
       </div>
+      <nav className="flashcard__navigation flashcard__navigation--footer" aria-label="Card navigation">
+        <Button className="btn btn--ghost" disabled={session.atStart} onClick={goPrev}>
+          Previous
+        </Button>
+        <Button className="btn btn--primary" disabled={session.atEnd} onClick={goNext}>
+          Next
+        </Button>
+      </nav>
     </section>
   );
 }

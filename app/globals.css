@@ -25,6 +25,7 @@
   --accent-prepositions: #b45309;
   --accent-idioms: #be123c;
   --accent-word-formation: #1d4ed8;
+  --hint-icon: #ca8a04;
 
   --radius-sm: 0.5rem;
   --radius: 0.9rem;
@@ -57,6 +58,7 @@
   --accent-prepositions: #fcd34d;
   --accent-idioms: #fda4af;
   --accent-word-formation: #60a5fa;
+  --hint-icon: #facc15;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.6);
@@ -424,6 +426,28 @@ a {
   margin: 0;
 }
 
+/* ——— SPEC 17 · encabezado de práctica ——— */
+.practice-header {
+  display: grid;
+  gap: 0.25rem;
+  width: min(100%, 44rem);
+  justify-self: center;
+}
+
+.practice-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.practice-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.8vw, 1.25rem);
+}
+
 .filters-drawer__overlay {
   position: fixed;
   inset: 0;
@@ -572,7 +596,7 @@ a {
   text-transform: uppercase;
 }
 
-.flashcard__kicker + h1 {
+.flashcard .flashcard__kicker + h2 {
   margin-top: 0.25rem;
 }
 
@@ -654,6 +678,33 @@ a {
   transform: translateY(-1px);
 }
 
+/* Botón de pista: solo icono amarillo (lamparita de ayuda). */
+.btn--hint {
+  min-width: 3rem;
+  width: 3rem;
+  padding: 0.7rem 0;
+  border-radius: 999px;
+  border-color: var(--line);
+  color: var(--hint-icon);
+}
+
+.btn--hint:hover:not(:disabled) {
+  border-color: var(--hint-icon);
+  color: var(--hint-icon);
+  transform: translateY(-1px);
+}
+
+.btn--hint[aria-pressed="true"] {
+  border-color: var(--hint-icon);
+  background: color-mix(in srgb, var(--hint-icon) 14%, transparent);
+}
+
+.hint-icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .btn:disabled,
 .flashcard-empty button:disabled {
   cursor: not-allowed;
@@ -703,8 +754,8 @@ a {
   transition: width 200ms ease;
 }
 
-.flashcard h1 {
-  margin: 0;
+.flashcard h2 {
+  margin: 2rem 0;
   overflow-wrap: anywhere;
   font-size: clamp(2rem, 8vw, 3.5rem);
   font-weight: 800;
@@ -803,6 +854,18 @@ a {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 0.25rem;
+}
+
+.flashcard__navigation--footer {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.flashcard__hint {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
 }
 
 /* ——— SPEC 14 · pistas visuales ——— */

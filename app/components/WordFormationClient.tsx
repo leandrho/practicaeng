@@ -7,6 +7,7 @@ import type { WordFamily } from "../../src/domain/word-formation";
 import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
+import { HintIcon } from "./ui/HintIcon";
 
 type WFState = {
   index: number;
@@ -112,7 +113,7 @@ export default function WordFormationClient({
         </div>
       </div>
       <p className="flashcard__kicker">Base</p>
-      <h1>{family.base.toUpperCase()}</h1>
+      <h2>{family.base.toUpperCase()}</h2>
       {state.revealed ? (
         <div key={`${family.base}:dorso`} className="flashcard__answer flashcard__face" aria-live="polite">
           <p>
@@ -146,22 +147,25 @@ export default function WordFormationClient({
               <li key={example}>{example}</li>
             ))}
           </ul>
-          <nav className="flashcard__navigation" aria-label="Family navigation">
-            <Button className="btn btn--ghost" disabled={state.index === 0} onClick={() => move(-1)}>
-              Previous
-            </Button>
+          <div className="flashcard__hint">
             <Button
-              className="btn btn--primary"
-              disabled={state.index === families.length - 1}
-              onClick={() => move(1)}
+              className="btn btn--ghost btn--hint"
+              aria-pressed={state.showHint}
+              aria-label={state.showHint ? "Hide visual hint" : "Show visual hint"}
+              title="Ver pista"
+              onClick={() => setState((current) => ({ ...current, showHint: !current.showHint }))}
             >
-              Next
+              <HintIcon />
             </Button>
-          </nav>
+            {state.showHint ? (
+              <div aria-live="polite">
+                <HintGallery hintId={hintId} />
+              </div>
+            ) : null}
+          </div>
         </div>
       ) : (
         <div key={`${family.base}:frente`} className="flashcard__front flashcard__face">
-          <p>Produce: noun / adjective / adverb.</p>
           <form className="flashcard__form" onSubmit={handleSubmit}>
             <label htmlFor="word-formation-guess">
               Complete with the correct form of &quot;{family.base.toUpperCase()}&quot;: ______ ({family.base.toUpperCase()})
@@ -197,12 +201,13 @@ export default function WordFormationClient({
           </div>
           <div>
             <Button
-              className="btn btn--ghost"
+              className="btn btn--ghost btn--hint"
               aria-pressed={state.showHint}
               aria-label={state.showHint ? "Hide visual hint" : "Show visual hint"}
+              title="Ver pista"
               onClick={() => setState((current) => ({ ...current, showHint: !current.showHint }))}
             >
-              Ver pista
+              <HintIcon />
             </Button>
             {state.showHint ? (
               <div aria-live="polite">
@@ -218,6 +223,21 @@ export default function WordFormationClient({
           </div>
         </div>
       )}
+      <nav
+        className="flashcard__navigation flashcard__navigation--footer"
+        aria-label="Family navigation"
+      >
+        <Button className="btn btn--ghost" disabled={state.index === 0} onClick={() => move(-1)}>
+          Previous
+        </Button>
+        <Button
+          className="btn btn--primary"
+          disabled={state.index === families.length - 1}
+          onClick={() => move(1)}
+        >
+          Next
+        </Button>
+      </nav>
     </section>
   );
 }

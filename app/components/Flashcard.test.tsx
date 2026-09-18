@@ -26,7 +26,7 @@ const secondCard: Card = {
 
 const fallbackCard: Card = {
   ...card,
-  expression: "look after",
+  expression: "run into",
 };
 
 afterEach(cleanup);
@@ -41,11 +41,27 @@ describe("Flashcard", () => {
     expect(screen.queryByText(card.translationEs!)).toBeNull();
   });
 
+  it("keeps the recall prompt out of the card and the expression as h2", () => {
+    render(<Flashcard cards={[card]} clearFiltersPath="/phrasal-verbs" />);
+
+    expect(
+      screen.queryByText("What does it mean? Think of an example with this expression."),
+    ).toBeNull();
+    expect(screen.getByRole("heading", { name: card.expression }).tagName).toBe("H2");
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+
+    expect(
+      screen.queryByText("What does it mean? Think of an example with this expression."),
+    ).toBeNull();
+    expect(screen.getByRole("heading", { name: card.expression }).tagName).toBe("H2");
+  });
+
   it("shows, hides, and resets a photo hint without exposing answers", () => {
     render(<Flashcard cards={[card, secondCard]} clearFiltersPath="/phrasal-verbs" />);
 
     expect(screen.queryByAltText("Pista visual")).toBeNull();
-    expect(screen.queryByText("Foto: cclogg / CC0 1.0")).toBeNull();
+    expect(screen.queryByText("Foto: David Rosen / CC BY 2.0")).toBeNull();
     expect(screen.queryByText(card.meaningEs)).toBeNull();
     expect(screen.queryByText(card.exampleEn)).toBeNull();
     expect(screen.queryByText(card.translationEs!)).toBeNull();
@@ -59,12 +75,12 @@ describe("Flashcard", () => {
     expect(photo.getAttribute("alt")).not.toContain(card.meaningEs);
     expect(photo.getAttribute("alt")).not.toContain(card.exampleEn);
     expect(photo.getAttribute("alt")).not.toContain(card.translationEs!);
-    expect(screen.getByText("Foto: cclogg / CC0 1.0")).not.toBeNull();
+    expect(screen.getByText("Foto: David Rosen / CC BY 2.0")).not.toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: "Hide visual hint" }));
 
     expect(screen.queryByAltText("Pista visual")).toBeNull();
-    expect(screen.queryByText("Foto: cclogg / CC0 1.0")).toBeNull();
+    expect(screen.queryByText("Foto: David Rosen / CC BY 2.0")).toBeNull();
     expect(hintButton.getAttribute("aria-pressed")).toBe("false");
 
     fireEvent.click(hintButton);
@@ -75,7 +91,7 @@ describe("Flashcard", () => {
     expect(screen.getByRole("button", { name: "Show visual hint" }).getAttribute("aria-pressed")).toBe("false");
   });
 
-  it("keeps the SVG fallback for look after", () => {
+  it("keeps the SVG fallback for expressions without a curated photo", () => {
     render(<Flashcard cards={[fallbackCard]} clearFiltersPath="/phrasal-verbs" />);
 
     fireEvent.click(screen.getByRole("button", { name: "Show visual hint" }));

@@ -20,6 +20,10 @@ export default async function WordFormationPage({
     <main className="practice-layout" id="contenido">
       <div className="practice-layout__content">
         <RegisterPracticeFilters cards={families} filter={filter} pathname="/word-formation" />
+        <header className="practice-header">
+          <h1>Word Formation</h1>
+          <p>Produce: noun / adjective / adverb.</p>
+        </header>
         <WordFormationClient
           clearFiltersPath="/word-formation"
           families={filterCards(families, filter)}

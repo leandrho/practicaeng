@@ -50,6 +50,18 @@ describe("WordFormationClient", () => {
     expect(screen.queryByText("decisively")).toBeNull();
   });
 
+  it("keeps the produce prompt out of the card and the base as h2", () => {
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
+
+    expect(screen.queryByText("Produce: noun / adjective / adverb.")).toBeNull();
+    expect(screen.getByRole("heading", { name: "DECIDE" }).tagName).toBe("H2");
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal family" }));
+
+    expect(screen.queryByText("Produce: noun / adjective / adverb.")).toBeNull();
+    expect(screen.getByRole("heading", { name: "DECIDE" }).tagName).toBe("H2");
+  });
+
   it("shows, hides, and resets the fallback SVG hint", () => {
     render(
       <WordFormationClient
