@@ -24,6 +24,11 @@ const secondCard: Card = {
   exampleEn: "The plane takes off at noon.",
 };
 
+const fallbackCard: Card = {
+  ...card,
+  expression: "look after",
+};
+
 afterEach(cleanup);
 
 describe("Flashcard", () => {
@@ -36,28 +41,47 @@ describe("Flashcard", () => {
     expect(screen.queryByText(card.translationEs!)).toBeNull();
   });
 
-  it("shows, hides, and resets the visual hint", () => {
+  it("shows, hides, and resets a photo hint without exposing answers", () => {
     render(<Flashcard cards={[card, secondCard]} clearFiltersPath="/phrasal-verbs" />);
 
-    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
+    expect(screen.queryByText("Foto: cclogg / CC0 1.0")).toBeNull();
+    expect(screen.queryByText(card.meaningEs)).toBeNull();
+    expect(screen.queryByText(card.exampleEn)).toBeNull();
+    expect(screen.queryByText(card.translationEs!)).toBeNull();
 
     const hintButton = screen.getByRole("button", { name: "Show visual hint" });
     fireEvent.click(hintButton);
 
     expect(hintButton.getAttribute("aria-pressed")).toBe("true");
-    expect(screen.getByRole("img", { name: "Pista visual animada" })).not.toBeNull();
+    const photo = screen.getByAltText("Pista visual");
+    expect(photo.getAttribute("alt")).toBe("Pista visual");
+    expect(photo.getAttribute("alt")).not.toContain(card.meaningEs);
+    expect(photo.getAttribute("alt")).not.toContain(card.exampleEn);
+    expect(photo.getAttribute("alt")).not.toContain(card.translationEs!);
+    expect(screen.getByText("Foto: cclogg / CC0 1.0")).not.toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: "Hide visual hint" }));
 
-    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
+    expect(screen.queryByText("Foto: cclogg / CC0 1.0")).toBeNull();
     expect(hintButton.getAttribute("aria-pressed")).toBe("false");
 
     fireEvent.click(hintButton);
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
     fireEvent.click(screen.getByRole("button", { name: "Next" }));
 
-    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
     expect(screen.getByRole("button", { name: "Show visual hint" }).getAttribute("aria-pressed")).toBe("false");
+  });
+
+  it("keeps the SVG fallback for look after", () => {
+    render(<Flashcard cards={[fallbackCard]} clearFiltersPath="/phrasal-verbs" />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Show visual hint" }));
+
+    expect(screen.getByRole("img", { name: "Pista visual animada" })).not.toBeNull();
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
   });
 
   it("switches the complete explanation between English and Spanish", () => {

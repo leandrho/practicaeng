@@ -824,6 +824,27 @@ a {
   animation: hint-drift 3.8s ease-in-out infinite alternate;
 }
 
+.visual-hint__photo {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--hint-accent) 10%, var(--surface));
+}
+
+.visual-hint__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-hint--photo figcaption {
+  padding: 0.45rem 0.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--hint-accent) 24%, var(--line));
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
 .visual-hint svg {
   display: block;
   width: 100%;

@@ -1,4 +1,6 @@
+import Image from "next/image";
 import type { HintId } from "../../domain/hints";
+import { hintPhotos } from "./photos";
 
 type HintGalleryProps = {
   hintId: HintId;
@@ -13,6 +15,27 @@ function hintVariant(hintId: HintId): string {
 }
 
 export function HintGallery({ hintId }: HintGalleryProps) {
+  const photo = hintPhotos[hintId];
+
+  if (photo !== undefined) {
+    return (
+      <figure className="visual-hint visual-hint--photo" data-hint={hintId}>
+        <div className="visual-hint__photo">
+          <Image
+            src={photo.src}
+            width={photo.width}
+            height={photo.height}
+            alt="Pista visual"
+            loading="lazy"
+            sizes="(max-width: 640px) 100vw, 640px"
+            unoptimized
+          />
+        </div>
+        <figcaption>Foto: {photo.credit.author} / {photo.credit.license}</figcaption>
+      </figure>
+    );
+  }
+
   const variant = hintVariant(hintId);
 
   return (
