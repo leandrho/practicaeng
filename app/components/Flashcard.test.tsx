@@ -26,7 +26,7 @@ afterEach(cleanup);
 
 describe("Flashcard", () => {
   it("no incluye las respuestas en el DOM antes de Reveal", () => {
-    render(<Flashcard cards={[card]} />);
+    render(<Flashcard cards={[card]} clearFiltersPath="/phrasal-verbs" />);
 
     expect(screen.getByText(card.expression)).not.toBeNull();
     expect(screen.queryByText(card.meaningEs)).toBeNull();
@@ -35,7 +35,7 @@ describe("Flashcard", () => {
   });
 
   it("muestra el dorso al revelar", () => {
-    render(<Flashcard cards={[card]} />);
+    render(<Flashcard cards={[card]} clearFiltersPath="/phrasal-verbs" />);
 
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
 
@@ -45,7 +45,7 @@ describe("Flashcard", () => {
   });
 
   it("navega con botones y atajos sin salir de los límites", () => {
-    render(<Flashcard cards={[card, secondCard]} />);
+    render(<Flashcard cards={[card, secondCard]} clearFiltersPath="/phrasal-verbs" />);
 
     fireEvent.keyDown(window, { key: "ArrowLeft" });
     fireEvent.keyDown(window, { key: " " });
@@ -60,5 +60,12 @@ describe("Flashcard", () => {
 
     fireEvent.keyDown(window, { key: "ArrowRight" });
     expect(screen.getByText(secondCard.expression)).not.toBeNull();
+  });
+
+  it("muestra el estado vacío de filtros y permite limpiarlos", () => {
+    render(<Flashcard cards={[]} clearFiltersPath="/collocations" />);
+
+    expect(screen.getByText("No hay tarjetas con estos filtros.")).not.toBeNull();
+    expect(screen.getByRole("button", { name: "Limpiar filtros" })).not.toBeNull();
   });
 });

@@ -1,5 +1,5 @@
 export { checkGapFill } from "./checkGapFill";
-export { filterCards, type Filter } from "./filterCards";
+export { filterCards, type Filter, type Filterable } from "./filterCards";
 export { getCards, type CardRepository, type CardSection } from "./getCards";
 export { getSections } from "./getSections";
 export {

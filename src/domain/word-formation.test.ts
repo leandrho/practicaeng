@@ -5,6 +5,7 @@ describe("WordFamilySchema", () => {
   it("familia válida con 1 forma pasa", () => {
     const parsed = WordFamilySchema.parse({
       base: "decide",
+      category: "D",
       noun: "decision",
     });
     expect(parsed.base).toBe("decide");
@@ -13,12 +14,12 @@ describe("WordFamilySchema", () => {
   });
 
   it("sin formas (todo --- / ausente) falla por refinamiento", () => {
-    expect(() => WordFamilySchema.parse({ base: "decide" })).toThrow();
+    expect(() => WordFamilySchema.parse({ base: "decide", category: "D" })).toThrow();
   });
 
   it("base vacía falla", () => {
     expect(() =>
-      WordFamilySchema.parse({ base: "", noun: "decision" }),
+      WordFamilySchema.parse({ base: "", category: "D", noun: "decision" }),
     ).toThrow();
   });
 });

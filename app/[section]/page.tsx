@@ -4,7 +4,9 @@ import {
   contentRepository,
   type ContentSection,
 } from "../../src/infrastructure/content-loader";
+import { filterCards, type Filter } from "../../src/application/filterCards";
 import { Flashcard } from "../components/Flashcard";
+import { Filters } from "../components/Filters";
 
 export const dynamicParams = false;
 
@@ -18,21 +20,36 @@ function isContentSection(section: string): section is ContentSection {
 
 export default async function SectionPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ section: string }>;
+  searchParams: Promise<{ level?: string | string[]; category?: string | string[] }>;
 }) {
-  const { section } = await params;
+  const [{ section }, query] = await Promise.all([params, searchParams]);
 
   if (!isContentSection(section)) {
     notFound();
   }
 
   const cards = contentRepository.getCards(section);
-  const card = cards[0];
 
-  if (card === undefined) {
+  if (cards.length === 0) {
     notFound();
   }
 
-  return <Flashcard cards={cards} />;
+  const filter: Filter = {
+    level: typeof query.level === "string" ? query.level : undefined,
+    category: typeof query.category === "string" ? query.category : undefined,
+  };
+
+  return (
+    <main className="practice-page">
+      <Filters cards={cards} filter={filter} pathname={`/${section}`} />
+      <Flashcard
+        cards={filterCards(cards, filter)}
+        clearFiltersPath={`/${section}`}
+        key={`${filter.level ?? ""}:${filter.category ?? ""}`}
+      />
+    </main>
+  );
 }

@@ -6,9 +6,10 @@ import type { Card } from "../../src/domain/card";
 
 type FlashcardClientProps = {
   cards: Card[];
+  clearFiltersPath: string;
 };
 
-export default function FlashcardClient({ cards }: FlashcardClientProps) {
+export default function FlashcardClient({ cards, clearFiltersPath }: FlashcardClientProps) {
   const [session, setSession] = useState(() => init(cards));
   const card = session.current;
 
@@ -39,7 +40,14 @@ export default function FlashcardClient({ cards }: FlashcardClientProps) {
   }, []);
 
   if (card === null) {
-    return <p className="flashcard-empty">No hay tarjetas disponibles.</p>;
+    return (
+      <section className="flashcard-empty">
+        <p>No hay tarjetas con estos filtros.</p>
+        <form action={clearFiltersPath}>
+          <button type="submit">Limpiar filtros</button>
+        </form>
+      </section>
+    );
   }
 
   return (

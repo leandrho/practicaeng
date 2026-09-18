@@ -13,9 +13,13 @@ type WFState = {
 
 type WordFormationClientProps = {
   families: WordFamily[];
+  clearFiltersPath: string;
 };
 
-export default function WordFormationClient({ families }: WordFormationClientProps) {
+export default function WordFormationClient({
+  families,
+  clearFiltersPath,
+}: WordFormationClientProps) {
   const [state, setState] = useState<WFState>({
     index: 0,
     revealed: false,
@@ -44,7 +48,14 @@ export default function WordFormationClient({ families }: WordFormationClientPro
   const family = families[state.index];
 
   if (family === undefined) {
-    return <p className="flashcard-empty">No hay familias disponibles.</p>;
+    return (
+      <section className="flashcard-empty">
+        <p>No hay tarjetas con estos filtros.</p>
+        <form action={clearFiltersPath}>
+          <button type="submit">Limpiar filtros</button>
+        </form>
+      </section>
+    );
   }
 
   const answer = family.noun ?? family.adjective ?? family.adverb;

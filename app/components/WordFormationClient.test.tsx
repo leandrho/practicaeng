@@ -6,6 +6,8 @@ import WordFormationClient from "./WordFormationClient";
 
 const family: WordFamily = {
   base: "decide",
+  level: "B1-B2",
+  category: "D",
   noun: "decision",
   adjective: "decisive",
   adverb: "decisively",
@@ -15,6 +17,8 @@ const family: WordFamily = {
 
 const secondFamily: WordFamily = {
   base: "act",
+  level: "B1-B2",
+  category: "A",
   noun: "action",
   adjective: "active",
   adverb: "actively",
@@ -24,6 +28,8 @@ const secondFamily: WordFamily = {
 
 const familyWithMissingForms: WordFamily = {
   base: "announce",
+  level: "B1-B2",
+  category: "A",
   noun: "announcement",
   meaningHint: "anunciar",
   examples: [],
@@ -33,7 +39,7 @@ afterEach(cleanup);
 
 describe("WordFormationClient", () => {
   it("muestra la base sin las formas antes de revelar", () => {
-    render(<WordFormationClient families={[family]} />);
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     expect(screen.getByRole("heading", { name: "DECIDE" })).not.toBeNull();
     expect(screen.queryByText("decision")).toBeNull();
@@ -42,7 +48,7 @@ describe("WordFormationClient", () => {
   });
 
   it("informa cuando la respuesta es correcta", () => {
-    render(<WordFormationClient families={[family]} />);
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     fireEvent.change(screen.getByLabelText(/complete with the correct form/i), {
       target: { value: "decision" },
@@ -53,7 +59,7 @@ describe("WordFormationClient", () => {
   });
 
   it("informa cuando la respuesta es incorrecta", () => {
-    render(<WordFormationClient families={[family]} />);
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     fireEvent.change(screen.getByLabelText(/complete with the correct form/i), {
       target: { value: "decisions" },
@@ -64,7 +70,12 @@ describe("WordFormationClient", () => {
   });
 
   it("resetea el frente al cambiar de familia", () => {
-    render(<WordFormationClient families={[family, secondFamily]} />);
+    render(
+      <WordFormationClient
+        clearFiltersPath="/word-formation"
+        families={[family, secondFamily]}
+      />,
+    );
 
     fireEvent.change(screen.getByLabelText(/complete with the correct form/i), {
       target: { value: "decision" },
@@ -79,7 +90,7 @@ describe("WordFormationClient", () => {
   });
 
   it("comprueba con Enter dentro del input", () => {
-    render(<WordFormationClient families={[family]} />);
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     const input = screen.getByRole("textbox");
     fireEvent.change(input, { target: { value: "decision" } });
@@ -89,7 +100,7 @@ describe("WordFormationClient", () => {
   });
 
   it("no revela cuando Espacio se usa en el input", () => {
-    render(<WordFormationClient families={[family]} />);
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     const input = screen.getByRole("textbox");
     expect(fireEvent.keyDown(input, { key: " " })).toBe(true);
@@ -100,7 +111,7 @@ describe("WordFormationClient", () => {
   });
 
   it("revela con Espacio fuera del input", () => {
-    render(<WordFormationClient families={[family]} />);
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
 
     fireEvent.keyDown(window, { key: " " });
 
@@ -111,11 +122,23 @@ describe("WordFormationClient", () => {
   });
 
   it("muestra las formas ausentes como un guion al revelar", () => {
-    render(<WordFormationClient families={[familyWithMissingForms]} />);
+    render(
+      <WordFormationClient
+        clearFiltersPath="/word-formation"
+        families={[familyWithMissingForms]}
+      />,
+    );
 
     fireEvent.click(screen.getByRole("button", { name: "Revelar familia" }));
 
     expect(screen.getByText("announcement")).not.toBeNull();
     expect(screen.getAllByText("—")).toHaveLength(2);
+  });
+
+  it("muestra el estado vacío de filtros y permite limpiarlos", () => {
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[]} />);
+
+    expect(screen.getByText("No hay tarjetas con estos filtros.")).not.toBeNull();
+    expect(screen.getByRole("button", { name: "Limpiar filtros" })).not.toBeNull();
   });
 });
