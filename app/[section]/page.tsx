@@ -6,7 +6,7 @@ import {
 } from "../../src/infrastructure/content-loader";
 import { filterCards, type Filter } from "../../src/application/filterCards";
 import { Flashcard } from "../components/Flashcard";
-import { Filters } from "../components/Filters";
+import { RegisterPracticeFilters } from "../components/FilterDrawerProvider";
 
 export const dynamicParams = false;
 
@@ -50,14 +50,16 @@ export default async function SectionPage({
   };
 
   return (
-    <main className="practice-page" id="contenido">
-      <Filters cards={cards} filter={filter} pathname={`/${section}`} />
-      <Flashcard
-        cards={filterCards(cards, filter)}
-        clearFiltersPath={`/${section}`}
-        accent={SECTION_ACCENTS[section]}
-        key={`${filter.level ?? ""}:${filter.category ?? ""}`}
-      />
+    <main className="practice-layout" id="contenido">
+      <div className="practice-layout__content">
+        <RegisterPracticeFilters cards={cards} filter={filter} pathname={`/${section}`} />
+        <Flashcard
+          cards={filterCards(cards, filter)}
+          clearFiltersPath={`/${section}`}
+          accent={SECTION_ACCENTS[section]}
+          key={`${filter.level ?? ""}:${filter.category ?? ""}`}
+        />
+      </div>
     </main>
   );
 }

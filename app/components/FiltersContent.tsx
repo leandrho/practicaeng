@@ -1,12 +1,13 @@
 import type { Filter, Filterable } from "../../src/application/filterCards";
 
-type FiltersProps = {
+export type FiltersContentProps = {
   cards: readonly Filterable[];
   filter: Filter;
   pathname: string;
+  onNavigate?: () => void;
 };
 
-function createFilterHref(pathname: string, filter: Filter): string {
+export function createFilterHref(pathname: string, filter: Filter): string {
   const searchParams = new URLSearchParams();
 
   if (filter.level !== undefined) {
@@ -20,7 +21,7 @@ function createFilterHref(pathname: string, filter: Filter): string {
   return query === "" ? pathname : `${pathname}?${query}`;
 }
 
-export function Filters({ cards, filter, pathname }: FiltersProps) {
+export function FiltersContent({ cards, filter, pathname, onNavigate }: FiltersContentProps) {
   const levels = [...new Set(cards.map((card) => card.level))];
   const categories = [...new Set(cards.map((card) => card.category))];
 
@@ -33,6 +34,7 @@ export function Filters({ cards, filter, pathname }: FiltersProps) {
             className="chip"
             aria-current={filter.level === undefined ? "page" : undefined}
             href={createFilterHref(pathname, { category: filter.category })}
+            onClick={onNavigate}
           >
             Todos
           </a>
@@ -42,6 +44,7 @@ export function Filters({ cards, filter, pathname }: FiltersProps) {
               aria-current={filter.level === level ? "page" : undefined}
               href={createFilterHref(pathname, { ...filter, level })}
               key={level}
+              onClick={onNavigate}
             >
               {level}
             </a>
@@ -55,6 +58,7 @@ export function Filters({ cards, filter, pathname }: FiltersProps) {
             className="chip"
             aria-current={filter.category === undefined ? "page" : undefined}
             href={createFilterHref(pathname, { level: filter.level })}
+            onClick={onNavigate}
           >
             Todas
           </a>
@@ -64,13 +68,14 @@ export function Filters({ cards, filter, pathname }: FiltersProps) {
               aria-current={filter.category === category ? "page" : undefined}
               href={createFilterHref(pathname, { ...filter, category })}
               key={category}
+              onClick={onNavigate}
             >
               {category}
             </a>
           ))}
         </div>
       </div>
-      <a className="btn btn--ghost filters__clear" href={pathname}>
+      <a className="btn btn--ghost filters__clear" href={pathname} onClick={onNavigate}>
         Limpiar filtros
       </a>
     </nav>
