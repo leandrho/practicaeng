@@ -3,8 +3,9 @@ import FlashcardClient from "./FlashcardClient";
 
 type FlashcardProps = {
   cards: Card[];
+  clearFiltersPath: string;
 };
 
-export function Flashcard({ cards }: FlashcardProps) {
-  return <FlashcardClient cards={cards} />;
+export function Flashcard({ cards, clearFiltersPath }: FlashcardProps) {
+  return <FlashcardClient cards={cards} clearFiltersPath={clearFiltersPath} />;
 }

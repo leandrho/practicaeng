@@ -34,6 +34,8 @@ describe("parseWordFamilies", () => {
     expect(parseWordFamilies(fixture, "data/word-formation-b1-b2.md")).toEqual([
       {
         base: "act",
+        level: "B1-B2",
+        category: "A",
         noun: "action",
         adjective: "active",
         adverb: "actively",
@@ -42,6 +44,8 @@ describe("parseWordFamilies", () => {
       },
       {
         base: "amaze",
+        level: "B1-B2",
+        category: "A",
         noun: "amazement",
         adjective: "amazing / amazed",
         adverb: "amazingly",
@@ -50,6 +54,8 @@ describe("parseWordFamilies", () => {
       },
       {
         base: "apply",
+        level: "B1-B2",
+        category: "A",
         noun: "application / applicant",
         adjective: "applicable",
         meaningHint: "solicitar-aplicar / solicitud-solicitante / aplicable",

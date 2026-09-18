@@ -43,7 +43,11 @@ describe("buildGapFills", () => {
   });
 
   it("deriva una sola actividad para una familia con solo noun", () => {
-    const family = WordFamilySchema.parse({ base: "announce", noun: "announcement" });
+    const family = WordFamilySchema.parse({
+      base: "announce",
+      category: "A",
+      noun: "announcement",
+    });
 
     expect(buildGapFills(family)).toEqual([
       {

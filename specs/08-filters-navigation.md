@@ -1,6 +1,6 @@
 # SPEC 08 — Filtros por URL y navegación
 
-> **Status:** Draft
+> **Status:** Implementado
 > **Depends on:** SPEC 05, SPEC 06, SPEC 07
 > **Date:** 2026-09-17
 > **Objective:** Filtrar tarjetas por `?level=` y `?category=` con URL copiable y estado vacío legible en ambas UIs.
@@ -37,13 +37,13 @@ This feature introduces no new data structures. Reusa `Filter` de SPEC 05. La UR
 
 ## Acceptance criteria
 
-- [ ] `?category=MAKE` en collocations muestra solo tarjetas `MAKE`.
-- [ ] URL copiada en otra pestaña restaura el mismo filtro.
-- [ ] `?category=NOPE` muestra estado vacío con texto exacto y botón limpiar (no crash).
-- [ ] Limpiar filtros vuelve a `?` sin params y muestra todo.
-- [ ] `Anterior/Siguiente` no pierden el filtro activo.
-- [ ] Valores del filtro salen de los datos (agregar una categoría nueva en `data/` la muestra sin tocar código).
-- [ ] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
+- [x] `?category=MAKE` en collocations muestra solo tarjetas `MAKE`.
+- [x] URL copiada en otra pestaña restaura el mismo filtro.
+- [x] `?category=NOPE` muestra estado vacío con texto exacto y botón limpiar (no crash).
+- [x] Limpiar filtros vuelve a `?` sin params y muestra todo.
+- [x] `Anterior/Siguiente` no pierden el filtro activo.
+- [x] Valores del filtro salen de los datos (agregar una categoría nueva en `data/` la muestra sin tocar código).
+- [x] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
 
 ## Decisions
 

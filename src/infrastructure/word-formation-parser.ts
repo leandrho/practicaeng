@@ -43,6 +43,8 @@ export function parseWordFamilies(markdown: string, file: string): WordFamily[] 
       families.push(
         WordFamilySchema.parse({
           base: normalizeRequiredCell(row.base),
+          level: "B1-B2",
+          category: normalizeRequiredCell(row.base).charAt(0).toUpperCase(),
           noun: normalizeOptionalCell(row.noun),
           adjective: normalizeOptionalCell(row.adjective),
           adverb: normalizeOptionalCell(row.adverb),

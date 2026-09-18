@@ -3,6 +3,8 @@ import { z } from "zod";
 export const WordFamilySchema = z
   .object({
     base: z.string().min(1),
+    level: z.string().default("B1-B2"),
+    category: z.string().min(1),
     noun: z.string().min(1).optional(),
     adjective: z.string().min(1).optional(),
     adverb: z.string().min(1).optional(),
