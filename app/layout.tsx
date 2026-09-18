@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { FilterDrawerProvider, HeaderFilterButton } from "./components/FilterDrawerProvider";
 import { ThemeToggle } from "./components/ThemeToggle";
 import "./globals.css";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   title: "PracticaEng — Practicá vocabulario en inglés",
   description:
     "Aplicación para practicar vocabulario y estructuras frecuentes del inglés con tarjetas de active recall.",
+  icons: { icon: "/icon.svg" },
 };
 
 export const viewport: Viewport = {
@@ -35,20 +37,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={sans.variable} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
       <body>
-        <a className="skip-link" href="#contenido">
-          Saltar al contenido
-        </a>
-        <header className="site-header">
-          <Link className="site-header__brand" href="/">
-            PracticaEng
-          </Link>
-          <ThemeToggle />
-        </header>
-        {children}
+        {/* Anti-flash de tema: corre durante el parseo, antes del primer
+            paint. Va primero en <body> a propósito (ver SPEC 10 paso 1). */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <FilterDrawerProvider>
+          <a className="skip-link" href="#contenido">
+            Saltar al contenido
+          </a>
+          <header className="site-header">
+            <Link className="site-header__brand" href="/">
+              PracticaEng
+            </Link>
+            <div className="site-header__actions">
+              <HeaderFilterButton />
+              <ThemeToggle />
+            </div>
+          </header>
+          {children}
+        </FilterDrawerProvider>
       </body>
     </html>
   );

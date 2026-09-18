@@ -1,14 +1,14 @@
 // @vitest-environment jsdom
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { Filters } from "./Filters";
+import { FiltersContent } from "./FiltersContent";
 
 afterEach(cleanup);
 
-describe("Filters", () => {
+describe("FiltersContent", () => {
   it("muestra los niveles y categorías recibidos y preserva el otro filtro", () => {
     render(
-      <Filters
+      <FiltersContent
         cards={[
           { level: "B1-B2", category: "MAKE" },
           { level: "C1", category: "TAKE" },

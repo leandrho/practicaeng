@@ -165,6 +165,22 @@ a {
   transform: translateY(-1px);
 }
 
+.theme-toggle__icon {
+  display: inline-flex;
+}
+
+.theme-toggle__icon--sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle__icon--sun {
+  display: inline-flex;
+}
+
+[data-theme="dark"] .theme-toggle__icon--moon {
+  display: none;
+}
+
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -373,6 +389,107 @@ a {
 
 .filters__clear {
   justify-self: start;
+}
+
+/* ——— SPEC 11 · layout práctica con drawer global ——— */
+.practice-layout {
+  display: grid;
+  gap: 1.25rem;
+  width: min(100% - 2rem, 72rem);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem) 0 4rem;
+  justify-items: stretch;
+  align-items: start;
+}
+
+.practice-layout__content {
+  display: grid;
+  min-width: 0;
+  gap: 1.25rem;
+  justify-items: stretch;
+  /* SPEC 11 paso 6: centrada en ambos ejes cuando sobra espacio;
+     si el contenido excede, crece y la página scrollea normal. */
+  min-height: calc(100vh - 9rem);
+  min-height: calc(100dvh - 9rem);
+  align-content: center;
+}
+
+.practice-layout__content .flashcard,
+.practice-layout__content .flashcard-empty,
+.practice-layout__content .empty-state {
+  width: min(100%, 44rem);
+  justify-self: center;
+}
+
+.practice-layout__content .flashcard,
+.practice-layout__content .flashcard-empty {
+  margin: 0;
+}
+
+.filters-drawer__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  border: 0;
+  padding: 0;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.filters-drawer__panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 41;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  width: min(22rem, 88vw);
+  overflow-y: auto;
+  padding: 1.25rem;
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(-102%);
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.filters-drawer__panel[data-open="true"] {
+  transform: none;
+}
+
+.filters-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.filters-drawer__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.filters-drawer__panel .filters {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-header__filters {
+  min-height: 2.5rem;
+  padding: 0.45rem 1rem;
 }
 
 .status-page {
@@ -637,7 +754,9 @@ a {
 @media (prefers-reduced-motion: reduce) {
   .section-card,
   .btn,
-  .flashcard-empty button {
+  .flashcard-empty button,
+  .filters-drawer__panel,
+  .filters-drawer__overlay {
     transition: none;
   }
 

@@ -52,17 +52,15 @@ function MoonIcon() {
  * Toggle claro/oscuro. Isla Client mínima:
  * - Primera visita sin valor guardado → respeta `prefers-color-scheme`.
  * - Toggle manual → persiste `practicaeng:theme:v1` y fija `data-theme`.
+ *
+ * Hidratación: el primer render es idéntico en servidor y cliente
+ * (estado inicial fijo "light" + ambos iconos siempre en el DOM).
+ * La visibilidad del icono la decide CSS vía `data-theme` —que el script
+ * anti-flash ya fijó antes del paint—, así que nunca hay icono erróneo
+ * ni mismatch. El estado solo maneja `aria-label` y el toggle.
  */
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof document !== "undefined") {
-      const current = document.documentElement.getAttribute("data-theme");
-      if (current === "light" || current === "dark") {
-        return current;
-      }
-    }
-    return "light";
-  });
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
     const stored = getStoredTheme();
@@ -105,9 +103,13 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={label}
       title={label}
-      suppressHydrationWarning
     >
-      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+      <span className="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+        <SunIcon />
+      </span>
+      <span className="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+        <MoonIcon />
+      </span>
     </Button>
   );
 }
