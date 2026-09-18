@@ -50,7 +50,7 @@ describe("WordFormationClient", () => {
     expect(screen.queryByText("decisively")).toBeNull();
   });
 
-  it("shows, hides, and resets the visual hint", () => {
+  it("shows, hides, and resets the fallback SVG hint", () => {
     render(
       <WordFormationClient
         clearFiltersPath="/word-formation"
@@ -59,16 +59,19 @@ describe("WordFormationClient", () => {
     );
 
     expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
 
     const hintButton = screen.getByRole("button", { name: "Show visual hint" });
     fireEvent.click(hintButton);
 
     expect(hintButton.getAttribute("aria-pressed")).toBe("true");
     expect(screen.getByRole("img", { name: "Pista visual animada" })).not.toBeNull();
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: "Hide visual hint" }));
 
     expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
     expect(hintButton.getAttribute("aria-pressed")).toBe("false");
 
     fireEvent.click(hintButton);
@@ -76,6 +79,7 @@ describe("WordFormationClient", () => {
     fireEvent.click(screen.getByRole("button", { name: "Next" }));
 
     expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
     expect(screen.getByRole("button", { name: "Show visual hint" }).getAttribute("aria-pressed")).toBe("false");
   });
 
