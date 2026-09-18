@@ -1,6 +1,6 @@
 # SPEC 09 — Polish y cierre del MVP
 
-> **Status:** Draft
+> **Status:** Implementado
 > **Depends on:** SPEC 01, SPEC 02, SPEC 03, SPEC 04, SPEC 05, SPEC 06, SPEC 07, SPEC 08
 > **Date:** 2026-09-17
 > **Objective:** Cerrar el MVP estático con metadatos, errores controlados, accesibilidad mínima y checklist Done verificada.
@@ -33,14 +33,14 @@ This feature introduces no new data structures.
 
 ## Acceptance criteria
 
-- [ ] `/nope` muestra 404 en español, no stacktrace.
-- [ ] Error en un Server Component de sección muestra `error.tsx` en español con botón reintentar.
-- [ ] Contenido `.md` roto hace fallar el build con archivo y línea (verificado en rama temporal, revertido).
-- [ ] Flujo completo solo con teclado: home → sección → Reveal → Siguiente → filtros.
-- [ ] Botones Reveal/Comprobar cumplen contraste AA (medido, valores anotados en el PR).
-- [ ] `README.md` explica ambos formatos `.md` con ejemplo copiable.
-- [ ] `env -i` + build pasa sin `.env` ni red ni DB.
-- [ ] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
+- [x] `/nope` muestra 404 en español, no stacktrace.
+- [x] Error en un Server Component de sección muestra `error.tsx` en español con botón reintentar.
+- [x] Contenido `.md` roto hace fallar el build con archivo y línea (verificado en rama temporal, revertido).
+- [x] Flujo completo solo con teclado: home → sección → Reveal → Siguiente → filtros.
+- [x] Botones Reveal/Comprobar cumplen contraste AA (medido, valores anotados en el PR).
+- [x] `README.md` explica ambos formatos `.md` con ejemplo copiable.
+- [x] `env -i` + build pasa sin `.env` ni red ni DB.
+- [x] `npm run lint && npm run typecheck && npm run test && npm run build` en verde.
 
 ## Decisions
 
