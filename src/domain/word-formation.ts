@@ -8,7 +8,8 @@ export const WordFamilySchema = z
     noun: z.string().min(1).optional(),
     adjective: z.string().min(1).optional(),
     adverb: z.string().min(1).optional(),
-    meaningHint: z.string().min(1).optional(),
+    meaningHintEn: z.string().min(1),
+    meaningHint: z.string().min(1),
     examples: z.array(z.string()).default([]),
   })
   .refine((v) => v.noun !== undefined || v.adjective !== undefined || v.adverb !== undefined, {

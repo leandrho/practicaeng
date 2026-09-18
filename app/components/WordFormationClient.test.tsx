@@ -11,6 +11,7 @@ const family: WordFamily = {
   noun: "decision",
   adjective: "decisive",
   adverb: "decisively",
+  meaningHintEn: "to make a choice",
   meaningHint: "decidir",
   examples: [],
 };
@@ -22,6 +23,7 @@ const secondFamily: WordFamily = {
   noun: "action",
   adjective: "active",
   adverb: "actively",
+  meaningHintEn: "to do something",
   meaningHint: "actuar",
   examples: [],
 };
@@ -31,6 +33,7 @@ const familyWithMissingForms: WordFamily = {
   level: "B1-B2",
   category: "A",
   noun: "announcement",
+  meaningHintEn: "to make something public",
   meaningHint: "anunciar",
   examples: [],
 };
@@ -119,6 +122,48 @@ describe("WordFormationClient", () => {
     expect(screen.getByText("decision")).not.toBeNull();
     expect(screen.getByText("decisive")).not.toBeNull();
     expect(screen.getByText("decisively")).not.toBeNull();
+  });
+
+  it("switches Hint between English and Spanish", () => {
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal family" }));
+
+    expect(screen.getByText(family.meaningHintEn)).not.toBeNull();
+    expect(screen.queryByText(family.meaningHint)).toBeNull();
+
+    const esButton = screen.getByRole("button", { name: "Show Spanish translation" });
+    fireEvent.click(esButton);
+
+    expect(esButton.getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByText(family.meaningHint)).not.toBeNull();
+    expect(screen.queryByText(family.meaningHintEn)).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Show English explanation" }));
+
+    expect(screen.queryByText(family.meaningHint)).toBeNull();
+    expect(screen.getByText(family.meaningHintEn)).not.toBeNull();
+    expect(esButton.getAttribute("aria-pressed")).toBe("false");
+  });
+
+  it("resets ES when changing family", () => {
+    render(
+      <WordFormationClient
+        clearFiltersPath="/word-formation"
+        families={[family, secondFamily]}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal family" }));
+    fireEvent.click(screen.getByRole("button", { name: "Show Spanish translation" }));
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+    fireEvent.click(screen.getByRole("button", { name: "Reveal family" }));
+
+    expect(screen.getByText(secondFamily.meaningHintEn)).not.toBeNull();
+    expect(screen.queryByText(secondFamily.meaningHint)).toBeNull();
+    expect(screen.getByRole("button", { name: "Show Spanish translation" }).getAttribute("aria-pressed")).toBe(
+      "false",
+    );
   });
 
   it("shows missing forms as dashes when revealed", () => {

@@ -50,14 +50,20 @@ export function parseBulletCards(
       bullet = `${bullet} ${continuation.trim()}`;
     }
 
-    const match = /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+\*(.+)\*\s*$/.exec(
+    const match = /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+)\*\s*$/.exec(
       bullet,
     );
-    if (match?.[1] === undefined || match[2] === undefined || match[3] === undefined) {
+    if (
+      match?.[1] === undefined ||
+      match[2] === undefined ||
+      match[3] === undefined ||
+      match[4] === undefined ||
+      match[5] === undefined
+    ) {
       throwParseError(
         file,
         startLine,
-        "bullet debe tener expresión, significado y ejemplo",
+        "bullet debe tener expresión, meaningEn, meaningEs, exampleEn y translationEs",
       );
     }
 
@@ -66,8 +72,10 @@ export function parseBulletCards(
         {
           expression: match[1],
           type,
-          meaningEs: match[2],
-          exampleEn: match[3],
+          meaningEn: match[2],
+          meaningEs: match[3],
+          exampleEn: match[4],
+          translationEs: match[5],
           category,
           sourceFile: file,
         },
@@ -87,8 +95,10 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
     | {
         expression: string;
         line: number;
+        meaningEn?: string;
         meaningEs?: string;
         exampleEn?: string;
+        translationEs?: string;
       }
     | undefined;
 
@@ -100,8 +110,14 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
     if (card.meaningEs === undefined) {
       throwParseError(file, card.line, "tarjeta sin Significado");
     }
+    if (card.meaningEn === undefined) {
+      throwParseError(file, card.line, "tarjeta sin Meaning (EN)");
+    }
     if (card.exampleEn === undefined) {
       throwParseError(file, card.line, "tarjeta sin Ejemplo");
+    }
+    if (card.translationEs === undefined) {
+      throwParseError(file, card.line, "tarjeta sin Traducción (ES)");
     }
 
     cards.push(
@@ -109,8 +125,10 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
         {
           expression: card.expression,
           type: "phrasal-verb",
+          meaningEn: card.meaningEn,
           meaningEs: card.meaningEs,
           exampleEn: card.exampleEn,
+          translationEs: card.translationEs,
           category: "general",
           sourceFile: file,
         },
@@ -145,6 +163,12 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
       continue;
     }
 
+    const meaningEn = /^\s*-\s+\*\*Meaning \(EN\):\*\*\s*(.+?)\s*$/.exec(line);
+    if (meaningEn?.[1] !== undefined) {
+      card.meaningEn = meaningEn[1];
+      continue;
+    }
+
     const meaning = /^\s*-\s+\*\*Significado:\*\*\s*(.+?)\s*$/.exec(line);
     if (meaning?.[1] !== undefined) {
       card.meaningEs = meaning[1];
@@ -154,6 +178,12 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
     const example = /^\s*-\s+\*\*Ejemplo:\*\*\s*(.+?)\s*$/.exec(line);
     if (example?.[1] !== undefined) {
       card.exampleEn = example[1];
+      continue;
+    }
+
+    const translationEs = /^\s*-\s+\*\*Traducción \(ES\):\*\*\s*(.+?)\s*$/.exec(line);
+    if (translationEs?.[1] !== undefined) {
+      card.translationEs = translationEs[1];
     }
   }
 

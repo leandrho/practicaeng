@@ -9,6 +9,7 @@ import { Button } from "./ui/Button";
 type WFState = {
   index: number;
   revealed: boolean;
+  showEs: boolean;
   guess: string;
   checked: "idle" | "correct" | "incorrect";
 };
@@ -27,6 +28,7 @@ export default function WordFormationClient({
   const [state, setState] = useState<WFState>({
     index: 0,
     revealed: false,
+    showEs: false,
     guess: "",
     checked: "idle",
   });
@@ -84,6 +86,7 @@ export default function WordFormationClient({
     setState((current) => ({
       index: current.index + offset,
       revealed: false,
+      showEs: false,
       guess: "",
       checked: "idle",
     }));
@@ -105,7 +108,7 @@ export default function WordFormationClient({
       <p className="flashcard__kicker">Base</p>
       <h1>{family.base.toUpperCase()}</h1>
       {state.revealed ? (
-        <div key={`${family.base}:dorso`} className="flashcard__answer flashcard__face">
+        <div key={`${family.base}:dorso`} className="flashcard__answer flashcard__face" aria-live="polite">
           <p>
             <strong>Noun:</strong> {family.noun ?? "—"}
           </p>
@@ -115,11 +118,23 @@ export default function WordFormationClient({
           <p>
             <strong>Adverb:</strong> {family.adverb ?? "—"}
           </p>
-          {family.meaningHint === undefined ? null : (
-            <p>
-              <strong>Hint:</strong> {family.meaningHint}
-            </p>
-          )}
+          <div aria-live="polite">
+            <div className="flashcard__answer-row">
+              <div className="flashcard__answer-copy">
+                <p>
+                  <strong>Hint:</strong> {state.showEs ? family.meaningHint : family.meaningHintEn}
+                </p>
+              </div>
+              <Button
+                className="btn btn--ghost flashcard__language-toggle"
+                aria-pressed={state.showEs}
+                aria-label={state.showEs ? "Show English explanation" : "Show Spanish translation"}
+                onClick={() => setState((current) => ({ ...current, showEs: !current.showEs }))}
+              >
+                {state.showEs ? "EN" : "ES"}
+              </Button>
+            </div>
+          </div>
           <ul className="flashcard__list">
             {family.examples.map((example) => (
               <li key={example}>{example}</li>

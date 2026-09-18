@@ -7,6 +7,8 @@ describe("WordFamilySchema", () => {
       base: "decide",
       category: "D",
       noun: "decision",
+      meaningHintEn: "to make a choice",
+      meaningHint: "decidir",
     });
     expect(parsed.base).toBe("decide");
     expect(parsed.noun).toBe("decision");
@@ -14,12 +16,44 @@ describe("WordFamilySchema", () => {
   });
 
   it("sin formas (todo --- / ausente) falla por refinamiento", () => {
-    expect(() => WordFamilySchema.parse({ base: "decide", category: "D" })).toThrow();
+    expect(() =>
+      WordFamilySchema.parse({
+        base: "decide",
+        category: "D",
+        meaningHintEn: "to make a choice",
+        meaningHint: "decidir",
+      }),
+    ).toThrow();
   });
 
   it("base vacía falla", () => {
     expect(() =>
-      WordFamilySchema.parse({ base: "", category: "D", noun: "decision" }),
+      WordFamilySchema.parse({
+        base: "",
+        category: "D",
+        noun: "decision",
+        meaningHintEn: "to make a choice",
+        meaningHint: "decidir",
+      }),
+    ).toThrow();
+  });
+
+  it("los hints en inglés y español son obligatorios", () => {
+    expect(() =>
+      WordFamilySchema.parse({
+        base: "decide",
+        category: "D",
+        noun: "decision",
+        meaningHint: "decidir",
+      }),
+    ).toThrow();
+    expect(() =>
+      WordFamilySchema.parse({
+        base: "decide",
+        category: "D",
+        noun: "decision",
+        meaningHintEn: "to make a choice",
+      }),
     ).toThrow();
   });
 });

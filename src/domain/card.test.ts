@@ -4,8 +4,10 @@ import { CardSchema } from "./card";
 const validCard = {
   expression: "give up",
   type: "phrasal-verb",
+  meaningEn: "to stop trying",
   meaningEs: "rendirse",
   exampleEn: "Don't give up.",
+  translationEs: "No te rindas.",
   category: "GENERAL",
   sourceFile: "data/idioms-b1-b2.md",
 } as const;
@@ -37,8 +39,14 @@ describe("CardSchema", () => {
     expect(() => CardSchema.parse({ ...validCard, type: "verb" })).toThrow();
   });
 
-  it("sin translationEs pasa; con translationEs vacía falla", () => {
-    expect(() => CardSchema.parse(validCard)).not.toThrow();
+  it("meaningEn y translationEs son obligatorios", () => {
+    expect(() =>
+      CardSchema.parse({ ...validCard, meaningEn: "" }),
+    ).toThrow();
+    expect(() => {
+      const { translationEs: _translationEs, ...cardWithoutTranslation } = validCard;
+      CardSchema.parse(cardWithoutTranslation);
+    }).toThrow();
     expect(() =>
       CardSchema.parse({ ...validCard, translationEs: "" }),
     ).toThrow();

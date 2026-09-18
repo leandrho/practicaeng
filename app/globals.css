@@ -781,6 +781,23 @@ a {
   color: var(--muted);
 }
 
+.flashcard__answer-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flashcard__answer-copy {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.flashcard__language-toggle {
+  min-width: 3rem;
+  min-height: 3rem;
+}
+
 .flashcard__navigation {
   display: flex;
   flex-wrap: wrap;

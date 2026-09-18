@@ -7,22 +7,23 @@ function fixedRow(
   noun: string,
   adjective: string,
   adverb: string,
+  meaningEn: string,
   meaning: string,
 ): string {
-  return `${base.padEnd(6)}${noun.padEnd(15)}${adjective.padEnd(16)}${adverb.padEnd(16)}${meaning}`;
+  return `${base.padEnd(6)}${noun.padEnd(15)}${adjective.padEnd(16)}${adverb.padEnd(16)}${meaningEn.padEnd(25)}${meaning}`;
 }
 
 const fixture = [
-  "Base  Sustantivo     Adjetivo        Adverbio        Significado orientativo",
-  "----  -------------  --------------  --------------  -----------------------",
-  fixedRow("act", "action", "active", "actively", "actuar / acción / activo /"),
-  "".padEnd(53) + "activamente",
-  fixedRow("amaze", "amazement", "amazing /", "amazingly", "asombrar / asombro /"),
-  "".padEnd(21) + "amazed".padEnd(32) + "increíble-asombrado",
-  fixedRow("apply", "application /", "applicable", "---", "solicitar-aplicar /"),
-  "".padEnd(6) + "applicant".padEnd(47) + "solicitud-solicitante /",
-  "".padEnd(53) + "aplicable",
-  "--------------------------------------------------------------------------------",
+  "Base  Sustantivo     Adjetivo        Adverbio        Hint (EN)                Significado orientativo",
+  "----  -------------  --------------  --------------  -----------------------  -----------------------",
+  fixedRow("act", "action", "active", "actively", "to do something", "actuar / acción / activo /"),
+  "".padEnd(78) + "activamente",
+  fixedRow("amaze", "amazement", "amazing /", "amazingly", "to surprise", "asombrar / asombro /"),
+  "".padEnd(21) + "amazed".padEnd(57) + "increíble-asombrado",
+  fixedRow("apply", "application /", "applicable", "---", "to request", "solicitar-aplicar /"),
+  "".padEnd(6) + "applicant".padEnd(72) + "solicitud-solicitante /",
+  "".padEnd(78) + "aplicable",
+  "---------------------------------------------------------------------------------------------------------",
   "## Ejemplos para practicar en contexto",
   "- **act → action → active → actively:** *Act now.* / *Action matters.*",
   "## Idea de tarjeta para la app",
@@ -39,6 +40,7 @@ describe("parseWordFamilies", () => {
         noun: "action",
         adjective: "active",
         adverb: "actively",
+        meaningHintEn: "to do something",
         meaningHint: "actuar / acción / activo / activamente",
         examples: ["Act now.", "Action matters."],
       },
@@ -49,6 +51,7 @@ describe("parseWordFamilies", () => {
         noun: "amazement",
         adjective: "amazing / amazed",
         adverb: "amazingly",
+        meaningHintEn: "to surprise",
         meaningHint: "asombrar / asombro / increíble-asombrado",
         examples: [],
       },
@@ -58,6 +61,7 @@ describe("parseWordFamilies", () => {
         category: "A",
         noun: "application / applicant",
         adjective: "applicable",
+        meaningHintEn: "to request",
         meaningHint: "solicitar-aplicar / solicitud-solicitante / aplicable",
         examples: [],
       },
@@ -66,9 +70,9 @@ describe("parseWordFamilies", () => {
 
   it("convierte --- a undefined", () => {
     const [family] = parseWordFamilies(
-      `Base | Sustantivo | Adjetivo | Adverbio | Significado orientativo
-| --- | --- | --- | --- | --- |
-| announce | announcement | --- | --- | anunciar / anuncio |`,
+      `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| announce | announcement | --- | --- | to make something public | anunciar / anuncio |`,
       "data/word-formation-b1-b2.md",
     );
 
@@ -84,9 +88,9 @@ describe("parseWordFamilies", () => {
     let error: unknown;
     try {
       parseWordFamilies(
-        `Base | Sustantivo | Adjetivo | Adverbio | Significado orientativo
-| --- | --- | --- | --- | --- |
-| invalid | --- | --- | --- | sin formas |`,
+        `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| invalid | --- | --- | --- | without forms | sin formas |`,
         "data/word-formation-b1-b2.md",
       );
     } catch (caught) {

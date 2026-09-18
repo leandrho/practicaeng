@@ -1,1 +1,1 @@
-- **a piece of cake** --- muy fácil --- *The test was a piece of cake.*
+- **a piece of cake** --- very easy --- muy fácil --- *The test was a piece of cake.* --- *El examen fue pan comido.*

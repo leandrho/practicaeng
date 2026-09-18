@@ -1,3 +1,3 @@
 ## Verb + preposition
 
-- **depend on** --- depender de --- *It depends on the weather.*
+- **depend on** --- be determined by something --- depender de --- *It depends on the weather.* --- *Depende del clima.*
