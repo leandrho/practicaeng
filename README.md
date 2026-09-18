@@ -25,13 +25,55 @@ El contenido de cada sección estará almacenado dentro del directorio:
 Ejemplo de estructura:
 
 data/
-├── phrasal-verbs.md
-├── collocations.md
-├── prepositions.md
-├── idioms.md
-└── word-formations.md
+├── phrasal-verbs-b1-b2-200.md
+├── collocations-b1-b2.md
+├── fixed-prepositions-b1-b2.md
+├── idioms-b1-b2.md
+└── word-formation-b1-b2.md
 
 Estos archivos contienen la información utilizada por la aplicación, como significado, ejemplos, traducciones, categorías y nivel de dificultad.
+
+## Cómo editar `data/`
+
+El contenido se edita directamente en los archivos Markdown de `data/`. No hace falta tocar el código para corregir o sumar tarjetas, pero hay que respetar el formato de cada archivo.
+
+### Tarjetas con bullets
+
+`collocations-b1-b2.md`, `fixed-prepositions-b1-b2.md` e `idioms-b1-b2.md` usan una tarjeta por bullet. Los encabezados `##` definen la categoría de las tarjetas que siguen.
+
+```md
+## MAKE
+
+- **make a decision** --- tomar una decisión --- *I need to make a decision today.*
+```
+
+- Usá exactamente tres bloques: expresión en `**negrita**`, significado en español y ejemplo en inglés en `*cursiva*`, separados por `---`.
+- Podés partir un ejemplo largo en la línea siguiente si esa continuación empieza con espacios.
+- Para crear una categoría, agregá un encabezado como `## TRAVEL` antes de sus tarjetas.
+
+`phrasal-verbs-b1-b2-200.md` usa el formato propio de título y campos:
+
+```md
+### 201. look after
+- **Significado:** cuidar de alguien o algo
+- **Ejemplo:** She looks after her younger brother.
+```
+
+### Word Formation
+
+`word-formation-b1-b2.md` usa una tabla de ancho fijo. Mantené el encabezado y la línea de guiones existentes, y agregá una fila respetando sus columnas:
+
+```md
+  decide         decision        decisive         decisively      decidir / decisión / decisivo / decisivamente
+```
+
+Usá `---` cuando no haya una forma común o útil para el nivel. Las líneas que continúan una celda deben empezar con espacios, igual que las filas existentes.
+
+### Antes de terminar
+
+- No renombres ni muevas archivos dentro de `data/`.
+- No cambies los encabezados ni los separadores de la tabla de Word Formation.
+- Verificá el cambio con `npm run build`; si el formato es inválido, el error indica el archivo y la línea que hay que corregir.
 
 ## Funcionamiento
 
@@ -410,11 +452,11 @@ También permitirá eventualmente transformar los archivos Markdown a otros form
 Por ejemplo:
 
 data/
-├── phrasal-verbs.md
-├── collocations.md
-├── prepositions.md
-├── idioms.md
-└── word-formations.md
+├── phrasal-verbs-b1-b2-200.md
+├── collocations-b1-b2.md
+├── fixed-prepositions-b1-b2.md
+├── idioms-b1-b2.md
+└── word-formation-b1-b2.md
 
 La aplicación podrá leer estos archivos durante el proceso de build o transformarlos previamente en una estructura de datos interna.
 
@@ -495,4 +537,3 @@ Sino:
 
 # MVP
 -   Solo usa los archivos que estan en data/ para cada seccion, no utiliza db ni tampoco maneja usuarios.
-

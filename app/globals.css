@@ -40,7 +40,8 @@ a {
 .section-index,
 .flashcard,
 .flashcard-empty,
-.filters {
+.filters,
+.status-page {
   width: min(100% - 2rem, 44rem);
   margin: 0 auto;
 }
@@ -89,6 +90,57 @@ a {
 
 .section-index {
   padding: clamp(3.5rem, 12vw, 7rem) 0 3rem;
+}
+
+.status-page {
+  padding: clamp(3.5rem, 12vw, 7rem) 0 3rem;
+}
+
+.status-page__eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--muted-ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status-page h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.75rem, 12vw, 5.5rem);
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+.status-page > p:not(.status-page__eyebrow) {
+  max-width: 34rem;
+  margin: 1.5rem 0 2.5rem;
+  color: var(--muted-ink);
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+}
+
+.status-page a,
+.status-page button {
+  display: inline-block;
+  min-height: 3rem;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--surface);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.status-page button {
+  cursor: pointer;
+}
+
+.status-page a:hover,
+.status-page button:hover {
+  border-color: var(--action);
+  background: var(--action);
 }
 
 .section-index h1,
