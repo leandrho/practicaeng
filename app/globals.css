@@ -739,13 +739,13 @@ a {
   outline-color: var(--card-accent);
 }
 
-/* Botón de pista: solo icono amarillo (lamparita de ayuda). */
+/* Botón de pista: borde del mismo amarillo que la lamparita (no usa el acento de la card). */
 .btn--hint {
   min-width: 3rem;
   width: 3rem;
   padding: 0.7rem 0;
   border-radius: 999px;
-  border-color: var(--line);
+  border-color: var(--hint-icon);
   color: var(--hint-icon);
 }
 
@@ -779,7 +779,7 @@ a {
   width: 3rem;
   padding: 0.7rem 0;
   border-radius: 999px;
-  border-color: var(--line);
+  border-color: var(--context-icon);
   color: var(--context-icon);
 }
 
@@ -792,6 +792,29 @@ a {
 .btn--context[aria-pressed="true"] {
   border-color: var(--context-icon);
   background: color-mix(in srgb, var(--context-icon) 14%, transparent);
+}
+
+/* Las ayudas conservan su color propio dentro de la flashcard:
+   `.flashcard .btn--ghost` usa `--card-accent`, pero hint/context
+   usan `--hint-icon` / `--context-icon` en borde e icono. */
+.flashcard .btn--hint {
+  border-color: var(--hint-icon);
+  color: var(--hint-icon);
+}
+
+.flashcard .btn--hint:hover:not(:disabled) {
+  border-color: var(--hint-icon);
+  color: var(--hint-icon);
+}
+
+.flashcard .btn--context {
+  border-color: var(--context-icon);
+  color: var(--context-icon);
+}
+
+.flashcard .btn--context:hover:not(:disabled) {
+  border-color: var(--context-icon);
+  color: var(--context-icon);
 }
 
 .book-icon {
