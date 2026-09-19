@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { ViewTransition } from "react";
 import { FilterDrawerProvider, HeaderFilterButton } from "./components/FilterDrawerProvider";
+import { Footer } from "./components/Footer";
 import { ThemeToggle } from "./components/ThemeToggle";
 import "./globals.css";
 
@@ -56,6 +57,7 @@ export default function RootLayout({
             </div>
           </header>
           <ViewTransition name="page">{children}</ViewTransition>
+          <Footer />
         </FilterDrawerProvider>
       </body>
     </html>
