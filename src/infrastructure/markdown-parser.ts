@@ -50,32 +50,19 @@ export function parseBulletCards(
       bullet = `${bullet} ${continuation.trim()}`;
     }
 
-    const match = /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+)\*\s*$/.exec(
-      bullet,
-    );
-    if (
-      match?.[1] === undefined ||
-      match[2] === undefined ||
-      match[3] === undefined ||
-      match[4] === undefined ||
-      match[5] === undefined
-    ) {
-      throwParseError(
-        file,
-        startLine,
-        "bullet debe tener expresión, meaningEn, meaningEs, exampleEn y translationEs",
-      );
-    }
+    const parsed = parseBulletLine(bullet, file, startLine);
 
     cards.push(
       parseCard(
         {
-          expression: match[1],
+          expression: parsed.expression,
           type,
-          meaningEn: match[2],
-          meaningEs: match[3],
-          exampleEn: match[4],
-          translationEs: match[5],
+          meaningEn: parsed.meaningEn,
+          meaningEs: parsed.meaningEs,
+          exampleEn: parsed.exampleEn,
+          translationEs: parsed.translationEs,
+          contextEn: parsed.contextEn,
+          contextSource: parsed.contextSource,
           category,
           sourceFile: file,
         },
@@ -86,6 +73,51 @@ export function parseBulletCards(
   }
 
   return cards;
+}
+
+const BULLET_WITH_CONTEXT =
+  /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s*(?:---\s+\*(.+?)\*\s*)?$/;
+const BULLET_WITHOUT_CONTEXT =
+  /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s*$/;
+
+function parseBulletLine(bullet: string, file: string, line: number) {
+  const match = BULLET_WITH_CONTEXT.exec(bullet);
+  if (
+    match?.[1] === undefined ||
+    match[2] === undefined ||
+    match[3] === undefined ||
+    match[4] === undefined ||
+    match[5] === undefined ||
+    match[6] === undefined
+  ) {
+    if (BULLET_WITHOUT_CONTEXT.test(bullet)) {
+      throwParseError(file, line, "tarjeta sin Context (EN)");
+    }
+    throwParseError(
+      file,
+      line,
+      "bullet debe tener expresión, meaningEn, meaningEs, exampleEn, translationEs y Context (EN)",
+    );
+  }
+
+  const contextEn = match[6].trim();
+  const contextSource = (match[7] ?? "Everyday conversation").trim();
+  if (contextEn.includes("---") || contextSource.includes("---")) {
+    throwParseError(file, line, "contexto no puede contener ---");
+  }
+  if (contextEn.length === 0) {
+    throwParseError(file, line, "tarjeta sin Context (EN)");
+  }
+
+  return {
+    expression: match[1].trim(),
+    meaningEn: match[2].trim(),
+    meaningEs: match[3].trim(),
+    exampleEn: match[4].trim(),
+    translationEs: match[5].trim(),
+    contextEn,
+    contextSource,
+  };
 }
 
 export function parseIrregularVerbCards(markdown: string, file: string): Card[] {
@@ -126,24 +158,9 @@ export function parseIrregularVerbCards(markdown: string, file: string): Card[] 
       bullet = `${bullet} ${continuation.trim()}`;
     }
 
-    const match = /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+)\*\s*$/.exec(
-      bullet,
-    );
-    if (
-      match?.[1] === undefined ||
-      match[2] === undefined ||
-      match[3] === undefined ||
-      match[4] === undefined ||
-      match[5] === undefined
-    ) {
-      throwParseError(
-        file,
-        startLine,
-        "bullet debe tener formas, meaningEn, meaningEs, exampleEn y translationEs",
-      );
-    }
+    const parsed = parseBulletLine(bullet, file, startLine);
 
-    const forms = match[1]
+    const forms = parsed.expression
       .split(/\s+[–—-]\s+/)
       .map((form) => form.trim())
       .filter((form) => form.length > 0);
@@ -162,10 +179,12 @@ export function parseIrregularVerbCards(markdown: string, file: string): Card[] 
         {
           expression: base,
           type: "irregular-verb",
-          meaningEn: match[2],
-          meaningEs: match[3],
-          exampleEn: match[4],
-          translationEs: match[5],
+          meaningEn: parsed.meaningEn,
+          meaningEs: parsed.meaningEs,
+          exampleEn: parsed.exampleEn,
+          translationEs: parsed.translationEs,
+          contextEn: parsed.contextEn,
+          contextSource: parsed.contextSource,
           category,
           sourceFile: file,
           pastSimple,
@@ -191,6 +210,8 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
         meaningEs?: string;
         exampleEn?: string;
         translationEs?: string;
+        contextEn?: string;
+        contextSource?: string;
       }
     | undefined;
 
@@ -211,6 +232,12 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
     if (card.translationEs === undefined) {
       throwParseError(file, card.line, "tarjeta sin Traducción (ES)");
     }
+    if (card.contextEn === undefined) {
+      throwParseError(file, card.line, "tarjeta sin Context (EN)");
+    }
+    if (card.contextEn.includes("---")) {
+      throwParseError(file, card.line, "contexto no puede contener ---");
+    }
 
     cards.push(
       parseCard(
@@ -221,6 +248,8 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
           meaningEs: card.meaningEs,
           exampleEn: card.exampleEn,
           translationEs: card.translationEs,
+          contextEn: card.contextEn,
+          contextSource: card.contextSource ?? "Everyday conversation",
           category: "general",
           sourceFile: file,
         },
@@ -276,6 +305,18 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
     const translationEs = /^\s*-\s+\*\*Traducción \(ES\):\*\*\s*(.+?)\s*$/.exec(line);
     if (translationEs?.[1] !== undefined) {
       card.translationEs = translationEs[1];
+      continue;
+    }
+
+    const contextEn = /^\s*-\s+\*\*Context \(EN\):\*\*\s*(.+?)\s*$/.exec(line);
+    if (contextEn?.[1] !== undefined) {
+      card.contextEn = contextEn[1];
+      continue;
+    }
+
+    const contextSource = /^\s*-\s+\*\*Context source:\*\*\s*(.+?)\s*$/.exec(line);
+    if (contextSource?.[1] !== undefined) {
+      card.contextSource = contextSource[1];
     }
   }
 

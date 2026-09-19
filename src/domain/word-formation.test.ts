@@ -9,6 +9,9 @@ describe("WordFamilySchema", () => {
       noun: "decision",
       meaningHintEn: "to make a choice",
       meaningHint: "decidir",
+      contextEn:
+        '"We must decide now," she said, looking at the two roads ahead. There was no time to wait.',
+      contextSource: "Everyday conversation",
     });
     expect(parsed.base).toBe("decide");
     expect(parsed.noun).toBe("decision");
@@ -22,6 +25,8 @@ describe("WordFamilySchema", () => {
         category: "D",
         meaningHintEn: "to make a choice",
         meaningHint: "decidir",
+        contextEn:
+          '"We must decide now," she said, looking at the two roads ahead. There was no time to wait.',
       }),
     ).toThrow();
   });
@@ -34,6 +39,8 @@ describe("WordFamilySchema", () => {
         noun: "decision",
         meaningHintEn: "to make a choice",
         meaningHint: "decidir",
+        contextEn:
+          '"We must decide now," she said, looking at the two roads ahead. There was no time to wait.',
       }),
     ).toThrow();
   });
@@ -45,6 +52,8 @@ describe("WordFamilySchema", () => {
         category: "D",
         noun: "decision",
         meaningHint: "decidir",
+        contextEn:
+          '"We must decide now," she said, looking at the two roads ahead. There was no time to wait.',
       }),
     ).toThrow();
     expect(() =>
@@ -53,8 +62,45 @@ describe("WordFamilySchema", () => {
         category: "D",
         noun: "decision",
         meaningHintEn: "to make a choice",
+        contextEn:
+          '"We must decide now," she said, looking at the two roads ahead. There was no time to wait.',
       }),
     ).toThrow();
+  });
+
+  it("contextEn es obligatorio", () => {
+    expect(() =>
+      WordFamilySchema.parse({
+        base: "decide",
+        category: "D",
+        noun: "decision",
+        meaningHintEn: "to make a choice",
+        meaningHint: "decidir",
+      }),
+    ).toThrow();
+    expect(() =>
+      WordFamilySchema.parse({
+        base: "decide",
+        category: "D",
+        noun: "decision",
+        meaningHintEn: "to make a choice",
+        meaningHint: "decidir",
+        contextEn: "",
+      }),
+    ).toThrow();
+  });
+
+  it("contextSource es opcional", () => {
+    const parsed = WordFamilySchema.parse({
+      base: "decide",
+      category: "D",
+      noun: "decision",
+      meaningHintEn: "to make a choice",
+      meaningHint: "decidir",
+      contextEn:
+        '"We must decide now," she said, looking at the two roads ahead. There was no time to wait.',
+    });
+    expect(parsed.contextSource).toBeUndefined();
   });
 });
 

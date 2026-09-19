@@ -10,6 +10,8 @@ const validCard = {
   translationEs: "No te rindas.",
   category: "GENERAL",
   sourceFile: "data/idioms-b1-b2.md",
+  contextEn: '"Are you ready?" "Give me a minute, I don\'t want to give up now."',
+  contextSource: "Everyday conversation",
 } as const;
 
 describe("CardSchema", () => {
@@ -73,5 +75,20 @@ describe("CardSchema", () => {
     });
     expect(parsed.pastSimple).toBe("went");
     expect(parsed.pastParticiple).toBe("gone");
+  });
+
+  it("contextEn es obligatorio", () => {
+    expect(() => {
+      const { contextEn: _contextEn, ...cardWithoutContext } = validCard;
+      CardSchema.parse(cardWithoutContext);
+    }).toThrow();
+    expect(() => CardSchema.parse({ ...validCard, contextEn: "" })).toThrow();
+  });
+
+  it("contextSource es opcional", () => {
+    const { contextSource: _contextSource, ...cardWithoutSource } = validCard;
+    const parsed = CardSchema.parse(cardWithoutSource);
+    expect(parsed.contextEn).toBe(validCard.contextEn);
+    expect(parsed.contextSource).toBeUndefined();
   });
 });

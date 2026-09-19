@@ -13,6 +13,8 @@ const cards: Card[] = [
     translationEs: "Necesito tomar una decisión.",
     category: "MAKE",
     sourceFile: "fixture.md",
+    contextEn: '"I must make a decision before nightfall," she said, looking at the two roads ahead.',
+    contextSource: "Everyday conversation",
   },
   {
     expression: "give up",
@@ -24,6 +26,8 @@ const cards: Card[] = [
     translationEs: "No te rindas.",
     category: "general",
     sourceFile: "fixture.md",
+    contextEn: '"Are you ready?" "Give me a minute, I don\'t want to give up now."',
+    contextSource: "Everyday conversation",
   },
 ];
 

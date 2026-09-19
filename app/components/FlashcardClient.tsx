@@ -7,6 +7,8 @@ import { resolveHint } from "../../src/domain/hints";
 import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
+import { BookIcon } from "./ui/BookIcon";
+import { ContextBook } from "./ui/ContextBook";
 import { HintIcon } from "./ui/HintIcon";
 
 type FlashcardClientProps = {
@@ -82,6 +84,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
   const [dir, setDir] = useState<1 | -1>(1);
   const [showEs, setShowEs] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [showContext, setShowContext] = useState(false);
   const card = session.current;
   const total = session.cards.length;
   const position = total === 0 ? 0 : session.index + 1;
@@ -91,6 +94,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
     setDir(-1);
     setShowEs(false);
     setShowHint(false);
+    setShowContext(false);
     setSession(prev);
   }
 
@@ -98,6 +102,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
     setDir(1);
     setShowEs(false);
     setShowHint(false);
+    setShowContext(false);
     setSession(next);
   }
 
@@ -150,19 +155,39 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
       <div key={card.expression} className="flashcard__body">
         <div className="flashcard__head">
           <h2>{card.expression}</h2>
-          <Button
-            className="btn btn--ghost btn--hint"
-            aria-pressed={showHint}
-            aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
-            title="Ver pista"
-            onClick={() => setShowHint((current) => !current)}
-          >
-            <HintIcon />
-          </Button>
+          <div className="flashcard__hint-actions">
+            <Button
+              className="btn btn--ghost btn--hint"
+              aria-pressed={showHint}
+              aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
+              title="Ver pista"
+              onClick={() => setShowHint((current) => !current)}
+            >
+              <HintIcon />
+            </Button>
+            <Button
+              className="btn btn--ghost btn--context"
+              aria-pressed={showContext}
+              aria-label={showContext ? "Hide context hint" : "Show context hint"}
+              title="Ver contexto"
+              onClick={() => setShowContext((current) => !current)}
+            >
+              <BookIcon />
+            </Button>
+          </div>
         </div>
         {showHint ? (
           <div className="flashcard__hint-panel" aria-live="polite">
             <HintGallery hintId={hintId} />
+          </div>
+        ) : null}
+        {showContext ? (
+          <div className="flashcard__context-panel">
+            <ContextBook
+              expression={card.expression}
+              contextEn={card.contextEn}
+              contextSource={card.contextSource}
+            />
           </div>
         ) : null}
         {session.revealed ? (

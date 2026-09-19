@@ -3,56 +3,56 @@
 Aprendelas como una sola unidad, no traduciendo la preposición palabra por palabra.
 
 ## Adjective + preposition
-- **interested in** --- wanting to know more about --- interesado en --- *I'm interested in technology.* --- *Me interesa la tecnología.*
-- **good at** --- able to do something well --- bueno en --- *She's good at languages.* --- *Ella es buena con los idiomas.*
-- **bad at** --- unable to do something well --- malo en --- *I'm bad at remembering names.* --- *Soy malo para recordar nombres.*
-- **afraid of** --- feeling fear about --- tener miedo de --- *He's afraid of flying.* --- *Le tiene miedo a volar.*
-- **proud of** --- pleased about --- orgulloso de --- *I'm proud of you.* --- *Estoy orgulloso de vos.*
-- **worried about** --- anxious about --- preocupado por --- *She's worried about the exam.* --- *Está preocupada por el examen.*
-- **responsible for** --- having a duty to deal with --- responsable de --- *I'm responsible for the project.* --- *Soy responsable del proyecto.*
-- **famous for** --- known by many people for --- famoso por --- *The city is famous for its food.* --- *La ciudad es famosa por su comida.*
-- **different from** --- not the same as --- diferente de --- *This is different from mine.* --- *Esto es diferente del mío.*
-- **similar to** --- almost the same as --- similar a --- *Your idea is similar to mine.* --- *Tu idea es similar a la mía.*
-- **ready for** --- prepared for --- listo para --- *Are you ready for the test?* --- *¿Estás listo para el examen?*
-- **angry with** --- feeling angry at someone --- enojado con --- *She was angry with me.* --- *Estaba enojada conmigo.*
-- **pleased with** --- satisfied with --- satisfecho con --- *I'm pleased with the result.* --- *Estoy satisfecho con el resultado.*
-- **surprised by/at** --- feeling surprised because of --- sorprendido por --- *I was surprised by the news.* --- *Me sorprendieron las noticias.*
-- **tired of** --- no longer wanting something --- cansado de --- *I'm tired of waiting.* --- *Estoy cansado de esperar.*
+- **interested in** --- wanting to know more about --- interesado en --- *I'm interested in technology.* --- *Me interesa la tecnología.* --- *You should have listened to Mr. Bell.” “But he wasn’t talking to me,” protested Anne. “He was talking to God and he didn’t seem to be very much interested in it, either.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **good at** --- able to do something well --- bueno en --- *She's good at languages.* --- *Ella es buena con los idiomas.* --- *She said we could ask her any question we liked and I asked ever so many. I’m good at asking questions, Marilla.” “I believe you,” was Marilla’s emphatic comment.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **bad at** --- unable to do something well --- malo en --- *I'm bad at remembering names.* --- *Soy malo para recordar nombres.* --- *I'm bad at remembering names. I forget them in seconds. Now I repeat them aloud.* --- *Everyday conversation*
+- **afraid of** --- feeling fear about --- tener miedo de --- *He's afraid of flying.* --- *Le tiene miedo a volar.* --- *Jim,” he said, “are you afraid of blood?” “No, sir,” said I. “Well, then,” said he, “you hold the basin”; and with that he took his lancet and opened a vein.* --- *Treasure Island — Robert Louis Stevenson*
+- **proud of** --- pleased about --- orgulloso de --- *I'm proud of you.* --- *Estoy orgulloso de vos.* --- *Dad is proud of my grades. I studied hard this term. He bought me a book.* --- *Everyday conversation*
+- **worried about** --- anxious about --- preocupado por --- *She's worried about the exam.* --- *Está preocupada por el examen.* --- *She's worried about her dog. It eats nothing today. The vet opens at nine.* --- *Everyday conversation*
+- **responsible for** --- having a duty to deal with --- responsable de --- *I'm responsible for the project.* --- *Soy responsable del proyecto.* --- *I'm responsible for the keys. I lock every night. Nobody else touches them.* --- *Everyday conversation*
+- **famous for** --- known by many people for --- famoso por --- *The city is famous for its food.* --- *La ciudad es famosa por su comida.* --- *The town is famous for its cheese. People visit from far. The festival is in May.* --- *Everyday conversation*
+- **different from** --- not the same as --- diferente de --- *This is different from mine.* --- *Esto es diferente del mío.* --- *This cake is different from Mom's. It has more chocolate. I like both versions.* --- *Everyday conversation*
+- **similar to** --- almost the same as --- similar a --- *Your idea is similar to mine.* --- *Tu idea es similar a la mía.* --- *Your shirt is similar to mine. Same color and size. We laugh every time.* --- *Everyday conversation*
+- **ready for** --- prepared for --- listo para --- *Are you ready for the test?* --- *¿Estás listo para el examen?* --- *I suppose Dinah’ll be sending me on messages next!” And she began fancying the sort of thing that would happen: “‘Miss Alice! Come here directly, and get ready for your walk!’* --- *Alice's Adventures in Wonderland — Lewis Carroll*
+- **angry with** --- feeling angry at someone --- enojado con --- *She was angry with me.* --- *Estaba enojada conmigo.* --- *He was angry with her now for not seeing why she could not have Wendy. The reason was so simple: “I’m fond of her too.* --- *Peter Pan — J. M. Barrie*
+- **pleased with** --- satisfied with --- satisfecho con --- *I'm pleased with the result.* --- *Estoy satisfecho con el resultado.* --- *I'm pleased with my new room. It has light all day. I study by the window.* --- *Everyday conversation*
+- **surprised by/at** --- feeling surprised because of --- sorprendido por --- *I was surprised by the news.* --- *Me sorprendieron las noticias.* --- *I was surprised at the loud noise. It came from the kitchen. The cat broke a glass.* --- *Everyday conversation*
+- **tired of** --- no longer wanting something --- cansado de --- *I'm tired of waiting.* --- *Estoy cansado de esperar.* --- *I'm tired of this cold rain. It falls every day. I want sun and beach.* --- *Everyday conversation*
 
 ## Verb + preposition
-- **depend on** --- be decided by --- depender de --- *It depends on the weather.* --- *Depende del clima.*
-- **belong to** --- be owned by --- pertenecer a --- *This book belongs to me.* --- *Este libro me pertenece.*
-- **listen to** --- give attention to sound --- escuchar --- *I listen to podcasts every day.* --- *Escucho podcasts todos los días.*
-- **wait for** --- stay until someone or something arrives --- esperar a --- *I'm waiting for the bus.* --- *Estoy esperando el colectivo.*
-- **pay for** --- give money for --- pagar por --- *Who paid for dinner?* --- *¿Quién pagó la cena?*
-- **ask for** --- request --- pedir --- *She asked for help.* --- *Pidió ayuda.*
-- **agree with** --- have the same opinion as --- estar de acuerdo con --- *I agree with you.* --- *Estoy de acuerdo con vos.*
-- **apologize for** --- say sorry for --- disculparse por --- *He apologized for being late.* --- *Se disculpó por llegar tarde.*
-- **apply for** --- formally request --- solicitar --- *I'm applying for a new job.* --- *Estoy solicitando un trabajo nuevo.*
-- **believe in** --- have faith in --- creer en --- *Do you believe in luck?* --- *¿Creés en la suerte?*
-- **care about** --- consider important --- preocuparse/interesarse por --- *I care about my family.* --- *Me importa mi familia.*
-- **complain about** --- say that you are unhappy about --- quejarse de --- *They complained about the service.* --- *Se quejaron del servicio.*
-- **concentrate on** --- give all your attention to --- concentrarse en --- *Concentrate on your pronunciation.* --- *Concentrate en tu pronunciación.*
-- **consist of** --- be made of --- consistir en --- *The course consists of ten lessons.* --- *El curso consta de diez lecciones.*
-- **deal with** --- take action about --- lidiar con --- *I'll deal with the problem.* --- *Me voy a ocupar del problema.*
-- **focus on** --- give special attention to --- enfocarse en --- *Let's focus on grammar.* --- *Enfoquémonos en la gramática.*
-- **laugh at** --- make fun of --- reírse de --- *Don't laugh at him.* --- *No te rías de él.*
-- **look at** --- direct your eyes toward --- mirar --- *Look at this picture.* --- *Mirá esta foto.*
-- **refer to** --- mention or describe --- referirse a --- *What does this word refer to?* --- *¿A qué se refiere esta palabra?*
-- **rely on** --- depend on or trust --- depender/confiar en --- *You can rely on me.* --- *Podés confiar en mí.*
-- **suffer from** --- experience an illness or problem --- sufrir de --- *Many people suffer from stress.* --- *Muchas personas sufren de estrés.*
-- **think about** --- consider --- pensar en/sobre --- *I'm thinking about my future.* --- *Estoy pensando en mi futuro.*
-- **talk about** --- discuss --- hablar de --- *We talked about the problem.* --- *Hablamos sobre el problema.*
-- **work on** --- spend time improving --- trabajar en --- *I'm working on my English.* --- *Estoy trabajando en mi inglés.*
+- **depend on** --- be decided by --- depender de --- *It depends on the weather.* --- *Depende del clima.* --- *It all depends on the way we look at it. Sit down here and tell me about yourself.” “I am very sorry I can’t,” said Anne firmly.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **belong to** --- be owned by --- pertenecer a --- *This book belongs to me.* --- *Este libro me pertenece.* --- *Spencer said it was eight miles. I’m glad because I love driving. Oh, it seems so wonderful that I’m going to live with you and belong to you.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **listen to** --- give attention to sound --- escuchar --- *I listen to podcasts every day.* --- *Escucho podcasts todos los días.* --- *The yard was quite dark as they turned into it and the poplar leaves were rustling silkily all round it. “Listen to the trees talking in their sleep,” she whispered, as he lifted her to the ground. “What nice dreams they must have!”* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **wait for** --- stay until someone or something arrives --- esperar a --- *I'm waiting for the bus.* --- *Estoy esperando el colectivo.* --- *I'm waiting for Ana outside. Her class ends at four. Then we walk home.* --- *Everyday conversation*
+- **pay for** --- give money for --- pagar por --- *Who paid for dinner?* --- *¿Quién pagó la cena?* --- *She’d have gone today if they could have taken her. She had promised to pay for a quarter’s music lessons for Diana, but now she is determined to do nothing at all for such a tomboy.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **ask for** --- request --- pedir --- *She asked for help.* --- *Pidió ayuda.* --- *She was wearing Wendy’s bracelet on her arm; she had asked for the loan of it. Wendy loved to lend her bracelet to her mother.* --- *Peter Pan — J. M. Barrie*
+- **agree with** --- have the same opinion as --- estar de acuerdo con --- *I agree with you.* --- *Estoy de acuerdo con vos.* --- *I agree with your plan. It saves time and money. Let's start Monday.* --- *Everyday conversation*
+- **apologize for** --- say sorry for --- disculparse por --- *He apologized for being late.* --- *Se disculpó por llegar tarde.* --- *He apologized for the noise. The baby woke up twice. He brought cookies today.* --- *Everyday conversation*
+- **apply for** --- formally request --- solicitar --- *I'm applying for a new job.* --- *Estoy solicitando un trabajo nuevo.* --- *I'm applying for a library card. It is free for students. I need one photo.* --- *Everyday conversation*
+- **believe in** --- have faith in --- creer en --- *Do you believe in luck?* --- *¿Creés en la suerte?* --- *And I don’t believe in making the girls sit with the boys for punishment. It isn’t modest. Tillie Boulter was real indignant. She took Anne’s part right through and said all the scholars did too.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **care about** --- consider important --- preocuparse/interesarse por --- *I care about my family.* --- *Me importa mi familia.* --- *I care about my old bike. It was Dad's gift. I clean it weekly.* --- *Everyday conversation*
+- **complain about** --- say that you are unhappy about --- quejarse de --- *They complained about the service.* --- *Se quejaron del servicio.* --- *They complained about the cold food. The waiter changed it fast. Then they smiled.* --- *Everyday conversation*
+- **concentrate on** --- give all your attention to --- concentrarse en --- *Concentrate on your pronunciation.* --- *Concentrate en tu pronunciación.* --- *Concentrate on the road, please. The fog is thick. I will read the signs.* --- *Everyday conversation*
+- **consist of** --- be made of --- consistir en --- *The course consists of ten lessons.* --- *El curso consta de diez lecciones.* --- *And how ardently they grew to love their home under the ground; especially Wendy. It consisted of one large room, as all houses should do, with a floor in which you could dig if you wanted to go fishing, and in this floor grew stout mushrooms of a charming colour, which were used as stools.* --- *Peter Pan — J. M. Barrie*
+- **deal with** --- take action about --- lidiar con --- *I'll deal with the problem.* --- *Me voy a ocupar del problema.* --- *There was the end of this tangled clue. Then I made inquiries as to this mysterious assistant and found that I had to deal with one of the coolest and most daring criminals in London.* --- *The Adventures of Sherlock Holmes — Arthur Conan Doyle*
+- **focus on** --- give special attention to --- enfocarse en --- *Let's focus on grammar.* --- *Enfoquémonos en la gramática.* --- *Let's focus on the easy questions first. We gain time that way. Hard ones come later.* --- *Everyday conversation*
+- **laugh at** --- make fun of --- reírse de --- *Don't laugh at him.* --- *No te rías de él.* --- *I’ve had that said to me a million times if I have once. And people laugh at me because I use big words.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **look at** --- direct your eyes toward --- mirar --- *Look at this picture.* --- *Mirá esta foto.* --- *Look at the sky tonight. There are a thousand stars. I see the moon too.* --- *Everyday conversation*
+- **refer to** --- mention or describe --- referirse a --- *What does this word refer to?* --- *¿A qué se refiere esta palabra?* --- *He used to make merry over the cleverness of women, but I have not heard him do it of late. And when he speaks of Irene Adler, or when he refers to her photograph, it is always under the honourable title of the woman.* --- *The Adventures of Sherlock Holmes — Arthur Conan Doyle*
+- **rely on** --- depend on or trust --- depender/confiar en --- *You can rely on me.* --- *Podés confiar en mí.* --- *You can rely on our team. We never miss deadlines. The client trusts us.* --- *Everyday conversation*
+- **suffer from** --- experience an illness or problem --- sufrir de --- *Many people suffer from stress.* --- *Muchas personas sufren de estrés.* --- *Many children suffer from fear of dark. A small lamp helps. My sister had one.* --- *Everyday conversation*
+- **think about** --- consider --- pensar en/sobre --- *I'm thinking about my future.* --- *Estoy pensando en mi futuro.* --- *I'm thinking about pizza tonight. Cheese and tomatoes. Who joins me?* --- *Everyday conversation*
+- **talk about** --- discuss --- hablar de --- *We talked about the problem.* --- *Hablamos sobre el problema.* --- *Alice replied eagerly, for she was always ready to talk about her pet: “Dinah’s our cat. And she’s such a capital one for catching mice you can’t think!* --- *Alice's Adventures in Wonderland — Lewis Carroll*
+- **work on** --- spend time improving --- trabajar en --- *I'm working on my English.* --- *Estoy trabajando en mi inglés.* --- *I'm working on a song for Ana. Guitar first, then words. I finish it Friday.* --- *Everyday conversation*
 
 ## Noun + preposition
-- **reason for** --- cause of --- razón de/para --- *What's the reason for the delay?* --- *¿Cuál es la razón de la demora?*
-- **solution to** --- answer to a problem --- solución a --- *We need a solution to this problem.* --- *Necesitamos una solución para este problema.*
-- **answer to** --- response to --- respuesta a --- *Do you know the answer to this question?* --- *¿Sabés la respuesta a esta pregunta?*
-- **increase in** --- a rise in amount --- aumento de --- *There was an increase in prices.* --- *Hubo un aumento de precios.*
-- **difference between** --- way in which two things are not the same --- diferencia entre --- *What's the difference between these words?* --- *¿Cuál es la diferencia entre estas palabras?*
-- **relationship with** --- connection with --- relación con --- *I have a good relationship with my coworkers.* --- *Tengo una buena relación con mis compañeros de trabajo.*
-- **problem with** --- difficulty involving --- problema con --- *There's a problem with my computer.* --- *Hay un problema con mi computadora.*
-- **need for** --- requirement for --- necesidad de --- *There's a need for change.* --- *Hay una necesidad de cambio.*
-- **experience with** --- knowledge gained from doing something --- experiencia con --- *Do you have experience with Linux?* --- *¿Tenés experiencia con Linux?*
-- **advantage of** --- benefit of --- ventaja de --- *What's the advantage of this approach?* --- *¿Cuál es la ventaja de este enfoque?*
+- **reason for** --- cause of --- razón de/para --- *What's the reason for the delay?* --- *¿Cuál es la razón de la demora?* --- *What's the reason for your smile? You look happy today. Tell me everything.* --- *Everyday conversation*
+- **solution to** --- answer to a problem --- solución a --- *We need a solution to this problem.* --- *Necesitamos una solución para este problema.* --- *We need a quick solution to this leak. The floor is wet. Call the plumber now.* --- *Everyday conversation*
+- **answer to** --- response to --- respuesta a --- *Do you know the answer to this question?* --- *¿Sabés la respuesta a esta pregunta?* --- *Do you know the answer to number five? I tried twice. The book confuses me.* --- *Everyday conversation*
+- **increase in** --- a rise in amount --- aumento de --- *There was an increase in prices.* --- *Hubo un aumento de precios.* --- *There was an increase in bus tickets. Now we walk more. It is healthy anyway.* --- *Everyday conversation*
+- **difference between** --- way in which two things are not the same --- diferencia entre --- *What's the difference between these words?* --- *¿Cuál es la diferencia entre estas palabras?* --- *Lynde said you were red-haired and homely. You say it yourself often enough.” “Oh, but there’s such a difference between saying a thing yourself and hearing other people say it,” wailed Anne.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **relationship with** --- connection with --- relación con --- *I have a good relationship with my coworkers.* --- *Tengo una buena relación con mis compañeros de trabajo.* --- *I have a good relationship with my neighbor. She waters my plants. I feed her cat.* --- *Everyday conversation*
+- **problem with** --- difficulty involving --- problema con --- *There's a problem with my computer.* --- *Hay un problema con mi computadora.* --- *There's a problem with my bike. The wheel makes noise. The shop opens Monday.* --- *Everyday conversation*
+- **need for** --- requirement for --- necesidad de --- *There's a need for change.* --- *Hay una necesidad de cambio.* --- *I’m sixteen and a half, ‘obstinate as a mule,’ as Mrs. Lynde once told me,” laughed Anne. “Oh, Marilla, don’t you go pitying me. I don’t like to be pitied, and there is no need for it.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **experience with** --- knowledge gained from doing something --- experiencia con --- *Do you have experience with Linux?* --- *¿Tenés experiencia con Linux?* --- *Rachel’s expression. “It’s a great responsibility you’ve taken on yourself,” said that lady gloomily, “especially when you’ve never had any experience with children.* --- *Anne of Green Gables — Lucy Maud Montgomery*
+- **advantage of** --- benefit of --- ventaja de --- *What's the advantage of this approach?* --- *¿Cuál es la ventaja de este enfoque?* --- *That is one of the advantages of being thirteen. You know so much more than you did when you were only twelve.” “Well, what became of Cordelia and Geraldine?” asked Diana, who was beginning to feel rather interested in their fate.* --- *Anne of Green Gables — Lucy Maud Montgomery*

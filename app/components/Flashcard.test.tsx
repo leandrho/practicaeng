@@ -14,6 +14,8 @@ const card: Card = {
   translationEs: "No te rindas.",
   category: "general",
   sourceFile: "data/phrasal-verbs-b1-b2-200.md",
+  contextEn: '"Are you ready?" "Give me a minute, I don\'t want to give up now."',
+  contextSource: "Everyday conversation",
 };
 
 const secondCard: Card = {
@@ -22,6 +24,7 @@ const secondCard: Card = {
   meaningEn: "to leave the ground and begin flying",
   meaningEs: "despegar",
   exampleEn: "The plane takes off at noon.",
+  contextEn: '"Fasten your seatbelts," she said. "We are about to take off now."',
 };
 
 const fallbackCard: Card = {
@@ -42,6 +45,8 @@ const irregularCard: Card = {
   sourceFile: "data/irregular-verbs-b1-b2.md",
   pastSimple: "went",
   pastParticiple: "gone",
+  contextEn: '"We must go now," she said when the lights went out. There was no time to wait.',
+  contextSource: "Everyday conversation",
 };
 
 afterEach(cleanup);
@@ -200,5 +205,77 @@ describe("Flashcard", () => {
 
     expect(screen.getByText("No cards match these filters.")).not.toBeNull();
     expect(screen.getByRole("button", { name: "Clear filters" })).not.toBeNull();
+  });
+
+  it("keeps the book context out of the DOM until the cyan button is pressed", () => {
+    render(<Flashcard cards={[card]} clearFiltersPath="/phrasal-verbs" />);
+
+    expect(screen.queryByText(card.contextEn)).toBeNull();
+    expect(document.querySelector(".book-page")).toBeNull();
+    expect(screen.queryByText(card.meaningEs)).toBeNull();
+    expect(screen.queryByText(card.exampleEn)).toBeNull();
+    expect(screen.queryByText(card.translationEs!)).toBeNull();
+
+    const contextButton = screen.getByRole("button", { name: "Show context hint" });
+    fireEvent.click(contextButton);
+
+    expect(contextButton.getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("button", { name: "Hide context hint" })).not.toBeNull();
+    expect(document.querySelector(".book-page")).not.toBeNull();
+    expect(document.querySelector(".book-page mark")).not.toBeNull();
+    expect(screen.getByText("Everyday conversation")).not.toBeNull();
+    expect(screen.queryByText(card.meaningEs)).toBeNull();
+    expect(screen.queryByText(card.translationEs!)).toBeNull();
+  });
+
+  it("hides the book context when pressed again", () => {
+    render(<Flashcard cards={[card]} clearFiltersPath="/phrasal-verbs" />);
+
+    const contextButton = screen.getByRole("button", { name: "Show context hint" });
+    fireEvent.click(contextButton);
+    fireEvent.click(screen.getByRole("button", { name: "Hide context hint" }));
+
+    expect(screen.queryByText(card.contextEn)).toBeNull();
+    expect(document.querySelector(".book-page")).toBeNull();
+    expect(
+      screen.getByRole("button", { name: "Show context hint" }).getAttribute("aria-pressed"),
+    ).toBe("false");
+  });
+
+  it("resets the book context when navigating", () => {
+    render(<Flashcard cards={[card, secondCard]} clearFiltersPath="/phrasal-verbs" />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Show context hint" }));
+    expect(document.querySelector(".book-page")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(screen.queryByText(card.contextEn)).toBeNull();
+    expect(screen.queryByText(secondCard.contextEn)).toBeNull();
+    expect(document.querySelector(".book-page")).toBeNull();
+    expect(
+      screen.getByRole("button", { name: "Show context hint" }).getAttribute("aria-pressed"),
+    ).toBe("false");
+  });
+
+  it("keeps visual hint and book context independent", () => {
+    render(<Flashcard cards={[card, secondCard]} clearFiltersPath="/phrasal-verbs" />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Show visual hint" }));
+    fireEvent.click(screen.getByRole("button", { name: "Show context hint" }));
+
+    expect(screen.getByAltText("Pista visual")).not.toBeNull();
+    expect(document.querySelector(".book-page")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Hide visual hint" }));
+
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
+    expect(document.querySelector(".book-page")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
+    expect(document.querySelector(".book-page")).toBeNull();
   });
 });
