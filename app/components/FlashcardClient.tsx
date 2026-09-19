@@ -51,21 +51,29 @@ function FlashcardAnswer({ card, showEs, onToggleEs }: FlashcardAnswerProps) {
         <div className="flashcard__answer-row">
           <div className="flashcard__answer-copy">
             {card.pastSimple !== undefined && card.pastParticiple !== undefined ? (
-              <>
-                <p>
-                  <strong>Past simple:</strong> {card.pastSimple}
+              <div className="answer-block answer-block--forms">
+                <p className="answer-form">
+                  <span className="answer-pill answer-pill--ghost">Past simple:</span>{" "}
+                  <span className="answer-text answer-text--form">{card.pastSimple}</span>
                 </p>
-                <p>
-                  <strong>Past participle:</strong> {card.pastParticiple}
+                <p className="answer-form">
+                  <span className="answer-pill answer-pill--ghost">Past participle:</span>{" "}
+                  <span className="answer-text answer-text--form">{card.pastParticiple}</span>
                 </p>
-              </>
+              </div>
             ) : null}
-            <p>
-              <strong>Meaning:</strong> {showEs ? card.meaningEs : card.meaningEn}
-            </p>
-            <p>
-              <strong>Example:</strong> {showEs ? card.translationEs : card.exampleEn}
-            </p>
+            <div className="answer-block answer-block--meaning">
+              <span className="answer-pill">Meaning:</span>
+              <p className="answer-text answer-text--meaning">
+                {showEs ? card.meaningEs : card.meaningEn}
+              </p>
+            </div>
+            <div className="answer-block answer-block--example">
+              <span className="answer-pill answer-pill--outline">Example:</span>
+              <p className="answer-text answer-text--example">
+                {showEs ? card.translationEs : card.exampleEn}
+              </p>
+            </div>
           </div>
           <Button
             className="btn btn--ghost flashcard__language-toggle"
