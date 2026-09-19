@@ -167,8 +167,11 @@ a {
   text-decoration: none;
 }
 
-.site-header__brand:hover {
-  color: var(--action);
+.site-header__brand,
+.site-header__brand:visited,
+.site-header__brand:hover,
+.site-header__brand:active {
+  color: inherit;
 }
 
 .site-footer {
