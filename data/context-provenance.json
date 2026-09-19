@@ -1,0 +1,2467 @@
+{
+ "ask around": {
+  "kind": "dialogue"
+ },
+ "ask out": {
+  "kind": "dialogue"
+ },
+ "back up": {
+  "kind": "dialogue"
+ },
+ "break down": {
+  "kind": "dialogue"
+ },
+ "break in": {
+  "kind": "dialogue"
+ },
+ "break up": {
+  "kind": "dialogue"
+ },
+ "bring back": {
+  "kind": "dialogue"
+ },
+ "bring up": {
+  "kind": "dialogue"
+ },
+ "call back": {
+  "kind": "dialogue"
+ },
+ "call off": {
+  "kind": "dialogue"
+ },
+ "calm down": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XIX. A Concert, a Catastrophe, and a Confession"
+ },
+ "carry on": {
+  "kind": "dialogue"
+ },
+ "catch up": {
+  "kind": "dialogue"
+ },
+ "check in": {
+  "kind": "dialogue"
+ },
+ "check out": {
+  "kind": "dialogue"
+ },
+ "cheer up": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER II. Matthew Cuthbert Is Surprised"
+ },
+ "clean up": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "MEG GOES TO VANITY FAIR"
+ },
+ "come across": {
+  "kind": "dialogue"
+ },
+ "come back": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHORUS."
+ },
+ "come in": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "II"
+ },
+ "come on": {
+  "kind": "dialogue"
+ },
+ "come out": {
+  "kind": "dialogue"
+ },
+ "come over": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XVI. Diana Is Invited to Tea with Tragic Results"
+ },
+ "come up": {
+  "kind": "dialogue"
+ },
+ "come up with": {
+  "kind": "dialogue"
+ },
+ "count on": {
+  "kind": "dialogue"
+ },
+ "cut down on": {
+  "kind": "dialogue"
+ },
+ "cut off": {
+  "kind": "dialogue"
+ },
+ "deal with": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "I."
+ },
+ "do over": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER XV"
+ },
+ "dress up": {
+  "kind": "quote",
+  "book": "Huckleberry Finn — Mark Twain",
+  "chapter": "CHAPTER X."
+ },
+ "drop by": {
+  "kind": "dialogue"
+ },
+ "drop off": {
+  "kind": "dialogue"
+ },
+ "eat out": {
+  "kind": "dialogue"
+ },
+ "end up": {
+  "kind": "dialogue"
+ },
+ "fall apart": {
+  "kind": "dialogue"
+ },
+ "fall behind": {
+  "kind": "dialogue"
+ },
+ "fall for": {
+  "kind": "dialogue"
+ },
+ "fall out": {
+  "kind": "dialogue"
+ },
+ "figure out": {
+  "kind": "dialogue"
+ },
+ "fill in": {
+  "kind": "dialogue"
+ },
+ "fill out": {
+  "kind": "dialogue"
+ },
+ "fill up": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "CONSEQUENCES"
+ },
+ "find out": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "get along": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER II. Matthew Cuthbert Is Surprised"
+ },
+ "get around": {
+  "kind": "dialogue"
+ },
+ "get away": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "II"
+ },
+ "get back": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXVIII. An Unfortunate Lily Maid"
+ },
+ "get by": {
+  "kind": "dialogue"
+ },
+ "get in": {
+  "kind": "dialogue"
+ },
+ "get off": {
+  "kind": "dialogue"
+ },
+ "get on": {
+  "kind": "dialogue"
+ },
+ "get out": {
+  "kind": "dialogue"
+ },
+ "get over": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XV. A Tempest in the School Teapot"
+ },
+ "get rid of": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXVII. Vanity and Vexation of Spirit"
+ },
+ "get together": {
+  "kind": "dialogue"
+ },
+ "get up": {
+  "kind": "dialogue"
+ },
+ "give away": {
+  "kind": "dialogue"
+ },
+ "give back": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXX. The Queen’s Class Is Organized"
+ },
+ "give in": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER X. Anne’s Apology"
+ },
+ "give up": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "VI"
+ },
+ "go ahead": {
+  "kind": "quote",
+  "book": "Huckleberry Finn — Mark Twain",
+  "chapter": "CHAPTER II."
+ },
+ "go away": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXI. A New Departure in Flavorings"
+ },
+ "go back": {
+  "kind": "dialogue"
+ },
+ "go off": {
+  "kind": "dialogue"
+ },
+ "go on": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "go out": {
+  "kind": "dialogue"
+ },
+ "go over": {
+  "kind": "dialogue"
+ },
+ "grow up": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "hand in": {
+  "kind": "dialogue"
+ },
+ "hand out": {
+  "kind": "dialogue"
+ },
+ "hang on": {
+  "kind": "dialogue"
+ },
+ "hang out": {
+  "kind": "dialogue"
+ },
+ "hang up": {
+  "kind": "dialogue"
+ },
+ "hold on": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "V"
+ },
+ "hurry up": {
+  "kind": "dialogue"
+ },
+ "keep away": {
+  "kind": "quote",
+  "book": "The Wonderful Wizard of Oz — L. Frank Baum",
+  "chapter": "Chapter III"
+ },
+ "keep on": {
+  "kind": "dialogue"
+ },
+ "keep up": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXXIII"
+ },
+ "keep up with": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXXIII"
+ },
+ "kick off": {
+  "kind": "dialogue"
+ },
+ "leave out": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "LITERARY LESSONS"
+ },
+ "let down": {
+  "kind": "dialogue"
+ },
+ "let in": {
+  "kind": "dialogue"
+ },
+ "log in": {
+  "kind": "dialogue"
+ },
+ "log out": {
+  "kind": "dialogue"
+ },
+ "look after": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER IV. Morning at Green Gables"
+ },
+ "look around": {
+  "kind": "dialogue"
+ },
+ "look at": {
+  "kind": "dialogue"
+ },
+ "look for": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "V"
+ },
+ "look forward to": {
+  "kind": "dialogue"
+ },
+ "look into": {
+  "kind": "dialogue"
+ },
+ "look out": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER VIII."
+ },
+ "look up": {
+  "kind": "dialogue"
+ },
+ "look up to": {
+  "kind": "dialogue"
+ },
+ "make up": {
+  "kind": "dialogue"
+ },
+ "move in": {
+  "kind": "dialogue"
+ },
+ "move out": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "I."
+ },
+ "pass away": {
+  "kind": "dialogue"
+ },
+ "pass out": {
+  "kind": "dialogue"
+ },
+ "pay back": {
+  "kind": "dialogue"
+ },
+ "pick out": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXV. Matthew Insists on Puffed Sleeves"
+ },
+ "pick up": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "IV"
+ },
+ "point out": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE FLIGHT"
+ },
+ "put away": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXXII. The Pass List Is Out"
+ },
+ "put back": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE ISLAND COME TRUE"
+ },
+ "put down": {
+  "kind": "quote",
+  "book": "The Wonderful Wizard of Oz — L. Frank Baum",
+  "chapter": "Chapter XII"
+ },
+ "put off": {
+  "kind": "dialogue"
+ },
+ "put on": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "put out": {
+  "kind": "dialogue"
+ },
+ "put together": {
+  "kind": "dialogue"
+ },
+ "put up with": {
+  "kind": "dialogue"
+ },
+ "run into": {
+  "kind": "dialogue"
+ },
+ "run out": {
+  "kind": "dialogue"
+ },
+ "run out of": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER II"
+ },
+ "set off": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE FLIGHT"
+ },
+ "set up": {
+  "kind": "dialogue"
+ },
+ "show off": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE FLIGHT"
+ },
+ "show up": {
+  "kind": "quote",
+  "book": "The Jungle Book — Rudyard Kipling",
+  "chapter": "THE JUNGLE BOOK"
+ },
+ "shut down": {
+  "kind": "dialogue"
+ },
+ "sit down": {
+  "kind": "dialogue"
+ },
+ "slow down": {
+  "kind": "dialogue"
+ },
+ "sort out": {
+  "kind": "dialogue"
+ },
+ "speak up": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XII"
+ },
+ "stand up": {
+  "kind": "dialogue"
+ },
+ "stay up": {
+  "kind": "dialogue"
+ },
+ "take after": {
+  "kind": "dialogue"
+ },
+ "take away": {
+  "kind": "quote",
+  "book": "The Jungle Book — Rudyard Kipling",
+  "chapter": "Tiger! Tiger!"
+ },
+ "take back": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "LAZY LAURENCE"
+ },
+ "take off": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER III. Marilla Cuthbert Is Surprised"
+ },
+ "take on": {
+  "kind": "dialogue"
+ },
+ "take out": {
+  "kind": "dialogue"
+ },
+ "take over": {
+  "kind": "dialogue"
+ },
+ "take up": {
+  "kind": "dialogue"
+ },
+ "talk over": {
+  "kind": "dialogue"
+ },
+ "think over": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER IX. Mrs. Rachel Lynde Is Properly Horrified"
+ },
+ "throw away": {
+  "kind": "dialogue"
+ },
+ "try on": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XIV. Anne’s Confession"
+ },
+ "turn around": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXVII. Vanity and Vexation of Spirit"
+ },
+ "turn down": {
+  "kind": "quote",
+  "book": "A Christmas Carol — Charles Dickens",
+  "chapter": "STAVE II:  THE FIRST OF THE THREE SPIRITS"
+ },
+ "turn off": {
+  "kind": "dialogue"
+ },
+ "turn on": {
+  "kind": "dialogue"
+ },
+ "turn up": {
+  "kind": "dialogue"
+ },
+ "wake up": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER V. Anne’s History"
+ },
+ "warm up": {
+  "kind": "dialogue"
+ },
+ "watch out": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXVIII. An Unfortunate Lily Maid"
+ },
+ "work out": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "AUNT MARCH SETTLES THE QUESTION"
+ },
+ "write down": {
+  "kind": "dialogue"
+ },
+ "break into": {
+  "kind": "dialogue"
+ },
+ "break out": {
+  "kind": "dialogue"
+ },
+ "bring about": {
+  "kind": "dialogue"
+ },
+ "bring in": {
+  "kind": "dialogue"
+ },
+ "brush up on": {
+  "kind": "dialogue"
+ },
+ "build up": {
+  "kind": "dialogue"
+ },
+ "call for": {
+  "kind": "dialogue"
+ },
+ "call on": {
+  "kind": "dialogue"
+ },
+ "carry out": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "II."
+ },
+ "catch on": {
+  "kind": "dialogue"
+ },
+ "check up on": {
+  "kind": "dialogue"
+ },
+ "clear up": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "I."
+ },
+ "cut out": {
+  "kind": "dialogue"
+ },
+ "do without": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XI. Anne’s Impressions of Sunday-school"
+ },
+ "drop out": {
+  "kind": "dialogue"
+ },
+ "face up to": {
+  "kind": "dialogue"
+ },
+ "get across": {
+  "kind": "dialogue"
+ },
+ "get ahead": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XX. A Good Imagination Gone Wrong"
+ },
+ "get around to": {
+  "kind": "dialogue"
+ },
+ "get through": {
+  "kind": "dialogue"
+ },
+ "give out": {
+  "kind": "dialogue"
+ },
+ "go through": {
+  "kind": "dialogue"
+ },
+ "hold back": {
+  "kind": "dialogue"
+ },
+ "keep off": {
+  "kind": "dialogue"
+ },
+ "leave behind": {
+  "kind": "dialogue"
+ },
+ "live up to": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXV. Matthew Insists on Puffed Sleeves"
+ },
+ "make out": {
+  "kind": "dialogue"
+ },
+ "make up for": {
+  "kind": "dialogue"
+ },
+ "put aside": {
+  "kind": "dialogue"
+ },
+ "put forward": {
+  "kind": "dialogue"
+ },
+ "rule out": {
+  "kind": "dialogue"
+ },
+ "settle down": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER XI."
+ },
+ "stand for": {
+  "kind": "dialogue"
+ },
+ "stick to": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER V. Anne’s History"
+ },
+ "take in": {
+  "kind": "dialogue"
+ },
+ "turn into": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHORUS."
+ },
+ "wear out": {
+  "kind": "dialogue"
+ },
+ "work on": {
+  "kind": "dialogue"
+ },
+ "back down": {
+  "kind": "dialogue"
+ },
+ "blow up": {
+  "kind": "dialogue"
+ },
+ "break through": {
+  "kind": "dialogue"
+ },
+ "bring out": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXIV. Miss Stacy and Her Pupils Get Up a Concert"
+ },
+ "come along": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER II. Matthew Cuthbert Is Surprised"
+ },
+ "come down with": {
+  "kind": "dialogue"
+ },
+ "cut back on": {
+  "kind": "dialogue"
+ },
+ "get away with": {
+  "kind": "dialogue"
+ },
+ "get down to": {
+  "kind": "dialogue"
+ },
+ "go ahead with": {
+  "kind": "dialogue"
+ },
+ "go without": {
+  "kind": "dialogue"
+ },
+ "hold on to": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "V"
+ },
+ "keep track of": {
+  "kind": "dialogue"
+ },
+ "look back on": {
+  "kind": "dialogue"
+ },
+ "make a decision": {
+  "kind": "dialogue"
+ },
+ "make a mistake": {
+  "kind": "dialogue"
+ },
+ "make an effort": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "BEING NEIGHBORLY"
+ },
+ "make progress": {
+  "kind": "dialogue"
+ },
+ "make money": {
+  "kind": "dialogue"
+ },
+ "make a difference": {
+  "kind": "dialogue"
+ },
+ "make a choice": {
+  "kind": "dialogue"
+ },
+ "make a promise": {
+  "kind": "dialogue"
+ },
+ "make friends": {
+  "kind": "dialogue"
+ },
+ "make plans": {
+  "kind": "dialogue"
+ },
+ "do homework": {
+  "kind": "dialogue"
+ },
+ "do exercise": {
+  "kind": "dialogue"
+ },
+ "do business": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "III. A CASE OF IDENTITY"
+ },
+ "do your best": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "CASTLES IN THE AIR"
+ },
+ "do someone a favor": {
+  "kind": "dialogue"
+ },
+ "do research": {
+  "kind": "dialogue"
+ },
+ "do the shopping": {
+  "kind": "dialogue"
+ },
+ "do the dishes": {
+  "kind": "dialogue"
+ },
+ "do a good job": {
+  "kind": "dialogue"
+ },
+ "do damage": {
+  "kind": "dialogue"
+ },
+ "have a good time": {
+  "kind": "dialogue"
+ },
+ "have a conversation": {
+  "kind": "dialogue"
+ },
+ "have a chance": {
+  "kind": "dialogue"
+ },
+ "take a break": {
+  "kind": "dialogue"
+ },
+ "take a look": {
+  "kind": "dialogue"
+ },
+ "take notes": {
+  "kind": "dialogue"
+ },
+ "take responsibility": {
+  "kind": "dialogue"
+ },
+ "get ready": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "get married": {
+  "kind": "quote",
+  "book": "A Christmas Carol — Charles Dickens",
+  "chapter": "STAVE I:  MARLEY'S GHOST"
+ },
+ "get better": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE LITTLE HOUSE"
+ },
+ "heavy rain": {
+  "kind": "dialogue"
+ },
+ "strong coffee": {
+  "kind": "dialogue"
+ },
+ "deep sleep": {
+  "kind": "dialogue"
+ },
+ "close friend": {
+  "kind": "dialogue"
+ },
+ "high probability": {
+  "kind": "dialogue"
+ },
+ "serious problem": {
+  "kind": "dialogue"
+ },
+ "great opportunity": {
+  "kind": "dialogue"
+ },
+ "hard work": {
+  "kind": "dialogue"
+ },
+ "fast food": {
+  "kind": "dialogue"
+ },
+ "common mistake": {
+  "kind": "dialogue"
+ },
+ "highly recommended": {
+  "kind": "dialogue"
+ },
+ "deeply worried": {
+  "kind": "dialogue"
+ },
+ "completely different": {
+  "kind": "dialogue"
+ },
+ "perfectly normal": {
+  "kind": "dialogue"
+ },
+ "fully aware": {
+  "kind": "dialogue"
+ },
+ "absolutely necessary": {
+  "kind": "dialogue"
+ },
+ "extremely difficult": {
+  "kind": "dialogue"
+ },
+ "widely available": {
+  "kind": "dialogue"
+ },
+ "closely related": {
+  "kind": "dialogue"
+ },
+ "strongly recommended": {
+  "kind": "dialogue"
+ },
+ "interested in": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XI. Anne’s Impressions of Sunday-school"
+ },
+ "good at": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXI. A New Departure in Flavorings"
+ },
+ "bad at": {
+  "kind": "dialogue"
+ },
+ "afraid of": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "II"
+ },
+ "proud of": {
+  "kind": "dialogue"
+ },
+ "worried about": {
+  "kind": "dialogue"
+ },
+ "responsible for": {
+  "kind": "dialogue"
+ },
+ "famous for": {
+  "kind": "dialogue"
+ },
+ "different from": {
+  "kind": "dialogue"
+ },
+ "similar to": {
+  "kind": "dialogue"
+ },
+ "ready for": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "angry with": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE RETURN HOME"
+ },
+ "pleased with": {
+  "kind": "dialogue"
+ },
+ "surprised by/at": {
+  "kind": "dialogue"
+ },
+ "tired of": {
+  "kind": "dialogue"
+ },
+ "depend on": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XIX. A Concert, a Catastrophe, and a Confession"
+ },
+ "belong to": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER II. Matthew Cuthbert Is Surprised"
+ },
+ "listen to": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER II. Matthew Cuthbert Is Surprised"
+ },
+ "wait for": {
+  "kind": "dialogue"
+ },
+ "pay for": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XIX. A Concert, a Catastrophe, and a Confession"
+ },
+ "ask for": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE SHADOW"
+ },
+ "agree with": {
+  "kind": "dialogue"
+ },
+ "apologize for": {
+  "kind": "dialogue"
+ },
+ "apply for": {
+  "kind": "dialogue"
+ },
+ "believe in": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XV. A Tempest in the School Teapot"
+ },
+ "care about": {
+  "kind": "dialogue"
+ },
+ "complain about": {
+  "kind": "dialogue"
+ },
+ "concentrate on": {
+  "kind": "dialogue"
+ },
+ "consist of": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE HOME UNDER THE GROUND"
+ },
+ "focus on": {
+  "kind": "dialogue"
+ },
+ "laugh at": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER II. Matthew Cuthbert Is Surprised"
+ },
+ "refer to": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "III."
+ },
+ "rely on": {
+  "kind": "dialogue"
+ },
+ "suffer from": {
+  "kind": "dialogue"
+ },
+ "think about": {
+  "kind": "dialogue"
+ },
+ "talk about": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER III."
+ },
+ "reason for": {
+  "kind": "dialogue"
+ },
+ "solution to": {
+  "kind": "dialogue"
+ },
+ "answer to": {
+  "kind": "dialogue"
+ },
+ "increase in": {
+  "kind": "dialogue"
+ },
+ "difference between": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER IX. Mrs. Rachel Lynde Is Properly Horrified"
+ },
+ "relationship with": {
+  "kind": "dialogue"
+ },
+ "problem with": {
+  "kind": "dialogue"
+ },
+ "need for": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXXVIII. The Bend in the Road"
+ },
+ "experience with": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER IX. Mrs. Rachel Lynde Is Properly Horrified"
+ },
+ "advantage of": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXVI. The Story Club Is Formed"
+ },
+ "a piece of cake": {
+  "kind": "dialogue"
+ },
+ "break the ice": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "CAMP LAURENCE"
+ },
+ "call it a day": {
+  "kind": "dialogue"
+ },
+ "cost an arm and a leg": {
+  "kind": "dialogue"
+ },
+ "get out of hand": {
+  "kind": "dialogue"
+ },
+ "give someone a hand": {
+  "kind": "dialogue"
+ },
+ "hang in there": {
+  "kind": "dialogue"
+ },
+ "hit the nail on the head": {
+  "kind": "dialogue"
+ },
+ "in the same boat": {
+  "kind": "dialogue"
+ },
+ "keep an eye on": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE RETURN HOME"
+ },
+ "learn the hard way": {
+  "kind": "dialogue"
+ },
+ "miss the point": {
+  "kind": "dialogue"
+ },
+ "on the right track": {
+  "kind": "dialogue"
+ },
+ "out of the blue": {
+  "kind": "dialogue"
+ },
+ "pull someone's leg": {
+  "kind": "dialogue"
+ },
+ "see eye to eye": {
+  "kind": "dialogue"
+ },
+ "so far, so good": {
+  "kind": "dialogue"
+ },
+ "speak of the devil": {
+  "kind": "dialogue"
+ },
+ "take your time": {
+  "kind": "dialogue"
+ },
+ "the last straw": {
+  "kind": "dialogue"
+ },
+ "under the weather": {
+  "kind": "dialogue"
+ },
+ "up in the air": {
+  "kind": "dialogue"
+ },
+ "better late than never": {
+  "kind": "dialogue"
+ },
+ "easier said than done": {
+  "kind": "dialogue"
+ },
+ "once in a blue moon": {
+  "kind": "dialogue"
+ },
+ "get the hang of it": {
+  "kind": "dialogue"
+ },
+ "go the extra mile": {
+  "kind": "dialogue"
+ },
+ "make up your mind": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XIV. Anne’s Confession"
+ },
+ "no big deal": {
+  "kind": "dialogue"
+ },
+ "on the same page": {
+  "kind": "dialogue"
+ },
+ "ring a bell": {
+  "kind": "dialogue"
+ },
+ "take it easy": {
+  "kind": "dialogue"
+ },
+ "think outside the box": {
+  "kind": "dialogue"
+ },
+ "time flies": {
+  "kind": "dialogue"
+ },
+ "worth a shot": {
+  "kind": "dialogue"
+ },
+ "be": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "become": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHORUS."
+ },
+ "begin": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHORUS."
+ },
+ "bend": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXVI"
+ },
+ "bite": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XI"
+ },
+ "bleed": {
+  "kind": "dialogue"
+ },
+ "blow": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXI"
+ },
+ "break": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "III"
+ },
+ "bring": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "I"
+ },
+ "build": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XV. A Tempest in the School Teapot"
+ },
+ "burn": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XVIII. Anne to the Rescue"
+ },
+ "buy": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "I"
+ },
+ "catch": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "choose": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXI"
+ },
+ "come": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "cost": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXVI"
+ },
+ "cut": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER VIII."
+ },
+ "dig": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXVI"
+ },
+ "do": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "draw": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "II"
+ },
+ "drink": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "III"
+ },
+ "drive": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IX."
+ },
+ "eat": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "fall": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "feed": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER IX. Mrs. Rachel Lynde Is Properly Horrified"
+ },
+ "feel": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER III."
+ },
+ "fight": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "VII"
+ },
+ "find": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "fly": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XIX"
+ },
+ "forget": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "forgive": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXXIV"
+ },
+ "freeze": {
+  "kind": "quote",
+  "book": "Huckleberry Finn — Mark Twain",
+  "chapter": "CHAPTER XVI."
+ },
+ "get": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "give": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "go": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "grow": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "hang": {
+  "kind": "dialogue"
+ },
+ "have": {
+  "kind": "dialogue"
+ },
+ "hear": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "hide": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XII"
+ },
+ "hit": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXXI"
+ },
+ "hold": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IX."
+ },
+ "hurt": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "II"
+ },
+ "keep": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER V."
+ },
+ "know": {
+  "kind": "dialogue"
+ },
+ "lay": {
+  "kind": "dialogue"
+ },
+ "lead": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER VII."
+ },
+ "leave": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER III."
+ },
+ "lend": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER V. Anne’s History"
+ },
+ "let": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "lie": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "III"
+ },
+ "light": {
+  "kind": "dialogue"
+ },
+ "lose": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER III.   A Caucus-Race and a Long Tale"
+ },
+ "make": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "mean": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "III"
+ },
+ "meet": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER III."
+ },
+ "pay": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "VIII"
+ },
+ "put": {
+  "kind": "dialogue"
+ },
+ "quit": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER XII"
+ },
+ "read": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER XI."
+ },
+ "ride": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "V"
+ },
+ "ring": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "VI"
+ },
+ "rise": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "III"
+ },
+ "run": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "say": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "see": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "sell": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XI"
+ },
+ "send": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XII"
+ },
+ "set": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER X."
+ },
+ "shake": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER VII."
+ },
+ "shine": {
+  "kind": "dialogue"
+ },
+ "shoot": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXI"
+ },
+ "show": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "shut": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER X."
+ },
+ "sing": {
+  "kind": "dialogue"
+ },
+ "sink": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XIX"
+ },
+ "sit": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "III"
+ },
+ "sleep": {
+  "kind": "dialogue"
+ },
+ "slide": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXVII. Vanity and Vexation of Spirit"
+ },
+ "speak": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "spend": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XVI. Diana Is Invited to Tea with Tragic Results"
+ },
+ "split": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXVIII"
+ },
+ "stand": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER XI."
+ },
+ "steal": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XIV. Anne’s Confession"
+ },
+ "stick": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "V"
+ },
+ "strike": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XVIII"
+ },
+ "swear": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "V"
+ },
+ "sweep": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER IX. Mrs. Rachel Lynde Is Properly Horrified"
+ },
+ "swim": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "Chapter XV."
+ },
+ "take": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "teach": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXVIII"
+ },
+ "tear": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXVIII"
+ },
+ "tell": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER II."
+ },
+ "think": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "throw": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER X."
+ },
+ "understand": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER VII."
+ },
+ "wake": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XII"
+ },
+ "wear": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXVIII"
+ },
+ "win": {
+  "kind": "dialogue"
+ },
+ "write": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "how's it going?": {
+  "kind": "dialogue"
+ },
+ "nice to meet you": {
+  "kind": "dialogue"
+ },
+ "long time no see": {
+  "kind": "dialogue"
+ },
+ "what have you been up to?": {
+  "kind": "dialogue"
+ },
+ "how have you been?": {
+  "kind": "dialogue"
+ },
+ "it's good to see you": {
+  "kind": "dialogue"
+ },
+ "say hello to": {
+  "kind": "dialogue"
+ },
+ "give my regards to": {
+  "kind": "dialogue"
+ },
+ "make yourself at home": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "CHAPTER THIRTY-THREE"
+ },
+ "help yourself": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXI"
+ },
+ "mind if i join you?": {
+  "kind": "dialogue"
+ },
+ "i was just leaving": {
+  "kind": "dialogue"
+ },
+ "see you around": {
+  "kind": "dialogue"
+ },
+ "take care": {
+  "kind": "dialogue"
+ },
+ "have a good one": {
+  "kind": "dialogue"
+ },
+ "sleep well": {
+  "kind": "dialogue"
+ },
+ "enjoy your weekend": {
+  "kind": "dialogue"
+ },
+ "good luck with": {
+  "kind": "dialogue"
+ },
+ "happy birthday": {
+  "kind": "dialogue"
+ },
+ "congratulations on": {
+  "kind": "dialogue"
+ },
+ "sorry i'm late": {
+  "kind": "dialogue"
+ },
+ "no worries": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "PLAYING PILGRIMS"
+ },
+ "that's a shame": {
+  "kind": "dialogue"
+ },
+ "what a surprise": {
+  "kind": "dialogue"
+ },
+ "i can't believe it": {
+  "kind": "dialogue"
+ },
+ "could you help me?": {
+  "kind": "dialogue"
+ },
+ "would you mind waiting?": {
+  "kind": "dialogue"
+ },
+ "can i ask you a favor?": {
+  "kind": "dialogue"
+ },
+ "do you mind if i sit here?": {
+  "kind": "dialogue"
+ },
+ "i'd appreciate it if you could": {
+  "kind": "dialogue"
+ },
+ "after you": {
+  "kind": "dialogue"
+ },
+ "excuse me": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "IX"
+ },
+ "pardon me": {
+  "kind": "dialogue"
+ },
+ "i'm sorry to bother you": {
+  "kind": "dialogue"
+ },
+ "could i have a receipt?": {
+  "kind": "dialogue"
+ },
+ "may i come in?": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "CASTLES IN THE AIR"
+ },
+ "would it be possible to reschedule?": {
+  "kind": "dialogue"
+ },
+ "thanks anyway": {
+  "kind": "dialogue"
+ },
+ "you're welcome": {
+  "kind": "dialogue"
+ },
+ "don't mention it": {
+  "kind": "dialogue"
+ },
+ "my pleasure": {
+  "kind": "dialogue"
+ },
+ "that's very kind of you": {
+  "kind": "dialogue"
+ },
+ "i owe you one": {
+  "kind": "dialogue"
+ },
+ "could you do me a favor?": {
+  "kind": "dialogue"
+ },
+ "let me know": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "III. A CASE OF IDENTITY"
+ },
+ "feel free to ask": {
+  "kind": "dialogue"
+ },
+ "there's no rush": {
+  "kind": "dialogue"
+ },
+ "whenever you're ready": {
+  "kind": "dialogue"
+ },
+ "that would be great": {
+  "kind": "dialogue"
+ },
+ "i really appreciate it": {
+  "kind": "dialogue"
+ },
+ "i'm on my way": {
+  "kind": "dialogue"
+ },
+ "i'm running late": {
+  "kind": "dialogue"
+ },
+ "i'll be right back": {
+  "kind": "dialogue"
+ },
+ "be there in a minute": {
+  "kind": "dialogue"
+ },
+ "i'm almost ready": {
+  "kind": "dialogue"
+ },
+ "the door is locked": {
+  "kind": "dialogue"
+ },
+ "the lights are on": {
+  "kind": "dialogue"
+ },
+ "the power is out": {
+  "kind": "dialogue"
+ },
+ "the water is boiling": {
+  "kind": "dialogue"
+ },
+ "dinner is ready": {
+  "kind": "dialogue"
+ },
+ "the laundry needs doing": {
+  "kind": "dialogue"
+ },
+ "the trash needs taking out": {
+  "kind": "dialogue"
+ },
+ "the house is a mess": {
+  "kind": "dialogue"
+ },
+ "the bed needs making": {
+  "kind": "dialogue"
+ },
+ "the table is set": {
+  "kind": "dialogue"
+ },
+ "the dishes are clean": {
+  "kind": "dialogue"
+ },
+ "the shower is free": {
+  "kind": "dialogue"
+ },
+ "we're out of milk": {
+  "kind": "dialogue"
+ },
+ "the fridge is empty": {
+  "kind": "dialogue"
+ },
+ "the keys are on the counter": {
+  "kind": "dialogue"
+ },
+ "could you feed the cat?": {
+  "kind": "dialogue"
+ },
+ "it's time to leave": {
+  "kind": "dialogue"
+ },
+ "i need some fresh air": {
+  "kind": "dialogue"
+ },
+ "the window is open": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE RETURN HOME"
+ },
+ "the floor is wet": {
+  "kind": "dialogue"
+ },
+ "how much is it?": {
+  "kind": "dialogue"
+ },
+ "i'm just looking, thanks": {
+  "kind": "dialogue"
+ },
+ "do you have this in a larger size?": {
+  "kind": "dialogue"
+ },
+ "can i try it on?": {
+  "kind": "dialogue"
+ },
+ "where is the fitting room?": {
+  "kind": "dialogue"
+ },
+ "i'd like to return this": {
+  "kind": "dialogue"
+ },
+ "can i pay by card?": {
+  "kind": "dialogue"
+ },
+ "could i get the bill, please?": {
+  "kind": "dialogue"
+ },
+ "is service included?": {
+  "kind": "dialogue"
+ },
+ "i'd like a table for two": {
+  "kind": "dialogue"
+ },
+ "could we see the menu?": {
+  "kind": "dialogue"
+ },
+ "what do you recommend?": {
+  "kind": "dialogue"
+ },
+ "i'll have the chicken": {
+  "kind": "dialogue"
+ },
+ "can i get this to go?": {
+  "kind": "dialogue"
+ },
+ "no ice, please": {
+  "kind": "dialogue"
+ },
+ "could i have the check?": {
+  "kind": "dialogue"
+ },
+ "keep the change": {
+  "kind": "dialogue"
+ },
+ "is there a discount?": {
+  "kind": "dialogue"
+ },
+ "do you have anything cheaper?": {
+  "kind": "dialogue"
+ },
+ "i'd like to make an appointment": {
+  "kind": "dialogue"
+ },
+ "is there a waiting list?": {
+  "kind": "dialogue"
+ },
+ "i have a reservation": {
+  "kind": "dialogue"
+ },
+ "can you deliver it?": {
+  "kind": "dialogue"
+ },
+ "i'd like a refund": {
+  "kind": "dialogue"
+ },
+ "the card machine isn't working": {
+  "kind": "dialogue"
+ },
+ "where is the nearest station?": {
+  "kind": "dialogue"
+ },
+ "which platform does it leave from?": {
+  "kind": "dialogue"
+ },
+ "what time does the bus arrive?": {
+  "kind": "dialogue"
+ },
+ "is this seat taken?": {
+  "kind": "dialogue"
+ },
+ "could you tell me the way?": {
+  "kind": "dialogue"
+ },
+ "how far is it from here?": {
+  "kind": "dialogue"
+ },
+ "turn left at the corner": {
+  "kind": "dialogue"
+ },
+ "go straight ahead": {
+  "kind": "dialogue"
+ },
+ "is it within walking distance?": {
+  "kind": "dialogue"
+ },
+ "i think i'm lost": {
+  "kind": "dialogue"
+ },
+ "can you show me on the map?": {
+  "kind": "dialogue"
+ },
+ "is there a direct train?": {
+  "kind": "dialogue"
+ },
+ "do i need to change trains?": {
+  "kind": "dialogue"
+ },
+ "where can i buy a ticket?": {
+  "kind": "dialogue"
+ },
+ "i'd like a single ticket": {
+  "kind": "dialogue"
+ },
+ "i'd like a return ticket": {
+  "kind": "dialogue"
+ },
+ "is the flight on time?": {
+  "kind": "dialogue"
+ },
+ "where is the baggage claim?": {
+  "kind": "dialogue"
+ },
+ "my luggage is missing": {
+  "kind": "dialogue"
+ },
+ "can i leave my bag here?": {
+  "kind": "dialogue"
+ },
+ "is breakfast included?": {
+  "kind": "dialogue"
+ },
+ "what is the wi-fi password?": {
+  "kind": "dialogue"
+ },
+ "could i get a taxi?": {
+  "kind": "dialogue"
+ },
+ "please stop here": {
+  "kind": "dialogue"
+ },
+ "how do i get to the airport?": {
+  "kind": "dialogue"
+ },
+ "i'm looking for a job": {
+  "kind": "dialogue"
+ },
+ "i have an interview tomorrow": {
+  "kind": "dialogue"
+ },
+ "when does the meeting start?": {
+  "kind": "dialogue"
+ },
+ "could we move the meeting?": {
+  "kind": "dialogue"
+ },
+ "i'm available this afternoon": {
+  "kind": "dialogue"
+ },
+ "i'm tied up right now": {
+  "kind": "dialogue"
+ },
+ "i'll get back to you": {
+  "kind": "dialogue"
+ },
+ "let's keep in touch": {
+  "kind": "dialogue"
+ },
+ "i'm working from home": {
+  "kind": "dialogue"
+ },
+ "can we talk later?": {
+  "kind": "dialogue"
+ },
+ "i'll send you an email": {
+  "kind": "dialogue"
+ },
+ "please find the attachment": {
+  "kind": "dialogue"
+ },
+ "i need more time": {
+  "kind": "dialogue"
+ },
+ "the deadline is tomorrow": {
+  "kind": "dialogue"
+ },
+ "i'm running behind schedule": {
+  "kind": "dialogue"
+ },
+ "something came up": {
+  "kind": "dialogue"
+ },
+ "the printer isn't working": {
+  "kind": "dialogue"
+ },
+ "the internet is down": {
+  "kind": "dialogue"
+ },
+ "my computer froze": {
+  "kind": "dialogue"
+ },
+ "i can't log in": {
+  "kind": "dialogue"
+ },
+ "the file won't open": {
+  "kind": "dialogue"
+ },
+ "i need to cancel": {
+  "kind": "dialogue"
+ },
+ "can we reschedule?": {
+  "kind": "dialogue"
+ },
+ "that doesn't work for me": {
+  "kind": "dialogue"
+ },
+ "i'll consider it": {
+  "kind": "dialogue"
+ },
+ "act": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XX"
+ },
+ "achieve": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER XXIV"
+ },
+ "agree": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXIX. An Epoch in Anne’s Life"
+ },
+ "amaze": {
+  "kind": "quote",
+  "book": "The Time Machine — H. G. Wells",
+  "chapter": "XII."
+ },
+ "announce": {
+  "kind": "dialogue"
+ },
+ "appear": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXVII"
+ },
+ "apply": {
+  "kind": "quote",
+  "book": "A Christmas Carol — Charles Dickens",
+  "chapter": "STAVE I:  MARLEY'S GHOST"
+ },
+ "argue": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER IV. Morning at Green Gables"
+ },
+ "arrange": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXVIII. An Unfortunate Lily Maid"
+ },
+ "attend": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "X"
+ },
+ "attract": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "IV. THE BOSCOMBE VALLEY MYSTERY"
+ },
+ "avoid": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "I"
+ },
+ "believe": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "III"
+ },
+ "benefit": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXI. A New Departure in Flavorings"
+ },
+ "care": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "VI"
+ },
+ "communicate": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "X. THE ADVENTURE OF THE NOBLE BACHELOR"
+ },
+ "compete": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE HOME UNDER THE GROUND"
+ },
+ "complete": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXXVIII. The Bend in the Road"
+ },
+ "confuse": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXXII. The Pass List Is Out"
+ },
+ "connect": {
+  "kind": "dialogue"
+ },
+ "consider": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XX"
+ },
+ "create": {
+  "kind": "quote",
+  "book": "Frankenstein — Mary Shelley",
+  "chapter": "Chapter 17"
+ },
+ "decide": {
+  "kind": "quote",
+  "book": "A Christmas Carol — Charles Dickens",
+  "chapter": "STAVE III:  THE SECOND OF THE THREE SPIRITS"
+ },
+ "describe": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XIV. Anne’s Confession"
+ },
+ "develop": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "II. THE RED-HEADED LEAGUE"
+ },
+ "differ": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "MEG GOES TO VANITY FAIR"
+ },
+ "educate": {
+  "kind": "quote",
+  "book": "Frankenstein — Mary Shelley",
+  "chapter": "Chapter 16"
+ },
+ "employ": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "IV. THE BOSCOMBE VALLEY MYSTERY"
+ },
+ "encourage": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXI"
+ },
+ "enjoy": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "VI"
+ },
+ "entertain": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER XXIX"
+ },
+ "excite": {
+  "kind": "dialogue"
+ },
+ "exist": {
+  "kind": "quote",
+  "book": "The Time Machine — H. G. Wells",
+  "chapter": "I."
+ },
+ "expect": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "X"
+ },
+ "explain": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "express": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XXV"
+ },
+ "fail": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XIV. Anne’s Confession"
+ },
+ "friend": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER X."
+ },
+ "help": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IV."
+ },
+ "imagine": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER XI."
+ },
+ "improve": {
+  "kind": "quote",
+  "book": "A Christmas Carol — Charles Dickens",
+  "chapter": "STAVE II:  THE FIRST OF THE THREE SPIRITS"
+ },
+ "inform": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE SHADOW"
+ },
+ "instruct": {
+  "kind": "dialogue"
+ },
+ "intend": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "IV. THE BOSCOMBE VALLEY MYSTERY"
+ },
+ "interest": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XV"
+ },
+ "invite": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "AUNT MARCH SETTLES THE QUESTION"
+ },
+ "manage": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ },
+ "motivate": {
+  "kind": "dialogue"
+ },
+ "organize": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXX. The Queen’s Class Is Organized"
+ },
+ "perform": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "VI. THE MAN WITH THE TWISTED LIP"
+ },
+ "permit": {
+  "kind": "quote",
+  "book": "The Wonderful Wizard of Oz — L. Frank Baum",
+  "chapter": "Chapter IX"
+ },
+ "please": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER III."
+ },
+ "pollute": {
+  "kind": "dialogue"
+ },
+ "predict": {
+  "kind": "dialogue"
+ },
+ "prefer": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XI. Anne’s Impressions of Sunday-school"
+ },
+ "prepare": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "CHAPTER THIRTY-SIX"
+ },
+ "prevent": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER II. Matthew Cuthbert Is Surprised"
+ },
+ "produce": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "IX"
+ },
+ "protect": {
+  "kind": "quote",
+  "book": "The Jungle Book — Rudyard Kipling",
+  "chapter": "Tiger! Tiger!"
+ },
+ "react": {
+  "kind": "dialogue"
+ },
+ "relate": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "X. THE ADVENTURE OF THE NOBLE BACHELOR"
+ },
+ "relax": {
+  "kind": "quote",
+  "book": "The Call of the Wild — Jack London",
+  "chapter": "Chapter I. Into the Primitive"
+ },
+ "rely": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XIII"
+ },
+ "respond": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "Chapter XI."
+ },
+ "satisfy": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "I."
+ },
+ "solve": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "X"
+ },
+ "succeed": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXX. The Queen’s Class Is Organized"
+ },
+ "suggest": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "V. THE FIVE ORANGE PIPS"
+ },
+ "surprise": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER XI."
+ },
+ "use": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER VI."
+ },
+ "vary": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "PETER BREAKS THROUGH"
+ },
+ "wonder": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER I."
+ }
+}
