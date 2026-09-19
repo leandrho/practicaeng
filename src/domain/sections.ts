@@ -10,6 +10,16 @@ export const SECTIONS = [
 
 export type Section = (typeof SECTIONS)[number];
 
+export const SECTION_LABELS: Record<Section, string> = {
+  "phrasal-verbs": "Phrasal verbs",
+  collocations: "Collocations",
+  prepositions: "Prepositions",
+  idioms: "Idioms & Expressions",
+  "irregular-verbs": "Irregular Verbs",
+  "word-formation": "Word Formation",
+  "everyday-phrases": "Everyday Phrases",
+};
+
 export const SECTION_FILES: Record<Section, string> = {
   "phrasal-verbs": "data/phrasal-verbs-b1-b2-200.md",
   collocations: "data/collocations-b1-b2.md",

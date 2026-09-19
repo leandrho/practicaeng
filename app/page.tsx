@@ -63,6 +63,22 @@ const sections = [
 
 const total = sections.reduce((sum, section) => sum + section.count, 0);
 
+const mixedCount = sections
+  .filter((section) => section.unit === "cards")
+  .reduce((sum, section) => sum + section.count, 0);
+
+const gridSections = [
+  ...sections,
+  {
+    href: "/mixed",
+    name: "Mixed Practice",
+    detail: "All sections shuffled",
+    count: mixedCount,
+    unit: "cards",
+    accent: "var(--accent-mixed)",
+  },
+];
+
 export default function HomePage() {
   return (
     <main className="home" id="contenido">
@@ -73,7 +89,7 @@ export default function HomePage() {
           reveal, compare, repeat.
         </p>
         <p className="home-hero__meta">
-          {total} cards · {sections.length} sections
+          {total} cards · {gridSections.length} sections
         </p>
         <div
           className="session-bar"
@@ -92,7 +108,7 @@ export default function HomePage() {
         </div>
       </section>
       <ul className="section-grid">
-        {sections.map((section) => (
+        {gridSections.map((section) => (
           <li key={section.href}>
             <Link
               className="section-card"

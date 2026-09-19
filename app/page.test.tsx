@@ -8,12 +8,20 @@ import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 afterEach(cleanup);
 
 describe("HomePage", () => {
-  it("shows the hero, seven sections with correct counts, and working links", () => {
+  it("shows the hero, eight sections with correct counts, and working links", () => {
     render(<HomePage />);
 
     expect(
       screen.getByRole("heading", { name: "Practice English" }),
     ).not.toBeNull();
+
+    const mixedCount =
+      contentRepository.getCards("phrasal-verbs").length +
+      contentRepository.getCards("collocations").length +
+      contentRepository.getCards("prepositions").length +
+      contentRepository.getCards("idioms").length +
+      contentRepository.getCards("irregular-verbs").length +
+      contentRepository.getCards("everyday-phrases").length;
 
     const expected: Array<[string, number]> = [
       ["Phrasal verbs", contentRepository.getCards("phrasal-verbs").length],
@@ -23,10 +31,11 @@ describe("HomePage", () => {
       ["Irregular Verbs", contentRepository.getCards("irregular-verbs").length],
       ["Word Formation", getWordFamilies().length],
       ["Everyday Phrases", contentRepository.getCards("everyday-phrases").length],
+      ["Mixed Practice", mixedCount],
     ];
 
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(7);
+    expect(links).toHaveLength(8);
 
     for (const [name, count] of expected) {
       const link = screen.getByRole("link", {

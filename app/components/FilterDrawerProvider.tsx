@@ -13,11 +13,21 @@ import {
 } from "react";
 import type { Filter, Filterable } from "../../src/application/filterCards";
 import { FiltersContent } from "./FiltersContent";
+import { SlidersIcon } from "./ui/SlidersIcon";
+
+export type OrderMode = "shuffled" | "ordered";
+
+export type OrderControls = {
+  mode: OrderMode;
+  onModeChange: (mode: OrderMode) => void;
+};
 
 export type PracticeFilters = {
   cards: readonly Filterable[];
   filter: Filter;
   pathname: string;
+  order?: OrderControls;
+  hideFilters?: boolean;
 };
 
 type FilterDrawerContextValue = {
@@ -25,6 +35,7 @@ type FilterDrawerContextValue = {
   open: boolean;
   panelId: string;
   register: (config: PracticeFilters) => void;
+  updateFilters: (config: PracticeFilters) => void;
   unregister: () => void;
   setTrigger: (element: HTMLButtonElement | null) => void;
   openDrawer: () => void;
@@ -69,7 +80,10 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
 
   const register = useCallback((next: PracticeFilters) => {
     setConfig(next);
-    setOpen(false);
+  }, []);
+
+  const updateFilters = useCallback((next: PracticeFilters) => {
+    setConfig(next);
   }, []);
 
   const unregister = useCallback(() => {
@@ -105,6 +119,7 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
       open,
       panelId,
       register,
+      updateFilters,
       unregister,
       setTrigger,
       openDrawer,
@@ -115,6 +130,7 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
       open,
       panelId,
       register,
+      updateFilters,
       unregister,
       setTrigger,
       openDrawer,
@@ -141,13 +157,13 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
             className="filters-drawer__panel"
             role="dialog"
             aria-modal="true"
-            aria-label="Filters"
+            aria-label="Filters & Order"
             data-open={open}
             aria-hidden={!open}
             inert={!open}
           >
             <div className="filters-drawer__header">
-              <h2 className="filters-drawer__title">Filters</h2>
+              <h2 className="filters-drawer__title">Filters & Order</h2>
               <button
                 type="button"
                 ref={closeRef}
@@ -163,6 +179,8 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
               filter={config.filter}
               pathname={config.pathname}
               onNavigate={closeDrawer}
+              order={config.order}
+              hideFilters={config.hideFilters}
             />
           </div>
         </>
@@ -186,23 +204,32 @@ export function HeaderFilterButton() {
       className="btn btn--ghost site-header__filters"
       aria-expanded={open}
       aria-controls={panelId}
+      aria-label="Filters & Order"
       onClick={openDrawer}
     >
-      Filters
+      <SlidersIcon />
     </button>
   );
 }
 
 export function RegisterPracticeFilters(config: PracticeFilters) {
-  const { register, unregister } = useFilterDrawerContext();
-  const { cards, filter, pathname } = config;
+  const { register, updateFilters, unregister } = useFilterDrawerContext();
+  const { cards, filter, pathname, order, hideFilters } = config;
 
+  // Alta al montar la página y baja al salir (ahí sí se cierra el drawer).
   useEffect(() => {
-    register({ cards, filter, pathname });
+    register({ cards, filter, pathname, order, hideFilters });
     return () => {
       unregister();
     };
-  }, [register, unregister, cards, filter, pathname]);
+    // Intencionalmente una sola vez por página; los cambios van por updateFilters.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [register, unregister]);
+
+  // Cambios de filtros u orden: actualiza el contenido sin cerrar el drawer.
+  useEffect(() => {
+    updateFilters({ cards, filter, pathname, order, hideFilters });
+  }, [updateFilters, cards, filter, pathname, order, hideFilters]);
 
   return null;
 }

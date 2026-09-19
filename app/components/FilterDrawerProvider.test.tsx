@@ -35,19 +35,19 @@ describe("FilterDrawerProvider", () => {
       </FilterDrawerProvider>,
     );
 
-    expect(screen.queryByRole("button", { name: "Filters" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Filters & Order" })).toBeNull();
     expect(screen.queryByRole("dialog")).toBeNull();
   });
 
   it("shows the button after filters register and opens and closes with Escape", () => {
     renderWithFilters();
 
-    const trigger = screen.getByRole("button", { name: "Filters" });
+    const trigger = screen.getByRole("button", { name: "Filters & Order" });
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
 
     fireEvent.click(trigger);
     expect(trigger.getAttribute("aria-expanded")).toBe("true");
-    expect(screen.getByRole("dialog", { name: "Filters" })).not.toBeNull();
+    expect(screen.getByRole("dialog", { name: "Filters & Order" })).not.toBeNull();
     expect(
       screen.getByRole("link", { name: "MAKE" }).getAttribute("href"),
     ).toBe("/collocations?category=MAKE");
@@ -60,7 +60,7 @@ describe("FilterDrawerProvider", () => {
   it("closes with the close button, overlay, and a chip click", () => {
     renderWithFilters();
 
-    const trigger = screen.getByRole("button", { name: "Filters" });
+    const trigger = screen.getByRole("button", { name: "Filters & Order" });
     fireEvent.click(trigger);
     fireEvent.click(screen.getByRole("button", { name: "Close filters" }));
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
@@ -78,7 +78,7 @@ describe("FilterDrawerProvider", () => {
 
   it("hides the button when registration unmounts", () => {
     const { unmount } = renderWithFilters();
-    expect(screen.getByRole("button", { name: "Filters" })).not.toBeNull();
+    expect(screen.getByRole("button", { name: "Filters & Order" })).not.toBeNull();
 
     unmount();
     cleanup();
@@ -87,6 +87,6 @@ describe("FilterDrawerProvider", () => {
         <HeaderFilterButton />
       </FilterDrawerProvider>,
     );
-    expect(screen.queryByRole("button", { name: "Filters" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Filters & Order" })).toBeNull();
   });
 });

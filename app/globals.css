@@ -27,6 +27,7 @@
   --accent-irregular-verbs: #a21caf;
   --accent-word-formation: #1d4ed8;
   --accent-everyday-phrases: #0e7490;
+  --accent-mixed: #15803d;
   --hint-icon: #ca8a04;
   --context-icon: #0e7490;
 
@@ -69,6 +70,7 @@
   --accent-irregular-verbs: #f0abfc;
   --accent-word-formation: #60a5fa;
   --accent-everyday-phrases: #67e8f9;
+  --accent-mixed: #86efac;
   --hint-icon: #facc15;
   --context-icon: #67e8f9;
 
@@ -500,6 +502,74 @@ a {
   font-size: clamp(1.05rem, 2.8vw, 1.25rem);
 }
 
+/* ——— Orden: pill segmentado (vive en el drawer de filtros) ——— */
+.segmented {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.segmented__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.45rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.segmented__option:hover {
+  color: var(--text);
+}
+
+.segmented__option[aria-pressed="true"] {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.filters-drawer__panel .segmented {
+  width: 100%;
+}
+
+.filters-drawer__panel .segmented__option {
+  flex: 1 1 0;
+  justify-content: center;
+}
+
+.shuffle-icon,
+.ordered-icon {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Badge de origen (solo /mixed): nombre lindo de la sección. */
+.flashcard__type-badge {
+  margin: 0;
+  justify-self: start;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--card-accent) 45%, var(--line));
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .filters-drawer__overlay {
   position: fixed;
   inset: 0;
@@ -561,9 +631,19 @@ a {
   gap: 0.5rem;
 }
 
-.site-header__filters {
-  min-height: 2.5rem;
-  padding: 0.45rem 1rem;
+.btn.site-header__filters {
+  width: 2.5rem;
+  height: 2.5rem;
+  min-height: 0;
+  padding: 0;
+  border-radius: 999px;
+}
+
+.sliders-icon {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
 }
 
 /* ——— View Transitions entre páginas (solo contenido, header fijo) ——— */

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { init, next, prev, reveal } from "../../src/application/session";
 import type { Card } from "../../src/domain/card";
+import { CARD_TYPE_LABELS } from "../../src/domain/card";
 import { resolveHint } from "../../src/domain/hints";
 import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
@@ -15,6 +16,7 @@ type FlashcardClientProps = {
   cards: Card[];
   clearFiltersPath: string;
   accent?: string;
+  showTypeBadge?: boolean;
 };
 
 type FlashcardFrontProps = {
@@ -79,7 +81,7 @@ function FlashcardAnswer({ card, showEs, onToggleEs }: FlashcardAnswerProps) {
   );
 }
 
-export default function FlashcardClient({ cards, clearFiltersPath, accent }: FlashcardClientProps) {
+export default function FlashcardClient({ cards, clearFiltersPath, accent, showTypeBadge = false }: FlashcardClientProps) {
   const [session, setSession] = useState(() => init(cards));
   const [dir, setDir] = useState<1 | -1>(1);
   const [showEs, setShowEs] = useState(false);
@@ -153,6 +155,9 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent }: Fla
         </div>
       </div>
       <div key={card.expression} className="flashcard__body">
+        {showTypeBadge ? (
+          <p className="flashcard__type-badge">{CARD_TYPE_LABELS[card.type]}</p>
+        ) : null}
         <div className="flashcard__head">
           <h2>{card.expression}</h2>
           <div className="flashcard__hint-actions">

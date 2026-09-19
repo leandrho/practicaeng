@@ -5,8 +5,9 @@ type FlashcardProps = {
   cards: Card[];
   clearFiltersPath: string;
   accent?: string;
+  showTypeBadge?: boolean;
 };
 
-export function Flashcard({ cards, clearFiltersPath, accent }: FlashcardProps) {
-  return <FlashcardClient cards={cards} clearFiltersPath={clearFiltersPath} accent={accent} />;
+export function Flashcard({ cards, clearFiltersPath, accent, showTypeBadge = false }: FlashcardProps) {
+  return <FlashcardClient cards={cards} clearFiltersPath={clearFiltersPath} accent={accent} showTypeBadge={showTypeBadge} />;
 }
