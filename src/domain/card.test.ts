@@ -39,6 +39,12 @@ describe("CardSchema", () => {
     expect(() => CardSchema.parse({ ...validCard, type: "verb" })).toThrow();
   });
 
+  it("everyday-phrase es un tipo válido", () => {
+    expect(CardSchema.parse({ ...validCard, type: "everyday-phrase" }).type).toBe(
+      "everyday-phrase",
+    );
+  });
+
   it("meaningEn y translationEs son obligatorios", () => {
     expect(() =>
       CardSchema.parse({ ...validCard, meaningEn: "" }),

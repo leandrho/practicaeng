@@ -8,9 +8,18 @@ describe("resolveHint", () => {
 
   it("falls back to the card type for unknown expressions", () => {
     expect(resolveHint("unknown expression", "idiom", "general")).toBe("fallback:idiom");
+    expect(resolveHint("unknown expression", "everyday-phrase", "general")).toBe(
+      "fallback:everyday-phrase",
+    );
   });
 
   it("normalizes whitespace and casing before resolving a curated hint", () => {
     expect(resolveHint("  GIVE UP  ", "phrasal-verb", "general")).toBe("give-up-flag");
+  });
+
+  it("resolves a curated everyday phrase", () => {
+    expect(resolveHint("How's it going?", "everyday-phrase", "Greetings & socializing")).toBe(
+      "hows-it-going-conversation",
+    );
   });
 });

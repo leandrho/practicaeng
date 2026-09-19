@@ -26,6 +26,7 @@
   --accent-idioms: #be123c;
   --accent-irregular-verbs: #a21caf;
   --accent-word-formation: #1d4ed8;
+  --accent-everyday-phrases: #0e7490;
   --hint-icon: #ca8a04;
 
   --radius-sm: 0.5rem;
@@ -60,6 +61,7 @@
   --accent-idioms: #fda4af;
   --accent-irregular-verbs: #f0abfc;
   --accent-word-formation: #60a5fa;
+  --accent-everyday-phrases: #67e8f9;
   --hint-icon: #facc15;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -1040,6 +1042,10 @@ a {
 
 .visual-hint[data-hint="irregular-verb"] {
   --hint-accent: var(--accent-irregular-verbs);
+}
+
+.visual-hint[data-hint="everyday-phrase"] {
+  --hint-accent: var(--accent-everyday-phrases);
 }
 
 .visual-hint[data-hint="word-formation"] {

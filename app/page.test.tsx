@@ -8,7 +8,7 @@ import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 afterEach(cleanup);
 
 describe("HomePage", () => {
-  it("shows the hero, six sections with correct counts, and working links", () => {
+  it("shows the hero, seven sections with correct counts, and working links", () => {
     render(<HomePage />);
 
     expect(
@@ -22,10 +22,11 @@ describe("HomePage", () => {
       ["Idioms & Expressions", contentRepository.getCards("idioms").length],
       ["Irregular Verbs", contentRepository.getCards("irregular-verbs").length],
       ["Word Formation", getWordFamilies().length],
+      ["Everyday Phrases", contentRepository.getCards("everyday-phrases").length],
     ];
 
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(6);
+    expect(links).toHaveLength(7);
 
     for (const [name, count] of expected) {
       const link = screen.getByRole("link", {
@@ -36,6 +37,12 @@ describe("HomePage", () => {
       expect(scope.getByText(name)).not.toBeNull();
       expect(scope.getByText(String(count))).not.toBeNull();
     }
+
+    expect(
+      within(screen.getByRole("link", { name: /Practice Everyday Phrases, 150/ })).getByText(
+        "Common phrases for daily situations",
+      ),
+    ).not.toBeNull();
   });
 
   it("shows the session bar with the total number of cards", () => {
@@ -47,7 +54,8 @@ describe("HomePage", () => {
       contentRepository.getCards("prepositions").length +
       contentRepository.getCards("idioms").length +
       contentRepository.getCards("irregular-verbs").length +
-      getWordFamilies().length;
+      getWordFamilies().length +
+      contentRepository.getCards("everyday-phrases").length;
 
     expect(screen.getByText(new RegExp(`${total} cards`))).not.toBeNull();
     expect(

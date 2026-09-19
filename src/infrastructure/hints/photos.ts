@@ -3032,4 +3032,442 @@ export const hintPhotos: Partial<Record<HintId, PhotoEntry>> = {
     height: 501,
     credit: { author: "Gardiner, William", license: "Public domain", source: "https://commons.wikimedia.org/wiki/File:A_short_answer_to_a_long_rabbinical_letter,_supposed_to_be_wrote_to_Mr._Woolston_Fleuron_T140332-8.png" },
   },
+  "hows-it-going-conversation": {
+    src: "/hints/everyday-phrases/hows-it-going-conversation.webp",
+    width: 500,
+    height: 500,
+    credit: { author: "Ahsan Saeed", license: "CC BY 2.0", source: "https://www.flickr.com/photos/27310159@N03/8404288423" },
+  },
+  "nice-to-meet-you-greeting": {
+    src: "/hints/everyday-phrases/nice-to-meet-you-greeting.webp",
+    width: 640,
+    height: 426,
+    credit: { author: "PattayaPatrol", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:DZ6_0736_Two_friends_share_a_joyful_tight_hug_and_laughter_while_seated_at_a_lively_bar.jpg" },
+  },
+  "long-time-no-see-reunion": {
+    src: "/hints/everyday-phrases/long-time-no-see-reunion.webp",
+    width: 640,
+    height: 853,
+    credit: { author: "Nir .B.", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Dog_waiting_for_his_owners_to_come.jpg" },
+  },
+  "what-have-you-been-up-to-catchup": {
+    src: "/hints/everyday-phrases/what-have-you-been-up-to-catchup.webp",
+    width: 640,
+    height: 897,
+    credit: { author: "Abdelrahmannr", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Think_about_the_past.jpg" },
+  },
+  "how-have-you-been-checkin": {
+    src: "/hints/everyday-phrases/how-have-you-been-checkin.webp",
+    width: 640,
+    height: 480,
+    credit: { author: "Bureau of Land Management Alaska", license: "CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Group_of_hikers_having_lunch_along_the_Pinnel_Mountain_National_Recreation_Trail_(29060567153).jpg" },
+  },
+  "its-good-to-see-you-reunion": {
+    src: "/hints/everyday-phrases/its-good-to-see-you-reunion.webp",
+    width: 640,
+    height: 453,
+    credit: { author: "Gregory 'Slobirdr' Smith", license: "CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Great_Gray_Owl_(Strix_nebulosa)_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg" },
+  },
+  "say-hello-to-greeting": {
+    src: "/hints/everyday-phrases/say-hello-to-greeting.webp",
+    width: 640,
+    height: 427,
+    credit: { author: "PattayaPatrol", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:DFC_4841_Live_on_stage_at_Burapa_Pattaya_Bike_Week_2022_-_a_night_of_rock_lights_and_nostalgia_in_Ban_Nong_Hin_Chon_Buri.jpg" },
+  },
+  "give-my-regards-to-greeting": {
+    src: "/hints/everyday-phrases/give-my-regards-to-greeting.webp",
+    width: 640,
+    height: 853,
+    credit: { author: "cogdogblog", license: "CC0", source: "https://commons.wikimedia.org/wiki/File:The_nice_folks_in_the_Northern_Territory_gave_me_some_beautiful_parting_gifts;_a_detail_here_from_the_small_didgeridoo_I_got._(1744065187).jpg" },
+  },
+  "make-yourself-at-home-welcome": {
+    src: "/hints/everyday-phrases/make-yourself-at-home-welcome.webp",
+    width: 640,
+    height: 483,
+    credit: { author: "Harper, W. St. John, 1851-1910, artist", license: "Public domain", source: "https://commons.wikimedia.org/wiki/File:Castle_Garden-their_first_Thanksgiving_dinner_-_Harper._LCCN90707729.jpg" },
+  },
+  "help-yourself-serving": {
+    src: "/hints/everyday-phrases/help-yourself-serving.webp",
+    width: 640,
+    height: 643,
+    credit: { author: "Fotograaf Onbekend / Anefo", license: "CC0", source: "https://commons.wikimedia.org/wiki/File:,_geneeskunde,_Bestanddeelnr_900-8145.jpg" },
+  },
+  "mind-if-i-join-you-group": {
+    src: "/hints/everyday-phrases/mind-if-i-join-you-group.webp",
+    width: 640,
+    height: 427,
+    credit: { author: "©UK Parliament/Jessica Taylor", license: "CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Principal_Doorkeepers,_Whips_and_the_Speaker_meet_for_a_rehearsal_of_socially_distanced_divisions.jpg" },
+  },
+  "i-was-just-leaving-departure": {
+    src: "/hints/everyday-phrases/i-was-just-leaving-departure.webp",
+    width: 640,
+    height: 491,
+    credit: { author: "John-Morgan", license: "CC BY 2.0", source: "https://www.flickr.com/photos/24742305@N00/4896311628" },
+  },
+  "see-you-around-city": {
+    src: "/hints/everyday-phrases/see-you-around-city.webp",
+    width: 640,
+    height: 896,
+    credit: { author: "Dietmar Rabich", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:London,_Trafalgar_Square,_Nelson%27s_Column_--_2016_--_4851.jpg" },
+  },
+  "take-care-support": {
+    src: "/hints/everyday-phrases/take-care-support.webp",
+    width: 640,
+    height: 482,
+    credit: { author: "Ismael Olea", license: "CC BY 4.0", source: "https://commons.wikimedia.org/wiki/File:20250808_Intensive_care_unit_bed.jpg" },
+  },
+  "have-a-good-one-enjoyment": {
+    src: "/hints/everyday-phrases/have-a-good-one-enjoyment.webp",
+    width: 640,
+    height: 481,
+    credit: { author: "Fry72", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:K%C4%85pielisko_w_Le%C5%9Bnicy,_Le%C5%9Bnica,_okres_Strzelce_01.jpg" },
+  },
+  "sleep-well-rest": {
+    src: "/hints/everyday-phrases/sleep-well-rest.webp",
+    width: 640,
+    height: 427,
+    credit: { author: "Nikhil makode", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:A_sound_sleep.jpg" },
+  },
+  "enjoy-your-weekend-leisure": {
+    src: "/hints/everyday-phrases/enjoy-your-weekend-leisure.webp",
+    width: 640,
+    height: 427,
+    credit: { author: "Shixart1985", license: "CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:A_cheerful_child_is_splashing_in_a_pool_while_sitting_on_a_bright_pink_flamingo_float.jpg" },
+  },
+  "good-luck-with-success": {
+    src: "/hints/everyday-phrases/good-luck-with-success.webp",
+    width: 640,
+    height: 967,
+    credit: { author: "Christopher Johnson from Tokyo, Japan", license: "CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Billups_%26_Odom_holding_World_Cup_trophy.jpg" },
+  },
+  "happy-birthday-celebration": {
+    src: "/hints/everyday-phrases/happy-birthday-celebration.webp",
+    width: 640,
+    height: 438,
+    credit: { author: "Unknown", license: "Public domain", source: "https://commons.wikimedia.org/wiki/File:%22Hindoo_bathers_in_the_river_Jumna_surprised_by_a_snake,%22_from_the_Illustrated_London_News,_1864.jpg" },
+  },
+  "congratulations-on-achievement": {
+    src: "/hints/everyday-phrases/congratulations-on-achievement.webp",
+    width: 640,
+    height: 676,
+    credit: { author: "Yosape", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Matt_Hamilton_Olympic_Gold_Medal_Madison_Curling_Club.jpg" },
+  },
+  "sorry-im-late-arrival": {
+    src: "/hints/everyday-phrases/sorry-im-late-arrival.webp",
+    width: 640,
+    height: 293,
+    credit: { author: "Nesnad", license: "CC BY 4.0", source: "https://commons.wikimedia.org/wiki/File:Asakusabashi_station_platform_and_train_-_Oct_23_2020.jpg" },
+  },
+  "no-worries-calm": {
+    src: "/hints/everyday-phrases/no-worries-calm.webp",
+    width: 640,
+    height: 515,
+    credit: { author: "Flavio~", license: "CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Beach_Yoga_(5)_(5301901853).jpg" },
+  },
+  "thats-a-shame-missed-target": {
+    src: "/hints/everyday-phrases/thats-a-shame-missed-target.webp",
+    width: 640,
+    height: 427,
+    credit: { author: "Wacky1976", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Archery_Arrows_Target_WA_122cm.jpg" },
+  },
+  "what-a-surprise-reaction": {
+    src: "/hints/everyday-phrases/what-a-surprise-reaction.webp",
+    width: 640,
+    height: 895,
+    credit: { author: "Didier Descouens", license: "Public domain", source: "https://commons.wikimedia.org/wiki/File:(Narbonne)_Baigneuse_surprise_-_Alexandre_Falgui%C3%A8re_-_Mus%C3%A9e_des_Beaux-Arts_de_Narbonne.jpg" },
+  },
+  "i-cant-believe-it-belief": {
+    src: "/hints/everyday-phrases/i-cant-believe-it-belief.webp",
+    width: 640,
+    height: 429,
+    credit: { author: "Adam Cuerden", license: "Public domain", source: "https://commons.wikimedia.org/wiki/File:Rose_O%27Neill_-_When_We_All_Believe_(Santa_Claus_and_children_illustration_from_the_1903_December_2_issue_of_Puck).jpg" },
+  },
 };
+
+function copyVendoredPhoto(hintId: HintId, src: PhotoEntry["src"]): PhotoEntry {
+  const photo = hintPhotos[hintId];
+
+  if (photo === undefined) {
+    throw new Error(`Foto curada faltante: ${hintId}`);
+  }
+
+  return { ...photo, src };
+}
+
+Object.assign(hintPhotos, {
+  "could-you-help-me-assistance": copyVendoredPhoto(
+    "give-someone-a-hand-help",
+    "/hints/everyday-phrases/could-you-help-me-assistance.webp",
+  ),
+  "would-you-mind-waiting-pause": copyVendoredPhoto(
+    "hang-on-wait-short",
+    "/hints/everyday-phrases/would-you-mind-waiting-pause.webp",
+  ),
+  "can-i-ask-you-a-favor-assistance": copyVendoredPhoto(
+    "do-someone-a-favor-helpful",
+    "/hints/everyday-phrases/can-i-ask-you-a-favor-assistance.webp",
+  ),
+  "do-you-mind-if-i-sit-here-seat": copyVendoredPhoto(
+    "sit-seat",
+    "/hints/everyday-phrases/do-you-mind-if-i-sit-here-seat.webp",
+  ),
+  "id-appreciate-it-if-you-could-gratitude": copyVendoredPhoto(
+    "benefit-benefit-beneficial",
+    "/hints/everyday-phrases/id-appreciate-it-if-you-could-gratitude.webp",
+  ),
+  "after-you-turn": copyVendoredPhoto(
+    "go-ahead-proceed-start",
+    "/hints/everyday-phrases/after-you-turn.webp",
+  ),
+  "excuse-me-apology": copyVendoredPhoto(
+    "apologize-for-say-sorry",
+    "/hints/everyday-phrases/excuse-me-apology.webp",
+  ),
+  "pardon-me-repeat": copyVendoredPhoto(
+    "speak-up-speak-loudly",
+    "/hints/everyday-phrases/pardon-me-repeat.webp",
+  ),
+  "im-sorry-to-bother-you-apology": copyVendoredPhoto(
+    "apologize-for-say-sorry",
+    "/hints/everyday-phrases/im-sorry-to-bother-you-apology.webp",
+  ),
+  "could-i-have-a-receipt-payment": copyVendoredPhoto(
+    "keep-retain",
+    "/hints/everyday-phrases/could-i-have-a-receipt-payment.webp",
+  ),
+  "may-i-come-in-door": copyVendoredPhoto(
+    "come-in-enter",
+    "/hints/everyday-phrases/may-i-come-in-door.webp",
+  ),
+  "would-it-be-possible-to-reschedule-calendar": copyVendoredPhoto(
+    "arrange-arrange-arrangement",
+    "/hints/everyday-phrases/would-it-be-possible-to-reschedule-calendar.webp",
+  ),
+  "thanks-anyway-gratitude": copyVendoredPhoto(
+    "give-hand",
+    "/hints/everyday-phrases/thanks-anyway-gratitude.webp",
+  ),
+  "youre-welcome-hospitality": copyVendoredPhoto(
+    "come-over-visit-their",
+    "/hints/everyday-phrases/youre-welcome-hospitality.webp",
+  ),
+  "dont-mention-it-modesty": copyVendoredPhoto(
+    "speak-talk",
+    "/hints/everyday-phrases/dont-mention-it-modesty.webp",
+  ),
+  "my-pleasure-kindness": copyVendoredPhoto(
+    "please-pleasure-pleasant",
+    "/hints/everyday-phrases/my-pleasure-kindness.webp",
+  ),
+  "thats-very-kind-of-you-kindness": copyVendoredPhoto(
+    "care-care-careful",
+    "/hints/everyday-phrases/thats-very-kind-of-you-kindness.webp",
+  ),
+  "i-owe-you-one-repayment": copyVendoredPhoto(
+    "pay-back-return-money",
+    "/hints/everyday-phrases/i-owe-you-one-repayment.webp",
+  ),
+  "could-you-do-me-a-favor-assistance": copyVendoredPhoto(
+    "do-someone-a-favor-helpful",
+    "/hints/everyday-phrases/could-you-do-me-a-favor-assistance.webp",
+  ),
+  "let-me-know-information": copyVendoredPhoto(
+    "inform-inform-information",
+    "/hints/everyday-phrases/let-me-know-information.webp",
+  ),
+  "feel-free-to-ask-question": copyVendoredPhoto(
+    "ask-around-ripples",
+    "/hints/everyday-phrases/feel-free-to-ask-question.webp",
+  ),
+  "theres-no-rush-time": copyVendoredPhoto(
+    "hurry-up-quickly",
+    "/hints/everyday-phrases/theres-no-rush-time.webp",
+  ),
+  "whenever-youre-ready-start": copyVendoredPhoto(
+    "get-ready-prepare-yourself",
+    "/hints/everyday-phrases/whenever-youre-ready-start.webp",
+  ),
+  "that-would-be-great-opportunity": copyVendoredPhoto(
+    "great-opportunity-good-chance",
+    "/hints/everyday-phrases/that-would-be-great-opportunity.webp",
+  ),
+  "i-really-appreciate-it-gratitude": copyVendoredPhoto(
+    "benefit-benefit-beneficial",
+    "/hints/everyday-phrases/i-really-appreciate-it-gratitude.webp",
+  ),
+  "im-on-my-way-journey": copyVendoredPhoto(
+    "get-away-horizon",
+    "/hints/everyday-phrases/im-on-my-way-journey.webp",
+  ),
+  "im-running-late-clock": copyVendoredPhoto(
+    "better-late-than-never-better-late",
+    "/hints/everyday-phrases/im-running-late-clock.webp",
+  ),
+  "ill-be-right-back-return": copyVendoredPhoto(
+    "come-back-return",
+    "/hints/everyday-phrases/ill-be-right-back-return.webp",
+  ),
+  "be-there-in-a-minute-arrival": copyVendoredPhoto(
+    "come-along-accompany-progress",
+    "/hints/everyday-phrases/be-there-in-a-minute-arrival.webp",
+  ),
+  "im-almost-ready-preparation": copyVendoredPhoto(
+    "get-ready-prepare-yourself",
+    "/hints/everyday-phrases/im-almost-ready-preparation.webp",
+  ),
+  "the-door-is-locked-entry": copyVendoredPhoto(
+    "come-in-enter",
+    "/hints/everyday-phrases/the-door-is-locked-entry.webp",
+  ),
+  "the-lights-are-on-light": copyVendoredPhoto(
+    "turn-on-switch",
+    "/hints/everyday-phrases/the-lights-are-on-light.webp",
+  ),
+  "the-power-is-out-darkness": copyVendoredPhoto(
+    "shut-down-turn-off",
+    "/hints/everyday-phrases/the-power-is-out-darkness.webp",
+  ),
+  "the-water-is-boiling-kettle": copyVendoredPhoto(
+    "burn-fire",
+    "/hints/everyday-phrases/the-water-is-boiling-kettle.webp",
+  ),
+  "dinner-is-ready-meal": copyVendoredPhoto(
+    "eat-consume-food",
+    "/hints/everyday-phrases/dinner-is-ready-meal.webp",
+  ),
+  "the-laundry-needs-doing-cleaning": copyVendoredPhoto(
+    "clean-up-place-clean",
+    "/hints/everyday-phrases/the-laundry-needs-doing-cleaning.webp",
+  ),
+  "the-trash-needs-taking-out-bin": copyVendoredPhoto(
+    "throw-away-rid-putting",
+    "/hints/everyday-phrases/the-trash-needs-taking-out-bin.webp",
+  ),
+  "the-house-is-a-mess-tidying": copyVendoredPhoto(
+    "clear-up-clear-tidy",
+    "/hints/everyday-phrases/the-house-is-a-mess-tidying.webp",
+  ),
+  "the-bed-needs-making-bedroom": copyVendoredPhoto(
+    "deep-sleep-sound-sleep",
+    "/hints/everyday-phrases/the-bed-needs-making-bedroom.webp",
+  ),
+  "the-table-is-set-meal": copyVendoredPhoto(
+    "set-adjust",
+    "/hints/everyday-phrases/the-table-is-set-meal.webp",
+  ),
+  "the-dishes-are-clean-kitchen": copyVendoredPhoto(
+    "do-the-dishes-wash-dishes",
+    "/hints/everyday-phrases/the-dishes-are-clean-kitchen.webp",
+  ),
+  "the-shower-is-free-bathroom": copyVendoredPhoto(
+    "clean-up-place-clean",
+    "/hints/everyday-phrases/the-shower-is-free-bathroom.webp",
+  ),
+  "were-out-of-milk-groceries": copyVendoredPhoto(
+    "run-out-of-we-ve-run",
+    "/hints/everyday-phrases/were-out-of-milk-groceries.webp",
+  ),
+  "the-fridge-is-empty-shelves": copyVendoredPhoto(
+    "run-out-used",
+    "/hints/everyday-phrases/the-fridge-is-empty-shelves.webp",
+  ),
+  "the-keys-are-on-the-counter-keys": copyVendoredPhoto(
+    "keep-retain",
+    "/hints/everyday-phrases/the-keys-are-on-the-counter-keys.webp",
+  ),
+  "could-you-feed-the-cat-pet": copyVendoredPhoto(
+    "feed-food",
+    "/hints/everyday-phrases/could-you-feed-the-cat-pet.webp",
+  ),
+  "its-time-to-leave-departure": copyVendoredPhoto(
+    "leave-away",
+    "/hints/everyday-phrases/its-time-to-leave-departure.webp",
+  ),
+  "i-need-some-fresh-air-outdoors": copyVendoredPhoto(
+    "get-away-horizon",
+    "/hints/everyday-phrases/i-need-some-fresh-air-outdoors.webp",
+  ),
+  "the-window-is-open-view": copyVendoredPhoto(
+    "look-out-careful",
+    "/hints/everyday-phrases/the-window-is-open-view.webp",
+  ),
+  "the-floor-is-wet-puddle": copyVendoredPhoto(
+    "fall-drop-down",
+    "/hints/everyday-phrases/the-floor-is-wet-puddle.webp",
+  ),
+  "how-much-is-it-price": copyVendoredPhoto("cost-price", "/hints/everyday-phrases/how-much-is-it-price.webp"),
+  "im-just-looking-thanks-browsing": copyVendoredPhoto("look-around-explore-look", "/hints/everyday-phrases/im-just-looking-thanks-browsing.webp"),
+  "do-you-have-this-in-a-larger-size-sizing": copyVendoredPhoto("choose-pick", "/hints/everyday-phrases/do-you-have-this-in-a-larger-size-sizing.webp"),
+  "can-i-try-it-on-fitting": copyVendoredPhoto("try-on-clothing-see", "/hints/everyday-phrases/can-i-try-it-on-fitting.webp"),
+  "where-is-the-fitting-room-clothes": copyVendoredPhoto("dress-up-wear-smart", "/hints/everyday-phrases/where-is-the-fitting-room-clothes.webp"),
+  "id-like-to-return-this-refund": copyVendoredPhoto("give-back-return-its", "/hints/everyday-phrases/id-like-to-return-this-refund.webp"),
+  "can-i-pay-by-card-payment": copyVendoredPhoto("pay-money", "/hints/everyday-phrases/can-i-pay-by-card-payment.webp"),
+  "could-i-get-the-bill-please-payment": copyVendoredPhoto("cost-price", "/hints/everyday-phrases/could-i-get-the-bill-please-payment.webp"),
+  "is-service-included-benefit": copyVendoredPhoto("benefit-benefit-beneficial", "/hints/everyday-phrases/is-service-included-benefit.webp"),
+  "id-like-a-table-for-two-restaurant": copyVendoredPhoto("come-over-visit-their", "/hints/everyday-phrases/id-like-a-table-for-two-restaurant.webp"),
+  "could-we-see-the-menu-ordering": copyVendoredPhoto("eat-consume-food", "/hints/everyday-phrases/could-we-see-the-menu-ordering.webp"),
+  "what-do-you-recommend-suggestion": copyVendoredPhoto("highly-recommended-recommended-strongly", "/hints/everyday-phrases/what-do-you-recommend-suggestion.webp"),
+  "ill-have-the-chicken-ordering": copyVendoredPhoto("eat-consume-food", "/hints/everyday-phrases/ill-have-the-chicken-ordering.webp"),
+  "can-i-get-this-to-go-takeaway": copyVendoredPhoto("take-away-remove-carry", "/hints/everyday-phrases/can-i-get-this-to-go-takeaway.webp"),
+  "no-ice-please-drink": copyVendoredPhoto("freeze-turn-ice", "/hints/everyday-phrases/no-ice-please-drink.webp"),
+  "could-i-have-the-check-payment": copyVendoredPhoto("cost-price", "/hints/everyday-phrases/could-i-have-the-check-payment.webp"),
+  "keep-the-change-payment": copyVendoredPhoto("pay-back-return-money", "/hints/everyday-phrases/keep-the-change-payment.webp"),
+  "is-there-a-discount-price": copyVendoredPhoto("cut-back-on-reduce-amount", "/hints/everyday-phrases/is-there-a-discount-price.webp"),
+  "do-you-have-anything-cheaper-price": copyVendoredPhoto("cost-price", "/hints/everyday-phrases/do-you-have-anything-cheaper-price.webp"),
+  "id-like-to-make-an-appointment-calendar": copyVendoredPhoto("arrange-arrange-arrangement", "/hints/everyday-phrases/id-like-to-make-an-appointment-calendar.webp"),
+  "is-there-a-waiting-list-queue": copyVendoredPhoto("hang-on-wait-short", "/hints/everyday-phrases/is-there-a-waiting-list-queue.webp"),
+  "i-have-a-reservation-booking": copyVendoredPhoto("check-in-gate", "/hints/everyday-phrases/i-have-a-reservation-booking.webp"),
+  "can-you-deliver-it-delivery": copyVendoredPhoto("bring-carry-here", "/hints/everyday-phrases/can-you-deliver-it-delivery.webp"),
+  "id-like-a-refund-return": copyVendoredPhoto("give-back-return-its", "/hints/everyday-phrases/id-like-a-refund-return.webp"),
+  "the-card-machine-isnt-working-payment": copyVendoredPhoto("pay-money", "/hints/everyday-phrases/the-card-machine-isnt-working-payment.webp"),
+  "where-is-the-nearest-station-station": copyVendoredPhoto("check-in-gate", "/hints/everyday-phrases/where-is-the-nearest-station-station.webp"),
+  "which-platform-does-it-leave-from-platform": copyVendoredPhoto("better-late-than-never-better-late", "/hints/everyday-phrases/which-platform-does-it-leave-from-platform.webp"),
+  "what-time-does-the-bus-arrive-bus": copyVendoredPhoto("come-move-here", "/hints/everyday-phrases/what-time-does-the-bus-arrive-bus.webp"),
+  "is-this-seat-taken-seat": copyVendoredPhoto("sit-seat", "/hints/everyday-phrases/is-this-seat-taken-seat.webp"),
+  "could-you-tell-me-the-way-directions": copyVendoredPhoto("point-out-draw-attention", "/hints/everyday-phrases/could-you-tell-me-the-way-directions.webp"),
+  "how-far-is-it-from-here-distance": copyVendoredPhoto("get-away-horizon", "/hints/everyday-phrases/how-far-is-it-from-here-distance.webp"),
+  "turn-left-at-the-corner-turn": copyVendoredPhoto("turn-around-turn-face", "/hints/everyday-phrases/turn-left-at-the-corner-turn.webp"),
+  "go-straight-ahead-route": copyVendoredPhoto("go-ahead-proceed-start", "/hints/everyday-phrases/go-straight-ahead-route.webp"),
+  "is-it-within-walking-distance-walk": copyVendoredPhoto("get-around-move-place", "/hints/everyday-phrases/is-it-within-walking-distance-walk.webp"),
+  "i-think-im-lost-map": copyVendoredPhoto("look-around-explore-look", "/hints/everyday-phrases/i-think-im-lost-map.webp"),
+  "can-you-show-me-on-the-map-map": copyVendoredPhoto("come-across-find-chance", "/hints/everyday-phrases/can-you-show-me-on-the-map-map.webp"),
+  "is-there-a-direct-train-train": copyVendoredPhoto("come-move-here", "/hints/everyday-phrases/is-there-a-direct-train-train.webp"),
+  "do-i-need-to-change-trains-transfer": copyVendoredPhoto("get-off-leave-bus", "/hints/everyday-phrases/do-i-need-to-change-trains-transfer.webp"),
+  "where-can-i-buy-a-ticket-ticket": copyVendoredPhoto("pay-money", "/hints/everyday-phrases/where-can-i-buy-a-ticket-ticket.webp"),
+  "id-like-a-single-ticket-ticket": copyVendoredPhoto("check-in-gate", "/hints/everyday-phrases/id-like-a-single-ticket-ticket.webp"),
+  "id-like-a-return-ticket-ticket": copyVendoredPhoto("come-back-return", "/hints/everyday-phrases/id-like-a-return-ticket-ticket.webp"),
+  "is-the-flight-on-time-flight": copyVendoredPhoto("leave-away", "/hints/everyday-phrases/is-the-flight-on-time-flight.webp"),
+  "where-is-the-baggage-claim-luggage": copyVendoredPhoto("carry-on-path", "/hints/everyday-phrases/where-is-the-baggage-claim-luggage.webp"),
+  "my-luggage-is-missing-luggage": copyVendoredPhoto("lose-misplace", "/hints/everyday-phrases/my-luggage-is-missing-luggage.webp"),
+  "can-i-leave-my-bag-here-bag": copyVendoredPhoto("drop-off-place-leave", "/hints/everyday-phrases/can-i-leave-my-bag-here-bag.webp"),
+  "is-breakfast-included-meal": copyVendoredPhoto("eat-consume-food", "/hints/everyday-phrases/is-breakfast-included-meal.webp"),
+  "what-is-the-wi-fi-password-connection": copyVendoredPhoto("connect-connect-connection", "/hints/everyday-phrases/what-is-the-wi-fi-password-connection.webp"),
+  "could-i-get-a-taxi-transport": copyVendoredPhoto("drive-control-car", "/hints/everyday-phrases/could-i-get-a-taxi-transport.webp"),
+  "please-stop-here-stop": copyVendoredPhoto("shut-close", "/hints/everyday-phrases/please-stop-here-stop.webp"),
+  "how-do-i-get-to-the-airport-route": copyVendoredPhoto("get-around-move-place", "/hints/everyday-phrases/how-do-i-get-to-the-airport-route.webp"),
+  "im-looking-for-a-job-employment": copyVendoredPhoto("employ-employ-employment", "/hints/everyday-phrases/im-looking-for-a-job-employment.webp"),
+  "i-have-an-interview-tomorrow-interview": copyVendoredPhoto("apply-apply-application", "/hints/everyday-phrases/i-have-an-interview-tomorrow-interview.webp"),
+  "when-does-the-meeting-start-meeting": copyVendoredPhoto("meet-encounter", "/hints/everyday-phrases/when-does-the-meeting-start-meeting.webp"),
+  "could-we-move-the-meeting-calendar": copyVendoredPhoto("arrange-arrange-arrangement", "/hints/everyday-phrases/could-we-move-the-meeting-calendar.webp"),
+  "im-available-this-afternoon-availability": copyVendoredPhoto("widely-available-available-places", "/hints/everyday-phrases/im-available-this-afternoon-availability.webp"),
+  "im-tied-up-right-now-work": copyVendoredPhoto("work-on-spend-time", "/hints/everyday-phrases/im-tied-up-right-now-work.webp"),
+  "ill-get-back-to-you-reply": copyVendoredPhoto("get-back-loop", "/hints/everyday-phrases/ill-get-back-to-you-reply.webp"),
+  "lets-keep-in-touch-contact": copyVendoredPhoto("communicate-communicate-communication", "/hints/everyday-phrases/lets-keep-in-touch-contact.webp"),
+  "im-working-from-home-work": copyVendoredPhoto("work-on-spend-time", "/hints/everyday-phrases/im-working-from-home-work.webp"),
+  "can-we-talk-later-conversation": copyVendoredPhoto("speak-talk", "/hints/everyday-phrases/can-we-talk-later-conversation.webp"),
+  "ill-send-you-an-email-message": copyVendoredPhoto("send-dispatch", "/hints/everyday-phrases/ill-send-you-an-email-message.webp"),
+  "please-find-the-attachment-file": copyVendoredPhoto("connect-connect-connection", "/hints/everyday-phrases/please-find-the-attachment-file.webp"),
+  "i-need-more-time-clock": copyVendoredPhoto("time-flies-time-passes", "/hints/everyday-phrases/i-need-more-time-clock.webp"),
+  "the-deadline-is-tomorrow-calendar": copyVendoredPhoto("better-late-than-never-better-late", "/hints/everyday-phrases/the-deadline-is-tomorrow-calendar.webp"),
+  "im-running-behind-schedule-delay": copyVendoredPhoto("fall-behind-fail", "/hints/everyday-phrases/im-running-behind-schedule-delay.webp"),
+  "something-came-up-unexpected": copyVendoredPhoto("come-up-happen-unexpectedly", "/hints/everyday-phrases/something-came-up-unexpected.webp"),
+  "the-printer-isnt-working-document": copyVendoredPhoto("write-words", "/hints/everyday-phrases/the-printer-isnt-working-document.webp"),
+  "the-internet-is-down-connection": copyVendoredPhoto("shut-down-turn-off", "/hints/everyday-phrases/the-internet-is-down-connection.webp"),
+  "my-computer-froze-screen": copyVendoredPhoto("freeze-turn-ice", "/hints/everyday-phrases/my-computer-froze-screen.webp"),
+  "i-cant-log-in-account": copyVendoredPhoto("log-in-sign-computer", "/hints/everyday-phrases/i-cant-log-in-account.webp"),
+  "the-file-wont-open-document": copyVendoredPhoto("write-words", "/hints/everyday-phrases/the-file-wont-open-document.webp"),
+  "i-need-to-cancel-cancellation": copyVendoredPhoto("call-off-cross", "/hints/everyday-phrases/i-need-to-cancel-cancellation.webp"),
+  "can-we-reschedule-calendar": copyVendoredPhoto("arrange-arrange-arrangement", "/hints/everyday-phrases/can-we-reschedule-calendar.webp"),
+  "that-doesnt-work-for-me-schedule": copyVendoredPhoto("work-out-exercise-solve", "/hints/everyday-phrases/that-doesnt-work-for-me-schedule.webp"),
+  "ill-consider-it-decision": copyVendoredPhoto("consider-consider-consideration", "/hints/everyday-phrases/ill-consider-it-decision.webp"),
+});

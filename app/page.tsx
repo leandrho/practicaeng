@@ -51,6 +51,14 @@ const sections = [
     unit: "families",
     accent: "var(--accent-word-formation)",
   },
+  {
+    href: "/everyday-phrases",
+    name: "Everyday Phrases",
+    detail: "Common phrases for daily situations",
+    count: contentRepository.getCards("everyday-phrases").length,
+    unit: "cards",
+    accent: "var(--accent-everyday-phrases)",
+  },
 ];
 
 const total = sections.reduce((sum, section) => sum + section.count, 0);

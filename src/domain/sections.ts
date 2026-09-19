@@ -5,6 +5,7 @@ export const SECTIONS = [
   "idioms",
   "irregular-verbs",
   "word-formation",
+  "everyday-phrases",
 ] as const;
 
 export type Section = (typeof SECTIONS)[number];
@@ -16,4 +17,5 @@ export const SECTION_FILES: Record<Section, string> = {
   idioms: "data/idioms-b1-b2.md",
   "irregular-verbs": "data/irregular-verbs-b1-b2.md",
   "word-formation": "data/word-formation-b1-b2.md",
+  "everyday-phrases": "data/everyday-phrases-b1-b2-150.md",
 };

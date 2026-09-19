@@ -12,6 +12,7 @@ export const CONTENT_SECTIONS = [
   "prepositions",
   "idioms",
   "irregular-verbs",
+  "everyday-phrases",
 ] as const;
 
 export type ContentSection = (typeof CONTENT_SECTIONS)[number];
@@ -51,5 +52,7 @@ function parseCards(markdown: string, section: ContentSection, file: string): Ca
       return parseBulletCards(markdown, { file, type: "idiom" });
     case "irregular-verbs":
       return parseIrregularVerbCards(markdown, file);
+    case "everyday-phrases":
+      return parseBulletCards(markdown, { file, type: "everyday-phrase" });
   }
 }

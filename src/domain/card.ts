@@ -6,6 +6,7 @@ export const CardTypeSchema = z.enum([
   "preposition",
   "idiom",
   "irregular-verb",
+  "everyday-phrase",
 ]);
 
 export type CardType = z.infer<typeof CardTypeSchema>;

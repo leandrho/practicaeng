@@ -18,6 +18,7 @@ const realContentCounts: Record<ContentSection, number> = {
   prepositions: 49,
   idioms: 35,
   "irregular-verbs": 100,
+  "everyday-phrases": 150,
 };
 
 // The versioned Markdown is a fixed baseline, so content changes must update it explicitly.
@@ -45,6 +46,7 @@ describe("ContentRepository", () => {
       prepositions: "preposition",
       idioms: "idiom",
       "irregular-verbs": "irregular-verb",
+      "everyday-phrases": "everyday-phrase",
     };
 
     for (const section of CONTENT_SECTIONS) {
@@ -78,6 +80,44 @@ describe("ContentRepository", () => {
     expect(repository.getCards("phrasal-verbs")[0]?.category).toBe("general");
   });
 
+  it("carga 150 everyday phrases B1-B2 en seis categorías de 25", () => {
+    const cards = createContentRepository().getCards("everyday-phrases");
+    const expectedCategories = [
+      "Greetings & socializing",
+      "Courtesy & requests",
+      "Home & daily routine",
+      "Shopping, food & services",
+      "Travel & directions",
+      "Work, plans & problems",
+    ];
+
+    expect(cards).toHaveLength(150);
+    expect(cards.every((card) => card.type === "everyday-phrase")).toBe(true);
+    expect(cards.every((card) => card.level === "B1-B2")).toBe(true);
+    expect([...new Set(cards.map((card) => card.category))]).toEqual(expectedCategories);
+
+    for (const category of expectedCategories) {
+      expect(cards.filter((card) => card.category === category)).toHaveLength(25);
+    }
+  });
+
+  it("mantiene las everyday phrases normalizadas sin duplicados", () => {
+    const repository = createContentRepository();
+    const cards = repository.getCards("everyday-phrases");
+    const expressions = cards.map((card) => normalizeExpression(card.expression));
+    const existingExpressions = new Set(
+      CONTENT_SECTIONS.filter((section) => section !== "everyday-phrases").flatMap(
+        (section) =>
+          repository
+            .getCards(section)
+            .map((card) => normalizeExpression(card.expression)),
+      ),
+    );
+
+    expect(new Set(expressions)).toHaveLength(cards.length);
+    expect(expressions.some((expression) => existingExpressions.has(expression))).toBe(false);
+  });
+
   it("expone solo la base en expression y el pasado por separado", () => {
     const repository = createContentRepository();
     const be = repository
@@ -91,3 +131,7 @@ describe("ContentRepository", () => {
     });
   });
 });
+
+function normalizeExpression(expression: string): string {
+  return expression.toLowerCase().trim();
+}

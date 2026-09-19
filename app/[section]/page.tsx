@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import {
   CONTENT_SECTIONS,
   contentRepository,
   type ContentSection,
 } from "../../src/infrastructure/content-loader";
-import { filterCards, type Filter } from "../../src/application/filterCards";
-import { Flashcard } from "../components/Flashcard";
-import { RegisterPracticeFilters } from "../components/FilterDrawerProvider";
+import { SectionPracticeClient } from "../components/SectionPracticeClient";
 
 export const dynamicParams = false;
 
@@ -16,6 +15,7 @@ const SECTION_ACCENTS: Record<ContentSection, string> = {
   prepositions: "var(--accent-prepositions)",
   idioms: "var(--accent-idioms)",
   "irregular-verbs": "var(--accent-irregular-verbs)",
+  "everyday-phrases": "var(--accent-everyday-phrases)",
 };
 
 const SECTION_TITLES: Record<ContentSection, string> = {
@@ -24,6 +24,7 @@ const SECTION_TITLES: Record<ContentSection, string> = {
   prepositions: "Prepositions",
   idioms: "Idioms & Expressions",
   "irregular-verbs": "Irregular Verbs",
+  "everyday-phrases": "Everyday Phrases",
 };
 
 const SECTION_PROMPTS: Record<ContentSection, string> = {
@@ -33,6 +34,8 @@ const SECTION_PROMPTS: Record<ContentSection, string> = {
   idioms: "What does it mean? Think of an example with this expression.",
   "irregular-verbs":
     "Say the past simple and past participle aloud. Then reveal and compare.",
+  "everyday-phrases":
+    "What does it mean? Think of an example with this expression.",
 };
 
 export function generateStaticParams() {
@@ -45,12 +48,10 @@ function isContentSection(section: string): section is ContentSection {
 
 export default async function SectionPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ section: string }>;
-  searchParams: Promise<{ level?: string | string[]; category?: string | string[] }>;
 }) {
-  const [{ section }, query] = await Promise.all([params, searchParams]);
+  const { section } = await params;
 
   if (!isContentSection(section)) {
     notFound();
@@ -62,25 +63,20 @@ export default async function SectionPage({
     notFound();
   }
 
-  const filter: Filter = {
-    level: typeof query.level === "string" ? query.level : undefined,
-    category: typeof query.category === "string" ? query.category : undefined,
-  };
-
   return (
     <main className="practice-layout" id="contenido">
       <div className="practice-layout__content">
-        <RegisterPracticeFilters cards={cards} filter={filter} pathname={`/${section}`} />
         <header className="practice-header">
           <h1>{SECTION_TITLES[section]}</h1>
           <p>{SECTION_PROMPTS[section]}</p>
         </header>
-        <Flashcard
-          cards={filterCards(cards, filter)}
-          clearFiltersPath={`/${section}`}
-          accent={SECTION_ACCENTS[section]}
-          key={`${filter.level ?? ""}:${filter.category ?? ""}`}
-        />
+        <Suspense fallback={null}>
+          <SectionPracticeClient
+            cards={cards}
+            pathname={`/${section}`}
+            accent={SECTION_ACCENTS[section]}
+          />
+        </Suspense>
       </div>
     </main>
   );
