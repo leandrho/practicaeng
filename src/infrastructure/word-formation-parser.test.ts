@@ -26,6 +26,10 @@ const fixture = [
   "---------------------------------------------------------------------------------------------------------",
   "## Ejemplos para practicar en contexto",
   "- **act → action → active → actively:** *Act now.* / *Action matters.*",
+  "## Contextos",
+  '- **act:** "We must act now," he whispered when the lights went out during the school play. — Everyday conversation',
+  '- **amaze:** "The view amazed us completely," she said. We stood in silence for a while. — Emma · J. Austen (adapted)',
+  '- **apply:** "You must apply early," he said. There is no time to wait.',
   "## Idea de tarjeta para la app",
   "**Frente:** `ACT`",
 ].join("\n");
@@ -42,6 +46,9 @@ describe("parseWordFamilies", () => {
         adverb: "actively",
         meaningHintEn: "to do something",
         meaningHint: "actuar / acción / activo / activamente",
+        contextEn:
+          '"We must act now," he whispered when the lights went out during the school play.',
+        contextSource: "Everyday conversation",
         examples: ["Act now.", "Action matters."],
       },
       {
@@ -53,6 +60,8 @@ describe("parseWordFamilies", () => {
         adverb: "amazingly",
         meaningHintEn: "to surprise",
         meaningHint: "asombrar / asombro / increíble-asombrado",
+        contextEn: '"The view amazed us completely," she said. We stood in silence for a while.',
+        contextSource: "Emma · J. Austen (adapted)",
         examples: [],
       },
       {
@@ -63,6 +72,8 @@ describe("parseWordFamilies", () => {
         adjective: "applicable",
         meaningHintEn: "to request",
         meaningHint: "solicitar-aplicar / solicitud-solicitante / aplicable",
+        contextEn: '"You must apply early," he said. There is no time to wait.',
+        contextSource: "Everyday conversation",
         examples: [],
       },
     ]);
@@ -72,7 +83,9 @@ describe("parseWordFamilies", () => {
     const [family] = parseWordFamilies(
       `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
 | --- | --- | --- | --- | --- | --- |
-| announce | announcement | --- | --- | to make something public | anunciar / anuncio |`,
+| announce | announcement | --- | --- | to make something public | anunciar / anuncio |
+## Contextos
+- **announce:** "We must announce the news today," she said. Everyone waited in silence.`,
       "data/word-formation-b1-b2.md",
     );
 
@@ -81,6 +94,7 @@ describe("parseWordFamilies", () => {
       noun: "announcement",
       adjective: undefined,
       adverb: undefined,
+      contextSource: "Everyday conversation",
     });
   });
 
@@ -90,7 +104,9 @@ describe("parseWordFamilies", () => {
       parseWordFamilies(
         `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
 | --- | --- | --- | --- | --- | --- |
-| invalid | --- | --- | --- | without forms | sin formas |`,
+| invalid | --- | --- | --- | without forms | sin formas |
+## Contextos
+- **invalid:** "We must invalid now," she said. There was no time to wait.`,
         "data/word-formation-b1-b2.md",
       );
     } catch (caught) {
@@ -101,6 +117,50 @@ describe("parseWordFamilies", () => {
       file: "data/word-formation-b1-b2.md",
       line: 3,
       reason: expect.any(String),
+    });
+  });
+
+  it("falla cuando falta el bullet de contexto", () => {
+    let error: unknown;
+    try {
+      parseWordFamilies(
+        `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| act | action | active | actively | to do something | actuar |
+## Contextos
+- **other:** "Something else," she said. We waited.`,
+        "data/word-formation-b1-b2.md",
+      );
+    } catch (caught) {
+      error = caught;
+    }
+
+    expect(error).toMatchObject({
+      file: "data/word-formation-b1-b2.md",
+      line: 3,
+      reason: "familia sin Context (EN)",
+    });
+  });
+
+  it("falla cuando sobra un contexto sin familia", () => {
+    let error: unknown;
+    try {
+      parseWordFamilies(
+        `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| act | action | active | actively | to do something | actuar |
+## Contextos
+- **act:** "We must act now," he said. There was no time to wait.
+- **extra:** "Something extra," she said. We waited.`,
+        "data/word-formation-b1-b2.md",
+      );
+    } catch (caught) {
+      error = caught;
+    }
+
+    expect(error).toMatchObject({
+      file: "data/word-formation-b1-b2.md",
+      reason: expect.stringContaining("contexto sin familia"),
     });
   });
 

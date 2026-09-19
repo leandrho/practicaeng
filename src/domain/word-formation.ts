@@ -10,6 +10,8 @@ export const WordFamilySchema = z
     adverb: z.string().min(1).optional(),
     meaningHintEn: z.string().min(1),
     meaningHint: z.string().min(1),
+    contextEn: z.string().min(1),
+    contextSource: z.string().min(1).optional(),
     examples: z.array(z.string()).default([]),
   })
   .refine((v) => v.noun !== undefined || v.adjective !== undefined || v.adverb !== undefined, {

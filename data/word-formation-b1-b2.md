@@ -100,3 +100,82 @@ Intentá producir: noun / adjective / adverb.
 
 También podés generar ejercicios tipo:\
 `I haven't made a final ______ yet. (DECIDE)` → **decision**
+
+## Contextos
+
+- **act:** "Do you know 'act?' he asked. "Tell me more," she replied. There was no time to wait.
+- **achieve:** "Have you heard 'achieve?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **agree:** "Remember 'agree,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **amaze:** "Can you use 'amaze?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **announce:** "Do you know 'announce?' he asked. "Tell me more," she replied. There was no time to wait.
+- **appear:** "Have you heard 'appear?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **apply:** "Remember 'apply,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **argue:** "Can you use 'argue?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **arrange:** "Do you know 'arrange?' he asked. "Tell me more," she replied. There was no time to wait.
+- **attend:** "Have you heard 'attend?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **attract:** "Remember 'attract,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **avoid:** "Can you use 'avoid?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **believe:** "Do you know 'believe?' he asked. "Tell me more," she replied. There was no time to wait.
+- **benefit:** "Have you heard 'benefit?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **care:** "Remember 'care,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **choose:** "Can you use 'choose?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **communicate:** "Do you know 'communicate?' he asked. "Tell me more," she replied. There was no time to wait.
+- **compete:** "Have you heard 'compete?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **complete:** "Remember 'complete,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **confuse:** "Can you use 'confuse?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **connect:** "Do you know 'connect?' he asked. "Tell me more," she replied. There was no time to wait.
+- **consider:** "Have you heard 'consider?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **create:** "Remember 'create,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **decide:** "Can you use 'decide?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **describe:** "Do you know 'describe?' he asked. "Tell me more," she replied. There was no time to wait.
+- **develop:** "Have you heard 'develop?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **differ:** "Remember 'differ,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **educate:** "Can you use 'educate?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **employ:** "Do you know 'employ?' he asked. "Tell me more," she replied. There was no time to wait.
+- **encourage:** "Have you heard 'encourage?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **enjoy:** "Remember 'enjoy,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **entertain:** "Can you use 'entertain?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **excite:** "Do you know 'excite?' he asked. "Tell me more," she replied. There was no time to wait.
+- **exist:** "Have you heard 'exist?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **expect:** "Remember 'expect,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **explain:** "Can you use 'explain?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **express:** "Do you know 'express?' he asked. "Tell me more," she replied. There was no time to wait.
+- **fail:** "Have you heard 'fail?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **friend:** "Remember 'friend,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **help:** "Can you use 'help?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **imagine:** "Do you know 'imagine?' he asked. "Tell me more," she replied. There was no time to wait.
+- **improve:** "Have you heard 'improve?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **inform:** "Remember 'inform,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **instruct:** "Can you use 'instruct?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **intend:** "Do you know 'intend?' he asked. "Tell me more," she replied. There was no time to wait.
+- **interest:** "Have you heard 'interest?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **invite:** "Remember 'invite,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **know:** "Can you use 'know?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **manage:** "Do you know 'manage?' he asked. "Tell me more," she replied. There was no time to wait.
+- **mean:** "Have you heard 'mean?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **motivate:** "Remember 'motivate,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **organize:** "Can you use 'organize?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **perform:** "Do you know 'perform?' he asked. "Tell me more," she replied. There was no time to wait.
+- **permit:** "Have you heard 'permit?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **please:** "Remember 'please,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **pollute:** "Can you use 'pollute?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **predict:** "Do you know 'predict?' he asked. "Tell me more," she replied. There was no time to wait.
+- **prefer:** "Have you heard 'prefer?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **prepare:** "Remember 'prepare,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **prevent:** "Can you use 'prevent?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **produce:** "Do you know 'produce?' he asked. "Tell me more," she replied. There was no time to wait.
+- **protect:** "Have you heard 'protect?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **react:** "Remember 'react,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **relate:** "Can you use 'relate?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **relax:** "Do you know 'relax?' he asked. "Tell me more," she replied. There was no time to wait.
+- **rely:** "Have you heard 'rely?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **respond:** "Remember 'respond,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **satisfy:** "Can you use 'satisfy?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **solve:** "Do you know 'solve?' he asked. "Tell me more," she replied. There was no time to wait.
+- **succeed:** "Have you heard 'succeed?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **suggest:** "Remember 'suggest,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **surprise:** "Can you use 'surprise?' she smiled. "Try it now," he replied. Everyone practiced together.
+- **think:** "Do you know 'think?' he asked. "Tell me more," she replied. There was no time to wait.
+- **use:** "Have you heard 'use?' she asked. Everyone listened carefully. Nobody wanted to leave.
+- **vary:** "Remember 'vary,' the teacher said. The whole class nodded together. Nobody asked questions.
+- **wonder:** "Can you use 'wonder?' she smiled. "Try it now," he replied. Everyone practiced together.

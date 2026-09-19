@@ -12,7 +12,9 @@ describe("buildGapFills", () => {
     const [family] = parseWordFamilies(
       `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
 | --- | --- | --- | --- | --- | --- |
-| amaze | amazement | amazing / amazed | amazingly | to surprise | asombrar |`,
+| amaze | amazement | amazing / amazed | amazingly | to surprise | asombrar |
+## Contextos
+- **amaze:** "The view amazed us completely," she said. We stood in silence for a while.`,
       "data/word-formation-b1-b2.md",
     );
     if (family === undefined) {
@@ -49,6 +51,8 @@ describe("buildGapFills", () => {
       noun: "announcement",
       meaningHintEn: "to make something public",
       meaningHint: "anunciar",
+      contextEn: '"We must announce the news today," she said. Everyone waited in silence.',
+      contextSource: "Everyday conversation",
     });
 
     expect(buildGapFills(family)).toEqual([

@@ -31,6 +31,7 @@ export function parseWordFamilies(markdown: string, file: string): WordFamily[] 
     ? extractPipeCells
     : createFixedWidthCellExtractor(separator);
   const examplesByBase = extractExamples(lines);
+  const contextsByBase = extractContexts(lines, file);
   const families: WordFamily[] = [];
   let row: WordFamilyRow | undefined;
   let rowLine = 0;
@@ -49,21 +50,37 @@ export function parseWordFamilies(markdown: string, file: string): WordFamily[] 
       if (meaningHint === undefined) {
         throwParseError(file, rowLine, "familia sin Significado (ES)");
       }
+      const base = normalizeRequiredCell(row.base);
+      const context = contextsByBase.get(base.toLowerCase());
+      if (context === undefined) {
+        throwParseError(file, rowLine, "familia sin Context (EN)");
+      }
 
       families.push(
         WordFamilySchema.parse({
-          base: normalizeRequiredCell(row.base),
+          base,
           level: "B1-B2",
-          category: normalizeRequiredCell(row.base).charAt(0).toUpperCase(),
+          category: base.charAt(0).toUpperCase(),
           noun: normalizeOptionalCell(row.noun),
           adjective: normalizeOptionalCell(row.adjective),
           adverb: normalizeOptionalCell(row.adverb),
           meaningHintEn,
           meaningHint,
-          examples: examplesByBase.get(normalizeRequiredCell(row.base).toLowerCase()) ?? [],
+          contextEn: context.contextEn,
+          contextSource: context.contextSource,
+          examples: examplesByBase.get(base.toLowerCase()) ?? [],
         }),
       );
     } catch (error) {
+      if (
+        typeof error === "object" &&
+        error !== null &&
+        "reason" in error &&
+        "file" in error &&
+        "line" in error
+      ) {
+        throw error;
+      }
       throwParseError(
         file,
         rowLine,
@@ -99,7 +116,72 @@ export function parseWordFamilies(markdown: string, file: string): WordFamily[] 
   }
 
   addRow();
+
+  const familyBases = new Set(families.map((family) => family.base.toLowerCase()));
+  for (const [base, context] of contextsByBase) {
+    if (!familyBases.has(base)) {
+      throwParseError(file, context.line, `contexto sin familia: ${base}`);
+    }
+  }
+
   return families;
+}
+
+type FamilyContext = { contextEn: string; contextSource: string; line: number };
+
+function extractContexts(lines: readonly string[], file: string): Map<string, FamilyContext> {
+  const contextsByBase = new Map<string, FamilyContext>();
+  let inContextsSection = false;
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (line === undefined) {
+      continue;
+    }
+
+    if (/^##\s+Contextos\s*$/.test(line)) {
+      inContextsSection = true;
+      continue;
+    }
+    if (inContextsSection && /^##\s+/.test(line)) {
+      break;
+    }
+    if (!inContextsSection || !/^\s*-\s+/.test(line)) {
+      continue;
+    }
+
+    const startLine = index + 1;
+    let bullet = line.trim();
+    while (index + 1 < lines.length && /^\s+\S/.test(lines[index + 1] ?? "")) {
+      const continuation = lines[index + 1];
+      if (continuation === undefined || /^\s*-\s+/.test(continuation)) {
+        break;
+      }
+      index += 1;
+      bullet = `${bullet} ${lines[index]?.trim()}`;
+    }
+
+    const match = /^-\s+\*\*(.+?):\*\*\s*(.+?)\s*(?:[—–]\s+(.+?)\s*|\s+-\s+(.+?)\s*)?$/.exec(bullet);
+    if (match?.[1] === undefined || match[2] === undefined) {
+      throwParseError(file, startLine, "contexto debe tener base y fragmento en inglés");
+    }
+
+    const base = match[1].trim().toLowerCase();
+    const contextEn = match[2].trim();
+    const contextSource = (match[3] ?? match[4] ?? "Everyday conversation").trim();
+    if (base.length === 0 || contextEn.length === 0) {
+      throwParseError(file, startLine, "familia sin Context (EN)");
+    }
+    if (contextEn.includes("---")) {
+      throwParseError(file, startLine, "contexto no puede contener ---");
+    }
+    if (contextsByBase.has(base)) {
+      throwParseError(file, startLine, `contexto duplicado: ${base}`);
+    }
+    contextsByBase.set(base, { contextEn, contextSource, line: startLine });
+  }
+
+  return contextsByBase;
 }
 
 function extractExamples(lines: readonly string[]): Map<string, string[]> {

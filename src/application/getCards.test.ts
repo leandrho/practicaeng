@@ -13,6 +13,8 @@ const cards: Card[] = [
     translationEs: "Necesito tomar una decisión.",
     category: "MAKE",
     sourceFile: "fixture.md",
+    contextEn: '"I must make a decision before nightfall," she said, looking at the two roads ahead.',
+    contextSource: "Everyday conversation",
   },
 ];
 

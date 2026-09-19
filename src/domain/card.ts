@@ -22,6 +22,8 @@ export const CardSchema = z
     translationEs: z.string().min(1),
     category: z.string().min(1),
     sourceFile: z.string().min(1),
+    contextEn: z.string().min(1),
+    contextSource: z.string().min(1).optional(),
     pastSimple: z.string().min(1).optional(),
     pastParticiple: z.string().min(1).optional(),
   })

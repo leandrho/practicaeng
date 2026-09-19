@@ -13,6 +13,8 @@ const family: WordFamily = {
   adverb: "decisively",
   meaningHintEn: "to make a choice",
   meaningHint: "decidir",
+  contextEn: '"We must decide now," she said, looking at the two roads ahead. There was no time to wait.',
+  contextSource: "Everyday conversation",
   examples: [],
 };
 
@@ -25,6 +27,8 @@ const secondFamily: WordFamily = {
   adverb: "actively",
   meaningHintEn: "to do something",
   meaningHint: "actuar",
+  contextEn: '"We must act now," he whispered when the lights went out during the school play.',
+  contextSource: "Everyday conversation",
   examples: [],
 };
 
@@ -35,6 +39,8 @@ const familyWithMissingForms: WordFamily = {
   noun: "announcement",
   meaningHintEn: "to make something public",
   meaningHint: "anunciar",
+  contextEn: '"We must announce the news today," she said. Everyone waited in silence.',
+  contextSource: "Everyday conversation",
   examples: [],
 };
 
@@ -46,6 +52,8 @@ const fallbackFamily: WordFamily = {
   noun: "zzfallbackness",
   meaningHintEn: "to do something uncurated",
   meaningHint: "hacer algo no curado",
+  contextEn: '"We must zzfallback now," he said. There was no time to wait.',
+  contextSource: "Everyday conversation",
   examples: [],
 };
 
@@ -56,6 +64,8 @@ const secondFallbackFamily: WordFamily = {
   noun: "zzsecondness",
   meaningHintEn: "to do another uncurated thing",
   meaningHint: "hacer otra cosa no curada",
+  contextEn: '"We must zzsecond now," she said. There was no time to wait.',
+  contextSource: "Everyday conversation",
   examples: [],
 };
 
@@ -251,5 +261,73 @@ describe("WordFormationClient", () => {
 
     expect(screen.getByText("No cards match these filters.")).not.toBeNull();
     expect(screen.getByRole("button", { name: "Clear filters" })).not.toBeNull();
+  });
+
+  it("keeps the book context out of the DOM until the cyan button is pressed", () => {
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
+
+    expect(document.querySelector(".book-page")).toBeNull();
+    expect(screen.queryByText(family.meaningHint)).toBeNull();
+
+    const contextButton = screen.getByRole("button", { name: "Show context hint" });
+    fireEvent.click(contextButton);
+
+    expect(contextButton.getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("button", { name: "Hide context hint" })).not.toBeNull();
+    expect(document.querySelector(".book-page")).not.toBeNull();
+    expect(document.querySelector(".book-page mark")).not.toBeNull();
+    expect(screen.getByText("Everyday conversation")).not.toBeNull();
+    expect(screen.queryByText(family.meaningHint)).toBeNull();
+  });
+
+  it("hides the book context when pressed again", () => {
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Show context hint" }));
+    fireEvent.click(screen.getByRole("button", { name: "Hide context hint" }));
+
+    expect(document.querySelector(".book-page")).toBeNull();
+    expect(
+      screen.getByRole("button", { name: "Show context hint" }).getAttribute("aria-pressed"),
+    ).toBe("false");
+  });
+
+  it("resets the book context when changing family", () => {
+    render(
+      <WordFormationClient
+        clearFiltersPath="/word-formation"
+        families={[family, secondFamily]}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Show context hint" }));
+    expect(document.querySelector(".book-page")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(document.querySelector(".book-page")).toBeNull();
+    expect(
+      screen.getByRole("button", { name: "Show context hint" }).getAttribute("aria-pressed"),
+    ).toBe("false");
+  });
+
+  it("keeps visual hint and book context independent", () => {
+    render(
+      <WordFormationClient
+        clearFiltersPath="/word-formation"
+        families={[fallbackFamily, secondFallbackFamily]}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Show visual hint" }));
+    fireEvent.click(screen.getByRole("button", { name: "Show context hint" }));
+
+    expect(screen.getByRole("img", { name: "Pista visual animada" })).not.toBeNull();
+    expect(document.querySelector(".book-page")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Hide visual hint" }));
+
+    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(document.querySelector(".book-page")).not.toBeNull();
   });
 });

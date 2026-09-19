@@ -15,6 +15,7 @@ después revelá la respuesta.
 -   **Significado:** preguntar a varias personas
 -   **Ejemplo:** I asked around, but nobody knew the answer.
 -   **Traducción (ES):** Pregunté a varias personas, pero nadie sabía la respuesta.
+-   **Context (EN):** "Do you know 'ask around?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 2. ask out
 
@@ -22,6 +23,7 @@ después revelá la respuesta.
 -   **Significado:** invitar a salir
 -   **Ejemplo:** He asked her out for dinner.
 -   **Traducción (ES):** La invitó a salir a cenar.
+-   **Context (EN):** "Have you heard 'ask out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 3. back up
 
@@ -29,6 +31,7 @@ después revelá la respuesta.
 -   **Significado:** hacer una copia de seguridad / respaldar
 -   **Ejemplo:** Back up your files before updating the system.
 -   **Traducción (ES):** Hacé una copia de seguridad de tus archivos antes de actualizar el sistema.
+-   **Context (EN):** "Remember 'back up,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 4. break down
 
@@ -36,6 +39,7 @@ después revelá la respuesta.
 -   **Significado:** averiarse / descomponerse
 -   **Ejemplo:** My car broke down on the way to work.
 -   **Traducción (ES):** Mi auto se descompuso camino al trabajo.
+-   **Context (EN):** "Can you use 'break down?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 5. break in
 
@@ -43,6 +47,7 @@ después revelá la respuesta.
 -   **Significado:** entrar por la fuerza
 -   **Ejemplo:** Someone tried to break in last night.
 -   **Traducción (ES):** Alguien intentó entrar por la fuerza anoche.
+-   **Context (EN):** "Do you know 'break in?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 6. break up
 
@@ -50,6 +55,7 @@ después revelá la respuesta.
 -   **Significado:** separarse / terminar una relación
 -   **Ejemplo:** They broke up after five years together.
 -   **Traducción (ES):** Se separaron después de cinco años juntos.
+-   **Context (EN):** "Have you heard 'break up?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 7. bring back
 
@@ -57,6 +63,7 @@ después revelá la respuesta.
 -   **Significado:** traer de vuelta / hacer recordar
 -   **Ejemplo:** This song brings back good memories.
 -   **Traducción (ES):** Esta canción trae buenos recuerdos.
+-   **Context (EN):** "Remember 'bring back,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 8. bring up
 
@@ -64,6 +71,7 @@ después revelá la respuesta.
 -   **Significado:** mencionar / criar
 -   **Ejemplo:** She brought up an interesting point.
 -   **Traducción (ES):** Ella mencionó un punto interesante.
+-   **Context (EN):** "Can you use 'bring up?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 9. call back
 
@@ -71,6 +79,7 @@ después revelá la respuesta.
 -   **Significado:** devolver una llamada
 -   **Ejemplo:** I'll call you back after the meeting.
 -   **Traducción (ES):** Te devuelvo la llamada después de la reunión.
+-   **Context (EN):** "Do you know 'call back?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 10. call off
 
@@ -78,6 +87,7 @@ después revelá la respuesta.
 -   **Significado:** cancelar
 -   **Ejemplo:** They called off the match because of the rain.
 -   **Traducción (ES):** Cancelaron el partido por la lluvia.
+-   **Context (EN):** "Have you heard 'call off?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 11. calm down
 
@@ -85,6 +95,7 @@ después revelá la respuesta.
 -   **Significado:** calmarse
 -   **Ejemplo:** Calm down and tell me what happened.
 -   **Traducción (ES):** Calmate y contame qué pasó.
+-   **Context (EN):** "Remember 'calm down,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 12. carry on
 
@@ -92,6 +103,7 @@ después revelá la respuesta.
 -   **Significado:** continuar
 -   **Ejemplo:** Please carry on with your work.
 -   **Traducción (ES):** Por favor, seguí con tu trabajo.
+-   **Context (EN):** "Can you use 'carry on?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 13. catch up
 
@@ -99,6 +111,7 @@ después revelá la respuesta.
 -   **Significado:** ponerse al día / alcanzar
 -   **Ejemplo:** I need to catch up on my English lessons.
 -   **Traducción (ES):** Necesito ponerme al día con mis clases de inglés.
+-   **Context (EN):** "Do you know 'catch up?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 14. check in
 
@@ -106,6 +119,7 @@ después revelá la respuesta.
 -   **Significado:** registrarse
 -   **Ejemplo:** We checked in at the hotel at three.
 -   **Traducción (ES):** Nos registramos en el hotel a las tres.
+-   **Context (EN):** "Have you heard 'check in?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 15. check out
 
@@ -113,6 +127,7 @@ después revelá la respuesta.
 -   **Significado:** hacer el check-out / revisar
 -   **Ejemplo:** We checked out of the hotel early.
 -   **Traducción (ES):** Hicimos el check-out del hotel temprano.
+-   **Context (EN):** "Remember 'check out,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 16. cheer up
 
@@ -120,6 +135,7 @@ después revelá la respuesta.
 -   **Significado:** animarse / animar
 -   **Ejemplo:** Cheer up! Things will get better.
 -   **Traducción (ES):** ¡Animate! Las cosas van a mejorar.
+-   **Context (EN):** "Can you use 'cheer up?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 17. clean up
 
@@ -127,6 +143,7 @@ después revelá la respuesta.
 -   **Significado:** limpiar / ordenar
 -   **Ejemplo:** We need to clean up the kitchen.
 -   **Traducción (ES):** Tenemos que limpiar la cocina.
+-   **Context (EN):** "Do you know 'clean up?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 18. come across
 
@@ -134,6 +151,7 @@ después revelá la respuesta.
 -   **Significado:** encontrarse con algo por casualidad
 -   **Ejemplo:** I came across an old photo yesterday.
 -   **Traducción (ES):** Me encontré con una foto vieja ayer.
+-   **Context (EN):** "Have you heard 'come across?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 19. come back
 
@@ -141,6 +159,7 @@ después revelá la respuesta.
 -   **Significado:** volver
 -   **Ejemplo:** What time are you coming back?
 -   **Traducción (ES):** ¿A qué hora volvés?
+-   **Context (EN):** "Remember 'come back,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 20. come in
 
@@ -148,6 +167,7 @@ después revelá la respuesta.
 -   **Significado:** entrar
 -   **Ejemplo:** Come in and have a seat.
 -   **Traducción (ES):** Pasá y sentate.
+-   **Context (EN):** "Can you use 'come in?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 21. come on
 
@@ -155,6 +175,7 @@ después revelá la respuesta.
 -   **Significado:** vamos / darse prisa
 -   **Ejemplo:** Come on! We're going to be late.
 -   **Traducción (ES):** ¡Dale! Vamos a llegar tarde.
+-   **Context (EN):** "Do you know 'come on?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 22. come out
 
@@ -162,6 +183,7 @@ después revelá la respuesta.
 -   **Significado:** salir / publicarse
 -   **Ejemplo:** Her new book comes out next month.
 -   **Traducción (ES):** Su nuevo libro sale el mes que viene.
+-   **Context (EN):** "Have you heard 'come out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 23. come over
 
@@ -169,6 +191,7 @@ después revelá la respuesta.
 -   **Significado:** venir de visita
 -   **Ejemplo:** Why don't you come over this evening?
 -   **Traducción (ES):** ¿Por qué no venís de visita esta noche?
+-   **Context (EN):** "Remember 'come over,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 24. come up
 
@@ -176,6 +199,7 @@ después revelá la respuesta.
 -   **Significado:** surgir
 -   **Ejemplo:** Something important came up at work.
 -   **Traducción (ES):** Surgió algo importante en el trabajo.
+-   **Context (EN):** "Can you use 'come up?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 25. come up with
 
@@ -183,6 +207,7 @@ después revelá la respuesta.
 -   **Significado:** idear / ocurrírsele
 -   **Ejemplo:** We need to come up with a better plan.
 -   **Traducción (ES):** Tenemos que idear un plan mejor.
+-   **Context (EN):** "Do you know 'come up with?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 26. count on
 
@@ -190,6 +215,7 @@ después revelá la respuesta.
 -   **Significado:** contar con
 -   **Ejemplo:** You can always count on me.
 -   **Traducción (ES):** Siempre podés contar conmigo.
+-   **Context (EN):** "Have you heard 'count on?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 27. cut down on
 
@@ -197,6 +223,7 @@ después revelá la respuesta.
 -   **Significado:** reducir
 -   **Ejemplo:** I'm trying to cut down on sugar.
 -   **Traducción (ES):** Estoy tratando de reducir el consumo de azúcar.
+-   **Context (EN):** "Remember 'cut down on,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 28. cut off
 
@@ -204,6 +231,7 @@ después revelá la respuesta.
 -   **Significado:** cortar / interrumpir
 -   **Ejemplo:** The storm cut off the electricity.
 -   **Traducción (ES):** La tormenta cortó la electricidad.
+-   **Context (EN):** "Can you use 'cut off?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 29. deal with
 
@@ -211,6 +239,7 @@ después revelá la respuesta.
 -   **Significado:** lidiar con / encargarse de
 -   **Ejemplo:** I have to deal with this problem today.
 -   **Traducción (ES):** Tengo que ocuparme de este problema hoy.
+-   **Context (EN):** "Do you know 'deal with?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 30. do over
 
@@ -218,6 +247,7 @@ después revelá la respuesta.
 -   **Significado:** hacer de nuevo
 -   **Ejemplo:** The teacher asked me to do the exercise over.
 -   **Traducción (ES):** La profesora me pidió que hiciera el ejercicio de nuevo.
+-   **Context (EN):** "Have you heard 'do over?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 31. dress up
 
@@ -225,6 +255,7 @@ después revelá la respuesta.
 -   **Significado:** vestirse elegante / disfrazarse
 -   **Ejemplo:** We dressed up for the wedding.
 -   **Traducción (ES):** Nos vestimos elegantes para la boda.
+-   **Context (EN):** "Remember 'dress up,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 32. drop by
 
@@ -232,6 +263,7 @@ después revelá la respuesta.
 -   **Significado:** pasar de visita
 -   **Ejemplo:** I'll drop by after work.
 -   **Traducción (ES):** Voy a pasar después del trabajo.
+-   **Context (EN):** "Can you use 'drop by?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 33. drop off
 
@@ -239,6 +271,7 @@ después revelá la respuesta.
 -   **Significado:** dejar a alguien/algo
 -   **Ejemplo:** I'll drop you off at the station.
 -   **Traducción (ES):** Te dejo en la estación.
+-   **Context (EN):** "Do you know 'drop off?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 34. eat out
 
@@ -246,6 +279,7 @@ después revelá la respuesta.
 -   **Significado:** comer afuera
 -   **Ejemplo:** We usually eat out on Fridays.
 -   **Traducción (ES):** Generalmente comemos afuera los viernes.
+-   **Context (EN):** "Have you heard 'eat out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 35. end up
 
@@ -253,6 +287,7 @@ después revelá la respuesta.
 -   **Significado:** terminar / acabar
 -   **Ejemplo:** We ended up staying at home.
 -   **Traducción (ES):** Al final nos quedamos en casa.
+-   **Context (EN):** "Remember 'end up,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 36. fall apart
 
@@ -260,6 +295,7 @@ después revelá la respuesta.
 -   **Significado:** desarmarse / venirse abajo
 -   **Ejemplo:** My old shoes are falling apart.
 -   **Traducción (ES):** Mis zapatos viejos se están desarmando.
+-   **Context (EN):** "Can you use 'fall apart?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 37. fall behind
 
@@ -267,6 +303,7 @@ después revelá la respuesta.
 -   **Significado:** quedarse atrás
 -   **Ejemplo:** I fell behind with my homework.
 -   **Traducción (ES):** Me atrasé con la tarea.
+-   **Context (EN):** "Do you know 'fall behind?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 38. fall for
 
@@ -274,6 +311,7 @@ después revelá la respuesta.
 -   **Significado:** enamorarse de / caer en un engaño
 -   **Ejemplo:** He fell for her immediately.
 -   **Traducción (ES):** Se enamoró de ella de inmediato.
+-   **Context (EN):** "Have you heard 'fall for?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 39. fall out
 
@@ -281,6 +319,7 @@ después revelá la respuesta.
 -   **Significado:** pelearse / dejar de ser amigos
 -   **Ejemplo:** They fell out over money.
 -   **Traducción (ES):** Se pelearon por dinero.
+-   **Context (EN):** "Remember 'fall out,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 40. figure out
 
@@ -288,6 +327,7 @@ después revelá la respuesta.
 -   **Significado:** entender / resolver
 -   **Ejemplo:** I can't figure out how this works.
 -   **Traducción (ES):** No puedo entender cómo funciona esto.
+-   **Context (EN):** "Can you use 'figure out?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 41. fill in
 
@@ -295,6 +335,7 @@ después revelá la respuesta.
 -   **Significado:** completar / sustituir
 -   **Ejemplo:** Please fill in this form.
 -   **Traducción (ES):** Por favor, completá este formulario.
+-   **Context (EN):** "Do you know 'fill in?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 42. fill out
 
@@ -302,6 +343,7 @@ después revelá la respuesta.
 -   **Significado:** completar un formulario
 -   **Ejemplo:** You need to fill out the application.
 -   **Traducción (ES):** Tenés que completar la solicitud.
+-   **Context (EN):** "Have you heard 'fill out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 43. fill up
 
@@ -309,6 +351,7 @@ después revelá la respuesta.
 -   **Significado:** llenar
 -   **Ejemplo:** Let's fill up the tank before we leave.
 -   **Traducción (ES):** Llenemos el tanque antes de irnos.
+-   **Context (EN):** "Remember 'fill up,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 44. find out
 
@@ -316,6 +359,7 @@ después revelá la respuesta.
 -   **Significado:** averiguar / descubrir
 -   **Ejemplo:** I found out what happened.
 -   **Traducción (ES):** Averigüé qué pasó.
+-   **Context (EN):** "Can you use 'find out?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 45. get along
 
@@ -323,6 +367,7 @@ después revelá la respuesta.
 -   **Significado:** llevarse bien
 -   **Ejemplo:** Do you get along with your coworkers?
 -   **Traducción (ES):** ¿Te llevás bien con tus compañeros de trabajo?
+-   **Context (EN):** "Do you know 'get along?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 46. get around
 
@@ -330,6 +375,7 @@ después revelá la respuesta.
 -   **Significado:** desplazarse / circular
 -   **Ejemplo:** It's easy to get around by bus.
 -   **Traducción (ES):** Es fácil moverse en colectivo.
+-   **Context (EN):** "Have you heard 'get around?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 47. get away
 
@@ -337,6 +383,7 @@ después revelá la respuesta.
 -   **Significado:** escaparse / irse de vacaciones
 -   **Ejemplo:** We want to get away for the weekend.
 -   **Traducción (ES):** Queremos escaparnos el fin de semana.
+-   **Context (EN):** "Remember 'get away,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 48. get back
 
@@ -344,6 +391,7 @@ después revelá la respuesta.
 -   **Significado:** regresar / recuperar
 -   **Ejemplo:** What time did you get back home?
 -   **Traducción (ES):** ¿A qué hora volviste a casa?
+-   **Context (EN):** "Can you use 'get back?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 49. get by
 
@@ -351,6 +399,7 @@ después revelá la respuesta.
 -   **Significado:** arreglárselas
 -   **Ejemplo:** I can get by with a little Spanish.
 -   **Traducción (ES):** Puedo arreglármelas con un poco de español.
+-   **Context (EN):** "Do you know 'get by?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 50. get in
 
@@ -358,6 +407,7 @@ después revelá la respuesta.
 -   **Significado:** entrar / llegar
 -   **Ejemplo:** What time does your train get in?
 -   **Traducción (ES):** ¿A qué hora llega tu tren?
+-   **Context (EN):** "Have you heard 'get in?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 51. get off
 
@@ -365,6 +415,7 @@ después revelá la respuesta.
 -   **Significado:** bajarse
 -   **Ejemplo:** We get off the bus at the next stop.
 -   **Traducción (ES):** Nos bajamos del colectivo en la próxima parada.
+-   **Context (EN):** "Remember 'get off,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 52. get on
 
@@ -372,6 +423,7 @@ después revelá la respuesta.
 -   **Significado:** subirse / llevarse bien
 -   **Ejemplo:** Get on the bus before it leaves.
 -   **Traducción (ES):** Subite al colectivo antes de que se vaya.
+-   **Context (EN):** "Can you use 'get on?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 53. get out
 
@@ -379,6 +431,7 @@ después revelá la respuesta.
 -   **Significado:** salir
 -   **Ejemplo:** Let's get out of here.
 -   **Traducción (ES):** Salgamos de acá.
+-   **Context (EN):** "Do you know 'get out?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 54. get over
 
@@ -386,6 +439,7 @@ después revelá la respuesta.
 -   **Significado:** superar / recuperarse
 -   **Ejemplo:** It took her weeks to get over the flu.
 -   **Traducción (ES):** Le llevó semanas recuperarse de la gripe.
+-   **Context (EN):** "Have you heard 'get over?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 55. get rid of
 
@@ -393,6 +447,7 @@ después revelá la respuesta.
 -   **Significado:** deshacerse de
 -   **Ejemplo:** I need to get rid of these old clothes.
 -   **Traducción (ES):** Necesito deshacerme de esta ropa vieja.
+-   **Context (EN):** "Remember 'get rid of,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 56. get together
 
@@ -400,6 +455,7 @@ después revelá la respuesta.
 -   **Significado:** reunirse
 -   **Ejemplo:** Let's get together this weekend.
 -   **Traducción (ES):** Juntémonos este fin de semana.
+-   **Context (EN):** "Can you use 'get together?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 57. get up
 
@@ -407,6 +463,7 @@ después revelá la respuesta.
 -   **Significado:** levantarse
 -   **Ejemplo:** I usually get up at seven.
 -   **Traducción (ES):** Generalmente me levanto a las siete.
+-   **Context (EN):** "Do you know 'get up?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 58. give away
 
@@ -414,6 +471,7 @@ después revelá la respuesta.
 -   **Significado:** regalar / revelar
 -   **Ejemplo:** She gave away all her old books.
 -   **Traducción (ES):** Regaló todos sus libros viejos.
+-   **Context (EN):** "Have you heard 'give away?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 59. give back
 
@@ -421,6 +479,7 @@ después revelá la respuesta.
 -   **Significado:** devolver
 -   **Ejemplo:** Can you give my pen back?
 -   **Traducción (ES):** ¿Me podés devolver mi lapicera?
+-   **Context (EN):** "Remember 'give back,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 60. give in
 
@@ -428,6 +487,7 @@ después revelá la respuesta.
 -   **Significado:** ceder
 -   **Ejemplo:** He finally gave in and agreed.
 -   **Traducción (ES):** Finalmente cedió y aceptó.
+-   **Context (EN):** "Can you use 'give in?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 61. give up
 
@@ -435,6 +495,7 @@ después revelá la respuesta.
 -   **Significado:** rendirse / dejar
 -   **Ejemplo:** Don't give up on your goals.
 -   **Traducción (ES):** No abandones tus metas.
+-   **Context (EN):** "Do you know 'give up?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 62. go ahead
 
@@ -442,6 +503,7 @@ después revelá la respuesta.
 -   **Significado:** seguir adelante / proceder
 -   **Ejemplo:** Go ahead and ask your question.
 -   **Traducción (ES):** Adelante, hacé tu pregunta.
+-   **Context (EN):** "Have you heard 'go ahead?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 63. go away
 
@@ -449,6 +511,7 @@ después revelá la respuesta.
 -   **Significado:** irse
 -   **Ejemplo:** We went away for a few days.
 -   **Traducción (ES):** Nos fuimos unos días.
+-   **Context (EN):** "Remember 'go away,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 64. go back
 
@@ -456,6 +519,7 @@ después revelá la respuesta.
 -   **Significado:** volver
 -   **Ejemplo:** I'd like to go back to Brazil.
 -   **Traducción (ES):** Me gustaría volver a Brasil.
+-   **Context (EN):** "Can you use 'go back?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 65. go off
 
@@ -463,6 +527,7 @@ después revelá la respuesta.
 -   **Significado:** sonar / explotar / echarse a perder
 -   **Ejemplo:** My alarm went off at six.
 -   **Traducción (ES):** Mi alarma sonó a las seis.
+-   **Context (EN):** "Do you know 'go off?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 66. go on
 
@@ -470,6 +535,7 @@ después revelá la respuesta.
 -   **Significado:** continuar / suceder
 -   **Ejemplo:** What's going on here?
 -   **Traducción (ES):** ¿Qué está pasando acá?
+-   **Context (EN):** "Have you heard 'go on?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 67. go out
 
@@ -477,6 +543,7 @@ después revelá la respuesta.
 -   **Significado:** salir
 -   **Ejemplo:** We're going out for dinner tonight.
 -   **Traducción (ES):** Vamos a salir a cenar esta noche.
+-   **Context (EN):** "Remember 'go out,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 68. go over
 
@@ -484,6 +551,7 @@ después revelá la respuesta.
 -   **Significado:** repasar
 -   **Ejemplo:** Let's go over the answers together.
 -   **Traducción (ES):** Repasemos las respuestas juntos.
+-   **Context (EN):** "Can you use 'go over?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 69. grow up
 
@@ -491,6 +559,7 @@ después revelá la respuesta.
 -   **Significado:** crecer
 -   **Ejemplo:** I grew up in a small town.
 -   **Traducción (ES):** Crecí en un pueblo pequeño.
+-   **Context (EN):** "Do you know 'grow up?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 70. hand in
 
@@ -498,6 +567,7 @@ después revelá la respuesta.
 -   **Significado:** entregar
 -   **Ejemplo:** Please hand in your homework tomorrow.
 -   **Traducción (ES):** Por favor, entregá la tarea mañana.
+-   **Context (EN):** "Have you heard 'hand in?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 71. hand out
 
@@ -505,6 +575,7 @@ después revelá la respuesta.
 -   **Significado:** repartir
 -   **Ejemplo:** The teacher handed out the worksheets.
 -   **Traducción (ES):** La profesora repartió las hojas de trabajo.
+-   **Context (EN):** "Remember 'hand out,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 72. hang on
 
@@ -512,6 +583,7 @@ después revelá la respuesta.
 -   **Significado:** esperar
 -   **Ejemplo:** Hang on a minute, please.
 -   **Traducción (ES):** Esperá un minuto, por favor.
+-   **Context (EN):** "Can you use 'hang on?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 73. hang out
 
@@ -519,6 +591,7 @@ después revelá la respuesta.
 -   **Significado:** pasar el rato
 -   **Ejemplo:** We often hang out after class.
 -   **Traducción (ES):** A menudo pasamos el rato después de clase.
+-   **Context (EN):** "Do you know 'hang out?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 74. hang up
 
@@ -526,6 +599,7 @@ después revelá la respuesta.
 -   **Significado:** colgar el teléfono
 -   **Ejemplo:** Don't hang up; I need to tell you something.
 -   **Traducción (ES):** No cortes; necesito contarte algo.
+-   **Context (EN):** "Have you heard 'hang up?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 75. hold on
 
@@ -533,6 +607,7 @@ después revelá la respuesta.
 -   **Significado:** esperar / sujetar
 -   **Ejemplo:** Hold on while I check.
 -   **Traducción (ES):** Esperá mientras reviso.
+-   **Context (EN):** "Remember 'hold on,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 76. hurry up
 
@@ -540,6 +615,7 @@ después revelá la respuesta.
 -   **Significado:** darse prisa
 -   **Ejemplo:** Hurry up or we'll miss the bus.
 -   **Traducción (ES):** Apurate o vamos a perder el colectivo.
+-   **Context (EN):** "Can you use 'hurry up?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 77. keep away
 
@@ -547,6 +623,7 @@ después revelá la respuesta.
 -   **Significado:** mantenerse alejado
 -   **Ejemplo:** Keep away from the edge.
 -   **Traducción (ES):** Mantenete alejado del borde.
+-   **Context (EN):** "Do you know 'keep away?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 78. keep on
 
@@ -554,6 +631,7 @@ después revelá la respuesta.
 -   **Significado:** seguir haciendo
 -   **Ejemplo:** She kept on talking despite the noise.
 -   **Traducción (ES):** Siguió hablando a pesar del ruido.
+-   **Context (EN):** "Have you heard 'keep on?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 79. keep up
 
@@ -561,6 +639,7 @@ después revelá la respuesta.
 -   **Significado:** mantener el ritmo
 -   **Ejemplo:** It's hard to keep up with him.
 -   **Traducción (ES):** Es difícil seguirle el ritmo.
+-   **Context (EN):** "Remember 'keep up,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 80. keep up with
 
@@ -568,6 +647,7 @@ después revelá la respuesta.
 -   **Significado:** mantenerse al día con / seguir el ritmo de
 -   **Ejemplo:** I use podcasts to keep up with the news.
 -   **Traducción (ES):** Uso podcasts para mantenerme al día con las noticias.
+-   **Context (EN):** "Can you use 'keep up with?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 81. kick off
 
@@ -575,6 +655,7 @@ después revelá la respuesta.
 -   **Significado:** comenzar
 -   **Ejemplo:** The meeting kicks off at nine.
 -   **Traducción (ES):** La reunión empieza a las nueve.
+-   **Context (EN):** "Do you know 'kick off?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 82. leave out
 
@@ -582,6 +663,7 @@ después revelá la respuesta.
 -   **Significado:** omitir / dejar afuera
 -   **Ejemplo:** Don't leave out any important details.
 -   **Traducción (ES):** No omitas ningún detalle importante.
+-   **Context (EN):** "Have you heard 'leave out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 83. let down
 
@@ -589,6 +671,7 @@ después revelá la respuesta.
 -   **Significado:** decepcionar
 -   **Ejemplo:** I don't want to let my team down.
 -   **Traducción (ES):** No quiero decepcionar a mi equipo.
+-   **Context (EN):** "Remember 'let down,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 84. let in
 
@@ -596,6 +679,7 @@ después revelá la respuesta.
 -   **Significado:** dejar entrar
 -   **Ejemplo:** Could you let the dog in?
 -   **Traducción (ES):** ¿Podés dejar entrar al perro?
+-   **Context (EN):** "Can you use 'let in?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 85. log in
 
@@ -603,6 +687,7 @@ después revelá la respuesta.
 -   **Significado:** iniciar sesión
 -   **Ejemplo:** Log in with your username and password.
 -   **Traducción (ES):** Iniciá sesión con tu nombre de usuario y contraseña.
+-   **Context (EN):** "Do you know 'log in?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 86. log out
 
@@ -610,6 +695,7 @@ después revelá la respuesta.
 -   **Significado:** cerrar sesión
 -   **Ejemplo:** Remember to log out on shared computers.
 -   **Traducción (ES):** Recordá cerrar sesión en las computadoras compartidas.
+-   **Context (EN):** "Have you heard 'log out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 87. look after
 
@@ -617,6 +703,7 @@ después revelá la respuesta.
 -   **Significado:** cuidar
 -   **Ejemplo:** Can you look after my dog tomorrow?
 -   **Traducción (ES):** ¿Podés cuidar a mi perro mañana?
+-   **Context (EN):** "Remember 'look after,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 88. look around
 
@@ -624,6 +711,7 @@ después revelá la respuesta.
 -   **Significado:** mirar alrededor / recorrer
 -   **Ejemplo:** We looked around the city all afternoon.
 -   **Traducción (ES):** Recorrimos la ciudad toda la tarde.
+-   **Context (EN):** "Can you use 'look around?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 89. look at
 
@@ -631,6 +719,7 @@ después revelá la respuesta.
 -   **Significado:** mirar / examinar
 -   **Ejemplo:** Let's look at the problem again.
 -   **Traducción (ES):** Miremos el problema de nuevo.
+-   **Context (EN):** "Do you know 'look at?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 90. look for
 
@@ -638,6 +727,7 @@ después revelá la respuesta.
 -   **Significado:** buscar
 -   **Ejemplo:** I'm looking for my keys.
 -   **Traducción (ES):** Estoy buscando mis llaves.
+-   **Context (EN):** "Have you heard 'look for?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 91. look forward to
 
@@ -645,6 +735,7 @@ después revelá la respuesta.
 -   **Significado:** esperar con ganas
 -   **Ejemplo:** I'm looking forward to seeing you.
 -   **Traducción (ES):** Tengo ganas de verte.
+-   **Context (EN):** "Remember 'look forward to,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 92. look into
 
@@ -652,6 +743,7 @@ después revelá la respuesta.
 -   **Significado:** investigar
 -   **Ejemplo:** The company is looking into the problem.
 -   **Traducción (ES):** La empresa está investigando el problema.
+-   **Context (EN):** "Can you use 'look into?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 93. look out
 
@@ -659,6 +751,7 @@ después revelá la respuesta.
 -   **Significado:** tener cuidado
 -   **Ejemplo:** Look out! There's a car coming.
 -   **Traducción (ES):** ¡Cuidado! Viene un auto.
+-   **Context (EN):** "Do you know 'look out?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 94. look up
 
@@ -666,6 +759,7 @@ después revelá la respuesta.
 -   **Significado:** buscar información
 -   **Ejemplo:** I looked the word up in a dictionary.
 -   **Traducción (ES):** Busqué la palabra en un diccionario.
+-   **Context (EN):** "Have you heard 'look up?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 95. look up to
 
@@ -673,6 +767,7 @@ después revelá la respuesta.
 -   **Significado:** admirar
 -   **Ejemplo:** I've always looked up to my older brother.
 -   **Traducción (ES):** Siempre admiré a mi hermano mayor.
+-   **Context (EN):** "Remember 'look up to,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 96. make up
 
@@ -680,6 +775,7 @@ después revelá la respuesta.
 -   **Significado:** inventar / reconciliarse
 -   **Ejemplo:** He made up an excuse for being late.
 -   **Traducción (ES):** Inventó una excusa por llegar tarde.
+-   **Context (EN):** "Can you use 'make up?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 97. move in
 
@@ -687,6 +783,7 @@ después revelá la respuesta.
 -   **Significado:** mudarse a un lugar
 -   **Ejemplo:** They moved in last weekend.
 -   **Traducción (ES):** Se mudaron el fin de semana pasado.
+-   **Context (EN):** "Do you know 'move in?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 98. move out
 
@@ -694,6 +791,7 @@ después revelá la respuesta.
 -   **Significado:** mudarse de un lugar
 -   **Ejemplo:** She's moving out next month.
 -   **Traducción (ES):** Se muda el mes que viene.
+-   **Context (EN):** "Have you heard 'move out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 99. pass away
 
@@ -701,6 +799,7 @@ después revelá la respuesta.
 -   **Significado:** fallecer
 -   **Ejemplo:** His grandfather passed away last year.
 -   **Traducción (ES):** Su abuelo falleció el año pasado.
+-   **Context (EN):** "Remember 'pass away,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 100. pass out
 
@@ -708,6 +807,7 @@ después revelá la respuesta.
 -   **Significado:** desmayarse / repartir
 -   **Ejemplo:** He passed out because of the heat.
 -   **Traducción (ES):** Se desmayó por el calor.
+-   **Context (EN):** "Can you use 'pass out?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 101. pay back
 
@@ -715,6 +815,7 @@ después revelá la respuesta.
 -   **Significado:** devolver dinero
 -   **Ejemplo:** I'll pay you back tomorrow.
 -   **Traducción (ES):** Te devuelvo el dinero mañana.
+-   **Context (EN):** "Do you know 'pay back?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 102. pick out
 
@@ -722,6 +823,7 @@ después revelá la respuesta.
 -   **Significado:** elegir
 -   **Ejemplo:** She picked out a blue dress.
 -   **Traducción (ES):** Eligió un vestido azul.
+-   **Context (EN):** "Have you heard 'pick out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 103. pick up
 
@@ -729,6 +831,7 @@ después revelá la respuesta.
 -   **Significado:** recoger / aprender
 -   **Ejemplo:** I'll pick you up at the airport.
 -   **Traducción (ES):** Te paso a buscar al aeropuerto.
+-   **Context (EN):** "Remember 'pick up,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 104. point out
 
@@ -736,6 +839,7 @@ después revelá la respuesta.
 -   **Significado:** señalar
 -   **Ejemplo:** She pointed out a mistake in the report.
 -   **Traducción (ES):** Señaló un error en el informe.
+-   **Context (EN):** "Can you use 'point out?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 105. put away
 
@@ -743,6 +847,7 @@ después revelá la respuesta.
 -   **Significado:** guardar
 -   **Ejemplo:** Please put your clothes away.
 -   **Traducción (ES):** Por favor, guardá tu ropa.
+-   **Context (EN):** "Do you know 'put away?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 106. put back
 
@@ -750,6 +855,7 @@ después revelá la respuesta.
 -   **Significado:** volver a poner
 -   **Ejemplo:** Put the book back when you're finished.
 -   **Traducción (ES):** Volvé a poner el libro en su lugar cuando termines.
+-   **Context (EN):** "Have you heard 'put back?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 107. put down
 
@@ -757,6 +863,7 @@ después revelá la respuesta.
 -   **Significado:** dejar / anotar / menospreciar
 -   **Ejemplo:** Put down your phone for a minute.
 -   **Traducción (ES):** Dejá el teléfono un minuto.
+-   **Context (EN):** "Remember 'put down,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 108. put off
 
@@ -764,6 +871,7 @@ después revelá la respuesta.
 -   **Significado:** posponer
 -   **Ejemplo:** We had to put off the meeting.
 -   **Traducción (ES):** Tuvimos que posponer la reunión.
+-   **Context (EN):** "Can you use 'put off?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 109. put on
 
@@ -771,6 +879,7 @@ después revelá la respuesta.
 -   **Significado:** ponerse ropa / encender
 -   **Ejemplo:** Put on a jacket; it's cold.
 -   **Traducción (ES):** Ponete una campera; hace frío.
+-   **Context (EN):** "Do you know 'put on?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 110. put out
 
@@ -778,6 +887,7 @@ después revelá la respuesta.
 -   **Significado:** apagar
 -   **Ejemplo:** Firefighters put out the fire quickly.
 -   **Traducción (ES):** Los bomberos apagaron el incendio rápidamente.
+-   **Context (EN):** "Have you heard 'put out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 111. put together
 
@@ -785,6 +895,7 @@ después revelá la respuesta.
 -   **Significado:** armar / reunir
 -   **Ejemplo:** It took me an hour to put the desk together.
 -   **Traducción (ES):** Me llevó una hora armar el escritorio.
+-   **Context (EN):** "Remember 'put together,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 112. put up with
 
@@ -792,6 +903,7 @@ después revelá la respuesta.
 -   **Significado:** tolerar
 -   **Ejemplo:** I can't put up with that noise anymore.
 -   **Traducción (ES):** Ya no puedo tolerar ese ruido.
+-   **Context (EN):** "Can you use 'put up with?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 113. run into
 
@@ -799,6 +911,7 @@ después revelá la respuesta.
 -   **Significado:** encontrarse con alguien por casualidad
 -   **Ejemplo:** I ran into an old friend downtown.
 -   **Traducción (ES):** Me encontré con un viejo amigo en el centro.
+-   **Context (EN):** "Do you know 'run into?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 114. run out
 
@@ -806,6 +919,7 @@ después revelá la respuesta.
 -   **Significado:** acabarse
 -   **Ejemplo:** Time is running out.
 -   **Traducción (ES):** Se está acabando el tiempo.
+-   **Context (EN):** "Have you heard 'run out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 115. run out of
 
@@ -813,6 +927,7 @@ después revelá la respuesta.
 -   **Significado:** quedarse sin
 -   **Ejemplo:** We've run out of milk.
 -   **Traducción (ES):** Nos quedamos sin leche.
+-   **Context (EN):** "Remember 'run out of,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 116. set off
 
@@ -820,6 +935,7 @@ después revelá la respuesta.
 -   **Significado:** partir / activar
 -   **Ejemplo:** We set off early in the morning.
 -   **Traducción (ES):** Salimos temprano a la mañana.
+-   **Context (EN):** "Can you use 'set off?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 117. set up
 
@@ -827,6 +943,7 @@ después revelá la respuesta.
 -   **Significado:** configurar / establecer
 -   **Ejemplo:** I need to set up my new computer.
 -   **Traducción (ES):** Necesito configurar mi computadora nueva.
+-   **Context (EN):** "Do you know 'set up?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 118. show off
 
@@ -834,6 +951,7 @@ después revelá la respuesta.
 -   **Significado:** presumir
 -   **Ejemplo:** He likes to show off his new phone.
 -   **Traducción (ES):** Le gusta presumir su teléfono nuevo.
+-   **Context (EN):** "Have you heard 'show off?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 119. show up
 
@@ -841,6 +959,7 @@ después revelá la respuesta.
 -   **Significado:** aparecer / presentarse
 -   **Ejemplo:** He didn't show up for the meeting.
 -   **Traducción (ES):** No se presentó a la reunión.
+-   **Context (EN):** "Remember 'show up,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 120. shut down
 
@@ -848,6 +967,7 @@ después revelá la respuesta.
 -   **Significado:** apagar / cerrar
 -   **Ejemplo:** Please shut down the computer.
 -   **Traducción (ES):** Por favor, apagá la computadora.
+-   **Context (EN):** "Can you use 'shut down?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 121. sit down
 
@@ -855,6 +975,7 @@ después revelá la respuesta.
 -   **Significado:** sentarse
 -   **Ejemplo:** Come in and sit down.
 -   **Traducción (ES):** Pasá y sentate.
+-   **Context (EN):** "Do you know 'sit down?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 122. slow down
 
@@ -862,6 +983,7 @@ después revelá la respuesta.
 -   **Significado:** reducir la velocidad
 -   **Ejemplo:** Slow down; you're driving too fast.
 -   **Traducción (ES):** Bajá la velocidad; estás manejando demasiado rápido.
+-   **Context (EN):** "Have you heard 'slow down?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 123. sort out
 
@@ -869,6 +991,7 @@ después revelá la respuesta.
 -   **Significado:** resolver / organizar
 -   **Ejemplo:** We need to sort out this problem.
 -   **Traducción (ES):** Tenemos que resolver este problema.
+-   **Context (EN):** "Remember 'sort out,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 124. speak up
 
@@ -876,6 +999,7 @@ después revelá la respuesta.
 -   **Significado:** hablar más fuerte
 -   **Ejemplo:** Could you speak up, please?
 -   **Traducción (ES):** ¿Podés hablar más fuerte, por favor?
+-   **Context (EN):** "Can you use 'speak up?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 125. stand up
 
@@ -883,6 +1007,7 @@ después revelá la respuesta.
 -   **Significado:** ponerse de pie
 -   **Ejemplo:** Everyone stood up when she entered.
 -   **Traducción (ES):** Todos se pusieron de pie cuando ella entró.
+-   **Context (EN):** "Do you know 'stand up?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 126. stay up
 
@@ -890,6 +1015,7 @@ después revelá la respuesta.
 -   **Significado:** quedarse despierto
 -   **Ejemplo:** I stayed up late last night.
 -   **Traducción (ES):** Me quedé despierto hasta tarde anoche.
+-   **Context (EN):** "Have you heard 'stay up?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 127. take after
 
@@ -897,6 +1023,7 @@ después revelá la respuesta.
 -   **Significado:** parecerse a
 -   **Ejemplo:** She takes after her mother.
 -   **Traducción (ES):** Se parece a su madre.
+-   **Context (EN):** "Remember 'take after,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 128. take away
 
@@ -904,6 +1031,7 @@ después revelá la respuesta.
 -   **Significado:** quitar / llevarse
 -   **Ejemplo:** The waiter took away our plates.
 -   **Traducción (ES):** El mozo se llevó nuestros platos.
+-   **Context (EN):** "Can you use 'take away?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 129. take back
 
@@ -911,6 +1039,7 @@ después revelá la respuesta.
 -   **Significado:** devolver / retractarse
 -   **Ejemplo:** I take back what I said.
 -   **Traducción (ES):** Me retracto de lo que dije.
+-   **Context (EN):** "Do you know 'take back?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 130. take off
 
@@ -918,6 +1047,7 @@ después revelá la respuesta.
 -   **Significado:** despegar / quitarse ropa
 -   **Ejemplo:** The plane took off on time.
 -   **Traducción (ES):** El avión despegó a tiempo.
+-   **Context (EN):** "Have you heard 'take off?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 131. take on
 
@@ -925,6 +1055,7 @@ después revelá la respuesta.
 -   **Significado:** asumir / aceptar trabajo
 -   **Ejemplo:** She's taking on more responsibility.
 -   **Traducción (ES):** Está asumiendo más responsabilidad.
+-   **Context (EN):** "Remember 'take on,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 132. take out
 
@@ -932,6 +1063,7 @@ después revelá la respuesta.
 -   **Significado:** sacar / llevar a salir
 -   **Ejemplo:** He took out his wallet.
 -   **Traducción (ES):** Sacó su billetera.
+-   **Context (EN):** "Can you use 'take out?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 133. take over
 
@@ -939,6 +1071,7 @@ después revelá la respuesta.
 -   **Significado:** hacerse cargo / tomar control
 -   **Ejemplo:** She took over the project last month.
 -   **Traducción (ES):** Se hizo cargo del proyecto el mes pasado.
+-   **Context (EN):** "Do you know 'take over?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 134. take up
 
@@ -946,6 +1079,7 @@ después revelá la respuesta.
 -   **Significado:** empezar una actividad / ocupar
 -   **Ejemplo:** I've taken up swimming.
 -   **Traducción (ES):** Empecé a practicar natación.
+-   **Context (EN):** "Have you heard 'take up?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 135. talk over
 
@@ -953,6 +1087,7 @@ después revelá la respuesta.
 -   **Significado:** hablar y analizar
 -   **Ejemplo:** Let's talk it over before deciding.
 -   **Traducción (ES):** Hablemoslo antes de decidir.
+-   **Context (EN):** "Remember 'talk over,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 136. think over
 
@@ -960,6 +1095,7 @@ después revelá la respuesta.
 -   **Significado:** pensar detenidamente
 -   **Ejemplo:** Think it over and tell me tomorrow.
 -   **Traducción (ES):** Pensalo bien y contame mañana.
+-   **Context (EN):** "Can you use 'think over?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 137. throw away
 
@@ -967,6 +1103,7 @@ después revelá la respuesta.
 -   **Significado:** tirar
 -   **Ejemplo:** Don't throw that box away.
 -   **Traducción (ES):** No tires esa caja.
+-   **Context (EN):** "Do you know 'throw away?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 138. try on
 
@@ -974,6 +1111,7 @@ después revelá la respuesta.
 -   **Significado:** probarse ropa
 -   **Ejemplo:** Can I try this jacket on?
 -   **Traducción (ES):** ¿Puedo probarme esta campera?
+-   **Context (EN):** "Have you heard 'try on?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 139. turn around
 
@@ -981,6 +1119,7 @@ después revelá la respuesta.
 -   **Significado:** darse vuelta / cambiar una situación
 -   **Ejemplo:** Turn around and look behind you.
 -   **Traducción (ES):** Date vuelta y mirá detrás tuyo.
+-   **Context (EN):** "Remember 'turn around,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 140. turn down
 
@@ -988,6 +1127,7 @@ después revelá la respuesta.
 -   **Significado:** rechazar / bajar volumen
 -   **Ejemplo:** She turned down the job offer.
 -   **Traducción (ES):** Rechazó la oferta de trabajo.
+-   **Context (EN):** "Can you use 'turn down?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 141. turn off
 
@@ -995,6 +1135,7 @@ después revelá la respuesta.
 -   **Significado:** apagar
 -   **Ejemplo:** Please turn off the lights.
 -   **Traducción (ES):** Por favor, apagá las luces.
+-   **Context (EN):** "Do you know 'turn off?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 142. turn on
 
@@ -1002,6 +1143,7 @@ después revelá la respuesta.
 -   **Significado:** encender
 -   **Ejemplo:** Can you turn on the TV?
 -   **Traducción (ES):** ¿Podés prender la tele?
+-   **Context (EN):** "Have you heard 'turn on?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 143. turn up
 
@@ -1009,6 +1151,7 @@ después revelá la respuesta.
 -   **Significado:** aparecer / subir volumen
 -   **Ejemplo:** He turned up an hour late.
 -   **Traducción (ES):** Apareció una hora tarde.
+-   **Context (EN):** "Remember 'turn up,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 144. wake up
 
@@ -1016,6 +1159,7 @@ después revelá la respuesta.
 -   **Significado:** despertarse
 -   **Ejemplo:** I wake up at six every morning.
 -   **Traducción (ES):** Me despierto a las seis todas las mañanas.
+-   **Context (EN):** "Can you use 'wake up?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 145. warm up
 
@@ -1023,6 +1167,7 @@ después revelá la respuesta.
 -   **Significado:** calentar / entrar en calor
 -   **Ejemplo:** Warm up before you start running.
 -   **Traducción (ES):** Entrá en calor antes de empezar a correr.
+-   **Context (EN):** "Do you know 'warm up?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 146. watch out
 
@@ -1030,6 +1175,7 @@ después revelá la respuesta.
 -   **Significado:** tener cuidado
 -   **Ejemplo:** Watch out for the wet floor.
 -   **Traducción (ES):** Cuidado con el piso mojado.
+-   **Context (EN):** "Have you heard 'watch out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 147. work out
 
@@ -1037,6 +1183,7 @@ después revelá la respuesta.
 -   **Significado:** hacer ejercicio / resolver / resultar
 -   **Ejemplo:** We need to work out a solution.
 -   **Traducción (ES):** Tenemos que encontrar una solución.
+-   **Context (EN):** "Remember 'work out,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 148. write down
 
@@ -1044,6 +1191,7 @@ después revelá la respuesta.
 -   **Significado:** anotar
 -   **Ejemplo:** Write down the new vocabulary.
 -   **Traducción (ES):** Anotá el vocabulario nuevo.
+-   **Context (EN):** "Can you use 'write down?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 149. break into
 
@@ -1051,6 +1199,7 @@ después revelá la respuesta.
 -   **Significado:** entrar por la fuerza
 -   **Ejemplo:** Someone broke into the office last night.
 -   **Traducción (ES):** Alguien entró por la fuerza a la oficina anoche.
+-   **Context (EN):** "Do you know 'break into?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 150. break out
 
@@ -1058,6 +1207,7 @@ después revelá la respuesta.
 -   **Significado:** estallar / comenzar repentinamente
 -   **Ejemplo:** A fire broke out in the kitchen.
 -   **Traducción (ES):** Se desató un incendio en la cocina.
+-   **Context (EN):** "Have you heard 'break out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 151. bring about
 
@@ -1065,6 +1215,7 @@ después revelá la respuesta.
 -   **Significado:** provocar / causar
 -   **Ejemplo:** The new policy brought about major changes.
 -   **Traducción (ES):** La nueva política provocó cambios importantes.
+-   **Context (EN):** "Remember 'bring about,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 152. bring in
 
@@ -1072,6 +1223,7 @@ después revelá la respuesta.
 -   **Significado:** introducir / generar ingresos
 -   **Ejemplo:** The company brought in a new manager.
 -   **Traducción (ES):** La empresa incorporó a un gerente nuevo.
+-   **Context (EN):** "Can you use 'bring in?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 153. brush up on
 
@@ -1079,6 +1231,7 @@ después revelá la respuesta.
 -   **Significado:** refrescar conocimientos
 -   **Ejemplo:** I need to brush up on my English grammar.
 -   **Traducción (ES):** Necesito repasar mi gramática inglesa.
+-   **Context (EN):** "Do you know 'brush up on?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 154. build up
 
@@ -1086,6 +1239,7 @@ después revelá la respuesta.
 -   **Significado:** acumular / desarrollar
 -   **Ejemplo:** You need time to build up your confidence.
 -   **Traducción (ES):** Necesitás tiempo para desarrollar tu confianza.
+-   **Context (EN):** "Have you heard 'build up?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 155. call for
 
@@ -1093,6 +1247,7 @@ después revelá la respuesta.
 -   **Significado:** requerir / pedir
 -   **Ejemplo:** This situation calls for a quick response.
 -   **Traducción (ES):** Esta situación requiere una respuesta rápida.
+-   **Context (EN):** "Remember 'call for,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 156. call on
 
@@ -1100,6 +1255,7 @@ después revelá la respuesta.
 -   **Significado:** visitar / pedir que alguien participe
 -   **Ejemplo:** The teacher called on me to answer.
 -   **Traducción (ES):** La profesora me pidió que respondiera.
+-   **Context (EN):** "Can you use 'call on?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 157. carry out
 
@@ -1107,6 +1263,7 @@ después revelá la respuesta.
 -   **Significado:** llevar a cabo
 -   **Ejemplo:** They carried out several tests.
 -   **Traducción (ES):** Llevaron a cabo varias pruebas.
+-   **Context (EN):** "Do you know 'carry out?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 158. catch on
 
@@ -1114,6 +1271,7 @@ después revelá la respuesta.
 -   **Significado:** entender / ponerse de moda
 -   **Ejemplo:** It took me a while to catch on.
 -   **Traducción (ES):** Me llevó un tiempo entenderlo.
+-   **Context (EN):** "Have you heard 'catch on?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 159. check up on
 
@@ -1121,6 +1279,7 @@ después revelá la respuesta.
 -   **Significado:** comprobar cómo está algo o alguien
 -   **Ejemplo:** I'll check up on the kids later.
 -   **Traducción (ES):** Voy a ver cómo están los chicos más tarde.
+-   **Context (EN):** "Remember 'check up on,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 160. clear up
 
@@ -1128,6 +1287,7 @@ después revelá la respuesta.
 -   **Significado:** aclarar / ordenar / mejorar el tiempo
 -   **Ejemplo:** We need to clear up this misunderstanding.
 -   **Traducción (ES):** Tenemos que aclarar este malentendido.
+-   **Context (EN):** "Can you use 'clear up?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 161. cut out
 
@@ -1135,6 +1295,7 @@ después revelá la respuesta.
 -   **Significado:** eliminar / dejar de consumir
 -   **Ejemplo:** I'm trying to cut out junk food.
 -   **Traducción (ES):** Estoy tratando de dejar la comida chatarra.
+-   **Context (EN):** "Do you know 'cut out?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 162. do without
 
@@ -1142,6 +1303,7 @@ después revelá la respuesta.
 -   **Significado:** arreglárselas sin
 -   **Ejemplo:** We can do without a car for a few days.
 -   **Traducción (ES):** Podemos arreglárnoslas sin auto unos días.
+-   **Context (EN):** "Have you heard 'do without?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 163. drop out
 
@@ -1149,6 +1311,7 @@ después revelá la respuesta.
 -   **Significado:** abandonar un curso
 -   **Ejemplo:** He dropped out of college.
 -   **Traducción (ES):** Abandonó la universidad.
+-   **Context (EN):** "Remember 'drop out,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 164. face up to
 
@@ -1156,6 +1319,7 @@ después revelá la respuesta.
 -   **Significado:** afrontar
 -   **Ejemplo:** We have to face up to the problem.
 -   **Traducción (ES):** Tenemos que afrontar el problema.
+-   **Context (EN):** "Can you use 'face up to?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 165. get across
 
@@ -1163,6 +1327,7 @@ después revelá la respuesta.
 -   **Significado:** comunicar una idea con claridad
 -   **Ejemplo:** She got her message across clearly.
 -   **Traducción (ES):** Comunicó su mensaje con claridad.
+-   **Context (EN):** "Do you know 'get across?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 166. get ahead
 
@@ -1170,6 +1335,7 @@ después revelá la respuesta.
 -   **Significado:** progresar
 -   **Ejemplo:** You have to work hard to get ahead.
 -   **Traducción (ES):** Tenés que trabajar duro para progresar.
+-   **Context (EN):** "Have you heard 'get ahead?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 167. get around to
 
@@ -1177,6 +1343,7 @@ después revelá la respuesta.
 -   **Significado:** finalmente encontrar tiempo para
 -   **Ejemplo:** I finally got around to fixing the door.
 -   **Traducción (ES):** Finalmente encontré tiempo para arreglar la puerta.
+-   **Context (EN):** "Remember 'get around to,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 168. get through
 
@@ -1184,6 +1351,7 @@ después revelá la respuesta.
 -   **Significado:** terminar / superar / comunicarse
 -   **Ejemplo:** I finally got through all my emails.
 -   **Traducción (ES):** Finalmente terminé todos mis correos electrónicos.
+-   **Context (EN):** "Can you use 'get through?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 169. give out
 
@@ -1191,6 +1359,7 @@ después revelá la respuesta.
 -   **Significado:** repartir / agotarse
 -   **Ejemplo:** They gave out free water.
 -   **Traducción (ES):** Repartieron agua gratis.
+-   **Context (EN):** "Do you know 'give out?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 170. go through
 
@@ -1198,6 +1367,7 @@ después revelá la respuesta.
 -   **Significado:** atravesar / revisar
 -   **Ejemplo:** She's going through a difficult time.
 -   **Traducción (ES):** Está atravesando un momento difícil.
+-   **Context (EN):** "Have you heard 'go through?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 171. hold back
 
@@ -1205,6 +1375,7 @@ después revelá la respuesta.
 -   **Significado:** contener / frenar
 -   **Ejemplo:** He couldn't hold back his tears.
 -   **Traducción (ES):** No pudo contener las lágrimas.
+-   **Context (EN):** "Remember 'hold back,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 172. keep off
 
@@ -1212,6 +1383,7 @@ después revelá la respuesta.
 -   **Significado:** mantenerse fuera / evitar
 -   **Ejemplo:** Keep off the grass.
 -   **Traducción (ES):** No pises el césped.
+-   **Context (EN):** "Can you use 'keep off?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 173. leave behind
 
@@ -1219,6 +1391,7 @@ después revelá la respuesta.
 -   **Significado:** dejar atrás
 -   **Ejemplo:** I left my umbrella behind.
 -   **Traducción (ES):** Dejé mi paraguas olvidado.
+-   **Context (EN):** "Do you know 'leave behind?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 174. live up to
 
@@ -1226,6 +1399,7 @@ después revelá la respuesta.
 -   **Significado:** estar a la altura de
 -   **Ejemplo:** The film lived up to my expectations.
 -   **Traducción (ES):** La película estuvo a la altura de mis expectativas.
+-   **Context (EN):** "Have you heard 'live up to?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 175. make out
 
@@ -1233,6 +1407,7 @@ después revelá la respuesta.
 -   **Significado:** distinguir / entender
 -   **Ejemplo:** I couldn't make out what he was saying.
 -   **Traducción (ES):** No pude entender lo que estaba diciendo.
+-   **Context (EN):** "Remember 'make out,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 176. make up for
 
@@ -1240,6 +1415,7 @@ después revelá la respuesta.
 -   **Significado:** compensar
 -   **Ejemplo:** I'll work late to make up for lost time.
 -   **Traducción (ES):** Voy a trabajar hasta tarde para compensar el tiempo perdido.
+-   **Context (EN):** "Can you use 'make up for?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 177. put aside
 
@@ -1247,6 +1423,7 @@ después revelá la respuesta.
 -   **Significado:** reservar / dejar de lado
 -   **Ejemplo:** I put aside some money every month.
 -   **Traducción (ES):** Aparto algo de dinero todos los meses.
+-   **Context (EN):** "Do you know 'put aside?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 178. put forward
 
@@ -1254,6 +1431,7 @@ después revelá la respuesta.
 -   **Significado:** proponer
 -   **Ejemplo:** She put forward a new idea.
 -   **Traducción (ES):** Propuso una idea nueva.
+-   **Context (EN):** "Have you heard 'put forward?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 179. rule out
 
@@ -1261,6 +1439,7 @@ después revelá la respuesta.
 -   **Significado:** descartar
 -   **Ejemplo:** We can't rule out that possibility.
 -   **Traducción (ES):** No podemos descartar esa posibilidad.
+-   **Context (EN):** "Remember 'rule out,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 180. settle down
 
@@ -1268,6 +1447,7 @@ después revelá la respuesta.
 -   **Significado:** establecerse / calmarse
 -   **Ejemplo:** He wants to settle down and start a family.
 -   **Traducción (ES):** Quiere establecerse y formar una familia.
+-   **Context (EN):** "Can you use 'settle down?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 181. stand for
 
@@ -1275,6 +1455,7 @@ después revelá la respuesta.
 -   **Significado:** representar / significar
 -   **Ejemplo:** What does this abbreviation stand for?
 -   **Traducción (ES):** ¿Qué significa esta abreviatura?
+-   **Context (EN):** "Do you know 'stand for?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 182. stick to
 
@@ -1282,6 +1463,7 @@ después revelá la respuesta.
 -   **Significado:** mantenerse fiel a / cumplir
 -   **Ejemplo:** Try to stick to the plan.
 -   **Traducción (ES):** Tratá de cumplir el plan.
+-   **Context (EN):** "Have you heard 'stick to?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 183. take in
 
@@ -1289,6 +1471,7 @@ después revelá la respuesta.
 -   **Significado:** comprender / absorber
 -   **Ejemplo:** There was too much information to take in.
 -   **Traducción (ES):** Había demasiada información para asimilar.
+-   **Context (EN):** "Remember 'take in,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 184. turn into
 
@@ -1296,6 +1479,7 @@ después revelá la respuesta.
 -   **Significado:** convertirse en
 -   **Ejemplo:** The small project turned into a big business.
 -   **Traducción (ES):** El proyecto pequeño se convirtió en un gran negocio.
+-   **Context (EN):** "Can you use 'turn into?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 185. wear out
 
@@ -1303,6 +1487,7 @@ después revelá la respuesta.
 -   **Significado:** desgastarse / agotar
 -   **Ejemplo:** These shoes wear out quickly.
 -   **Traducción (ES):** Estos zapatos se desgastan rápido.
+-   **Context (EN):** "Do you know 'wear out?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 186. work on
 
@@ -1310,6 +1495,7 @@ después revelá la respuesta.
 -   **Significado:** trabajar en / mejorar
 -   **Ejemplo:** I'm working on my pronunciation.
 -   **Traducción (ES):** Estoy trabajando en mi pronunciación.
+-   **Context (EN):** "Have you heard 'work on?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 187. back down
 
@@ -1317,6 +1503,7 @@ después revelá la respuesta.
 -   **Significado:** ceder / retirar una postura
 -   **Ejemplo:** Neither side wanted to back down.
 -   **Traducción (ES):** Ninguna de las partes quería ceder.
+-   **Context (EN):** "Remember 'back down,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 188. blow up
 
@@ -1324,6 +1511,7 @@ después revelá la respuesta.
 -   **Significado:** explotar / inflar
 -   **Ejemplo:** We blew up the balloons for the party.
 -   **Traducción (ES):** Inflamos los globos para la fiesta.
+-   **Context (EN):** "Can you use 'blow up?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 189. break through
 
@@ -1331,6 +1519,7 @@ después revelá la respuesta.
 -   **Significado:** lograr un avance / atravesar
 -   **Ejemplo:** Scientists hope to break through this barrier.
 -   **Traducción (ES):** Los científicos esperan superar esta barrera.
+-   **Context (EN):** "Do you know 'break through?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 190. bring out
 
@@ -1338,6 +1527,7 @@ después revelá la respuesta.
 -   **Significado:** resaltar / lanzar
 -   **Ejemplo:** That color brings out your eyes.
 -   **Traducción (ES):** Ese color resalta tus ojos.
+-   **Context (EN):** "Have you heard 'bring out?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 191. come along
 
@@ -1345,6 +1535,7 @@ después revelá la respuesta.
 -   **Significado:** acompañar / progresar
 -   **Ejemplo:** Would you like to come along with us?
 -   **Traducción (ES):** ¿Te gustaría venir con nosotros?
+-   **Context (EN):** "Remember 'come along,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 192. come down with
 
@@ -1352,6 +1543,7 @@ después revelá la respuesta.
 -   **Significado:** enfermarse de
 -   **Ejemplo:** I think I'm coming down with a cold.
 -   **Traducción (ES):** Creo que me estoy resfriando.
+-   **Context (EN):** "Can you use 'come down with?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 193. cut back on
 
@@ -1359,6 +1551,7 @@ después revelá la respuesta.
 -   **Significado:** reducir
 -   **Ejemplo:** We need to cut back on our spending.
 -   **Traducción (ES):** Tenemos que reducir nuestros gastos.
+-   **Context (EN):** "Do you know 'cut back on?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 194. get away with
 
@@ -1366,6 +1559,7 @@ después revelá la respuesta.
 -   **Significado:** salirse con la suya
 -   **Ejemplo:** He thought he could get away with cheating.
 -   **Traducción (ES):** Creyó que podía salirse con la suya haciendo trampa.
+-   **Context (EN):** "Have you heard 'get away with?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 195. get down to
 
@@ -1373,6 +1567,7 @@ después revelá la respuesta.
 -   **Significado:** ponerse seriamente a hacer algo
 -   **Ejemplo:** Let's get down to work.
 -   **Traducción (ES):** Pongámonos a trabajar.
+-   **Context (EN):** "Remember 'get down to,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 196. go ahead with
 
@@ -1380,6 +1575,7 @@ después revelá la respuesta.
 -   **Significado:** seguir adelante con
 -   **Ejemplo:** They decided to go ahead with the project.
 -   **Traducción (ES):** Decidieron seguir adelante con el proyecto.
+-   **Context (EN):** "Can you use 'go ahead with?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ### 197. go without
 
@@ -1387,6 +1583,7 @@ después revelá la respuesta.
 -   **Significado:** pasar sin algo
 -   **Ejemplo:** I can't go without coffee in the morning.
 -   **Traducción (ES):** No puedo pasar sin café a la mañana.
+-   **Context (EN):** "Do you know 'go without?' he asked. "Tell me more," she replied. There was no time to wait.
 
 ### 198. hold on to
 
@@ -1394,6 +1591,7 @@ después revelá la respuesta.
 -   **Significado:** conservar / aferrarse a
 -   **Ejemplo:** Hold on to your ticket.
 -   **Traducción (ES):** Guardá tu boleto.
+-   **Context (EN):** "Have you heard 'hold on to?' she asked. Everyone listened carefully. Nobody wanted to leave.
 
 ### 199. keep track of
 
@@ -1401,6 +1599,7 @@ después revelá la respuesta.
 -   **Significado:** llevar un registro de
 -   **Ejemplo:** I use an app to keep track of my expenses.
 -   **Traducción (ES):** Uso una aplicación para llevar un registro de mis gastos.
+-   **Context (EN):** "Remember 'keep track of,' the teacher said. The whole class nodded together. Nobody asked questions.
 
 ### 200. look back on
 
@@ -1408,6 +1607,7 @@ después revelá la respuesta.
 -   **Significado:** recordar el pasado
 -   **Ejemplo:** I look back on those years with affection.
 -   **Traducción (ES):** Recuerdo esos años con cariño.
+-   **Context (EN):** "Can you use 'look back on?' she smiled. "Try it now," he replied. Everyone practiced together.
 
 ## Estructura sugerida para la app
 

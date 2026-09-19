@@ -7,6 +7,8 @@ import type { WordFamily } from "../../src/domain/word-formation";
 import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
+import { BookIcon } from "./ui/BookIcon";
+import { ContextBook } from "./ui/ContextBook";
 import { HintIcon } from "./ui/HintIcon";
 
 type WFState = {
@@ -14,6 +16,7 @@ type WFState = {
   revealed: boolean;
   showEs: boolean;
   showHint: boolean;
+  showContext: boolean;
   guess: string;
   checked: "idle" | "correct" | "incorrect";
 };
@@ -34,6 +37,7 @@ export default function WordFormationClient({
     revealed: false,
     showEs: false,
     showHint: false,
+    showContext: false,
     guess: "",
     checked: "idle",
   });
@@ -94,6 +98,7 @@ export default function WordFormationClient({
       revealed: false,
       showEs: false,
       showHint: false,
+      showContext: false,
       guess: "",
       checked: "idle",
     }));
@@ -115,19 +120,39 @@ export default function WordFormationClient({
       <p className="flashcard__kicker">Base</p>
       <div className="flashcard__head">
         <h2>{family.base.toUpperCase()}</h2>
-        <Button
-          className="btn btn--ghost btn--hint"
-          aria-pressed={state.showHint}
-          aria-label={state.showHint ? "Hide visual hint" : "Show visual hint"}
-          title="Ver pista"
-          onClick={() => setState((current) => ({ ...current, showHint: !current.showHint }))}
-        >
-          <HintIcon />
-        </Button>
+        <div className="flashcard__hint-actions">
+          <Button
+            className="btn btn--ghost btn--hint"
+            aria-pressed={state.showHint}
+            aria-label={state.showHint ? "Hide visual hint" : "Show visual hint"}
+            title="Ver pista"
+            onClick={() => setState((current) => ({ ...current, showHint: !current.showHint }))}
+          >
+            <HintIcon />
+          </Button>
+          <Button
+            className="btn btn--ghost btn--context"
+            aria-pressed={state.showContext}
+            aria-label={state.showContext ? "Hide context hint" : "Show context hint"}
+            title="Ver contexto"
+            onClick={() => setState((current) => ({ ...current, showContext: !current.showContext }))}
+          >
+            <BookIcon />
+          </Button>
+        </div>
       </div>
       {state.showHint ? (
         <div className="flashcard__hint-panel" aria-live="polite">
           <HintGallery hintId={hintId} />
+        </div>
+      ) : null}
+      {state.showContext ? (
+        <div className="flashcard__context-panel">
+          <ContextBook
+            expression={family.base}
+            contextEn={family.contextEn}
+            contextSource={family.contextSource}
+          />
         </div>
       ) : null}
       {state.revealed ? (
