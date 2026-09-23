@@ -74,6 +74,7 @@ El contenido se edita directamente en los archivos Markdown de `data/`. No hace 
 - Los encabezados `##` son los nueve grupos de función (Adding information, Contrast and concession, Cause and reason, Result and consequence, Purpose, Time and sequence, Examples and clarification, Opinion and stance, Summary and conclusion) y se usan como categoría en los filtros.
 - El archivo tiene al menos 70 conectores, con cinco o más por grupo.
 - Un bullet incompleto o con `---` dentro del contexto hace fallar el build con archivo y línea.
+- El contexto sigue la convención de SPEC 21: cita real de uno de los 14 clásicos en dominio público donde existe (fuente `Título — Autor`, registrada en `data/context-provenance.json`), o diálogo situado con fuente `Everyday conversation` cuando el conector no aparece en el corpus.
 - Los conectores **no** forman parte de Mixed Practice.
 
 ### Word Formation

@@ -2463,5 +2463,311 @@
   "kind": "quote",
   "book": "Alice's Adventures in Wonderland — Lewis Carroll",
   "chapter": "CHAPTER I."
+ },
+ "moreover": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER VI. Marilla Makes Up Her Mind"
+ },
+ "furthermore": {
+  "kind": "dialogue"
+ },
+ "in addition": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "II. THE RED-HEADED LEAGUE"
+ },
+ "besides": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "CHAPTER TWENTY-EIGHT"
+ },
+ "what's more": {
+  "kind": "dialogue"
+ },
+ "not only ... but also": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "COME AWAY, COME AWAY!"
+ },
+ "additionally": {
+  "kind": "dialogue"
+ },
+ "on top of that": {
+  "kind": "dialogue"
+ },
+ "however": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER VIII. Anne’s Bringing-up Is Begun"
+ },
+ "nevertheless": {
+  "kind": "quote",
+  "book": "A Christmas Carol — Charles Dickens",
+  "chapter": "STAVE III:  THE SECOND OF THE THREE SPIRITS"
+ },
+ "on the other hand": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "IV. THE BOSCOMBE VALLEY MYSTERY"
+ },
+ "although": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XVI. Diana Is Invited to Tea with Tragic Results"
+ },
+ "even though": {
+  "kind": "quote",
+  "book": "A Christmas Carol — Charles Dickens",
+  "chapter": "STAVE IV:  THE LAST OF THE SPIRITS"
+ },
+ "whereas": {
+  "kind": "quote",
+  "book": "Huckleberry Finn — Mark Twain",
+  "chapter": "CHAPTER XXII."
+ },
+ "despite": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "CHAPTER TWENTY-FOUR"
+ },
+ "in spite of": {
+  "kind": "quote",
+  "book": "The Wonderful Wizard of Oz — L. Frank Baum",
+  "chapter": "L. Frank Baum"
+ },
+ "because": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER III. Marilla Cuthbert Is Surprised"
+ },
+ "since": {
+  "kind": "quote",
+  "book": "Little Women — Louisa May Alcott",
+  "chapter": "CHAPTER SEVEN"
+ },
+ "due to": {
+  "kind": "quote",
+  "book": "The Wonderful Wizard of Oz — L. Frank Baum",
+  "chapter": "L. Frank Baum"
+ },
+ "owing to": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE SHADOW"
+ },
+ "on account of": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XVIII. Anne to the Rescue"
+ },
+ "for this reason": {
+  "kind": "quote",
+  "book": "The Wonderful Wizard of Oz — L. Frank Baum",
+  "chapter": "L. Frank Baum"
+ },
+ "as": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "IX"
+ },
+ "given that": {
+  "kind": "dialogue"
+ },
+ "therefore": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER VI."
+ },
+ "thus": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "WENDY’S STORY"
+ },
+ "consequently": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER XVI"
+ },
+ "as a result": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXI. A New Departure in Flavorings"
+ },
+ "hence": {
+  "kind": "dialogue"
+ },
+ "accordingly": {
+  "kind": "quote",
+  "book": "Anne of Green Gables — Lucy Maud Montgomery",
+  "chapter": "CHAPTER XXVII. Vanity and Vexation of Spirit"
+ },
+ "so": {
+  "kind": "quote",
+  "book": "The Wonderful Wizard of Oz — L. Frank Baum",
+  "chapter": "L. Frank Baum"
+ },
+ "as a consequence": {
+  "kind": "dialogue"
+ },
+ "so that": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "DO YOU BELIEVE IN FAIRIES?"
+ },
+ "in order to": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "V. THE FIVE ORANGE PIPS"
+ },
+ "in order that": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "VIII. THE ADVENTURE OF THE SPECKLED BAND"
+ },
+ "so as to": {
+  "kind": "quote",
+  "book": "Huckleberry Finn — Mark Twain",
+  "chapter": "CHAPTER I."
+ },
+ "with the aim of": {
+  "kind": "dialogue"
+ },
+ "with a view to": {
+  "kind": "dialogue"
+ },
+ "firstly": {
+  "kind": "dialogue"
+ },
+ "subsequently": {
+  "kind": "dialogue"
+ },
+ "meanwhile": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER XV"
+ },
+ "afterwards": {
+  "kind": "quote",
+  "book": "A Christmas Carol — Charles Dickens",
+  "chapter": "STAVE V:  THE END OF IT"
+ },
+ "in the meantime": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "WENDY’S STORY"
+ },
+ "eventually": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER XXIX"
+ },
+ "by the time": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER XI."
+ },
+ "finally": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER XVI"
+ },
+ "for example": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "II. THE RED-HEADED LEAGUE"
+ },
+ "for instance": {
+  "kind": "quote",
+  "book": "Peter Pan — J. M. Barrie",
+  "chapter": "THE ISLAND COME TRUE"
+ },
+ "such as": {
+  "kind": "quote",
+  "book": "The Jungle Book — Rudyard Kipling",
+  "chapter": "Mowgli’s Brothers"
+ },
+ "to illustrate": {
+  "kind": "quote",
+  "book": "A Christmas Carol — Charles Dickens",
+  "chapter": "STAVE I:  MARLEY'S GHOST"
+ },
+ "in other words": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "I."
+ },
+ "namely": {
+  "kind": "quote",
+  "book": "Tom Sawyer — Mark Twain",
+  "chapter": "CHAPTER II"
+ },
+ "in particular": {
+  "kind": "quote",
+  "book": "Treasure Island — Robert Louis Stevenson",
+  "chapter": "XV"
+ },
+ "that is": {
+  "kind": "quote",
+  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
+  "chapter": "XII. THE ADVENTURE OF THE COPPER BEECHES"
+ },
+ "in my opinion": {
+  "kind": "quote",
+  "book": "Huckleberry Finn — Mark Twain",
+  "chapter": "CHAPTER XXVII."
+ },
+ "from my point of view": {
+  "kind": "dialogue"
+ },
+ "as far as I'm concerned": {
+  "kind": "dialogue"
+ },
+ "personally": {
+  "kind": "dialogue"
+ },
+ "in fact": {
+  "kind": "quote",
+  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
+  "chapter": "CHAPTER IX."
+ },
+ "above all": {
+  "kind": "quote",
+  "book": "The Jungle Book — Rudyard Kipling",
+  "chapter": "Kaa’s Hunting"
+ },
+ "to be honest": {
+  "kind": "dialogue"
+ },
+ "as I see it": {
+  "kind": "quote",
+  "book": "The Time Machine — H. G. Wells",
+  "chapter": "XIII."
+ },
+ "in conclusion": {
+  "kind": "dialogue"
+ },
+ "to sum up": {
+  "kind": "dialogue"
+ },
+ "in short": {
+  "kind": "quote",
+  "book": "The Call of the Wild — Jack London",
+  "chapter": "None"
+ },
+ "all in all": {
+  "kind": "dialogue"
+ },
+ "overall": {
+  "kind": "dialogue"
+ },
+ "to conclude": {
+  "kind": "dialogue"
+ },
+ "in summary": {
+  "kind": "dialogue"
+ },
+ "in brief": {
+  "kind": "dialogue"
  }
 }
