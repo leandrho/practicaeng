@@ -1,19 +1,22 @@
 ## Present Simple / Present Progressive
 ### Regla y forma
-El **present simple** usa el verbo base y agrega **-s/-es** en tercera persona; para preguntas y negativas se apoya en **do/does**. El **present progressive** combina **am/is/are + verbo en -ing**; en preguntas se invierte el orden del sujeto y el auxiliar.
+- **EN:** The **present simple** uses the base verb and adds **-s/-es** in the third person; questions and negatives rely on **do/does**. The **present progressive** combines **am/is/are + the -ing form**; in questions the subject and the auxiliary swap places.
+- **ES:** El **present simple** usa el verbo base y agrega **-s/-es** en tercera persona; para preguntas y negativas se apoya en **do/does**. El **present progressive** combina **am/is/are + verbo en -ing**; en preguntas se invierte el orden del sujeto y el auxiliar.
 ### Formación
 - **Name (EN):** Present Simple
-  - **Afirmativa:** sujeto + verbo base (+ -s/-es en tercera persona)
-  - **Negativa:** sujeto + don't/doesn't + verbo base
-  - **Interrogativa:** Do/does + sujeto + verbo base?
+  - **Affirmative:** subject + base verb (+ -s/-es in the third person)
+  - **Negative:** subject + don't/doesn't + base verb
+  - **Question:** Do/does + subject + base verb?
 - **Name (EN):** Present Progressive
-  - **Afirmativa:** sujeto + am/is/are + verbo en -ing
-  - **Negativa:** sujeto + am/is/are + not + verbo en -ing
-  - **Interrogativa:** Am/is/are + sujeto + verbo en -ing?
+  - **Affirmative:** subject + am/is/are + -ing form
+  - **Negative:** subject + am/is/are + not + -ing form
+  - **Question:** Am/is/are + subject + -ing form?
 ### Usos
-Usá present simple para hábitos, hechos generales y horarios establecidos. Usá present progressive para acciones que ocurren ahora, situaciones temporales y planes personales ya organizados. Expresiones como every day orientan al simple; now, at the moment y this week suelen orientar al progressive.
+- **EN:** Use the present simple for habits, general facts and fixed timetables. Use the present progressive for actions happening now, temporary situations and personal plans already arranged. Expressions like every day point to the simple; now, at the moment and this week usually point to the progressive.
+- **ES:** Usá present simple para hábitos, hechos generales y horarios establecidos. Usá present progressive para acciones que ocurren ahora, situaciones temporales y planes personales ya organizados. Expresiones como every day orientan al simple; now, at the moment y this week suelen orientar al progressive.
 ### Contrastes y errores
-Un hábito repetido no requiere -ing solo porque ocurre en el presente. En tercera persona, She work es incorrecto: el simple exige works. Después de does, el verbo vuelve a la base: Does she work?, no Does she works? Para una situación temporal, I am staying with friends comunica una duración limitada, no una costumbre permanente.
+- **EN:** A repeated habit does not take -ing just because it happens in the present. In the third person, She work is wrong: the simple needs works. After does, the verb goes back to the base form: Does she work?, not Does she works?. For a temporary situation, I am staying with friends conveys a limited duration, not a permanent habit.
+- **ES:** Un hábito repetido no requiere -ing solo porque ocurre en el presente. En tercera persona, She work es incorrecto: el simple exige works. Después de does, el verbo vuelve a la base: Does she work?, no Does she works? Para una situación temporal, I am staying with friends comunica una duración limitada, no una costumbre permanente.
 ### Ejemplos
 - **EN:** My brother takes the train every morning. --- **ES:** Mi hermano toma el tren todas las mañanas.
 - **EN:** I am staying with my aunt this month. --- **ES:** Este mes me estoy quedando en lo de mi tía.
@@ -27,20 +30,23 @@ Un hábito repetido no requiere -ing solo porque ocurre en el presente. En terce
 
 ## Stative verbs
 ### Regla y forma
-Los **stative verbs** describen estados y suelen ir en **present simple**. Algunos verbos también pueden describir acciones temporales; en ese uso aceptan **am/is/are + verbo en -ing**.
+- **EN:** **Stative verbs** describe states and usually take the **present simple**. Some of them can also describe temporary actions; in that use they accept **am/is/are + the -ing form**.
+- **ES:** Los **stative verbs** describen estados y suelen ir en **present simple**. Algunos verbos también pueden describir acciones temporales; en ese uso aceptan **am/is/are + verbo en -ing**.
 ### Formación
-- **Name (EN):** Stative verbs (estado)
-  - **Afirmativa:** sujeto + verbo de estado en present simple
-  - **Negativa:** sujeto + don't/doesn't + verbo de estado en forma base
-  - **Interrogativa:** Do/does + sujeto + verbo de estado en forma base?
-- **Name (EN):** Actividad temporal
-  - **Afirmativa:** sujeto + am/is/are + verbo en -ing
-  - **Negativa:** sujeto + am/is/are + not + verbo en -ing
-  - **Interrogativa:** Am/is/are + sujeto + verbo en -ing?
+- **Name (EN):** Stative verbs (state)
+  - **Affirmative:** subject + stative verb in the present simple
+  - **Negative:** subject + don't/doesn't + stative verb in the base form
+  - **Question:** Do/does + subject + stative verb in the base form?
+- **Name (EN):** Temporary activity
+  - **Affirmative:** subject + am/is/are + -ing form
+  - **Negative:** subject + am/is/are + not + -ing form
+  - **Question:** Am/is/are + subject + -ing form?
 ### Usos
-Usá present simple para creencias, conocimiento, posesión y relaciones estables: know a person, own a bicycle, belong to a team. Para una actividad deliberada que está ocurriendo, think about, have a meal y taste a dish pueden aparecer en progressive. El significado concreto decide la forma, no solamente la lista de verbos.
+- **EN:** Use the present simple for beliefs, knowledge, possession and stable relationships: know a person, own a bicycle, belong to a team. For a deliberate activity that is going on, think about, have a meal and taste a dish can appear in the progressive. The concrete meaning decides the form, not just the list of verbs.
+- **ES:** Usá present simple para creencias, conocimiento, posesión y relaciones estables: know a person, own a bicycle, belong to a team. Para una actividad deliberada que está ocurriendo, think about, have a meal y taste a dish pueden aparecer en progressive. El significado concreto decide la forma, no solamente la lista de verbos.
 ### Contrastes y errores
-I am knowing the answer es incorrecto para expresar conocimiento; decí I know the answer. I think this is useful expresa una opinión; I am thinking about it describe el proceso de considerarlo. Have como posesión suele ser simple; have como experiencia o comida admite progressive.
+- **EN:** I am knowing the answer is wrong to express knowledge; say I know the answer. I think this is useful states an opinion; I am thinking about it describes the process of considering it. Have as possession usually takes the simple; have as experience or meals allows the progressive.
+- **ES:** I am knowing the answer es incorrecto para expresar conocimiento; decí I know the answer. I think this is useful expresa una opinión; I am thinking about it describe el proceso de considerarlo. Have como posesión suele ser simple; have como experiencia o comida admite progressive.
 ### Ejemplos
 - **EN:** These keys belong to our neighbor. --- **ES:** Estas llaves pertenecen a nuestro vecino.
 - **EN:** I think the new schedule is practical. --- **ES:** Creo que el nuevo horario es práctico.
@@ -54,15 +60,18 @@ I am knowing the answer es incorrecto para expresar conocimiento; decí I know t
 
 ## Comparisons
 ### Regla y forma
-Para comparar, los adjetivos cortos suelen sumar **-er + than** y los largos usan **more + adjetivo + than**. La igualdad se arma con **as + adjetivo + as**; el superlativo, con **the + -est** o **the most + adjetivo**.
+- **EN:** To compare, short adjectives usually add **-er + than** and long ones use **more + adjective + than**. Equality is built with **as + adjective + as**; the superlative, with **the + -est** or **the most + adjective**.
+- **ES:** Para comparar, los adjetivos cortos suelen sumar **-er + than** y los largos usan **more + adjetivo + than**. La igualdad se arma con **as + adjetivo + as**; el superlativo, con **the + -est** o **the most + adjetivo**.
 ### Formación
-- **Name (EN):** Comparative --- **Pattern:** Sujeto + verbo be + adjetivo corto + -er + than + segundo referente / sujeto + be + more + adjetivo largo + than + segundo referente.
-- **Name (EN):** Equality --- **Pattern:** Sujeto + verbo be + as + adjetivo + as + segundo referente.
-- **Name (EN):** Superlative --- **Pattern:** Sujeto + verbo be + the + adjetivo corto + -est (+ sustantivo) / the most + adjetivo largo (+ sustantivo).
+- **Name (EN):** Comparative --- **Pattern:** subject + be + short adjective + -er + than + second reference / subject + be + more + long adjective + than + second reference.
+- **Name (EN):** Equality --- **Pattern:** subject + be + as + adjective + as + second reference.
+- **Name (EN):** Superlative --- **Pattern:** subject + be + the + short adjective + -est (+ noun) / the most + long adjective (+ noun).
 ### Usos
-Usá el comparativo para una diferencia entre dos cosas y el superlativo para destacar un extremo entre tres o más. As ... as señala igualdad y not as ... as indica menor grado. Less ... than expresa menor cantidad o grado; para contar objetos concretos, fewer ... than es más preciso.
+- **EN:** Use the comparative for a difference between two things and the superlative to highlight an extreme among three or more. As ... as marks equality and not as ... as indicates a lower degree. Less ... than expresses a smaller amount or degree; to count concrete objects, fewer ... than is more precise.
+- **ES:** Usá el comparativo para una diferencia entre dos cosas y el superlativo para destacar un extremo entre tres o más. As ... as señala igualdad y not as ... as indica menor grado. Less ... than expresa menor cantidad o grado; para contar objetos concretos, fewer ... than es más preciso.
 ### Contrastes y errores
-No combines marcas dobles: more easier y the most fastest son incorrectos. Con un adjetivo corto como small, escribí smaller than y the smallest. Con uno largo como interesting, usá more interesting than y the most interesting. Después de than se menciona el segundo referente, mientras que un superlativo puede incluir in u of para definir el grupo.
+- **EN:** Do not combine double markers: more easier and the most fastest are wrong. With a short adjective like small, write smaller than and the smallest. With a long one like interesting, use more interesting than and the most interesting. After than you mention the second reference, while a superlative can include in or of to define the group.
+- **ES:** No combines marcas dobles: more easier y the most fastest son incorrectos. Con un adjetivo corto como small, escribí smaller than y the smallest. Con uno largo como interesting, usá more interesting than y the most interesting. Después de than se menciona el segundo referente, mientras que un superlativo puede incluir in u of para definir el grupo.
 ### Ejemplos
 - **EN:** This route is shorter than the coastal road. --- **ES:** Esta ruta es más corta que el camino costero.
 - **EN:** That was the most interesting lecture of the week. --- **ES:** Esa fue la charla más interesante de la semana.
@@ -76,14 +85,17 @@ No combines marcas dobles: more easier y the most fastest son incorrectos. Con u
 
 ## Countable and uncountable nouns
 ### Regla y forma
-Los contables pueden ir en singular o plural; los incontables no suelen llevar plural ni a o an. Usá **many/few** y **how many** con contables plurales, y **much/little** y **how much** con incontables.
+- **EN:** Countable nouns can be singular or plural; uncountable nouns usually take no plural and no a or an. Use **many/few** and **how many** with plural countables, and **much/little** and **how much** with uncountables.
+- **ES:** Los contables pueden ir en singular o plural; los incontables no suelen llevar plural ni a o an. Usá **many/few** y **how many** con contables plurales, y **much/little** y **how much** con incontables.
 ### Formación
-- **Name (EN):** Countable nouns --- **Pattern:** Many/few + sustantivo contable plural. Pregunta: how many + sustantivo contable plural?
-- **Name (EN):** Uncountable nouns --- **Pattern:** Much/little + sustantivo incontable. Pregunta: how much + sustantivo incontable?
+- **Name (EN):** Countable nouns --- **Pattern:** Many/few + plural countable noun. Question: how many + plural countable noun?
+- **Name (EN):** Uncountable nouns --- **Pattern:** Much/little + uncountable noun. Question: how much + uncountable noun?
 ### Usos
-Usá many y few con plurales contables; much y little con incontables. Some y a lot of sirven para ambos tipos en contextos adecuados. Para preguntar por cantidad, How many acompaña un plural contable y How much acompaña un incontable.
+- **EN:** Use many and few with plural countables; much and little with uncountables. Some and a lot of work for both types in the right contexts. To ask about quantity, How many goes with a plural countable noun and How much goes with an uncountable one.
+- **ES:** Usá many y few con plurales contables; much y little con incontables. Some y a lot of sirven para ambos tipos en contextos adecuados. Para preguntar por cantidad, How many acompaña un plural contable y How much acompaña un incontable.
 ### Contrastes y errores
-An information y two advices son incorrectos en este sentido: decí some information y two pieces of advice. No confundas el recipiente con el contenido: two bottles of water cuenta botellas, no convierte a water en plural. A few ofrece una pequeña cantidad de unidades; a little expresa una pequeña cantidad de una sustancia.
+- **EN:** An information and two advices are wrong in this sense: say some information and two pieces of advice. Do not confuse the container with the content: two bottles of water counts bottles; it does not turn water into a plural. A few offers a small number of units; a little expresses a small amount of a substance.
+- **ES:** An information y two advices son incorrectos en este sentido: decí some information y two pieces of advice. No confundas el recipiente con el contenido: two bottles of water cuenta botellas, no convierte a water en plural. A few ofrece una pequeña cantidad de unidades; a little expresa una pequeña cantidad de una sustancia.
 ### Ejemplos
 - **EN:** We bought three oranges and some rice. --- **ES:** Compramos tres naranjas y algo de arroz.
 - **EN:** How much luggage can you bring on the plane? --- **ES:** ¿Cuánto equipaje podés llevar en el avión?

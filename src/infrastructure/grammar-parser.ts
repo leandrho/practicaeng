@@ -55,12 +55,34 @@ export function parseGrammarPart(markdown: string, partNumber: number, file: str
   function finish() {
     if (!draft) return;
     const current = draft;
-    const prose = (key: Section) => {
+    // Las tres secciones de prosa deben ser exactamente dos bullets EN/ES (SPEC 23, paso 12).
+    const prose = (key: "ruleEs" | "usesEs" | "contrastsEs") => {
       const block = current.sections[key];
       if (!block) fail(file, current.line, current.title, `sección ${key} faltante`);
-      const value = block.lines.map((entry) => entry.text).join(" ").trim();
-      if (!value) fail(file, block.line, current.title, `sección ${key} vacía`);
-      return value;
+      const entries = block.lines;
+      if (entries.length === 0) fail(file, block.line, current.title, `sección ${key} vacía`);
+      if (!entries.some(({ text }) => text.startsWith("- "))) {
+        fail(file, entries[0]?.line ?? block.line, current.title, `sección ${key}: prosa legacy sin bullets **EN:** y **ES:**`);
+      }
+      if (entries.length !== 2) {
+        fail(file, entries[1]?.line ?? block.line, current.title, `sección ${key}: se esperan exactamente dos bullets (EN y ES)`);
+      }
+      const expected = ["EN", "ES"] as const;
+      const values: Partial<Record<"EN" | "ES", string>> = {};
+      entries.forEach((entry, index) => {
+        const match = entry.text.match(/^- \*\*([^*]+):\*\*\s*(.*)$/);
+        if (!match) fail(file, entry.line, current.title, `sección ${key}: bullet inválido, se esperaba **EN:** o **ES:**`);
+        const label = match[1] ?? "";
+        const text = match[2]?.trim() ?? "";
+        if (label !== "EN" && label !== "ES") fail(file, entry.line, current.title, `sección ${key}: etiqueta desconocida **${label}:**`);
+        if (label !== expected[index]) fail(file, entry.line, current.title, `sección ${key}: bullet **${label}:** fuera de orden, se esperaba **${expected[index]}:**`);
+        if (!text) fail(file, entry.line, current.title, `sección ${key}: bullet **${label}:** vacío`);
+        values[label] = text;
+      });
+      const en = values.EN;
+      const es = values.ES;
+      if (!en || !es) fail(file, block.line, current.title, `sección ${key}: bullets EN y ES obligatorios`);
+      return { en, es };
     };
     const bullets = (key: "examples" | "exercises", labels: readonly string[]) => {
       const block = current.sections[key];
@@ -103,14 +125,20 @@ export function parseGrammarPart(markdown: string, partNumber: number, file: str
     finishFormation();
     const examples = bullets("examples", ["EN", "ES"]);
     const exercises = bullets("exercises", ["Prompt (EN)", "Model (EN)", "Explanation (ES)", "Translation (ES)"]);
+    const rule = prose("ruleEs");
+    const uses = prose("usesEs");
+    const contrasts = prose("contrastsEs");
     const result = GrammarTopicSchema.safeParse({
       part: partNumber,
       title: current.title,
       slug: current.slug,
-      ruleEs: prose("ruleEs"),
+      ruleEn: rule.en,
+      ruleEs: rule.es,
       formations,
-      usesEs: prose("usesEs"),
-      contrastsEs: prose("contrastsEs"),
+      usesEn: uses.en,
+      usesEs: uses.es,
+      contrastsEn: contrasts.en,
+      contrastsEs: contrasts.es,
       examples: examples.map(({ values }) => ({ exampleEn: values[0], translationEs: values[1] })),
       exercises: exercises.map(({ values }) => ({
         promptEn: values[0], modelEn: values[1], explanationEs: values[2], translationEs: values[3],
@@ -122,9 +150,10 @@ export function parseGrammarPart(markdown: string, partNumber: number, file: str
       const key = issue.path[0];
       const index = issue.path[1];
       const source = key === "formations" ? formations : key === "examples" ? examples : key === "exercises" ? exercises : undefined;
+      const sectionOf = key === "ruleEn" ? "ruleEs" : key === "usesEn" ? "usesEs" : key === "contrastsEn" ? "contrastsEs" : key;
       const line = source && typeof index === "number"
         ? source[index]?.line ?? current.line
-        : current.sections[key as Section]?.line ?? current.line;
+        : current.sections[sectionOf as Section]?.line ?? current.line;
       fail(file, line, current.title, `${issue.path.join(".")}: ${issue.message}`);
     }
     topics.push(result.data);

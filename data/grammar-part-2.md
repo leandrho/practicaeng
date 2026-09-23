@@ -1,19 +1,22 @@
 ## Past Simple / Past Progressive
 ### Regla y forma
-El **past simple** usa la forma pasada del verbo y **did + verbo base** para negativas y preguntas. El **past progressive** combina **was/were + verbo en -ing** para una acción en desarrollo en el pasado.
+- **EN:** The **past simple** uses the past form of the verb and **did + base verb** for negatives and questions. The **past progressive** combines **was/were + the -ing form** for an action in progress in the past.
+- **ES:** El **past simple** usa la forma pasada del verbo y **did + verbo base** para negativas y preguntas. El **past progressive** combina **was/were + verbo en -ing** para una acción en desarrollo en el pasado.
 ### Formación
 - **Name (EN):** Past Simple
-  - **Afirmativa:** sujeto + verbo en pasado
-  - **Negativa:** sujeto + didn't + verbo base
-  - **Interrogativa:** Did + sujeto + verbo base?
+  - **Affirmative:** subject + past form of the verb
+  - **Negative:** subject + didn't + base verb
+  - **Question:** Did + subject + base verb?
 - **Name (EN):** Past Progressive
-  - **Afirmativa:** sujeto + was/were + verbo en -ing
-  - **Negativa:** sujeto + was/were + not + verbo en -ing
-  - **Interrogativa:** Was/were + sujeto + verbo en -ing?
+  - **Affirmative:** subject + was/were + -ing form
+  - **Negative:** subject + was/were + not + -ing form
+  - **Question:** Was/were + subject + -ing form?
 ### Usos
-Usá past simple para acciones terminadas en un momento pasado o para una secuencia de hechos. Usá past progressive para una acción en curso en un momento del pasado o como trasfondo de otra acción. When suele introducir el suceso que interrumpe; while puede introducir la actividad que ya estaba en progreso.
+- **EN:** Use the past simple for actions finished at a moment in the past or for a sequence of facts. Use the past progressive for an action in progress at a moment in the past or as the background of another action. When usually introduces the event that interrupts; while can introduce the activity that was already in progress.
+- **ES:** Usá past simple para acciones terminadas en un momento pasado o para una secuencia de hechos. Usá past progressive para una acción en curso en un momento del pasado o como trasfondo de otra acción. When suele introducir el suceso que interrumpe; while puede introducir la actividad que ya estaba en progreso.
 ### Contrastes y errores
-En una pregunta con did no repitas la forma pasada: Did you go?, no Did you went? Una acción breve que interrumpe otra suele ir en simple: I was reading when the lights went out. Was o were no se combina con la forma pasada para formar progressive: were walking, no were walked.
+- **EN:** In a question with did, do not repeat the past form: Did you go?, not Did you went?. A short action that interrupts another usually takes the simple: I was reading when the lights went out. Was or were do not combine with the past form to build a progressive: were walking, not were walked.
+- **ES:** En una pregunta con did no repitas la forma pasada: Did you go?, no Did you went? Una acción breve que interrumpe otra suele ir en simple: I was reading when the lights went out. Was o were no se combina con la forma pasada para formar progressive: were walking, no were walked.
 ### Ejemplos
 - **EN:** We visited the market on Saturday. --- **ES:** Visitamos el mercado el sábado.
 - **EN:** It was raining when I left the office. --- **ES:** Estaba lloviendo cuando salí de la oficina.
@@ -27,20 +30,23 @@ En una pregunta con did no repitas la forma pasada: Did you go?, no Did you went
 
 ## Past Perfect Simple / Past Perfect Progressive
 ### Regla y forma
-El **past perfect simple** combina **had + participio pasado**; el **past perfect progressive**, **had been + verbo en -ing**. Had no cambia con el sujeto y aparece antes de este en preguntas.
+- **EN:** The **past perfect simple** combines **had + the past participle**; the **past perfect progressive**, **had been + the -ing form**. Had does not change with the subject and comes before it in questions.
+- **ES:** El **past perfect simple** combina **had + participio pasado**; el **past perfect progressive**, **had been + verbo en -ing**. Had no cambia con el sujeto y aparece antes de este en preguntas.
 ### Formación
 - **Name (EN):** Past Perfect Simple
-  - **Afirmativa:** sujeto + had + participio pasado
-  - **Negativa:** sujeto + had not/hadn't + participio pasado
-  - **Interrogativa:** Had + sujeto + participio pasado?
+  - **Affirmative:** subject + had + past participle
+  - **Negative:** subject + had not/hadn't + past participle
+  - **Question:** Had + subject + past participle?
 - **Name (EN):** Past Perfect Progressive
-  - **Afirmativa:** sujeto + had + been + verbo en -ing
-  - **Negativa:** sujeto + had not/hadn't + been + verbo en -ing
-  - **Interrogativa:** Had + sujeto + been + verbo en -ing?
+  - **Affirmative:** subject + had + been + -ing form
+  - **Negative:** subject + had not/hadn't + been + -ing form
+  - **Question:** Had + subject + been + -ing form?
 ### Usos
-Usá el past perfect simple para aclarar que una acción se completó antes de otra situación pasada o para destacar su resultado. Usá el past perfect progressive para destacar la duración o continuidad de una actividad anterior a un momento pasado. Since señala el punto de inicio y for expresa la duración.
+- **EN:** Use the past perfect simple to make clear that an action was completed before another past situation or to highlight its result. Use the past perfect progressive to highlight the duration or continuity of an activity before a moment in the past. Since marks the starting point and for expresses the duration.
+- **ES:** Usá el past perfect simple para aclarar que una acción se completó antes de otra situación pasada o para destacar su resultado. Usá el past perfect progressive para destacar la duración o continuidad de una actividad anterior a un momento pasado. Since señala el punto de inicio y for expresa la duración.
 ### Contrastes y errores
-Cuando importa el resultado terminado, She had written the report pone el foco en el informe listo. Cuando importa el tiempo dedicado, She had been writing for hours enfatiza el proceso. Evitá usar past perfect para toda una narración: la acción posterior normalmente va en past simple. Un estado como know suele ir en perfect simple, no en perfect progressive.
+- **EN:** When the finished result matters, She had written the report focuses on the report being ready. When the time spent matters, She had been writing for hours stresses the process. Avoid using the past perfect for a whole narrative: the later action normally takes the past simple. A state like know usually takes the perfect simple, not the perfect progressive.
+- **ES:** Cuando importa el resultado terminado, She had written the report pone el foco en el informe listo. Cuando importa el tiempo dedicado, She had been writing for hours enfatiza el proceso. Evitá usar past perfect para toda una narración: la acción posterior normalmente va en past simple. Un estado como know suele ir en perfect simple, no en perfect progressive.
 ### Ejemplos
 - **EN:** By the time we arrived, the shop had closed. --- **ES:** Para cuando llegamos, el negocio ya había cerrado.
 - **EN:** She was tired because she had been working all afternoon. --- **ES:** Estaba cansada porque había estado trabajando toda la tarde.
@@ -54,24 +60,27 @@ Cuando importa el resultado terminado, She had written the report pone el foco e
 
 ## Used to / would / was-were going to
 ### Regla y forma
-**Used to + verbo base** describe hábitos y estados pasados; **would + verbo base** puede describir acciones repetidas. **Was/were going to + verbo base** presenta un plan que existía en el pasado.
+- **EN:** **Used to + base verb** describes past habits and states; **would + base verb** can describe repeated actions. **Was/were going to + base verb** presents a plan that existed in the past.
+- **ES:** **Used to + verbo base** describe hábitos y estados pasados; **would + verbo base** puede describir acciones repetidas. **Was/were going to + verbo base** presenta un plan que existía en el pasado.
 ### Formación
 - **Name (EN):** Used to
-  - **Afirmativa:** sujeto + used to + verbo base
-  - **Negativa:** sujeto + didn't use to + verbo base
-  - **Interrogativa:** Did + sujeto + use to + verbo base?
-- **Name (EN):** Would (hábito pasado)
-  - **Afirmativa:** sujeto + would + verbo base
-  - **Negativa:** sujeto + would not/wouldn't + verbo base
-  - **Interrogativa:** Would + sujeto + verbo base?
+  - **Affirmative:** subject + used to + base verb
+  - **Negative:** subject + didn't use to + base verb
+  - **Question:** Did + subject + use to + base verb?
+- **Name (EN):** Would (past habit)
+  - **Affirmative:** subject + would + base verb
+  - **Negative:** subject + would not/wouldn't + base verb
+  - **Question:** Would + subject + base verb?
 - **Name (EN):** Was/were going to
-  - **Afirmativa:** sujeto + was/were going to + verbo base
-  - **Negativa:** sujeto + was/were not + going to + verbo base
-  - **Interrogativa:** Was/were + sujeto + going to + verbo base?
+  - **Affirmative:** subject + was/were going to + base verb
+  - **Negative:** subject + was/were not + going to + base verb
+  - **Question:** Was/were + subject + going to + base verb?
 ### Usos
-Usá used to para contrastar el pasado con el presente: I used to live there. Para contar rutinas pasadas en un relato con un período establecido, would permite variar la expresión: Every summer, we would swim in the river. Usá was going to o were going to cuando hablás de un plan visto desde un momento pasado: I was going to call you, but I forgot.
+- **EN:** Use used to to contrast the past with the present: I used to live there. To tell past routines in a story with an established period, would lets you vary the wording: Every summer, we would swim in the river. Use was going to or were going to when you talk about a plan seen from a moment in the past: I was going to call you, but I forgot.
+- **ES:** Usá used to para contrastar el pasado con el presente: I used to live there. Para contar rutinas pasadas en un relato con un período establecido, would permite variar la expresión: Every summer, we would swim in the river. Usá was going to o were going to cuando hablás de un plan visto desde un momento pasado: I was going to call you, but I forgot.
 ### Contrastes y errores
-No reemplaces used to por would al describir un estado como tener una mascota o vivir en una ciudad: I used to have a dog. En preguntas y negativas con did, la forma es use to: Did you use to play here? No confundas was going to con una acción realizada; I was going to leave puede señalar una intención interrumpida, no que efectivamente salí.
+- **EN:** Do not replace used to with would when describing a state like owning a pet or living in a city: I used to have a dog. In questions and negatives with did, the form is use to: Did you use to play here? Do not confuse was going to with an action carried out: I was going to leave can signal an interrupted intention, not that you actually left.
+- **ES:** No reemplaces used to por would al describir un estado como tener una mascota o vivir en una ciudad: I used to have a dog. En preguntas y negativas con did, la forma es use to: Did you use to play here? No confundas was going to con una acción realizada; I was going to leave puede señalar una intención interrumpida, no que efectivamente salí.
 ### Ejemplos
 - **EN:** I used to own a small motorbike, but I sold it. --- **ES:** Antes tenía una moto pequeña, pero la vendí.
 - **EN:** When we were children, we would build forts in the garden. --- **ES:** Cuando éramos chicos, solíamos construir fuertes en el jardín.
