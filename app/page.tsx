@@ -81,21 +81,28 @@ const mixedCount = MIXED_SECTIONS.reduce(
   0,
 );
 
-const gridSections = [
-  ...sections,
-  {
-    href: "/mixed",
-    name: "Mixed Practice",
-    detail: "All sections shuffled",
-    count: mixedCount,
-    unit: "cards",
-    accent: "var(--accent-mixed)",
-  },
+const mixedCard = {
+  href: "/mixed",
+  name: "Mixed Practice",
+  detail: "All sections shuffled",
+  count: mixedCount,
+  unit: "cards",
+  accent: "var(--accent-mixed)",
+};
+
+const practiceSections = [...sections, mixedCard];
+
+const grammarTopicCount = GRAMMAR_PARTS.reduce(
+  (sum, part) => sum + part.topics.length,
+  0,
+);
+
+const theorySections = [
   {
     href: "/grammar",
     name: "Grammar B1+",
     detail: "Grammar by topic, with guided practice",
-    count: GRAMMAR_PARTS.reduce((sum, part) => sum + part.topics.length, 0),
+    count: grammarTopicCount,
     unit: "topics",
     accent: "var(--accent-grammar)",
   },
@@ -111,7 +118,8 @@ export default function HomePage() {
           reveal, compare, repeat.
         </p>
         <p className="home-hero__meta">
-          {total} cards · {gridSections.length} sections
+          {total} cards · {practiceSections.length} practice sections ·{" "}
+          {grammarTopicCount} grammar topics
         </p>
         <div
           className="session-bar"
@@ -129,25 +137,62 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <ul className="section-grid">
-        {gridSections.map((section) => (
-          <li key={section.href}>
-            <Link
-              className="section-card"
-              style={{ "--card-accent": section.accent } as React.CSSProperties}
-              href={section.href}
-              aria-label={`Practice ${section.name}, ${section.count} ${section.unit}`}
-            >
-              <span className="section-card__name">{section.name}</span>
-              <span className="section-card__detail">{section.detail}</span>
-              <span className="section-card__count">
-                {section.count}{" "}
-                <span className="section-card__unit">{section.unit}</span>
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <section className="home-group" aria-labelledby="home-group-practice">
+        <div className="home-group__heading">
+          <h2 id="home-group-practice">Practice</h2>
+          <span>{practiceSections.length} sections</span>
+        </div>
+        <p className="home-group__desc">
+          Active recall: see, recall, produce, reveal, compare, repeat.
+        </p>
+        <ul className="section-grid">
+          {practiceSections.map((section) => (
+            <li key={section.href}>
+              <Link
+                className="section-card"
+                style={{ "--card-accent": section.accent } as React.CSSProperties}
+                href={section.href}
+                aria-label={`Practice ${section.name}, ${section.count} ${section.unit}`}
+              >
+                <span className="section-card__name">{section.name}</span>
+                <span className="section-card__detail">{section.detail}</span>
+                <span className="section-card__count">
+                  {section.count}{" "}
+                  <span className="section-card__unit">{section.unit}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className="home-group" aria-labelledby="home-group-theory">
+        <div className="home-group__heading">
+          <h2 id="home-group-theory">Grammar &amp; theory</h2>
+          <span>{grammarTopicCount} topics</span>
+        </div>
+        <p className="home-group__desc">
+          Review the rules, then practise by making your own sentences.
+        </p>
+        <ul className="section-grid">
+          {theorySections.map((section) => (
+            <li key={section.href}>
+              <Link
+                className="section-card"
+                style={{ "--card-accent": section.accent } as React.CSSProperties}
+                href={section.href}
+                aria-label={`Practice ${section.name}, ${section.count} ${section.unit}`}
+              >
+                <span className="section-card__name">{section.name}</span>
+                <span className="section-card__detail">{section.detail}</span>
+                <span className="section-card__count">
+                  {section.count}{" "}
+                  <span className="section-card__unit">{section.unit}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }

@@ -407,6 +407,38 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
+.home-group {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-group__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.home-group__heading h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  letter-spacing: -0.02em;
+}
+
+.home-group__heading span {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.home-group__desc {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--muted);
+}
+
 .grammar-part:nth-of-type(8n + 1) { --grammar-part-accent: var(--accent-prepositions); }
 .grammar-part:nth-of-type(8n + 2) { --grammar-part-accent: var(--accent-word-formation); }
 .grammar-part:nth-of-type(8n + 3) { --grammar-part-accent: var(--accent-grammar); }

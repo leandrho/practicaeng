@@ -11,11 +11,17 @@ import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 afterEach(cleanup);
 
 describe("HomePage", () => {
-  it("shows the hero, ten sections with correct counts, and working links", () => {
+  it("shows the hero, two groups with ten sections, and working links", () => {
     render(<HomePage />);
 
     expect(
       screen.getByRole("heading", { name: "Practice English" }),
+    ).not.toBeNull();
+    expect(
+      screen.getByRole("heading", { name: "Practice" }),
+    ).not.toBeNull();
+    expect(
+      screen.getByRole("heading", { name: "Grammar & theory" }),
     ).not.toBeNull();
 
     const mixedCount =
@@ -41,6 +47,13 @@ describe("HomePage", () => {
 
     const links = screen.getAllByRole("link");
     expect(links).toHaveLength(10);
+
+    const practiceGroup = screen.getByRole("region", { name: "Practice" });
+    const theoryGroup = screen.getByRole("region", {
+      name: "Grammar & theory",
+    });
+    expect(within(practiceGroup).getAllByRole("link")).toHaveLength(9);
+    expect(within(theoryGroup).getAllByRole("link")).toHaveLength(1);
 
     for (const [name, count] of expected) {
       const link = screen.getByRole("link", {
