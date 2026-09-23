@@ -11,6 +11,9 @@
   - **Affirmative:** subject + have/has + been + -ing form
   - **Negative:** subject + have/has not (haven't/hasn't) + been + -ing form
   - **Question:** Have/has + subject + been + -ing form?
+### Definición
+- **EN:** The **present perfect** is the bridge tense between past and present; it connects an earlier action with its present relevance. The simple form presents it as experience or result, while the progressive form presents it as ongoing activity with duration.
+- **ES:** El **present perfect** es el tiempo puente entre el pasado y el presente; conecta una acción anterior con su relevancia actual. La forma simple la presenta como experiencia o resultado, mientras que la forma progressive la presenta como actividad en curso con duración.
 ### Usos
 - **EN:** Use the simple for an experience with no precise date, a result visible now, or a number of tasks completed. Use the progressive to highlight an activity started before that continues up to now, or its duration and recent effects. For says how long and since says from what moment. With states like know, the simple is usually the natural form.
 - **ES:** Usá el simple para una experiencia sin fecha precisa, un resultado visible ahora o una cantidad de tareas terminadas. Usá el progressive para destacar una actividad iniciada antes que continúa hasta ahora, o su duración y efectos recientes. For indica cuánto tiempo y since indica desde qué momento. Con estados como know, el simple suele ser la forma natural.
@@ -35,6 +38,9 @@
 ### Formación
 - **Name (EN):** Defining relative clause --- **Pattern:** Antecedent + who/which/that + identifying clause (no commas).
 - **Name (EN):** Non-defining relative clause --- **Pattern:** Antecedent + comma + who/which/whose/where + extra information + comma.
+### Definición
+- **EN:** **Relative clauses** are subordinate clauses that describe a noun; they are the tool for joining two sentences into one without repeating the referent. Defining clauses identify which one, while non-defining clauses add extra information about one that is already identified.
+- **ES:** Las **relative clauses** son cláusulas subordinadas que describen un sustantivo; son la herramienta para unir dos oraciones en una sin repetir el referente. Las defining identifican cuál, mientras que las non-defining agregan información extra sobre uno ya identificado.
 ### Usos
 - **EN:** Use a defining clause when, without it, it is unclear which person or thing you mean: the student who won. Use a non-defining clause if the referent is already identified: Marta, who lives nearby, ... . Whose expresses possession; where introduces information about a place. In a defining clause the relative pronoun can be omitted when it is the object, but not when it is the subject.
 - **ES:** Usá una defining clause cuando sin ella no queda claro a qué persona u objeto te referís: the student who won. Usá una non-defining clause si el referente ya está identificado: Marta, who lives nearby, ... . Whose expresa posesión; where introduce información sobre un lugar. En una defining clause se puede omitir el pronombre relativo cuando funciona como objeto, pero no cuando funciona como sujeto.
@@ -60,6 +66,9 @@
 - **Name (EN):** Should --- **Pattern:** Subject + should + base verb.
 - **Name (EN):** Ought to --- **Pattern:** Subject + ought to + base verb.
 - **Name (EN):** Had better --- **Pattern:** Subject + had better + base verb.
+### Definición
+- **EN:** **Should, ought to and had better** are the verbs of advice; they are a scale of strength from a general recommendation to an urgent warning tied to a consequence.
+- **ES:** **Should, ought to y had better** son los verbos de consejo; son una escala de fuerza desde una recomendación general hasta una advertencia urgente ligada a una consecuencia.
 ### Usos
 - **EN:** Use should for general recommendations: You should rest. Ought to has a similar meaning and can sound somewhat more formal. Had better suits a concrete situation with a close consequence: We'd better leave now or we'll miss the train. Should can also express what is likely or expected, according to the context.
 - **ES:** Usá should para recomendaciones generales: You should rest. Ought to tiene un sentido parecido y puede sonar algo más formal. Had better sirve para una situación concreta con una consecuencia cercana: We'd better leave now or we'll miss the train. Should también puede expresar lo que es probable o esperable, según el contexto.

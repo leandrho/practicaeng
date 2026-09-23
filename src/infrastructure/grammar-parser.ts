@@ -1,9 +1,10 @@
 import { GRAMMAR_PARTS } from "../domain/grammar-catalog";
 import { GrammarTopicSchema, type GrammarTopic } from "../domain/grammar";
 
-type Section = "ruleEs" | "formations" | "usesEs" | "contrastsEs" | "examples" | "exercises";
+type Section = "ruleEs" | "definitionEs" | "formations" | "usesEs" | "contrastsEs" | "examples" | "exercises";
 const HEADINGS: Record<string, Section> = {
   "Regla y forma": "ruleEs",
+  "Definición": "definitionEs",
   "Formación": "formations",
   "Usos": "usesEs",
   "Contrastes y errores": "contrastsEs",
@@ -55,8 +56,8 @@ export function parseGrammarPart(markdown: string, partNumber: number, file: str
   function finish() {
     if (!draft) return;
     const current = draft;
-    // Las tres secciones de prosa deben ser exactamente dos bullets EN/ES (SPEC 23, paso 12).
-    const prose = (key: "ruleEs" | "usesEs" | "contrastsEs") => {
+    // Las cuatro secciones de prosa deben ser exactamente dos bullets EN/ES (SPEC 23 paso 12, SPEC 25).
+    const prose = (key: "ruleEs" | "definitionEs" | "usesEs" | "contrastsEs") => {
       const block = current.sections[key];
       if (!block) fail(file, current.line, current.title, `sección ${key} faltante`);
       const entries = block.lines;
@@ -126,12 +127,15 @@ export function parseGrammarPart(markdown: string, partNumber: number, file: str
     const examples = bullets("examples", ["EN", "ES"]);
     const exercises = bullets("exercises", ["Prompt (EN)", "Model (EN)", "Explanation (ES)", "Translation (ES)"]);
     const rule = prose("ruleEs");
+    const definition = prose("definitionEs");
     const uses = prose("usesEs");
     const contrasts = prose("contrastsEs");
     const result = GrammarTopicSchema.safeParse({
       part: partNumber,
       title: current.title,
       slug: current.slug,
+      definitionEn: definition.en,
+      definitionEs: definition.es,
       ruleEn: rule.en,
       ruleEs: rule.es,
       formations,
@@ -150,7 +154,7 @@ export function parseGrammarPart(markdown: string, partNumber: number, file: str
       const key = issue.path[0];
       const index = issue.path[1];
       const source = key === "formations" ? formations : key === "examples" ? examples : key === "exercises" ? exercises : undefined;
-      const sectionOf = key === "ruleEn" ? "ruleEs" : key === "usesEn" ? "usesEs" : key === "contrastsEn" ? "contrastsEs" : key;
+      const sectionOf = key === "ruleEn" ? "ruleEs" : key === "definitionEn" ? "definitionEs" : key === "usesEn" ? "usesEs" : key === "contrastsEn" ? "contrastsEs" : key;
       const line = source && typeof index === "number"
         ? source[index]?.line ?? current.line
         : current.sections[sectionOf as Section]?.line ?? current.line;

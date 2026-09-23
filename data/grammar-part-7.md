@@ -6,6 +6,9 @@
 - **Name (EN):** Statements --- **Pattern:** Said (that) + clause / told + person + clause.
 - **Name (EN):** Questions --- **Pattern:** Asked + person + if/whether or wh-word + clause in statement order.
 - **Name (EN):** Commands and requests --- **Pattern:** Told/asked + person + (not) to + base verb.
+### Definición
+- **EN:** **Reported speech** is the system for retelling what someone else said; it shifts pronouns, time references and word order so the original message fits inside a new reporting sentence.
+- **ES:** El **reported speech** es el sistema para volver a contar lo que dijo otra persona; desplaza pronombres, referencias temporales y orden de palabras para que el mensaje original encaje dentro de una nueva oración.
 ### Usos
 - **EN:** For statements, use said (that) + clause or told + person + clause. For yes/no questions, use asked + person + if or whether; for open questions, keep the wh-word, but use statement order. Orders and requests use told or asked + person + to + base verb; for prohibitions, not to. Verbs like advise, suggest and promise allow nuances: advise someone to do something, suggest doing something and promise to do something.
 - **ES:** Para afirmaciones, usá said (that) más cláusula o told más persona más cláusula. Para preguntas de respuesta sí/no, usá asked más persona más if o whether; para preguntas abiertas, conservá la palabra interrogativa, pero usá orden afirmativo. Las órdenes y los pedidos usan told o asked más persona más to y verbo base; para prohibiciones, not to. Verbos como advise, suggest y promise permiten matices: advise someone to do something, suggest doing something y promise to do something.
@@ -32,6 +35,9 @@
 - **Name (EN):** Such ... that --- **Pattern:** Such + (a/an) + adjective + noun + that + clause.
 - **Name (EN):** Too ... to --- **Pattern:** Too + adjective + to + base verb.
 - **Name (EN):** ... enough to --- **Pattern:** Adjective + enough + to + base verb.
+### Definición
+- **EN:** **Clauses of result** are structures that link intensity with consequence; they measure how strong a quality is by showing what it produced, prevented or made possible.
+- **ES:** Las **clauses of result** son estructuras que unen intensidad con consecuencia; miden cuán fuerte es una cualidad mostrando lo que produjo, impidió o hizo posible.
 ### Usos
 - **EN:** Use so ... that to measure the intensity of a quality and such ... that when the central expression is a noun. With a singular countable noun, such takes a or an: such a difficult task. With plurals and uncountables, use such without a or an. Too usually marks an excess that prevents an action; enough says the degree is sufficient to perform it.
 - **ES:** Usá so ... that para medir la intensidad de una cualidad y such ... that cuando la expresión central es un sustantivo. Con un sustantivo contable singular, such lleva a o an: such a difficult task. Con plurales e incontables, se usa such sin a o an. Too suele indicar un exceso que impide una acción; enough señala que el grado alcanza para realizarla.

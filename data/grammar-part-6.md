@@ -7,6 +7,9 @@
   - **Affirmative:** subject receiving the action + be conjugated in the corresponding tense + past participle (+ by + agent)
   - **Negative:** subject receiving the action + be conjugated in the corresponding tense + not + past participle (+ by + agent)
   - **Question:** be conjugated in the corresponding tense + subject receiving the action + past participle (+ by + agent)?
+### Definición
+- **EN:** The **passive voice** is the rearrangement of the sentence around the receiver of the action; it is the voice you choose when the result matters more than who performed it.
+- **ES:** La **passive voice** es la reorganización de la oración alrededor de quien recibe la acción; es la voz que elegís cuando el resultado importa más que quién la realizó.
 ### Usos
 - **EN:** Use the passive when the result or whoever receives the action matters more than the agent, for example in news, instructions or process descriptions. Tense is marked by be: use is or are for the present simple, was or were for the past simple and will be for the future with will. In the present perfect, use have or has been plus the participle.
 - **ES:** Usá la pasiva cuando el resultado o quien recibe la acción es más importante que el agente, por ejemplo en noticias, instrucciones o descripciones de procesos. El tiempo lo marca be: se usa is o are para present simple, was o were para past simple y will be para futuro con will. En present perfect se usa have o has been más participio.
@@ -31,6 +34,9 @@
 ### Formación
 - **Name (EN):** Although / though / even though --- **Pattern:** Although/though/even though + subject + verb.
 - **Name (EN):** Despite / in spite of --- **Pattern:** Despite/in spite of + noun or -ing form.
+### Definición
+- **EN:** **Clauses of concession** are structures for holding two opposing ideas together; they present an obstacle and, at the same time, the unexpected result that happens despite it.
+- **ES:** Las **clauses of concession** son estructuras para sostener dos ideas opuestas juntas; presentan un obstáculo y, al mismo tiempo, el resultado inesperado que ocurre a pesar de él.
 ### Usos
 - **EN:** Use although for a general contrast and even though to stress that the result is surprising despite a real difficulty. Despite or in spite of let you condense the obstacle into a noun phrase: despite the noise; in spite of feeling tired. Despite the fact that and in spite of the fact that do allow a subject and verb after that.
 - **ES:** Usá although para un contraste general y even though para subrayar que el resultado sorprende pese a una dificultad real. Despite o in spite of permiten condensar el obstáculo en una frase nominal: despite the noise; in spite of feeling tired. Despite the fact that e in spite of the fact that sí admiten sujeto y verbo después de that.

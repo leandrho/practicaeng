@@ -95,9 +95,9 @@ Usá `---` cuando no haya una forma común o útil para el nivel. Las líneas qu
 
 ### Grammar B1+
 
-La tarjeta **Grammar B1+** del inicio abre `/grammar`, donde los 26 temas están agrupados en ocho partes. Cada tema muestra la teoría **en inglés por defecto**, con un botón `ES`/`EN` que alterna las tres secciones de prosa (Rule, When to use, Watch out for this) al español; los encabezados y el bloque Formation quedan siempre en inglés. Además hay ejemplos EN/ES siempre visibles y una práctica de producción guiada: pensá o decí una oración antes de pulsar **Reveal**. Los ejercicios aparecen en el orden del archivo y sus respuestas se ocultan al cambiar de tarjeta. Esta práctica no forma parte de Mixed Practice ni de los filtros de vocabulario.
+La tarjeta **Grammar B1+** del inicio abre `/grammar`, donde los 26 temas están agrupados en ocho partes. Cada tema muestra la teoría **en inglés por defecto**, con un botón `ES`/`EN` que alterna las cuatro secciones de prosa (Definition, Rule, When to use, Watch out for this) al español; los encabezados y el bloque Formation quedan siempre en inglés. Además hay ejemplos EN/ES siempre visibles y una práctica de producción guiada: pensá o decí una oración antes de pulsar **Reveal**. Los ejercicios aparecen en el orden del archivo y sus respuestas se ocultan al cambiar de tarjeta. Esta práctica no forma parte de Mixed Practice ni de los filtros de vocabulario.
 
-El contenido se edita en `data/grammar-part-1.md` a `data/grammar-part-8.md`, uno por parte. Cada título `##` debe coincidir exactamente con el tema correspondiente del catálogo en `src/domain/grammar-catalog.ts` y mantenerse en ese orden. Dentro de cada tema, usá los seis encabezados `###` que siguen (son estructura editorial y no cambian de nombre), con **dos bullets `EN` y `ES` obligatorios y no vacíos** en cada una de las tres secciones teóricas, **al menos una formación**, **dos ejemplos** y **cinco ejercicios**:
+El contenido se edita en `data/grammar-part-1.md` a `data/grammar-part-8.md`, uno por parte. Cada título `##` debe coincidir exactamente con el tema correspondiente del catálogo en `src/domain/grammar-catalog.ts` y mantenerse en ese orden. Dentro de cada tema, usá los siete encabezados `###` que siguen (son estructura editorial y no cambian de nombre), con **dos bullets `EN` y `ES` obligatorios y no vacíos** en cada una de las cuatro secciones teóricas, **al menos una formación**, **dos ejemplos** y **cinco ejercicios**:
 
 ```md
 ## Present Simple / Present Progressive
@@ -113,6 +113,9 @@ El contenido se edita en `data/grammar-part-1.md` a `data/grammar-part-8.md`, un
   - **Affirmative:** subject + am/is/are + -ing form
   - **Negative:** subject + am/is/are + not + -ing form
   - **Question:** Am/is/are + subject + -ing form?
+### Definición
+- **EN:** The **present simple** is the base tense for habits, facts and routines; it is the form you build questions and negatives on with do/does.
+- **ES:** El **present simple** es el tiempo base para hábitos, hechos y rutinas; es la forma sobre la que se construyen preguntas y negativas con do/does.
 ### Usos
 - **EN:** Use it for habits and general facts.
 - **ES:** Usalo para hábitos y hechos generales.
@@ -126,7 +129,7 @@ El contenido se edita en `data/grammar-part-1.md` a `data/grammar-part-8.md`, un
 - **Prompt (EN):** Describe a habit: she / walk to school every day. --- **Model (EN):** She walks to school every day. --- **Explanation (ES):** El *present simple* expresa hábitos y la tercera persona lleva -s. --- **Translation (ES):** Ella camina a la escuela todos los días.
 ```
 
-En cada sección teórica se espera exactamente un bullet `**EN:**` y un bullet `**ES:**`, en ese orden; un bullet de más, una etiqueta distinta o un texto vacío fallan con archivo, línea, tema y sección. El texto español de `ES` es el que ya existía; el `EN` es su versión inglesa equivalente y debe mantenerse sincronizado.
+En cada sección teórica (`Definición`, `Regla y forma`, `Usos`, `Contrastes y errores`) se espera exactamente un bullet `**EN:**` y un bullet `**ES:**`, en ese orden; un bullet de más, una etiqueta distinta o un texto vacío fallan con archivo, línea, tema y sección. La `### Definición` va entre `### Formación` y `### Usos` y dice **qué es y para qué sirve el tema en general** (identidad y propósito); `### Usos` sigue siendo **dónde se aplica** (contextos, matices y expresiones clave). Si una frase puede ir en las dos, va en `Usos`. El texto español de `ES` es el que ya existía; el `EN` es su versión inglesa equivalente y debe mantenerse sincronizado.
 
 El bloque `### Formación` se escribe **íntegramente en inglés**: los `Name (EN)`, las etiquetas y los patterns. Cada formación es un bullet con `Name (EN)`. Para una estructura simple, agregá `--- **Pattern:** fórmula`; para tiempos verbales, usá sub-bullets con las etiquetas de la lista cerrada `Affirmative`, `Negative` y `Question` (las demás opciones son `Pattern`, `Result`, `Condition`, `Main clause` y `Time clause`), cada una seguida de su fórmula en inglés (`subject + base verb`, nunca `sujeto + verbo base`). El parser rechaza cualquier etiqueta fuera de esa lista. Agregá una entrada distinta por construcción (por ejemplo, present perfect simple y present perfect progressive). En `Regla y forma`, encerrá en `**doble asterisco**` los términos clave para resaltarlos — tanto en el bullet `EN` como en el `ES`. En `Explanation (ES)`, usá `*asteriscos simples*` para mostrar fragmentos en inglés en cursiva. Cada ejercicio usa cuatro campos en una sola línea y el separador literal ` --- `; el prompt no debe adelantar el modelo. No repitas literalmente los modelos de las tarjetas en los ejemplos teóricos. Para comprobar la edición, ejecutá `npm run test` y `npm run build`: los datos incompletos, fuera de orden o mal formados fallan con archivo, tema y línea/campo.
 

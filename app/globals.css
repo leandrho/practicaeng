@@ -602,6 +602,31 @@ a {
   white-space: normal;
 }
 
+.grammar-theory__definition {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent-grammar) 26%, var(--line));
+  border-left: 3px solid var(--accent-grammar);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-grammar) 5%, var(--surface));
+}
+
+.grammar-theory__definition h3 {
+  color: var(--accent-grammar);
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.grammar-theory__definition p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 .grammar-theory__highlight {
   color: var(--accent-grammar);
   font-weight: 800;

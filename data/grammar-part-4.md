@@ -19,6 +19,9 @@
   - **Affirmative:** subject + present simple verb + future timetable reference
   - **Negative:** subject + don't/doesn't + base verb + future timetable reference
   - **Question:** Do/does + subject + base verb + future timetable reference?
+### Definición
+- **EN:** **Future tenses** are the set of forms for talking about what has not happened yet; they are a choice of perspective, spontaneous decision, prior intention, arrangement or fixed timetable, rather than a single future form.
+- **ES:** Los **future tenses** son el conjunto de formas para hablar de lo que aún no ocurrió; son una elección de perspectiva, decisión espontánea, intención previa, arreglo u horario fijo, más que una única forma de futuro.
 ### Usos
 - **EN:** Use will for decisions made while speaking, offers and predictions based on an opinion. Use going to for prior intentions and predictions with present evidence. The present progressive places a meeting or arrangement already organized; the present simple presents a timetable set by an institution.
 - **ES:** Usá will para decisiones tomadas al hablar, ofrecimientos y predicciones basadas en una opinión. Usá going to para intenciones previas y predicciones con indicios presentes. El present progressive sitúa una cita o arreglo ya organizado; el present simple presenta un horario establecido por una institución.
@@ -53,6 +56,9 @@
   - **Affirmative:** subject + am/is/are + about to/due to + base verb
   - **Negative:** subject + am/is/are + not + about to/due to + base verb
   - **Question:** Am/is/are + subject + about to/due to + base verb?
+### Definición
+- **EN:** The **future progressive, future perfect and be about to/due to** are the advanced future forms; they exist to show a future action in progress, a future action already complete, or an event felt as imminent or scheduled.
+- **ES:** El **future progressive, el future perfect y be about to/due to** son las formas futuras avanzadas; existen para mostrar una acción futura en curso, una acción futura ya completa, o un evento sentido como inminente o programado.
 ### Usos
 - **EN:** Use will be working to imagine what will be going on at a future time, and will have finished to look back from a future deadline. Be about to suits a very close imminence; be due to says something is scheduled, for example in a timetable. These forms choose different perspectives on future time; they do not automatically replace will.
 - **ES:** Usá will be working para imaginar qué estará pasando a cierta hora futura, y will have finished para mirar hacia atrás desde un límite futuro. Be about to sirve para una inminencia muy cercana; be due to expresa que algo está previsto, por ejemplo en un horario. Estas formas eligen perspectivas distintas sobre el tiempo futuro, no sustituyen automáticamente a will.
@@ -78,6 +84,9 @@
 - **Name (EN):** Future time clause
   - **Time clause:** time connector + subject + present simple (or present perfect)
   - **Main clause:** subject + will + base verb / imperative
+### Definición
+- **EN:** **Time clauses** are subordinate clauses that anchor the main clause in time; they are the structure for ordering two future events with connectors such as when, after or until.
+- **ES:** Las **time clauses** son cláusulas subordinadas que anclan la oración principal en el tiempo; son la estructura para ordenar dos eventos futuros con conectores como when, after o until.
 ### Usos
 - **EN:** Use when for the moment something happens and as soon as to say another action will follow immediately. Until marks the limit up to which an action continues. After and before order events; once introduces a temporal condition that must be met. If the time clause comes first, a comma separates it from the main clause.
 - **ES:** Usá when para el momento en que ocurre algo y as soon as para indicar que otra acción seguirá inmediatamente. Until señala el límite hasta el que se mantiene una acción. After y before ordenan sucesos; once introduce una condición temporal de cumplimiento. Si la cláusula temporal va primero, se separa de la principal con coma.
@@ -109,6 +118,9 @@
 - **Name (EN):** Second conditional
   - **Condition:** if + subject + past simple
   - **Result:** subject + would + base verb
+### Definición
+- **EN:** **Conditionals zero, 1 and 2** are the system for linking a condition with its result; they form a scale from general truths through possible futures to alternatives that contradict present reality.
+- **ES:** Los **conditionals zero, 1 y 2** son el sistema para unir una condición con su resultado; forman una escala desde verdades generales pasando por futuros posibles hasta alternativas que contradicen la realidad presente.
 ### Usos
 - **EN:** Use type zero for rules and general results, type 1 for possible consequences of a future condition, and type 2 to imagine an alternative to reality. The if clause can go at the beginning or the end; when it goes first, a comma precedes the main clause. Unless means if not in the right contexts.
 - **ES:** Usá el tipo zero para reglas y resultados generales, el tipo 1 para consecuencias posibles de una condición futura y el tipo 2 para imaginar una alternativa a la realidad. La cláusula con if puede ir al principio o al final; cuando va al principio, se coloca una coma antes de la principal. Unless significa if not en contextos adecuados.
@@ -132,6 +144,9 @@
 - **ES:** **Must + verbo base** expresa obligación o deducción; **have/has to + verbo base** y **need(s) to + verbo base** expresan necesidad. **Mustn't** prohíbe, mientras que don't have to y don't need to indican que no es necesario.
 ### Formación
 - **Name (EN):** Must / have to / need to --- **Pattern:** Subject + must + base verb / have or has to + base verb / need/needs to + base verb. Past: subject + had to + base verb.
+### Definición
+- **EN:** **Must, have to and need** are the verbs of obligation and necessity; they answer who imposes the requirement, the speaker, an external rule or the goal itself, and how strong it feels.
+- **ES:** **Must, have to y need** son los verbos de obligación y necesidad; responden quién impone el requisito, el hablante, una regla externa o el objetivo mismo, y con qué fuerza se siente.
 ### Usos
 - **EN:** Use must to highlight an obligation the speaker presents as important; have to usually points to a rule, a circumstance or an external obligation. Need to focuses on what is needed to reach a goal. In the past, had to expresses obligation, since must has no common past form with that meaning.
 - **ES:** Usá must para destacar una obligación que el hablante presenta como importante; have to suele remitir a una regla, circunstancia u obligación externa. Need to se centra en lo necesario para lograr un objetivo. En pasado, had to expresa obligación, pues must no tiene una forma pasada común con ese sentido.

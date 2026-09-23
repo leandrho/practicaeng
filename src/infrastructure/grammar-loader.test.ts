@@ -14,6 +14,9 @@ function fixtureMarkdown(part: (typeof GRAMMAR_PARTS)[number]): string {
 - **ES:** Regla en español.
 ### Formación
 - **Name (EN):** Present Simple --- **Pattern:** subject + base verb
+### Definición
+- **EN:** Definition in English.
+- **ES:** Definición en español.
 ### Usos
 - **EN:** Use in English.
 - **ES:** Uso en español.

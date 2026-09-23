@@ -10,6 +10,8 @@ const topic: GrammarTopic = {
   part: 1,
   slug: "present-simple-present-progressive",
   title: "Present Simple / Present Progressive",
+  definitionEn: "The **present simple** is the base tense for habits, facts and routines.",
+  definitionEs: "El **present simple** es el tiempo base para hábitos, hechos y rutinas.",
   ruleEn: "The **present simple** uses the base verb and adds **-s/-es** in the third person.",
   ruleEs: "El **present simple** usa el verbo base y agrega **-s/-es** en tercera persona.",
   formations: [
@@ -45,9 +47,11 @@ describe("GrammarTheoryClient", () => {
   it("muestra la prosa en inglés por defecto, sin el texto español en el DOM", () => {
     const { container } = renderTheory();
     expect(container.textContent).toContain("uses the base verb and adds");
+    expect(container.textContent).toContain("is the base tense for habits");
     expect(screen.getByText(/Use it for habits and general facts/)).not.toBeNull();
     expect(screen.getByText(/A repeated habit does not take -ing/)).not.toBeNull();
     expect(container.textContent).not.toContain("usa el verbo base");
+    expect(container.textContent).not.toContain("es el tiempo base para hábitos");
     expect(container.textContent).not.toContain("Usalo para hábitos");
     expect(container.textContent).not.toContain("no requiere -ing");
     expect(container.textContent).toContain("uses the base verb and adds");
@@ -62,9 +66,11 @@ describe("GrammarTheoryClient", () => {
     fireEvent.click(toggle);
 
     expect(container.textContent).not.toContain("uses the base verb");
+    expect(container.textContent).not.toContain("is the base tense for habits");
     expect(container.textContent).not.toContain("Use it for habits");
     expect(container.textContent).not.toContain("does not take -ing");
     expect(container.textContent).toContain("usa el verbo base");
+    expect(container.textContent).toContain("es el tiempo base para hábitos");
     expect(screen.getByText(/Usalo para hábitos/)).not.toBeNull();
     expect(screen.getByText(/no requiere -ing/)).not.toBeNull();
     const pressed = screen.getByRole("button", { name: "Show English theory" });
@@ -77,15 +83,17 @@ describe("GrammarTheoryClient", () => {
     fireEvent.click(screen.getByRole("button", { name: "Show Spanish theory" }));
     fireEvent.click(screen.getByRole("button", { name: "Show English theory" }));
     expect(container.textContent).not.toContain("usa el verbo base");
+    expect(container.textContent).not.toContain("es el tiempo base para hábitos");
     expect(container.textContent).not.toContain("Usalo para hábitos");
     expect(container.textContent).not.toContain("no requiere -ing");
     expect(container.textContent).toContain("uses the base verb and adds");
+    expect(container.textContent).toContain("is the base tense for habits");
     expect(screen.getByRole("button", { name: "Show Spanish theory" }).getAttribute("aria-pressed")).toBe("false");
   });
 
   it("mantiene los encabezados en inglés y la formación en inglés en ambos modos", () => {
     const { container } = renderTheory();
-    const headings = () => ["Theory", "Formation", "Rule", "When to use", "Watch out for this", "In context"]
+    const headings = () => ["Theory", "Formation", "Definition", "Rule", "When to use", "Watch out for this", "In context"]
       .map((name) => screen.queryByRole("heading", { name }));
     headings().forEach((heading) => expect(heading).not.toBeNull());
     expect(container.textContent).not.toContain("Formación");
@@ -126,6 +134,29 @@ describe("GrammarTheoryClient", () => {
     expect(screen.getByRole("button", { name: "Show Spanish theory" }).getAttribute("aria-pressed")).toBe("false");
     expect(second.container.textContent).not.toContain("usa el verbo base");
     expect(second.container.textContent).toContain("uses the base verb and adds");
+  });
+
+  it("ubica el recuadro Definition entre Formation y Rule con lang según el modo", () => {
+    const { container } = renderTheory();
+    const article = container.querySelector(".grammar-theory");
+    const order = Array.from(article?.children ?? []).map((child) => (child as HTMLElement).className);
+    expect(order).toEqual([
+      "grammar-theory__header",
+      "grammar-theory__formations",
+      "grammar-theory__definition",
+      "grammar-theory__prose",
+      "grammar-theory__examples",
+    ]);
+    expect(screen.getByRole("heading", { name: "Definition" })).not.toBeNull();
+    expect(container.querySelector(".grammar-theory__definition p")?.getAttribute("lang")).toBe("en");
+
+    fireEvent.click(screen.getByRole("button", { name: "Show Spanish theory" }));
+
+    expect(screen.getByRole("heading", { name: "Definition" })).not.toBeNull();
+    const definition = container.querySelector(".grammar-theory__definition");
+    expect(definition?.querySelector("p")?.getAttribute("lang")).toBe("es");
+    expect(definition?.textContent).toContain("es el tiempo base para hábitos");
+    expect(definition?.textContent).not.toContain("is the base tense for habits");
   });
 
   it("expone la prosa conmutable en una región aria-live", () => {

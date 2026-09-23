@@ -11,6 +11,9 @@
   - **Affirmative:** subject + was/were + -ing form
   - **Negative:** subject + was/were + not + -ing form
   - **Question:** Was/were + subject + -ing form?
+### Definición
+- **EN:** The **past simple** is the tense for finished past events; it is the backbone you use to tell a story in order. The **past progressive** is the tense for an activity in progress at a past moment; it is the background form that frames another event.
+- **ES:** El **past simple** es el tiempo para hechos pasados terminados; es la columna vertebral para contar una historia en orden. El **past progressive** es el tiempo para una actividad en curso en un momento pasado; es la forma de fondo que enmarca otro suceso.
 ### Usos
 - **EN:** Use the past simple for actions finished at a moment in the past or for a sequence of facts. Use the past progressive for an action in progress at a moment in the past or as the background of another action. When usually introduces the event that interrupts; while can introduce the activity that was already in progress.
 - **ES:** Usá past simple para acciones terminadas en un momento pasado o para una secuencia de hechos. Usá past progressive para una acción en curso en un momento del pasado o como trasfondo de otra acción. When suele introducir el suceso que interrumpe; while puede introducir la actividad que ya estaba en progreso.
@@ -41,6 +44,9 @@
   - **Affirmative:** subject + had + been + -ing form
   - **Negative:** subject + had not/hadn't + been + -ing form
   - **Question:** Had + subject + been + -ing form?
+### Definición
+- **EN:** The **past perfect** is the tense for the earlier of two past moments; it is the tool for showing which event came first. The simple form presents it as completed with a result, while the progressive form presents it as an activity with duration.
+- **ES:** El **past perfect** es el tiempo para el momento anterior de dos momentos pasados; es la herramienta para mostrar qué evento ocurrió primero. La forma simple lo presenta como terminado con un resultado, mientras que la forma progressive lo presenta como una actividad con duración.
 ### Usos
 - **EN:** Use the past perfect simple to make clear that an action was completed before another past situation or to highlight its result. Use the past perfect progressive to highlight the duration or continuity of an activity before a moment in the past. Since marks the starting point and for expresses the duration.
 - **ES:** Usá el past perfect simple para aclarar que una acción se completó antes de otra situación pasada o para destacar su resultado. Usá el past perfect progressive para destacar la duración o continuidad de una actividad anterior a un momento pasado. Since señala el punto de inicio y for expresa la duración.
@@ -75,6 +81,9 @@
   - **Affirmative:** subject + was/were going to + base verb
   - **Negative:** subject + was/were not + going to + base verb
   - **Question:** Was/were + subject + going to + base verb?
+### Definición
+- **EN:** **Used to, would and was/were going to** are the forms for looking back at the past from a distance: used to names habits and states that changed, would retells repeated actions inside a story, and was/were going to names a plan that existed at a past moment.
+- **ES:** **Used to, would y was/were going to** son las formas para mirar el pasado a la distancia: used to nombra hábitos y estados que cambiaron, would vuelve a contar acciones repetidas dentro de un relato, y was/were going to nombra un plan que existía en un momento pasado.
 ### Usos
 - **EN:** Use used to to contrast the past with the present: I used to live there. To tell past routines in a story with an established period, would lets you vary the wording: Every summer, we would swim in the river. Use was going to or were going to when you talk about a plan seen from a moment in the past: I was going to call you, but I forgot.
 - **ES:** Usá used to para contrastar el pasado con el presente: I used to live there. Para contar rutinas pasadas en un relato con un período establecido, would permite variar la expresión: Every summer, we would swim in the river. Usá was going to o were going to cuando hablás de un plan visto desde un momento pasado: I was going to call you, but I forgot.
