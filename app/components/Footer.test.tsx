@@ -6,12 +6,12 @@ import { Footer } from "./Footer";
 afterEach(cleanup);
 
 describe("Footer", () => {
-  it("shows the current year and lemirdev without hardcoding", () => {
+  it("shows the current year and LeanDev without hardcoding", () => {
     render(<Footer />);
 
     const year = String(new Date().getFullYear());
     const footer = screen.getByRole("contentinfo");
     expect(footer.textContent).toContain(year);
-    expect(footer.textContent).toContain("lemirdev");
+    expect(footer.textContent).toContain("LeanDev");
   });
 });

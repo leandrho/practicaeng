@@ -8,7 +8,7 @@ import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 afterEach(cleanup);
 
 describe("HomePage", () => {
-  it("shows the hero, eight sections with correct counts, and working links", () => {
+  it("shows the hero, nine sections with correct counts, and working links", () => {
     render(<HomePage />);
 
     expect(
@@ -32,14 +32,15 @@ describe("HomePage", () => {
       ["Word Formation", getWordFamilies().length],
       ["Everyday Phrases", contentRepository.getCards("everyday-phrases").length],
       ["Mixed Practice", mixedCount],
+      ["Grammar B1+", 26],
     ];
 
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(8);
+    expect(links).toHaveLength(9);
 
     for (const [name, count] of expected) {
       const link = screen.getByRole("link", {
-        name: new RegExp(`Practice ${name}, ${count}`),
+        name: (accessibleName) => accessibleName.startsWith(`Practice ${name}, ${count} `),
       });
       expect(link.getAttribute("href")).toMatch(/^\/[a-z-]+$/);
       const scope = within(link);

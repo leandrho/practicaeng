@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GRAMMAR_PARTS } from "../src/domain/grammar-catalog";
 import { contentRepository } from "../src/infrastructure/content-loader";
 import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 
@@ -76,6 +77,14 @@ const gridSections = [
     count: mixedCount,
     unit: "cards",
     accent: "var(--accent-mixed)",
+  },
+  {
+    href: "/grammar",
+    name: "Grammar B1+",
+    detail: "Grammar by topic, with guided practice",
+    count: GRAMMAR_PARTS.reduce((sum, part) => sum + part.topics.length, 0),
+    unit: "topics",
+    accent: "var(--accent-grammar)",
   },
 ];
 

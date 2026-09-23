@@ -75,6 +75,29 @@ Usá `---` cuando no haya una forma común o útil para el nivel. Las líneas qu
 - No cambies los encabezados ni los separadores de la tabla de Word Formation.
 - Verificá el cambio con `npm run build`; si el formato es inválido, el error indica el archivo y la línea que hay que corregir.
 
+### Grammar B1+
+
+La tarjeta **Grammar B1+** del inicio abre `/grammar`, donde los 26 temas están agrupados en ocho partes. Cada tema tiene teoría en español, ejemplos EN/ES y una práctica de producción guiada: pensá o decí una oración antes de pulsar **Reveal**. Los ejercicios aparecen en el orden del archivo y sus respuestas se ocultan al cambiar de tarjeta. Esta práctica no forma parte de Mixed Practice ni de los filtros de vocabulario.
+
+El contenido se edita en `data/grammar-part-1.md` a `data/grammar-part-8.md`, uno por parte. Cada título `##` debe coincidir exactamente con el tema correspondiente del catálogo en `src/domain/grammar-catalog.ts` y mantenerse en ese orden. Dentro de cada tema, usá los cinco encabezados `###` que siguen, con texto no vacío en las tres secciones teóricas, **al menos dos ejemplos** y **al menos cinco ejercicios**:
+
+```md
+## Present Simple / Present Progressive
+### Regla y forma
+El present simple se usa para hábitos y se forma con la base del verbo.
+### Usos
+Usalo para describir acciones habituales.
+### Contrastes y errores
+En tercera persona singular, el verbo lleva -s.
+### Ejemplos
+- **EN:** She works from home. --- **ES:** Ella trabaja desde casa.
+- **EN:** They are working now. --- **ES:** Ellos están trabajando ahora.
+### Ejercicios
+- **Prompt (EN):** Describe a habit: she / walk to school every day. --- **Model (EN):** She walks to school every day. --- **Explanation (ES):** El present simple expresa hábitos y la tercera persona lleva -s. --- **Translation (ES):** Ella camina a la escuela todos los días.
+```
+
+El ejemplo muestra solo una tarjeta por brevedad: agregá al menos cinco. Cada ejercicio usa cuatro campos en una sola línea y el separador literal ` --- `; el prompt no debe adelantar el modelo. No repitas literalmente los modelos de las tarjetas en los ejemplos teóricos. Para comprobar la edición, ejecutá `npm run test` y `npm run build`: los datos incompletos, fuera de orden o mal formados fallan con archivo, tema y línea/campo.
+
 ## Funcionamiento
 
 La forma principal de estudio será mediante tarjetas.
