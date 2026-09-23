@@ -1,27 +1,30 @@
 ## Future tenses
 ### Regla y forma
-Para el futuro, **will + verbo base** sirve para decisiones espontáneas y predicciones; **am/is/are going to + verbo base**, para planes e indicios. El present progressive puede marcar arreglos y el present simple, horarios.
+- **EN:** For the future, **will + base verb** works for spontaneous decisions and predictions; **am/is/are going to + base verb**, for plans and present evidence. The present progressive can mark arrangements and the present simple, timetables.
+- **ES:** Para el futuro, **will + verbo base** sirve para decisiones espontáneas y predicciones; **am/is/are going to + verbo base**, para planes e indicios. El present progressive puede marcar arreglos y el present simple, horarios.
 ### Formación
 - **Name (EN):** Will
-  - **Afirmativa:** sujeto + will + verbo base
-  - **Negativa:** sujeto + will not/won't + verbo base
-  - **Interrogativa:** Will + sujeto + verbo base?
+  - **Affirmative:** subject + will + base verb
+  - **Negative:** subject + will not/won't + base verb
+  - **Question:** Will + subject + base verb?
 - **Name (EN):** Be going to
-  - **Afirmativa:** sujeto + am/is/are + going to + verbo base
-  - **Negativa:** sujeto + am/is/are + not + going to + verbo base
-  - **Interrogativa:** Am/is/are + sujeto + going to + verbo base?
-- **Name (EN):** Present Progressive (arreglo futuro)
-  - **Afirmativa:** sujeto + am/is/are + verbo en -ing + referencia futura
-  - **Negativa:** sujeto + am/is/are + not + verbo en -ing + referencia futura
-  - **Interrogativa:** Am/is/are + sujeto + verbo en -ing + referencia futura?
-- **Name (EN):** Present Simple (horario)
-  - **Afirmativa:** sujeto + verbo en present simple + referencia horaria futura
-  - **Negativa:** sujeto + don't/doesn't + verbo base + referencia horaria futura
-  - **Interrogativa:** Do/does + sujeto + verbo base + referencia horaria futura?
+  - **Affirmative:** subject + am/is/are + going to + base verb
+  - **Negative:** subject + am/is/are + not + going to + base verb
+  - **Question:** Am/is/are + subject + going to + base verb?
+- **Name (EN):** Present Progressive (future arrangement)
+  - **Affirmative:** subject + am/is/are + -ing form + future time reference
+  - **Negative:** subject + am/is/are + not + -ing form + future time reference
+  - **Question:** Am/is/are + subject + -ing form + future time reference?
+- **Name (EN):** Present Simple (timetable)
+  - **Affirmative:** subject + present simple verb + future timetable reference
+  - **Negative:** subject + don't/doesn't + base verb + future timetable reference
+  - **Question:** Do/does + subject + base verb + future timetable reference?
 ### Usos
-Usá will para decisiones tomadas al hablar, ofrecimientos y predicciones basadas en una opinión. Usá going to para intenciones previas y predicciones con indicios presentes. El present progressive sitúa una cita o arreglo ya organizado; el present simple presenta un horario establecido por una institución.
+- **EN:** Use will for decisions made while speaking, offers and predictions based on an opinion. Use going to for prior intentions and predictions with present evidence. The present progressive places a meeting or arrangement already organized; the present simple presents a timetable set by an institution.
+- **ES:** Usá will para decisiones tomadas al hablar, ofrecimientos y predicciones basadas en una opinión. Usá going to para intenciones previas y predicciones con indicios presentes. El present progressive sitúa una cita o arreglo ya organizado; el present simple presenta un horario establecido por una institución.
 ### Contrastes y errores
-I'll answer it puede ser una decisión espontánea; I'm going to answer it presenta una intención anterior. Una reserva ya hecha admite I'm flying on Friday. Un horario de salida fijo admite The train leaves at seven. No supongas que will sirve para todas las referencias al futuro; el contexto determina la forma natural.
+- **EN:** I'll answer it can be a spontaneous decision; I'm going to answer it presents an earlier intention. A booking already made takes I'm flying on Friday. A fixed departure timetable takes The train leaves at seven. Do not assume will works for every future reference; the context decides the natural form.
+- **ES:** I'll answer it puede ser una decisión espontánea; I'm going to answer it presenta una intención anterior. Una reserva ya hecha admite I'm flying on Friday. Un horario de salida fijo admite The train leaves at seven. No supongas que will sirve para todas las referencias al futuro; el contexto determina la forma natural.
 ### Ejemplos
 - **EN:** I will carry your suitcase for you. --- **ES:** Te voy a llevar la valija.
 - **EN:** Look at those clouds; it is going to rain. --- **ES:** Mirá esas nubes; va a llover.
@@ -35,24 +38,27 @@ I'll answer it puede ser una decisión espontánea; I'm going to answer it prese
 
 ## Other future forms
 ### Regla y forma
-El **future progressive** usa **will be + verbo en -ing**; el **future perfect simple**, **will have + participio pasado**. **Am/is/are about to/due to + verbo base** indica inminencia o un evento previsto.
+- **EN:** The **future progressive** uses **will be + the -ing form**; the **future perfect simple**, **will have + the past participle**. **Am/is/are about to/due to + base verb** signals imminence or a scheduled event.
+- **ES:** El **future progressive** usa **will be + verbo en -ing**; el **future perfect simple**, **will have + participio pasado**. **Am/is/are about to/due to + verbo base** indica inminencia o un evento previsto.
 ### Formación
 - **Name (EN):** Future Progressive
-  - **Afirmativa:** sujeto + will + be + verbo en -ing
-  - **Negativa:** sujeto + will not/won't + be + verbo en -ing
-  - **Interrogativa:** Will + sujeto + be + verbo en -ing?
+  - **Affirmative:** subject + will + be + -ing form
+  - **Negative:** subject + will not/won't + be + -ing form
+  - **Question:** Will + subject + be + -ing form?
 - **Name (EN):** Future Perfect Simple
-  - **Afirmativa:** sujeto + will + have + participio pasado
-  - **Negativa:** sujeto + will not/won't + have + participio pasado
-  - **Interrogativa:** Will + sujeto + have + participio pasado?
+  - **Affirmative:** subject + will + have + past participle
+  - **Negative:** subject + will not/won't + have + past participle
+  - **Question:** Will + subject + have + past participle?
 - **Name (EN):** Be about to / be due to
-  - **Afirmativa:** sujeto + am/is/are + about to/due to + verbo base
-  - **Negativa:** sujeto + am/is/are + not + about to/due to + verbo base
-  - **Interrogativa:** Am/is/are + sujeto + about to/due to + verbo base?
+  - **Affirmative:** subject + am/is/are + about to/due to + base verb
+  - **Negative:** subject + am/is/are + not + about to/due to + base verb
+  - **Question:** Am/is/are + subject + about to/due to + base verb?
 ### Usos
-Usá will be working para imaginar qué estará pasando a cierta hora futura, y will have finished para mirar hacia atrás desde un límite futuro. Be about to sirve para una inminencia muy cercana; be due to expresa que algo está previsto, por ejemplo en un horario. Estas formas eligen perspectivas distintas sobre el tiempo futuro, no sustituyen automáticamente a will.
+- **EN:** Use will be working to imagine what will be going on at a future time, and will have finished to look back from a future deadline. Be about to suits a very close imminence; be due to says something is scheduled, for example in a timetable. These forms choose different perspectives on future time; they do not automatically replace will.
+- **ES:** Usá will be working para imaginar qué estará pasando a cierta hora futura, y will have finished para mirar hacia atrás desde un límite futuro. Be about to sirve para una inminencia muy cercana; be due to expresa que algo está previsto, por ejemplo en un horario. Estas formas eligen perspectivas distintas sobre el tiempo futuro, no sustituyen automáticamente a will.
 ### Contrastes y errores
-At nine, I'll be reading no afirma que la lectura esté terminada; by nine, I'll have read the chapter sí señala que estará completo. En be about to no agregues -ing al verbo principal: about to leave, no about to leaving. Para el future perfect, el participio es obligatorio: will have written, no will have write.
+- **EN:** At nine, I'll be reading does not claim the reading is finished; by nine, I'll have read the chapter does signal it will be complete. In be about to, do not add -ing to the main verb: about to leave, not about to leaving. For the future perfect, the participle is mandatory: will have written, not will have write.
+- **ES:** At nine, I'll be reading no afirma que la lectura esté terminada; by nine, I'll have read the chapter sí señala que estará completo. En be about to no agregues -ing al verbo principal: about to leave, no about to leaving. Para el future perfect, el participio es obligatorio: will have written, no will have write.
 ### Ejemplos
 - **EN:** This time tomorrow, they will be crossing the mountains. --- **ES:** Mañana a esta hora estarán cruzando las montañas.
 - **EN:** By Friday, we will have completed the project. --- **ES:** Para el viernes habremos terminado el proyecto.
@@ -66,15 +72,18 @@ At nine, I'll be reading no afirma que la lectura esté terminada; by nine, I'll
 
 ## Time clauses
 ### Regla y forma
-En una referencia futura, la cláusula con **when, after, before, as soon as, until** u **once** lleva present simple (o present perfect si se enfatiza que algo ya se completó); la principal puede llevar will o un imperativo.
+- **EN:** In a future reference, the clause with **when, after, before, as soon as, until** or **once** takes the present simple (or the present perfect if it stresses that something is already complete); the main clause can take will or an imperative.
+- **ES:** En una referencia futura, la cláusula con **when, after, before, as soon as, until** u **once** lleva present simple (o present perfect si se enfatiza que algo ya se completó); la principal puede llevar will o un imperativo.
 ### Formación
-- **Name (EN):** Time clause futura
-  - **Cláusula temporal:** conector temporal + sujeto + present simple (o present perfect)
-  - **Oración principal:** sujeto + will + verbo base / imperativo
+- **Name (EN):** Future time clause
+  - **Time clause:** time connector + subject + present simple (or present perfect)
+  - **Main clause:** subject + will + base verb / imperative
 ### Usos
-Usá when para el momento en que ocurre algo y as soon as para indicar que otra acción seguirá inmediatamente. Until señala el límite hasta el que se mantiene una acción. After y before ordenan sucesos; once introduce una condición temporal de cumplimiento. Si la cláusula temporal va primero, se separa de la principal con coma.
+- **EN:** Use when for the moment something happens and as soon as to say another action will follow immediately. Until marks the limit up to which an action continues. After and before order events; once introduces a temporal condition that must be met. If the time clause comes first, a comma separates it from the main clause.
+- **ES:** Usá when para el momento en que ocurre algo y as soon as para indicar que otra acción seguirá inmediatamente. Until señala el límite hasta el que se mantiene una acción. After y before ordenan sucesos; once introduce una condición temporal de cumplimiento. Si la cláusula temporal va primero, se separa de la principal con coma.
 ### Contrastes y errores
-No uses will en una subordinada temporal futura común: I'll call you when I arrive, no when I will arrive. El will de la oración principal sí es correcto. When puede referirse al momento de un hecho esperado; if plantea incertidumbre sobre si sucederá. El present perfect en after I've finished destaca que la primera acción estará completada.
+- **EN:** Do not use will in an ordinary future time clause: I'll call you when I arrive, not when I will arrive. The will in the main clause is correct. When can point to the moment an expected event happens; if raises uncertainty about whether it will happen. The present perfect in after I've finished stresses that the first action will be complete.
+- **ES:** No uses will en una subordinada temporal futura común: I'll call you when I arrive, no when I will arrive. El will de la oración principal sí es correcto. When puede referirse al momento de un hecho esperado; if plantea incertidumbre sobre si sucederá. El present perfect en after I've finished destaca que la primera acción estará completada.
 ### Ejemplos
 - **EN:** We will leave as soon as the rain stops. --- **ES:** Nos iremos apenas pare la lluvia.
 - **EN:** Stay here until I return. --- **ES:** Quedate acá hasta que vuelva.
@@ -88,21 +97,24 @@ No uses will en una subordinada temporal futura común: I'll call you when I arr
 
 ## Conditional Sentences: Types Zero, 1 and 2
 ### Regla y forma
-El **zero conditional** combina **if + present simple** con present simple; el **first conditional**, if + present simple con **will + verbo base**; el **second conditional**, if + past simple con **would + verbo base**.
+- **EN:** The **zero conditional** combines **if + present simple** with the present simple; the **first conditional**, if + present simple with **will + base verb**; the **second conditional**, if + past simple with **would + base verb**.
+- **ES:** El **zero conditional** combina **if + present simple** con present simple; el **first conditional**, if + present simple con **will + verbo base**; el **second conditional**, if + past simple con **would + verbo base**.
 ### Formación
 - **Name (EN):** Zero conditional
-  - **Condición:** if + sujeto + present simple
-  - **Resultado:** sujeto + present simple
+  - **Condition:** if + subject + present simple
+  - **Result:** subject + present simple
 - **Name (EN):** First conditional
-  - **Condición:** if + sujeto + present simple
-  - **Resultado:** sujeto + will + verbo base
+  - **Condition:** if + subject + present simple
+  - **Result:** subject + will + base verb
 - **Name (EN):** Second conditional
-  - **Condición:** if + sujeto + past simple
-  - **Resultado:** sujeto + would + verbo base
+  - **Condition:** if + subject + past simple
+  - **Result:** subject + would + base verb
 ### Usos
-Usá el tipo zero para reglas y resultados generales, el tipo 1 para consecuencias posibles de una condición futura y el tipo 2 para imaginar una alternativa a la realidad. La cláusula con if puede ir al principio o al final; cuando va al principio, se coloca una coma antes de la principal. Unless significa if not en contextos adecuados.
+- **EN:** Use type zero for rules and general results, type 1 for possible consequences of a future condition, and type 2 to imagine an alternative to reality. The if clause can go at the beginning or the end; when it goes first, a comma precedes the main clause. Unless means if not in the right contexts.
+- **ES:** Usá el tipo zero para reglas y resultados generales, el tipo 1 para consecuencias posibles de una condición futura y el tipo 2 para imaginar una alternativa a la realidad. La cláusula con if puede ir al principio o al final; cuando va al principio, se coloca una coma antes de la principal. Unless significa if not en contextos adecuados.
 ### Contrastes y errores
-If it rains, we'll stay inside es una posibilidad real; If it rained, we'd stay inside presenta la lluvia como hipotética. En la cláusula con if del tipo 1 no va will: if it rains, no if it will rain. En la principal del tipo 2 se usa would más base: would go, no would went. Un past simple en el tipo 2 marca distancia hipotética, no una referencia al pasado.
+- **EN:** If it rains, we'll stay inside is a real possibility; If it rained, we'd stay inside presents the rain as hypothetical. In the if clause of type 1 there is no will: if it rains, not if it will rain. In the main clause of type 2 use would + base: would go, not would went. A past simple in type 2 marks hypothetical distance, not a past reference.
+- **ES:** If it rains, we'll stay inside es una posibilidad real; If it rained, we'd stay inside presenta la lluvia como hipotética. En la cláusula con if del tipo 1 no va will: if it rains, no if it will rain. En la principal del tipo 2 se usa would más base: would go, no would went. Un past simple en el tipo 2 marca distancia hipotética, no una referencia al pasado.
 ### Ejemplos
 - **EN:** If you heat ice, it melts. --- **ES:** Si calentás hielo, se derrite.
 - **EN:** If we find the keys, we will leave immediately. --- **ES:** Si encontramos las llaves, saldremos de inmediato.
@@ -116,13 +128,16 @@ If it rains, we'll stay inside es una posibilidad real; If it rained, we'd stay 
 
 ## Must / have to / need
 ### Regla y forma
-**Must + verbo base** expresa obligación o deducción; **have/has to + verbo base** y **need(s) to + verbo base** expresan necesidad. **Mustn't** prohíbe, mientras que don't have to y don't need to indican que no es necesario.
+- **EN:** **Must + base verb** expresses obligation or deduction; **have/has to + base verb** and **need(s) to + base verb** express necessity. **Mustn't** prohibits, while don't have to and don't need to say something is not necessary.
+- **ES:** **Must + verbo base** expresa obligación o deducción; **have/has to + verbo base** y **need(s) to + verbo base** expresan necesidad. **Mustn't** prohíbe, mientras que don't have to y don't need to indican que no es necesario.
 ### Formación
-- **Name (EN):** Must / have to / need to --- **Pattern:** Sujeto + must + verbo base / have or has to + verbo base / need/needs to + verbo base. Pasado: sujeto + had to + verbo base.
+- **Name (EN):** Must / have to / need to --- **Pattern:** Subject + must + base verb / have or has to + base verb / need/needs to + base verb. Past: subject + had to + base verb.
 ### Usos
-Usá must para destacar una obligación que el hablante presenta como importante; have to suele remitir a una regla, circunstancia u obligación externa. Need to se centra en lo necesario para lograr un objetivo. En pasado, had to expresa obligación, pues must no tiene una forma pasada común con ese sentido.
+- **EN:** Use must to highlight an obligation the speaker presents as important; have to usually points to a rule, a circumstance or an external obligation. Need to focuses on what is needed to reach a goal. In the past, had to expresses obligation, since must has no common past form with that meaning.
+- **ES:** Usá must para destacar una obligación que el hablante presenta como importante; have to suele remitir a una regla, circunstancia u obligación externa. Need to se centra en lo necesario para lograr un objetivo. En pasado, had to expresa obligación, pues must no tiene una forma pasada común con ese sentido.
 ### Contrastes y errores
-You mustn't enter significa que está prohibido entrar; You don't have to enter significa que podés elegir no hacerlo. Don't need to tampoco prohíbe: señala que la acción no es necesaria. Para una regla pasada, decí had to, no musted. En tercera persona, She has to leave, no She have to leave.
+- **EN:** You mustn't enter means entering is forbidden; You don't have to enter means you may choose not to. Don't need to does not prohibit either: it says the action is not necessary. For a past rule, say had to, not musted. In the third person, She has to leave, not She have to leave.
+- **ES:** You mustn't enter significa que está prohibido entrar; You don't have to enter significa que podés elegir no hacerlo. Don't need to tampoco prohíbe: señala que la acción no es necesaria. Para una regla pasada, decí had to, no musted. En tercera persona, She has to leave, no She have to leave.
 ### Ejemplos
 - **EN:** Students have to show their ID at the entrance. --- **ES:** Los estudiantes tienen que mostrar su documento en la entrada.
 - **EN:** You mustn't touch that cable. --- **ES:** No debés tocar ese cable.

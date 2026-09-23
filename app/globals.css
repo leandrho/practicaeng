@@ -470,6 +470,19 @@ a {
   text-underline-offset: 0.2em;
 }
 
+.grammar-theory__header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+/* Envuelve la prosa conmutable (SPEC 23): mantiene el ritmo del grid padre. */
+.grammar-theory__prose {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
 .grammar-theory h2,
 .grammar-practice-section > h2 {
   margin: 0;

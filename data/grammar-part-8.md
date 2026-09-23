@@ -1,15 +1,18 @@
 ## Unreal past
 ### Regla y forma
-**Wish/if only + past simple** expresa un deseo presente; **wish/if only + past perfect**, un lamento pasado. **Would rather + sujeto + past simple** y **it's time + sujeto + past simple** expresan una preferencia o que ya es hora de actuar.
+- **EN:** **Wish/if only + past simple** expresses a present wish; **wish/if only + past perfect**, a past regret. **Would rather + subject + past simple** and **it's time + subject + past simple** express a preference or that it is already time to act.
+- **ES:** **Wish/if only + past simple** expresa un deseo presente; **wish/if only + past perfect**, un lamento pasado. **Would rather + sujeto + past simple** y **it's time + sujeto + past simple** expresan una preferencia o que ya es hora de actuar.
 ### Formación
-- **Name (EN):** Wish / if only (deseo presente) --- **Pattern:** Wish/if only + past simple.
-- **Name (EN):** Wish / if only (lamento pasado) --- **Pattern:** Wish/if only + past perfect.
-- **Name (EN):** Would rather --- **Pattern:** Would rather + sujeto + past simple.
-- **Name (EN):** It's time --- **Pattern:** It's time + sujeto + past simple.
+- **Name (EN):** Wish / if only (present wish) --- **Pattern:** Wish/if only + past simple.
+- **Name (EN):** Wish / if only (past regret) --- **Pattern:** Wish/if only + past perfect.
+- **Name (EN):** Would rather --- **Pattern:** Would rather + subject + past simple.
+- **Name (EN):** It's time --- **Pattern:** It's time + subject + past simple.
 ### Usos
-Usá wish para expresar un deseo contrario a la realidad e if only para darle más énfasis. It's time más sujeto más past simple indica que una acción ya debería ocurrir: It's time we left. En deseos hipotéticos con be, were es frecuente para todas las personas, especialmente en registros más cuidados. Wish más would puede expresar que alguien cambie un comportamiento, pero no se usa normalmente para cambiar una capacidad propia.
+- **EN:** Use wish to express a desire contrary to reality and if only to give it extra emphasis. It's time + subject + past simple indicates an action should already happen: It's time we left. In hypothetical wishes with be, were is common for every person, especially in more careful registers. Wish + would can ask someone to change a behaviour, but it is not normally used to change your own ability.
+- **ES:** Usá wish para expresar un deseo contrario a la realidad e if only para darle más énfasis. It's time más sujeto más past simple indica que una acción ya debería ocurrir: It's time we left. En deseos hipotéticos con be, were es frecuente para todas las personas, especialmente en registros más cuidados. Wish más would puede expresar que alguien cambie un comportamiento, pero no se usa normalmente para cambiar una capacidad propia.
 ### Contrastes y errores
-I wish I knew the answer expresa que ahora no la sé; I wish I had known the answer lamenta no haberla sabido antes. Después de would rather con otro sujeto se usa past simple: I'd rather you stayed, no I'd rather you stay en este patrón. It's time we went no afirma que ya fuimos: plantea que debemos ir ahora. No confundas la forma pasada con el tiempo real de la situación.
+- **EN:** I wish I knew the answer says I do not know it now; I wish I had known the answer regrets not having known it before. After would rather with another subject, use the past simple: I'd rather you stayed, not I'd rather you stay in this pattern. It's time we went does not claim we already went: it says we should go now. Do not confuse the past form with the real time of the situation.
+- **ES:** I wish I knew the answer expresa que ahora no la sé; I wish I had known the answer lamenta no haberla sabido antes. Después de would rather con otro sujeto se usa past simple: I'd rather you stayed, no I'd rather you stay en este patrón. It's time we went no afirma que ya fuimos: plantea que debemos ir ahora. No confundas la forma pasada con el tiempo real de la situación.
 ### Ejemplos
 - **EN:** I wish I spoke another language fluently. --- **ES:** Ojalá hablara otro idioma con fluidez.
 - **EN:** If only we had taken a map yesterday. --- **ES:** Ojalá hubiéramos llevado un mapa ayer.
@@ -23,15 +26,18 @@ I wish I knew the answer expresa que ahora no la sé; I wish I had known the ans
 
 ## Conditional Sentences: Type 3
 ### Regla y forma
-El **third conditional** combina **if + past perfect** en la condición con **would/could/might have + participio pasado** en el resultado. Ambas partes describen una alternativa irreal al pasado.
+- **EN:** The **third conditional** combines **if + past perfect** in the condition with **would/could/might have + past participle** in the result. Both parts describe an unreal alternative to the past.
+- **ES:** El **third conditional** combina **if + past perfect** en la condición con **would/could/might have + participio pasado** en el resultado. Ambas partes describen una alternativa irreal al pasado.
 ### Formación
 - **Name (EN):** Third conditional
-  - **Condición:** if + sujeto + had + participio pasado
-  - **Resultado:** sujeto + would/could/might have + participio pasado
+  - **Condition:** if + subject + had + past participle
+  - **Result:** subject + would/could/might have + past participle
 ### Usos
-Usá el tipo 3 para imaginar qué habría ocurrido si una condición pasada hubiera sido distinta, expresar un arrepentimiento o explicar una oportunidad perdida. Could have más participio expresa capacidad o posibilidad pasada en el resultado; might have señala una consecuencia menos segura. Si ambas personas conocen la condición, se puede abreviar had y would en el habla y la escritura informal.
+- **EN:** Use type 3 to imagine what would have happened if a past condition had been different, to express regret or to explain a missed opportunity. Could have + participle expresses past ability or possibility in the result; might have marks a less certain consequence. If both people know the condition, had and would can be contracted in speech and informal writing.
+- **ES:** Usá el tipo 3 para imaginar qué habría ocurrido si una condición pasada hubiera sido distinta, expresar un arrepentimiento o explicar una oportunidad perdida. Could have más participio expresa capacidad o posibilidad pasada en el resultado; might have señala una consecuencia menos segura. Si ambas personas conocen la condición, se puede abreviar had y would en la habla y la escritura informal.
 ### Contrastes y errores
-If I had left earlier, I would have arrived on time no significa que salí temprano: ambas situaciones son hipotéticas. No uses would have en la cláusula con if del patrón estándar: if I had known, no if I would have known. No confundas el tipo 3 con el tipo 2: el tipo 3 imagina cambios en hechos pasados y usa past perfect más would have.
+- **EN:** If I had left earlier, I would have arrived on time does not mean I left early: both situations are hypothetical. Do not use would have in the if clause of the standard pattern: if I had known, not if I would have known. Do not confuse type 3 with type 2: type 3 imagines changes to past facts and uses past perfect + would have.
+- **ES:** If I had left earlier, I would have arrived on time no significa que salí temprano: ambas situaciones son hipotéticas. No uses would have en la cláusula con if del patrón estándar: if I had known, no if I would have known. No confundas el tipo 3 con el tipo 2: el tipo 3 imagina cambios en hechos pasados y usa past perfect más would have.
 ### Ejemplos
 - **EN:** If she had checked the address, she would have found the house. --- **ES:** Si hubiera revisado la dirección, habría encontrado la casa.
 - **EN:** We could have joined them if we had finished earlier. --- **ES:** Podríamos habernos sumado si hubiéramos terminado antes.
@@ -45,15 +51,18 @@ If I had left earlier, I would have arrived on time no significa que salí tempr
 
 ## Causative Form
 ### Regla y forma
-**Have/get + objeto + participio pasado** indica que se encargó un trabajo. Para nombrar quién lo hizo, usá **have + persona + verbo base** o **get + persona + to + verbo base**.
+- **EN:** **Have/get + object + past participle** says a job was arranged. To name who did it, use **have + person + base verb** or **get + person + to + base verb**.
+- **ES:** **Have/get + objeto + participio pasado** indica que se encargó un trabajo. Para nombrar quién lo hizo, usá **have + persona + verbo base** o **get + persona + to + verbo base**.
 ### Formación
-- **Name (EN):** Have/get something done --- **Pattern:** Sujeto + have/get + objeto + participio pasado.
-- **Name (EN):** Have someone do something --- **Pattern:** Sujeto + have + persona + verbo base.
-- **Name (EN):** Get someone to do something --- **Pattern:** Sujeto + get + persona + to + verbo base.
+- **Name (EN):** Have/get something done --- **Pattern:** Subject + have/get + object + past participle.
+- **Name (EN):** Have someone do something --- **Pattern:** Subject + have + person + base verb.
+- **Name (EN):** Get someone to do something --- **Pattern:** Subject + get + person + to + base verb.
 ### Usos
-Usá la causative form cuando organizás que otra persona haga un trabajo para vos o sobre algo tuyo, sin afirmar que lo hiciste personalmente. Have puede conjugarse en pasado, presente o futuro: had the roof fixed, have the windows cleaned, will have the room painted. Get enfatiza a veces el esfuerzo de conseguir que el trabajo se realice. El contexto también puede describir algo que te ocurre sin que lo hayas querido, como having your wallet stolen.
+- **EN:** Use the causative form when you arrange for another person to do a job for you or on something of yours, without claiming you did it yourself. Have can be conjugated in the past, present or future: had the roof fixed, have the windows cleaned, will have the room painted. Get sometimes stresses the effort of making the job happen. The context can also describe something that happens to you against your will, like having your wallet stolen.
+- **ES:** Usá la causative form cuando organizás que otra persona haga un trabajo para vos o sobre algo tuyo, sin afirmar que lo hiciste personalmente. Have puede conjugarse en pasado, presente o futuro: had the roof fixed, have the windows cleaned, will have the room painted. Get enfatiza a veces el esfuerzo de conseguir que el trabajo se realice. El contexto también puede describir algo que te ocurre sin que lo hayas querido, como having your wallet stolen.
 ### Contrastes y errores
-I repaired my bike dice que yo lo arreglé; I had my bike repaired indica que otra persona lo hizo. En have something done se usa el participio: had the door painted, no had the door paint. Si el objeto es una persona que realiza la acción, el patrón cambia: had the mechanic check the brakes; con get, got the mechanic to check the brakes.
+- **EN:** I repaired my bike says I fixed it; I had my bike repaired indicates another person did it. In have something done use the participle: had the door painted, not had the door paint. If the object is a person performing the action, the pattern changes: had the mechanic check the brakes; with get, got the mechanic to check the brakes.
+- **ES:** I repaired my bike dice que yo lo arreglé; I had my bike repaired indica que otra persona lo hizo. En have something done se usa el participio: had the door painted, no had the door paint. Si el objeto es una persona que realiza la acción, el patrón cambia: had the mechanic check the brakes; con get, got the mechanic to check the brakes.
 ### Ejemplos
 - **EN:** She had her kitchen painted last month. --- **ES:** Hizo pintar su cocina el mes pasado.
 - **EN:** We got our internet connection fixed yesterday. --- **ES:** Hicimos arreglar nuestra conexión a internet ayer.

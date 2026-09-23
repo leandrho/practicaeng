@@ -1,19 +1,22 @@
 ## Present Perfect Simple / Present Perfect Progressive
 ### Regla y forma
-El **present perfect simple** combina **have/has + participio pasado**. El **present perfect progressive** combina **have/has been + verbo en -ing**; las preguntas invierten sujeto y auxiliar, y las negativas agregan not.
+- **EN:** The **present perfect simple** combines **have/has + the past participle**. The **present perfect progressive** combines **have/has been + the -ing form**; questions invert subject and auxiliary, and negatives add not.
+- **ES:** El **present perfect simple** combina **have/has + participio pasado**. El **present perfect progressive** combina **have/has been + verbo en -ing**; las preguntas invierten sujeto y auxiliar, y las negativas agregan not.
 ### Formación
 - **Name (EN):** Present Perfect Simple
-  - **Afirmativa:** sujeto + have/has + participio pasado
-  - **Negativa:** sujeto + have/has not (haven't/hasn't) + participio pasado
-  - **Interrogativa:** Have/has + sujeto + participio pasado?
+  - **Affirmative:** subject + have/has + past participle
+  - **Negative:** subject + have/has not (haven't/hasn't) + past participle
+  - **Question:** Have/has + subject + past participle?
 - **Name (EN):** Present Perfect Progressive
-  - **Afirmativa:** sujeto + have/has + been + verbo en -ing
-  - **Negativa:** sujeto + have/has not (haven't/hasn't) + been + verbo en -ing
-  - **Interrogativa:** Have/has + sujeto + been + verbo en -ing?
+  - **Affirmative:** subject + have/has + been + -ing form
+  - **Negative:** subject + have/has not (haven't/hasn't) + been + -ing form
+  - **Question:** Have/has + subject + been + -ing form?
 ### Usos
-Usá el simple para una experiencia sin fecha precisa, un resultado visible ahora o una cantidad de tareas terminadas. Usá el progressive para destacar una actividad iniciada antes que continúa hasta ahora, o su duración y efectos recientes. For indica cuánto tiempo y since indica desde qué momento. Con estados como know, el simple suele ser la forma natural.
+- **EN:** Use the simple for an experience with no precise date, a result visible now, or a number of tasks completed. Use the progressive to highlight an activity started before that continues up to now, or its duration and recent effects. For says how long and since says from what moment. With states like know, the simple is usually the natural form.
+- **ES:** Usá el simple para una experiencia sin fecha precisa, un resultado visible ahora o una cantidad de tareas terminadas. Usá el progressive para destacar una actividad iniciada antes que continúa hasta ahora, o su duración y efectos recientes. For indica cuánto tiempo y since indica desde qué momento. Con estados como know, el simple suele ser la forma natural.
 ### Contrastes y errores
-I've painted three rooms destaca el resultado y el número; I've been painting all morning destaca el proceso. No agregues un momento pasado cerrado como yesterday al present perfect: para eso se usa past simple. No digas I have been knowing her; know expresa un estado y se usa I have known her.
+- **EN:** I've painted three rooms stresses the result and the number; I've been painting all morning stresses the process. Do not add a closed past moment like yesterday to the present perfect: that is what the past simple is for. Do not say I have been knowing her; know expresses a state and takes I have known her.
+- **ES:** I've painted three rooms destaca el resultado y el número; I've been painting all morning destaca el proceso. No agregues un momento pasado cerrado como yesterday al present perfect: para eso se usa past simple. No digas I have been knowing her; know expresa un estado y se usa I have known her.
 ### Ejemplos
 - **EN:** She has visited that museum twice. --- **ES:** Ella visitó ese museo dos veces.
 - **EN:** We have been waiting for the bus since noon. --- **ES:** Estamos esperando el colectivo desde el mediodía.
@@ -27,14 +30,17 @@ I've painted three rooms destaca el resultado y el número; I've been painting a
 
 ## Defining and Non-Defining Relative Clauses
 ### Regla y forma
-Una **defining relative clause** identifica al referente y no lleva comas; puede empezar con **who, which** o **that**. Una **non-defining relative clause** agrega información entre comas y no admite that.
+- **EN:** A **defining relative clause** identifies the referent and takes no comma; it can start with **who, which** or **that**. A **non-defining relative clause** adds information between commas and does not allow that.
+- **ES:** Una **defining relative clause** identifica al referente y no lleva comas; puede empezar con **who, which** o **that**. Una **non-defining relative clause** agrega información entre comas y no admite that.
 ### Formación
-- **Name (EN):** Defining relative clause --- **Pattern:** Antecedente + who/which/that + cláusula identificadora (sin comas).
-- **Name (EN):** Non-defining relative clause --- **Pattern:** Antecedente + coma + who/which/whose/where + información adicional + coma.
+- **Name (EN):** Defining relative clause --- **Pattern:** Antecedent + who/which/that + identifying clause (no commas).
+- **Name (EN):** Non-defining relative clause --- **Pattern:** Antecedent + comma + who/which/whose/where + extra information + comma.
 ### Usos
-Usá una defining clause cuando sin ella no queda claro a qué persona u objeto te referís: the student who won. Usá una non-defining clause si el referente ya está identificado: Marta, who lives nearby, ... . Whose expresa posesión; where introduce información sobre un lugar. En una defining clause se puede omitir el pronombre relativo cuando funciona como objeto, pero no cuando funciona como sujeto.
+- **EN:** Use a defining clause when, without it, it is unclear which person or thing you mean: the student who won. Use a non-defining clause if the referent is already identified: Marta, who lives nearby, ... . Whose expresses possession; where introduces information about a place. In a defining clause the relative pronoun can be omitted when it is the object, but not when it is the subject.
+- **ES:** Usá una defining clause cuando sin ella no queda claro a qué persona u objeto te referís: the student who won. Usá una non-defining clause si el referente ya está identificado: Marta, who lives nearby, ... . Whose expresa posesión; where introduce información sobre un lugar. En una defining clause se puede omitir el pronombre relativo cuando funciona como objeto, pero no cuando funciona como sujeto.
 ### Contrastes y errores
-The book that I borrowed lleva información necesaria y no va entre comas. My laptop, which I bought last year, is broken agrega un dato accesorio y sí lleva comas. No uses that entre comas en una non-defining clause. Tampoco omitas who si es sujeto en the woman who called me.
+- **EN:** The book that I borrowed carries necessary information and stays out of commas. My laptop, which I bought last year, is broken adds an extra detail and does take commas. Never use that between commas in a non-defining clause. Nor omit who when it is the subject in the woman who called me.
+- **ES:** The book that I borrowed lleva información necesaria y no va entre comas. My laptop, which I bought last year, is broken agrega un dato accesorio y sí lleva comas. No uses that entre comas en una non-defining clause. Tampoco omitas who si es sujeto en the woman who called me.
 ### Ejemplos
 - **EN:** The café where we met has closed. --- **ES:** Cerró el café donde nos conocimos.
 - **EN:** My cousin, who lives in Córdoba, is visiting this week. --- **ES:** Mi primo, que vive en Córdoba, nos visita esta semana.
@@ -48,15 +54,18 @@ The book that I borrowed lleva información necesaria y no va entre comas. My la
 
 ## Should / ought to / had better
 ### Regla y forma
-**Should + verbo base** y **ought to + verbo base** expresan consejos moderados. **Had better + verbo base** da un consejo más fuerte, normalmente ligado a una consecuencia.
+- **EN:** **Should + base verb** and **ought to + base verb** express moderate advice. **Had better + base verb** gives stronger advice, usually tied to a consequence.
+- **ES:** **Should + verbo base** y **ought to + verbo base** expresan consejos moderados. **Had better + verbo base** da un consejo más fuerte, normalmente ligado a una consecuencia.
 ### Formación
-- **Name (EN):** Should --- **Pattern:** Sujeto + should + verbo base.
-- **Name (EN):** Ought to --- **Pattern:** Sujeto + ought to + verbo base.
-- **Name (EN):** Had better --- **Pattern:** Sujeto + had better + verbo base.
+- **Name (EN):** Should --- **Pattern:** Subject + should + base verb.
+- **Name (EN):** Ought to --- **Pattern:** Subject + ought to + base verb.
+- **Name (EN):** Had better --- **Pattern:** Subject + had better + base verb.
 ### Usos
-Usá should para recomendaciones generales: You should rest. Ought to tiene un sentido parecido y puede sonar algo más formal. Had better sirve para una situación concreta con una consecuencia cercana: We'd better leave now or we'll miss the train. Should también puede expresar lo que es probable o esperable, según el contexto.
+- **EN:** Use should for general recommendations: You should rest. Ought to has a similar meaning and can sound somewhat more formal. Had better suits a concrete situation with a close consequence: We'd better leave now or we'll miss the train. Should can also express what is likely or expected, according to the context.
+- **ES:** Usá should para recomendaciones generales: You should rest. Ought to tiene un sentido parecido y puede sonar algo más formal. Had better sirve para una situación concreta con una consecuencia cercana: We'd better leave now or we'll miss the train. Should también puede expresar lo que es probable o esperable, según el contexto.
 ### Contrastes y errores
-No confundas had better con un pasado: We'd better call now aconseja una acción presente o futura. Después de had better no agregues to: had better leave, no had better to leave. En una negativa, had better not va antes del verbo principal. Ought to no se combina con should en una misma recomendación.
+- **EN:** Do not confuse had better with a past: We'd better call now advises a present or future action. After had better, do not add to: had better leave, not had better to leave. In a negative, had better not goes before the main verb. Ought to does not combine with should in the same recommendation.
+- **ES:** No confundas had better con un pasado: We'd better call now aconseja una acción presente o futura. Después de had better no agregues to: had better leave, no had better to leave. En una negativa, had better not va antes del verbo principal. Ought to no se combina con should en una misma recomendación.
 ### Ejemplos
 - **EN:** You should drink more water during the day. --- **ES:** Deberías tomar más agua durante el día.
 - **EN:** She ought to check the address before leaving. --- **ES:** Ella debería revisar la dirección antes de salir.

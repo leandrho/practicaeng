@@ -13,7 +13,7 @@ export default function GrammarPage() {
       {GRAMMAR_PARTS.map((part) => (
         <section className="grammar-part" key={part.number} aria-labelledby={`grammar-part-${part.number}`}>
           <div className="grammar-part__heading">
-            <h2 id={`grammar-part-${part.number}`}>Parte {part.number}</h2>
+            <h2 id={`grammar-part-${part.number}`}>Part {part.number}</h2>
             <span>{part.topics.length} topics</span>
           </div>
           <ul className="section-grid">

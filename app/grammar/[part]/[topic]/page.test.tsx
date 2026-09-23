@@ -17,11 +17,11 @@ describe("GrammarTopicPage", () => {
   it("muestra la teoría y el enlace de vuelta para un tema válido", async () => {
     render(await GrammarTopicPage({ params: Promise.resolve({ part: "parte-1", topic: "stative-verbs" }) }));
     expect(screen.getByRole("heading", { name: "Stative verbs" })).not.toBeNull();
-    expect(screen.getByRole("heading", { name: "Formación" })).not.toBeNull();
-    expect(screen.getByRole("heading", { name: "Regla" })).not.toBeNull();
-    expect(screen.getByRole("heading", { name: "Stative verbs (estado)" })).not.toBeNull();
-    expect(screen.getByRole("heading", { name: "Cuándo se usa" })).not.toBeNull();
-    expect(screen.getByRole("heading", { name: "Ojo con esto" })).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Formation" })).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Rule" })).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Stative verbs (state)" })).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "When to use" })).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Watch out for this" })).not.toBeNull();
     expect(screen.getByRole("heading", { name: "In context" })).not.toBeNull();
     expect(screen.getByRole("heading", { name: "Practice · 5 cards" })).not.toBeNull();
     expect(screen.getByRole("link", { name: /All grammar topics/ }).getAttribute("href")).toBe("/grammar");
@@ -41,11 +41,11 @@ describe("GrammarTopicPage", () => {
     expect(screen.getByRole("heading", { name: "Past Perfect Progressive" })).not.toBeNull();
     expect(container.querySelectorAll(".grammar-formation")).toHaveLength(2);
     expect(container.querySelector(".grammar-theory__highlight")?.textContent).toBe("past perfect simple");
-    expect(container.textContent).toContain("sujeto + had + been + verbo en -ing");
+    expect(container.textContent).toContain("subject + had + been + -ing form");
     expect(container.querySelectorAll(".grammar-formation__pattern strong")).toHaveLength(6);
-    expect(container.querySelector(".grammar-formation__pattern strong")?.textContent).toBe("Afirmativa:");
+    expect(container.querySelector(".grammar-formation__pattern strong")?.textContent).toBe("Affirmative:");
     expect(container.querySelector(".grammar-formation__pattern strong + code")?.textContent)
-      .toBe("sujeto + had + participio pasado");
+      .toBe("subject + had + past participle");
   });
 
   it("mantiene en regular el texto de la regla y resalta los dos tiempos por igual", async () => {

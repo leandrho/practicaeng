@@ -10,13 +10,16 @@ let fixtureDirectory: string;
 function fixtureMarkdown(part: (typeof GRAMMAR_PARTS)[number]): string {
   return part.topics.map(({ title }) => `## ${title}
 ### Regla y forma
-Regla en español.
+- **EN:** Rule in English.
+- **ES:** Regla en español.
 ### Formación
-- **Name (EN):** Present Simple --- **Pattern:** sujeto + verbo base
+- **Name (EN):** Present Simple --- **Pattern:** subject + base verb
 ### Usos
-Uso en español.
+- **EN:** Use in English.
+- **ES:** Uso en español.
 ### Contrastes y errores
-Error habitual en español.
+- **EN:** Common error in English.
+- **ES:** Error habitual en español.
 ### Ejemplos
 - **EN:** A sentence works. --- **ES:** Una oración funciona.
 - **EN:** Another example works. --- **ES:** Otro ejemplo funciona.
