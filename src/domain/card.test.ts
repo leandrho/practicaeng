@@ -48,9 +48,19 @@ describe("CardSchema", () => {
   });
 
   it("connector es un tipo válido", () => {
-    expect(CardSchema.parse({ ...validCard, type: "connector" }).type).toBe(
-      "connector",
-    );
+    const parsed = CardSchema.parse({
+      ...validCard,
+      type: "connector",
+      register: "neutral",
+      channel: "both",
+    });
+    expect(parsed.type).toBe("connector");
+    expect(parsed.register).toBe("neutral");
+    expect(parsed.channel).toBe("both");
+  });
+
+  it("rechaza conectores sin etiquetas de registro o canal", () => {
+    expect(() => CardSchema.parse({ ...validCard, type: "connector" })).toThrow();
   });
 
   it("meaningEn y translationEs son obligatorios", () => {

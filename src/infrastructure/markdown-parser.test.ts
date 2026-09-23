@@ -58,6 +58,32 @@ describe("parseBulletCards", () => {
 
     expect(card?.contextSource).toBe("Everyday conversation");
   });
+
+  it("parsea las etiquetas de registro y canal para conectores", () => {
+    const [card] = parseBulletCards(
+      "- **however** --- used to introduce an opposite idea --- sin embargo --- *The food was good; however, the service was slow.* --- *La comida estaba bien; sin embargo, el servicio fue lento.* --- *The room was small. However, the view was lovely.* --- *Register: neutral; Channel: both*",
+      { file: "data/connectors-b1-b2.md", type: "connector" },
+    );
+
+    expect(card).toMatchObject({
+      expression: "however",
+      register: "neutral",
+      channel: "both",
+    });
+  });
+
+  it("permite omitir la fuente del contexto manteniendo las etiquetas", () => {
+    const [card] = parseBulletCards(
+      "- **moreover** --- in addition --- además --- *The room is small; moreover, it is bright.* --- *La habitación es pequeña; además, es luminosa.* --- *The room is small. Moreover, it is bright.* --- *Register: formal; Channel: written*",
+      { file: "data/connectors-b1-b2.md", type: "connector" },
+    );
+
+    expect(card).toMatchObject({
+      contextSource: "Everyday conversation",
+      register: "formal",
+      channel: "written",
+    });
+  });
 });
 
 const irregularVerbsFixture = `## A–B

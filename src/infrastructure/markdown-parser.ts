@@ -1,4 +1,10 @@
-import { CardSchema, type Card, type CardType } from "../domain/card";
+import {
+  CardSchema,
+  ConnectorChannelSchema,
+  ConnectorRegisterSchema,
+  type Card,
+  type CardType,
+} from "../domain/card";
 
 export type ParseError = { file: string; line: number; reason: string };
 
@@ -50,7 +56,7 @@ export function parseBulletCards(
       bullet = `${bullet} ${continuation.trim()}`;
     }
 
-    const parsed = parseBulletLine(bullet, file, startLine);
+    const parsed = parseBulletLine(bullet, file, startLine, type);
 
     cards.push(
       parseCard(
@@ -63,6 +69,8 @@ export function parseBulletCards(
           translationEs: parsed.translationEs,
           contextEn: parsed.contextEn,
           contextSource: parsed.contextSource,
+          register: parsed.register,
+          channel: parsed.channel,
           category,
           sourceFile: file,
         },
@@ -79,8 +87,45 @@ const BULLET_WITH_CONTEXT =
   /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s*(?:---\s+\*(.+?)\*\s*)?$/;
 const BULLET_WITHOUT_CONTEXT =
   /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s*$/;
+const BULLET_WITH_CONNECTOR_USAGE =
+  /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s*(?:---\s+\*(?!Register:)(.+?)\*\s*)?---\s+\*Register:\s*(formal|neutral|informal);\s*Channel:\s*(spoken|written|both)\*\s*$/;
 
-function parseBulletLine(bullet: string, file: string, line: number) {
+function parseBulletLine(
+  bullet: string,
+  file: string,
+  line: number,
+  type?: BulletCardType,
+) {
+  if (type === "connector") {
+    const usageMatch = BULLET_WITH_CONNECTOR_USAGE.exec(bullet);
+    if (usageMatch !== null) {
+      const contextEn = usageMatch[6]?.trim();
+      const contextSource = (usageMatch[7] ?? "Everyday conversation").trim();
+      if (contextEn === undefined || contextEn.length === 0) {
+        throwParseError(file, line, "tarjeta sin Context (EN)");
+      }
+      if (contextEn.includes("---") || contextSource.includes("---")) {
+        throwParseError(file, line, "contexto no puede contener ---");
+      }
+
+      return {
+        expression: usageMatch[1]!.trim(),
+        meaningEn: usageMatch[2]!.trim(),
+        meaningEs: usageMatch[3]!.trim(),
+        exampleEn: usageMatch[4]!.trim(),
+        translationEs: usageMatch[5]!.trim(),
+        contextEn,
+        contextSource,
+        register: ConnectorRegisterSchema.parse(usageMatch[8]),
+        channel: ConnectorChannelSchema.parse(usageMatch[9]),
+      };
+    }
+
+    if (/---\s+\*Register:/i.test(bullet)) {
+      throwParseError(file, line, "etiquetas Register/Channel inválidas");
+    }
+  }
+
   const match = BULLET_WITH_CONTEXT.exec(bullet);
   if (
     match?.[1] === undefined ||
@@ -107,6 +152,10 @@ function parseBulletLine(bullet: string, file: string, line: number) {
   }
   if (contextEn.length === 0) {
     throwParseError(file, line, "tarjeta sin Context (EN)");
+  }
+
+  if (type === "connector") {
+    throwParseError(file, line, "conector sin etiquetas Register y Channel");
   }
 
   return {

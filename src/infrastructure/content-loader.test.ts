@@ -170,6 +170,8 @@ describe("ContentRepository", () => {
         card.category,
         card.contextEn,
       ].every((field) => field.length > 0)).toBe(true);
+      expect(card.register).toBeDefined();
+      expect(card.channel).toBeDefined();
     }
   });
 
@@ -195,6 +197,24 @@ describe("ContentRepository", () => {
       file: "data/connectors-b1-b2.md",
       line: 2,
       reason: "tarjeta sin Context (EN)",
+    });
+  });
+
+  it("un conector sin etiquetas Register y Channel falla con archivo y línea", () => {
+    let error: unknown;
+    try {
+      parseBulletCards(
+        "## Purpose\n- **so that** --- with the purpose that --- para que --- *Speak slowly so that everyone can understand.* --- *Hablá despacio para que todos puedan entender.* --- *Speak slowly. That way, everyone can follow.* --- *Everyday conversation*",
+        { file: "data/connectors-b1-b2.md", type: "connector" },
+      );
+    } catch (caught) {
+      error = caught;
+    }
+
+    expect(error).toEqual({
+      file: "data/connectors-b1-b2.md",
+      line: 2,
+      reason: "conector sin etiquetas Register y Channel",
     });
   });
 });

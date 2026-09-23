@@ -278,4 +278,25 @@ describe("Flashcard", () => {
     expect(screen.queryByAltText("Pista visual")).toBeNull();
     expect(document.querySelector(".book-page")).toBeNull();
   });
+
+  it("reveals connector usage tags only after Reveal", () => {
+    const taggedConnectorCard: Card = {
+      ...card,
+      expression: "moreover",
+      type: "connector",
+      category: "Adding information",
+      register: "neutral",
+      channel: "both",
+    };
+    render(<Flashcard cards={[taggedConnectorCard]} clearFiltersPath="/connectors" />);
+
+    expect(screen.queryByText("Neutral")).toBeNull();
+    expect(screen.queryByText("Spoken & written")).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+
+    expect(screen.getByRole("group", { name: "Connector tags" })).not.toBeNull();
+    expect(screen.getByText("Neutral")).not.toBeNull();
+    expect(screen.getByText("Spoken & written")).not.toBeNull();
+  });
 });

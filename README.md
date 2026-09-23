@@ -63,17 +63,19 @@ El contenido se edita directamente en los archivos Markdown de `data/`. No hace 
 
 ### Connectors
 
-`connectors-b1-b2.md` usa el mismo formato de bullet que `idioms-b1-b2.md`, con **siete campos** separados por ` --- `: expresión en `**negrita**`, meaning en inglés, significado en español, ejemplo en inglés en `*cursiva*`, traducción al español en `*cursiva*`, contexto en inglés en `*cursiva*` y la fuente del contexto en `*cursiva*` (opcional; sin ella se usa `Everyday conversation`):
+`connectors-b1-b2.md` usa el mismo formato de bullet que `idioms-b1-b2.md`: expresión en `**negrita**`, meaning en inglés, significado en español, ejemplo en inglés en `*cursiva*`, traducción al español en `*cursiva*`, contexto en inglés en `*cursiva*`, fuente del contexto opcional (si se omite, se usa `Everyday conversation`) y un campo final obligatorio con etiquetas de registro y canal:
 
 ```md
 ## Contrast and concession
 
-- **moreover** --- in addition to what has been said --- y además, encima --- *The hotel was cheap; moreover, it was close to the centre.* --- *El hotel era barato; además, estaba cerca del centro.* --- *The course is short. Moreover, it is cheap, so I will sign up tomorrow morning.* --- *Everyday conversation*
+- **however** --- used to introduce an opposite idea --- sin embargo, pero --- *The food was good; however, the service was slow.* --- *La comida estaba bien; sin embargo, el servicio fue lento.* --- *The course is short. However, it is affordable, so I will sign up tomorrow morning.* --- *Everyday conversation* --- *Register: neutral; Channel: both*
 ```
 
+- En el campo final, `Register` acepta `formal`, `neutral` o `informal`; `Channel` acepta `spoken`, `written` o `both`. En la tarjeta las etiquetas siempre aparecen en inglés y sin prefijo: `Formal`, `Neutral` o `Informal`, y `Spoken`, `Written` o `Spoken & written`. Son orientaciones de uso, no restricciones gramaticales.
+- Las etiquetas aparecen únicamente al pulsar **Reveal**, para no adelantar información durante el recuerdo activo.
 - Los encabezados `##` son los nueve grupos de función (Adding information, Contrast and concession, Cause and reason, Result and consequence, Purpose, Time and sequence, Examples and clarification, Opinion and stance, Summary and conclusion) y se usan como categoría en los filtros.
 - El archivo tiene al menos 70 conectores, con cinco o más por grupo.
-- Un bullet incompleto o con `---` dentro del contexto hace fallar el build con archivo y línea.
+- Un bullet incompleto, sin etiquetas válidas o con `---` dentro del contexto hace fallar el build con archivo y línea.
 - El contexto sigue la convención de SPEC 21: cita real de uno de los 14 clásicos en dominio público donde existe (fuente `Título — Autor`, registrada en `data/context-provenance.json`), o diálogo situado con fuente `Everyday conversation` cuando el conector no aparece en el corpus.
 - Los conectores **no** forman parte de Mixed Practice.
 

@@ -19,6 +19,18 @@ type FlashcardClientProps = {
   showTypeBadge?: boolean;
 };
 
+const CONNECTOR_REGISTER_LABELS = {
+  formal: "Formal",
+  neutral: "Neutral",
+  informal: "Informal",
+} as const;
+
+const CONNECTOR_CHANNEL_LABELS = {
+  spoken: "Spoken",
+  written: "Written",
+  both: "Spoken & written",
+} as const;
+
 type FlashcardFrontProps = {
   card: Card;
   onReveal: () => void;
@@ -74,6 +86,20 @@ function FlashcardAnswer({ card, showEs, onToggleEs }: FlashcardAnswerProps) {
                 {showEs ? card.translationEs : card.exampleEn}
               </p>
             </div>
+            {card.type === "connector" && card.register !== undefined && card.channel !== undefined ? (
+              <div
+                className="connector-usage-tags"
+                role="group"
+                aria-label="Connector tags"
+              >
+                <span className="connector-usage-tag">
+                  {CONNECTOR_REGISTER_LABELS[card.register]}
+                </span>
+                <span className="connector-usage-tag">
+                  {CONNECTOR_CHANNEL_LABELS[card.channel]}
+                </span>
+              </div>
+            ) : null}
           </div>
           <Button
             className="btn btn--ghost flashcard__language-toggle"

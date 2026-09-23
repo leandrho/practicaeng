@@ -12,6 +12,12 @@ export const CardTypeSchema = z.enum([
 
 export type CardType = z.infer<typeof CardTypeSchema>;
 
+export const ConnectorRegisterSchema = z.enum(["formal", "neutral", "informal"]);
+export const ConnectorChannelSchema = z.enum(["spoken", "written", "both"]);
+
+export type ConnectorRegister = z.infer<typeof ConnectorRegisterSchema>;
+export type ConnectorChannel = z.infer<typeof ConnectorChannelSchema>;
+
 export const CARD_TYPE_LABELS: Record<CardType, string> = {
   "phrasal-verb": "Phrasal verbs",
   collocation: "Collocations",
@@ -35,10 +41,21 @@ export const CardSchema = z
     sourceFile: z.string().min(1),
     contextEn: z.string().min(1),
     contextSource: z.string().min(1).optional(),
+    register: ConnectorRegisterSchema.optional(),
+    channel: ConnectorChannelSchema.optional(),
     pastSimple: z.string().min(1).optional(),
     pastParticiple: z.string().min(1).optional(),
   })
   .superRefine((card, ctx) => {
+    if (card.type === "connector") {
+      if (card.register === undefined) {
+        ctx.addIssue({ code: "custom", message: "connector sin register" });
+      }
+      if (card.channel === undefined) {
+        ctx.addIssue({ code: "custom", message: "connector sin channel" });
+      }
+    }
+
     if (card.type === "irregular-verb") {
       if (card.pastSimple === undefined) {
         ctx.addIssue({ code: "custom", message: "irregular-verb sin pastSimple" });
