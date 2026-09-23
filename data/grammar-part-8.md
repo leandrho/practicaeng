@@ -7,6 +7,9 @@
 - **Name (EN):** Wish / if only (past regret) --- **Pattern:** Wish/if only + past perfect.
 - **Name (EN):** Would rather --- **Pattern:** Would rather + subject + past simple.
 - **Name (EN):** It's time --- **Pattern:** It's time + subject + past simple.
+### Definición
+- **EN:** The **unreal past** is the use of past forms for present or future ideas that contradict reality; it is the grammar of wishes, regrets, preferences and urgent calls to act.
+- **ES:** El **unreal past** es el uso de formas pasadas para ideas presentes o futuras que contradicen la realidad; es la gramática de deseos, lamentos, preferencias y llamados urgentes a actuar.
 ### Usos
 - **EN:** Use wish to express a desire contrary to reality and if only to give it extra emphasis. It's time + subject + past simple indicates an action should already happen: It's time we left. In hypothetical wishes with be, were is common for every person, especially in more careful registers. Wish + would can ask someone to change a behaviour, but it is not normally used to change your own ability.
 - **ES:** Usá wish para expresar un deseo contrario a la realidad e if only para darle más énfasis. It's time más sujeto más past simple indica que una acción ya debería ocurrir: It's time we left. En deseos hipotéticos con be, were es frecuente para todas las personas, especialmente en registros más cuidados. Wish más would puede expresar que alguien cambie un comportamiento, pero no se usa normalmente para cambiar una capacidad propia.
@@ -32,6 +35,9 @@
 - **Name (EN):** Third conditional
   - **Condition:** if + subject + had + past participle
   - **Result:** subject + would/could/might have + past participle
+### Definición
+- **EN:** The **third conditional** is the conditional for the irrecoverable past; it imagines a different earlier condition in order to picture the result that never happened.
+- **ES:** El **third conditional** es el condicional para el pasado irrecuperable; imagina una condición anterior distinta para dibujar el resultado que nunca ocurrió.
 ### Usos
 - **EN:** Use type 3 to imagine what would have happened if a past condition had been different, to express regret or to explain a missed opportunity. Could have + participle expresses past ability or possibility in the result; might have marks a less certain consequence. If both people know the condition, had and would can be contracted in speech and informal writing.
 - **ES:** Usá el tipo 3 para imaginar qué habría ocurrido si una condición pasada hubiera sido distinta, expresar un arrepentimiento o explicar una oportunidad perdida. Could have más participio expresa capacidad o posibilidad pasada en el resultado; might have señala una consecuencia menos segura. Si ambas personas conocen la condición, se puede abreviar had y would en la habla y la escritura informal.
@@ -57,6 +63,9 @@
 - **Name (EN):** Have/get something done --- **Pattern:** Subject + have/get + object + past participle.
 - **Name (EN):** Have someone do something --- **Pattern:** Subject + have + person + base verb.
 - **Name (EN):** Get someone to do something --- **Pattern:** Subject + get + person + to + base verb.
+### Definición
+- **EN:** The **causative form** is the structure for having things done by others; it puts the focus on the arranged service or result instead of on who performed the work.
+- **ES:** La **causative form** es la estructura para hacer que otros hagan cosas; pone el foco en el servicio encargado o en el resultado en vez de en quién realizó el trabajo.
 ### Usos
 - **EN:** Use the causative form when you arrange for another person to do a job for you or on something of yours, without claiming you did it yourself. Have can be conjugated in the past, present or future: had the roof fixed, have the windows cleaned, will have the room painted. Get sometimes stresses the effort of making the job happen. The context can also describe something that happens to you against your will, like having your wallet stolen.
 - **ES:** Usá la causative form cuando organizás que otra persona haga un trabajo para vos o sobre algo tuyo, sin afirmar que lo hiciste personalmente. Have puede conjugarse en pasado, presente o futuro: had the roof fixed, have the windows cleaned, will have the room painted. Get enfatiza a veces el esfuerzo de conseguir que el trabajo se realice. El contexto también puede describir algo que te ocurre sin que lo hayas querido, como having your wallet stolen.

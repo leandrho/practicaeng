@@ -6,6 +6,9 @@
 - **Name (EN):** To-infinitive --- **Pattern:** Verb + to + base verb.
 - **Name (EN):** -ing form --- **Pattern:** Verb or preposition + -ing form.
 - **Name (EN):** After a modal --- **Pattern:** Modal + base verb (no to).
+### Definición
+- **EN:** The **infinitive and the -ing form** are the two non-finite complements of English; they are the choice every verb forces you to make about which shape the next verb takes.
+- **ES:** El **infinitive y la forma -ing** son los dos complementos no finitos del inglés; son la elección que cada verbo te obliga a hacer sobre qué forma toma el verbo siguiente.
 ### Usos
 - **EN:** Use to + verb to express purpose: I went out to buy milk. With can, should and other modals, use the base without to: can swim. Stop doing something means to quit doing it, while stop to do something means to interrupt another activity in order to do that. Remember to do something looks ahead to a pending task; remember doing something recalls a previous experience.
 - **ES:** Usá to más verbo para expresar propósito: I went out to buy milk. Con can, should y otros modales se usa la base sin to: can swim. Stop doing something significa dejar de hacerlo, mientras que stop to do something significa detener otra actividad para hacer eso. Remember to do something mira hacia una tarea pendiente; remember doing something recuerda una experiencia anterior.
@@ -31,6 +34,9 @@
 - **Name (EN):** May / might --- **Pattern:** Subject + may/might + base verb.
 - **Name (EN):** Would (hypothetical condition) --- **Pattern:** Subject + would + base verb + condition.
 - **Name (EN):** Past possibility --- **Pattern:** Subject + may/might have + past participle.
+### Definición
+- **EN:** **May, might and would** are the modals of possibility; they grade how certain or hypothetical an idea is, from an open present possibility to a conditioned or imagined result.
+- **ES:** **May, might y would** son los modales de posibilidad; gradúan cuán cierta o hipotética es una idea, desde una posibilidad presente abierta hasta un resultado condicionado o imaginado.
 ### Usos
 - **EN:** Use may or might when you are not certain about a present or future fact; might can sound somewhat more tentative, but the difference is not always fixed. Use would to imagine what would happen in a hypothetical situation or for a polite invitation, like Would you like some tea? With have + participle, may or might let you talk about past possibilities.
 - **ES:** Usá may o might cuando no tenés certeza sobre un hecho presente o futuro; might puede sonar algo más tentativo, pero la diferencia no siempre es fija. Usá would para imaginar qué pasaría en una situación hipotética o para una invitación cortés, como Would you like some tea? Con have más participio, may o might permiten hablar de posibilidades pasadas.
@@ -55,6 +61,9 @@
 ### Formación
 - **Name (EN):** Present deduction --- **Pattern:** Subject + must/can't + base verb (or be + adjective).
 - **Name (EN):** Past deduction --- **Pattern:** Subject + must/can't have + past participle.
+### Definición
+- **EN:** **Must and can't for deductions** are the modals of logical conclusion; they turn visible evidence into a near-certain affirmation or an impossibility, in the present or the past.
+- **ES:** **Must y can't para deducciones** son los modales de conclusión lógica; convierten la evidencia visible en una afirmación casi segura o en una imposibilidad, en presente o en pasado.
 ### Usos
 - **EN:** Use must when the evidence strongly favours one explanation, and can't when the evidence rules a possibility out. The context supports the deduction: if all the lights are off, the office must be closed; if you saw someone leave, that person can't still be inside. With past facts, the participle after have places the hypothesis before the present.
 - **ES:** Usá must cuando la evidencia favorece fuertemente una explicación, y can't cuando la evidencia descarta una posibilidad. El contexto sostiene la deducción: si todas las luces están apagadas, la oficina must be closed; si viste salir a alguien, esa persona can't still be inside. Con hechos pasados, el participio después de have sitúa la hipótesis antes del presente.
@@ -78,6 +87,9 @@
 - **ES:** La **question tag** repite el auxiliar o modal con polaridad opuesta y un pronombre sujeto. Si la oración no tiene auxiliar, la tag usa **do/does/did**.
 ### Formación
 - **Name (EN):** Question tag --- **Pattern:** Statement + auxiliary/modal with opposite polarity + subject pronoun. No auxiliary: do/does/did + pronoun.
+### Definición
+- **EN:** **Question tags** are short questions added at the end of a statement; they are the device for turning an affirmation into a check, a confirmation request or a genuine question through intonation.
+- **ES:** Las **question tags** son preguntas cortas agregadas al final de una afirmación; son el recurso para convertir una afirmación en un chequeo, un pedido de confirmación o una pregunta genuina mediante la entonación.
 ### Usos
 - **EN:** If the main sentence has be, have as an auxiliary or a modal, repeat that auxiliary in the tag. If it has no auxiliary, use do, does or did according to the tense. For the imperative, will you? is common; with Let's, use shall we? A rising intonation usually expresses a genuine question and a falling one seeks confirmation.
 - **ES:** Si la oración principal tiene be, have como auxiliar o un modal, repetí ese auxiliar en la tag. Si no tiene auxiliar, usá do, does o did según el tiempo verbal. Para el imperativo, will you? es frecuente; con Let's, se usa shall we? La entonación ascendente suele expresar una pregunta genuina y la descendente busca confirmación.

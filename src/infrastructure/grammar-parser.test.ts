@@ -12,6 +12,9 @@ function topic(title: string) {
 - **ES:** Regla en español.
 ### Formación
 - **Name (EN):** Present Simple --- **Pattern:** subject + base verb
+### Definición
+- **EN:** Definition in English.
+- **ES:** Definición en español.
 ### Usos
 - **EN:** Use in English.
 - **ES:** Uso en español.
@@ -43,6 +46,7 @@ describe("parseGrammarPart", () => {
     expect(topics.map(({ title }) => title)).toEqual(titles);
     expect(topics.every(({ formations }) => formations.length > 0)).toBe(true);
     expect(topics.every(({ examples, exercises }) => examples.length >= 2 && exercises.length >= 5)).toBe(true);
+    expect(topics.every(({ definitionEn, definitionEs }) => definitionEn.trim() && definitionEs.trim())).toBe(true);
     expect(topics.flatMap(({ exercises }) => exercises)).toHaveLength(titles.length * 5);
   });
 
@@ -74,11 +78,11 @@ describe("parseGrammarPart", () => {
 
   it("señala el campo ausente en un ejercicio con archivo, tema y línea", () => {
     const broken = valid.replace(" --- **Model (EN):** A letter was sent to Jane 0.", "");
-    expect(() => parseGrammarPart(broken, 6, file)).toThrow(/data\/grammar-part-6\.md:17 \(Passive Voice\): campo Model \(EN\) faltante/);
+    expect(() => parseGrammarPart(broken, 6, file)).toThrow(/data\/grammar-part-6\.md:20 \(Passive Voice\): campo Model \(EN\) faltante/);
   });
 
   it("rechaza secciones obligatorias y mínimos incompletos", () => {
-    expect(() => parseGrammarPart(valid.replace("### Usos", "### Otra cosa"), 6, file)).toThrow(/:7 \(Passive Voice\): sección desconocida/);
+    expect(() => parseGrammarPart(valid.replace("### Usos", "### Otra cosa"), 6, file)).toThrow(/:10 \(Passive Voice\): sección desconocida/);
     expect(() => parseGrammarPart(valid.replace("### Usos\n- **EN:** Use in English.\n- **ES:** Uso en español.\n", ""), 6, file)).toThrow(/Passive Voice\): sección usesEs faltante/);
     expect(() => parseGrammarPart(valid.replace(/### Formación\n- \*\*Name \(EN\):\*\* Present Simple --- \*\*Pattern:\*\* subject \+ base verb\n/, ""), 6, file)).toThrow(/Passive Voice\): sección formations faltante/);
     expect(() => parseGrammarPart(valid.replace(/- \*\*EN:\*\* The door was opened[^\n]*\n/, ""), 6, file)).toThrow(/Passive Voice\): examples: Too small/);
@@ -95,6 +99,8 @@ describe("parseGrammarPart", () => {
     const topics = parseGrammarPart(valid, 6, file);
     expect(topics[0]?.ruleEn).toBe("Rule in English.");
     expect(topics[0]?.ruleEs).toBe("Regla en español.");
+    expect(topics[0]?.definitionEn).toBe("Definition in English.");
+    expect(topics[0]?.definitionEs).toBe("Definición en español.");
     expect(topics[0]?.usesEn).toBe("Use in English.");
     expect(topics[0]?.usesEs).toBe("Uso en español.");
     expect(topics[0]?.contrastsEn).toBe("Common error in English.");
@@ -108,7 +114,7 @@ describe("parseGrammarPart", () => {
       .toThrow(/data\/grammar-part-6\.md:3 \(Passive Voice\): sección ruleEs: prosa legacy sin bullets/);
     const partialLegacy = valid.replace("- **EN:** Use in English.", "Use in English sin bullet.");
     expect(() => parseGrammarPart(partialLegacy, 6, file))
-      .toThrow(/data\/grammar-part-6\.md:8 \(Passive Voice\): sección usesEs:/);
+      .toThrow(/data\/grammar-part-6\.md:11 \(Passive Voice\): sección usesEs:/);
   });
 
   it("rechaza una etiqueta desconocida en la prosa bilingüe con archivo, línea, tema y sección", () => {
@@ -139,6 +145,29 @@ describe("parseGrammarPart", () => {
     );
     expect(() => parseGrammarPart(swapped, 6, file))
       .toThrow(/data\/grammar-part-6\.md:\d+ \(Passive Voice\): sección usesEs: bullet \*\*ES:\*\* fuera de orden/);
+  });
+
+  it("rechaza la sección Definición ausente o mal formada con archivo, línea, tema y sección", () => {
+    expect(() => parseGrammarPart(valid.replace("### Definición\n- **EN:** Definition in English.\n- **ES:** Definición en español.\n", ""), 6, file))
+      .toThrow(/Passive Voice\): sección definitionEs faltante/);
+    const extra = valid.replace(
+      "- **ES:** Definición en español.",
+      "- **ES:** Definición en español.\n- **EN:** Oración de más.",
+    );
+    expect(() => parseGrammarPart(extra, 6, file))
+      .toThrow(/sección definitionEs: se esperan exactamente dos bullets/);
+    const swapped = valid.replace(
+      "- **EN:** Definition in English.\n- **ES:** Definición en español.",
+      "- **ES:** Definición en español.\n- **EN:** Definition in English.",
+    );
+    expect(() => parseGrammarPart(swapped, 6, file))
+      .toThrow(/sección definitionEs: bullet \*\*ES:\*\* fuera de orden/);
+    const empty = valid.replace("- **EN:** Definition in English.", "- **EN:**");
+    expect(() => parseGrammarPart(empty, 6, file))
+      .toThrow(/sección definitionEs: bullet \*\*EN:\*\* vacío/);
+    const unknown = valid.replace("- **ES:** Definición en español.", "- **FR:** Definición en español.");
+    expect(() => parseGrammarPart(unknown, 6, file))
+      .toThrow(/sección definitionEs: etiqueta desconocida \*\*FR:\*\*/);
   });
 
   it("rechaza etiquetas de formación fuera de la lista cerrada en inglés", () => {

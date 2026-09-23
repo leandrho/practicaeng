@@ -19,6 +19,7 @@ function highlightedRule(text: string) {
 export function GrammarTheoryClient({ topic }: { topic: GrammarTopic }) {
   const [showEs, setShowEs] = useState(false);
   const pick = (en: string, es: string) => (showEs ? { text: es, locale: "es" as const } : { text: en, locale: "en" as const });
+  const definition = pick(topic.definitionEn, topic.definitionEs);
   const rule = pick(topic.ruleEn, topic.ruleEs);
   const uses = pick(topic.usesEn, topic.usesEs);
   const contrasts = pick(topic.contrastsEn, topic.contrastsEs);
@@ -56,6 +57,12 @@ export function GrammarTheoryClient({ topic }: { topic: GrammarTopic }) {
             </article>
           ))}
         </div>
+      </section>
+      <section className="grammar-theory__definition" aria-labelledby="grammar-definition-title">
+        <h3 id="grammar-definition-title">Definition</h3>
+        {sentences(definition.text, definition.locale).map((sentence, index) => (
+          <p key={index} lang={definition.locale}>{highlightedRule(sentence)}</p>
+        ))}
       </section>
       <div className="grammar-theory__prose" aria-live="polite">
         <section className="grammar-theory__rule" aria-labelledby="grammar-rule-title">

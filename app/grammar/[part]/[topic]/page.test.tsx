@@ -40,7 +40,7 @@ describe("GrammarTopicPage", () => {
     expect(screen.getByRole("heading", { name: "Past Perfect Simple" })).not.toBeNull();
     expect(screen.getByRole("heading", { name: "Past Perfect Progressive" })).not.toBeNull();
     expect(container.querySelectorAll(".grammar-formation")).toHaveLength(2);
-    expect(container.querySelector(".grammar-theory__highlight")?.textContent).toBe("past perfect simple");
+    expect(container.querySelector(".grammar-theory__rule .grammar-theory__highlight")?.textContent).toBe("past perfect simple");
     expect(container.textContent).toContain("subject + had + been + -ing form");
     expect(container.querySelectorAll(".grammar-formation__pattern strong")).toHaveLength(6);
     expect(container.querySelector(".grammar-formation__pattern strong")?.textContent).toBe("Affirmative:");

@@ -11,6 +11,9 @@
   - **Affirmative:** subject + am/is/are + -ing form
   - **Negative:** subject + am/is/are + not + -ing form
   - **Question:** Am/is/are + subject + -ing form?
+### Definición
+- **EN:** The **present simple** is the base tense for habits, facts and routines; it is the form you build questions and negatives on with do/does. The **present progressive** is the tense for an action in progress; it is the form you build with am/is/are + -ing.
+- **ES:** El **present simple** es el tiempo base para hábitos, hechos y rutinas; es la forma sobre la que se construyen preguntas y negativas con do/does. El **present progressive** es el tiempo para una acción en desarrollo; es la forma que se construye con am/is/are + -ing.
 ### Usos
 - **EN:** Use the present simple for habits, general facts and fixed timetables. Use the present progressive for actions happening now, temporary situations and personal plans already arranged. Expressions like every day point to the simple; now, at the moment and this week usually point to the progressive.
 - **ES:** Usá present simple para hábitos, hechos generales y horarios establecidos. Usá present progressive para acciones que ocurren ahora, situaciones temporales y planes personales ya organizados. Expresiones como every day orientan al simple; now, at the moment y this week suelen orientar al progressive.
@@ -41,6 +44,9 @@
   - **Affirmative:** subject + am/is/are + -ing form
   - **Negative:** subject + am/is/are + not + -ing form
   - **Question:** Am/is/are + subject + -ing form?
+### Definición
+- **EN:** **Stative verbs** are verbs of state, what you know, feel, own or think, not of deliberate action; they are the group where the simple form is the default and the progressive is only possible when the meaning shifts to an activity.
+- **ES:** Los **stative verbs** son verbos de estado, lo que sabés, sentís, poseés o pensás, no de acción deliberada; son el grupo donde la forma simple es la opción por defecto y el progressive solo es posible cuando el significado cambia a una actividad.
 ### Usos
 - **EN:** Use the present simple for beliefs, knowledge, possession and stable relationships: know a person, own a bicycle, belong to a team. For a deliberate activity that is going on, think about, have a meal and taste a dish can appear in the progressive. The concrete meaning decides the form, not just the list of verbs.
 - **ES:** Usá present simple para creencias, conocimiento, posesión y relaciones estables: know a person, own a bicycle, belong to a team. Para una actividad deliberada que está ocurriendo, think about, have a meal y taste a dish pueden aparecer en progressive. El significado concreto decide la forma, no solamente la lista de verbos.
@@ -66,6 +72,9 @@
 - **Name (EN):** Comparative --- **Pattern:** subject + be + short adjective + -er + than + second reference / subject + be + more + long adjective + than + second reference.
 - **Name (EN):** Equality --- **Pattern:** subject + be + as + adjective + as + second reference.
 - **Name (EN):** Superlative --- **Pattern:** subject + be + the + short adjective + -est (+ noun) / the most + long adjective (+ noun).
+### Definición
+- **EN:** **Comparisons** are the system for grading adjectives: the comparative ranks two things, equality states the same degree and the superlative singles out an extreme within a group.
+- **ES:** Las **comparisons** son el sistema para graduar adjetivos: el comparativo ordena dos cosas, la igualdad declara el mismo grado y el superlativo destaca un extremo dentro de un grupo.
 ### Usos
 - **EN:** Use the comparative for a difference between two things and the superlative to highlight an extreme among three or more. As ... as marks equality and not as ... as indicates a lower degree. Less ... than expresses a smaller amount or degree; to count concrete objects, fewer ... than is more precise.
 - **ES:** Usá el comparativo para una diferencia entre dos cosas y el superlativo para destacar un extremo entre tres o más. As ... as señala igualdad y not as ... as indica menor grado. Less ... than expresa menor cantidad o grado; para contar objetos concretos, fewer ... than es más preciso.
@@ -90,6 +99,9 @@
 ### Formación
 - **Name (EN):** Countable nouns --- **Pattern:** Many/few + plural countable noun. Question: how many + plural countable noun?
 - **Name (EN):** Uncountable nouns --- **Pattern:** Much/little + uncountable noun. Question: how much + uncountable noun?
+### Definición
+- **EN:** **Countable and uncountable nouns** are the two classes of nouns by quantity: countables name units you can number and pluralize, while uncountables name substances or abstract ideas you measure but do not pluralize.
+- **ES:** Los **countable and uncountable nouns** son las dos clases de sustantivos según la cantidad: los contables nombran unidades que podés numerar y pluralizar, mientras que los incontables nombran sustancias o ideas abstractas que se miden pero no se pluralizan.
 ### Usos
 - **EN:** Use many and few with plural countables; much and little with uncountables. Some and a lot of work for both types in the right contexts. To ask about quantity, How many goes with a plural countable noun and How much goes with an uncountable one.
 - **ES:** Usá many y few con plurales contables; much y little con incontables. Some y a lot of sirven para ambos tipos en contextos adecuados. Para preguntar por cantidad, How many acompaña un plural contable y How much acompaña un incontable.

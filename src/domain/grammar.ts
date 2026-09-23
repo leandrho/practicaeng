@@ -28,6 +28,8 @@ export const GrammarTopicSchema = z.object({
   part: z.literal([1, 2, 3, 4, 5, 6, 7, 8]),
   slug: nonemptyText,
   title: nonemptyText,
+  definitionEn: nonemptyText,
+  definitionEs: nonemptyText,
   ruleEn: nonemptyText,
   ruleEs: nonemptyText,
   formations: z.array(GrammarFormationSchema).min(1),
