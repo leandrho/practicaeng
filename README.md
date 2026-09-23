@@ -79,12 +79,21 @@ Usá `---` cuando no haya una forma común o útil para el nivel. Las líneas qu
 
 La tarjeta **Grammar B1+** del inicio abre `/grammar`, donde los 26 temas están agrupados en ocho partes. Cada tema tiene teoría en español, ejemplos EN/ES y una práctica de producción guiada: pensá o decí una oración antes de pulsar **Reveal**. Los ejercicios aparecen en el orden del archivo y sus respuestas se ocultan al cambiar de tarjeta. Esta práctica no forma parte de Mixed Practice ni de los filtros de vocabulario.
 
-El contenido se edita en `data/grammar-part-1.md` a `data/grammar-part-8.md`, uno por parte. Cada título `##` debe coincidir exactamente con el tema correspondiente del catálogo en `src/domain/grammar-catalog.ts` y mantenerse en ese orden. Dentro de cada tema, usá los cinco encabezados `###` que siguen, con texto no vacío en las tres secciones teóricas, **al menos dos ejemplos** y **al menos cinco ejercicios**:
+El contenido se edita en `data/grammar-part-1.md` a `data/grammar-part-8.md`, uno por parte. Cada título `##` debe coincidir exactamente con el tema correspondiente del catálogo en `src/domain/grammar-catalog.ts` y mantenerse en ese orden. Dentro de cada tema, usá los seis encabezados `###` que siguen, con texto no vacío en las tres secciones teóricas, **al menos una formación**, **dos ejemplos** y **cinco ejercicios**:
 
 ```md
 ## Present Simple / Present Progressive
 ### Regla y forma
-El present simple se usa para hábitos y se forma con la base del verbo.
+El **present simple** se usa para hábitos y agrega **-s/-es** en tercera persona.
+### Formación
+- **Name (EN):** Present Simple
+  - **Afirmativa:** sujeto + verbo base (+ -s/-es en tercera persona)
+  - **Negativa:** sujeto + don't/doesn't + verbo base
+  - **Interrogativa:** Do/does + sujeto + verbo base?
+- **Name (EN):** Present Progressive
+  - **Afirmativa:** sujeto + am/is/are + verbo en -ing
+  - **Negativa:** sujeto + am/is/are + not + verbo en -ing
+  - **Interrogativa:** Am/is/are + sujeto + verbo en -ing?
 ### Usos
 Usalo para describir acciones habituales.
 ### Contrastes y errores
@@ -93,10 +102,10 @@ En tercera persona singular, el verbo lleva -s.
 - **EN:** She works from home. --- **ES:** Ella trabaja desde casa.
 - **EN:** They are working now. --- **ES:** Ellos están trabajando ahora.
 ### Ejercicios
-- **Prompt (EN):** Describe a habit: she / walk to school every day. --- **Model (EN):** She walks to school every day. --- **Explanation (ES):** El present simple expresa hábitos y la tercera persona lleva -s. --- **Translation (ES):** Ella camina a la escuela todos los días.
+- **Prompt (EN):** Describe a habit: she / walk to school every day. --- **Model (EN):** She walks to school every day. --- **Explanation (ES):** El *present simple* expresa hábitos y la tercera persona lleva -s. --- **Translation (ES):** Ella camina a la escuela todos los días.
 ```
 
-El ejemplo muestra solo una tarjeta por brevedad: agregá al menos cinco. Cada ejercicio usa cuatro campos en una sola línea y el separador literal ` --- `; el prompt no debe adelantar el modelo. No repitas literalmente los modelos de las tarjetas en los ejemplos teóricos. Para comprobar la edición, ejecutá `npm run test` y `npm run build`: los datos incompletos, fuera de orden o mal formados fallan con archivo, tema y línea/campo.
+Cada formación se escribe como un bullet con `Name (EN)`. Para una estructura simple, agregá `--- **Pattern:** fórmula`; para tiempos verbales, usá sub-bullets con las etiquetas `Afirmativa`, `Negativa` e `Interrogativa`, cada una seguida de su fórmula. Agregá una entrada distinta por construcción (por ejemplo, present perfect simple y present perfect progressive). En `Regla y forma`, encerrá en `**doble asterisco**` los términos clave para resaltarlos. En `Explanation (ES)`, usá `*asteriscos simples*` para mostrar fragmentos en inglés en cursiva. Cada ejercicio usa cuatro campos en una sola línea y el separador literal ` --- `; el prompt no debe adelantar el modelo. No repitas literalmente los modelos de las tarjetas en los ejemplos teóricos. Para comprobar la edición, ejecutá `npm run test` y `npm run build`: los datos incompletos, fuera de orden o mal formados fallan con archivo, tema y línea/campo.
 
 ## Funcionamiento
 

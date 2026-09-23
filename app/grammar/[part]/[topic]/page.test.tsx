@@ -17,7 +17,9 @@ describe("GrammarTopicPage", () => {
   it("muestra la teoría y el enlace de vuelta para un tema válido", async () => {
     render(await GrammarTopicPage({ params: Promise.resolve({ part: "parte-1", topic: "stative-verbs" }) }));
     expect(screen.getByRole("heading", { name: "Stative verbs" })).not.toBeNull();
-    expect(screen.getByRole("heading", { name: "Regla y forma" })).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Formación" })).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Regla" })).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Stative verbs (estado)" })).not.toBeNull();
     expect(screen.getByRole("heading", { name: "Cuándo se usa" })).not.toBeNull();
     expect(screen.getByRole("heading", { name: "Ojo con esto" })).not.toBeNull();
     expect(screen.getByRole("heading", { name: "In context" })).not.toBeNull();
@@ -29,6 +31,31 @@ describe("GrammarTopicPage", () => {
     expect(screen.queryByText("I know the answer to that question.")).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
     expect(screen.getByText("I know the answer to that question.")).not.toBeNull();
+  });
+
+  it("muestra por separado las dos formaciones de los tiempos perfectos progresivos y resalta sus claves en la regla", async () => {
+    const { container } = render(await GrammarTopicPage({
+      params: Promise.resolve({ part: "parte-2", topic: "past-perfect-simple-past-perfect-progressive" }),
+    }));
+    expect(screen.getByRole("heading", { name: "Past Perfect Simple" })).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Past Perfect Progressive" })).not.toBeNull();
+    expect(container.querySelectorAll(".grammar-formation")).toHaveLength(2);
+    expect(container.querySelector(".grammar-theory__highlight")?.textContent).toBe("past perfect simple");
+    expect(container.textContent).toContain("sujeto + had + been + verbo en -ing");
+    expect(container.querySelectorAll(".grammar-formation__pattern strong")).toHaveLength(6);
+    expect(container.querySelector(".grammar-formation__pattern strong")?.textContent).toBe("Afirmativa:");
+    expect(container.querySelector(".grammar-formation__pattern strong + code")?.textContent)
+      .toBe("sujeto + had + participio pasado");
+  });
+
+  it("mantiene en regular el texto de la regla y resalta los dos tiempos por igual", async () => {
+    const { container } = render(await GrammarTopicPage({
+      params: Promise.resolve({ part: "parte-2", topic: "past-simple-past-progressive" }),
+    }));
+    const ruleParagraphs = Array.from(container.querySelectorAll(".grammar-theory__rule p"));
+    expect(ruleParagraphs).toHaveLength(2);
+    expect(ruleParagraphs[0]?.querySelector(".grammar-theory__highlight")?.textContent).toBe("past simple");
+    expect(ruleParagraphs[1]?.querySelector(".grammar-theory__highlight")?.textContent).toBe("past progressive");
   });
 
   it("rechaza partes y slugs ajenos al catálogo", async () => {

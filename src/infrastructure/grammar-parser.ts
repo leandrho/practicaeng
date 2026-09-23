@@ -1,9 +1,10 @@
 import { GRAMMAR_PARTS } from "../domain/grammar-catalog";
 import { GrammarTopicSchema, type GrammarTopic } from "../domain/grammar";
 
-type Section = "ruleEs" | "usesEs" | "contrastsEs" | "examples" | "exercises";
+type Section = "ruleEs" | "formations" | "usesEs" | "contrastsEs" | "examples" | "exercises";
 const HEADINGS: Record<string, Section> = {
   "Regla y forma": "ruleEs",
+  "Formación": "formations",
   "Usos": "usesEs",
   "Contrastes y errores": "contrastsEs",
   "Ejemplos": "examples",
@@ -69,6 +70,37 @@ export function parseGrammarPart(markdown: string, partNumber: number, file: str
         return { values: fields(text, labels, file, line, current.title), line };
       });
     };
+    const formationBlock = current.sections.formations;
+    if (!formationBlock) fail(file, current.line, current.title, "sección formations faltante");
+    const formations: { name: string; patterns: { label?: string; pattern: string }[]; line: number }[] = [];
+    let formation: (typeof formations)[number] | undefined;
+    const finishFormation = () => {
+      if (!formation) return;
+      formations.push(formation);
+      formation = undefined;
+    };
+    for (const { text, line } of formationBlock.lines) {
+      if (!text.startsWith("- ")) fail(file, line, current.title, "bullet inválido en formations");
+      if (text.includes(" --- **Pattern:** ")) {
+        finishFormation();
+        const values = fields(text, ["Name (EN)", "Pattern"], file, line, current.title);
+        const name = values[0];
+        const pattern = values[1];
+        if (name === undefined || pattern === undefined) fail(file, line, current.title, "formación incompleta");
+        formations.push({ name, patterns: [{ pattern }], line });
+        continue;
+      }
+      const name = text.match(/^- \*\*Name \(EN\):\*\* (.+)$/);
+      if (name) {
+        finishFormation();
+        formation = { name: name[1]?.trim() ?? "", patterns: [], line };
+        continue;
+      }
+      const pattern = text.match(/^- \*\*([^*]+):\*\* (.+)$/);
+      if (!formation || !pattern) fail(file, line, current.title, "formación inválida");
+      formation.patterns.push({ label: pattern[1]?.trim(), pattern: pattern[2]?.trim() ?? "" });
+    }
+    finishFormation();
     const examples = bullets("examples", ["EN", "ES"]);
     const exercises = bullets("exercises", ["Prompt (EN)", "Model (EN)", "Explanation (ES)", "Translation (ES)"]);
     const result = GrammarTopicSchema.safeParse({
@@ -76,6 +108,7 @@ export function parseGrammarPart(markdown: string, partNumber: number, file: str
       title: current.title,
       slug: current.slug,
       ruleEs: prose("ruleEs"),
+      formations,
       usesEs: prose("usesEs"),
       contrastsEs: prose("contrastsEs"),
       examples: examples.map(({ values }) => ({ exampleEn: values[0], translationEs: values[1] })),
@@ -88,7 +121,7 @@ export function parseGrammarPart(markdown: string, partNumber: number, file: str
       if (!issue) fail(file, current.line, current.title, "validación de tema fallida");
       const key = issue.path[0];
       const index = issue.path[1];
-      const source = key === "examples" ? examples : key === "exercises" ? exercises : undefined;
+      const source = key === "formations" ? formations : key === "examples" ? examples : key === "exercises" ? exercises : undefined;
       const line = source && typeof index === "number"
         ? source[index]?.line ?? current.line
         : current.sections[key as Section]?.line ?? current.line;

@@ -11,6 +11,8 @@ function fixtureMarkdown(part: (typeof GRAMMAR_PARTS)[number]): string {
   return part.topics.map(({ title }) => `## ${title}
 ### Regla y forma
 Regla en español.
+### Formación
+- **Name (EN):** Present Simple --- **Pattern:** sujeto + verbo base
 ### Usos
 Uso en español.
 ### Contrastes y errores
@@ -65,7 +67,7 @@ describe("getGrammarTopics", () => {
     if (!part) throw new Error("Fixture de Parte 8 no disponible");
     writeFileSync(file, "## Unreal past\n");
     try {
-      expect(() => getGrammarTopics(fixtureDirectory)).toThrow(/data\/grammar-part-8\.md:1 \(Unreal past\): sección examples faltante/);
+      expect(() => getGrammarTopics(fixtureDirectory)).toThrow(/data\/grammar-part-8\.md:1 \(Unreal past\): sección formations faltante/);
     } finally {
       writeFileSync(file, fixtureMarkdown(part));
     }

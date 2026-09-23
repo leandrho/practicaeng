@@ -4,6 +4,13 @@ import { useState } from "react";
 import type { GrammarExercise } from "../../src/domain/grammar";
 import { Button } from "./ui/Button";
 
+function renderExplanation(text: string) {
+  return text.split(/(\*[^*]+\*)/g).map((part, index) => {
+    const emphasized = part.match(/^\*([^*]+)\*$/);
+    return emphasized ? <em key={index} lang="en">{emphasized[1]}</em> : part;
+  });
+}
+
 export function GrammarPracticeClient({ exercises }: { exercises: GrammarExercise[] }) {
   const [index, setIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
@@ -39,7 +46,7 @@ export function GrammarPracticeClient({ exercises }: { exercises: GrammarExercis
             </div>
             <div className="answer-block">
               <span className="answer-pill answer-pill--ghost">Explanation</span>
-              <p className="answer-text" lang="es">{exercise.explanationEs}</p>
+              <p className="answer-text" lang="es">{renderExplanation(exercise.explanationEs)}</p>
             </div>
             <div className="answer-block answer-block--example">
               <span className="answer-pill answer-pill--outline">Translation</span>

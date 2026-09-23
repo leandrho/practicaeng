@@ -10,7 +10,7 @@ const exercises: [GrammarExercise, GrammarExercise] = [
   {
     promptEn: "Ask about a daily routine.",
     modelEn: "She walks to work.",
-    explanationEs: "El present simple expresa hábitos.",
+    explanationEs: "El *present simple* expresa hábitos.",
     translationEs: "Ella camina al trabajo.",
   },
   {
@@ -32,7 +32,9 @@ describe("GrammarPracticeClient", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
     expect(screen.getByText(exercises[0].modelEn)).not.toBeNull();
-    expect(screen.getByText(exercises[0].explanationEs)).not.toBeNull();
+    const explanation = container.querySelector(".answer-text[lang='es']");
+    expect(explanation?.textContent).toBe("El present simple expresa hábitos.");
+    expect(explanation?.querySelector("em[lang='en']")?.textContent).toBe("present simple");
     expect(screen.getByText(exercises[0].translationEs)).not.toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: "Next" }));

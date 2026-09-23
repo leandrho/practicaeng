@@ -9,6 +9,8 @@ function topic(title: string) {
   return `## ${title}
 ### Regla y forma
 Regla en español.
+### Formación
+- **Name (EN):** Present Simple --- **Pattern:** sujeto + verbo base
 ### Usos
 Uso en español.
 ### Contrastes y errores
@@ -36,6 +38,7 @@ describe("parseGrammarPart", () => {
     const source = `data/grammar-part-${number}.md`;
     const topics = parseGrammarPart(readFileSync(source, "utf8"), number, source);
     expect(topics.map(({ title }) => title)).toEqual(titles);
+    expect(topics.every(({ formations }) => formations.length > 0)).toBe(true);
     expect(topics.every(({ examples, exercises }) => examples.length >= 2 && exercises.length >= 5)).toBe(true);
     expect(topics.flatMap(({ exercises }) => exercises)).toHaveLength(titles.length * 5);
   });
@@ -45,16 +48,34 @@ describe("parseGrammarPart", () => {
     expect(topics.map((entry) => entry.slug)).toEqual(["passive-voice", "clauses-of-concession"]);
     expect(topics[0]?.exercises).toHaveLength(5);
     expect(topics[0]?.examples).toHaveLength(2);
+    expect(topics[0]?.formations).toEqual([{ name: "Present Simple", patterns: [{ pattern: "sujeto + verbo base" }] }]);
+  });
+
+  it("parsea formaciones verbales con etiquetas y fórmulas separadas", () => {
+    const grouped = valid.replace(
+      "- **Name (EN):** Present Simple --- **Pattern:** sujeto + verbo base",
+      "- **Name (EN):** Present Simple\n  - **Afirmativa:** sujeto + verbo base\n  - **Negativa:** sujeto + don't + verbo base\n  - **Interrogativa:** Do + sujeto + verbo base?",
+    );
+    const parsed = parseGrammarPart(grouped, 6, file);
+    expect(parsed[0]?.formations[0]).toEqual({
+      name: "Present Simple",
+      patterns: [
+        { label: "Afirmativa", pattern: "sujeto + verbo base" },
+        { label: "Negativa", pattern: "sujeto + don't + verbo base" },
+        { label: "Interrogativa", pattern: "Do + sujeto + verbo base?" },
+      ],
+    });
   });
 
   it("señala el campo ausente en un ejercicio con archivo, tema y línea", () => {
     const broken = valid.replace(" --- **Model (EN):** A letter was sent to Jane 0.", "");
-    expect(() => parseGrammarPart(broken, 6, file)).toThrow(/data\/grammar-part-6\.md:12 \(Passive Voice\): campo Model \(EN\) faltante/);
+    expect(() => parseGrammarPart(broken, 6, file)).toThrow(/data\/grammar-part-6\.md:14 \(Passive Voice\): campo Model \(EN\) faltante/);
   });
 
   it("rechaza secciones obligatorias y mínimos incompletos", () => {
-    expect(() => parseGrammarPart(valid.replace("### Usos", "### Otra cosa"), 6, file)).toThrow(/:4 \(Passive Voice\): sección desconocida/);
+    expect(() => parseGrammarPart(valid.replace("### Usos", "### Otra cosa"), 6, file)).toThrow(/:6 \(Passive Voice\): sección desconocida/);
     expect(() => parseGrammarPart(valid.replace("### Usos\nUso en español.\n", ""), 6, file)).toThrow(/Passive Voice\): sección usesEs faltante/);
+    expect(() => parseGrammarPart(valid.replace(/### Formación\n- \*\*Name \(EN\):\*\* Present Simple --- \*\*Pattern:\*\* sujeto \+ verbo base\n/, ""), 6, file)).toThrow(/Passive Voice\): sección formations faltante/);
     expect(() => parseGrammarPart(valid.replace(/- \*\*EN:\*\* The door was opened[^\n]*\n/, ""), 6, file)).toThrow(/Passive Voice\): examples: Too small/);
     expect(() => parseGrammarPart(valid.replace(/- \*\*Prompt \(EN\):\*\* Say who received the letter 4[^\n]*\n/, ""), 6, file)).toThrow(/Passive Voice\): exercises: Too small/);
   });

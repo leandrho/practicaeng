@@ -485,12 +485,79 @@ a {
 .grammar-theory h3 {
   margin: 0;
   font-size: 1.1rem;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .grammar-theory p {
   margin: 0;
   line-height: 1.6;
+}
+
+.grammar-theory__formations {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.grammar-theory__formation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 0.7rem;
+}
+
+.grammar-formation {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent-grammar) 26%, var(--line));
+  border-left: 3px solid var(--accent-grammar);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-grammar) 5%, var(--surface));
+}
+
+.grammar-formation h4 {
+  margin: 0;
+  color: var(--accent-grammar);
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.grammar-formation__patterns {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.grammar-formation__pattern {
+  display: block;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.grammar-formation__pattern strong {
+  display: block;
+  margin-bottom: 0.1rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.grammar-formation__pattern code {
+  display: block;
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 0.93rem;
+  line-height: 1.55;
+  white-space: normal;
+}
+
+.grammar-theory__highlight {
+  color: var(--accent-grammar);
+  font-weight: 800;
 }
 
 .grammar-theory__rule {
@@ -500,15 +567,9 @@ a {
   background: color-mix(in srgb, var(--accent-grammar) 8%, var(--surface));
 }
 
-.grammar-theory__rule .grammar-theory__lead {
-  font-size: clamp(1.1rem, 2.7vw, 1.25rem);
-  font-weight: 750;
-  line-height: 1.4;
-  text-wrap: balance;
-}
-
-.grammar-theory__rule p:not(.grammar-theory__lead) {
-  color: var(--muted);
+.grammar-theory__rule p {
+  font-size: 1.125rem;
+  font-weight: 400;
 }
 
 .grammar-theory__details {

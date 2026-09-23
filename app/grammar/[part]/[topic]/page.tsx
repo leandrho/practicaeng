@@ -17,6 +17,13 @@ function sentences(text: string): string[] {
     ({ segment }) => segment.trim()).filter(Boolean);
 }
 
+function highlightedRule(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) => {
+    const emphasized = part.match(/^\*\*([^*]+)\*\*$/);
+    return emphasized ? <strong key={index} className="grammar-theory__highlight">{emphasized[1]}</strong> : part;
+  });
+}
+
 export default async function GrammarTopicPage({
   params,
 }: {
@@ -44,10 +51,28 @@ export default async function GrammarTopicPage({
             <h2 id="grammar-theory-title">Theory</h2>
             <a href="#grammar-practice">Go to practice ↓</a>
           </header>
+          <section className="grammar-theory__formations" aria-labelledby="grammar-formations-title">
+            <h3 id="grammar-formations-title">Formación</h3>
+            <div className="grammar-theory__formation-grid">
+              {topic.formations.map(({ name, patterns }) => (
+                <article className="grammar-formation" key={name}>
+                  <h4>{name}</h4>
+                  <div className="grammar-formation__patterns">
+                    {patterns.map(({ label, pattern }, index) => (
+                      <div className="grammar-formation__pattern" key={`${label ?? "pattern"}-${index}`}>
+                        {label && <strong>{label}:</strong>}
+                        <code>{pattern}</code>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
           <section className="grammar-theory__rule" aria-labelledby="grammar-rule-title">
-            <h3 id="grammar-rule-title">Regla y forma</h3>
+            <h3 id="grammar-rule-title">Regla</h3>
             {sentences(topic.ruleEs).map((sentence, index) => (
-              <p key={index} className={index === 0 ? "grammar-theory__lead" : undefined} lang="es">{sentence}</p>
+              <p key={index} lang="es">{highlightedRule(sentence)}</p>
             ))}
           </section>
           <div className="grammar-theory__details">
