@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { GRAMMAR_PARTS } from "../../src/domain/grammar-catalog";
+import { BackIcon } from "../components/ui/BackIcon";
 
 export default function GrammarPage() {
   return (
     <main className="home grammar-index" id="contenido">
       <header className="home-hero">
-        <Link href="/" className="grammar-index__back">← All sections</Link>
+        <Link href="/" className="grammar-index__back"><BackIcon /> All sections</Link>
         <h1>Grammar B1+</h1>
         <p>Choose a topic. Review the rules, then practise by making your own sentences before you reveal the answer.</p>
         <p className="home-hero__meta">8 parts · 26 topics</p>

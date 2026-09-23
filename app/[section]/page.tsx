@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import {
@@ -6,6 +7,7 @@ import {
   type ContentSection,
 } from "../../src/infrastructure/content-loader";
 import { SectionPracticeClient } from "../components/SectionPracticeClient";
+import { BackIcon } from "../components/ui/BackIcon";
 
 export const dynamicParams = false;
 
@@ -71,6 +73,7 @@ export default async function SectionPage({
     <main className="practice-layout" id="contenido">
       <div className="practice-layout__content">
         <header className="practice-header">
+          <Link href="/" className="grammar-index__back"><BackIcon /> All sections</Link>
           <h1>{SECTION_TITLES[section]}</h1>
           <p>{SECTION_PROMPTS[section]}</p>
         </header>

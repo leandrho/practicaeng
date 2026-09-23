@@ -4,6 +4,7 @@ import { GRAMMAR_PARTS } from "../../../../src/domain/grammar-catalog";
 import { getGrammarTopics } from "../../../../src/infrastructure/grammar-loader";
 import { GrammarPracticeClient } from "../../../components/GrammarPracticeClient";
 import { GrammarTheoryClient } from "../../../components/GrammarTheoryClient";
+import { BackIcon } from "../../../components/ui/BackIcon";
 
 export const dynamicParams = false;
 
@@ -31,7 +32,7 @@ export default async function GrammarTopicPage({
     <main className="practice-layout grammar-topic-page" id="contenido">
       <div className="practice-layout__content">
         <header className="practice-header">
-          <Link className="grammar-index__back" href="/grammar">← All grammar topics</Link>
+          <Link className="grammar-index__back" href="/grammar"><BackIcon /> All grammar topics</Link>
           <p>Part {match.number} · Grammar B1+</p>
           <h1>{topic.title}</h1>
         </header>

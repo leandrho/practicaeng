@@ -374,11 +374,32 @@ a {
 }
 
 .grammar-index__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   width: fit-content;
   color: var(--action);
   font-weight: 700;
+  text-decoration: none;
+  transition: transform 150ms ease;
+}
+
+.grammar-index__back:hover {
+  text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
+}
+
+.grammar-index__back .back-icon {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  transition: transform 150ms ease;
+}
+
+.grammar-index__back:hover .back-icon {
+  transform: translateX(-2px);
 }
 
 .grammar-part {
