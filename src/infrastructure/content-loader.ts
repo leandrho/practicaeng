@@ -13,9 +13,16 @@ export const CONTENT_SECTIONS = [
   "idioms",
   "irregular-verbs",
   "everyday-phrases",
+  "connectors",
 ] as const;
 
 export type ContentSection = (typeof CONTENT_SECTIONS)[number];
+
+// Mixed Practice arma su mazo con las secciones de contenido, excepto
+// connectors (SPEC 24): los conectores no participan de la mezcla.
+export const MIXED_SECTIONS = CONTENT_SECTIONS.filter(
+  (section) => section !== "connectors",
+);
 
 export type ContentRepository = {
   getCards(section: ContentSection): Card[];
@@ -54,5 +61,7 @@ function parseCards(markdown: string, section: ContentSection, file: string): Ca
       return parseIrregularVerbCards(markdown, file);
     case "everyday-phrases":
       return parseBulletCards(markdown, { file, type: "everyday-phrase" });
+    case "connectors":
+      return parseBulletCards(markdown, { file, type: "connector" });
   }
 }

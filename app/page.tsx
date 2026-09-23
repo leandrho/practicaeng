@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { GRAMMAR_PARTS } from "../src/domain/grammar-catalog";
-import { contentRepository } from "../src/infrastructure/content-loader";
+import {
+  MIXED_SECTIONS,
+  contentRepository,
+} from "../src/infrastructure/content-loader";
 import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 
 const sections = [
@@ -60,13 +63,23 @@ const sections = [
     unit: "cards",
     accent: "var(--accent-everyday-phrases)",
   },
+  {
+    href: "/connectors",
+    name: "Connectors",
+    detail: "Link ideas: contrast, cause, result",
+    count: contentRepository.getCards("connectors").length,
+    unit: "cards",
+    accent: "var(--accent-connectors)",
+  },
 ];
 
 const total = sections.reduce((sum, section) => sum + section.count, 0);
 
-const mixedCount = sections
-  .filter((section) => section.unit === "cards")
-  .reduce((sum, section) => sum + section.count, 0);
+// Mixed Practice usa MIXED_SECTIONS: los conectores quedan fuera (SPEC 24).
+const mixedCount = MIXED_SECTIONS.reduce(
+  (sum, section) => sum + contentRepository.getCards(section).length,
+  0,
+);
 
 const gridSections = [
   ...sections,

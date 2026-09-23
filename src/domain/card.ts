@@ -7,6 +7,7 @@ export const CardTypeSchema = z.enum([
   "idiom",
   "irregular-verb",
   "everyday-phrase",
+  "connector",
 ]);
 
 export type CardType = z.infer<typeof CardTypeSchema>;
@@ -18,6 +19,7 @@ export const CARD_TYPE_LABELS: Record<CardType, string> = {
   idiom: "Idioms & Expressions",
   "irregular-verb": "Irregular Verbs",
   "everyday-phrase": "Everyday Phrases",
+  connector: "Connectors",
 };
 
 export const CardSchema = z

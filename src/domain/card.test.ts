@@ -47,6 +47,12 @@ describe("CardSchema", () => {
     );
   });
 
+  it("connector es un tipo válido", () => {
+    expect(CardSchema.parse({ ...validCard, type: "connector" }).type).toBe(
+      "connector",
+    );
+  });
+
   it("meaningEn y translationEs son obligatorios", () => {
     expect(() =>
       CardSchema.parse({ ...validCard, meaningEn: "" }),

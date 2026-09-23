@@ -17,6 +17,7 @@ La aplicación estará dividida en diferentes áreas de práctica:
 - Prepositions
 - Idioms & Expressions
 - Word Formation
+- Connectors
 
 El contenido de cada sección estará almacenado dentro del directorio:
 
@@ -29,6 +30,7 @@ data/
 ├── collocations-b1-b2.md
 ├── fixed-prepositions-b1-b2.md
 ├── idioms-b1-b2.md
+├── connectors-b1-b2.md
 └── word-formation-b1-b2.md
 
 Estos archivos contienen la información utilizada por la aplicación, como significado, ejemplos, traducciones, categorías y nivel de dificultad.
@@ -58,6 +60,21 @@ El contenido se edita directamente en los archivos Markdown de `data/`. No hace 
 - **Significado:** cuidar de alguien o algo
 - **Ejemplo:** She looks after her younger brother.
 ```
+
+### Connectors
+
+`connectors-b1-b2.md` usa el mismo formato de bullet que `idioms-b1-b2.md`, con **siete campos** separados por ` --- `: expresión en `**negrita**`, meaning en inglés, significado en español, ejemplo en inglés en `*cursiva*`, traducción al español en `*cursiva*`, contexto en inglés en `*cursiva*` y la fuente del contexto en `*cursiva*` (opcional; sin ella se usa `Everyday conversation`):
+
+```md
+## Contrast and concession
+
+- **moreover** --- in addition to what has been said --- y además, encima --- *The hotel was cheap; moreover, it was close to the centre.* --- *El hotel era barato; además, estaba cerca del centro.* --- *The course is short. Moreover, it is cheap, so I will sign up tomorrow morning.* --- *Everyday conversation*
+```
+
+- Los encabezados `##` son los nueve grupos de función (Adding information, Contrast and concession, Cause and reason, Result and consequence, Purpose, Time and sequence, Examples and clarification, Opinion and stance, Summary and conclusion) y se usan como categoría en los filtros.
+- El archivo tiene al menos 70 conectores, con cinco o más por grupo.
+- Un bullet incompleto o con `---` dentro del contexto hace fallar el build con archivo y línea.
+- Los conectores **no** forman parte de Mixed Practice.
 
 ### Word Formation
 
@@ -252,6 +269,22 @@ under the weather
 once in a blue moon
 
 El objetivo será aprender expresiones útiles y relativamente frecuentes, evitando centrarse en idioms demasiado raros o poco utilizados.
+
+## Connectors
+
+Sección para practicar conectores frecuentes del inglés (B1-B2): palabras y frases que unen ideas dentro de una oración o un texto.
+
+Están agrupados por función en `data/connectors-b1-b2.md` (nueve grupos: Adding information, Contrast and concession, Cause and reason, Result and consequence, Purpose, Time and sequence, Examples and clarification, Opinion and stance, Summary and conclusion). Ejemplos:
+
+however
+
+therefore
+
+for example
+
+in my opinion
+
+La tarjeta muestra la expresión y su grupo de función; al pulsar **Reveal** se compara el meaning, el ejemplo, la traducción y el contexto. Esta sección **no** participa de Mixed Practice.
 
 ## Word Formation
 

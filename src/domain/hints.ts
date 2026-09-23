@@ -24,6 +24,7 @@ export function resolveHint(
     case "idiom":
     case "irregular-verb":
     case "everyday-phrase":
+    case "connector":
       return `fallback:${type}`;
     default:
       return "fallback:word-formation";

@@ -3,9 +3,11 @@ import { describe, expect, it } from "vitest";
 import { CardSchema } from "../domain/card";
 import {
   CONTENT_SECTIONS,
+  MIXED_SECTIONS,
   createContentRepository,
   type ContentSection,
 } from "./content-loader";
+import { parseBulletCards } from "./markdown-parser";
 
 const fixtureDirectory = join(
   process.cwd(),
@@ -19,6 +21,7 @@ const realContentCounts: Record<ContentSection, number> = {
   idioms: 35,
   "irregular-verbs": 100,
   "everyday-phrases": 150,
+  connectors: 70,
 };
 
 // The versioned Markdown is a fixed baseline, so content changes must update it explicitly.
@@ -47,6 +50,7 @@ describe("ContentRepository", () => {
       idioms: "idiom",
       "irregular-verbs": "irregular-verb",
       "everyday-phrases": "everyday-phrase",
+      connectors: "connector",
     };
 
     for (const section of CONTENT_SECTIONS) {
@@ -128,6 +132,69 @@ describe("ContentRepository", () => {
       type: "irregular-verb",
       pastSimple: "was/were",
       pastParticiple: "been",
+    });
+  });
+
+  it("carga al menos 70 conectores con los nueve grupos de función", () => {
+    const cards = createContentRepository().getCards("connectors");
+    const expectedCategories = [
+      "Adding information",
+      "Contrast and concession",
+      "Cause and reason",
+      "Result and consequence",
+      "Purpose",
+      "Time and sequence",
+      "Examples and clarification",
+      "Opinion and stance",
+      "Summary and conclusion",
+    ];
+
+    expect(cards.length).toBeGreaterThanOrEqual(70);
+    expect(cards.every((card) => card.type === "connector")).toBe(true);
+    expect(cards.every((card) => card.level === "B1-B2")).toBe(true);
+    expect([...new Set(cards.map((card) => card.category))].sort()).toEqual(
+      [...expectedCategories].sort(),
+    );
+
+    for (const category of expectedCategories) {
+      expect(cards.filter((card) => card.category === category).length).toBeGreaterThanOrEqual(5);
+    }
+
+    for (const card of cards) {
+      expect([
+        card.expression,
+        card.meaningEn,
+        card.meaningEs,
+        card.exampleEn,
+        card.translationEs,
+        card.category,
+        card.contextEn,
+      ].every((field) => field.length > 0)).toBe(true);
+    }
+  });
+
+  it("MIXED_SECTIONS deja fuera connectors", () => {
+    expect(MIXED_SECTIONS).not.toContain("connectors");
+    expect(MIXED_SECTIONS).toEqual(
+      CONTENT_SECTIONS.filter((section) => section !== "connectors"),
+    );
+  });
+
+  it("un bullet de conectores incompleto falla con archivo y línea", () => {
+    let error: unknown;
+    try {
+      parseBulletCards(
+        "## Purpose\n- **so that** --- con el fin de que --- para que --- *Speak slowly so that everyone can understand.* --- *Hablá despacio para que todos puedan entender.*",
+        { file: "data/connectors-b1-b2.md", type: "connector" },
+      );
+    } catch (caught) {
+      error = caught;
+    }
+
+    expect(error).toEqual({
+      file: "data/connectors-b1-b2.md",
+      line: 2,
+      reason: "tarjeta sin Context (EN)",
     });
   });
 });

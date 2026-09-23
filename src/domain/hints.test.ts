@@ -13,6 +13,15 @@ describe("resolveHint", () => {
     );
   });
 
+  it("falls back to fallback:connector for connector cards", () => {
+    expect(resolveHint("moreover", "connector", "Adding information")).toBe(
+      "fallback:connector",
+    );
+    expect(
+      resolveHint("unknown connector", "connector", "Contrast and concession"),
+    ).toBe("fallback:connector");
+  });
+
   it("normalizes whitespace and casing before resolving a curated hint", () => {
     expect(resolveHint("  GIVE UP  ", "phrasal-verb", "general")).toBe("give-up-flag");
   });

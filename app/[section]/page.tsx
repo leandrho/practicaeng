@@ -16,6 +16,7 @@ const SECTION_ACCENTS: Record<ContentSection, string> = {
   idioms: "var(--accent-idioms)",
   "irregular-verbs": "var(--accent-irregular-verbs)",
   "everyday-phrases": "var(--accent-everyday-phrases)",
+  connectors: "var(--accent-connectors)",
 };
 
 const SECTION_TITLES: Record<ContentSection, string> = {
@@ -25,6 +26,7 @@ const SECTION_TITLES: Record<ContentSection, string> = {
   idioms: "Idioms & Expressions",
   "irregular-verbs": "Irregular Verbs",
   "everyday-phrases": "Everyday Phrases",
+  connectors: "Connectors",
 };
 
 const SECTION_PROMPTS: Record<ContentSection, string> = {
@@ -35,6 +37,8 @@ const SECTION_PROMPTS: Record<ContentSection, string> = {
   "irregular-verbs":
     "Say the past simple and past participle aloud. Then reveal and compare.",
   "everyday-phrases":
+    "What does it mean? Think of an example with this expression.",
+  connectors:
     "What does it mean? Think of an example with this expression.",
 };
 
