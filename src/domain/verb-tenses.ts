@@ -1,10 +1,30 @@
 import { z } from "zod";
 
+export const PRESENT_VERB_TENSE_FORMS = [
+  "Present Simple",
+  "Present Progressive",
+  "Present Perfect Simple",
+  "Present Perfect Progressive",
+  "Mixed",
+] as const;
+
+export const PAST_VERB_TENSE_FORMS = [
+  "Past Simple",
+  "Past Progressive",
+  "Past Perfect Simple",
+  "Past Perfect Progressive",
+  "Mixed",
+] as const;
+
 export const VERB_TENSE_FORMS = [
   "Present Simple",
   "Present Progressive",
   "Present Perfect Simple",
   "Present Perfect Progressive",
+  "Past Simple",
+  "Past Progressive",
+  "Past Perfect Simple",
+  "Past Perfect Progressive",
   "Mixed",
 ] as const;
 
@@ -103,11 +123,29 @@ export const VerbTenseSectionSchema = z.object({
 
 export type VerbTenseSection = z.infer<typeof VerbTenseSectionSchema>;
 
+export const VERB_TENSE_FORMS_BY_SLUG = {
+  present: PRESENT_VERB_TENSE_FORMS,
+  past: PAST_VERB_TENSE_FORMS,
+} as const satisfies Partial<
+  Record<VerbTenseSlug, readonly VerbTenseForm[]>
+>;
+
+export function getVerbTenseFormsForSlug(
+  slug: VerbTenseSlug,
+): readonly VerbTenseForm[] {
+  return VERB_TENSE_FORMS_BY_SLUG[slug as keyof typeof VERB_TENSE_FORMS_BY_SLUG] ?? VERB_TENSE_FORMS;
+}
+
 export const VERB_TENSE_SECTIONS = [
   {
     slug: "present",
     title: "Presente",
     file: "data/verb-tenses-present.md",
+  },
+  {
+    slug: "past",
+    title: "Pasado",
+    file: "data/verb-tenses-past.md",
   },
 ] as const satisfies ReadonlyArray<{
   slug: VerbTenseSlug;
@@ -125,6 +163,10 @@ export function getVerbTenseFormCounts(
     "Present Progressive": 0,
     "Present Perfect Simple": 0,
     "Present Perfect Progressive": 0,
+    "Past Simple": 0,
+    "Past Progressive": 0,
+    "Past Perfect Simple": 0,
+    "Past Perfect Progressive": 0,
     Mixed: 0,
   };
   for (const exercise of exercises) {
@@ -140,7 +182,7 @@ export function assertVerbTenseMinimums(section: VerbTenseSection): void {
     );
   }
   const counts = getVerbTenseFormCounts(section.exercises);
-  for (const form of VERB_TENSE_FORMS) {
+  for (const form of getVerbTenseFormsForSlug(section.slug)) {
     if (counts[form] < VERB_TENSE_MIN_PER_FORM) {
       throw new Error(
         `sección ${section.slug}: la forma ${form} necesita ${VERB_TENSE_MIN_PER_FORM} o más ejercicios, hay ${counts[form]}`,

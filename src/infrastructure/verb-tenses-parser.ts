@@ -1,5 +1,5 @@
 import {
-  VERB_TENSE_FORMS,
+  getVerbTenseFormsForSlug,
   VerbTenseExerciseSchema,
   type VerbTenseExercise,
   type VerbTenseSection,
@@ -103,7 +103,7 @@ export function parseVerbTenseSection(
     }
 
     const form = (values["Form"] ?? "").trim();
-    if (!(VERB_TENSE_FORMS as readonly string[]).includes(form)) {
+    if (!(getVerbTenseFormsForSlug(expected.slug) as readonly string[]).includes(form)) {
       throwParseError(file, lineNumber, `forma inválida: ${form}`);
     }
 

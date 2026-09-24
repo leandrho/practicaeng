@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   assertVerbTenseMinimums,
   getVerbTenseFormCounts,
+  getVerbTenseFormsForSlug,
   VERB_TENSE_SECTIONS,
   VerbTenseExerciseSchema,
   VerbTenseSectionSchema,
@@ -66,8 +67,14 @@ describe("VerbTenseExerciseSchema", () => {
 
   it("forma inválida falla", () => {
     expect(() =>
-      VerbTenseExerciseSchema.parse({ ...validExercise, form: "Past Simple" }),
+      VerbTenseExerciseSchema.parse({ ...validExercise, form: "Future Simple" }),
     ).toThrow();
+  });
+
+  it("acepta las formas del pasado en el esquema global", () => {
+    expect(
+      VerbTenseExerciseSchema.parse({ ...validExercise, form: "Past Simple" }).form,
+    ).toBe("Past Simple");
   });
 
   it("sin contexto falla", () => {
@@ -89,7 +96,7 @@ describe("VerbTenseExerciseSchema", () => {
 });
 
 describe("verb-tenses catalog", () => {
-  it("la sección present es única en slug, título y archivo", () => {
+  it("las secciones present y past son únicas en slug, título y archivo", () => {
     const slugs = VERB_TENSE_SECTIONS.map((section) => section.slug);
     const titles = VERB_TENSE_SECTIONS.map((section) => section.title);
     const files = VERB_TENSE_SECTIONS.map((section) => section.file);
@@ -101,6 +108,28 @@ describe("verb-tenses catalog", () => {
       title: "Presente",
       file: "data/verb-tenses-present.md",
     });
+    expect(VERB_TENSE_SECTIONS[1]).toMatchObject({
+      slug: "past",
+      title: "Pasado",
+      file: "data/verb-tenses-past.md",
+    });
+  });
+
+  it("expone las formas por sección y el fallback global", () => {
+    expect(getVerbTenseFormsForSlug("present")).toEqual([
+      "Present Simple",
+      "Present Progressive",
+      "Present Perfect Simple",
+      "Present Perfect Progressive",
+      "Mixed",
+    ]);
+    expect(getVerbTenseFormsForSlug("past")).toEqual([
+      "Past Simple",
+      "Past Progressive",
+      "Past Perfect Simple",
+      "Past Perfect Progressive",
+      "Mixed",
+    ]);
   });
 
   it("cuenta ejercicios por forma y exige los mínimos", () => {
@@ -120,6 +149,10 @@ describe("verb-tenses catalog", () => {
       "Present Progressive": 10,
       "Present Perfect Simple": 10,
       "Present Perfect Progressive": 10,
+      "Past Simple": 0,
+      "Past Progressive": 0,
+      "Past Perfect Simple": 0,
+      "Past Perfect Progressive": 0,
       Mixed: 10,
     });
 
@@ -157,5 +190,45 @@ describe("verb-tenses catalog", () => {
       ],
     });
     expect(() => assertVerbTenseMinimums(unbalanced)).toThrow(/Present Progressive/);
+  });
+
+  it("exige los mínimos de la sección past por forma", () => {
+    const forms: VerbTenseExercise["form"][] = [
+      "Past Simple",
+      "Past Progressive",
+      "Past Perfect Simple",
+      "Past Perfect Progressive",
+      "Mixed",
+    ];
+    const exercises = forms.flatMap((form) =>
+      Array.from({ length: 10 }, (_, index) => exerciseFor(form, 1000 + index)),
+    );
+    const section = VerbTenseSectionSchema.parse({
+      slug: "past",
+      title: "Pasado",
+      exercises,
+    });
+    expect(() => assertVerbTenseMinimums(section)).not.toThrow();
+
+    const unbalancedPast = VerbTenseSectionSchema.parse({
+      slug: "past",
+      title: "Pasado",
+      exercises: [
+        ...Array.from({ length: 14 }, (_, index) =>
+          exerciseFor("Past Simple", 2000 + index),
+        ),
+        ...Array.from({ length: 9 }, (_, index) =>
+          exerciseFor("Past Progressive", 2100 + index),
+        ),
+        ...Array.from({ length: 10 }, (_, index) =>
+          exerciseFor("Past Perfect Simple", 2200 + index),
+        ),
+        ...Array.from({ length: 10 }, (_, index) =>
+          exerciseFor("Past Perfect Progressive", 2300 + index),
+        ),
+        ...Array.from({ length: 10 }, (_, index) => exerciseFor("Mixed", 2400 + index)),
+      ],
+    });
+    expect(() => assertVerbTenseMinimums(unbalancedPast)).toThrow(/Past Progressive/);
   });
 });
