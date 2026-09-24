@@ -121,6 +121,39 @@ describe("SPEC 29 — atajos de práctica", () => {
     expect(screen.getByText("Noun:")).not.toBeNull();
   });
 
+  it("Word Formation: las flechas navegan y al volver ocultan la familia", () => {
+    render(
+      <WordFormationClient
+        clearFiltersPath="/word-formation"
+        families={[
+          family,
+          {
+            ...family,
+            base: "act",
+            category: "A",
+            noun: "action",
+            exercise: {
+              target: "noun",
+              sentenceEn: "The committee took immediate ____.",
+              acceptedAnswers: ["action"],
+            },
+          },
+        ]}
+      />,
+    );
+
+    fireEvent.keyDown(window, { key: " " });
+    expect(screen.getByText("Noun:")).not.toBeNull();
+
+    fireEvent.keyDown(window, { key: "ArrowRight" });
+    expect(screen.getByText("Family 2 of 2")).not.toBeNull();
+    expect(screen.queryByText("Noun:")).toBeNull();
+
+    fireEvent.keyDown(window, { key: "ArrowLeft" });
+    expect(screen.getByText("Family 1 of 2")).not.toBeNull();
+    expect(screen.queryByText("Noun:")).toBeNull();
+  });
+
   it("Grammar mantiene interacción por botones sin atajos globales", () => {
     render(<GrammarPracticeClient exercises={exercises} />);
 

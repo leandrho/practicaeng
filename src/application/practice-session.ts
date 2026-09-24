@@ -20,6 +20,15 @@ export type PracticeItemRef = {
   fingerprint: string;
 };
 
+/**
+ * Dificultad previa por ítem (`kind:id` → intento). SPEC 31 la persiste para
+ * no perder un fallo al recargar antes de avanzar; la evaluación se decide
+ * al concluir el ejercicio. Ausente en sesiones legacy de vocabulario.
+ */
+export type PracticeAttempt = {
+  hadIncorrectAttempt: boolean;
+};
+
 export type PracticePhase = "initial" | "review" | "summary";
 
 export type PracticeSelection = {
@@ -39,6 +48,11 @@ export type PracticeSession = {
   ratings: Record<string, PracticeRating>;
   /** avance de la ronda actual (`kind:id` → rating) */
   roundRatings: Record<string, PracticeRating>;
+  /**
+   * Dificultad previa por ítem en la ronda actual (SPEC 31). Opcional para
+   * no invalidar sesiones legacy de vocabulario persistidas sin el campo.
+   */
+  attempts?: Record<string, PracticeAttempt>;
   selection: PracticeSelection;
   updatedAt: number;
 };
@@ -90,6 +104,7 @@ export function createPracticeSession(
     phase: "initial",
     ratings: {},
     roundRatings: {},
+    attempts: {},
     selection: { ...selection },
     updatedAt: now,
   };
@@ -194,7 +209,8 @@ export function finishPracticeRound(
 
 /**
  * Inicia una ronda de repaso a pedido explícito. Vacía `roundRatings` y
- * conserva `ratings` para el resumen.
+ * `attempts` (la dificultad se reevalúa en la ronda nueva) y conserva
+ * `ratings` para el resumen.
  */
 export function startPracticeReview(
   session: PracticeSession,
@@ -212,6 +228,7 @@ export function startPracticeReview(
     index: 0,
     phase: "review",
     roundRatings: {},
+    attempts: {},
     updatedAt: now,
   };
 }
@@ -244,7 +261,8 @@ export function countPracticeResults(
 /**
  * Indica si la sesión tiene progreso que valga la pena confirmar antes de
  * reemplazarla (cambio de filtros u orden). Una sesión recién creada o un
- * resumen no piden confirmación.
+ * resumen no piden confirmación. Un intento fallido (SPEC 31) también cuenta
+ * como progreso aunque el ítem aún no tenga evaluación.
  */
 export function hasPracticeProgress(session: PracticeSession): boolean {
   if (session.phase === "summary") {
@@ -253,7 +271,11 @@ export function hasPracticeProgress(session: PracticeSession): boolean {
   if (session.phase === "review") {
     return true;
   }
-  return session.index > 0 || Object.keys(session.roundRatings).length > 0;
+  return (
+    session.index > 0 ||
+    Object.keys(session.roundRatings).length > 0 ||
+    Object.keys(session.attempts ?? {}).length > 0
+  );
 }
 
 export function practiceSelectionsEqual(
@@ -263,4 +285,30 @@ export function practiceSelectionsEqual(
   return (
     a.level === b.level && a.category === b.category && a.order === b.order
   );
+}
+
+/** Dificultad previa del ítem en la ronda actual (`undefined` = sin fallos). */
+export function getPracticeAttempt(
+  session: PracticeSession,
+  key: string,
+): PracticeAttempt | undefined {
+  return session.attempts?.[key];
+}
+
+/**
+ * Conserva por ítem si hubo un intento incorrecto, incluso si se recarga
+ * antes de avanzar (SPEC 31). No evalúa: la evaluación se decide al concluir
+ * el ejercicio (acierto, Reveal o Skip).
+ */
+export function setPracticeAttempt(
+  session: PracticeSession,
+  key: string,
+  attempt: PracticeAttempt,
+  now: number = Date.now(),
+): PracticeSession {
+  return {
+    ...session,
+    attempts: { ...(session.attempts ?? {}), [key]: { ...attempt } },
+    updatedAt: now,
+  };
 }

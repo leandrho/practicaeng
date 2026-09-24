@@ -75,6 +75,19 @@ function isValidRatings(value: unknown): value is Record<string, PracticeRating>
   );
 }
 
+function isValidAttempts(
+  value: unknown,
+): value is Record<string, { hadIncorrectAttempt: boolean }> {
+  if (!isRecord(value)) {
+    return false;
+  }
+  return Object.values(value).every(
+    (attempt) =>
+      isRecord(attempt) &&
+      typeof attempt["hadIncorrectAttempt"] === "boolean",
+  );
+}
+
 /** Validación estructural (sin contenido): la de contenido la pone el lector. */
 export function isValidPracticeSessionShape(
   value: unknown,
@@ -132,6 +145,14 @@ export function isValidPracticeSessionShape(
     return false;
   }
   if (!isValidRatings(value["roundRatings"])) {
+    return false;
+  }
+  // SPEC 31: `attempts` es opcional para no invalidar sesiones legacy de
+  // vocabulario; cuando está presente debe tener la forma esperada.
+  if (
+    value["attempts"] !== undefined &&
+    !isValidAttempts(value["attempts"])
+  ) {
     return false;
   }
   if (typeof value["updatedAt"] !== "number") {
