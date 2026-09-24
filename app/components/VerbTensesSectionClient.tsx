@@ -13,8 +13,14 @@ export function VerbTensesSectionClient({ exercises, pathname }: {
   const [form, setForm] = useState<string | undefined>();
   const [mode, setMode] = useState<OrderMode>("shuffled");
   const [reshuffleCount, setReshuffleCount] = useState(0);
-  const options = useMemo(() => [...new Set(exercises.map((exercise) => exercise.form))], [exercises]);
-  const filtered = useMemo(() => exercises.filter((exercise) => form === undefined || exercise.form === form), [exercises, form]);
+  const options = useMemo(
+    () => [...new Set(exercises.flatMap((exercise) => exercise.forms))],
+    [exercises],
+  );
+  const filtered = useMemo(
+    () => exercises.filter((exercise) => form === undefined || exercise.forms.some((item) => item === form)),
+    [exercises, form],
+  );
   const visible = useMemo(
     () => mode === "ordered" ? filtered : shuffle(filtered),
     // reshuffleCount forces a fresh shuffle on demand.

@@ -981,6 +981,14 @@ a {
   text-transform: uppercase;
 }
 
+.flashcard__type-badge--verb-tenses {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
 .filters-drawer__overlay {
   position: fixed;
   inset: 0;

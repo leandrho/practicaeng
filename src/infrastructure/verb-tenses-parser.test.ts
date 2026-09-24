@@ -6,7 +6,7 @@ const EXPECTED = { slug: "present" as const, title: "Present" };
 
 function bullet(overrides: Partial<Record<string, string>> = {}): string {
   const fields: Record<string, string> = {
-    "Form": "Present Simple",
+    "Forms": "Present Simple",
     "Prompt (EN)": "Complete the routine: she / walk to school every day.",
     "Sentence (EN)": "She ____ to school every day.",
     "Answers": "walks",
@@ -17,7 +17,7 @@ function bullet(overrides: Partial<Record<string, string>> = {}): string {
     "Context source": "Everyday conversation",
     ...overrides,
   };
-  return `- **Form:** ${fields["Form"]} --- **Prompt (EN):** ${fields["Prompt (EN)"]} --- **Sentence (EN):** ${fields["Sentence (EN)"]} --- **Answers:** ${fields["Answers"]} --- **Model (EN):** ${fields["Model (EN)"]} --- **Explanation (ES):** ${fields["Explanation (ES)"]} --- **Translation (ES):** ${fields["Translation (ES)"]} --- **Context (EN):** ${fields["Context (EN)"]} --- **Context source:** ${fields["Context source"]}`;
+  return `- **Forms:** ${fields["Forms"]} --- **Prompt (EN):** ${fields["Prompt (EN)"]} --- **Sentence (EN):** ${fields["Sentence (EN)"]} --- **Answers:** ${fields["Answers"]} --- **Model (EN):** ${fields["Model (EN)"]} --- **Explanation (ES):** ${fields["Explanation (ES)"]} --- **Translation (ES):** ${fields["Translation (ES)"]} --- **Context (EN):** ${fields["Context (EN)"]} --- **Context source:** ${fields["Context source"]}`;
 }
 
 function expectParseError(markdown: string, match: RegExp | string) {
@@ -39,7 +39,7 @@ describe("parseVerbTenseSection", () => {
     expect(parsed.title).toBe("Present");
     expect(parsed.exercises).toHaveLength(1);
     expect(parsed.exercises[0]).toMatchObject({
-      form: "Present Simple",
+      forms: ["Present Simple"],
       acceptedAnswers: ["walks"],
       contextSource: "Everyday conversation",
     });
@@ -58,7 +58,7 @@ describe("parseVerbTenseSection", () => {
     const markdown = [
       "## Present",
       bullet({
-        "Form": "Present Progressive",
+        "Forms": "Present Progressive",
         "Prompt (EN)": "Describe what is happening now: she / work in the garden.",
         "Sentence (EN)": "She ____ in the garden now.",
         "Answers": "is working / 's working",
@@ -70,6 +70,20 @@ describe("parseVerbTenseSection", () => {
     ].join("\n");
     const parsed = parseVerbTenseSection(markdown, FILE, EXPECTED);
     expect(parsed.exercises[0]?.acceptedAnswers).toEqual(["is working", "'s working"]);
+  });
+
+  it("lee varias formas concretas y rechaza la etiqueta genérica Mixed", () => {
+    const parsed = parseVerbTenseSection(
+      ["## Present", bullet({ Forms: "Present Simple, Present Progressive" })].join("\n"),
+      FILE,
+      EXPECTED,
+    );
+    expect(parsed.exercises[0]?.forms).toEqual(["Present Simple", "Present Progressive"]);
+
+    expectParseError(
+      ["## Present", bullet({ Forms: "Mixed" })].join("\n"),
+      /forma inválida/,
+    );
   });
 
   it("falla sin hueco único", () => {
@@ -94,14 +108,14 @@ describe("parseVerbTenseSection", () => {
 
   it("falla con forma inválida", () => {
     expectParseError(
-      ["## Present", bullet({ "Form": "Future Simple" })].join("\n"),
+      ["## Present", bullet({ "Forms": "Future Simple" })].join("\n"),
       /forma inválida/,
     );
   });
 
   it("rechaza formas del pasado en la sección presente", () => {
     expectParseError(
-      ["## Present", bullet({ "Form": "Past Simple" })].join("\n"),
+      ["## Present", bullet({ "Forms": "Past Simple" })].join("\n"),
       /forma inválida/,
     );
   });
@@ -109,7 +123,7 @@ describe("parseVerbTenseSection", () => {
   it("un fixture del pasado carga y una forma ajena falla", () => {
     const pastExpected = { slug: "past" as const, title: "Past" };
     const pastBullet = bullet({
-      "Form": "Past Simple",
+      "Forms": "Past Simple",
       "Prompt (EN)": "Complete the finished action: I / visit my grandmother yesterday.",
       "Sentence (EN)": "I ____ my grandmother yesterday.",
       "Answers": "visited",
@@ -124,12 +138,12 @@ describe("parseVerbTenseSection", () => {
       pastExpected,
     );
     expect(parsed.slug).toBe("past");
-    expect(parsed.exercises[0]).toMatchObject({ form: "Past Simple" });
+    expect(parsed.exercises[0]).toMatchObject({ forms: ["Past Simple"] });
 
     let error: unknown;
     try {
       parseVerbTenseSection(
-        ["## Past", bullet({ "Form": "Present Simple" })].join("\n"),
+        ["## Past", bullet({ "Forms": "Present Simple" })].join("\n"),
         "data/verb-tenses-past.md",
         pastExpected,
       );
@@ -147,7 +161,7 @@ describe("parseVerbTenseSection", () => {
   it("un fixture del futuro carga y una forma ajena falla", () => {
     const futureExpected = { slug: "future" as const, title: "Future" };
     const futureBullet = bullet({
-      "Form": "Be going to",
+      "Forms": "Be going to",
       "Prompt (EN)": "State your prior plan: I / make soup tonight.",
       "Sentence (EN)": "I ____ make soup tonight.",
       "Answers": "am going to",
@@ -162,12 +176,12 @@ describe("parseVerbTenseSection", () => {
       futureExpected,
     );
     expect(parsed.slug).toBe("future");
-    expect(parsed.exercises[0]).toMatchObject({ form: "Be going to" });
+    expect(parsed.exercises[0]).toMatchObject({ forms: ["Be going to"] });
 
     let error: unknown;
     try {
       parseVerbTenseSection(
-        ["## Future", bullet({ "Form": "Present Simple" })].join("\n"),
+        ["## Future", bullet({ "Forms": "Present Simple" })].join("\n"),
         "data/verb-tenses-future.md",
         futureExpected,
       );
@@ -185,7 +199,7 @@ describe("parseVerbTenseSection", () => {
   it("un fixture de condicionales carga y una forma ajena falla", () => {
     const conditionalsExpected = { slug: "conditionals" as const, title: "Conditionals" };
     const conditionalsBullet = bullet({
-      "Form": "Conditional Type 2",
+      "Forms": "Conditional Type 2",
       "Prompt (EN)": "Imagine the opposite of now: If I / be you, I would accept.",
       "Sentence (EN)": "If I ____ you, I would accept.",
       "Answers": "were",
@@ -200,12 +214,12 @@ describe("parseVerbTenseSection", () => {
       conditionalsExpected,
     );
     expect(parsed.slug).toBe("conditionals");
-    expect(parsed.exercises[0]).toMatchObject({ form: "Conditional Type 2" });
+    expect(parsed.exercises[0]).toMatchObject({ forms: ["Conditional Type 2"] });
 
     let error: unknown;
     try {
       parseVerbTenseSection(
-        ["## Conditionals", bullet({ "Form": "Present Simple" })].join("\n"),
+        ["## Conditionals", bullet({ "Forms": "Present Simple" })].join("\n"),
         "data/verb-tenses-conditionals.md",
         conditionalsExpected,
       );

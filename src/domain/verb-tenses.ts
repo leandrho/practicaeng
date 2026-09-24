@@ -5,7 +5,6 @@ export const PRESENT_VERB_TENSE_FORMS = [
   "Present Progressive",
   "Present Perfect Simple",
   "Present Perfect Progressive",
-  "Mixed",
 ] as const;
 
 export const PAST_VERB_TENSE_FORMS = [
@@ -13,7 +12,6 @@ export const PAST_VERB_TENSE_FORMS = [
   "Past Progressive",
   "Past Perfect Simple",
   "Past Perfect Progressive",
-  "Mixed",
 ] as const;
 
 export const FUTURE_VERB_TENSE_FORMS = [
@@ -23,8 +21,8 @@ export const FUTURE_VERB_TENSE_FORMS = [
   "Present Simple (timetable)",
   "Future Progressive",
   "Future Perfect Simple",
-  "Be about to / Be due to",
-  "Mixed",
+  "Be about to",
+  "Be due to",
 ] as const;
 
 export const CONDITIONAL_VERB_TENSE_FORMS = [
@@ -32,7 +30,8 @@ export const CONDITIONAL_VERB_TENSE_FORMS = [
   "Conditional Type 1",
   "Conditional Type 2",
   "Conditional Type 3",
-  "Mixed",
+  "Past Perfect → would + base (present result)",
+  "Past Simple → would have + past participle (past result)",
 ] as const;
 
 export const VERB_TENSE_FORMS = [
@@ -50,12 +49,14 @@ export const VERB_TENSE_FORMS = [
   "Present Simple (timetable)",
   "Future Progressive",
   "Future Perfect Simple",
-  "Be about to / Be due to",
+  "Be about to",
+  "Be due to",
   "Conditional Zero",
   "Conditional Type 1",
   "Conditional Type 2",
   "Conditional Type 3",
-  "Mixed",
+  "Past Perfect → would + base (present result)",
+  "Past Simple → would have + past participle (past result)",
 ] as const;
 
 export type VerbTenseForm = (typeof VERB_TENSE_FORMS)[number];
@@ -67,7 +68,8 @@ export type VerbTenseSlug = (typeof VERB_TENSE_SLUGS)[number];
 export const VERB_TENSE_MIN_TOTAL = 50;
 export const VERB_TENSE_MIN_PER_FORM = 10;
 export const FUTURE_VERB_TENSE_MIN_PER_FORM = 6;
-export const FUTURE_VERB_TENSE_MIN_MIXED = 8;
+export const FUTURE_VERB_TENSE_MIN_BE_DUE_TO = 4;
+export const CROSS_TIME_CONDITIONAL_MIN_PER_FORM = 5;
 
 const nonemptyText = z.string().trim().min(1);
 
@@ -87,7 +89,7 @@ export const VerbTenseFormSchema = z.enum(VERB_TENSE_FORMS);
 
 export const VerbTenseExerciseSchema = z
   .object({
-    form: VerbTenseFormSchema,
+    forms: z.array(VerbTenseFormSchema).min(1),
     promptEn: nonemptyText,
     sentenceEn: z.string().min(1),
     acceptedAnswers: z.array(z.string().min(1)).min(1),
@@ -98,6 +100,14 @@ export const VerbTenseExerciseSchema = z
     contextSource: z.string().trim().min(1).optional(),
   })
   .superRefine((exercise, ctx) => {
+    if (new Set(exercise.forms).size !== exercise.forms.length) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["forms"],
+        message: "formas duplicadas",
+      });
+    }
+
     const runs = gapRuns(exercise.sentenceEn);
     if (runs.length !== 1 || runs[0] !== "____") {
       ctx.addIssue({
@@ -147,11 +157,26 @@ export const VerbTenseExerciseSchema = z
 
 export type VerbTenseExercise = z.infer<typeof VerbTenseExerciseSchema>;
 
-export const VerbTenseSectionSchema = z.object({
-  slug: z.enum(VERB_TENSE_SLUGS),
-  title: nonemptyText,
-  exercises: z.array(VerbTenseExerciseSchema).min(1),
-});
+export const VerbTenseSectionSchema = z
+  .object({
+    slug: z.enum(VERB_TENSE_SLUGS),
+    title: nonemptyText,
+    exercises: z.array(VerbTenseExerciseSchema).min(1),
+  })
+  .superRefine((section, ctx) => {
+    const allowedForms = getVerbTenseFormsForSlug(section.slug);
+    section.exercises.forEach((exercise, exerciseIndex) => {
+      exercise.forms.forEach((form) => {
+        if (!(allowedForms as readonly string[]).includes(form)) {
+          ctx.addIssue({
+            code: "custom",
+            path: ["exercises", exerciseIndex, "forms"],
+            message: `forma ${form} ajena a la sección ${section.slug}`,
+          });
+        }
+      });
+    });
+  });
 
 export type VerbTenseSection = z.infer<typeof VerbTenseSectionSchema>;
 
@@ -217,15 +242,19 @@ export function getVerbTenseFormCounts(
     "Present Simple (timetable)": 0,
     "Future Progressive": 0,
     "Future Perfect Simple": 0,
-    "Be about to / Be due to": 0,
+    "Be about to": 0,
+    "Be due to": 0,
     "Conditional Zero": 0,
     "Conditional Type 1": 0,
     "Conditional Type 2": 0,
     "Conditional Type 3": 0,
-    Mixed: 0,
+    "Past Perfect → would + base (present result)": 0,
+    "Past Simple → would have + past participle (past result)": 0,
   };
   for (const exercise of exercises) {
-    counts[exercise.form] += 1;
+    for (const form of exercise.forms) {
+      counts[form] += 1;
+    }
   }
   return counts;
 }
@@ -237,24 +266,17 @@ export function assertVerbTenseMinimums(section: VerbTenseSection): void {
     );
   }
   const counts = getVerbTenseFormCounts(section.exercises);
-  if (section.slug === "future") {
-    for (const form of getVerbTenseFormsForSlug(section.slug)) {
-      const minimum =
-        form === "Mixed"
-          ? FUTURE_VERB_TENSE_MIN_MIXED
-          : FUTURE_VERB_TENSE_MIN_PER_FORM;
-      if (counts[form] < minimum) {
-        throw new Error(
-          `sección ${section.slug}: la forma ${form} necesita ${minimum} o más ejercicios, hay ${counts[form]}`,
-        );
-      }
-    }
-    return;
-  }
   for (const form of getVerbTenseFormsForSlug(section.slug)) {
-    if (counts[form] < VERB_TENSE_MIN_PER_FORM) {
+    const minimum = section.slug === "future"
+      ? form === "Be due to"
+        ? FUTURE_VERB_TENSE_MIN_BE_DUE_TO
+        : FUTURE_VERB_TENSE_MIN_PER_FORM
+      : section.slug === "conditionals" && form.includes("→")
+        ? CROSS_TIME_CONDITIONAL_MIN_PER_FORM
+        : VERB_TENSE_MIN_PER_FORM;
+    if (counts[form] < minimum) {
       throw new Error(
-        `sección ${section.slug}: la forma ${form} necesita ${VERB_TENSE_MIN_PER_FORM} o más ejercicios, hay ${counts[form]}`,
+        `sección ${section.slug}: la forma ${form} necesita ${minimum} o más ejercicios, hay ${counts[form]}`,
       );
     }
   }

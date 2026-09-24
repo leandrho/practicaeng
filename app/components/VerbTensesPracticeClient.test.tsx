@@ -5,7 +5,7 @@ import type { VerbTenseExercise } from "../../src/domain/verb-tenses";
 import { VerbTensesPracticeClient } from "./VerbTensesPracticeClient";
 
 const first: VerbTenseExercise = {
-  form: "Present Simple",
+  forms: ["Present Simple"],
   promptEn: "Complete the routine: she / walk to school every day.",
   sentenceEn: "She ____ to school every day.",
   acceptedAnswers: ["walks"],
@@ -17,7 +17,7 @@ const first: VerbTenseExercise = {
 };
 
 const second: VerbTenseExercise = {
-  form: "Present Progressive",
+  forms: ["Present Progressive"],
   promptEn: "Describe what is happening now: she / work in the garden.",
   sentenceEn: "She ____ in the garden now.",
   acceptedAnswers: ["is working", "'s working"],
@@ -118,6 +118,18 @@ describe("VerbTensesPracticeClient", () => {
     expect(screen.getByText(first.translationEs)).not.toBeNull();
   });
 
+  it("revela todas las formas cuando el ejercicio practica más de una", () => {
+    const exercise: VerbTenseExercise = {
+      ...first,
+      forms: ["Present Simple", "Present Progressive"],
+    };
+    render(<VerbTensesPracticeClient exercises={[exercise]} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+
+    expect(screen.getByText("Present Simple + Present Progressive")).not.toBeNull();
+  });
+
   it("al cambiar de tarjeta se resetea respuesta, contexto y revelado", () => {
     const { container } = render(
       <VerbTensesPracticeClient exercises={[first, second]} />,
@@ -162,7 +174,7 @@ describe("VerbTensesPracticeClient", () => {
 
   it("soporta ejercicios del pasado sin cambiar el formato", () => {
     const past: VerbTenseExercise = {
-      form: "Past Simple",
+      forms: ["Past Simple"],
       promptEn: "Complete the finished action: I / visit my grandmother yesterday.",
       sentenceEn: "I ____ my grandmother yesterday.",
       acceptedAnswers: ["visited"],
@@ -190,7 +202,7 @@ describe("VerbTensesPracticeClient", () => {
 
   it("soporta ejercicios del futuro sin cambiar el formato", () => {
     const future: VerbTenseExercise = {
-      form: "Be going to",
+      forms: ["Be going to"],
       promptEn: "State your prior plan: I / make soup tonight.",
       sentenceEn: "I ____ make soup tonight.",
       acceptedAnswers: ["am going to"],
@@ -218,7 +230,7 @@ describe("VerbTensesPracticeClient", () => {
 
   it("soporta ejercicios de condicionales sin cambiar el formato", () => {
     const conditionals: VerbTenseExercise = {
-      form: "Conditional Type 2",
+      forms: ["Conditional Type 2"],
       promptEn: "Imagine the opposite of now: If I / be you, I would accept.",
       sentenceEn: "If I ____ you, I would accept.",
       acceptedAnswers: ["were"],

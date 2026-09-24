@@ -56,12 +56,12 @@ describe("PresentPracticePage", () => {
     fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
     expect(screen.getByRole("button", { name: "Shuffled" }).getAttribute("aria-pressed")).toBe("true");
     fireEvent.click(screen.getByRole("button", { name: "Present Perfect Progressive" }));
-    expect(screen.getByText(`Card 1 of ${section.exercises.filter((entry) => entry.form === "Present Perfect Progressive").length}`)).not.toBeNull();
+    expect(screen.getByText(`Card 1 of ${section.exercises.filter((entry) => entry.forms.includes("Present Perfect Progressive")).length}`)).not.toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
     fireEvent.click(screen.getByRole("button", { name: "Ordered" }));
     fireEvent.click(screen.getByRole("button", { name: "Close filters" }));
-    expect(screen.getByText(section.exercises.find((entry) => entry.form === "Present Perfect Progressive")!.promptEn)).not.toBeNull();
+    expect(screen.getByText(section.exercises.find((entry) => entry.forms.includes("Present Perfect Progressive"))!.promptEn)).not.toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
     fireEvent.click(screen.getByRole("button", { name: "All" }));

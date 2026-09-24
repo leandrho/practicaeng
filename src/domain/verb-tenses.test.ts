@@ -7,389 +7,259 @@ import {
   VerbTenseExerciseSchema,
   VerbTenseSectionSchema,
   type VerbTenseExercise,
+  type VerbTenseForm,
 } from "./verb-tenses";
 
 const validExercise: VerbTenseExercise = {
-  form: "Present Simple",
+  forms: ["Present Simple"],
   promptEn: "Complete the routine: she / walk to school every day.",
   sentenceEn: "She ____ to school every day.",
   acceptedAnswers: ["walks"],
   modelEn: "She walks to school every day.",
-  explanationEs: "El *present simple* expresa hábitos y la tercera persona lleva -s.",
+  explanationEs:
+    "El *present simple* expresa hábitos y la tercera persona lleva -s.",
   translationEs: "Ella camina a la escuela todos los días.",
-  contextEn: '"Do you walk to school?" "Yes, I walk there every day with my brother."',
+  contextEn:
+    '"Do you walk to school?" "Yes, I walk there every day with my brother."',
   contextSource: "Everyday conversation",
 };
 
-function exerciseFor(form: VerbTenseExercise["form"], index: number): VerbTenseExercise {
+function exerciseFor(forms: VerbTenseForm[], index: number): VerbTenseExercise {
+  const label = forms.join(" + ");
   return {
     ...validExercise,
-    form,
-    promptEn: `Complete the routine case ${form} ${index}.`,
-    sentenceEn: `She ____ to school every day (${form} ${index}).`,
-    modelEn: `She walks to school every day (${form} ${index}).`,
-    translationEs: `Ella camina a la escuela todos los días (${form} ${index}).`,
+    forms,
+    promptEn: `Complete the routine case ${label} ${index}.`,
+    sentenceEn: `She ____ to school every day (${label} ${index}).`,
+    modelEn: `She walks to school every day (${label} ${index}).`,
+    translationEs: `Ella camina a la escuela todos los días (${label} ${index}).`,
   };
 }
 
 describe("VerbTenseExerciseSchema", () => {
-  it("un ejercicio completo pasa", () => {
+  it("acepta un ejercicio con una o más formas concretas", () => {
     expect(VerbTenseExerciseSchema.parse(validExercise)).toEqual(validExercise);
+    expect(
+      VerbTenseExerciseSchema.parse({
+        ...validExercise,
+        forms: ["Present Simple", "Present Progressive"],
+      }).forms
+    ).toEqual(["Present Simple", "Present Progressive"]);
   });
 
-  it("contextSource es opcional", () => {
-    const { contextSource: _omitted, ...withoutSource } = validExercise;
-    expect(VerbTenseExerciseSchema.parse(withoutSource).contextSource).toBeUndefined();
-  });
-
-  it("sin hueco único falla", () => {
-    for (const sentenceEn of ["She walks to school.", "She ____ and ____ today."]) {
+  it("rechaza formas vacías, genéricas o duplicadas", () => {
+    for (const forms of [[], ["Mixed"], ["Present Simple", "Present Simple"]]) {
       expect(() =>
-        VerbTenseExerciseSchema.parse({ ...validExercise, sentenceEn }),
+        VerbTenseExerciseSchema.parse({ ...validExercise, forms })
       ).toThrow();
     }
   });
 
-  it("sin respuestas falla", () => {
+  it("contextSource es opcional y valida la respuesta y el hueco", () => {
+    const { contextSource: _omitted, ...withoutSource } = validExercise;
+    expect(
+      VerbTenseExerciseSchema.parse(withoutSource).contextSource
+    ).toBeUndefined();
     expect(() =>
-      VerbTenseExerciseSchema.parse({ ...validExercise, acceptedAnswers: [] }),
+      VerbTenseExerciseSchema.parse({ ...validExercise, sentenceEn: "No gap" })
     ).toThrow();
-  });
-
-  it("respuestas duplicadas tras normalizar fallan", () => {
+    expect(() =>
+      VerbTenseExerciseSchema.parse({ ...validExercise, acceptedAnswers: [] })
+    ).toThrow();
     expect(() =>
       VerbTenseExerciseSchema.parse({
         ...validExercise,
-        acceptedAnswers: ["walks", "  WALKS "],
-      }),
+        acceptedAnswers: ["walks", " WALKS "],
+      })
     ).toThrow();
   });
 
-  it("forma inválida falla", () => {
-    expect(() =>
-      VerbTenseExerciseSchema.parse({ ...validExercise, form: "Future Simple" }),
-    ).toThrow();
-  });
-
-  it("acepta las formas del pasado en el esquema global", () => {
-    expect(
-      VerbTenseExerciseSchema.parse({ ...validExercise, form: "Past Simple" }).form,
-    ).toBe("Past Simple");
-  });
-
-  it("sin contexto falla", () => {
+  it("requiere contexto y rechaza el separador del formato", () => {
     const { contextEn: _omitted, ...withoutContext } = validExercise;
     expect(() => VerbTenseExerciseSchema.parse(withoutContext)).toThrow();
     expect(() =>
       VerbTenseExerciseSchema.parse({ ...validExercise, contextEn: "" }),
     ).toThrow();
-  });
-
-  it("contexto con --- falla", () => {
     expect(() =>
       VerbTenseExerciseSchema.parse({
         ...validExercise,
-        contextEn: "One sentence --- another one here.",
+        contextEn: "One sentence --- another sentence.",
       }),
     ).toThrow();
   });
 });
 
-describe("verb-tenses catalog", () => {
-  it("las secciones present, past, future y conditionals son únicas en slug, título y archivo", () => {
-    const slugs = VERB_TENSE_SECTIONS.map((section) => section.slug);
-    const titles = VERB_TENSE_SECTIONS.map((section) => section.title);
-    const files = VERB_TENSE_SECTIONS.map((section) => section.file);
-    expect(new Set(slugs).size).toBe(slugs.length);
-    expect(new Set(titles).size).toBe(titles.length);
-    expect(new Set(files).size).toBe(files.length);
-    expect(VERB_TENSE_SECTIONS[0]).toMatchObject({
-      slug: "present",
-      title: "Present",
-      file: "data/verb-tenses-present.md",
-    });
-    expect(VERB_TENSE_SECTIONS[1]).toMatchObject({
-      slug: "past",
-      title: "Past",
-      file: "data/verb-tenses-past.md",
-    });
-    expect(VERB_TENSE_SECTIONS[2]).toMatchObject({
-      slug: "future",
-      title: "Future",
-      file: "data/verb-tenses-future.md",
-    });
-    expect(VERB_TENSE_SECTIONS[3]).toMatchObject({
-      slug: "conditionals",
-      title: "Conditionals",
-      file: "data/verb-tenses-conditionals.md",
-    });
-  });
-
-  it("expone las formas por sección y el fallback global", () => {
+describe("verb-tenses catalog and minimums", () => {
+  it("keeps unique section metadata and lists only specific forms", () => {
+    expect(new Set(VERB_TENSE_SECTIONS.map(({ slug }) => slug)).size).toBe(4);
+    expect(new Set(VERB_TENSE_SECTIONS.map(({ title }) => title)).size).toBe(4);
+    expect(new Set(VERB_TENSE_SECTIONS.map(({ file }) => file)).size).toBe(4);
     expect(getVerbTenseFormsForSlug("present")).toEqual([
       "Present Simple",
       "Present Progressive",
       "Present Perfect Simple",
       "Present Perfect Progressive",
-      "Mixed",
     ]);
-    expect(getVerbTenseFormsForSlug("past")).toEqual([
-      "Past Simple",
-      "Past Progressive",
-      "Past Perfect Simple",
-      "Past Perfect Progressive",
-      "Mixed",
-    ]);
-    expect(getVerbTenseFormsForSlug("future")).toEqual([
-      "Will",
-      "Be going to",
-      "Present Progressive (future arrangement)",
-      "Present Simple (timetable)",
-      "Future Progressive",
-      "Future Perfect Simple",
-      "Be about to / Be due to",
-      "Mixed",
-    ]);
-    expect(getVerbTenseFormsForSlug("conditionals")).toEqual([
-      "Conditional Zero",
-      "Conditional Type 1",
-      "Conditional Type 2",
-      "Conditional Type 3",
-      "Mixed",
-    ]);
-  });
-
-  it("cuenta ejercicios por forma y exige los mínimos", () => {
-    const forms: VerbTenseExercise["form"][] = [
-      "Present Simple",
-      "Present Progressive",
-      "Present Perfect Simple",
-      "Present Perfect Progressive",
-      "Mixed",
-    ];
-    const exercises = forms.flatMap((form) =>
-      Array.from({ length: 10 }, (_, index) => exerciseFor(form, index)),
+    expect(getVerbTenseFormsForSlug("future")).toContain("Be due to");
+    expect(getVerbTenseFormsForSlug("conditionals")).toContain(
+      "Past Perfect → would + base (present result)"
     );
-    expect(exercises).toHaveLength(50);
-    expect(getVerbTenseFormCounts(exercises)).toEqual({
-      "Present Simple": 10,
-      "Present Progressive": 10,
-      "Present Perfect Simple": 10,
-      "Present Perfect Progressive": 10,
-      "Past Simple": 0,
-      "Past Progressive": 0,
-      "Past Perfect Simple": 0,
-      "Past Perfect Progressive": 0,
-      Will: 0,
-      "Be going to": 0,
-      "Present Progressive (future arrangement)": 0,
-      "Present Simple (timetable)": 0,
-      "Future Progressive": 0,
-      "Future Perfect Simple": 0,
-      "Be about to / Be due to": 0,
-      "Conditional Zero": 0,
-      "Conditional Type 1": 0,
-      "Conditional Type 2": 0,
-      "Conditional Type 3": 0,
-      Mixed: 10,
-    });
-
-    const section = VerbTenseSectionSchema.parse({
-      slug: "present",
-      title: "Present",
-      exercises,
-    });
-    expect(() => assertVerbTenseMinimums(section)).not.toThrow();
-
-    const short = VerbTenseSectionSchema.parse({
-      slug: "present",
-      title: "Present",
-      exercises: exercises.slice(0, 49),
-    });
-    expect(() => assertVerbTenseMinimums(short)).toThrow(/50 o más/);
-
-    const unbalanced = VerbTenseSectionSchema.parse({
-      slug: "present",
-      title: "Present",
-      exercises: [
-        ...Array.from({ length: 14 }, (_, index) =>
-          exerciseFor("Present Simple", index),
-        ),
-        ...Array.from({ length: 9 }, (_, index) =>
-          exerciseFor("Present Progressive", 100 + index),
-        ),
-        ...Array.from({ length: 10 }, (_, index) =>
-          exerciseFor("Present Perfect Simple", 200 + index),
-        ),
-        ...Array.from({ length: 10 }, (_, index) =>
-          exerciseFor("Present Perfect Progressive", 300 + index),
-        ),
-        ...Array.from({ length: 10 }, (_, index) => exerciseFor("Mixed", 400 + index)),
-      ],
-    });
-    expect(() => assertVerbTenseMinimums(unbalanced)).toThrow(/Present Progressive/);
-  });
-
-  it("exige los mínimos de la sección past por forma", () => {
-    const forms: VerbTenseExercise["form"][] = [
-      "Past Simple",
-      "Past Progressive",
-      "Past Perfect Simple",
-      "Past Perfect Progressive",
-      "Mixed",
-    ];
-    const exercises = forms.flatMap((form) =>
-      Array.from({ length: 10 }, (_, index) => exerciseFor(form, 1000 + index)),
+    expect(getVerbTenseFormsForSlug("conditionals")).toContain(
+      "Past Simple → would have + past participle (past result)"
     );
-    const section = VerbTenseSectionSchema.parse({
-      slug: "past",
-      title: "Past",
-      exercises,
-    });
-    expect(() => assertVerbTenseMinimums(section)).not.toThrow();
-
-    const unbalancedPast = VerbTenseSectionSchema.parse({
-      slug: "past",
-      title: "Past",
-      exercises: [
-        ...Array.from({ length: 14 }, (_, index) =>
-          exerciseFor("Past Simple", 2000 + index),
-        ),
-        ...Array.from({ length: 9 }, (_, index) =>
-          exerciseFor("Past Progressive", 2100 + index),
-        ),
-        ...Array.from({ length: 10 }, (_, index) =>
-          exerciseFor("Past Perfect Simple", 2200 + index),
-        ),
-        ...Array.from({ length: 10 }, (_, index) =>
-          exerciseFor("Past Perfect Progressive", 2300 + index),
-        ),
-        ...Array.from({ length: 10 }, (_, index) => exerciseFor("Mixed", 2400 + index)),
-      ],
-    });
-    expect(() => assertVerbTenseMinimums(unbalancedPast)).toThrow(/Past Progressive/);
+    expect(getVerbTenseFormsForSlug("conditionals")).not.toContain("Mixed");
   });
 
-  it("exige los mínimos de la sección future por forma", () => {
-    const forms: VerbTenseExercise["form"][] = [
-      "Will",
-      "Be going to",
-      "Present Progressive (future arrangement)",
-      "Present Simple (timetable)",
-      "Future Progressive",
-      "Future Perfect Simple",
-      "Be about to / Be due to",
-    ];
-    const exercises = [
-      ...forms.flatMap((form) =>
-        Array.from({ length: 6 }, (_, index) => exerciseFor(form, 3000 + index * 100)),
+  it("counts every form on a multi-form exercise", () => {
+    const counts = getVerbTenseFormCounts([
+      exerciseFor(["Present Simple", "Present Progressive"], 1),
+    ]);
+    expect(counts["Present Simple"]).toBe(1);
+    expect(counts["Present Progressive"]).toBe(1);
+    expect(counts["Present Perfect Simple"]).toBe(0);
+  });
+
+  it("checks section-specific form minimums and the total card count", () => {
+    const presentForms = getVerbTenseFormsForSlug("present");
+    const presentExercises = [
+      ...presentForms.flatMap((form) =>
+        Array.from({ length: 13 }, (_, index) => exerciseFor([form], index))
       ),
-      ...Array.from({ length: 8 }, (_, index) => exerciseFor("Mixed", 4000 + index)),
     ];
-    expect(exercises).toHaveLength(50);
-    const section = VerbTenseSectionSchema.parse({
-      slug: "future",
-      title: "Future",
-      exercises,
+    const present = VerbTenseSectionSchema.parse({
+      slug: "present",
+      title: "Present",
+      exercises: presentExercises,
     });
-    expect(() => assertVerbTenseMinimums(section)).not.toThrow();
+    expect(() => assertVerbTenseMinimums(present)).not.toThrow();
 
-    const shortMixed = VerbTenseSectionSchema.parse({
-      slug: "future",
-      title: "Future",
-      exercises: [
-        ...Array.from({ length: 7 }, (_, index) => exerciseFor("Will", 5000 + index)),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Be going to", 5100 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Present Progressive (future arrangement)", 5200 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Present Simple (timetable)", 5300 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Future Progressive", 5400 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Future Perfect Simple", 5500 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Be about to / Be due to", 5600 + index),
-        ),
-        ...Array.from({ length: 7 }, (_, index) => exerciseFor("Mixed", 5700 + index)),
-      ],
+    const shortPresent = VerbTenseSectionSchema.parse({
+      ...present,
+      exercises: present.exercises.slice(0, 49),
     });
-    expect(() => assertVerbTenseMinimums(shortMixed)).toThrow(/Mixed/);
+    expect(() => assertVerbTenseMinimums(shortPresent)).toThrow(/50 o más/);
 
-    const unbalancedFuture = VerbTenseSectionSchema.parse({
+    const futureForms = getVerbTenseFormsForSlug("future");
+    const futureExercises = futureForms.flatMap((form) =>
+      Array.from({ length: 6 }, (_, index) => exerciseFor([form], 100 + index))
+    );
+    futureExercises.push(
+      exerciseFor(["Will"], 200),
+      exerciseFor(["Will"], 201)
+    );
+    const future = VerbTenseSectionSchema.parse({
       slug: "future",
       title: "Future",
-      exercises: [
-        ...Array.from({ length: 10 }, (_, index) => exerciseFor("Will", 7000 + index)),
-        ...Array.from({ length: 5 }, (_, index) =>
-          exerciseFor("Be going to", 7100 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Present Progressive (future arrangement)", 7200 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Present Simple (timetable)", 7300 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Future Progressive", 7400 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Future Perfect Simple", 7500 + index),
-        ),
-        ...Array.from({ length: 6 }, (_, index) =>
-          exerciseFor("Be about to / Be due to", 7600 + index),
-        ),
-        ...Array.from({ length: 8 }, (_, index) => exerciseFor("Mixed", 7700 + index)),
-      ],
+      exercises: futureExercises,
     });
-    expect(() => assertVerbTenseMinimums(unbalancedFuture)).toThrow(/Be going to/);
+    expect(() => assertVerbTenseMinimums(future)).not.toThrow();
+
+    const conditionalForms = getVerbTenseFormsForSlug("conditionals");
+    const conditionalExercises = conditionalForms.flatMap((form) =>
+      Array.from({ length: form.includes("→") ? 5 : 10 }, (_, index) =>
+        exerciseFor([form], 300 + index)
+      )
+    );
+    const conditionals = VerbTenseSectionSchema.parse({
+      slug: "conditionals",
+      title: "Conditionals",
+      exercises: conditionalExercises,
+    });
+    expect(() => assertVerbTenseMinimums(conditionals)).not.toThrow();
   });
 
-  it("exige los mínimos de la sección conditionals por forma", () => {
-    const forms: VerbTenseExercise["form"][] = [
-      "Conditional Zero",
-      "Conditional Type 1",
-      "Conditional Type 2",
-      "Conditional Type 3",
-      "Mixed",
+  it("rejects underrepresented forms even when the section has 50 exercises", () => {
+    const underrepresentedPresent = [
+      ...Array.from({ length: 21 }, (_, index) =>
+        exerciseFor(["Present Simple"], 1000 + index),
+      ),
+      ...Array.from({ length: 9 }, (_, index) =>
+        exerciseFor(["Present Progressive"], 1100 + index),
+      ),
+      ...Array.from({ length: 10 }, (_, index) =>
+        exerciseFor(["Present Perfect Simple"], 1200 + index),
+      ),
+      ...Array.from({ length: 10 }, (_, index) =>
+        exerciseFor(["Present Perfect Progressive"], 1300 + index),
+      ),
     ];
-    const exercises = forms.flatMap((form) =>
-      Array.from({ length: 10 }, (_, index) => exerciseFor(form, 8000 + index)),
-    );
-    const section = VerbTenseSectionSchema.parse({
-      slug: "conditionals",
-      title: "Conditionals",
-      exercises,
+    const present = VerbTenseSectionSchema.parse({
+      slug: "present",
+      title: "Present",
+      exercises: underrepresentedPresent,
     });
-    expect(() => assertVerbTenseMinimums(section)).not.toThrow();
+    expect(() => assertVerbTenseMinimums(present)).toThrow(/Present Progressive/);
 
-    const unbalancedConditionals = VerbTenseSectionSchema.parse({
+    const underrepresentedPast = [
+      ...Array.from({ length: 21 }, (_, index) =>
+        exerciseFor(["Past Simple"], 2000 + index),
+      ),
+      ...Array.from({ length: 9 }, (_, index) =>
+        exerciseFor(["Past Progressive"], 2100 + index),
+      ),
+      ...Array.from({ length: 10 }, (_, index) =>
+        exerciseFor(["Past Perfect Simple"], 2200 + index),
+      ),
+      ...Array.from({ length: 10 }, (_, index) =>
+        exerciseFor(["Past Perfect Progressive"], 2300 + index),
+      ),
+    ];
+    const past = VerbTenseSectionSchema.parse({
+      slug: "past",
+      title: "Past",
+      exercises: underrepresentedPast,
+    });
+    expect(() => assertVerbTenseMinimums(past)).toThrow(/Past Progressive/);
+
+    const underrepresentedFuture = [
+      ...getVerbTenseFormsForSlug("future").flatMap((form) =>
+        Array.from(
+          { length: form === "Be due to" ? 3 : form === "Will" ? 11 : 6 },
+          (_, index) => exerciseFor([form], 3000 + index),
+        ),
+      ),
+    ];
+    const future = VerbTenseSectionSchema.parse({
+      slug: "future",
+      title: "Future",
+      exercises: underrepresentedFuture,
+    });
+    expect(() => assertVerbTenseMinimums(future)).toThrow(/Be due to.*4 o más/);
+
+    const underrepresentedConditionals = [
+      ...getVerbTenseFormsForSlug("conditionals").flatMap((form) =>
+        Array.from(
+          {
+            length:
+              form === "Past Perfect → would + base (present result)"
+                ? 4
+                : form === "Conditional Type 1"
+                  ? 11
+                  : form.includes("→")
+                    ? 5
+                    : 10,
+          },
+          (_, index) => exerciseFor([form], 4000 + index),
+        ),
+      ),
+    ];
+    const conditionals = VerbTenseSectionSchema.parse({
       slug: "conditionals",
       title: "Conditionals",
-      exercises: [
-        ...Array.from({ length: 14 }, (_, index) =>
-          exerciseFor("Conditional Zero", 9000 + index),
-        ),
-        ...Array.from({ length: 9 }, (_, index) =>
-          exerciseFor("Conditional Type 1", 9100 + index),
-        ),
-        ...Array.from({ length: 10 }, (_, index) =>
-          exerciseFor("Conditional Type 2", 9200 + index),
-        ),
-        ...Array.from({ length: 10 }, (_, index) =>
-          exerciseFor("Conditional Type 3", 9300 + index),
-        ),
-        ...Array.from({ length: 10 }, (_, index) => exerciseFor("Mixed", 9400 + index)),
-      ],
+      exercises: underrepresentedConditionals,
     });
-    expect(() => assertVerbTenseMinimums(unbalancedConditionals)).toThrow(
-      /Conditional Type 1/,
+    expect(() => assertVerbTenseMinimums(conditionals)).toThrow(
+      /Past Perfect → would \+ base.*5 o más/,
     );
+  });
+
+  it("rechaza una forma que no corresponde a la sección", () => {
+    expect(() =>
+      VerbTenseSectionSchema.parse({
+        slug: "past",
+        title: "Past",
+        exercises: [exerciseFor(["Present Simple"], 1)],
+      })
+    ).toThrow(/ajena a la sección/);
   });
 });

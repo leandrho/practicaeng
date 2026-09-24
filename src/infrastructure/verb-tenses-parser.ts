@@ -13,7 +13,7 @@ export type VerbTenseParseError = {
 };
 
 const LABELS = [
-  "Form",
+  "Forms",
   "Prompt (EN)",
   "Sentence (EN)",
   "Answers",
@@ -102,9 +102,11 @@ export function parseVerbTenseSection(
       values[label] = segment.slice(prefix.length).trim();
     }
 
-    const form = (values["Form"] ?? "").trim();
-    if (!(getVerbTenseFormsForSlug(expected.slug) as readonly string[]).includes(form)) {
-      throwParseError(file, lineNumber, `forma inválida: ${form}`);
+    const forms = (values["Forms"] ?? "").split(",").map((form) => form.trim());
+    const allowedForms = getVerbTenseFormsForSlug(expected.slug) as readonly string[];
+    const invalidForm = forms.find((form) => !allowedForms.includes(form));
+    if (forms.some((form) => !form) || invalidForm !== undefined) {
+      throwParseError(file, lineNumber, `forma inválida: ${invalidForm ?? "vacía"}`);
     }
 
     const promptEn = values["Prompt (EN)"] ?? "";
@@ -169,7 +171,7 @@ export function parseVerbTenseSection(
     try {
       exercises.push(
         VerbTenseExerciseSchema.parse({
-          form,
+          forms,
           promptEn,
           sentenceEn,
           acceptedAnswers,
