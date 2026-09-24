@@ -6,109 +6,116 @@ import {
 } from "../src/infrastructure/content-loader";
 import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 
-const sections = [
-  {
-    href: "/phrasal-verbs",
-    name: "Phrasal verbs",
-    detail: "Verbs with particles",
-    count: contentRepository.getCards("phrasal-verbs").length,
-    unit: "cards",
-    accent: "var(--accent-phrasal)",
-  },
-  {
-    href: "/collocations",
-    name: "Collocations",
-    detail: "Natural word combinations",
-    count: contentRepository.getCards("collocations").length,
-    unit: "cards",
-    accent: "var(--accent-collocations)",
-  },
-  {
-    href: "/prepositions",
-    name: "Prepositions",
-    detail: "Fixed prepositions",
-    count: contentRepository.getCards("prepositions").length,
-    unit: "cards",
-    accent: "var(--accent-prepositions)",
-  },
-  {
-    href: "/idioms",
-    name: "Idioms & Expressions",
-    detail: "Idiomatic expressions",
-    count: contentRepository.getCards("idioms").length,
-    unit: "cards",
-    accent: "var(--accent-idioms)",
-  },
-  {
-    href: "/irregular-verbs",
-    name: "Irregular Verbs",
-    detail: "Base, past and participle",
-    count: contentRepository.getCards("irregular-verbs").length,
-    unit: "cards",
-    accent: "var(--accent-irregular-verbs)",
-  },
-  {
-    href: "/word-formation",
-    name: "Word Formation",
-    detail: "Word families",
-    count: getWordFamilies().length,
-    unit: "families",
-    accent: "var(--accent-word-formation)",
-  },
-  {
-    href: "/everyday-phrases",
-    name: "Everyday Phrases",
-    detail: "Common phrases for daily situations",
-    count: contentRepository.getCards("everyday-phrases").length,
-    unit: "cards",
-    accent: "var(--accent-everyday-phrases)",
-  },
-  {
-    href: "/connectors",
-    name: "Connectors",
-    detail: "Link ideas: contrast, cause, result",
-    count: contentRepository.getCards("connectors").length,
-    unit: "cards",
-    accent: "var(--accent-connectors)",
-  },
-];
-
-const total = sections.reduce((sum, section) => sum + section.count, 0);
-
-// Mixed Practice usa MIXED_SECTIONS: los conectores quedan fuera (SPEC 24).
-const mixedCount = MIXED_SECTIONS.reduce(
-  (sum, section) => sum + contentRepository.getCards(section).length,
-  0,
-);
-
-const mixedCard = {
-  href: "/mixed",
-  name: "Mixed Practice",
-  detail: "All sections shuffled",
-  count: mixedCount,
-  unit: "cards",
-  accent: "var(--accent-mixed)",
-};
-
-const practiceSections = [...sections, mixedCard];
-
-const grammarTopicCount = GRAMMAR_PARTS.reduce(
-  (sum, part) => sum + part.topics.length,
-  0,
-);
-
-const theorySections = [
-  {
-    href: "/grammar",
-    name: "Grammar B1+",
-    detail: "Grammar by topic, with guided practice",
-    count: grammarTopicCount,
-    unit: "topics",
-    accent: "var(--accent-grammar)",
-  },
-];
+// Los archivos de data/ se editan independientemente del código: la portada
+// debe leer sus conteos actuales en cada solicitud, también en producción.
+export const dynamic = "force-dynamic";
 
 export default function HomePage() {
+  const sections = [
+    {
+      href: "/phrasal-verbs",
+      name: "Phrasal verbs",
+      detail: "Verbs with particles",
+      count: contentRepository.getCards("phrasal-verbs").length,
+      unit: "cards",
+      accent: "var(--accent-phrasal)",
+    },
+    {
+      href: "/collocations",
+      name: "Collocations",
+      detail: "Natural word combinations",
+      count: contentRepository.getCards("collocations").length,
+      unit: "cards",
+      accent: "var(--accent-collocations)",
+    },
+    {
+      href: "/prepositions",
+      name: "Prepositions",
+      detail: "Fixed prepositions",
+      count: contentRepository.getCards("prepositions").length,
+      unit: "cards",
+      accent: "var(--accent-prepositions)",
+    },
+    {
+      href: "/idioms",
+      name: "Idioms & Expressions",
+      detail: "Idiomatic expressions",
+      count: contentRepository.getCards("idioms").length,
+      unit: "cards",
+      accent: "var(--accent-idioms)",
+    },
+    {
+      href: "/irregular-verbs",
+      name: "Irregular Verbs",
+      detail: "Base, past and participle",
+      count: contentRepository.getCards("irregular-verbs").length,
+      unit: "cards",
+      accent: "var(--accent-irregular-verbs)",
+    },
+    {
+      href: "/word-formation",
+      name: "Word Formation",
+      detail: "Word families",
+      count: getWordFamilies().length,
+      unit: "families",
+      accent: "var(--accent-word-formation)",
+    },
+    {
+      href: "/everyday-phrases",
+      name: "Everyday Phrases",
+      detail: "Common phrases for daily situations",
+      count: contentRepository.getCards("everyday-phrases").length,
+      unit: "cards",
+      accent: "var(--accent-everyday-phrases)",
+    },
+    {
+      href: "/connectors",
+      name: "Connectors",
+      detail: "Link ideas: contrast, cause, result",
+      count: contentRepository.getCards("connectors").length,
+      unit: "cards",
+      accent: "var(--accent-connectors)",
+    },
+  ];
+
+  const total = sections
+    .filter((section) => section.unit === "cards")
+    .reduce((sum, section) => sum + section.count, 0);
+  const familyCount = getWordFamilies().length;
+
+  // Mixed Practice usa MIXED_SECTIONS: los conectores quedan fuera (SPEC 24).
+  const mixedCount = MIXED_SECTIONS.reduce(
+    (sum, section) => sum + contentRepository.getCards(section).length,
+    0
+  );
+
+  const mixedCard = {
+    href: "/mixed",
+    name: "Mixed Practice",
+    detail: "All sections shuffled",
+    count: mixedCount,
+    unit: "cards",
+    accent: "var(--accent-mixed)",
+  };
+
+  const practiceSections = [...sections, mixedCard];
+
+  const grammarTopicCount = GRAMMAR_PARTS.reduce(
+    (sum, part) => sum + part.topics.length,
+    0
+  );
+
+  const theorySections = [
+    {
+      href: "/grammar",
+      name: "Grammar B1+",
+      detail: "Grammar by topic, with guided practice",
+      count: grammarTopicCount,
+      unit: "topics",
+      accent: "var(--accent-grammar)",
+    },
+  ];
+
   return (
     <main className="home" id="contenido">
       <section className="home-hero" aria-labelledby="home-title">
@@ -118,23 +125,25 @@ export default function HomePage() {
           reveal, compare, repeat.
         </p>
         <p className="home-hero__meta">
-          {total} cards · {practiceSections.length} practice sections ·{" "}
-          {grammarTopicCount} grammar topics
+          {total} cards · {familyCount} families · {practiceSections.length}{" "}
+          practice sections · {grammarTopicCount} grammar topics
         </p>
         <div
           className="session-bar"
           role="img"
-          aria-label={`Card distribution by section, ${total} total`}
+          aria-label={`Card distribution by section, ${total} cards total`}
         >
-          {sections.map((section) => (
-            <span
-              key={section.href}
-              style={{
-                width: `${total === 0 ? 0 : (section.count / total) * 100}%`,
-                background: section.accent,
-              }}
-            />
-          ))}
+          {sections
+            .filter((section) => section.unit === "cards")
+            .map((section) => (
+              <span
+                key={section.href}
+                style={{
+                  width: `${total === 0 ? 0 : (section.count / total) * 100}%`,
+                  background: section.accent,
+                }}
+              />
+            ))}
         </div>
       </section>
       <section className="home-group" aria-labelledby="home-group-practice">
@@ -150,7 +159,9 @@ export default function HomePage() {
             <li key={section.href}>
               <Link
                 className="section-card"
-                style={{ "--card-accent": section.accent } as React.CSSProperties}
+                style={
+                  { "--card-accent": section.accent } as React.CSSProperties
+                }
                 href={section.href}
                 aria-label={`Practice ${section.name}, ${section.count} ${section.unit}`}
               >
@@ -178,7 +189,9 @@ export default function HomePage() {
             <li key={section.href}>
               <Link
                 className="section-card"
-                style={{ "--card-accent": section.accent } as React.CSSProperties}
+                style={
+                  { "--card-accent": section.accent } as React.CSSProperties
+                }
                 href={section.href}
                 aria-label={`Practice ${section.name}, ${section.count} ${section.unit}`}
               >

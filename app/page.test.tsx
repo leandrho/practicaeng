@@ -102,11 +102,11 @@ describe("HomePage", () => {
       contentRepository.getCards("prepositions").length +
       contentRepository.getCards("idioms").length +
       contentRepository.getCards("irregular-verbs").length +
-      getWordFamilies().length +
       contentRepository.getCards("everyday-phrases").length +
       contentRepository.getCards("connectors").length;
 
     expect(screen.getByText(new RegExp(`${total} cards`))).not.toBeNull();
+    expect(screen.getByText(new RegExp(`${getWordFamilies().length} families`))).not.toBeNull();
     expect(
       screen.getByRole("img", { name: /Card distribution by section/ }),
     ).not.toBeNull();
