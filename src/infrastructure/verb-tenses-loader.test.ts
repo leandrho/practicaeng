@@ -2,6 +2,8 @@ import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import {
+  FUTURE_VERB_TENSE_MIN_MIXED,
+  FUTURE_VERB_TENSE_MIN_PER_FORM,
   getVerbTenseFormCounts,
   VERB_TENSE_MIN_PER_FORM,
   VERB_TENSE_MIN_TOTAL,
@@ -27,12 +29,27 @@ const PAST_FORMS = [
   "Mixed",
 ] as const;
 
+const FUTURE_FORMS = [
+  "Will",
+  "Be going to",
+  "Present Progressive (future arrangement)",
+  "Present Simple (timetable)",
+  "Future Progressive",
+  "Future Perfect Simple",
+  "Be about to / Be due to",
+  "Mixed",
+] as const;
+
 function presentBullet(form: (typeof PRESENT_FORMS)[number], index: number): string {
   return `- **Form:** ${form} --- **Prompt (EN):** Complete case ${form} number ${index}. --- **Sentence (EN):** They ____ together every day (case ${form} ${index}). --- **Answers:** gather --- **Model (EN):** They gather together every day (case ${form} ${index}). --- **Explanation (ES):** El *present simple* explica el caso ${index}. --- **Translation (ES):** Ellos se reúnen todos los días (caso ${index}). --- **Context (EN):** "Do they meet often?" "Yes, they meet here every day after work." --- **Context source:** Everyday conversation`;
 }
 
 function pastBullet(form: (typeof PAST_FORMS)[number], index: number): string {
   return `- **Form:** ${form} --- **Prompt (EN):** Complete past case ${form} number ${index}. --- **Sentence (EN):** They ____ together yesterday (past case ${form} ${index}). --- **Answers:** gathered --- **Model (EN):** They gathered together yesterday (past case ${form} ${index}). --- **Explanation (ES):** El *past simple* explica el caso ${index}. --- **Translation (ES):** Ellos se reunieron ayer (caso ${index}). --- **Context (EN):** "Did they meet yesterday?" "Yes, they met here after work." --- **Context source:** Everyday conversation`;
+}
+
+function futureBullet(form: (typeof FUTURE_FORMS)[number], index: number): string {
+  return `- **Form:** ${form} --- **Prompt (EN):** Complete future case ${form} number ${index}. --- **Sentence (EN):** They ____ together tomorrow (future case ${form} ${index}). --- **Answers:** will gather --- **Model (EN):** They will gather together tomorrow (future case ${form} ${index}). --- **Explanation (ES):** El *future* explica el caso ${index}. --- **Translation (ES):** Ellos se reunirán mañana (caso ${index}). --- **Context (EN):** "Will they meet tomorrow?" "Yes, they meet here every day after work." --- **Context source:** Everyday conversation`;
 }
 
 function presentMarkdown(): string {
@@ -49,11 +66,22 @@ function pastMarkdown(): string {
   return ["## Pasado", ...bullets].join("\n");
 }
 
+function futureMarkdown(): string {
+  const bullets = [
+    ...FUTURE_FORMS.filter((form) => form !== "Mixed").flatMap((form) =>
+      Array.from({ length: 6 }, (_, index) => futureBullet(form, index)),
+    ),
+    ...Array.from({ length: 8 }, (_, index) => futureBullet("Mixed", 100 + index)),
+  ];
+  return ["## Futuros", ...bullets].join("\n");
+}
+
 beforeAll(() => {
   fixtureDirectory = mkdtempSync("/tmp/opencode/verb-tenses-fixture-");
   mkdirSync(join(fixtureDirectory, "data"), { recursive: true });
   writeFileSync(join(fixtureDirectory, "data/verb-tenses-present.md"), presentMarkdown());
   writeFileSync(join(fixtureDirectory, "data/verb-tenses-past.md"), pastMarkdown());
+  writeFileSync(join(fixtureDirectory, "data/verb-tenses-future.md"), futureMarkdown());
 });
 
 afterAll(() => {
@@ -93,18 +121,45 @@ describe("getVerbTenseSection", () => {
     }
   });
 
+  it("carga la sección real futuro con 50 o más ejercicios y los mínimos por forma", () => {
+    const section = getVerbTenseSection("future");
+    expect(section.slug).toBe("future");
+    expect(section.title).toBe("Futuros");
+    expect(section.exercises.length).toBeGreaterThanOrEqual(VERB_TENSE_MIN_TOTAL);
+    const counts = getVerbTenseFormCounts(section.exercises);
+    for (const form of FUTURE_FORMS) {
+      const minimum = form === "Mixed" ? FUTURE_VERB_TENSE_MIN_MIXED : FUTURE_VERB_TENSE_MIN_PER_FORM;
+      expect(counts[form]).toBeGreaterThanOrEqual(minimum);
+    }
+    expect(counts["Will"]).toBeGreaterThanOrEqual(6);
+    expect(counts["Be going to"]).toBeGreaterThanOrEqual(6);
+    expect(counts["Present Progressive (future arrangement)"]).toBeGreaterThanOrEqual(6);
+    expect(counts["Present Simple (timetable)"]).toBeGreaterThanOrEqual(6);
+    expect(counts["Future Progressive"]).toBeGreaterThanOrEqual(6);
+    expect(counts["Future Perfect Simple"]).toBeGreaterThanOrEqual(6);
+    expect(counts["Be about to / Be due to"]).toBeGreaterThanOrEqual(6);
+    expect(counts["Mixed"]).toBeGreaterThanOrEqual(8);
+    for (const exercise of section.exercises) {
+      expect(VerbTenseSectionSchema.parse(section)).toEqual(section);
+      expect(exercise.sentenceEn).toContain("____");
+      expect(exercise.acceptedAnswers.length).toBeGreaterThanOrEqual(1);
+    }
+  });
+
   it("lee desde fixtures sin exponer filesystem al cliente", () => {
     const sections = getVerbTenseSections(fixtureDirectory);
-    expect(sections).toHaveLength(2);
+    expect(sections).toHaveLength(3);
     expect(sections[0]?.exercises).toHaveLength(50);
     expect(sections[1]?.exercises).toHaveLength(50);
+    expect(sections[2]?.exercises).toHaveLength(50);
     expect(getVerbTenseSection("present", fixtureDirectory).title).toBe("Presente");
     expect(getVerbTenseSection("past", fixtureDirectory).title).toBe("Pasado");
+    expect(getVerbTenseSection("future", fixtureDirectory).title).toBe("Futuros");
   });
 
   it("rechaza slugs ajenos al catálogo", () => {
     expect(() =>
-      getVerbTenseSection("future" as "present", fixtureDirectory),
+      getVerbTenseSection("conditionals" as "present", fixtureDirectory),
     ).toThrow(/desconocida/);
   });
 
@@ -125,6 +180,16 @@ describe("getVerbTenseSection", () => {
       expect(() => getVerbTenseSection("past", fixtureDirectory)).toThrow();
     } finally {
       writeFileSync(file, pastMarkdown());
+    }
+  });
+
+  it("un ejercicio del futuro con forma ajena falla con archivo, línea y campo", () => {
+    const file = join(fixtureDirectory, "data/verb-tenses-future.md");
+    writeFileSync(file, `## Futuros\n${futureBullet("Will", 0).replace("Will", "Past Simple")}`);
+    try {
+      expect(() => getVerbTenseSection("future", fixtureDirectory)).toThrow();
+    } finally {
+      writeFileSync(file, futureMarkdown());
     }
   });
 });
