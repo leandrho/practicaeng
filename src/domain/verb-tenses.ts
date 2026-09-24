@@ -27,6 +27,14 @@ export const FUTURE_VERB_TENSE_FORMS = [
   "Mixed",
 ] as const;
 
+export const CONDITIONAL_VERB_TENSE_FORMS = [
+  "Conditional Zero",
+  "Conditional Type 1",
+  "Conditional Type 2",
+  "Conditional Type 3",
+  "Mixed",
+] as const;
+
 export const VERB_TENSE_FORMS = [
   "Present Simple",
   "Present Progressive",
@@ -43,6 +51,10 @@ export const VERB_TENSE_FORMS = [
   "Future Progressive",
   "Future Perfect Simple",
   "Be about to / Be due to",
+  "Conditional Zero",
+  "Conditional Type 1",
+  "Conditional Type 2",
+  "Conditional Type 3",
   "Mixed",
 ] as const;
 
@@ -147,6 +159,7 @@ export const VERB_TENSE_FORMS_BY_SLUG = {
   present: PRESENT_VERB_TENSE_FORMS,
   past: PAST_VERB_TENSE_FORMS,
   future: FUTURE_VERB_TENSE_FORMS,
+  conditionals: CONDITIONAL_VERB_TENSE_FORMS,
 } as const satisfies Partial<
   Record<VerbTenseSlug, readonly VerbTenseForm[]>
 >;
@@ -172,6 +185,11 @@ export const VERB_TENSE_SECTIONS = [
     slug: "future",
     title: "Futuros",
     file: "data/verb-tenses-future.md",
+  },
+  {
+    slug: "conditionals",
+    title: "Condicionales",
+    file: "data/verb-tenses-conditionals.md",
   },
 ] as const satisfies ReadonlyArray<{
   slug: VerbTenseSlug;
@@ -200,6 +218,10 @@ export function getVerbTenseFormCounts(
     "Future Progressive": 0,
     "Future Perfect Simple": 0,
     "Be about to / Be due to": 0,
+    "Conditional Zero": 0,
+    "Conditional Type 1": 0,
+    "Conditional Type 2": 0,
+    "Conditional Type 3": 0,
     Mixed: 0,
   };
   for (const exercise of exercises) {

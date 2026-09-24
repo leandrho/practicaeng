@@ -96,7 +96,7 @@ describe("VerbTenseExerciseSchema", () => {
 });
 
 describe("verb-tenses catalog", () => {
-  it("las secciones present, past y future son únicas en slug, título y archivo", () => {
+  it("las secciones present, past, future y conditionals son únicas en slug, título y archivo", () => {
     const slugs = VERB_TENSE_SECTIONS.map((section) => section.slug);
     const titles = VERB_TENSE_SECTIONS.map((section) => section.title);
     const files = VERB_TENSE_SECTIONS.map((section) => section.file);
@@ -117,6 +117,11 @@ describe("verb-tenses catalog", () => {
       slug: "future",
       title: "Futuros",
       file: "data/verb-tenses-future.md",
+    });
+    expect(VERB_TENSE_SECTIONS[3]).toMatchObject({
+      slug: "conditionals",
+      title: "Condicionales",
+      file: "data/verb-tenses-conditionals.md",
     });
   });
 
@@ -143,6 +148,13 @@ describe("verb-tenses catalog", () => {
       "Future Progressive",
       "Future Perfect Simple",
       "Be about to / Be due to",
+      "Mixed",
+    ]);
+    expect(getVerbTenseFormsForSlug("conditionals")).toEqual([
+      "Conditional Zero",
+      "Conditional Type 1",
+      "Conditional Type 2",
+      "Conditional Type 3",
       "Mixed",
     ]);
   });
@@ -175,6 +187,10 @@ describe("verb-tenses catalog", () => {
       "Future Progressive": 0,
       "Future Perfect Simple": 0,
       "Be about to / Be due to": 0,
+      "Conditional Zero": 0,
+      "Conditional Type 1": 0,
+      "Conditional Type 2": 0,
+      "Conditional Type 3": 0,
       Mixed: 10,
     });
 
@@ -333,5 +349,47 @@ describe("verb-tenses catalog", () => {
       ],
     });
     expect(() => assertVerbTenseMinimums(unbalancedFuture)).toThrow(/Be going to/);
+  });
+
+  it("exige los mínimos de la sección conditionals por forma", () => {
+    const forms: VerbTenseExercise["form"][] = [
+      "Conditional Zero",
+      "Conditional Type 1",
+      "Conditional Type 2",
+      "Conditional Type 3",
+      "Mixed",
+    ];
+    const exercises = forms.flatMap((form) =>
+      Array.from({ length: 10 }, (_, index) => exerciseFor(form, 8000 + index)),
+    );
+    const section = VerbTenseSectionSchema.parse({
+      slug: "conditionals",
+      title: "Condicionales",
+      exercises,
+    });
+    expect(() => assertVerbTenseMinimums(section)).not.toThrow();
+
+    const unbalancedConditionals = VerbTenseSectionSchema.parse({
+      slug: "conditionals",
+      title: "Condicionales",
+      exercises: [
+        ...Array.from({ length: 14 }, (_, index) =>
+          exerciseFor("Conditional Zero", 9000 + index),
+        ),
+        ...Array.from({ length: 9 }, (_, index) =>
+          exerciseFor("Conditional Type 1", 9100 + index),
+        ),
+        ...Array.from({ length: 10 }, (_, index) =>
+          exerciseFor("Conditional Type 2", 9200 + index),
+        ),
+        ...Array.from({ length: 10 }, (_, index) =>
+          exerciseFor("Conditional Type 3", 9300 + index),
+        ),
+        ...Array.from({ length: 10 }, (_, index) => exerciseFor("Mixed", 9400 + index)),
+      ],
+    });
+    expect(() => assertVerbTenseMinimums(unbalancedConditionals)).toThrow(
+      /Conditional Type 1/,
+    );
   });
 });

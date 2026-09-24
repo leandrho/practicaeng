@@ -182,6 +182,44 @@ describe("parseVerbTenseSection", () => {
     expect((error as { reason: string }).reason).toMatch(/forma inválida/);
   });
 
+  it("un fixture de condicionales carga y una forma ajena falla", () => {
+    const conditionalsExpected = { slug: "conditionals" as const, title: "Condicionales" };
+    const conditionalsBullet = bullet({
+      "Form": "Conditional Type 2",
+      "Prompt (EN)": "Imagine the opposite of now: If I / be you, I would accept.",
+      "Sentence (EN)": "If I ____ you, I would accept.",
+      "Answers": "were",
+      "Model (EN)": "If I were you, I would accept.",
+      "Explanation (ES)": "El *second conditional* usa pasado simple en la condición para un presente hipotético.",
+      "Translation (ES)": "Si yo fuera vos, aceptaría.",
+      "Context (EN)": '"Should I accept the offer?" "If I were you, I would accept it today."',
+    });
+    const parsed = parseVerbTenseSection(
+      ["## Condicionales", conditionalsBullet].join("\n"),
+      "data/verb-tenses-conditionals.md",
+      conditionalsExpected,
+    );
+    expect(parsed.slug).toBe("conditionals");
+    expect(parsed.exercises[0]).toMatchObject({ form: "Conditional Type 2" });
+
+    let error: unknown;
+    try {
+      parseVerbTenseSection(
+        ["## Condicionales", bullet({ "Form": "Present Simple" })].join("\n"),
+        "data/verb-tenses-conditionals.md",
+        conditionalsExpected,
+      );
+    } catch (caught) {
+      error = caught;
+    }
+    expect(error).toMatchObject({
+      file: "data/verb-tenses-conditionals.md",
+      line: expect.any(Number),
+      reason: expect.any(String),
+    });
+    expect((error as { reason: string }).reason).toMatch(/forma inválida/);
+  });
+
   it("falla sin contexto", () => {
     const missing = ["## Presente", bullet()]
       .join("\n")
