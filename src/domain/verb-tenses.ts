@@ -16,6 +16,17 @@ export const PAST_VERB_TENSE_FORMS = [
   "Mixed",
 ] as const;
 
+export const FUTURE_VERB_TENSE_FORMS = [
+  "Will",
+  "Be going to",
+  "Present Progressive (future arrangement)",
+  "Present Simple (timetable)",
+  "Future Progressive",
+  "Future Perfect Simple",
+  "Be about to / Be due to",
+  "Mixed",
+] as const;
+
 export const VERB_TENSE_FORMS = [
   "Present Simple",
   "Present Progressive",
@@ -25,6 +36,13 @@ export const VERB_TENSE_FORMS = [
   "Past Progressive",
   "Past Perfect Simple",
   "Past Perfect Progressive",
+  "Will",
+  "Be going to",
+  "Present Progressive (future arrangement)",
+  "Present Simple (timetable)",
+  "Future Progressive",
+  "Future Perfect Simple",
+  "Be about to / Be due to",
   "Mixed",
 ] as const;
 
@@ -36,6 +54,8 @@ export type VerbTenseSlug = (typeof VERB_TENSE_SLUGS)[number];
 
 export const VERB_TENSE_MIN_TOTAL = 50;
 export const VERB_TENSE_MIN_PER_FORM = 10;
+export const FUTURE_VERB_TENSE_MIN_PER_FORM = 6;
+export const FUTURE_VERB_TENSE_MIN_MIXED = 8;
 
 const nonemptyText = z.string().trim().min(1);
 
@@ -126,6 +146,7 @@ export type VerbTenseSection = z.infer<typeof VerbTenseSectionSchema>;
 export const VERB_TENSE_FORMS_BY_SLUG = {
   present: PRESENT_VERB_TENSE_FORMS,
   past: PAST_VERB_TENSE_FORMS,
+  future: FUTURE_VERB_TENSE_FORMS,
 } as const satisfies Partial<
   Record<VerbTenseSlug, readonly VerbTenseForm[]>
 >;
@@ -147,6 +168,11 @@ export const VERB_TENSE_SECTIONS = [
     title: "Pasado",
     file: "data/verb-tenses-past.md",
   },
+  {
+    slug: "future",
+    title: "Futuros",
+    file: "data/verb-tenses-future.md",
+  },
 ] as const satisfies ReadonlyArray<{
   slug: VerbTenseSlug;
   title: string;
@@ -167,6 +193,13 @@ export function getVerbTenseFormCounts(
     "Past Progressive": 0,
     "Past Perfect Simple": 0,
     "Past Perfect Progressive": 0,
+    Will: 0,
+    "Be going to": 0,
+    "Present Progressive (future arrangement)": 0,
+    "Present Simple (timetable)": 0,
+    "Future Progressive": 0,
+    "Future Perfect Simple": 0,
+    "Be about to / Be due to": 0,
     Mixed: 0,
   };
   for (const exercise of exercises) {
@@ -182,6 +215,20 @@ export function assertVerbTenseMinimums(section: VerbTenseSection): void {
     );
   }
   const counts = getVerbTenseFormCounts(section.exercises);
+  if (section.slug === "future") {
+    for (const form of getVerbTenseFormsForSlug(section.slug)) {
+      const minimum =
+        form === "Mixed"
+          ? FUTURE_VERB_TENSE_MIN_MIXED
+          : FUTURE_VERB_TENSE_MIN_PER_FORM;
+      if (counts[form] < minimum) {
+        throw new Error(
+          `sección ${section.slug}: la forma ${form} necesita ${minimum} o más ejercicios, hay ${counts[form]}`,
+        );
+      }
+    }
+    return;
+  }
   for (const form of getVerbTenseFormsForSlug(section.slug)) {
     if (counts[form] < VERB_TENSE_MIN_PER_FORM) {
       throw new Error(

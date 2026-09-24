@@ -96,7 +96,7 @@ describe("VerbTenseExerciseSchema", () => {
 });
 
 describe("verb-tenses catalog", () => {
-  it("las secciones present y past son únicas en slug, título y archivo", () => {
+  it("las secciones present, past y future son únicas en slug, título y archivo", () => {
     const slugs = VERB_TENSE_SECTIONS.map((section) => section.slug);
     const titles = VERB_TENSE_SECTIONS.map((section) => section.title);
     const files = VERB_TENSE_SECTIONS.map((section) => section.file);
@@ -113,6 +113,11 @@ describe("verb-tenses catalog", () => {
       title: "Pasado",
       file: "data/verb-tenses-past.md",
     });
+    expect(VERB_TENSE_SECTIONS[2]).toMatchObject({
+      slug: "future",
+      title: "Futuros",
+      file: "data/verb-tenses-future.md",
+    });
   });
 
   it("expone las formas por sección y el fallback global", () => {
@@ -128,6 +133,16 @@ describe("verb-tenses catalog", () => {
       "Past Progressive",
       "Past Perfect Simple",
       "Past Perfect Progressive",
+      "Mixed",
+    ]);
+    expect(getVerbTenseFormsForSlug("future")).toEqual([
+      "Will",
+      "Be going to",
+      "Present Progressive (future arrangement)",
+      "Present Simple (timetable)",
+      "Future Progressive",
+      "Future Perfect Simple",
+      "Be about to / Be due to",
       "Mixed",
     ]);
   });
@@ -153,6 +168,13 @@ describe("verb-tenses catalog", () => {
       "Past Progressive": 0,
       "Past Perfect Simple": 0,
       "Past Perfect Progressive": 0,
+      Will: 0,
+      "Be going to": 0,
+      "Present Progressive (future arrangement)": 0,
+      "Present Simple (timetable)": 0,
+      "Future Progressive": 0,
+      "Future Perfect Simple": 0,
+      "Be about to / Be due to": 0,
       Mixed: 10,
     });
 
@@ -230,5 +252,86 @@ describe("verb-tenses catalog", () => {
       ],
     });
     expect(() => assertVerbTenseMinimums(unbalancedPast)).toThrow(/Past Progressive/);
+  });
+
+  it("exige los mínimos de la sección future por forma", () => {
+    const forms: VerbTenseExercise["form"][] = [
+      "Will",
+      "Be going to",
+      "Present Progressive (future arrangement)",
+      "Present Simple (timetable)",
+      "Future Progressive",
+      "Future Perfect Simple",
+      "Be about to / Be due to",
+    ];
+    const exercises = [
+      ...forms.flatMap((form) =>
+        Array.from({ length: 6 }, (_, index) => exerciseFor(form, 3000 + index * 100)),
+      ),
+      ...Array.from({ length: 8 }, (_, index) => exerciseFor("Mixed", 4000 + index)),
+    ];
+    expect(exercises).toHaveLength(50);
+    const section = VerbTenseSectionSchema.parse({
+      slug: "future",
+      title: "Futuros",
+      exercises,
+    });
+    expect(() => assertVerbTenseMinimums(section)).not.toThrow();
+
+    const shortMixed = VerbTenseSectionSchema.parse({
+      slug: "future",
+      title: "Futuros",
+      exercises: [
+        ...Array.from({ length: 7 }, (_, index) => exerciseFor("Will", 5000 + index)),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Be going to", 5100 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Present Progressive (future arrangement)", 5200 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Present Simple (timetable)", 5300 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Future Progressive", 5400 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Future Perfect Simple", 5500 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Be about to / Be due to", 5600 + index),
+        ),
+        ...Array.from({ length: 7 }, (_, index) => exerciseFor("Mixed", 5700 + index)),
+      ],
+    });
+    expect(() => assertVerbTenseMinimums(shortMixed)).toThrow(/Mixed/);
+
+    const unbalancedFuture = VerbTenseSectionSchema.parse({
+      slug: "future",
+      title: "Futuros",
+      exercises: [
+        ...Array.from({ length: 10 }, (_, index) => exerciseFor("Will", 7000 + index)),
+        ...Array.from({ length: 5 }, (_, index) =>
+          exerciseFor("Be going to", 7100 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Present Progressive (future arrangement)", 7200 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Present Simple (timetable)", 7300 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Future Progressive", 7400 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Future Perfect Simple", 7500 + index),
+        ),
+        ...Array.from({ length: 6 }, (_, index) =>
+          exerciseFor("Be about to / Be due to", 7600 + index),
+        ),
+        ...Array.from({ length: 8 }, (_, index) => exerciseFor("Mixed", 7700 + index)),
+      ],
+    });
+    expect(() => assertVerbTenseMinimums(unbalancedFuture)).toThrow(/Be going to/);
   });
 });

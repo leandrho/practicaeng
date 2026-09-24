@@ -121,6 +121,7 @@ export default function HomePage() {
   // verbales. No suma tarjetas de vocabulario ni entra en Mixed Practice.
   const presentCount = getVerbTenseSection("present").exercises.length;
   const pastCount = getVerbTenseSection("past").exercises.length;
+  const futureCount = getVerbTenseSection("future").exercises.length;
 
   const grammarPracticeSections = [
     {
@@ -136,6 +137,14 @@ export default function HomePage() {
       name: "Pasado",
       detail: "Past tenses gap-fill + reveal",
       count: pastCount,
+      unit: "exercises",
+      accent: "var(--accent-grammar)",
+    },
+    {
+      href: "/verb-tenses/future",
+      name: "Futuros",
+      detail: "Future forms gap-fill + reveal",
+      count: futureCount,
       unit: "exercises",
       accent: "var(--accent-grammar)",
     },

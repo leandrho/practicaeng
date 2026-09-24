@@ -185,4 +185,31 @@ describe("VerbTensesPracticeClient", () => {
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
     expect(screen.getByText(past.modelEn)).not.toBeNull();
   });
+
+  it("soporta ejercicios del futuro sin cambiar el formato", () => {
+    const future: VerbTenseExercise = {
+      form: "Be going to",
+      promptEn: "State your prior plan: I / make soup tonight.",
+      sentenceEn: "I ____ make soup tonight.",
+      acceptedAnswers: ["am going to"],
+      modelEn: "I am going to make soup tonight.",
+      explanationEs: "El *be going to* expresa una intención formada antes de hablar.",
+      translationEs: "Voy a preparar sopa esta noche.",
+      contextEn: '"What is for dinner?" "I bought vegetables, so the kitchen smells fresh already."',
+      contextSource: "Everyday conversation",
+    };
+    const { container } = render(<VerbTensesPracticeClient exercises={[future]} />);
+
+    expect(screen.getByText("Be going to")).not.toBeNull();
+    expect(container.textContent).not.toContain(future.modelEn);
+
+    fireEvent.change(screen.getByLabelText("Type the missing words"), {
+      target: { value: "am going to" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
+    expect(screen.getByText("Correct: am going to")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+    expect(screen.getByText(future.modelEn)).not.toBeNull();
+  });
 });

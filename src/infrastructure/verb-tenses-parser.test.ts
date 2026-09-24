@@ -144,6 +144,44 @@ describe("parseVerbTenseSection", () => {
     expect((error as { reason: string }).reason).toMatch(/forma inválida/);
   });
 
+  it("un fixture del futuro carga y una forma ajena falla", () => {
+    const futureExpected = { slug: "future" as const, title: "Futuros" };
+    const futureBullet = bullet({
+      "Form": "Be going to",
+      "Prompt (EN)": "State your prior plan: I / make soup tonight.",
+      "Sentence (EN)": "I ____ make soup tonight.",
+      "Answers": "am going to",
+      "Model (EN)": "I am going to make soup tonight.",
+      "Explanation (ES)": "El *be going to* expresa una intención formada antes de hablar.",
+      "Translation (ES)": "Voy a preparar sopa esta noche.",
+      "Context (EN)": '"What is for dinner?" "I bought vegetables, so the kitchen smells fresh already."',
+    });
+    const parsed = parseVerbTenseSection(
+      ["## Futuros", futureBullet].join("\n"),
+      "data/verb-tenses-future.md",
+      futureExpected,
+    );
+    expect(parsed.slug).toBe("future");
+    expect(parsed.exercises[0]).toMatchObject({ form: "Be going to" });
+
+    let error: unknown;
+    try {
+      parseVerbTenseSection(
+        ["## Futuros", bullet({ "Form": "Present Simple" })].join("\n"),
+        "data/verb-tenses-future.md",
+        futureExpected,
+      );
+    } catch (caught) {
+      error = caught;
+    }
+    expect(error).toMatchObject({
+      file: "data/verb-tenses-future.md",
+      line: expect.any(Number),
+      reason: expect.any(String),
+    });
+    expect((error as { reason: string }).reason).toMatch(/forma inválida/);
+  });
+
   it("falla sin contexto", () => {
     const missing = ["## Presente", bullet()]
       .join("\n")
