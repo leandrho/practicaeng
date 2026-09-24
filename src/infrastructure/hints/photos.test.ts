@@ -60,4 +60,20 @@ describe("hintPhotos", () => {
 
     expect(actualFiles).toEqual(expectedFiles);
   });
+
+  it.each(["collocations", "prepositions", "idioms"] as const)(
+    "resolves every %s card to a local curated photo (connectors excluded)",
+    (section) => {
+      const cards = contentRepository.getCards(section);
+
+      expect(cards.length).toBeGreaterThan(0);
+
+      for (const card of cards) {
+        const hintId = resolveHint(card.expression, card.type, card.category);
+
+        expect(hintId.startsWith("fallback:")).toBe(false);
+        expect(hintPhotos[hintId]).toBeDefined();
+      }
+    }
+  );
 });
