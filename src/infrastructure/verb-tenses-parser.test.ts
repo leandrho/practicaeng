@@ -1,0 +1,135 @@
+import { describe, expect, it } from "vitest";
+import { parseVerbTenseSection } from "./verb-tenses-parser";
+
+const FILE = "data/verb-tenses-present.md";
+const EXPECTED = { slug: "present" as const, title: "Presente" };
+
+function bullet(overrides: Partial<Record<string, string>> = {}): string {
+  const fields: Record<string, string> = {
+    "Form": "Present Simple",
+    "Prompt (EN)": "Complete the routine: she / walk to school every day.",
+    "Sentence (EN)": "She ____ to school every day.",
+    "Answers": "walks",
+    "Model (EN)": "She walks to school every day.",
+    "Explanation (ES)": "El *present simple* expresa hábitos y la tercera persona lleva -s.",
+    "Translation (ES)": "Ella camina a la escuela todos los días.",
+    "Context (EN)": '"Do you walk to school?" "Yes, I walk there every day with my brother."',
+    "Context source": "Everyday conversation",
+    ...overrides,
+  };
+  return `- **Form:** ${fields["Form"]} --- **Prompt (EN):** ${fields["Prompt (EN)"]} --- **Sentence (EN):** ${fields["Sentence (EN)"]} --- **Answers:** ${fields["Answers"]} --- **Model (EN):** ${fields["Model (EN)"]} --- **Explanation (ES):** ${fields["Explanation (ES)"]} --- **Translation (ES):** ${fields["Translation (ES)"]} --- **Context (EN):** ${fields["Context (EN)"]} --- **Context source:** ${fields["Context source"]}`;
+}
+
+function expectParseError(markdown: string, match: RegExp | string) {
+  let error: unknown;
+  try {
+    parseVerbTenseSection(markdown, FILE, EXPECTED);
+  } catch (caught) {
+    error = caught;
+  }
+  expect(error).toMatchObject({ file: FILE, line: expect.any(Number), reason: expect.any(String) });
+  expect((error as { reason: string }).reason).toMatch(match);
+}
+
+describe("parseVerbTenseSection", () => {
+  it("un fixture válido pasa y aplica la fuente por defecto", () => {
+    const withSource = ["## Presente", bullet()].join("\n");
+    const parsed = parseVerbTenseSection(withSource, FILE, EXPECTED);
+    expect(parsed.slug).toBe("present");
+    expect(parsed.title).toBe("Presente");
+    expect(parsed.exercises).toHaveLength(1);
+    expect(parsed.exercises[0]).toMatchObject({
+      form: "Present Simple",
+      acceptedAnswers: ["walks"],
+      contextSource: "Everyday conversation",
+    });
+
+    const withoutSource = [
+      "## Presente",
+      bullet()
+        .replace(" --- **Context source:** Everyday conversation", "")
+        .replace("Second model.", "Second model."),
+    ].join("\n");
+    const parsedDefault = parseVerbTenseSection(withoutSource, FILE, EXPECTED);
+    expect(parsedDefault.exercises[0]?.contextSource).toBe("Everyday conversation");
+  });
+
+  it("acepta varias respuestas separadas por /", () => {
+    const markdown = [
+      "## Presente",
+      bullet({
+        "Form": "Present Progressive",
+        "Prompt (EN)": "Describe what is happening now: she / work in the garden.",
+        "Sentence (EN)": "She ____ in the garden now.",
+        "Answers": "is working / 's working",
+        "Model (EN)": "She is working in the garden now.",
+        "Explanation (ES)": "El *present progressive* describe acciones en curso.",
+        "Translation (ES)": "Ella está trabajando en el jardín ahora.",
+        "Context (EN)": '"Where is she?" "She is outside. She stays there every afternoon."',
+      }),
+    ].join("\n");
+    const parsed = parseVerbTenseSection(markdown, FILE, EXPECTED);
+    expect(parsed.exercises[0]?.acceptedAnswers).toEqual(["is working", "'s working"]);
+  });
+
+  it("falla sin hueco único", () => {
+    expectParseError(
+      ["## Presente", bullet({ "Sentence (EN)": "She walks to school." })].join("\n"),
+      /hueco/,
+    );
+    expectParseError(
+      ["## Presente", bullet({ "Sentence (EN)": "She ____ and ____ today." })].join("\n"),
+      /hueco/,
+    );
+  });
+
+  it("falla sin respuestas o con duplicados", () => {
+    expectParseError(
+      ["## Presente", bullet({ "Answers": "walks / WALKS" })].join("\n"),
+      /duplicadas/,
+    );
+    const missing = ["## Presente", bullet()].join("\n").replace(" --- **Answers:** walks", "");
+    expectParseError(missing, /cantidad de campos|campo Answers/);
+  });
+
+  it("falla con forma inválida", () => {
+    expectParseError(
+      ["## Presente", bullet({ "Form": "Past Simple" })].join("\n"),
+      /forma inválida/,
+    );
+  });
+
+  it("falla sin contexto", () => {
+    const missing = ["## Presente", bullet()]
+      .join("\n")
+      .replace(/ --- \*\*Context \(EN\):\*\*.*$/, "");
+    expectParseError(missing, /cantidad de campos|campo Context/);
+  });
+
+  it("falla si el prompt adelanta el modelo", () => {
+    expectParseError(
+      [
+        "## Presente",
+        bullet({
+          "Prompt (EN)": "Repeat: She walks to school every day.",
+          "Model (EN)": "She walks to school every day.",
+        }),
+      ].join("\n"),
+      /adelanta el modelo/,
+    );
+  });
+
+  it("falla con modelos duplicados", () => {
+    expectParseError(["## Presente", bullet(), bullet()].join("\n"), /duplicado/);
+  });
+
+  it("falla con título distinto del catálogo o sin encabezado", () => {
+    expectParseError(["## Pasado", bullet()].join("\n"), /catálogo/);
+    expectParseError([bullet()].join("\n"), /encabezado/);
+  });
+
+  it("falla con formato de campos incorrecto identificando campo", () => {
+    const broken = ["## Presente", bullet().replace("**Answers:**", "**Respuesta:**")].join("\n");
+    expectParseError(broken, /campo Answers/);
+  });
+});
