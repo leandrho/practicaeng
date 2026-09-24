@@ -135,7 +135,7 @@ describe("ContentRepository", () => {
     });
   });
 
-  it("carga al menos 70 conectores con los nueve grupos de función", () => {
+  it("carga los 70 conectores con los nueve grupos y dos tags complementarios", () => {
     const cards = createContentRepository().getCards("connectors");
     const expectedCategories = [
       "Adding information",
@@ -149,7 +149,7 @@ describe("ContentRepository", () => {
       "Summary and conclusion",
     ];
 
-    expect(cards.length).toBeGreaterThanOrEqual(70);
+    expect(cards).toHaveLength(70);
     expect(cards.every((card) => card.type === "connector")).toBe(true);
     expect(cards.every((card) => card.level === "B1-B2")).toBe(true);
     expect([...new Set(cards.map((card) => card.category))].sort()).toEqual(
@@ -170,8 +170,50 @@ describe("ContentRepository", () => {
         card.category,
         card.contextEn,
       ].every((field) => field.length > 0)).toBe(true);
-      expect(card.register).toBeDefined();
-      expect(card.channel).toBeDefined();
+      expect(card.tags).toHaveLength(2);
+      expect(
+        card.tags.filter((tag) => ["Formal", "Neutral", "Informal"].includes(tag)),
+      ).toHaveLength(1);
+      expect(
+        card.tags.filter((tag) => ["Spoken", "Written", "Spoken & written"].includes(tag)),
+      ).toHaveLength(1);
+    }
+  });
+
+  it("mantiene las categorías de Prepositions y añade formas de complemento", () => {
+    const cards = createContentRepository().getCards("prepositions");
+    const interestedIn = cards.find((card) => card.expression === "interested in");
+    const dependsOn = cards.find((card) => card.expression === "depend on");
+    const expectedCategories = [
+      "Adjective + preposition",
+      "Noun + preposition",
+      "Verb + preposition",
+    ];
+
+    expect(cards).toHaveLength(49);
+    expect([...new Set(cards.map((card) => card.category))].sort()).toEqual(
+      expectedCategories.sort(),
+    );
+    expect(interestedIn).toMatchObject({
+      category: "Adjective + preposition",
+      tags: ["+ noun phrase", "+ -ing"],
+    });
+    expect(dependsOn?.tags).toEqual(["+ noun phrase", "+ -ing", "+ clause"]);
+    expect(cards.every((card) => card.type === "preposition")).toBe(true);
+  });
+
+  it("valida las etiquetas de las 200 tarjetas de Phrasal Verbs", () => {
+    const cards = createContentRepository().getCards("phrasal-verbs");
+
+    expect(cards).toHaveLength(200);
+    for (const card of cards) {
+      const tags = new Set(card.tags);
+      expect(tags.has("Transitive") && tags.has("Intransitive")).toBe(false);
+      expect(tags.has("Separable") && tags.has("Inseparable")).toBe(false);
+      if (tags.has("Separable") || tags.has("Inseparable")) {
+        expect(tags.has("Transitive")).toBe(true);
+      }
+      expect(tags.size).toBeGreaterThan(0);
     }
   });
 
@@ -200,7 +242,7 @@ describe("ContentRepository", () => {
     });
   });
 
-  it("un conector sin etiquetas Register y Channel falla con archivo y línea", () => {
+  it("un conector sin Tags falla con archivo y línea", () => {
     let error: unknown;
     try {
       parseBulletCards(
@@ -214,7 +256,7 @@ describe("ContentRepository", () => {
     expect(error).toEqual({
       file: "data/connectors-b1-b2.md",
       line: 2,
-      reason: "conector sin etiquetas Register y Channel",
+      reason: "conector sin Tags de registro y uso",
     });
   });
 });

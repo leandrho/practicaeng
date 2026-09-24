@@ -10,6 +10,7 @@ después revelá la respuesta.
 ## Tarjetas
 
 ### 1. ask around
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** ask several people for information
 -   **Significado:** preguntar a varias personas
@@ -19,6 +20,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 2. ask out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** invite someone on a date
 -   **Significado:** invitar a salir
@@ -28,6 +30,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 3. back up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** make a copy of data; support
 -   **Significado:** hacer una copia de seguridad / respaldar
@@ -37,6 +40,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 4. break down
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** stop working, especially a vehicle or machine
 -   **Significado:** averiarse / descomponerse
@@ -46,6 +50,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 5. break in
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** enter a building by force
 -   **Significado:** entrar por la fuerza
@@ -55,6 +60,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 6. break up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** end a relationship
 -   **Significado:** separarse / terminar una relación
@@ -64,6 +70,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 7. bring back
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** return something; make someone remember
 -   **Significado:** traer de vuelta / hacer recordar
@@ -73,6 +80,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 8. bring up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** mention a topic; raise a child
 -   **Significado:** mencionar / criar
@@ -82,6 +90,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 9. call back
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** return a phone call
 -   **Significado:** devolver una llamada
@@ -91,6 +100,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 10. call off
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** cancel something planned
 -   **Significado:** cancelar
@@ -100,6 +110,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 11. calm down
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** become or make someone less upset
 -   **Significado:** calmarse
@@ -109,6 +120,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 12. carry on
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** continue doing something
 -   **Significado:** continuar
@@ -118,6 +130,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 13. catch up
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** reach the same level; become up to date
 -   **Significado:** ponerse al día / alcanzar
@@ -127,6 +140,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 14. check in
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** register on arrival
 -   **Significado:** registrarse
@@ -136,6 +150,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 15. check out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** leave a hotel after paying; examine
 -   **Significado:** hacer el check-out / revisar
@@ -145,6 +160,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 16. cheer up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** become or make someone happier
 -   **Significado:** animarse / animar
@@ -154,6 +170,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 17. clean up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** make a place clean and tidy
 -   **Significado:** limpiar / ordenar
@@ -163,6 +180,7 @@ después revelá la respuesta.
 -   **Context source:** Little Women — Louisa May Alcott
 
 ### 18. come across
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** find something by chance
 -   **Significado:** encontrarse con algo por casualidad
@@ -172,6 +190,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 19. come back
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** return
 -   **Significado:** volver
@@ -181,6 +200,7 @@ después revelá la respuesta.
 -   **Context source:** Alice's Adventures in Wonderland — Lewis Carroll
 
 ### 20. come in
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** enter
 -   **Significado:** entrar
@@ -190,6 +210,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 21. come on
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** encourage someone; tell someone to hurry
 -   **Significado:** vamos / darse prisa
@@ -199,6 +220,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 22. come out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** be published or released
 -   **Significado:** salir / publicarse
@@ -208,6 +230,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 23. come over
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** visit someone at their home
 -   **Significado:** venir de visita
@@ -217,6 +240,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 24. come up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** happen unexpectedly
 -   **Significado:** surgir
@@ -226,6 +250,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 25. come up with
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** think of an idea or plan
 -   **Significado:** idear / ocurrírsele
@@ -235,6 +260,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 26. count on
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** rely on someone or something
 -   **Significado:** contar con
@@ -244,6 +270,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 27. cut down on
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** reduce the amount of something
 -   **Significado:** reducir
@@ -253,6 +280,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 28. cut off
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** stop a supply or connection
 -   **Significado:** cortar / interrumpir
@@ -262,6 +290,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 29. deal with
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** take action to solve or manage something
 -   **Significado:** lidiar con / encargarse de
@@ -271,6 +300,7 @@ después revelá la respuesta.
 -   **Context source:** The Adventures of Sherlock Holmes — Arthur Conan Doyle
 
 ### 30. do over
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** do something again
 -   **Significado:** hacer de nuevo
@@ -280,6 +310,7 @@ después revelá la respuesta.
 -   **Context source:** Tom Sawyer — Mark Twain
 
 ### 31. dress up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** wear smart clothes or a costume
 -   **Significado:** vestirse elegante / disfrazarse
@@ -289,6 +320,7 @@ después revelá la respuesta.
 -   **Context source:** Huckleberry Finn — Mark Twain
 
 ### 32. drop by
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** visit briefly and informally
 -   **Significado:** pasar de visita
@@ -298,6 +330,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 33. drop off
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** take someone or something to a place and leave them there
 -   **Significado:** dejar a alguien/algo
@@ -307,6 +340,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 34. eat out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** eat at a restaurant
 -   **Significado:** comer afuera
@@ -316,6 +350,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 35. end up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** finally be in a particular situation
 -   **Significado:** terminar / acabar
@@ -325,6 +360,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 36. fall apart
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** break into pieces or stop functioning well
 -   **Significado:** desarmarse / venirse abajo
@@ -334,6 +370,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 37. fall behind
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** fail to keep up
 -   **Significado:** quedarse atrás
@@ -343,6 +380,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 38. fall for
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** fall in love with someone; be deceived
 -   **Significado:** enamorarse de / caer en un engaño
@@ -352,6 +390,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 39. fall out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** argue and stop being friends
 -   **Significado:** pelearse / dejar de ser amigos
@@ -361,6 +400,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 40. figure out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** understand or solve something
 -   **Significado:** entender / resolver
@@ -370,6 +410,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 41. fill in
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** complete a form; do someone else's job temporarily
 -   **Significado:** completar / sustituir
@@ -379,6 +420,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 42. fill out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** complete a form
 -   **Significado:** completar un formulario
@@ -388,6 +430,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 43. fill up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** make something full
 -   **Significado:** llenar
@@ -397,6 +440,7 @@ después revelá la respuesta.
 -   **Context source:** Little Women — Louisa May Alcott
 
 ### 44. find out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** discover information
 -   **Significado:** averiguar / descubrir
@@ -406,6 +450,7 @@ después revelá la respuesta.
 -   **Context source:** Alice's Adventures in Wonderland — Lewis Carroll
 
 ### 45. get along
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** have a friendly relationship
 -   **Significado:** llevarse bien
@@ -415,6 +460,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 46. get around
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** move from place to place
 -   **Significado:** desplazarse / circular
@@ -424,6 +470,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 47. get away
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** escape; go somewhere for a break
 -   **Significado:** escaparse / irse de vacaciones
@@ -433,6 +480,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 48. get back
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** return; recover something
 -   **Significado:** regresar / recuperar
@@ -442,6 +490,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 49. get by
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** manage with what is available
 -   **Significado:** arreglárselas
@@ -451,6 +500,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 50. get in
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** enter; arrive
 -   **Significado:** entrar / llegar
@@ -460,6 +510,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 51. get off
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** leave a bus, train, or similar vehicle
 -   **Significado:** bajarse
@@ -469,6 +520,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 52. get on
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** board a vehicle; have a good relationship
 -   **Significado:** subirse / llevarse bien
@@ -478,6 +530,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 53. get out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** leave a place
 -   **Significado:** salir
@@ -487,6 +540,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 54. get over
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** recover from something; overcome something
 -   **Significado:** superar / recuperarse
@@ -496,6 +550,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 55. get rid of
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** remove or throw away something unwanted
 -   **Significado:** deshacerse de
@@ -505,6 +560,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 56. get together
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** meet socially
 -   **Significado:** reunirse
@@ -514,6 +570,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 57. get up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** rise from bed
 -   **Significado:** levantarse
@@ -523,6 +580,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 58. give away
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** give something for free; reveal a secret
 -   **Significado:** regalar / revelar
@@ -532,6 +590,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 59. give back
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** return something to its owner
 -   **Significado:** devolver
@@ -541,6 +600,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 60. give in
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** finally agree after resisting
 -   **Significado:** ceder
@@ -550,6 +610,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 61. give up
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** stop trying; stop doing something
 -   **Significado:** rendirse / dejar
@@ -559,6 +620,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 62. go ahead
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** proceed; start doing something
 -   **Significado:** seguir adelante / proceder
@@ -568,6 +630,7 @@ después revelá la respuesta.
 -   **Context source:** Huckleberry Finn — Mark Twain
 
 ### 63. go away
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** leave
 -   **Significado:** irse
@@ -577,6 +640,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 64. go back
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** return to a place
 -   **Significado:** volver
@@ -586,6 +650,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 65. go off
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** ring; explode; become bad
 -   **Significado:** sonar / explotar / echarse a perder
@@ -595,6 +660,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 66. go on
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** continue; happen
 -   **Significado:** continuar / suceder
@@ -604,6 +670,7 @@ después revelá la respuesta.
 -   **Context source:** Alice's Adventures in Wonderland — Lewis Carroll
 
 ### 67. go out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** leave home for entertainment
 -   **Significado:** salir
@@ -613,6 +680,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 68. go over
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** review carefully
 -   **Significado:** repasar
@@ -622,6 +690,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 69. grow up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** become an adult
 -   **Significado:** crecer
@@ -631,6 +700,7 @@ después revelá la respuesta.
 -   **Context source:** Alice's Adventures in Wonderland — Lewis Carroll
 
 ### 70. hand in
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** give work or documents to someone in authority
 -   **Significado:** entregar
@@ -640,6 +710,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 71. hand out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** distribute something
 -   **Significado:** repartir
@@ -649,6 +720,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 72. hang on
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** wait for a short time
 -   **Significado:** esperar
@@ -658,6 +730,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 73. hang out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** spend time relaxing with friends
 -   **Significado:** pasar el rato
@@ -667,6 +740,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 74. hang up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** end a phone call
 -   **Significado:** colgar el teléfono
@@ -676,6 +750,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 75. hold on
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** wait; hold tightly
 -   **Significado:** esperar / sujetar
@@ -685,6 +760,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 76. hurry up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** do something more quickly
 -   **Significado:** darse prisa
@@ -694,6 +770,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 77. keep away
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** stay at a distance
 -   **Significado:** mantenerse alejado
@@ -703,6 +780,7 @@ después revelá la respuesta.
 -   **Context source:** The Wonderful Wizard of Oz — L. Frank Baum
 
 ### 78. keep on
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** continue doing something
 -   **Significado:** seguir haciendo
@@ -712,6 +790,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 79. keep up
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** continue at the same speed or level
 -   **Significado:** mantener el ritmo
@@ -721,6 +800,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 80. keep up with
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** stay informed about; move at the same speed as
 -   **Significado:** mantenerse al día con / seguir el ritmo de
@@ -730,6 +810,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 81. kick off
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** begin
 -   **Significado:** comenzar
@@ -739,6 +820,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 82. leave out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** omit something
 -   **Significado:** omitir / dejar afuera
@@ -748,6 +830,7 @@ después revelá la respuesta.
 -   **Context source:** Little Women — Louisa May Alcott
 
 ### 83. let down
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** disappoint someone
 -   **Significado:** decepcionar
@@ -757,6 +840,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 84. let in
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** allow someone to enter
 -   **Significado:** dejar entrar
@@ -766,6 +850,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 85. log in
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** sign into a computer system
 -   **Significado:** iniciar sesión
@@ -775,6 +860,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 86. log out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** sign out of a computer system
 -   **Significado:** cerrar sesión
@@ -784,6 +870,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 87. look after
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** take care of someone or something
 -   **Significado:** cuidar
@@ -793,6 +880,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 88. look around
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** explore or look at a place
 -   **Significado:** mirar alrededor / recorrer
@@ -802,6 +890,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 89. look at
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** direct your eyes toward; examine
 -   **Significado:** mirar / examinar
@@ -811,6 +900,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 90. look for
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** try to find something
 -   **Significado:** buscar
@@ -820,6 +910,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 91. look forward to
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** feel excited about something in the future
 -   **Significado:** esperar con ganas
@@ -829,6 +920,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 92. look into
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** investigate
 -   **Significado:** investigar
@@ -838,6 +930,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 93. look out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** be careful
 -   **Significado:** tener cuidado
@@ -847,6 +940,7 @@ después revelá la respuesta.
 -   **Context source:** Alice's Adventures in Wonderland — Lewis Carroll
 
 ### 94. look up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** search for information
 -   **Significado:** buscar información
@@ -856,6 +950,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 95. look up to
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** admire and respect someone
 -   **Significado:** admirar
@@ -865,6 +960,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 96. make up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** invent something; become friends again
 -   **Significado:** inventar / reconciliarse
@@ -874,6 +970,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 97. move in
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** start living in a new home
 -   **Significado:** mudarse a un lugar
@@ -883,6 +980,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 98. move out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** stop living in a home
 -   **Significado:** mudarse de un lugar
@@ -892,6 +990,7 @@ después revelá la respuesta.
 -   **Context source:** The Adventures of Sherlock Holmes — Arthur Conan Doyle
 
 ### 99. pass away
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** die
 -   **Significado:** fallecer
@@ -901,6 +1000,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 100. pass out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** faint; distribute things
 -   **Significado:** desmayarse / repartir
@@ -910,6 +1010,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 101. pay back
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** return money owed
 -   **Significado:** devolver dinero
@@ -919,6 +1020,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 102. pick out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** choose
 -   **Significado:** elegir
@@ -928,6 +1030,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 103. pick up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** collect someone or something; learn informally
 -   **Significado:** recoger / aprender
@@ -937,6 +1040,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 104. point out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** draw attention to something
 -   **Significado:** señalar
@@ -946,6 +1050,7 @@ después revelá la respuesta.
 -   **Context source:** Peter Pan — J. M. Barrie
 
 ### 105. put away
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** put something in its proper place
 -   **Significado:** guardar
@@ -955,6 +1060,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 106. put back
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** return something to its original place
 -   **Significado:** volver a poner
@@ -964,6 +1070,7 @@ después revelá la respuesta.
 -   **Context source:** Peter Pan — J. M. Barrie
 
 ### 107. put down
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** put something on a surface; write down; criticize
 -   **Significado:** dejar / anotar / menospreciar
@@ -973,6 +1080,7 @@ después revelá la respuesta.
 -   **Context source:** The Wonderful Wizard of Oz — L. Frank Baum
 
 ### 108. put off
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** postpone
 -   **Significado:** posponer
@@ -982,6 +1090,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 109. put on
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** dress in something; switch on
 -   **Significado:** ponerse ropa / encender
@@ -991,6 +1100,7 @@ después revelá la respuesta.
 -   **Context source:** Alice's Adventures in Wonderland — Lewis Carroll
 
 ### 110. put out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** extinguish a fire
 -   **Significado:** apagar
@@ -1000,6 +1110,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 111. put together
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** assemble something
 -   **Significado:** armar / reunir
@@ -1009,6 +1120,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 112. put up with
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** tolerate something unpleasant
 -   **Significado:** tolerar
@@ -1018,6 +1130,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 113. run into
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** meet someone by chance
 -   **Significado:** encontrarse con alguien por casualidad
@@ -1027,6 +1140,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 114. run out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** be used up
 -   **Significado:** acabarse
@@ -1036,6 +1150,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 115. run out of
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** have no more of something
 -   **Significado:** quedarse sin
@@ -1045,6 +1160,7 @@ después revelá la respuesta.
 -   **Context source:** Tom Sawyer — Mark Twain
 
 ### 116. set off
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** begin a journey; activate something
 -   **Significado:** partir / activar
@@ -1054,6 +1170,7 @@ después revelá la respuesta.
 -   **Context source:** Peter Pan — J. M. Barrie
 
 ### 117. set up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** arrange or install something
 -   **Significado:** configurar / establecer
@@ -1063,6 +1180,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 118. show off
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** try to impress people by showing abilities or possessions
 -   **Significado:** presumir
@@ -1072,6 +1190,7 @@ después revelá la respuesta.
 -   **Context source:** Peter Pan — J. M. Barrie
 
 ### 119. show up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** arrive or appear
 -   **Significado:** aparecer / presentarse
@@ -1081,6 +1200,7 @@ después revelá la respuesta.
 -   **Context source:** The Jungle Book — Rudyard Kipling
 
 ### 120. shut down
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** turn off; close a business or system
 -   **Significado:** apagar / cerrar
@@ -1090,6 +1210,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 121. sit down
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** move into a sitting position
 -   **Significado:** sentarse
@@ -1099,6 +1220,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 122. slow down
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** move or do something less quickly
 -   **Significado:** reducir la velocidad
@@ -1108,6 +1230,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 123. sort out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** solve or organize something
 -   **Significado:** resolver / organizar
@@ -1117,6 +1240,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 124. speak up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** speak more loudly
 -   **Significado:** hablar más fuerte
@@ -1126,6 +1250,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 125. stand up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** rise to a standing position
 -   **Significado:** ponerse de pie
@@ -1135,6 +1260,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 126. stay up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** remain awake instead of going to bed
 -   **Significado:** quedarse despierto
@@ -1144,6 +1270,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 127. take after
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** resemble an older family member
 -   **Significado:** parecerse a
@@ -1153,6 +1280,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 128. take away
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** remove or carry something away
 -   **Significado:** quitar / llevarse
@@ -1162,6 +1290,7 @@ después revelá la respuesta.
 -   **Context source:** The Jungle Book — Rudyard Kipling
 
 ### 129. take back
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** return something; withdraw what you said
 -   **Significado:** devolver / retractarse
@@ -1171,6 +1300,7 @@ después revelá la respuesta.
 -   **Context source:** Little Women — Louisa May Alcott
 
 ### 130. take off
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** leave the ground; remove clothing
 -   **Significado:** despegar / quitarse ropa
@@ -1180,6 +1310,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 131. take on
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** accept work or responsibility
 -   **Significado:** asumir / aceptar trabajo
@@ -1189,6 +1320,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 132. take out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** remove something; take someone somewhere socially
 -   **Significado:** sacar / llevar a salir
@@ -1198,6 +1330,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 133. take over
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** take control or responsibility
 -   **Significado:** hacerse cargo / tomar control
@@ -1207,6 +1340,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 134. take up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** start a hobby or activity; occupy space or time
 -   **Significado:** empezar una actividad / ocupar
@@ -1216,6 +1350,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 135. talk over
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** discuss something carefully
 -   **Significado:** hablar y analizar
@@ -1225,6 +1360,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 136. think over
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** consider carefully
 -   **Significado:** pensar detenidamente
@@ -1234,6 +1370,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 137. throw away
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** get rid of something by putting it in the rubbish
 -   **Significado:** tirar
@@ -1243,6 +1380,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 138. try on
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** put on clothing to see whether it fits
 -   **Significado:** probarse ropa
@@ -1252,6 +1390,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 139. turn around
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** turn to face the opposite direction; improve a situation
 -   **Significado:** darse vuelta / cambiar una situación
@@ -1261,6 +1400,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 140. turn down
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** refuse; reduce the volume
 -   **Significado:** rechazar / bajar volumen
@@ -1270,6 +1410,7 @@ después revelá la respuesta.
 -   **Context source:** A Christmas Carol — Charles Dickens
 
 ### 141. turn off
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** switch off
 -   **Significado:** apagar
@@ -1279,6 +1420,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 142. turn on
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** switch on
 -   **Significado:** encender
@@ -1288,6 +1430,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 143. turn up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** arrive unexpectedly; increase the volume
 -   **Significado:** aparecer / subir volumen
@@ -1297,6 +1440,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 144. wake up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** stop sleeping
 -   **Significado:** despertarse
@@ -1306,6 +1450,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 145. warm up
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** make or become warmer; prepare your body for exercise
 -   **Significado:** calentar / entrar en calor
@@ -1315,6 +1460,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 146. watch out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** be careful
 -   **Significado:** tener cuidado
@@ -1324,6 +1470,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 147. work out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** exercise; solve something; have a good result
 -   **Significado:** hacer ejercicio / resolver / resultar
@@ -1333,6 +1480,7 @@ después revelá la respuesta.
 -   **Context source:** Little Women — Louisa May Alcott
 
 ### 148. write down
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** record something in writing
 -   **Significado:** anotar
@@ -1342,6 +1490,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 149. break into
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** enter a place by force
 -   **Significado:** entrar por la fuerza
@@ -1351,6 +1500,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 150. break out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** start suddenly
 -   **Significado:** estallar / comenzar repentinamente
@@ -1360,6 +1510,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 151. bring about
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** cause something to happen
 -   **Significado:** provocar / causar
@@ -1369,6 +1520,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 152. bring in
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** introduce; earn money
 -   **Significado:** introducir / generar ingresos
@@ -1378,6 +1530,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 153. brush up on
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** improve a skill or refresh knowledge
 -   **Significado:** refrescar conocimientos
@@ -1387,6 +1540,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 154. build up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** increase or develop gradually
 -   **Significado:** acumular / desarrollar
@@ -1396,6 +1550,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 155. call for
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** require or demand
 -   **Significado:** requerir / pedir
@@ -1405,6 +1560,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 156. call on
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** ask someone to speak or participate
 -   **Significado:** visitar / pedir que alguien participe
@@ -1414,6 +1570,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 157. carry out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** do or complete a task
 -   **Significado:** llevar a cabo
@@ -1423,6 +1580,7 @@ después revelá la respuesta.
 -   **Context source:** The Adventures of Sherlock Holmes — Arthur Conan Doyle
 
 ### 158. catch on
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** understand; become popular
 -   **Significado:** entender / ponerse de moda
@@ -1432,6 +1590,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 159. check up on
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** make sure someone or something is all right
 -   **Significado:** comprobar cómo está algo o alguien
@@ -1441,6 +1600,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 160. clear up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** make something clear; tidy; improve weather
 -   **Significado:** aclarar / ordenar / mejorar el tiempo
@@ -1450,6 +1610,7 @@ después revelá la respuesta.
 -   **Context source:** The Adventures of Sherlock Holmes — Arthur Conan Doyle
 
 ### 161. cut out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** remove; stop consuming something
 -   **Significado:** eliminar / dejar de consumir
@@ -1459,6 +1620,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 162. do without
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** manage without something
 -   **Significado:** arreglárselas sin
@@ -1468,6 +1630,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 163. drop out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** leave a course or school before finishing
 -   **Significado:** abandonar un curso
@@ -1477,6 +1640,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 164. face up to
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** confront a difficult situation
 -   **Significado:** afrontar
@@ -1486,6 +1650,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 165. get across
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** communicate an idea successfully
 -   **Significado:** comunicar una idea con claridad
@@ -1495,6 +1660,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 166. get ahead
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** make progress or succeed
 -   **Significado:** progresar
@@ -1504,6 +1670,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 167. get around to
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** finally find time to do something
 -   **Significado:** finalmente encontrar tiempo para
@@ -1513,6 +1680,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 168. get through
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** finish; survive; communicate by phone
 -   **Significado:** terminar / superar / comunicarse
@@ -1522,6 +1690,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 169. give out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** distribute; be used up
 -   **Significado:** repartir / agotarse
@@ -1531,6 +1700,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 170. go through
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** experience; examine carefully
 -   **Significado:** atravesar / revisar
@@ -1540,6 +1710,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 171. hold back
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** restrain or stop something
 -   **Significado:** contener / frenar
@@ -1549,6 +1720,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 172. keep off
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** stay off; avoid
 -   **Significado:** mantenerse fuera / evitar
@@ -1558,6 +1730,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 173. leave behind
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** forget something in a place
 -   **Significado:** dejar atrás
@@ -1567,6 +1740,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 174. live up to
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** meet expectations
 -   **Significado:** estar a la altura de
@@ -1576,6 +1750,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 175. make out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** see or understand with difficulty
 -   **Significado:** distinguir / entender
@@ -1585,6 +1760,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 176. make up for
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** compensate for something
 -   **Significado:** compensar
@@ -1594,6 +1770,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 177. put aside
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** save or reserve for later
 -   **Significado:** reservar / dejar de lado
@@ -1603,6 +1780,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 178. put forward
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** suggest an idea or plan
 -   **Significado:** proponer
@@ -1612,6 +1790,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 179. rule out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** decide something is impossible or not suitable
 -   **Significado:** descartar
@@ -1621,6 +1800,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 180. settle down
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** begin living a stable life; become calm
 -   **Significado:** establecerse / calmarse
@@ -1630,6 +1810,7 @@ después revelá la respuesta.
 -   **Context source:** Alice's Adventures in Wonderland — Lewis Carroll
 
 ### 181. stand for
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** represent or mean
 -   **Significado:** representar / significar
@@ -1639,6 +1820,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 182. stick to
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** continue following or using something
 -   **Significado:** mantenerse fiel a / cumplir
@@ -1648,6 +1830,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 183. take in
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** understand or absorb information
 -   **Significado:** comprender / absorber
@@ -1657,6 +1840,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 184. turn into
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** become something different
 -   **Significado:** convertirse en
@@ -1666,6 +1850,7 @@ después revelá la respuesta.
 -   **Context source:** Alice's Adventures in Wonderland — Lewis Carroll
 
 ### 185. wear out
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** become damaged through use; make very tired
 -   **Significado:** desgastarse / agotar
@@ -1675,6 +1860,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 186. work on
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** spend time improving or developing something
 -   **Significado:** trabajar en / mejorar
@@ -1684,6 +1870,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 187. back down
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** stop defending a position in an argument
 -   **Significado:** ceder / retirar una postura
@@ -1693,6 +1880,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 188. blow up
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** explode; inflate
 -   **Significado:** explotar / inflar
@@ -1702,6 +1890,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 189. break through
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** make an important advance; pass through a barrier
 -   **Significado:** lograr un avance / atravesar
@@ -1711,6 +1900,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 190. bring out
+- **Tags:** Transitive, Separable
 
 -   **Meaning (EN):** make a quality more noticeable; release a product
 -   **Significado:** resaltar / lanzar
@@ -1720,6 +1910,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 191. come along
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** accompany someone; make progress
 -   **Significado:** acompañar / progresar
@@ -1729,6 +1920,7 @@ después revelá la respuesta.
 -   **Context source:** Anne of Green Gables — Lucy Maud Montgomery
 
 ### 192. come down with
+- **Tags:** Intransitive
 
 -   **Meaning (EN):** become ill with something
 -   **Significado:** enfermarse de
@@ -1738,6 +1930,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 193. cut back on
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** reduce the amount of something
 -   **Significado:** reducir
@@ -1747,6 +1940,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 194. get away with
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** do something wrong without being punished
 -   **Significado:** salirse con la suya
@@ -1756,6 +1950,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 195. get down to
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** start doing something seriously
 -   **Significado:** ponerse seriamente a hacer algo
@@ -1765,6 +1960,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 196. go ahead with
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** continue with a plan
 -   **Significado:** seguir adelante con
@@ -1774,6 +1970,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 197. go without
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** manage without something
 -   **Significado:** pasar sin algo
@@ -1783,6 +1980,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 198. hold on to
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** keep or hold something tightly
 -   **Significado:** conservar / aferrarse a
@@ -1792,6 +1990,7 @@ después revelá la respuesta.
 -   **Context source:** Treasure Island — Robert Louis Stevenson
 
 ### 199. keep track of
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** keep a record of something
 -   **Significado:** llevar un registro de
@@ -1801,6 +2000,7 @@ después revelá la respuesta.
 -   **Context source:** Everyday conversation
 
 ### 200. look back on
+- **Tags:** Transitive, Inseparable
 
 -   **Meaning (EN):** think about the past
 -   **Significado:** recordar el pasado

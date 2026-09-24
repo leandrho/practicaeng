@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CardSchema } from "./card";
+import { CardSchema, CardTagSchema } from "./card";
 
 const validCard = {
   expression: "give up",
@@ -24,6 +24,7 @@ describe("CardSchema", () => {
     const parsed = CardSchema.parse(validCard);
     expect(parsed).toMatchObject(validCard);
     expect(parsed.level).toBe("B1-B2");
+    expect(parsed.tags).toEqual([]);
   });
 
   it("level ausente → default B1-B2", () => {
@@ -51,16 +52,61 @@ describe("CardSchema", () => {
     const parsed = CardSchema.parse({
       ...validCard,
       type: "connector",
-      register: "neutral",
-      channel: "both",
+      tags: ["Neutral", "Spoken & written"],
     });
     expect(parsed.type).toBe("connector");
-    expect(parsed.register).toBe("neutral");
-    expect(parsed.channel).toBe("both");
+    expect(parsed.tags).toEqual(["Neutral", "Spoken & written"]);
   });
 
-  it("rechaza conectores sin etiquetas de registro o canal", () => {
+  it("rechaza conectores sin exactamente un tag de registro y uno de uso", () => {
     expect(() => CardSchema.parse({ ...validCard, type: "connector" })).toThrow();
+    expect(() =>
+      CardSchema.parse({
+        ...validCard,
+        type: "connector",
+        tags: ["Neutral"],
+      }),
+    ).toThrow();
+    expect(() =>
+      CardSchema.parse({
+        ...validCard,
+        type: "connector",
+        tags: ["Neutral", "Formal", "Written"],
+      }),
+    ).toThrow();
+  });
+
+  it("valida el allowlist de tags según el tipo", () => {
+    expect(() =>
+      CardSchema.parse({ ...validCard, type: "phrasal-verb", tags: ["Formal"] }),
+    ).toThrow();
+    expect(() =>
+      CardSchema.parse({ ...validCard, type: "collocation", tags: ["Transitive"] }),
+    ).toThrow();
+    expect(() => CardTagSchema.parse("Academic")).toThrow();
+  });
+
+  it("acepta patrones gramaticales válidos por sección", () => {
+    expect(
+      CardSchema.parse({ ...validCard, type: "phrasal-verb", tags: ["Transitive", "Separable"] })
+        .tags,
+    ).toEqual(["Transitive", "Separable"]);
+    expect(
+      CardSchema.parse({ ...validCard, type: "preposition", tags: ["+ noun phrase", "+ -ing"] })
+        .tags,
+    ).toEqual(["+ noun phrase", "+ -ing"]);
+  });
+
+  it("rechaza combinaciones contradictorias de tags phrasal", () => {
+    for (const tags of [
+      ["Transitive", "Intransitive"],
+      ["Intransitive", "Separable"],
+      ["Transitive", "Separable", "Inseparable"],
+    ]) {
+      expect(() =>
+        CardSchema.parse({ ...validCard, type: "phrasal-verb", tags }),
+      ).toThrow();
+    }
   });
 
   it("meaningEn y translationEs son obligatorios", () => {

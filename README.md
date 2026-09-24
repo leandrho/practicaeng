@@ -61,20 +61,40 @@ El contenido se edita directamente en los archivos Markdown de `data/`. No hace 
 - **Ejemplo:** She looks after her younger brother.
 ```
 
+### Tags de tarjetas
+
+Los tags son opcionales y se escriben en inglés. En las tarjetas con bullets, agregá un campo final separado por `---`; en Phrasal Verbs, agregá un campo `Tags` dentro de la tarjeta:
+
+```md
+- **interested in** --- wanting to know more about --- interesado en --- *I'm interested in technology.* --- *Me interesa la tecnología.* --- *I'm interested in it.* --- *Everyday conversation* --- *Tags: + noun phrase, + -ing*
+
+### 1. ask out
+- **Tags:** Transitive, Separable
+```
+
+Los valores permitidos dependen de la sección:
+
+- **Connectors:** un tag de registro (`Formal`, `Neutral`, `Informal`) y uno de uso (`Spoken`, `Written`, `Spoken & written`).
+- **Phrasal Verbs:** `Transitive`, `Intransitive`, `Separable`, `Inseparable`. No combines `Transitive` con `Intransitive`; `Separable` e `Inseparable` solo se usan con sentidos `Transitive` y no se combinan entre sí.
+- **Prepositions:** `+ noun phrase`, `+ -ing`, `+ clause`. Podés incluir más de una forma cuando el patrón lo admita. Los encabezados `Adjective + preposition`, `Verb + preposition` y `Noun + preposition` siguen siendo categorías y no se repiten como tags.
+- **Otras secciones:** por ahora no aceptan tags.
+
+Omití el campo cuando no agregue información útil o no puedas determinar el tag con confianza. Los chips muestran el valor en inglés, sin prefijo, y aparecen solo después de **Reveal**.
+
 ### Connectors
 
-`connectors-b1-b2.md` usa el mismo formato de bullet que `idioms-b1-b2.md`: expresión en `**negrita**`, meaning en inglés, significado en español, ejemplo en inglés en `*cursiva*`, traducción al español en `*cursiva*`, contexto en inglés en `*cursiva*`, fuente del contexto opcional (si se omite, se usa `Everyday conversation`) y un campo final obligatorio con etiquetas de registro y canal:
+`connectors-b1-b2.md` usa el mismo formato de bullet que `idioms-b1-b2.md`: expresión en `**negrita**`, meaning en inglés, significado en español, ejemplo en inglés en `*cursiva*`, traducción al español en `*cursiva*`, contexto en inglés en `*cursiva*`, fuente del contexto opcional (si se omite, se usa `Everyday conversation`) y un campo final obligatorio `Tags`:
 
 ```md
 ## Contrast and concession
 
-- **however** --- used to introduce an opposite idea --- sin embargo, pero --- *The food was good; however, the service was slow.* --- *La comida estaba bien; sin embargo, el servicio fue lento.* --- *The course is short. However, it is affordable, so I will sign up tomorrow morning.* --- *Everyday conversation* --- *Register: neutral; Channel: both*
+- **however** --- used to introduce an opposite idea --- sin embargo, pero --- *The food was good; however, the service was slow.* --- *La comida estaba bien; sin embargo, el servicio fue lento.* --- *The course is short. However, it is affordable, so I will sign up tomorrow morning.* --- *Everyday conversation* --- *Tags: Neutral, Spoken & written*
 ```
 
-- En el campo final, `Register` acepta `formal`, `neutral` o `informal`; `Channel` acepta `spoken`, `written` o `both`. En la tarjeta las etiquetas siempre aparecen en inglés y sin prefijo: `Formal`, `Neutral` o `Informal`, y `Spoken`, `Written` o `Spoken & written`. Son orientaciones de uso, no restricciones gramaticales.
-- Las etiquetas aparecen únicamente al pulsar **Reveal**, para no adelantar información durante el recuerdo activo.
+- El campo final lleva exactamente un tag de registro y uno de uso, tomados de los allowlists de Connectors indicados arriba. Son orientaciones de uso, no restricciones gramaticales.
+- Los tags aparecen únicamente al pulsar **Reveal**, para no adelantar información durante el recuerdo activo.
 - Los encabezados `##` son los nueve grupos de función (Adding information, Contrast and concession, Cause and reason, Result and consequence, Purpose, Time and sequence, Examples and clarification, Opinion and stance, Summary and conclusion) y se usan como categoría en los filtros.
-- El archivo tiene al menos 70 conectores, con cinco o más por grupo.
+- El archivo tiene 70 conectores, con cinco o más por grupo.
 - Un bullet incompleto, sin etiquetas válidas o con `---` dentro del contexto hace fallar el build con archivo y línea.
 - El contexto sigue la convención de SPEC 21: cita real de uno de los 14 clásicos en dominio público donde existe (fuente `Título — Autor`, registrada en `data/context-provenance.json`), o diálogo situado con fuente `Everyday conversation` cuando el conector no aparece en el corpus.
 - Los conectores **no** forman parte de Mixed Practice.
@@ -211,6 +231,7 @@ Cada tarjeta podrá contener:
 - Ejemplo.
 - Traducción.
 - Categoría.
+- Tags gramaticales opcionales.
 
 Ejemplo:
 
@@ -259,6 +280,7 @@ good at
 responsible for
 
 Estas estructuras suelen ser difíciles de deducir mediante traducción directa, por lo que la práctica repetida resulta especialmente útil.
+Las tarjetas pueden llevar tags opcionales de forma de complemento (`+ noun phrase`, `+ -ing` y `+ clause`); la categoría sigue siendo el encabezado del grupo.
 
 ## Idioms & Expressions
 

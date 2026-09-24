@@ -15,6 +15,7 @@ const cards: Card[] = [
     sourceFile: "fixture.md",
     contextEn: '"I must make a decision before nightfall," she said, looking at the two roads ahead.',
     contextSource: "Everyday conversation",
+    tags: [],
   },
 ];
 

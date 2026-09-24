@@ -1608,13 +1608,13 @@ a {
   color: var(--muted);
 }
 
-.connector-usage-tags {
+.flashcard__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.connector-usage-tag {
+.flashcard__tag {
   display: inline-flex;
   align-items: center;
   max-width: 100%;

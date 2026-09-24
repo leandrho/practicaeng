@@ -19,18 +19,6 @@ type FlashcardClientProps = {
   showTypeBadge?: boolean;
 };
 
-const CONNECTOR_REGISTER_LABELS = {
-  formal: "Formal",
-  neutral: "Neutral",
-  informal: "Informal",
-} as const;
-
-const CONNECTOR_CHANNEL_LABELS = {
-  spoken: "Spoken",
-  written: "Written",
-  both: "Spoken & written",
-} as const;
-
 type FlashcardFrontProps = {
   card: Card;
   onReveal: () => void;
@@ -86,18 +74,13 @@ function FlashcardAnswer({ card, showEs, onToggleEs }: FlashcardAnswerProps) {
                 {showEs ? card.translationEs : card.exampleEn}
               </p>
             </div>
-            {card.type === "connector" && card.register !== undefined && card.channel !== undefined ? (
-              <div
-                className="connector-usage-tags"
-                role="group"
-                aria-label="Connector tags"
-              >
-                <span className="connector-usage-tag">
-                  {CONNECTOR_REGISTER_LABELS[card.register]}
-                </span>
-                <span className="connector-usage-tag">
-                  {CONNECTOR_CHANNEL_LABELS[card.channel]}
-                </span>
+            {card.tags.length > 0 ? (
+              <div className="flashcard__tags" role="group" aria-label="Card tags">
+                {card.tags.map((tag) => (
+                  <span className="flashcard__tag" key={tag}>
+                    {tag}
+                  </span>
+                ))}
               </div>
             ) : null}
           </div>
@@ -173,6 +156,7 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent, showT
   }
 
   const hintId = resolveHint(card.expression, card.type, card.category);
+  const hasVisualHint = card.type !== "connector";
 
   return (
     <section
@@ -197,9 +181,10 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent, showT
           <div className="flashcard__hint-actions">
             <Button
               className="btn btn--ghost btn--hint"
+              disabled={!hasVisualHint}
               aria-pressed={showHint}
               aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
-              title="Ver pista"
+              title={hasVisualHint ? "Ver pista" : "No hay pista visual para conectores"}
               onClick={() => setShowHint((current) => !current)}
             >
               <HintIcon />

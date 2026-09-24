@@ -1,7 +1,7 @@
 import {
   CardSchema,
-  ConnectorChannelSchema,
-  ConnectorRegisterSchema,
+  CardTagSchema,
+  type CardTag,
   type Card,
   type CardType,
 } from "../domain/card";
@@ -69,8 +69,7 @@ export function parseBulletCards(
           translationEs: parsed.translationEs,
           contextEn: parsed.contextEn,
           contextSource: parsed.contextSource,
-          register: parsed.register,
-          channel: parsed.channel,
+          tags: parsed.tags,
           category,
           sourceFile: file,
         },
@@ -84,11 +83,9 @@ export function parseBulletCards(
 }
 
 const BULLET_WITH_CONTEXT =
-  /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s*(?:---\s+\*(.+?)\*\s*)?$/;
+  /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s*(?:---\s+\*(?!Tags:\s*)(.+?)\*\s*)?(?:---\s+\*Tags:\s*(.*?)\*\s*)?$/;
 const BULLET_WITHOUT_CONTEXT =
   /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s*$/;
-const BULLET_WITH_CONNECTOR_USAGE =
-  /^-\s+\*\*(.+?)\*\*\s+---\s+(.+?)\s+---\s+(.+?)\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s+---\s+\*(.+?)\*\s*(?:---\s+\*(?!Register:)(.+?)\*\s*)?---\s+\*Register:\s*(formal|neutral|informal);\s*Channel:\s*(spoken|written|both)\*\s*$/;
 
 function parseBulletLine(
   bullet: string,
@@ -96,36 +93,6 @@ function parseBulletLine(
   line: number,
   type?: BulletCardType,
 ) {
-  if (type === "connector") {
-    const usageMatch = BULLET_WITH_CONNECTOR_USAGE.exec(bullet);
-    if (usageMatch !== null) {
-      const contextEn = usageMatch[6]?.trim();
-      const contextSource = (usageMatch[7] ?? "Everyday conversation").trim();
-      if (contextEn === undefined || contextEn.length === 0) {
-        throwParseError(file, line, "tarjeta sin Context (EN)");
-      }
-      if (contextEn.includes("---") || contextSource.includes("---")) {
-        throwParseError(file, line, "contexto no puede contener ---");
-      }
-
-      return {
-        expression: usageMatch[1]!.trim(),
-        meaningEn: usageMatch[2]!.trim(),
-        meaningEs: usageMatch[3]!.trim(),
-        exampleEn: usageMatch[4]!.trim(),
-        translationEs: usageMatch[5]!.trim(),
-        contextEn,
-        contextSource,
-        register: ConnectorRegisterSchema.parse(usageMatch[8]),
-        channel: ConnectorChannelSchema.parse(usageMatch[9]),
-      };
-    }
-
-    if (/---\s+\*Register:/i.test(bullet)) {
-      throwParseError(file, line, "etiquetas Register/Channel inválidas");
-    }
-  }
-
   const match = BULLET_WITH_CONTEXT.exec(bullet);
   if (
     match?.[1] === undefined ||
@@ -147,6 +114,7 @@ function parseBulletLine(
 
   const contextEn = match[6].trim();
   const contextSource = (match[7] ?? "Everyday conversation").trim();
+  const tags = match[8] === undefined ? [] : parseTags(match[8], file, line);
   if (contextEn.includes("---") || contextSource.includes("---")) {
     throwParseError(file, line, "contexto no puede contener ---");
   }
@@ -155,7 +123,9 @@ function parseBulletLine(
   }
 
   if (type === "connector") {
-    throwParseError(file, line, "conector sin etiquetas Register y Channel");
+    if (tags.length === 0) {
+      throwParseError(file, line, "conector sin Tags de registro y uso");
+    }
   }
 
   return {
@@ -166,7 +136,23 @@ function parseBulletLine(
     translationEs: match[5].trim(),
     contextEn,
     contextSource,
+    tags,
   };
+}
+
+function parseTags(rawTags: string, file: string, line: number): CardTag[] {
+  const values = rawTags.split(",").map((tag) => tag.trim());
+  if (values.length === 0 || values.some((tag) => tag.length === 0)) {
+    throwParseError(file, line, "lista Tags vacía o inválida");
+  }
+
+  return values.map((tag) => {
+    const parsed = CardTagSchema.safeParse(tag);
+    if (!parsed.success) {
+      throwParseError(file, line, `tag desconocido: ${tag}`);
+    }
+    return parsed.data;
+  });
 }
 
 export function parseIrregularVerbCards(markdown: string, file: string): Card[] {
@@ -238,6 +224,7 @@ export function parseIrregularVerbCards(markdown: string, file: string): Card[] 
           sourceFile: file,
           pastSimple,
           pastParticiple,
+          tags: parsed.tags,
         },
         file,
         startLine,
@@ -261,6 +248,7 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
         translationEs?: string;
         contextEn?: string;
         contextSource?: string;
+        tags?: CardTag[];
       }
     | undefined;
 
@@ -299,6 +287,7 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
           translationEs: card.translationEs,
           contextEn: card.contextEn,
           contextSource: card.contextSource ?? "Everyday conversation",
+          tags: card.tags ?? [],
           category: "general",
           sourceFile: file,
         },
@@ -366,6 +355,15 @@ export function parsePhrasalVerbCards(markdown: string, file: string): Card[] {
     const contextSource = /^\s*-\s+\*\*Context source:\*\*\s*(.+?)\s*$/.exec(line);
     if (contextSource?.[1] !== undefined) {
       card.contextSource = contextSource[1];
+      continue;
+    }
+
+    const tags = /^\s*-\s+\*\*Tags:\*\*\s*(.*?)\s*$/.exec(line);
+    if (tags?.[1] !== undefined) {
+      if (card.tags !== undefined) {
+        throwParseError(file, index + 1, "campo Tags duplicado");
+      }
+      card.tags = parseTags(tags[1], file, index + 1);
     }
   }
 

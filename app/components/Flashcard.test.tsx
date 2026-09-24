@@ -16,6 +16,7 @@ const card: Card = {
   sourceFile: "data/phrasal-verbs-b1-b2-200.md",
   contextEn: '"Are you ready?" "Give me a minute, I don\'t want to give up now."',
   contextSource: "Everyday conversation",
+  tags: [],
 };
 
 const secondCard: Card = {
@@ -47,6 +48,15 @@ const irregularCard: Card = {
   pastParticiple: "gone",
   contextEn: '"We must go now," she said when the lights went out. There was no time to wait.',
   contextSource: "Everyday conversation",
+  tags: [],
+};
+
+const connectorCard: Card = {
+  ...card,
+  expression: "moreover",
+  type: "connector",
+  category: "Adding information",
+  tags: ["Neutral", "Spoken & written"],
 };
 
 afterEach(cleanup);
@@ -118,6 +128,22 @@ describe("Flashcard", () => {
 
     expect(screen.getByRole("img", { name: "Pista visual animada" })).not.toBeNull();
     expect(screen.queryByAltText("Pista visual")).toBeNull();
+  });
+
+  it("keeps the visual hint button disabled for connectors", () => {
+    render(<Flashcard cards={[connectorCard]} clearFiltersPath="/connectors" />);
+
+    const hintButton = screen.getByRole("button", { name: "Show visual hint" });
+    expect((hintButton as HTMLButtonElement).disabled).toBe(true);
+    expect(hintButton.getAttribute("title")).toBe("No hay pista visual para conectores");
+
+    fireEvent.click(hintButton);
+
+    expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
+    expect(screen.queryByAltText("Pista visual")).toBeNull();
+    expect((screen.getByRole("button", { name: "Show context hint" }) as HTMLButtonElement).disabled).toBe(
+      false,
+    );
   });
 
   it("switches the complete explanation between English and Spanish", () => {
@@ -285,8 +311,7 @@ describe("Flashcard", () => {
       expression: "moreover",
       type: "connector",
       category: "Adding information",
-      register: "neutral",
-      channel: "both",
+      tags: ["Neutral", "Spoken & written"],
     };
     render(<Flashcard cards={[taggedConnectorCard]} clearFiltersPath="/connectors" />);
 
@@ -295,7 +320,7 @@ describe("Flashcard", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
 
-    expect(screen.getByRole("group", { name: "Connector tags" })).not.toBeNull();
+    expect(screen.getByRole("group", { name: "Card tags" })).not.toBeNull();
     expect(screen.getByText("Neutral")).not.toBeNull();
     expect(screen.getByText("Spoken & written")).not.toBeNull();
   });

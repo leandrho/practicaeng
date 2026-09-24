@@ -15,6 +15,7 @@ const cards: Card[] = [
     sourceFile: "fixture.md",
     contextEn: '"I must make a decision before nightfall," she said, looking at the two roads ahead.',
     contextSource: "Everyday conversation",
+    tags: [],
   },
   {
     expression: "take responsibility",
@@ -28,6 +29,7 @@ const cards: Card[] = [
     sourceFile: "fixture.md",
     contextEn: '"Take responsibility now," he said. There was no time to wait.',
     contextSource: "Everyday conversation",
+    tags: [],
   },
   {
     expression: "give up",
@@ -41,6 +43,7 @@ const cards: Card[] = [
     sourceFile: "fixture.md",
     contextEn: '"Are you ready?" "Give me a minute, I don\'t want to give up now."',
     contextSource: "Everyday conversation",
+    tags: [],
   },
 ];
 

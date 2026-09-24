@@ -17,6 +17,7 @@ function makeCard(expression: string, type: Card["type"]): Card {
     sourceFile: "fixture.md",
     contextEn: `"Context for ${expression}," she said.`,
     contextSource: "Everyday conversation",
+    tags: [],
   };
 }
 

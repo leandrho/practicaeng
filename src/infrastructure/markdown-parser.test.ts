@@ -59,30 +59,66 @@ describe("parseBulletCards", () => {
     expect(card?.contextSource).toBe("Everyday conversation");
   });
 
-  it("parsea las etiquetas de registro y canal para conectores", () => {
+  it("parsea Tags de registro y uso para conectores", () => {
     const [card] = parseBulletCards(
-      "- **however** --- used to introduce an opposite idea --- sin embargo --- *The food was good; however, the service was slow.* --- *La comida estaba bien; sin embargo, el servicio fue lento.* --- *The room was small. However, the view was lovely.* --- *Register: neutral; Channel: both*",
+      "- **however** --- used to introduce an opposite idea --- sin embargo --- *The food was good; however, the service was slow.* --- *La comida estaba bien; sin embargo, el servicio fue lento.* --- *The room was small. However, the view was lovely.* --- *Tags: Neutral, Spoken & written*",
       { file: "data/connectors-b1-b2.md", type: "connector" },
     );
 
     expect(card).toMatchObject({
       expression: "however",
-      register: "neutral",
-      channel: "both",
+      tags: ["Neutral", "Spoken & written"],
     });
   });
 
   it("permite omitir la fuente del contexto manteniendo las etiquetas", () => {
     const [card] = parseBulletCards(
-      "- **moreover** --- in addition --- además --- *The room is small; moreover, it is bright.* --- *La habitación es pequeña; además, es luminosa.* --- *The room is small. Moreover, it is bright.* --- *Register: formal; Channel: written*",
+      "- **moreover** --- in addition --- además --- *The room is small; moreover, it is bright.* --- *La habitación es pequeña; además, es luminosa.* --- *The room is small. Moreover, it is bright.* --- *Tags: Formal, Written*",
       { file: "data/connectors-b1-b2.md", type: "connector" },
     );
 
     expect(card).toMatchObject({
       contextSource: "Everyday conversation",
-      register: "formal",
-      channel: "written",
+      tags: ["Formal", "Written"],
     });
+  });
+
+  it("asigna tags vacíos por defecto a bullets sin Tags", () => {
+    const [card] = parseBulletCards(collocationsFixture, {
+      file: "data/collocations-b1-b2.md",
+      type: "collocation",
+    });
+
+    expect(card?.tags).toEqual([]);
+  });
+
+  it("rechaza tags desconocidos o no permitidos con archivo y línea", () => {
+    const invalidTags = [
+      { type: "preposition" as const, tag: "Academic", reason: "tag desconocido: Academic" },
+      {
+        type: "preposition" as const,
+        tag: "Transitive",
+        reason: expect.stringContaining("tag Transitive no permitido para preposition"),
+      },
+    ];
+
+    for (const { type, tag, reason } of invalidTags) {
+      let error: unknown;
+      try {
+        parseBulletCards(
+          `- **interested in** --- wanting to know more about --- interesado en --- *I'm interested in technology.* --- *Me interesa la tecnología.* --- *I'm interested in it.* --- *Tags: ${tag}*`,
+          { file: "data/fixed-prepositions-b1-b2.md", type },
+        );
+      } catch (caught) {
+        error = caught;
+      }
+
+      expect(error).toMatchObject({
+        file: "data/fixed-prepositions-b1-b2.md",
+        line: 1,
+        reason,
+      });
+    }
   });
 });
 
@@ -163,6 +199,7 @@ describe("parseIrregularVerbCards", () => {
 });
 
 const phrasalVerbsFixture = `### 1. ask around
+- **Tags:** Intransitive
 - **Meaning (EN):** to ask several people
 - **Significado:** preguntar a varias personas
 - **Ejemplo:** I asked around, but nobody knew the answer.
@@ -171,6 +208,7 @@ const phrasalVerbsFixture = `### 1. ask around
 - **Context source:** Pride and Prejudice · J. Austen (adapted)
 
 ### 2. ask out
+- **Tags:** Transitive, Separable
 - **Meaning (EN):** to invite someone on a date
 - **Significado:** invitar a salir
 - **Ejemplo:** He asked her out for dinner.
@@ -178,6 +216,7 @@ const phrasalVerbsFixture = `### 1. ask around
 - **Context (EN):** "Are you free tomorrow?" he asked. "I would like to ask you out for dinner."
 
 ### 3. back up
+- **Tags:** Transitive, Separable
 - **Meaning (EN):** to make a copy of data
 - **Significado:** hacer una copia de seguridad
 - **Ejemplo:** Back up your files before updating the system.
@@ -205,7 +244,36 @@ describe("parsePhrasalVerbCards", () => {
     expect(cards[1]).toMatchObject({
       expression: "ask out",
       contextSource: "Everyday conversation",
+      tags: ["Transitive", "Separable"],
     });
+    expect(cards[0]?.tags).toEqual(["Intransitive"]);
+  });
+
+  it("rechaza combinaciones incompatibles de Tags con archivo y línea", () => {
+    let error: unknown;
+    try {
+      parsePhrasalVerbCards(
+        "### 1. ask around\n- **Meaning (EN):** to ask several people\n- **Significado:** preguntar a varias personas\n- **Ejemplo:** I asked around.\n- **Traducción (ES):** Pregunté a varias personas.\n- **Context (EN):** I asked around the village.\n- **Tags:** Intransitive, Separable",
+        "data/phrasal-verbs-b1-b2-200.md",
+      );
+    } catch (caught) {
+      error = caught;
+    }
+
+    expect(error).toMatchObject({
+      file: "data/phrasal-verbs-b1-b2-200.md",
+      line: 1,
+      reason: expect.stringContaining("la separabilidad solo se etiqueta para sentidos Transitive"),
+    });
+  });
+
+  it("usa tags vacíos por defecto cuando una tarjeta phrasal omite Tags", () => {
+    const [card] = parsePhrasalVerbCards(
+      "### 1. ask around\n- **Meaning (EN):** to ask several people\n- **Significado:** preguntar a varias personas\n- **Ejemplo:** I asked around.\n- **Traducción (ES):** Pregunté a varias personas.\n- **Context (EN):** I asked around the village.",
+      "data/phrasal-verbs-b1-b2-200.md",
+    );
+
+    expect(card?.tags).toEqual([]);
   });
 
   it("informa archivo y línea cuando falta Meaning (EN)", () => {
