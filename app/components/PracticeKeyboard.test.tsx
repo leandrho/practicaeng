@@ -154,22 +154,22 @@ describe("SPEC 29 — atajos de práctica", () => {
     expect(screen.queryByText("Noun:")).toBeNull();
   });
 
-  it("Grammar mantiene interacción por botones sin atajos globales", () => {
-    render(<GrammarPracticeClient exercises={exercises} />);
-
-    fireEvent.keyDown(window, { key: " " });
-    expect(screen.queryByText(exercises[0].modelEn)).toBeNull();
-
-    fireEvent.keyDown(window, { key: "ArrowRight" });
-    expect(screen.getByText(exercises[0].promptEn)).not.toBeNull();
-    expect(screen.queryByText(exercises[1].promptEn)).toBeNull();
+  it("Grammar con sesión: atajos globales con foco en contenido e ignorados en botones", () => {
+    render(<GrammarPracticeClient exercises={exercises} part={1} slug="comparisons" />);
 
     fireEvent.keyDown(screen.getByRole("button", { name: "Reveal" }), {
       key: " ",
     });
     expect(screen.queryByText(exercises[0].modelEn)).toBeNull();
 
-    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+    fireEvent.keyDown(window, { key: " " });
     expect(screen.getByText(exercises[0].modelEn)).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "I knew it" }));
+    expect(screen.getByText(exercises[1].promptEn)).not.toBeNull();
+
+    fireEvent.keyDown(window, { key: "ArrowLeft" });
+    expect(screen.getByText(exercises[0].promptEn)).not.toBeNull();
+    expect(screen.queryByText(exercises[0].modelEn)).toBeNull();
   });
 });

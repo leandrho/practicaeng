@@ -23,7 +23,9 @@ const exercises: [GrammarExercise, GrammarExercise] = [
 
 describe("GrammarPracticeClient", () => {
   it("oculta respuestas hasta Reveal y vuelve a ocultarlas al navegar en ambos sentidos", () => {
-    const { container } = render(<GrammarPracticeClient exercises={exercises} />);
+    const { container } = render(
+      <GrammarPracticeClient exercises={exercises} part={1} slug="comparisons" />,
+    );
     expect(screen.getByText("Ask about a daily routine.")).not.toBeNull();
     expect(container.textContent).not.toContain(exercises[0].modelEn);
     expect(container.textContent).not.toContain(exercises[0].explanationEs);

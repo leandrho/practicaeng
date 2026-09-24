@@ -28,6 +28,9 @@ export default async function GrammarTopicPage({
   const topic = getGrammarTopics().find((entry) => entry.part === match.number && entry.slug === slug);
   if (!topic) notFound();
 
+  const route = `/grammar/parte-${match.number}/${slug}`;
+  const sessionSize = Math.min(10, topic.exercises.length);
+
   return (
     <main className="practice-layout grammar-topic-page" id="contenido">
       <div className="practice-layout__content">
@@ -38,8 +41,13 @@ export default async function GrammarTopicPage({
         </header>
         <GrammarTheoryClient topic={topic} />
         <section className="grammar-practice-section" id="grammar-practice" aria-label="Practice">
-          <h2>Practice · {topic.exercises.length} cards</h2>
-          <GrammarPracticeClient exercises={topic.exercises} />
+          <h2>Practice · {sessionSize} cards</h2>
+          <GrammarPracticeClient
+            exercises={topic.exercises}
+            part={match.number}
+            slug={slug}
+            route={route}
+          />
         </section>
       </div>
     </main>
