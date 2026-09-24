@@ -30,6 +30,10 @@ const fixture = [
   '- **act:** "We must act now," he whispered when the lights went out during the school play. — Everyday conversation',
   '- **amaze:** "The view amazed us completely," she said. We stood in silence for a while. — Emma · J. Austen (adapted)',
   '- **apply:** "You must apply early," he said. There is no time to wait.',
+  "## Ejercicios",
+  "- **Base:** act --- **Target:** noun --- **Sentence (EN):** The committee took immediate ____. --- **Answers:** action",
+  "- **Base:** amaze --- **Target:** adjective --- **Sentence (EN):** The tourists were ____ by the view. --- **Answers:** amazed",
+  "- **Base:** apply --- **Target:** noun --- **Sentence (EN):** She submitted her ____ yesterday. --- **Answers:** application / applicant",
   "## Idea de tarjeta para la app",
   "**Frente:** `ACT`",
 ].join("\n");
@@ -50,6 +54,11 @@ describe("parseWordFamilies", () => {
           '"We must act now," he whispered when the lights went out during the school play.',
         contextSource: "Everyday conversation",
         examples: ["Act now.", "Action matters."],
+        exercise: {
+          target: "noun",
+          sentenceEn: "The committee took immediate ____.",
+          acceptedAnswers: ["action"],
+        },
       },
       {
         base: "amaze",
@@ -63,6 +72,11 @@ describe("parseWordFamilies", () => {
         contextEn: '"The view amazed us completely," she said. We stood in silence for a while.',
         contextSource: "Emma · J. Austen (adapted)",
         examples: [],
+        exercise: {
+          target: "adjective",
+          sentenceEn: "The tourists were ____ by the view.",
+          acceptedAnswers: ["amazed"],
+        },
       },
       {
         base: "apply",
@@ -75,6 +89,11 @@ describe("parseWordFamilies", () => {
         contextEn: '"You must apply early," he said. There is no time to wait.',
         contextSource: "Everyday conversation",
         examples: [],
+        exercise: {
+          target: "noun",
+          sentenceEn: "She submitted her ____ yesterday.",
+          acceptedAnswers: ["application", "applicant"],
+        },
       },
     ]);
   });
@@ -85,7 +104,9 @@ describe("parseWordFamilies", () => {
 | --- | --- | --- | --- | --- | --- |
 | announce | announcement | --- | --- | to make something public | anunciar / anuncio |
 ## Contextos
-- **announce:** "We must announce the news today," she said. Everyone waited in silence.`,
+- **announce:** "We must announce the news today," she said. Everyone waited in silence.
+## Ejercicios
+- **Base:** announce --- **Target:** noun --- **Sentence (EN):** They will make an ____ on Friday. --- **Answers:** announcement`,
       "data/word-formation-b1-b2.md",
     );
 
@@ -95,6 +116,11 @@ describe("parseWordFamilies", () => {
       adjective: undefined,
       adverb: undefined,
       contextSource: "Everyday conversation",
+      exercise: {
+        target: "noun",
+        sentenceEn: "They will make an ____ on Friday.",
+        acceptedAnswers: ["announcement"],
+      },
     });
   });
 
@@ -106,7 +132,9 @@ describe("parseWordFamilies", () => {
 | --- | --- | --- | --- | --- | --- |
 | invalid | --- | --- | --- | without forms | sin formas |
 ## Contextos
-- **invalid:** "We must invalid now," she said. There was no time to wait.`,
+- **invalid:** "We must invalid now," she said. There was no time to wait.
+## Ejercicios
+- **Base:** invalid --- **Target:** noun --- **Sentence (EN):** It was an ____. --- **Answers:** invalidness`,
         "data/word-formation-b1-b2.md",
       );
     } catch (caught) {
@@ -128,7 +156,9 @@ describe("parseWordFamilies", () => {
 | --- | --- | --- | --- | --- | --- |
 | act | action | active | actively | to do something | actuar |
 ## Contextos
-- **other:** "Something else," she said. We waited.`,
+- **other:** "Something else," she said. We waited.
+## Ejercicios
+- **Base:** act --- **Target:** noun --- **Sentence (EN):** It was an ____. --- **Answers:** action`,
         "data/word-formation-b1-b2.md",
       );
     } catch (caught) {
@@ -151,7 +181,9 @@ describe("parseWordFamilies", () => {
 | act | action | active | actively | to do something | actuar |
 ## Contextos
 - **act:** "We must act now," he said. There was no time to wait.
-- **extra:** "Something extra," she said. We waited.`,
+- **extra:** "Something extra," she said. We waited.
+## Ejercicios
+- **Base:** act --- **Target:** noun --- **Sentence (EN):** It was an ____. --- **Answers:** action`,
         "data/word-formation-b1-b2.md",
       );
     } catch (caught) {
@@ -169,5 +201,170 @@ describe("parseWordFamilies", () => {
     const finalSections = markdown.slice(markdown.indexOf("## Ejemplos para practicar"));
 
     expect(parseWordFamilies(finalSections, "data/word-formation-b1-b2.md")).toEqual([]);
+  });
+
+  it("rechaza una familia sin ejercicio con archivo y línea", () => {
+    let error: unknown;
+    try {
+      parseWordFamilies(
+        `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| act | action | active | actively | to do something | actuar |
+## Contextos
+- **act:** "We must act now," he said. There was no time to wait.`,
+        "data/word-formation-b1-b2.md",
+      );
+    } catch (caught) {
+      error = caught;
+    }
+
+    expect(error).toMatchObject({
+      file: "data/word-formation-b1-b2.md",
+      line: 3,
+      reason: expect.stringContaining("familia sin ejercicio"),
+    });
+  });
+
+  it("rechaza bases de ejercicio duplicadas", () => {
+    let error: unknown;
+    try {
+      parseWordFamilies(
+        `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| act | action | active | actively | to do something | actuar |
+## Contextos
+- **act:** "We must act now," he said. There was no time to wait.
+## Ejercicios
+- **Base:** act --- **Target:** noun --- **Sentence (EN):** It was an ____. --- **Answers:** action
+- **Base:** act --- **Target:** noun --- **Sentence (EN):** It was an ____. --- **Answers:** action`,
+        "data/word-formation-b1-b2.md",
+      );
+    } catch (caught) {
+      error = caught;
+    }
+
+    expect(error).toMatchObject({
+      file: "data/word-formation-b1-b2.md",
+      reason: expect.stringContaining("ejercicio duplicado"),
+    });
+  });
+
+  it("rechaza bases de ejercicio desconocidas", () => {
+    let error: unknown;
+    try {
+      parseWordFamilies(
+        `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| act | action | active | actively | to do something | actuar |
+## Contextos
+- **act:** "We must act now," he said. There was no time to wait.
+## Ejercicios
+- **Base:** act --- **Target:** noun --- **Sentence (EN):** It was an ____. --- **Answers:** action
+- **Base:** unknown --- **Target:** noun --- **Sentence (EN):** It was an ____. --- **Answers:** action`,
+        "data/word-formation-b1-b2.md",
+      );
+    } catch (caught) {
+      error = caught;
+    }
+
+    expect(error).toMatchObject({
+      file: "data/word-formation-b1-b2.md",
+      reason: expect.stringContaining("ejercicio sin familia"),
+    });
+  });
+
+  it("rechaza objetivos inválidos e inexistentes en la familia", () => {
+    for (const markdown of [
+      `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| act | action | active | actively | to do something | actuar |
+## Contextos
+- **act:** "We must act now," he said. There was no time to wait.
+## Ejercicios
+- **Base:** act --- **Target:** verb --- **Sentence (EN):** It was an ____. --- **Answers:** action`,
+      `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| announce | announcement | --- | --- | to announce | anunciar |
+## Contextos
+- **announce:** "We must announce now," she said. There was no time to wait.
+## Ejercicios
+- **Base:** announce --- **Target:** adjective --- **Sentence (EN):** It was very ____. --- **Answers:** announcement`,
+    ]) {
+      let error: unknown;
+      try {
+        parseWordFamilies(markdown, "data/word-formation-b1-b2.md");
+      } catch (caught) {
+        error = caught;
+      }
+
+      expect(error).toMatchObject({
+        file: "data/word-formation-b1-b2.md",
+        reason: expect.stringContaining("objetivo"),
+      });
+    }
+  });
+
+  it("rechaza ejercicios sin hueco o con varios huecos", () => {
+    for (const sentence of ["No gap here.", "____ and ____."]) {
+      let error: unknown;
+      try {
+        parseWordFamilies(
+          `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| act | action | active | actively | to do something | actuar |
+## Contextos
+- **act:** "We must act now," he said. There was no time to wait.
+## Ejercicios
+- **Base:** act --- **Target:** noun --- **Sentence (EN):** ${sentence} --- **Answers:** action`,
+          "data/word-formation-b1-b2.md",
+        );
+      } catch (caught) {
+        error = caught;
+      }
+
+      expect(error).toMatchObject({
+        file: "data/word-formation-b1-b2.md",
+        reason: expect.stringContaining("hueco"),
+      });
+    }
+  });
+
+  it("rechaza respuestas vacías, duplicadas o ajenas a la categoría", () => {
+    for (const answers of ["", "action /  / action", "action / ACTION", "active"]) {
+      let error: unknown;
+      try {
+        parseWordFamilies(
+          `Base | Sustantivo | Adjetivo | Adverbio | Hint (EN) | Significado orientativo
+| --- | --- | --- | --- | --- | --- |
+| act | action | active | actively | to do something | actuar |
+## Contextos
+- **act:** "We must act now," he said. There was no time to wait.
+## Ejercicios
+- **Base:** act --- **Target:** noun --- **Sentence (EN):** It was an ____. --- **Answers:** ${answers}`,
+          "data/word-formation-b1-b2.md",
+        );
+      } catch (caught) {
+        error = caught;
+      }
+
+      expect(error).toMatchObject({
+        file: "data/word-formation-b1-b2.md",
+        reason: expect.any(String),
+      });
+    }
+  });
+
+  it("acepta varias respuestas separadas por / y carga el archivo real", () => {
+    const families = parseWordFamilies(
+      readFileSync("data/word-formation-b1-b2.md", "utf8"),
+      "data/word-formation-b1-b2.md",
+    );
+
+    expect(families.length).toBeGreaterThan(70);
+    for (const family of families) {
+      expect(family.exercise.sentenceEn).toContain("____");
+      expect(["noun", "adjective", "adverb"]).toContain(family.exercise.target);
+      expect(family.exercise.acceptedAnswers.length).toBeGreaterThanOrEqual(1);
+    }
   });
 });

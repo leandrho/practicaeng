@@ -111,6 +111,21 @@ Omití el campo cuando no agregue información útil o no puedas determinar el t
 
 Usá `---` cuando no haya una forma común o útil para el nivel. Las líneas que continúan una celda deben empezar con espacios, igual que las filas existentes.
 
+Cada familia tiene exactamente un ejercicio curado en contexto en la sección `## Ejercicios`, debajo de la tabla y de las secciones existentes. Sintaxis (una línea por familia, campos separados por ` --- `):
+
+```md
+- **Base:** act --- **Target:** noun --- **Sentence (EN):** The committee took immediate ____. --- **Answers:** action
+```
+
+Criterio editorial para redactar y revisar un ejercicio:
+
+- `Base` debe existir en la tabla (en minúsculas); no repitas bases.
+- `Target` es `noun`, `adjective` o `adverb`, y esa categoría debe existir en la familia (no elijas una columna con `---`).
+- `Sentence (EN)` es una oración inglesa con exactamente una aparición de `____` (cuatro guiones bajos, ni más ni menos, sin otros grupos de guiones bajos). No uses ` --- ` dentro de la oración porque es el separador de campos.
+- `Answers` tiene al menos una respuesta, separadas por ` / ` cuando hay varias. Cada respuesta debe estar entre las variantes declaradas en la columna del `Target` (por ejemplo, `amazed` solo vale si la celda dice `amazing / amazed`). No declares duplicados tras normalizar (mayúsculas y espacios no distinguen).
+- Elegí una oración donde solo las respuestas declaradas suenen naturales; si la oración admite más de una forma, declaralas todas con ` / `, y si no se puede delimitar el conjunto, cambiá la oración.
+- La corrección ignora mayúsculas y espacios extra, pero rechaza cualquier forma ajena a `Answers`, aunque sea de la misma familia en otra categoría.
+
 ### Antes de terminar
 
 - No renombres ni muevas archivos dentro de `data/`.

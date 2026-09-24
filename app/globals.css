@@ -1179,6 +1179,32 @@ a {
   border-color: var(--action);
 }
 
+/* ——— Feedback de corrección (icono + texto en la misma línea) ——— */
+.feedback {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.feedback--correct {
+  color: var(--accent-mixed);
+}
+
+.feedback--incorrect {
+  color: #b91c1c;
+}
+
+[data-theme="dark"] .feedback--incorrect {
+  color: #fca5a5;
+}
+
+.feedback-icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 /* ——— SPEC 10 · botones ——— */
 .btn,
 .flashcard-empty button {

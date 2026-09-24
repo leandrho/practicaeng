@@ -8,7 +8,9 @@ import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
 import { BookIcon } from "./ui/BookIcon";
+import { CheckIcon } from "./ui/CheckIcon";
 import { ContextBook } from "./ui/ContextBook";
+import { CrossIcon } from "./ui/CrossIcon";
 import { HintIcon } from "./ui/HintIcon";
 
 type WFState = {
@@ -69,17 +71,17 @@ export default function WordFormationClient({
     return <EmptyState clearFiltersPath={clearFiltersPath} />;
   }
 
-  const answer = family.noun ?? family.adjective ?? family.adverb;
+  const exercise = (family as { exercise?: WordFamily["exercise"] }).exercise;
 
-  if (answer === undefined) {
+  if (exercise === undefined) {
     return <p className="flashcard-empty">This family has no exercises available.</p>;
   }
 
-  const gapFillAnswer = answer;
+  const acceptedAnswers = exercise.acceptedAnswers;
   const hintId = resolveHint(family.base, "word-formation", family.category);
 
   function checkAnswer() {
-    const { correct } = checkGapFill(state.guess, gapFillAnswer);
+    const { correct } = checkGapFill(state.guess, acceptedAnswers);
 
     setState((current) => ({
       ...current,
@@ -191,9 +193,13 @@ export default function WordFormationClient({
         </div>
       ) : (
         <div key={`${family.base}:frente`} className="flashcard__front flashcard__face">
+          <p>
+            Complete with the {exercise.target} form of &quot;{family.base.toUpperCase()}&quot;:
+          </p>
+          <p>{exercise.sentenceEn}</p>
           <form className="flashcard__form" onSubmit={handleSubmit}>
             <label htmlFor="word-formation-guess">
-              Complete with the correct form of &quot;{family.base.toUpperCase()}&quot;: ______ ({family.base.toUpperCase()})
+              Complete with the correct form of &quot;{family.base.toUpperCase()}&quot; ({exercise.target}):
             </label>
             <input
               id="word-formation-guess"
@@ -214,15 +220,23 @@ export default function WordFormationClient({
                 }
               }}
               className="field"
-              placeholder="Type the first form if there are alternatives…"
+              placeholder="Type the missing word…"
             />
             <Button className="btn btn--primary" type="submit">
               Check
             </Button>
           </form>
           <div aria-live="polite">
-            {state.checked === "correct" ? <p>Correct: {gapFillAnswer}</p> : null}
-            {state.checked === "incorrect" ? <p>Not yet: try again.</p> : null}
+            {state.checked === "correct" ? (
+              <p className="feedback feedback--correct">
+                <CheckIcon /> <span>Correct: {acceptedAnswers.join(" / ")}</span>
+              </p>
+            ) : null}
+            {state.checked === "incorrect" ? (
+              <p className="feedback feedback--incorrect">
+                <CrossIcon /> <span>Not yet: try again.</span>
+              </p>
+            ) : null}
           </div>
           <div>
             <Button
