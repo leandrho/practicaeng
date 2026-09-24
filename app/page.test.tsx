@@ -6,12 +6,13 @@ import {
   MIXED_SECTIONS,
   contentRepository,
 } from "../src/infrastructure/content-loader";
+import { getVerbTenseSection } from "../src/infrastructure/verb-tenses-loader";
 import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 
 afterEach(cleanup);
 
 describe("HomePage", () => {
-  it("shows the hero, two groups with ten sections, and working links", () => {
+  it("shows the hero, three groups with eleven sections, and working links", () => {
     render(<HomePage />);
 
     expect(
@@ -22,6 +23,9 @@ describe("HomePage", () => {
     ).not.toBeNull();
     expect(
       screen.getByRole("heading", { name: "Grammar & theory" }),
+    ).not.toBeNull();
+    expect(
+      screen.getByRole("heading", { name: "Grammar practice" }),
     ).not.toBeNull();
 
     const mixedCount =
@@ -43,27 +47,36 @@ describe("HomePage", () => {
       ["Connectors", contentRepository.getCards("connectors").length],
       ["Mixed Practice", mixedCount],
       ["Grammar B1+", 26],
+      ["Presente", getVerbTenseSection("present").exercises.length],
     ];
 
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(10);
+    expect(links).toHaveLength(11);
 
     const practiceGroup = screen.getByRole("region", { name: "Practice" });
     const theoryGroup = screen.getByRole("region", {
       name: "Grammar & theory",
     });
+    const grammarPracticeGroup = screen.getByRole("region", {
+      name: "Grammar practice",
+    });
     expect(within(practiceGroup).getAllByRole("link")).toHaveLength(9);
     expect(within(theoryGroup).getAllByRole("link")).toHaveLength(1);
+    expect(within(grammarPracticeGroup).getAllByRole("link")).toHaveLength(1);
 
     for (const [name, count] of expected) {
       const link = screen.getByRole("link", {
         name: (accessibleName) => accessibleName.startsWith(`Practice ${name}, ${count} `),
       });
-      expect(link.getAttribute("href")).toMatch(/^\/[a-z-]+$/);
+      expect(link.getAttribute("href")).toMatch(/^\/[a-z-]+(\/[a-z-]+)?$/);
       const scope = within(link);
       expect(scope.getByText(name)).not.toBeNull();
       expect(scope.getByText(String(count))).not.toBeNull();
     }
+
+    expect(
+      screen.getByRole("link", { name: /^Practice Presente, \d+/ }).getAttribute("href"),
+    ).toBe("/verb-tenses/present");
 
     expect(
       screen.getByRole("link", { name: /^Practice Connectors, \d+/ }).getAttribute("href"),

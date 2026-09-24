@@ -4,6 +4,7 @@ import {
   MIXED_SECTIONS,
   contentRepository,
 } from "../src/infrastructure/content-loader";
+import { getVerbTenseSection } from "../src/infrastructure/verb-tenses-loader";
 import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 
 // Los archivos de data/ se editan independientemente del código: la portada
@@ -116,6 +117,21 @@ export default function HomePage() {
     },
   ];
 
+  // SPEC 31 · tercer grupo Grammar practice: práctica pura de tiempos
+  // verbales. No suma tarjetas de vocabulario ni entra en Mixed Practice.
+  const presentCount = getVerbTenseSection("present").exercises.length;
+
+  const grammarPracticeSections = [
+    {
+      href: "/verb-tenses/present",
+      name: "Presente",
+      detail: "Present tenses gap-fill + reveal",
+      count: presentCount,
+      unit: "exercises",
+      accent: "var(--accent-grammar)",
+    },
+  ];
+
   return (
     <main className="home" id="contenido">
       <section className="home-hero" aria-labelledby="home-title">
@@ -186,6 +202,36 @@ export default function HomePage() {
         </p>
         <ul className="section-grid">
           {theorySections.map((section) => (
+            <li key={section.href}>
+              <Link
+                className="section-card"
+                style={
+                  { "--card-accent": section.accent } as React.CSSProperties
+                }
+                href={section.href}
+                aria-label={`Practice ${section.name}, ${section.count} ${section.unit}`}
+              >
+                <span className="section-card__name">{section.name}</span>
+                <span className="section-card__detail">{section.detail}</span>
+                <span className="section-card__count">
+                  {section.count}{" "}
+                  <span className="section-card__unit">{section.unit}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className="home-group" aria-labelledby="home-group-grammar-practice">
+        <div className="home-group__heading">
+          <h2 id="home-group-grammar-practice">Grammar practice</h2>
+          <span>{grammarPracticeSections.length} sections</span>
+        </div>
+        <p className="home-group__desc">
+          Pure practice: complete the gap, then reveal and compare.
+        </p>
+        <ul className="section-grid">
+          {grammarPracticeSections.map((section) => (
             <li key={section.href}>
               <Link
                 className="section-card"

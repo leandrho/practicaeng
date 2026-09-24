@@ -225,6 +225,27 @@ En cada sección teórica (`Definición`, `Regla y forma`, `Usos`, `Contrastes y
 
 El bloque `### Formación` se escribe **íntegramente en inglés**: los `Name (EN)`, las etiquetas y los patterns. Cada formación es un bullet con `Name (EN)`. Para una estructura simple, agregá `--- **Pattern:** fórmula`; para tiempos verbales, usá sub-bullets con las etiquetas de la lista cerrada `Affirmative`, `Negative` y `Question` (las demás opciones son `Pattern`, `Result`, `Condition`, `Main clause` y `Time clause`), cada una seguida de su fórmula en inglés (`subject + base verb`, nunca `sujeto + verbo base`). El parser rechaza cualquier etiqueta fuera de esa lista. Agregá una entrada distinta por construcción (por ejemplo, present perfect simple y present perfect progressive). En `Regla y forma`, encerrá en `**doble asterisco**` los términos clave para resaltarlos — tanto en el bullet `EN` como en el `ES`. En `Explanation (ES)`, usá `*asteriscos simples*` para mostrar fragmentos en inglés en cursiva. Cada ejercicio usa cuatro campos en una sola línea y el separador literal ` --- `; el prompt no debe adelantar el modelo. No repitas literalmente los modelos de las tarjetas en los ejemplos teóricos. Para comprobar la edición, ejecutá `npm run test` y `npm run build`: los datos incompletos, fuera de orden o mal formados fallan con archivo, tema y línea/campo.
 
+### Verb Tenses practice (Presente)
+
+La tarjeta **Presente** del grupo `Grammar practice` abre `/verb-tenses/present`: práctica pura de presentes sin teoría, con gap-fill y **Reveal** en una sola tarjeta. El contenido se edita en `data/verb-tenses-present.md`, cuyo encabezado `## Presente` debe coincidir con el catálogo en `src/domain/verb-tenses.ts`. La sección tiene 55 ejercicios, con 11 o más por forma (`Present Simple`, `Present Progressive`, `Present Perfect Simple`, `Present Perfect Progressive`, `Mixed`); el mínimo exigido es 50 en total y 10 por forma. Cada ejercicio combina corrección (campo con **Check**) y producción con **Reveal** en una sola tarjeta: consigna en inglés, oración con un único hueco `____`, botón cyan de contexto estilo libro, y dorso con modelo, explicación y traducción. Estas páginas no llevan pista visual y no forman parte de Mixed Practice ni de los filtros y contadores de vocabulario.
+
+Cada ejercicio es un bullet de una sola línea con el separador literal ` --- `:
+
+```md
+## Presente
+- **Form:** Present Simple --- **Prompt (EN):** Complete the routine: she / walk to school every day. --- **Sentence (EN):** She ____ to school every day. --- **Answers:** walks --- **Model (EN):** She walks to school every day. --- **Explanation (ES):** El *present simple* expresa hábitos y la tercera persona lleva -s. --- **Translation (ES):** Ella camina a la escuela todos los días. --- **Context (EN):** "Do you walk to school?" "Yes, I walk there every day with my brother." --- **Context source:** Everyday conversation
+```
+
+Convenciones:
+
+- `Form` usa la lista cerrada de arriba; cualquier otro valor falla.
+- `Sentence (EN)` contiene exactamente una aparición de `____`, sin otros grupos de guiones bajos ni ` --- ` dentro de la oración.
+- `Answers` separa variantes con ` / ` (por ejemplo, `is working / 's working`); cada respuesta debe sonar natural en esa oración; si admite más de una forma, se declaran todas, y si no se puede delimitar el conjunto, se cambia la oración. La corrección ignora mayúsculas y espacios extra, pero rechaza formas ajenas a `Answers`.
+- El prompt no adelanta el modelo literalmente (el parser lo rechaza) y los modelos no se repiten entre ejercicios.
+- En `Explanation (ES)`, el inglés va en `*cursiva simple*` y el resto en español.
+- `Context (EN)` son 2 a 4 oraciones en inglés, sin español ni `---`; `Context source` es opcional y usa `Everyday conversation` por defecto. Cada cita de clásico lleva título y autor y queda registrada en `data/context-provenance.json`.
+- Un bullet incompleto, sin hueco único, sin respuestas, con forma inválida o sin contexto hace fallar el build con archivo, línea y campo. Para comprobar la edición, ejecutá `npm run test` y `npm run build`.
+
 ## Funcionamiento
 
 La forma principal de estudio será mediante tarjetas.
