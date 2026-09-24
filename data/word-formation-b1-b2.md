@@ -178,3 +178,81 @@ También podés generar ejercicios tipo:\
 - **use:** Alice went timidly up to the door, and knocked. “There’s no sort of use in knocking,” said the Footman, “and that for two reasons. — Alice's Adventures in Wonderland — Lewis Carroll
 - **vary:** Of course the Neverlands vary a good deal. John’s, for instance, had a lagoon with flamingoes flying over it at which John was shooting, while Michael, who was very small, had a flamingo with lagoons flying over it. — Peter Pan — J. M. Barrie
 - **wonder:** (Which was very likely true.) Down, down, down. Would the fall never come to an end? “I wonder how many miles I’ve fallen by this time?” she said aloud. — Alice's Adventures in Wonderland — Lewis Carroll
+
+## Ejercicios
+- **Base:** act --- **Target:** noun --- **Sentence (EN):** The committee took immediate ____. --- **Answers:** action
+- **Base:** achieve --- **Target:** noun --- **Sentence (EN):** Winning the scholarship was a great ____. --- **Answers:** achievement
+- **Base:** agree --- **Target:** noun --- **Sentence (EN):** They finally reached an ____ after hours of discussion. --- **Answers:** agreement
+- **Base:** amaze --- **Target:** adjective --- **Sentence (EN):** The tourists were ____ by the view from the hill. --- **Answers:** amazed
+- **Base:** announce --- **Target:** noun --- **Sentence (EN):** They will make an ____ about the results on Friday. --- **Answers:** announcement
+- **Base:** appear --- **Target:** adverb --- **Sentence (EN):** ____, the road was closed after the storm. --- **Answers:** apparently
+- **Base:** apply --- **Target:** noun --- **Sentence (EN):** She submitted her ____ for the job yesterday. --- **Answers:** application
+- **Base:** argue --- **Target:** noun --- **Sentence (EN):** They had a heated ____ about money. --- **Answers:** argument
+- **Base:** arrange --- **Target:** noun --- **Sentence (EN):** The travel ____ was handled by the agency. --- **Answers:** arrangement
+- **Base:** attend --- **Target:** adverb --- **Sentence (EN):** The students listened ____ during the lecture. --- **Answers:** attentively
+- **Base:** attract --- **Target:** adjective --- **Sentence (EN):** The new park is very ____ for families. --- **Answers:** attractive
+- **Base:** avoid --- **Target:** adjective --- **Sentence (EN):** The accident was ____ with better brakes. --- **Answers:** avoidable
+- **Base:** believe --- **Target:** adjective --- **Sentence (EN):** His excuse was hardly ____. --- **Answers:** believable
+- **Base:** benefit --- **Target:** adjective --- **Sentence (EN):** Regular exercise is ____ for your health. --- **Answers:** beneficial
+- **Base:** care --- **Target:** noun --- **Sentence (EN):** The baby needs constant ____. --- **Answers:** care
+- **Base:** choose --- **Target:** noun --- **Sentence (EN):** It was a difficult ____ between two jobs. --- **Answers:** choice
+- **Base:** communicate --- **Target:** noun --- **Sentence (EN):** Good ____ is essential in a team. --- **Answers:** communication
+- **Base:** compete --- **Target:** noun --- **Sentence (EN):** She won the swimming ____ last weekend. --- **Answers:** competition
+- **Base:** complete --- **Target:** adverb --- **Sentence (EN):** The room was ____ empty when we arrived. --- **Answers:** completely
+- **Base:** confuse --- **Target:** adjective --- **Sentence (EN):** The instructions were ____ and nobody understood them. --- **Answers:** confusing
+- **Base:** connect --- **Target:** noun --- **Sentence (EN):** The Wi-Fi ____ was lost during the storm. --- **Answers:** connection
+- **Base:** consider --- **Target:** adjective --- **Sentence (EN):** It was very ____ of you to help. --- **Answers:** considerate
+- **Base:** create --- **Target:** adjective --- **Sentence (EN):** The child has a very ____ imagination. --- **Answers:** creative
+- **Base:** decide --- **Target:** noun --- **Sentence (EN):** She made an important ____ yesterday. --- **Answers:** decision
+- **Base:** describe --- **Target:** noun --- **Sentence (EN):** His ____ of the island was very vivid. --- **Answers:** description
+- **Base:** develop --- **Target:** noun --- **Sentence (EN):** The new housing ____ changed the neighborhood. --- **Answers:** development
+- **Base:** differ --- **Target:** noun --- **Sentence (EN):** There is a big ____ between the two plans. --- **Answers:** difference
+- **Base:** educate --- **Target:** adjective --- **Sentence (EN):** She is a highly ____ woman. --- **Answers:** educated
+- **Base:** employ --- **Target:** noun --- **Sentence (EN):** The company offers full ____ to graduates. --- **Answers:** employment
+- **Base:** encourage --- **Target:** noun --- **Sentence (EN):** The coach gave the team a lot of ____. --- **Answers:** encouragement
+- **Base:** enjoy --- **Target:** adjective --- **Sentence (EN):** The concert was really ____. --- **Answers:** enjoyable
+- **Base:** entertain --- **Target:** adjective --- **Sentence (EN):** The show was very ____. --- **Answers:** entertaining
+- **Base:** excite --- **Target:** adjective --- **Sentence (EN):** The children were ____ about the trip. --- **Answers:** excited
+- **Base:** exist --- **Target:** noun --- **Sentence (EN):** The ____ of life on other planets is still unproven. --- **Answers:** existence
+- **Base:** expect --- **Target:** adverb --- **Sentence (EN):** The guests arrived ____ early. --- **Answers:** unexpectedly
+- **Base:** explain --- **Target:** noun --- **Sentence (EN):** She gave a clear ____ of the rules. --- **Answers:** explanation
+- **Base:** express --- **Target:** adjective --- **Sentence (EN):** She has a very ____ face. --- **Answers:** expressive
+- **Base:** fail --- **Target:** noun --- **Sentence (EN):** The project was a complete ____. --- **Answers:** failure
+- **Base:** friend --- **Target:** noun --- **Sentence (EN):** Their ____ lasted for many years. --- **Answers:** friendship
+- **Base:** help --- **Target:** noun --- **Sentence (EN):** We asked for ____ with the bags. --- **Answers:** help
+- **Base:** imagine --- **Target:** noun --- **Sentence (EN):** The child has a vivid ____. --- **Answers:** imagination
+- **Base:** improve --- **Target:** noun --- **Sentence (EN):** There has been a big ____ in his English. --- **Answers:** improvement
+- **Base:** inform --- **Target:** noun --- **Sentence (EN):** We need more ____ before we decide. --- **Answers:** information
+- **Base:** instruct --- **Target:** noun --- **Sentence (EN):** Follow the ____ manual carefully. --- **Answers:** instruction
+- **Base:** intend --- **Target:** adverb --- **Sentence (EN):** Did you break it ____? --- **Answers:** intentionally
+- **Base:** interest --- **Target:** adjective --- **Sentence (EN):** The students were ____ in the topic. --- **Answers:** interested
+- **Base:** invite --- **Target:** noun --- **Sentence (EN):** Thanks for the ____ to your party. --- **Answers:** invitation
+- **Base:** know --- **Target:** noun --- **Sentence (EN):** She has a good ____ of French. --- **Answers:** knowledge
+- **Base:** manage --- **Target:** adjective --- **Sentence (EN):** The task is ____ in one afternoon. --- **Answers:** manageable
+- **Base:** mean --- **Target:** noun --- **Sentence (EN):** What is the ____ of this word? --- **Answers:** meaning
+- **Base:** motivate --- **Target:** noun --- **Sentence (EN):** The team lacks ____ before the final. --- **Answers:** motivation
+- **Base:** organize --- **Target:** adjective --- **Sentence (EN):** She is a very ____ person. --- **Answers:** organized
+- **Base:** perform --- **Target:** noun --- **Sentence (EN):** The singer gave a great ____. --- **Answers:** performance
+- **Base:** permit --- **Target:** noun --- **Sentence (EN):** You need ____ to enter the lab. --- **Answers:** permission
+- **Base:** please --- **Target:** adverb --- **Sentence (EN):** She smiled ____. --- **Answers:** pleasantly
+- **Base:** pollute --- **Target:** adjective --- **Sentence (EN):** The river is heavily ____. --- **Answers:** polluted
+- **Base:** predict --- **Target:** noun --- **Sentence (EN):** His ____ about the weather was correct. --- **Answers:** prediction
+- **Base:** prefer --- **Target:** adverb --- **Sentence (EN):** Please arrive ____ before noon. --- **Answers:** preferably
+- **Base:** prepare --- **Target:** adjective --- **Sentence (EN):** We were well ____ for the exam. --- **Answers:** prepared
+- **Base:** prevent --- **Target:** adjective --- **Sentence (EN):** Most accidents are ____. --- **Answers:** preventable
+- **Base:** produce --- **Target:** adjective --- **Sentence (EN):** We had a very ____ meeting. --- **Answers:** productive
+- **Base:** protect --- **Target:** noun --- **Sentence (EN):** Wear sunscreen for ____ against the sun. --- **Answers:** protection
+- **Base:** react --- **Target:** noun --- **Sentence (EN):** His ____ was surprise and joy. --- **Answers:** reaction
+- **Base:** relate --- **Target:** adverb --- **Sentence (EN):** The test was ____ easy. --- **Answers:** relatively
+- **Base:** relax --- **Target:** adjective --- **Sentence (EN):** I felt ____ after the bath. --- **Answers:** relaxed
+- **Base:** rely --- **Target:** noun --- **Sentence (EN):** The ____ of this watch is excellent. --- **Answers:** reliability
+- **Base:** respond --- **Target:** noun --- **Sentence (EN):** We are waiting for a ____ from the office. --- **Answers:** response
+- **Base:** satisfy --- **Target:** adverb --- **Sentence (EN):** He completed the task ____. --- **Answers:** satisfactorily
+- **Base:** solve --- **Target:** noun --- **Sentence (EN):** We finally found a ____ to the problem. --- **Answers:** solution
+- **Base:** succeed --- **Target:** adverb --- **Sentence (EN):** She passed the exam ____. --- **Answers:** successfully
+- **Base:** suggest --- **Target:** noun --- **Sentence (EN):** Thanks for your ____ about the hotel. --- **Answers:** suggestion
+- **Base:** surprise --- **Target:** adjective --- **Sentence (EN):** We were ____ by the news. --- **Answers:** surprised
+- **Base:** think --- **Target:** noun --- **Sentence (EN):** It was a kind ____ to invite them. --- **Answers:** thought
+- **Base:** use --- **Target:** noun --- **Sentence (EN):** The ____ of phones is not allowed here. --- **Answers:** use
+- **Base:** vary --- **Target:** noun --- **Sentence (EN):** There is a wide ____ of books in the library. --- **Answers:** variety
+- **Base:** wonder --- **Target:** adjective --- **Sentence (EN):** The view was ____. --- **Answers:** wonderful

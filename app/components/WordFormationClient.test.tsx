@@ -16,6 +16,11 @@ const family: WordFamily = {
   contextEn: '"We must decide now," she said, looking at the two roads ahead. There was no time to wait.',
   contextSource: "Everyday conversation",
   examples: [],
+  exercise: {
+    target: "noun",
+    sentenceEn: "She made an important ____ yesterday.",
+    acceptedAnswers: ["decision"],
+  },
 };
 
 const secondFamily: WordFamily = {
@@ -30,6 +35,11 @@ const secondFamily: WordFamily = {
   contextEn: '"We must act now," he whispered when the lights went out during the school play.',
   contextSource: "Everyday conversation",
   examples: [],
+  exercise: {
+    target: "noun",
+    sentenceEn: "The committee took immediate ____.",
+    acceptedAnswers: ["action"],
+  },
 };
 
 const familyWithMissingForms: WordFamily = {
@@ -42,6 +52,11 @@ const familyWithMissingForms: WordFamily = {
   contextEn: '"We must announce the news today," she said. Everyone waited in silence.',
   contextSource: "Everyday conversation",
   examples: [],
+  exercise: {
+    target: "noun",
+    sentenceEn: "They will make an ____ on Friday.",
+    acceptedAnswers: ["announcement"],
+  },
 };
 
 // Bases inexistentes en data/ y en curated.ts: ejercen la rama fallback.
@@ -55,6 +70,11 @@ const fallbackFamily: WordFamily = {
   contextEn: '"We must zzfallback now," he said. There was no time to wait.',
   contextSource: "Everyday conversation",
   examples: [],
+  exercise: {
+    target: "noun",
+    sentenceEn: "It was a clear ____.",
+    acceptedAnswers: ["zzfallbackness"],
+  },
 };
 
 const secondFallbackFamily: WordFamily = {
@@ -67,6 +87,29 @@ const secondFallbackFamily: WordFamily = {
   contextEn: '"We must zzsecond now," she said. There was no time to wait.',
   contextSource: "Everyday conversation",
   examples: [],
+  exercise: {
+    target: "noun",
+    sentenceEn: "It was another ____.",
+    acceptedAnswers: ["zzsecondness"],
+  },
+};
+
+const twoVariantFamily: WordFamily = {
+  base: "apply",
+  level: "B1-B2",
+  category: "A",
+  noun: "application / applicant",
+  adjective: "applicable",
+  meaningHintEn: "to request",
+  meaningHint: "solicitar",
+  contextEn: '"You must apply early," he said. There is no time to wait.',
+  contextSource: "Everyday conversation",
+  examples: [],
+  exercise: {
+    target: "noun",
+    sentenceEn: "She submitted her ____ yesterday.",
+    acceptedAnswers: ["application", "applicant"],
+  },
 };
 
 afterEach(cleanup);
@@ -329,5 +372,83 @@ describe("WordFormationClient", () => {
 
     expect(screen.queryByRole("img", { name: "Pista visual animada" })).toBeNull();
     expect(document.querySelector(".book-page")).not.toBeNull();
+  });
+
+  it("shows the exercise sentence and target before reveal without answers", () => {
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
+
+    expect(screen.getByText("She made an important ____ yesterday.")).not.toBeNull();
+    expect(screen.getAllByText(/noun/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.queryByText("decision")).toBeNull();
+  });
+
+  it("accepts any declared answer and rejects other-category forms", () => {
+    render(
+      <WordFormationClient clearFiltersPath="/word-formation" families={[twoVariantFamily]} />,
+    );
+
+    const input = screen.getByLabelText(/complete with the correct form/i);
+
+    fireEvent.change(input, { target: { value: "application" } });
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
+    expect(screen.getByText("Correct: application / applicant")).not.toBeNull();
+
+    fireEvent.change(input, { target: { value: "APPLICANT" } });
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
+    expect(screen.getByText("Correct: application / applicant")).not.toBeNull();
+
+    fireEvent.change(input, { target: { value: "applicable" } });
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
+    expect(screen.getByText("Not yet: try again.")).not.toBeNull();
+  });
+
+  it("shows a message when the family has no exercise", () => {
+    const withoutExercise = { ...family } as unknown as Record<string, unknown>;
+    delete withoutExercise.exercise;
+
+    render(
+      <WordFormationClient
+        clearFiltersPath="/word-formation"
+        families={[withoutExercise as unknown as WordFamily]}
+      />,
+    );
+
+    expect(screen.getByText("This family has no exercises available.")).not.toBeNull();
+  });
+
+  it("shows an icon at the end of correct and incorrect feedback", () => {
+    render(<WordFormationClient clearFiltersPath="/word-formation" families={[family]} />);
+
+    expect(document.querySelector(".feedback-icon")).toBeNull();
+
+    const input = screen.getByLabelText(/complete with the correct form/i);
+    fireEvent.change(input, { target: { value: "decision" } });
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
+
+    const correctRow = document.querySelector(".feedback--correct");
+    expect(correctRow).not.toBeNull();
+    const correctIcon = correctRow?.querySelector(".feedback-icon--correct");
+    expect(correctIcon).not.toBeNull();
+    expect(correctIcon?.tagName).toBe("svg");
+    expect(correctRow?.firstElementChild?.tagName).toBe("svg");
+    expect(correctRow?.textContent).toContain("Correct:");
+    expect(
+      (correctIcon?.querySelector("circle")?.getAttribute("fill") ?? "").toLowerCase(),
+    ).toBe("#16a34a");
+
+    fireEvent.change(input, { target: { value: "decisions" } });
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
+
+    expect(document.querySelector(".feedback--correct")).toBeNull();
+    const incorrectRow = document.querySelector(".feedback--incorrect");
+    expect(incorrectRow).not.toBeNull();
+    const incorrectIcon = incorrectRow?.querySelector(".feedback-icon--incorrect");
+    expect(incorrectIcon).not.toBeNull();
+    expect(incorrectIcon?.tagName).toBe("svg");
+    expect(incorrectRow?.firstElementChild?.tagName).toBe("svg");
+    expect(incorrectRow?.textContent).toContain("Not yet:");
+    expect(
+      (incorrectIcon?.querySelector("circle")?.getAttribute("fill") ?? "").toLowerCase(),
+    ).toBe("#dc2626");
   });
 });

@@ -14,7 +14,9 @@ describe("buildGapFills", () => {
 | --- | --- | --- | --- | --- | --- |
 | amaze | amazement | amazing / amazed | amazingly | to surprise | asombrar |
 ## Contextos
-- **amaze:** "The view amazed us completely," she said. We stood in silence for a while.`,
+- **amaze:** "The view amazed us completely," she said. We stood in silence for a while.
+## Ejercicios
+- **Base:** amaze --- **Target:** adjective --- **Sentence (EN):** The tourists were ____ by the view. --- **Answers:** amazed`,
       "data/word-formation-b1-b2.md",
     );
     if (family === undefined) {
@@ -53,6 +55,11 @@ describe("buildGapFills", () => {
       meaningHint: "anunciar",
       contextEn: '"We must announce the news today," she said. Everyone waited in silence.',
       contextSource: "Everyday conversation",
+      exercise: {
+        target: "noun",
+        sentenceEn: "They will make an ____ on Friday.",
+        acceptedAnswers: ["announcement"],
+      },
     });
 
     expect(buildGapFills(family)).toEqual([
@@ -76,6 +83,8 @@ describe("buildGapFills", () => {
 
     for (const family of families) {
       expect(WordFamilySchema.parse(family)).toEqual(family);
+      expect(family.exercise.sentenceEn).toContain("____");
+      expect(family.exercise.acceptedAnswers.length).toBeGreaterThanOrEqual(1);
     }
   });
 });

@@ -1,7 +1,13 @@
-export function checkGapFill(guess: string, answer: string): { correct: boolean } {
-  const firstAnswer = answer.split("/")[0] ?? "";
+export function checkGapFill(
+  guess: string,
+  accepted: string | readonly string[],
+): { correct: boolean } {
+  const acceptedAnswers = Array.isArray(accepted) ? accepted : [accepted];
+  const normalizedGuess = normalize(guess);
 
-  return { correct: normalize(guess) === normalize(firstAnswer) };
+  return {
+    correct: acceptedAnswers.some((answer) => normalize(answer) === normalizedGuess),
+  };
 }
 
 function normalize(value: string): string {
