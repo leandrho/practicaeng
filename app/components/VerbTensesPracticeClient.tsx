@@ -111,7 +111,7 @@ export function VerbTensesPracticeClient({
           <span style={{ width: `${progress}%` }} />
         </div>
       </div>
-      <p className="flashcard__type-badge">{exercise.form}</p>
+      {state.revealed ? <p className="flashcard__type-badge">{exercise.form}</p> : null}
       <p className="flashcard__kicker">Your turn</p>
       <div className="flashcard__head">
         <h3 lang="en">{exercise.promptEn}</h3>

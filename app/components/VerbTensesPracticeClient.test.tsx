@@ -36,7 +36,7 @@ describe("VerbTensesPracticeClient", () => {
 
     expect(screen.getByText(first.promptEn)).not.toBeNull();
     expect(screen.getByText(first.sentenceEn)).not.toBeNull();
-    expect(screen.getByText("Present Simple")).not.toBeNull();
+    expect(screen.queryByText("Present Simple")).toBeNull();
     expect(container.textContent).not.toContain(first.modelEn);
     expect(container.textContent).not.toContain("tercera persona lleva -s");
     expect(container.textContent).not.toContain(first.translationEs);
@@ -85,6 +85,7 @@ describe("VerbTensesPracticeClient", () => {
 
     fireEvent.keyDown(window, { key: " " });
     expect(screen.getByText(first.modelEn)).not.toBeNull();
+    expect(screen.getByText("Present Simple")).not.toBeNull();
   });
 
   it("mantiene el contexto libro fuera del DOM hasta pulsar el botón cyan", () => {
@@ -173,7 +174,7 @@ describe("VerbTensesPracticeClient", () => {
     };
     const { container } = render(<VerbTensesPracticeClient exercises={[past]} />);
 
-    expect(screen.getByText("Past Simple")).not.toBeNull();
+    expect(screen.queryByText("Past Simple")).toBeNull();
     expect(container.textContent).not.toContain(past.modelEn);
 
     fireEvent.change(screen.getByLabelText("Type the missing words"), {
@@ -184,6 +185,7 @@ describe("VerbTensesPracticeClient", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
     expect(screen.getByText(past.modelEn)).not.toBeNull();
+    expect(screen.getByText("Past Simple")).not.toBeNull();
   });
 
   it("soporta ejercicios del futuro sin cambiar el formato", () => {
@@ -200,7 +202,7 @@ describe("VerbTensesPracticeClient", () => {
     };
     const { container } = render(<VerbTensesPracticeClient exercises={[future]} />);
 
-    expect(screen.getByText("Be going to")).not.toBeNull();
+    expect(screen.queryByText("Be going to")).toBeNull();
     expect(container.textContent).not.toContain(future.modelEn);
 
     fireEvent.change(screen.getByLabelText("Type the missing words"), {
@@ -211,6 +213,7 @@ describe("VerbTensesPracticeClient", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
     expect(screen.getByText(future.modelEn)).not.toBeNull();
+    expect(screen.getByText("Be going to")).not.toBeNull();
   });
 
   it("soporta ejercicios de condicionales sin cambiar el formato", () => {
@@ -227,7 +230,7 @@ describe("VerbTensesPracticeClient", () => {
     };
     const { container } = render(<VerbTensesPracticeClient exercises={[conditionals]} />);
 
-    expect(screen.getByText("Conditional Type 2")).not.toBeNull();
+    expect(screen.queryByText("Conditional Type 2")).toBeNull();
     expect(container.textContent).not.toContain(conditionals.modelEn);
 
     fireEvent.change(screen.getByLabelText("Type the missing words"), {
@@ -238,5 +241,6 @@ describe("VerbTensesPracticeClient", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
     expect(screen.getByText(conditionals.modelEn)).not.toBeNull();
+    expect(screen.getByText("Conditional Type 2")).not.toBeNull();
   });
 });
