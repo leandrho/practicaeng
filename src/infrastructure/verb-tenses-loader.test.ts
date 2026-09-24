@@ -40,6 +40,14 @@ const FUTURE_FORMS = [
   "Mixed",
 ] as const;
 
+const CONDITIONAL_FORMS = [
+  "Conditional Zero",
+  "Conditional Type 1",
+  "Conditional Type 2",
+  "Conditional Type 3",
+  "Mixed",
+] as const;
+
 function presentBullet(form: (typeof PRESENT_FORMS)[number], index: number): string {
   return `- **Form:** ${form} --- **Prompt (EN):** Complete case ${form} number ${index}. --- **Sentence (EN):** They ____ together every day (case ${form} ${index}). --- **Answers:** gather --- **Model (EN):** They gather together every day (case ${form} ${index}). --- **Explanation (ES):** El *present simple* explica el caso ${index}. --- **Translation (ES):** Ellos se reúnen todos los días (caso ${index}). --- **Context (EN):** "Do they meet often?" "Yes, they meet here every day after work." --- **Context source:** Everyday conversation`;
 }
@@ -76,12 +84,24 @@ function futureMarkdown(): string {
   return ["## Futuros", ...bullets].join("\n");
 }
 
+function conditionalBullet(form: (typeof CONDITIONAL_FORMS)[number], index: number): string {
+  return `- **Form:** ${form} --- **Prompt (EN):** Complete conditional case ${form} number ${index}. --- **Sentence (EN):** If they ____ together every day (conditional case ${form} ${index}), they save money. --- **Answers:** gather --- **Model (EN):** If they gather together every day (conditional case ${form} ${index}), they save money. --- **Explanation (ES):** El *conditional* explica el caso ${index}. --- **Translation (ES):** Ellos se reúnen todos los días (caso ${index}). --- **Context (EN):** "Do they meet often?" "Yes, they meet here every day after work." --- **Context source:** Everyday conversation`;
+}
+
+function conditionalMarkdown(): string {
+  const bullets = CONDITIONAL_FORMS.flatMap((form) =>
+    Array.from({ length: 10 }, (_, index) => conditionalBullet(form, index)),
+  );
+  return ["## Condicionales", ...bullets].join("\n");
+}
+
 beforeAll(() => {
   fixtureDirectory = mkdtempSync("/tmp/opencode/verb-tenses-fixture-");
   mkdirSync(join(fixtureDirectory, "data"), { recursive: true });
   writeFileSync(join(fixtureDirectory, "data/verb-tenses-present.md"), presentMarkdown());
   writeFileSync(join(fixtureDirectory, "data/verb-tenses-past.md"), pastMarkdown());
   writeFileSync(join(fixtureDirectory, "data/verb-tenses-future.md"), futureMarkdown());
+  writeFileSync(join(fixtureDirectory, "data/verb-tenses-conditionals.md"), conditionalMarkdown());
 });
 
 afterAll(() => {
@@ -146,20 +166,38 @@ describe("getVerbTenseSection", () => {
     }
   });
 
+  it("carga la sección real condicionales con 50 o más ejercicios y los mínimos por forma", () => {
+    const section = getVerbTenseSection("conditionals");
+    expect(section.slug).toBe("conditionals");
+    expect(section.title).toBe("Condicionales");
+    expect(section.exercises.length).toBeGreaterThanOrEqual(VERB_TENSE_MIN_TOTAL);
+    const counts = getVerbTenseFormCounts(section.exercises);
+    for (const form of CONDITIONAL_FORMS) {
+      expect(counts[form]).toBeGreaterThanOrEqual(VERB_TENSE_MIN_PER_FORM);
+    }
+    for (const exercise of section.exercises) {
+      expect(VerbTenseSectionSchema.parse(section)).toEqual(section);
+      expect(exercise.sentenceEn).toContain("____");
+      expect(exercise.acceptedAnswers.length).toBeGreaterThanOrEqual(1);
+    }
+  });
+
   it("lee desde fixtures sin exponer filesystem al cliente", () => {
     const sections = getVerbTenseSections(fixtureDirectory);
-    expect(sections).toHaveLength(3);
+    expect(sections).toHaveLength(4);
     expect(sections[0]?.exercises).toHaveLength(50);
     expect(sections[1]?.exercises).toHaveLength(50);
     expect(sections[2]?.exercises).toHaveLength(50);
+    expect(sections[3]?.exercises).toHaveLength(50);
     expect(getVerbTenseSection("present", fixtureDirectory).title).toBe("Presente");
     expect(getVerbTenseSection("past", fixtureDirectory).title).toBe("Pasado");
     expect(getVerbTenseSection("future", fixtureDirectory).title).toBe("Futuros");
+    expect(getVerbTenseSection("conditionals", fixtureDirectory).title).toBe("Condicionales");
   });
 
   it("rechaza slugs ajenos al catálogo", () => {
     expect(() =>
-      getVerbTenseSection("conditionals" as "present", fixtureDirectory),
+      getVerbTenseSection("subjunctive" as "present", fixtureDirectory),
     ).toThrow(/desconocida/);
   });
 
@@ -190,6 +228,16 @@ describe("getVerbTenseSection", () => {
       expect(() => getVerbTenseSection("future", fixtureDirectory)).toThrow();
     } finally {
       writeFileSync(file, futureMarkdown());
+    }
+  });
+
+  it("un ejercicio de condicionales con forma ajena falla con archivo, línea y campo", () => {
+    const file = join(fixtureDirectory, "data/verb-tenses-conditionals.md");
+    writeFileSync(file, `## Condicionales\n${conditionalBullet("Conditional Type 1", 0).replace("Conditional Type 1", "Present Simple")}`);
+    try {
+      expect(() => getVerbTenseSection("conditionals", fixtureDirectory)).toThrow();
+    } finally {
+      writeFileSync(file, conditionalMarkdown());
     }
   });
 });

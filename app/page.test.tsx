@@ -12,7 +12,7 @@ import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
 afterEach(cleanup);
 
 describe("HomePage", () => {
-  it("shows the hero, three groups with thirteen sections, and working links", () => {
+  it("shows the hero, three groups with fourteen sections, and working links", () => {
     render(<HomePage />);
 
     expect(
@@ -50,10 +50,11 @@ describe("HomePage", () => {
       ["Presente", getVerbTenseSection("present").exercises.length],
       ["Pasado", getVerbTenseSection("past").exercises.length],
       ["Futuros", getVerbTenseSection("future").exercises.length],
+      ["Condicionales", getVerbTenseSection("conditionals").exercises.length],
     ];
 
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(13);
+    expect(links).toHaveLength(14);
 
     const practiceGroup = screen.getByRole("region", { name: "Practice" });
     const theoryGroup = screen.getByRole("region", {
@@ -64,7 +65,7 @@ describe("HomePage", () => {
     });
     expect(within(practiceGroup).getAllByRole("link")).toHaveLength(9);
     expect(within(theoryGroup).getAllByRole("link")).toHaveLength(1);
-    expect(within(grammarPracticeGroup).getAllByRole("link")).toHaveLength(3);
+    expect(within(grammarPracticeGroup).getAllByRole("link")).toHaveLength(4);
 
     for (const [name, count] of expected) {
       const link = screen.getByRole("link", {
@@ -87,6 +88,10 @@ describe("HomePage", () => {
     expect(
       screen.getByRole("link", { name: /^Practice Futuros, \d+/ }).getAttribute("href"),
     ).toBe("/verb-tenses/future");
+
+    expect(
+      screen.getByRole("link", { name: /^Practice Condicionales, \d+/ }).getAttribute("href"),
+    ).toBe("/verb-tenses/conditionals");
 
     expect(
       screen.getByRole("link", { name: /^Practice Connectors, \d+/ }).getAttribute("href"),

@@ -122,6 +122,7 @@ export default function HomePage() {
   const presentCount = getVerbTenseSection("present").exercises.length;
   const pastCount = getVerbTenseSection("past").exercises.length;
   const futureCount = getVerbTenseSection("future").exercises.length;
+  const conditionalsCount = getVerbTenseSection("conditionals").exercises.length;
 
   const grammarPracticeSections = [
     {
@@ -145,6 +146,14 @@ export default function HomePage() {
       name: "Futuros",
       detail: "Future forms gap-fill + reveal",
       count: futureCount,
+      unit: "exercises",
+      accent: "var(--accent-grammar)",
+    },
+    {
+      href: "/verb-tenses/conditionals",
+      name: "Condicionales",
+      detail: "Conditional forms gap-fill + reveal",
+      count: conditionalsCount,
       unit: "exercises",
       accent: "var(--accent-grammar)",
     },

@@ -212,4 +212,31 @@ describe("VerbTensesPracticeClient", () => {
     fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
     expect(screen.getByText(future.modelEn)).not.toBeNull();
   });
+
+  it("soporta ejercicios de condicionales sin cambiar el formato", () => {
+    const conditionals: VerbTenseExercise = {
+      form: "Conditional Type 2",
+      promptEn: "Imagine the opposite of now: If I / be you, I would accept.",
+      sentenceEn: "If I ____ you, I would accept.",
+      acceptedAnswers: ["were"],
+      modelEn: "If I were you, I would accept.",
+      explanationEs: "El *second conditional* usa pasado simple en la condición para un presente hipotético.",
+      translationEs: "Si yo fuera vos, aceptaría.",
+      contextEn: '"Should I accept the offer?" "The job looks good and friends support me today."',
+      contextSource: "Everyday conversation",
+    };
+    const { container } = render(<VerbTensesPracticeClient exercises={[conditionals]} />);
+
+    expect(screen.getByText("Conditional Type 2")).not.toBeNull();
+    expect(container.textContent).not.toContain(conditionals.modelEn);
+
+    fireEvent.change(screen.getByLabelText("Type the missing words"), {
+      target: { value: "were" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
+    expect(screen.getByText("Correct: were")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+    expect(screen.getByText(conditionals.modelEn)).not.toBeNull();
+  });
 });
