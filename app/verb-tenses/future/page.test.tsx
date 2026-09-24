@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
+import { FilterDrawerProvider, HeaderFilterButton } from "../../components/FilterDrawerProvider";
 import { getVerbTenseSection } from "../../../src/infrastructure/verb-tenses-loader";
 import FuturePracticePage from "./page";
 
@@ -9,7 +10,7 @@ afterEach(cleanup);
 describe("FuturePracticePage", () => {
   it("presenta la práctica de Future con el conteo real y sin pista visual", () => {
     const section = getVerbTenseSection("future");
-    render(<FuturePracticePage />);
+    render(<FilterDrawerProvider><HeaderFilterButton /><FuturePracticePage /></FilterDrawerProvider>);
 
     expect(screen.getByRole("heading", { name: "Future" })).not.toBeNull();
     expect(screen.getByText("Grammar practice · Future")).not.toBeNull();
@@ -23,9 +24,13 @@ describe("FuturePracticePage", () => {
 
   it("recorre una tarjeta completa: gap-fill, contexto y Reveal", () => {
     const section = getVerbTenseSection("future");
-    const { container } = render(<FuturePracticePage />);
+    const { container } = render(<FilterDrawerProvider><HeaderFilterButton /><FuturePracticePage /></FilterDrawerProvider>);
     const exercise = section.exercises[0];
     if (!exercise) throw new Error("La sección Future no tiene ejercicios");
+
+    fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
+    fireEvent.click(screen.getByRole("button", { name: "Ordered" }));
+    fireEvent.click(screen.getByRole("button", { name: "Close filters" }));
 
     expect(screen.getByText(exercise.promptEn)).not.toBeNull();
     expect(container.textContent).not.toContain(exercise.modelEn);

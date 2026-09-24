@@ -10,6 +10,11 @@ export type FiltersContentProps = {
   onNavigate?: () => void;
   order?: OrderControls;
   hideFilters?: boolean;
+  formFilter?: {
+    options: readonly string[];
+    selected?: string;
+    onChange: (form?: string) => void;
+  };
 };
 
 export function createFilterHref(pathname: string, filter: Filter): string {
@@ -33,6 +38,7 @@ export function FiltersContent({
   onNavigate,
   order,
   hideFilters = false,
+  formFilter,
 }: FiltersContentProps) {
   const levels = [...new Set(cards.map((card) => card.level))];
   const categories = [...new Set(cards.map((card) => card.category))];
@@ -50,6 +56,24 @@ export function FiltersContent({
 
   return (
     <nav className="filters" aria-label="Filters & Order">
+      {formFilter ? (
+        <div className="filters__group">
+          <span className="filters__label">Verb tense / form</span>
+          <div className="filters__options">
+            {[undefined, ...formFilter.options].map((form) => (
+              <button
+                key={form ?? "all"}
+                type="button"
+                className="chip"
+                aria-pressed={formFilter.selected === form}
+                onClick={() => { formFilter.onChange(form); onNavigate?.(); }}
+              >
+                {form ?? "All"}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
       {hideFilters ? null : (
         <>
           <div className="filters__group">

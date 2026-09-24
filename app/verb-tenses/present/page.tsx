@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getVerbTenseSection } from "../../../src/infrastructure/verb-tenses-loader";
-import { VerbTensesPracticeClient } from "../../components/VerbTensesPracticeClient";
+import { VerbTensesSectionClient } from "../../components/VerbTensesSectionClient";
 import { BackIcon } from "../../components/ui/BackIcon";
 
 export default function PresentPracticePage() {
@@ -27,9 +27,9 @@ export default function PresentPracticePage() {
             answer and compare.
           </p>
         </header>
-        <VerbTensesPracticeClient
+        <VerbTensesSectionClient
           exercises={section.exercises}
-          accent="var(--accent-grammar)"
+          pathname="/verb-tenses/present"
         />
       </div>
     </main>

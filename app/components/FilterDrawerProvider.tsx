@@ -28,6 +28,11 @@ export type PracticeFilters = {
   pathname: string;
   order?: OrderControls;
   hideFilters?: boolean;
+  formFilter?: {
+    options: readonly string[];
+    selected?: string;
+    onChange: (form?: string) => void;
+  };
 };
 
 type FilterDrawerContextValue = {
@@ -253,6 +258,7 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
               onNavigate={closeDrawer}
               order={config.order}
               hideFilters={config.hideFilters}
+              formFilter={config.formFilter}
             />
           </div>
         </>
@@ -286,11 +292,11 @@ export function HeaderFilterButton() {
 
 export function RegisterPracticeFilters(config: PracticeFilters) {
   const { register, updateFilters, unregister } = useFilterDrawerContext();
-  const { cards, filter, pathname, order, hideFilters } = config;
+  const { cards, filter, pathname, order, hideFilters, formFilter } = config;
 
   // Alta al montar la página y baja al salir (ahí sí se cierra el drawer).
   useEffect(() => {
-    register({ cards, filter, pathname, order, hideFilters });
+    register({ cards, filter, pathname, order, hideFilters, formFilter });
     return () => {
       unregister();
     };
@@ -300,8 +306,8 @@ export function RegisterPracticeFilters(config: PracticeFilters) {
 
   // Cambios de filtros u orden: actualiza el contenido sin cerrar el drawer.
   useEffect(() => {
-    updateFilters({ cards, filter, pathname, order, hideFilters });
-  }, [updateFilters, cards, filter, pathname, order, hideFilters]);
+    updateFilters({ cards, filter, pathname, order, hideFilters, formFilter });
+  }, [updateFilters, cards, filter, pathname, order, hideFilters, formFilter]);
 
   return null;
 }
