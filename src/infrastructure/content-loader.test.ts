@@ -16,12 +16,12 @@ const fixtureDirectory = join(
 
 const realContentCounts: Record<ContentSection, number> = {
   "phrasal-verbs": 200,
-  collocations: 50,
-  prepositions: 49,
-  idioms: 35,
+  collocations: 56,
+  prepositions: 52,
+  idioms: 56,
   "irregular-verbs": 100,
   "everyday-phrases": 150,
-  connectors: 70,
+  connectors: 74,
 };
 
 // The versioned Markdown is a fixed baseline, so content changes must update it explicitly.
@@ -135,7 +135,7 @@ describe("ContentRepository", () => {
     });
   });
 
-  it("carga los 70 conectores con los nueve grupos y dos tags complementarios", () => {
+  it("carga los 74 conectores con sus grupos y dos tags complementarios", () => {
     const cards = createContentRepository().getCards("connectors");
     const expectedCategories = [
       "Adding information",
@@ -147,9 +147,10 @@ describe("ContentRepository", () => {
       "Examples and clarification",
       "Opinion and stance",
       "Summary and conclusion",
+      "Otros conectores útiles",
     ];
 
-    expect(cards).toHaveLength(70);
+    expect(cards).toHaveLength(74);
     expect(cards.every((card) => card.type === "connector")).toBe(true);
     expect(cards.every((card) => card.level === "B1-B2")).toBe(true);
     expect([...new Set(cards.map((card) => card.category))].sort()).toEqual(
@@ -157,7 +158,9 @@ describe("ContentRepository", () => {
     );
 
     for (const category of expectedCategories) {
-      expect(cards.filter((card) => card.category === category).length).toBeGreaterThanOrEqual(5);
+      expect(cards.filter((card) => card.category === category).length).toBeGreaterThanOrEqual(
+        category === "Otros conectores útiles" ? 4 : 5,
+      );
     }
 
     for (const card of cards) {
@@ -190,7 +193,7 @@ describe("ContentRepository", () => {
       "Verb + preposition",
     ];
 
-    expect(cards).toHaveLength(49);
+    expect(cards).toHaveLength(52);
     expect([...new Set(cards.map((card) => card.category))].sort()).toEqual(
       expectedCategories.sort(),
     );
