@@ -94,9 +94,54 @@ describe("parseVerbTenseSection", () => {
 
   it("falla con forma inválida", () => {
     expectParseError(
+      ["## Presente", bullet({ "Form": "Future Simple" })].join("\n"),
+      /forma inválida/,
+    );
+  });
+
+  it("rechaza formas del pasado en la sección presente", () => {
+    expectParseError(
       ["## Presente", bullet({ "Form": "Past Simple" })].join("\n"),
       /forma inválida/,
     );
+  });
+
+  it("un fixture del pasado carga y una forma ajena falla", () => {
+    const pastExpected = { slug: "past" as const, title: "Pasado" };
+    const pastBullet = bullet({
+      "Form": "Past Simple",
+      "Prompt (EN)": "Complete the finished action: I / visit my grandmother yesterday.",
+      "Sentence (EN)": "I ____ my grandmother yesterday.",
+      "Answers": "visited",
+      "Model (EN)": "I visited my grandmother yesterday.",
+      "Explanation (ES)": "El *past simple* expresa acciones terminadas con referencia pasada.",
+      "Translation (ES)": "Ayer visité a mi abuela.",
+      "Context (EN)": '"Did you see your grandmother?" "Yes, I visited her yesterday afternoon."',
+    });
+    const parsed = parseVerbTenseSection(
+      ["## Pasado", pastBullet].join("\n"),
+      "data/verb-tenses-past.md",
+      pastExpected,
+    );
+    expect(parsed.slug).toBe("past");
+    expect(parsed.exercises[0]).toMatchObject({ form: "Past Simple" });
+
+    let error: unknown;
+    try {
+      parseVerbTenseSection(
+        ["## Pasado", bullet({ "Form": "Present Simple" })].join("\n"),
+        "data/verb-tenses-past.md",
+        pastExpected,
+      );
+    } catch (caught) {
+      error = caught;
+    }
+    expect(error).toMatchObject({
+      file: "data/verb-tenses-past.md",
+      line: expect.any(Number),
+      reason: expect.any(String),
+    });
+    expect((error as { reason: string }).reason).toMatch(/forma inválida/);
   });
 
   it("falla sin contexto", () => {

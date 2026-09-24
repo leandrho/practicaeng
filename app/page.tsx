@@ -120,6 +120,7 @@ export default function HomePage() {
   // SPEC 31 · tercer grupo Grammar practice: práctica pura de tiempos
   // verbales. No suma tarjetas de vocabulario ni entra en Mixed Practice.
   const presentCount = getVerbTenseSection("present").exercises.length;
+  const pastCount = getVerbTenseSection("past").exercises.length;
 
   const grammarPracticeSections = [
     {
@@ -127,6 +128,14 @@ export default function HomePage() {
       name: "Presente",
       detail: "Present tenses gap-fill + reveal",
       count: presentCount,
+      unit: "exercises",
+      accent: "var(--accent-grammar)",
+    },
+    {
+      href: "/verb-tenses/past",
+      name: "Pasado",
+      detail: "Past tenses gap-fill + reveal",
+      count: pastCount,
       unit: "exercises",
       accent: "var(--accent-grammar)",
     },

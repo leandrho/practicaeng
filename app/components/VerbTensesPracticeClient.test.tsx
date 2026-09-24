@@ -158,4 +158,31 @@ describe("VerbTensesPracticeClient", () => {
     render(<VerbTensesPracticeClient exercises={[]} />);
     expect(screen.getByText("No exercises available.")).not.toBeNull();
   });
+
+  it("soporta ejercicios del pasado sin cambiar el formato", () => {
+    const past: VerbTenseExercise = {
+      form: "Past Simple",
+      promptEn: "Complete the finished action: I / visit my grandmother yesterday.",
+      sentenceEn: "I ____ my grandmother yesterday.",
+      acceptedAnswers: ["visited"],
+      modelEn: "I visited my grandmother yesterday.",
+      explanationEs: "El *past simple* expresa acciones terminadas con referencia pasada.",
+      translationEs: "Ayer visité a mi abuela.",
+      contextEn: '"Did you see your grandmother?" "Yes, I visited her yesterday afternoon."',
+      contextSource: "Everyday conversation",
+    };
+    const { container } = render(<VerbTensesPracticeClient exercises={[past]} />);
+
+    expect(screen.getByText("Past Simple")).not.toBeNull();
+    expect(container.textContent).not.toContain(past.modelEn);
+
+    fireEvent.change(screen.getByLabelText("Type the missing words"), {
+      target: { value: "visited" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Check" }));
+    expect(screen.getByText("Correct: visited")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Reveal" }));
+    expect(screen.getByText(past.modelEn)).not.toBeNull();
+  });
 });
