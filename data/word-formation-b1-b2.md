@@ -102,7 +102,7 @@ También podés generar ejercicios tipo:\
 `I haven't made a final ______ yet. (DECIDE)` → **decision**
 
 ## Contextos
-- **act:** But I’ll tell you I was sober; I was on’y dog tired; and if I’d awoke a second sooner, I’d ’a caught you at the act, I would. He wasn’t dead when I got round to him, not he.” “Well?” says Captain Smollett as cool as can be. — Treasure Island — Robert Louis Stevenson
+- **act:** She acted quickly when the alarm rang. Everyone left the building safely. The teacher counted the students outside. — Everyday conversation
 - **achieve:** One of those omniscient and awe-inspiring marvels, a detective, came up from St. Louis, moused around, shook his head, looked wise, and made that sort of astounding success which members of that craft usually achieve. That is to say, he “found a clew.” — Tom Sawyer — Mark Twain
 - **agree:** Allan wants us to decorate it,” cried Anne. “No. Charlotte’s beau won’t agree to that, because nobody ever has been married in the church yet, and he thinks it would seem too much like a funeral. — Anne of Green Gables — Lucy Maud Montgomery
 - **amaze:** And then it came into my head that I would amaze our friends behind by lighting it. I was to discover the atrocious folly of this proceeding, but it came to my mind as an ingenious move for covering our retreat. “I don’t know if you have ever thought what a rare thing flame must be in the absence of man and in a temperate climate. — The Time Machine — H. G. Wells
@@ -134,7 +134,7 @@ También podés generar ejercicios tipo:\
 - **encourage:** The four who had boarded made straight before them for the building, shouting as they ran, and the men among the trees shouted back to encourage them. Several shots were fired, but such was the hurry of the marksmen that not one appears to have taken effect. — Treasure Island — Robert Louis Stevenson
 - **enjoy:** “First of all we’ll try the book,” observed the doctor. The squire and I were both peering over his shoulder as he opened it, for Dr. Livesey had kindly motioned me to come round from the side-table, where I had been eating, to enjoy the sport of the search. — Treasure Island — Robert Louis Stevenson
 - **entertain:** Sid was sick and had to miss the fun; Mary remained at home to entertain him. The last thing Mrs. Thatcher said to Becky, was: “You’ll not get back till late. — Tom Sawyer — Mark Twain
-- **excite:** The news excited the kids. They jump and shout. What happy noise! — Everyday conversation
+- **excite:** The news excited the kids. They jumped and shouted. What a happy noise! — Everyday conversation
 - **exist:** “Nor, having only length, breadth, and thickness, can a cube have a real existence.” “There I object,” said Filby. “Of course a solid body may exist. — The Time Machine — H. G. Wells
 - **expect:** As for the ship, he had taken a downright fancy to her. “She’ll lie a point nearer the wind than a man has a right to expect of his own married wife, sir. — Treasure Island — Robert Louis Stevenson
 - **explain:** Quick, now!” And Alice was so much frightened that she ran off at once in the direction it pointed to, without trying to explain the mistake it had made. “He took me for his housemaid,” she said to herself as she ran. — Alice's Adventures in Wonderland — Lewis Carroll
@@ -156,7 +156,7 @@ También podés generar ejercicios tipo:\
 - **organize:** Please tell me, Marilla.” “Well, Miss Stacy wants to organize a class among her advanced students who mean to study for the entrance examination into Queen’s. She intends to give them extra lessons for an hour after school. — Anne of Green Gables — Lucy Maud Montgomery
 - **perform:** There is no reason, therefore, to think that money troubles have been weighing upon his mind. “Last Monday Mr. Neville St. Clair went into town rather earlier than usual, remarking before he started that he had two important commissions to perform, and that he would bring his little boy home a box of bricks. — The Adventures of Sherlock Holmes — Arthur Conan Doyle
 - **permit:** But the Scarecrow told her about everything, and turning to the dignified little Mouse, he said: “Permit me to introduce to you her Majesty, the Queen.” Dorothy nodded gravely and the Queen made a curtsy, after which she became quite friendly with the little girl. The Scarecrow and the Woodman now began to fasten the mice to the truck, using the strings they had brought. — The Wonderful Wizard of Oz — L. Frank Baum
-- **please:** This is the driest thing I know. Silence all round, if you please! ‘William the Conqueror, whose cause was favoured by the pope, was soon submitted to by the English, who wanted leaders, and had been of late much accustomed to usurpation and conquest. — Alice's Adventures in Wonderland — Lewis Carroll
+- **please:** Her gift pleased everyone at the party. They thanked her warmly. She was glad she had made it herself. — Everyday conversation
 - **pollute:** Cars pollute our street daily. We want more trees. The school started a garden. — Everyday conversation
 - **predict:** I predict rain for Sunday. Clouds look dark. Take an umbrella. — Everyday conversation
 - **prefer:** I prefer the plain, sensible ones.” “But I’d rather look ridiculous when everybody else does than plain and sensible all by myself,” persisted Anne mournfully. “Trust you for that! — Anne of Green Gables — Lucy Maud Montgomery
@@ -188,7 +188,7 @@ También podés generar ejercicios tipo:\
 - **Base:** appear --- **Target:** adverb --- **Sentence (EN):** ____, the road was closed after the storm. --- **Answers:** apparently
 - **Base:** apply --- **Target:** noun --- **Sentence (EN):** She submitted her ____ for the job yesterday. --- **Answers:** application
 - **Base:** argue --- **Target:** noun --- **Sentence (EN):** They had a heated ____ about money. --- **Answers:** argument
-- **Base:** arrange --- **Target:** noun --- **Sentence (EN):** The travel ____ was handled by the agency. --- **Answers:** arrangement
+- **Base:** arrange --- **Target:** noun --- **Sentence (EN):** The seating ____ was handled by the agency. --- **Answers:** arrangement
 - **Base:** attend --- **Target:** adverb --- **Sentence (EN):** The students listened ____ during the lecture. --- **Answers:** attentively
 - **Base:** attract --- **Target:** adjective --- **Sentence (EN):** The new park is very ____ for families. --- **Answers:** attractive
 - **Base:** avoid --- **Target:** adjective --- **Sentence (EN):** The accident was ____ with better brakes. --- **Answers:** avoidable
@@ -249,7 +249,7 @@ También podés generar ejercicios tipo:\
 - **Base:** respond --- **Target:** noun --- **Sentence (EN):** We are waiting for a ____ from the office. --- **Answers:** response
 - **Base:** satisfy --- **Target:** adverb --- **Sentence (EN):** He completed the task ____. --- **Answers:** satisfactorily
 - **Base:** solve --- **Target:** noun --- **Sentence (EN):** We finally found a ____ to the problem. --- **Answers:** solution
-- **Base:** succeed --- **Target:** adverb --- **Sentence (EN):** She passed the exam ____. --- **Answers:** successfully
+- **Base:** succeed --- **Target:** adverb --- **Sentence (EN):** She completed the mission ____. --- **Answers:** successfully
 - **Base:** suggest --- **Target:** noun --- **Sentence (EN):** Thanks for your ____ about the hotel. --- **Answers:** suggestion
 - **Base:** surprise --- **Target:** adjective --- **Sentence (EN):** We were ____ by the news. --- **Answers:** surprised
 - **Base:** think --- **Target:** noun --- **Sentence (EN):** It was a kind ____ to invite them. --- **Answers:** thought

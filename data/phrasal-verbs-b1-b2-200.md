@@ -172,7 +172,7 @@ después revelá la respuesta.
 ### 17. clean up
 - **Tags:** Transitive, Separable
 
--   **Meaning (EN):** make a place clean and tidy
+-   **Meaning (EN):** make something clean and tidy
 -   **Significado:** limpiar / ordenar
 -   **Ejemplo:** We need to clean up the kitchen.
 -   **Traducción (ES):** Tenemos que limpiar la cocina.
@@ -1192,8 +1192,8 @@ después revelá la respuesta.
 ### 119. show up
 - **Tags:** Intransitive
 
--   **Meaning (EN):** arrive or appear
--   **Significado:** aparecer / presentarse
+-   **Meaning (EN):** arrive, appear or become visible
+-   **Significado:** aparecer / presentarse / hacerse visible
 -   **Ejemplo:** He didn't show up for the meeting.
 -   **Traducción (ES):** No se presentó a la reunión.
 -   **Context (EN):** “Baloo has spoken, and he is our teacher for the young cubs. Who speaks besides Baloo?” A black shadow dropped down into the circle. It was Bagheera the Black Panther, inky black all over, but with the panther markings showing up in certain lights like the pattern of watered silk.
@@ -1732,8 +1732,8 @@ después revelá la respuesta.
 ### 173. leave behind
 - **Tags:** Transitive, Separable
 
--   **Meaning (EN):** forget something in a place
--   **Significado:** dejar atrás
+-   **Meaning (EN):** leave someone or something in a place when departing
+-   **Significado:** dejar atrás / olvidarse de algo
 -   **Ejemplo:** I left my umbrella behind.
 -   **Traducción (ES):** Dejé mi paraguas olvidado.
 -   **Context (EN):** The bus left us behind at the station. We ran but it was too late. Dad drove us to school instead.
