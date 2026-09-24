@@ -220,6 +220,108 @@ describe("ContentRepository", () => {
     }
   });
 
+  it("carga los 56 idioms con tags selectivos de registro y canal", () => {
+    const cards = createContentRepository().getCards("idioms");
+    const allowed = new Set([
+      "Formal",
+      "Neutral",
+      "Informal",
+      "Spoken",
+      "Written",
+      "Spoken & written",
+    ]);
+
+    expect(cards).toHaveLength(56);
+    expect(cards.every((card) => card.type === "idiom")).toBe(true);
+    for (const card of cards) {
+      for (const tag of card.tags) {
+        expect(allowed.has(tag)).toBe(true);
+      }
+      expect(new Set(card.tags).size).toBe(card.tags.length);
+    }
+    // Selectividad: hay tarjetas con y sin tags, sin valores por defecto.
+    expect(cards.some((card) => card.tags.length === 0)).toBe(true);
+    expect(cards.some((card) => card.tags.length > 0)).toBe(true);
+    expect(
+      cards.find((card) => card.expression === "a piece of cake"),
+    ).toMatchObject({ tags: ["Informal", "Spoken"] });
+    expect(
+      cards.find((card) => card.expression === "get out of hand")?.tags,
+    ).toEqual([]);
+  });
+
+  it("carga everyday phrases con Polite solo cuando la cortesía es distintiva", () => {
+    const cards = createContentRepository().getCards("everyday-phrases");
+    const allowed = new Set([
+      "Formal",
+      "Neutral",
+      "Informal",
+      "Spoken",
+      "Written",
+      "Spoken & written",
+      "Polite",
+    ]);
+
+    expect(cards).toHaveLength(150);
+    for (const card of cards) {
+      for (const tag of card.tags) {
+        expect(allowed.has(tag)).toBe(true);
+      }
+    }
+    expect(cards.some((card) => card.tags.length === 0)).toBe(true);
+    expect(
+      cards.find((card) => card.expression === "Give my regards to"),
+    ).toMatchObject({ tags: ["Formal", "Polite"] });
+    expect(
+      cards.find((card) => card.expression === "Could you help me?"),
+    ).toMatchObject({ tags: ["Polite"] });
+    // Pregunta neutra sin cortesía distintiva: sin Polite por defecto.
+    expect(
+      cards.find((card) => card.expression === "How much is it?")?.tags,
+    ).toEqual([]);
+  });
+
+  it("carga collocations con ámbitos cerrados y sin Polite", () => {
+    const cards = createContentRepository().getCards("collocations");
+    const allowed = new Set([
+      "Formal",
+      "Neutral",
+      "Informal",
+      "Spoken",
+      "Written",
+      "Spoken & written",
+      "Work",
+      "Academic",
+      "Daily life",
+    ]);
+
+    expect(cards).toHaveLength(56);
+    expect([...new Set(cards.map((card) => card.category))]).toEqual([
+      "MAKE",
+      "DO",
+      "HAVE / TAKE / GET",
+      "ADJECTIVE + NOUN",
+      "ADVERB + ADJECTIVE",
+      "Más combinaciones para practicar",
+    ]);
+    for (const card of cards) {
+      for (const tag of card.tags) {
+        expect(allowed.has(tag)).toBe(true);
+      }
+      expect(card.tags).not.toContain("Polite");
+    }
+    expect(cards.some((card) => card.tags.length === 0)).toBe(true);
+    expect(
+      cards.find((card) => card.expression === "do homework"),
+    ).toMatchObject({ tags: ["Academic"] });
+    expect(
+      cards.find((card) => card.expression === "do business"),
+    ).toMatchObject({ tags: ["Work"] });
+    expect(
+      cards.find((card) => card.expression === "make a decision")?.tags,
+    ).toEqual([]);
+  });
+
   it("MIXED_SECTIONS deja fuera connectors", () => {
     expect(MIXED_SECTIONS).not.toContain("connectors");
     expect(MIXED_SECTIONS).toEqual(

@@ -26,17 +26,39 @@ export const CardTagSchema = z.enum([
   "+ noun phrase",
   "+ -ing",
   "+ clause",
+  "Polite",
+  "Work",
+  "Academic",
+  "Daily life",
 ]);
 
 export type CardTag = z.infer<typeof CardTagSchema>;
 
 export const CARD_TAGS_BY_TYPE: Readonly<Record<CardType, readonly CardTag[]>> = {
   "phrasal-verb": ["Transitive", "Intransitive", "Separable", "Inseparable"],
-  collocation: [],
+  collocation: [
+    "Formal",
+    "Neutral",
+    "Informal",
+    "Spoken",
+    "Written",
+    "Spoken & written",
+    "Work",
+    "Academic",
+    "Daily life",
+  ],
   preposition: ["+ noun phrase", "+ -ing", "+ clause"],
-  idiom: [],
+  idiom: ["Formal", "Neutral", "Informal", "Spoken", "Written", "Spoken & written"],
   "irregular-verb": [],
-  "everyday-phrase": [],
+  "everyday-phrase": [
+    "Formal",
+    "Neutral",
+    "Informal",
+    "Spoken",
+    "Written",
+    "Spoken & written",
+    "Polite",
+  ],
   connector: [
     "Formal",
     "Neutral",

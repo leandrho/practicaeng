@@ -94,31 +94,79 @@ describe("parseBulletCards", () => {
 
   it("rechaza tags desconocidos o no permitidos con archivo y línea", () => {
     const invalidTags = [
-      { type: "preposition" as const, tag: "Academic", reason: "tag desconocido: Academic" },
+      { type: "preposition" as const, tag: "NotATag", reason: "tag desconocido: NotATag" },
+      {
+        type: "preposition" as const,
+        tag: "Academic",
+        reason: expect.stringContaining("tag Academic no permitido para preposition"),
+      },
       {
         type: "preposition" as const,
         tag: "Transitive",
         reason: expect.stringContaining("tag Transitive no permitido para preposition"),
+      },
+      {
+        type: "idiom" as const,
+        tag: "Polite",
+        reason: expect.stringContaining("tag Polite no permitido para idiom"),
+      },
+      {
+        type: "everyday-phrase" as const,
+        tag: "Work",
+        reason: expect.stringContaining("tag Work no permitido para everyday-phrase"),
+      },
+      {
+        type: "collocation" as const,
+        tag: "Polite",
+        reason: expect.stringContaining("tag Polite no permitido para collocation"),
       },
     ];
 
     for (const { type, tag, reason } of invalidTags) {
       let error: unknown;
       try {
+        const expression = type === "preposition" ? "interested in" : "test expression";
+        const file =
+          type === "preposition"
+            ? "data/fixed-prepositions-b1-b2.md"
+            : type === "idiom"
+              ? "data/idioms-b1-b2.md"
+              : type === "everyday-phrase"
+                ? "data/everyday-phrases-b1-b2-150.md"
+                : "data/collocations-b1-b2.md";
         parseBulletCards(
-          `- **interested in** --- wanting to know more about --- interesado en --- *I'm interested in technology.* --- *Me interesa la tecnología.* --- *I'm interested in it.* --- *Tags: ${tag}*`,
-          { file: "data/fixed-prepositions-b1-b2.md", type },
+          `- **${expression}** --- wanting to know more about --- interesado en --- *I'm interested in technology.* --- *Me interesa la tecnología.* --- *I'm interested in it.* --- *Tags: ${tag}*`,
+          { file, type },
         );
       } catch (caught) {
         error = caught;
       }
 
       expect(error).toMatchObject({
-        file: "data/fixed-prepositions-b1-b2.md",
         line: 1,
         reason,
       });
     }
+  });
+
+  it("parsea tags selectivos de idioms, everyday phrases y collocations", () => {
+    const [idiom] = parseBulletCards(
+      "- **a piece of cake** --- very easy --- muy fácil --- *The test was a piece of cake.* --- *El examen fue muy fácil.* --- *The homework was easy.* --- *Tags: Informal, Spoken*",
+      { file: "data/idioms-b1-b2.md", type: "idiom" },
+    );
+    expect(idiom).toMatchObject({ tags: ["Informal", "Spoken"] });
+
+    const [phrase] = parseBulletCards(
+      "- **Could you help me?** --- politely ask for assistance --- ¿Me podrías ayudar? --- *Could you help me carry this box?* --- *¿Me podrías ayudar?* --- *Could you help me move this table?* --- *Tags: Formal, Polite*",
+      { file: "data/everyday-phrases-b1-b2-150.md", type: "everyday-phrase" },
+    );
+    expect(phrase).toMatchObject({ tags: ["Formal", "Polite"] });
+
+    const [collocation] = parseBulletCards(
+      "- **do research** --- study a subject --- investigar --- *They do research.* --- *Investigan.* --- *They do research daily.* --- *Tags: Academic*",
+      { file: "data/collocations-b1-b2.md", type: "collocation" },
+    );
+    expect(collocation).toMatchObject({ tags: ["Academic"] });
   });
 });
 

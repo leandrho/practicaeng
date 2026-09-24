@@ -77,9 +77,11 @@ Los valores permitidos dependen de la sección:
 - **Connectors:** un tag de registro (`Formal`, `Neutral`, `Informal`) y uno de uso (`Spoken`, `Written`, `Spoken & written`).
 - **Phrasal Verbs:** `Transitive`, `Intransitive`, `Separable`, `Inseparable`. No combines `Transitive` con `Intransitive`; `Separable` e `Inseparable` solo se usan con sentidos `Transitive` y no se combinan entre sí.
 - **Prepositions:** `+ noun phrase`, `+ -ing`, `+ clause`. Podés incluir más de una forma cuando el patrón lo admita. Los encabezados `Adjective + preposition`, `Verb + preposition` y `Noun + preposition` siguen siendo categorías y no se repiten como tags.
-- **Otras secciones:** por ahora no aceptan tags.
+- **Idioms:** registro y canal (`Formal`, `Neutral`, `Informal`, `Spoken`, `Written`, `Spoken & written`) solo cuando distingan el uso de la expresión. Ante la duda, se omite.
+- **Everyday Phrases:** los mismos tags de registro/canal y `Polite` cuando la cortesía ayude a escoger la frase. `Polite` no se asigna por el mero hecho de que la frase sea una pregunta (por ejemplo, `How much is it?` no lleva tags).
+- **Collocations:** registro/canal cuando aporten una diferencia real y ámbito (`Work`, `Academic`, `Daily life`) solo cuando el dominio sea claro y útil. Nunca llevan `Polite`.
 
-Omití el campo cuando no agregue información útil o no puedas determinar el tag con confianza. Los chips muestran el valor en inglés, sin prefijo, y aparecen solo después de **Reveal**.
+Omití el campo cuando no agregue información útil o no puedas determinar el tag con confianza; no uses `Neutral` ni `Spoken & written` para completar. Las tarjetas sin distinción conservan `tags: []`. Los chips muestran el valor en inglés, sin prefijo, y aparecen solo después de **Reveal** (nunca en el frente). `category` y sus encabezados `##` conservan su función de agrupamiento y no se reemplazan ni duplican con tags.
 
 ### Connectors
 

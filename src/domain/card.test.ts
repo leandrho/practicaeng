@@ -83,7 +83,56 @@ describe("CardSchema", () => {
     expect(() =>
       CardSchema.parse({ ...validCard, type: "collocation", tags: ["Transitive"] }),
     ).toThrow();
-    expect(() => CardTagSchema.parse("Academic")).toThrow();
+    expect(() => CardTagSchema.parse("NotATag")).toThrow();
+    expect(CardTagSchema.parse("Academic")).toBe("Academic");
+    expect(CardTagSchema.parse("Polite")).toBe("Polite");
+    expect(CardTagSchema.parse("Work")).toBe("Work");
+    expect(CardTagSchema.parse("Daily life")).toBe("Daily life");
+  });
+
+  it("acepta tags de registro y canal para idiom", () => {
+    expect(
+      CardSchema.parse({ ...validCard, type: "idiom", tags: ["Informal", "Spoken"] }).tags,
+    ).toEqual(["Informal", "Spoken"]);
+    expect(
+      CardSchema.parse({ ...validCard, type: "idiom", tags: [] }).tags,
+    ).toEqual([]);
+    for (const tags of [["Polite"], ["Work"], ["Academic"], ["Daily life"], ["Transitive"]]) {
+      expect(() => CardSchema.parse({ ...validCard, type: "idiom", tags })).toThrow();
+    }
+  });
+
+  it("acepta registro, canal y Polite para everyday-phrase", () => {
+    expect(
+      CardSchema.parse({ ...validCard, type: "everyday-phrase", tags: ["Formal", "Polite"] })
+        .tags,
+    ).toEqual(["Formal", "Polite"]);
+    expect(
+      CardSchema.parse({ ...validCard, type: "everyday-phrase", tags: [] }).tags,
+    ).toEqual([]);
+    for (const tags of [["Work"], ["Academic"], ["Daily life"], ["Transitive"]]) {
+      expect(() =>
+        CardSchema.parse({ ...validCard, type: "everyday-phrase", tags }),
+      ).toThrow();
+    }
+  });
+
+  it("acepta registro, canal y ámbito para collocation", () => {
+    expect(
+      CardSchema.parse({ ...validCard, type: "collocation", tags: ["Academic"] }).tags,
+    ).toEqual(["Academic"]);
+    expect(
+      CardSchema.parse({ ...validCard, type: "collocation", tags: ["Work", "Formal"] }).tags,
+    ).toEqual(["Work", "Formal"]);
+    expect(
+      CardSchema.parse({ ...validCard, type: "collocation", tags: ["Daily life"] }).tags,
+    ).toEqual(["Daily life"]);
+    expect(
+      CardSchema.parse({ ...validCard, type: "collocation", tags: [] }).tags,
+    ).toEqual([]);
+    for (const tags of [["Polite"], ["Transitive"], ["+ noun phrase"]]) {
+      expect(() => CardSchema.parse({ ...validCard, type: "collocation", tags })).toThrow();
+    }
   });
 
   it("acepta patrones gramaticales válidos por sección", () => {
