@@ -1,29 +1,32 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { FiltersContent } from "./FiltersContent";
+import { createFilterHref, FiltersContent, parseOrderMode } from "./FiltersContent";
 
 afterEach(cleanup);
 
 describe("FiltersContent", () => {
-  it("shows received levels and categories while preserving the other filter", () => {
+  it("keeps category and order in links while dropping legacy level", () => {
     render(
       <FiltersContent
         cards={[
           { level: "B1-B2", category: "MAKE" },
           { level: "C1", category: "TAKE" },
         ]}
-        filter={{ category: "MAKE" }}
+        filter={{ level: "B1-B2", category: "MAKE" }}
         pathname="/collocations"
+        order={{ mode: "ordered", onModeChange: vi.fn() }}
       />,
     );
 
-    expect(screen.getByRole("link", { name: "B1-B2" })).not.toBeNull();
-    expect(screen.getByRole("link", { name: "C1" })).not.toBeNull();
+    expect(screen.queryByText("Level")).toBeNull();
     expect(screen.getByRole("link", { name: "MAKE" })).not.toBeNull();
     expect(screen.getByRole("link", { name: "TAKE" })).not.toBeNull();
-    expect(screen.getByRole("link", { name: "B1-B2" }).getAttribute("href")).toBe(
-      "/collocations?level=B1-B2&category=MAKE",
+    expect(screen.getByRole("link", { name: "TAKE" }).getAttribute("href")).toBe(
+      "/collocations?category=TAKE&order=ordered",
+    );
+    expect(screen.getByRole("link", { name: "All" }).getAttribute("href")).toBe(
+      "/collocations?order=ordered",
     );
   });
 
@@ -38,7 +41,7 @@ describe("FiltersContent", () => {
       />,
     );
 
-    expect(screen.getByText("Level")).not.toBeNull();
+    expect(screen.queryByText("Level")).toBeNull();
     expect(screen.getByText("Order")).not.toBeNull();
     expect(screen.getByRole("button", { name: "Ordered" }).getAttribute("aria-pressed")).toBe(
       "true",
@@ -91,5 +94,19 @@ describe("FiltersContent", () => {
     fireEvent.click(screen.getByRole("button", { name: "Ordered" }));
     expect(onModeChange).toHaveBeenCalledWith("ordered");
     expect(onNavigate).not.toHaveBeenCalled();
+  });
+});
+
+describe("filter URLs", () => {
+  it("normalizes invalid modes and omits shuffled and legacy level", () => {
+    expect(parseOrderMode("random")).toBe("shuffled");
+    expect(parseOrderMode(null)).toBe("shuffled");
+    expect(parseOrderMode("ordered")).toBe("ordered");
+    expect(createFilterHref("/collocations", { level: "B1-B2", category: "MAKE" }, "random"))
+      .toBe("/collocations?category=MAKE");
+    expect(createFilterHref("/collocations", { category: "MAKE" }, "shuffled"))
+      .toBe("/collocations?category=MAKE");
+    expect(createFilterHref("/collocations", { category: "MAKE" }, "ordered"))
+      .toBe("/collocations?category=MAKE&order=ordered");
   });
 });

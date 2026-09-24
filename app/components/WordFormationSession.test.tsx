@@ -313,8 +313,9 @@ describe("SPEC 31 — sesiones y repaso de Word Formation", () => {
     ).toBe("known");
   });
 
-  it("la ruta restaura el modo de orden guardado para retomar la sesión", () => {
+  it("la ruta restaura la sesión cuando su orden coincide con la URL", () => {
     const families = deck(3);
+    paramsState.query = "order=ordered";
     let session = createPracticeSession(
       "/word-formation",
       assignWordFormationRefs(families),
@@ -345,6 +346,27 @@ describe("SPEC 31 — sesiones y repaso de Word Formation", () => {
     expect(screen.getByText("Family 2 of 3")).not.toBeNull();
     expect(screen.getByRole("heading", { name: "FAM-01" })).not.toBeNull();
     expect(screen.queryByText("Noun:")).toBeNull();
+  });
+
+  it("Word Formation lee order y category del enlace y descarta level antiguo", () => {
+    paramsState.query = "category=B&order=ordered&level=B1-B2";
+    render(
+      <FilterDrawerProvider>
+        <HeaderFilterButton />
+        <WordFormationSectionClient
+          families={[makeFamily("alpha", { category: "A" }), makeFamily("bravo", { category: "B" })]}
+          pathname="/word-formation"
+          accent="red"
+        />
+      </FilterDrawerProvider>,
+    );
+    expect(screen.getByRole("heading", { name: "BRAVO" })).not.toBeNull();
+    expect(screen.getByText("Family 1 of 1")).not.toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
+    expect(screen.queryByText("Level")).toBeNull();
+    expect(screen.getByRole("button", { name: "Ordered" }).getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("link", { name: "A" }).getAttribute("href"))
+      .toBe("/word-formation?category=A&order=ordered");
   });
 
   it("no retoma una sesión si el filtro vigente cambió", () => {
@@ -433,7 +455,7 @@ describe("SPEC 31 — sesiones y repaso de Word Formation", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
 
-    expect(paramsState.push).not.toHaveBeenCalled();
+    expect(paramsState.push).toHaveBeenCalledTimes(1);
     expect(screen.getByText("Family 1 of 2")).not.toBeNull();
     const stored = JSON.parse(
       localStorage.getItem(PRACTICE_STORAGE_KEY) ?? "{}",
@@ -473,7 +495,7 @@ describe("SPEC 31 — sesiones y repaso de Word Formation", () => {
     fireEvent.click(screen.getByRole("button", { name: "Start new session" }));
 
     expect(paramsState.push).toHaveBeenCalledWith(
-      "/word-formation?category=B",
+      "/word-formation?category=B&order=ordered",
     );
   });
 });

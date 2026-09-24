@@ -80,18 +80,21 @@ describe("SectionPracticeClient", () => {
 
     openFilters();
     fireEvent.click(screen.getByRole("button", { name: "Ordered" }));
+    pushMock.mockClear();
     fireEvent.click(screen.getByRole("button", { name: "Next" }));
     expect(screen.getByText("Card 2 of 5")).not.toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: "Shuffled" }));
 
     // Con progreso, el cambio de orden pide confirmación en lugar de mezclar.
+    expect(pushMock).not.toHaveBeenCalledWith("/collocations");
     expect(
       screen.getByRole("alertdialog", { name: "Start new session?" }),
     ).not.toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: "Start new session" }));
 
+    expect(pushMock).toHaveBeenCalledWith("/collocations");
     expect(screen.getByText("Card 1 of 5")).not.toBeNull();
     expect(screen.queryByRole("dialog", { name: "Filters & Order" })).toBeNull();
   });
@@ -101,6 +104,7 @@ describe("SectionPracticeClient", () => {
 
     openFilters();
     fireEvent.click(screen.getByRole("button", { name: "Ordered" }));
+    pushMock.mockClear();
     fireEvent.click(screen.getByRole("button", { name: "Next" }));
     fireEvent.click(screen.getByRole("button", { name: "Shuffled" }));
 
@@ -108,6 +112,8 @@ describe("SectionPracticeClient", () => {
 
     expect(screen.getByText("Card 2 of 5")).not.toBeNull();
     expect(pushMock).not.toHaveBeenCalled();
+    openFilters();
+    expect(screen.getByRole("button", { name: "Ordered" }).getAttribute("aria-pressed")).toBe("true");
     expect(
       screen.queryByRole("alertdialog", { name: "Start new session?" }),
     ).toBeNull();

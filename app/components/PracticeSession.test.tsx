@@ -61,9 +61,9 @@ function renderPractice(props: ComponentProps<typeof SectionPracticeClient>) {
 function renderOrderedPractice(
   props: ComponentProps<typeof SectionPracticeClient>,
 ) {
+  paramsState.query = "order=ordered";
   renderPractice(props);
   fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
-  fireEvent.click(screen.getByRole("button", { name: "Ordered" }));
 }
 
 function revealAndRate(label: "I knew it" | "Almost" | "I didn't know") {
@@ -276,6 +276,85 @@ describe("SPEC 30 — sesiones cortas de vocabulario", () => {
     expect(screen.queryByText("Level")).toBeNull();
   });
 
+  it("aplica orden compartido aunque haya una sesión shuffled guardada", () => {
+    const props = { cards: deck(5), pathname: "/collocations", accent: "red" };
+    renderPractice(props);
+    const shuffled = JSON.parse(localStorage.getItem(PRACTICE_STORAGE_KEY) ?? "{}") as {
+      sessions: Record<string, { items: Array<{ id: string }>; selection: { order: string } }>;
+    };
+    expect(shuffled.sessions[props.pathname]?.selection.order).toBe("shuffled");
+    cleanup();
+
+    paramsState.query = "order=ordered&level=B1-B2";
+    renderPractice(props);
+    expect(screen.getByRole("heading", { name: "card-00" })).not.toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
+    expect(screen.getByRole("button", { name: "Ordered" }).getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("link", { name: "general" }).getAttribute("href"))
+      .toBe("/collocations?category=general&order=ordered");
+  });
+
+  it("recargar shuffled conserva el mazo concreto y el índice", () => {
+    const props = { cards: deck(12), pathname: "/collocations", accent: "red" };
+    renderPractice(props);
+    const first = screen.getByRole("heading", { level: 2 }).textContent;
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+    const second = screen.getByRole("heading", { level: 2 }).textContent;
+    cleanup();
+    renderPractice(props);
+    expect(screen.getByText("Card 2 of 10")).not.toBeNull();
+    expect(screen.getByRole("heading", { level: 2 }).textContent).toBe(second);
+    expect(first).not.toBeNull();
+  });
+
+  it("un order inválido inicia shuffled y permite enlazar la categoría", () => {
+    paramsState.query = "order=invalid&level=B1-B2";
+    renderPractice({ cards: deck(2), pathname: "/collocations", accent: "red" });
+    fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
+    expect(screen.getByRole("button", { name: "Shuffled" }).getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("link", { name: "general" }).getAttribute("href"))
+      .toBe("/collocations?category=general");
+  });
+
+  it("una navegación compartida cambia el modo aun si la ruta sigue montada", () => {
+    const props = { cards: deck(3), pathname: "/collocations", accent: "red" };
+    const practice = renderPractice(props);
+    paramsState.query = "order=ordered";
+    practice.rerender(
+      <FilterDrawerProvider>
+        <HeaderFilterButton />
+        <SectionPracticeClient {...props} />
+      </FilterDrawerProvider>,
+    );
+    expect(screen.getByRole("heading", { name: "card-00" })).not.toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
+    expect(screen.getByRole("button", { name: "Ordered" }).getAttribute("aria-pressed")).toBe("true");
+  });
+
+  it("cambiar orden conserva category y Cancel mantiene URL y sesión", () => {
+    paramsState.query = "category=MAKE&order=ordered";
+    renderPractice({
+      cards: [makeCard("make one", { category: "MAKE" }), makeCard("make two", { category: "MAKE" })],
+      pathname: "/collocations",
+      accent: "red",
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+    const before = localStorage.getItem(PRACTICE_STORAGE_KEY);
+    fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
+    fireEvent.click(screen.getByRole("button", { name: "Shuffled" }));
+    expect(paramsState.push).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
+    expect(paramsState.query).toBe("category=MAKE&order=ordered");
+    expect(localStorage.getItem(PRACTICE_STORAGE_KEY)).toBe(before);
+    expect(screen.getByText("Card 2 of 2")).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
+    fireEvent.click(screen.getByRole("button", { name: "Shuffled" }));
+    fireEvent.click(screen.getByRole("button", { name: "Start new session" }));
+    expect(paramsState.push).toHaveBeenCalledWith("/collocations?category=MAKE");
+    expect(screen.getByText("Card 1 of 2")).not.toBeNull();
+  });
+
   it("recargar conserva índice, fase y resultados con la respuesta oculta", () => {
     const props = {
       cards: deck(3),
@@ -361,6 +440,7 @@ describe("SPEC 30 — sesiones cortas de vocabulario", () => {
     });
 
     revealAndRate("I knew it");
+    const before = localStorage.getItem(PRACTICE_STORAGE_KEY);
 
     fireEvent.click(screen.getByRole("button", { name: "Filters & Order" }));
     fireEvent.click(screen.getByRole("link", { name: "TAKE" }));
@@ -373,6 +453,9 @@ describe("SPEC 30 — sesiones cortas de vocabulario", () => {
 
     expect(paramsState.push).not.toHaveBeenCalled();
     expect(screen.getByText("Card 2 of 2")).not.toBeNull();
+    expect(localStorage.getItem(PRACTICE_STORAGE_KEY)).toBe(before);
+    expect(screen.getByRole("link", { name: "TAKE" }).getAttribute("href"))
+      .toBe("/collocations?category=TAKE&order=ordered");
     expect(
       screen.queryByRole("alertdialog", { name: "Start new session?" }),
     ).toBeNull();
@@ -383,11 +466,12 @@ describe("SPEC 30 — sesiones cortas de vocabulario", () => {
       makeCard("card-00", { category: "MAKE" }),
       makeCard("card-01", { category: "TAKE" }),
     ];
-    renderOrderedPractice({
+    const props = {
       cards: mixedCategories,
       pathname: "/collocations",
       accent: "red",
-    });
+    };
+    renderOrderedPractice(props);
 
     revealAndRate("I knew it");
 
@@ -396,8 +480,19 @@ describe("SPEC 30 — sesiones cortas de vocabulario", () => {
     fireEvent.click(screen.getByRole("button", { name: "Start new session" }));
 
     expect(paramsState.push).toHaveBeenCalledWith(
-      "/collocations?category=TAKE",
+      "/collocations?category=TAKE&order=ordered",
     );
+    // Simula la navegación confirmada al enlace de la nueva categoría.
+    paramsState.query = "category=TAKE&order=ordered";
+    cleanup();
+    renderPractice(props);
+    expect(screen.getByText("Card 1 of 1")).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "card-01" })).not.toBeNull();
+    const stored = JSON.parse(localStorage.getItem(PRACTICE_STORAGE_KEY) ?? "{}") as {
+      sessions: Record<string, { index: number; selection: { category?: string; order: string } }>;
+    };
+    expect(stored.sessions[props.pathname]?.index).toBe(0);
+    expect(stored.sessions[props.pathname]?.selection).toEqual({ category: "TAKE", order: "ordered" });
   });
 
   it("sin localStorage permite terminar la sesión en memoria", () => {

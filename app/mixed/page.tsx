@@ -22,7 +22,7 @@ export default async function MixedPage() {
         <header className="practice-header">
           <Link href="/" className="grammar-index__back"><BackIcon /> All sections</Link>
           <h1>Mixed Practice</h1>
-          <p>All sections shuffled. Recall, reveal, compare.</p>
+          <p>Phrasal verbs, collocations, prepositions, idioms, irregular verbs and everyday phrases. Recall, reveal, compare.</p>
         </header>
         <Suspense fallback={null}>
           <SectionPracticeClient

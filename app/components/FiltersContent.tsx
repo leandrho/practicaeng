@@ -17,14 +17,22 @@ export type FiltersContentProps = {
   ) => void;
 };
 
-export function createFilterHref(pathname: string, filter: Filter): string {
+export function parseOrderMode(value: string | null | undefined): OrderMode {
+  return value === "ordered" ? "ordered" : "shuffled";
+}
+
+export function createFilterHref(
+  pathname: string,
+  filter: Filter,
+  order: string | null | undefined = undefined,
+): string {
   const searchParams = new URLSearchParams();
 
-  if (filter.level !== undefined) {
-    searchParams.set("level", filter.level);
-  }
   if (filter.category !== undefined) {
     searchParams.set("category", filter.category);
+  }
+  if (parseOrderMode(order) === "ordered") {
+    searchParams.set("order", "ordered");
   }
 
   const query = searchParams.toString();
@@ -40,8 +48,8 @@ export function FiltersContent({
   hideFilters = false,
   onFilterNavigate,
 }: FiltersContentProps) {
-  const levels = [...new Set(cards.map((card) => card.level))];
   const categories = [...new Set(cards.map((card) => card.category))];
+  const mode = order?.mode;
 
   function handleFilterClick(
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -70,53 +78,17 @@ export function FiltersContent({
       {hideFilters ? null : (
         <>
           <div className="filters__group">
-            <span className="filters__label">Level</span>
-            <div className="filters__options">
-              <a
-                className="chip"
-                aria-current={filter.level === undefined ? "page" : undefined}
-                href={createFilterHref(pathname, { category: filter.category })}
-                onClick={(event) =>
-                  handleFilterClick(
-                    event,
-                    createFilterHref(pathname, { category: filter.category }),
-                    { category: filter.category },
-                  )
-                }
-              >
-                All
-              </a>
-              {levels.map((level) => (
-                <a
-                  className="chip"
-                  aria-current={filter.level === level ? "page" : undefined}
-                  href={createFilterHref(pathname, { ...filter, level })}
-                  key={level}
-                  onClick={(event) =>
-                    handleFilterClick(
-                      event,
-                      createFilterHref(pathname, { ...filter, level }),
-                      { ...filter, level },
-                    )
-                  }
-                >
-                  {level}
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="filters__group">
             <span className="filters__label">Category</span>
             <div className="filters__options">
               <a
                 className="chip"
                 aria-current={filter.category === undefined ? "page" : undefined}
-                href={createFilterHref(pathname, { level: filter.level })}
+                href={createFilterHref(pathname, {}, mode)}
                 onClick={(event) =>
                   handleFilterClick(
                     event,
-                    createFilterHref(pathname, { level: filter.level }),
-                    { level: filter.level },
+                    createFilterHref(pathname, {}, mode),
+                    {},
                   )
                 }
               >
@@ -126,13 +98,13 @@ export function FiltersContent({
                 <a
                   className="chip"
                   aria-current={filter.category === category ? "page" : undefined}
-                  href={createFilterHref(pathname, { ...filter, category })}
+                  href={createFilterHref(pathname, { category }, mode)}
                   key={category}
                   onClick={(event) =>
                     handleFilterClick(
                       event,
-                      createFilterHref(pathname, { ...filter, category }),
-                      { ...filter, category },
+                      createFilterHref(pathname, { category }, mode),
+                      { category },
                     )
                   }
                 >
@@ -143,8 +115,8 @@ export function FiltersContent({
           </div>
           <a
             className="btn btn--ghost filters__clear"
-            href={pathname}
-            onClick={(event) => handleFilterClick(event, pathname, {})}
+            href={createFilterHref(pathname, {}, mode)}
+            onClick={(event) => handleFilterClick(event, createFilterHref(pathname, {}, mode), {})}
           >
             Clear filters
           </a>

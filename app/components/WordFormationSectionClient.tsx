@@ -4,13 +4,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { filterCards, type Filter } from "../../src/application/filterCards";
 import type { WordFamily } from "../../src/domain/word-formation";
-import {
-  getPracticeStorageBackend,
-  isValidPracticeSessionShape,
-  loadPracticeState,
-} from "../../src/infrastructure/ui/practice-storage";
 import WordFormationClient from "./WordFormationClient";
 import { RegisterPracticeFilters, type OrderMode } from "./FilterDrawerProvider";
+import { createFilterHref, parseOrderMode } from "./FiltersContent";
 import { Button } from "./ui/Button";
 
 type WordFormationSectionClientProps = {
@@ -23,28 +19,6 @@ type PendingChange =
   | { type: "order"; mode: OrderMode; reshuffle: boolean }
   | { type: "filter"; href: string };
 
-function readStoredOrder(
-  pathname: string,
-  level: string | undefined,
-  category: string | undefined,
-): OrderMode {
-  try {
-    const stored = loadPracticeState(getPracticeStorageBackend());
-    const candidate = stored.sessions[pathname];
-    if (
-      candidate !== undefined &&
-      isValidPracticeSessionShape(candidate) &&
-      (candidate.selection.level ?? undefined) === (level ?? undefined) &&
-      (candidate.selection.category ?? undefined) === (category ?? undefined)
-    ) {
-      return candidate.selection.order;
-    }
-  } catch {
-    // Sin almacenamiento: se empieza mezclado y se sigue en memoria.
-  }
-  return "shuffled";
-}
-
 export function WordFormationSectionClient({
   families,
   pathname,
@@ -52,26 +26,22 @@ export function WordFormationSectionClient({
 }: WordFormationSectionClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const initialLevel = searchParams.get("level") ?? undefined;
-  const initialCategory = searchParams.get("category") ?? undefined;
-  // Recargar conserva el orden: la página vive tras Suspense (solo cliente),
-  // así que leer el storage en el inicializador no desincroniza el servidor.
-  const [mode, setMode] = useState<OrderMode>(() =>
-    readStoredOrder(pathname, initialLevel, initialCategory),
-  );
+  const urlKey = searchParams.toString();
+  const urlMode = parseOrderMode(searchParams.get("order"));
+  const [orderState, setOrderState] = useState(() => ({ urlKey, mode: urlMode }));
+  const mode = orderState.urlKey === urlKey ? orderState.mode : urlMode;
+  if (orderState.urlKey !== urlKey) {
+    setOrderState({ urlKey, mode: urlMode });
+  }
   const [reshuffleCount, setReshuffleCount] = useState(0);
   const [hasProgress, setHasProgress] = useState(false);
   const [pending, setPending] = useState<PendingChange | null>(null);
   const cancelRef = useRef<HTMLButtonElement | null>(null);
 
-  const level = searchParams.get("level") ?? undefined;
   const category = searchParams.get("category") ?? undefined;
   const filter: Filter = useMemo(
-    () => ({
-      level,
-      category,
-    }),
-    [level, category],
+    () => ({ category }),
+    [category],
   );
   const filteredFamilies = useMemo(
     () => filterCards(families, filter),
@@ -79,23 +49,26 @@ export function WordFormationSectionClient({
   );
   const selection = useMemo(
     () => ({
-      level: filter.level,
       category: filter.category,
       order: mode,
     }),
-    [filter.level, filter.category, mode],
+    [filter.category, mode],
   );
 
   const handleProgressChange = useCallback((progress: boolean) => {
     setHasProgress(progress);
   }, []);
 
-  function applyOrder(next: OrderMode, reshuffle: boolean) {
-    setMode(next);
-    if (reshuffle) {
-      setReshuffleCount((count) => count + 1);
-    }
-  }
+  const applyOrder = useCallback(
+    (next: OrderMode, reshuffle: boolean) => {
+      setOrderState({ urlKey, mode: next });
+      router.push(createFilterHref(pathname, filter, next));
+      if (reshuffle) {
+        setReshuffleCount((count) => count + 1);
+      }
+    },
+    [urlKey, router, pathname, filter],
+  );
 
   const requestOrderChange = useCallback(
     (next: OrderMode) => {
@@ -119,7 +92,7 @@ export function WordFormationSectionClient({
         applyOrder(next, next === "shuffled");
       }
     },
-    [mode, hasProgress, pending],
+    [mode, hasProgress, pending, applyOrder],
   );
 
   const order = useMemo(
@@ -133,16 +106,15 @@ export function WordFormationSectionClient({
         event.preventDefault();
         return;
       }
-      const sameLevel = (next.level ?? undefined) === (filter.level ?? undefined);
       const sameCategory =
         (next.category ?? undefined) === (filter.category ?? undefined);
-      if (hasProgress && (!sameLevel || !sameCategory)) {
+      if (hasProgress && !sameCategory) {
         event.preventDefault();
         setPending({ type: "filter", href });
       }
       // Sin progreso pendiente: navegación por defecto del enlace.
     },
-    [filter.level, filter.category, hasProgress, pending],
+    [filter.category, hasProgress, pending],
   );
 
   function confirmPending() {
@@ -198,7 +170,7 @@ export function WordFormationSectionClient({
         route={pathname}
         selection={selection}
         reshuffleCount={reshuffleCount}
-        clearFiltersPath={pathname}
+        clearFiltersPath={createFilterHref(pathname, {}, mode)}
         accent={accent}
         onProgressChange={handleProgressChange}
       />
