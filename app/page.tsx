@@ -219,16 +219,16 @@ export default function HomePage() {
           ))}
         </ul>
       </section>
-      <section className="home-group" aria-labelledby="home-group-theory">
+      <section className="home-group" aria-labelledby="home-group-grammar-practice">
         <div className="home-group__heading">
-          <h2 id="home-group-theory">Grammar &amp; theory</h2>
-          <span>{grammarTopicCount} topics</span>
+          <h2 id="home-group-grammar-practice">Grammar practice</h2>
+          <span>{grammarPracticeSections.length} sections</span>
         </div>
         <p className="home-group__desc">
-          Review the rules, then practise by making your own sentences.
+          Pure practice: complete the gap, then reveal and compare.
         </p>
         <ul className="section-grid">
-          {theorySections.map((section) => (
+          {grammarPracticeSections.map((section) => (
             <li key={section.href}>
               <Link
                 className="section-card"
@@ -249,16 +249,16 @@ export default function HomePage() {
           ))}
         </ul>
       </section>
-      <section className="home-group" aria-labelledby="home-group-grammar-practice">
+      <section className="home-group" aria-labelledby="home-group-theory">
         <div className="home-group__heading">
-          <h2 id="home-group-grammar-practice">Grammar practice</h2>
-          <span>{grammarPracticeSections.length} sections</span>
+          <h2 id="home-group-theory">Grammar &amp; theory</h2>
+          <span>{grammarTopicCount} topics</span>
         </div>
         <p className="home-group__desc">
-          Pure practice: complete the gap, then reveal and compare.
+          Review the rules, then practise by making your own sentences.
         </p>
         <ul className="section-grid">
-          {grammarPracticeSections.map((section) => (
+          {theorySections.map((section) => (
             <li key={section.href}>
               <Link
                 className="section-card"
