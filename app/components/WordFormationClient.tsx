@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { checkGapFill } from "../../src/application/checkGapFill";
 import { resolveHint } from "../../src/domain/hints";
 import type { WordFamily } from "../../src/domain/word-formation";
+import { shouldIgnorePracticeShortcut } from "../../src/infrastructure/ui/keyboard";
 import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
@@ -50,7 +51,7 @@ export default function WordFormationClient({
         return;
       }
 
-      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+      if (shouldIgnorePracticeShortcut(event)) {
         return;
       }
 
