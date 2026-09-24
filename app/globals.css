@@ -280,17 +280,74 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
-.session-bar {
+.home-hero__actions {
   display: flex;
-  height: 0.6rem;
-  overflow: hidden;
-  border-radius: 999px;
-  background: var(--line);
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.session-bar > span {
-  flex-shrink: 0;
-  min-width: 2px;
+.home-hero__continue {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.home-local {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+  max-width: 36rem;
+}
+
+/* Reserva estable mientras se lee localStorage: evita saltos de layout. */
+.home-local--loading {
+  min-height: 3.5rem;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--text) 4%, transparent);
+}
+
+.home-local__summary {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.home-local__title {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.home-local__list {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-local__list a {
+  overflow-wrap: anywhere;
+}
+
+.home-local__meta {
+  color: var(--muted);
+}
+
+.home-local__review {
+  width: fit-content;
+  max-width: 100%;
+  color: var(--action);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
 }
 
 .section-grid {

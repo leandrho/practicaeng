@@ -5,13 +5,20 @@ import {
   contentRepository,
 } from "../src/infrastructure/content-loader";
 import { getWordFamilies } from "../src/infrastructure/word-formation-loader";
+import { HomeLocal } from "./components/HomeLocal";
 
 // Los archivos de data/ se editan independientemente del código: la portada
 // debe leer sus conteos actuales en cada solicitud, también en producción.
 export const dynamic = "force-dynamic";
 
+// Mixed Practice usa MIXED_SECTIONS: seis secciones de vocabulario
+// (phrasal verbs, collocations, prepositions, idioms, irregular verbs y
+// everyday phrases). Connectors, Word Formation y Grammar quedan fuera.
+const MIXED_DESCRIPTION =
+  "Phrasal verbs, collocations, prepositions, idioms, irregular verbs and everyday phrases, shuffled.";
+
 export default function HomePage() {
-  const sections = [
+  const vocabularySections = [
     {
       href: "/phrasal-verbs",
       name: "Phrasal verbs",
@@ -53,14 +60,6 @@ export default function HomePage() {
       accent: "var(--accent-irregular-verbs)",
     },
     {
-      href: "/word-formation",
-      name: "Word Formation",
-      detail: "Word families",
-      count: getWordFamilies().length,
-      unit: "families",
-      accent: "var(--accent-word-formation)",
-    },
-    {
       href: "/everyday-phrases",
       name: "Everyday Phrases",
       detail: "Common phrases for daily situations",
@@ -78,34 +77,27 @@ export default function HomePage() {
     },
   ];
 
-  const total = sections
-    .filter((section) => section.unit === "cards")
-    .reduce((sum, section) => sum + section.count, 0);
   const familyCount = getWordFamilies().length;
 
-  // Mixed Practice usa MIXED_SECTIONS: los conectores quedan fuera (SPEC 24).
   const mixedCount = MIXED_SECTIONS.reduce(
     (sum, section) => sum + contentRepository.getCards(section).length,
-    0
+    0,
   );
-
-  const mixedCard = {
-    href: "/mixed",
-    name: "Mixed Practice",
-    detail: "All sections shuffled",
-    count: mixedCount,
-    unit: "cards",
-    accent: "var(--accent-mixed)",
-  };
-
-  const practiceSections = [...sections, mixedCard];
 
   const grammarTopicCount = GRAMMAR_PARTS.reduce(
     (sum, part) => sum + part.topics.length,
-    0
+    0,
   );
 
-  const theorySections = [
+  const guidedPaths = [
+    {
+      href: "/mixed",
+      name: "Mixed Practice",
+      detail: MIXED_DESCRIPTION,
+      count: mixedCount,
+      unit: "cards",
+      accent: "var(--accent-mixed)",
+    },
     {
       href: "/grammar",
       name: "Grammar B1+",
@@ -114,48 +106,39 @@ export default function HomePage() {
       unit: "topics",
       accent: "var(--accent-grammar)",
     },
+    {
+      href: "/word-formation",
+      name: "Word Formation",
+      detail: "Complete and produce word families",
+      count: familyCount,
+      unit: "families",
+      accent: "var(--accent-word-formation)",
+    },
   ];
 
   return (
     <main className="home" id="contenido">
       <section className="home-hero" aria-labelledby="home-title">
         <h1 id="home-title">Practice English</h1>
-        <p>
-          Pick a section and practice with flashcards: see, recall, produce,
-          reveal, compare, repeat.
-        </p>
+        <p>Start a 10-card session or pick a section.</p>
+        <div className="home-hero__actions">
+          <Link className="btn btn--primary" href="/mixed">
+            Practice 10 cards
+          </Link>
+        </div>
+        <HomeLocal />
         <p className="home-hero__meta">
-          {total} cards · {familyCount} families · {practiceSections.length}{" "}
-          practice sections · {grammarTopicCount} grammar topics
+          {mixedCount} mixed cards · {familyCount} families ·{" "}
+          {grammarTopicCount} grammar topics
         </p>
-        <div
-          className="session-bar"
-          role="img"
-          aria-label={`Card distribution by section, ${total} cards total`}
-        >
-          {sections
-            .filter((section) => section.unit === "cards")
-            .map((section) => (
-              <span
-                key={section.href}
-                style={{
-                  width: `${total === 0 ? 0 : (section.count / total) * 100}%`,
-                  background: section.accent,
-                }}
-              />
-            ))}
-        </div>
       </section>
-      <section className="home-group" aria-labelledby="home-group-practice">
+      <section className="home-group" aria-labelledby="home-group-path">
         <div className="home-group__heading">
-          <h2 id="home-group-practice">Practice</h2>
-          <span>{practiceSections.length} sections</span>
+          <h2 id="home-group-path">Choose a path</h2>
+          <span>3 guided options</span>
         </div>
-        <p className="home-group__desc">
-          Active recall: see, recall, produce, reveal, compare, repeat.
-        </p>
         <ul className="section-grid">
-          {practiceSections.map((section) => (
+          {guidedPaths.map((section) => (
             <li key={section.href}>
               <Link
                 className="section-card"
@@ -176,16 +159,13 @@ export default function HomePage() {
           ))}
         </ul>
       </section>
-      <section className="home-group" aria-labelledby="home-group-theory">
+      <section className="home-group" aria-labelledby="home-group-vocabulary">
         <div className="home-group__heading">
-          <h2 id="home-group-theory">Grammar &amp; theory</h2>
-          <span>{grammarTopicCount} topics</span>
+          <h2 id="home-group-vocabulary">Browse vocabulary</h2>
+          <span>{vocabularySections.length} sections</span>
         </div>
-        <p className="home-group__desc">
-          Review the rules, then practise by making your own sentences.
-        </p>
         <ul className="section-grid">
-          {theorySections.map((section) => (
+          {vocabularySections.map((section) => (
             <li key={section.href}>
               <Link
                 className="section-card"
