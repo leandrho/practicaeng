@@ -1,11 +1,14 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { ComponentProps } from "react";
 import type { Card } from "../../src/domain/card";
 
+const { pushMock } = vi.hoisted(() => ({ pushMock: vi.fn() }));
+
 vi.mock("next/navigation", () => ({
   useSearchParams: () => new URLSearchParams(),
+  useRouter: () => ({ push: pushMock }),
 }));
 
 import { SectionPracticeClient } from "./SectionPracticeClient";
@@ -33,6 +36,11 @@ const cards = ["alpha", "bravo", "charlie", "delta", "echo"].map((expression) =>
 );
 
 afterEach(cleanup);
+
+beforeEach(() => {
+  localStorage.clear();
+  pushMock.mockClear();
+});
 
 function renderPractice(props: ComponentProps<typeof SectionPracticeClient>) {
   return render(
@@ -67,7 +75,7 @@ describe("SectionPracticeClient", () => {
     expect(screen.getByText("Card 1 of 5")).not.toBeNull();
   });
 
-  it("reshuffles from the drawer and closes it", () => {
+  it("reshuffles from the drawer with confirmation when there is progress", () => {
     renderPractice({ cards, pathname: "/collocations", accent: "red" });
 
     openFilters();
@@ -77,8 +85,32 @@ describe("SectionPracticeClient", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Shuffled" }));
 
+    // Con progreso, el cambio de orden pide confirmación en lugar de mezclar.
+    expect(
+      screen.getByRole("alertdialog", { name: "Start new session?" }),
+    ).not.toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Start new session" }));
+
     expect(screen.getByText("Card 1 of 5")).not.toBeNull();
     expect(screen.queryByRole("dialog", { name: "Filters & Order" })).toBeNull();
+  });
+
+  it("cancel keeps the session and the URL", () => {
+    renderPractice({ cards, pathname: "/collocations", accent: "red" });
+
+    openFilters();
+    fireEvent.click(screen.getByRole("button", { name: "Ordered" }));
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+    fireEvent.click(screen.getByRole("button", { name: "Shuffled" }));
+
+    fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
+
+    expect(screen.getByText("Card 2 of 5")).not.toBeNull();
+    expect(pushMock).not.toHaveBeenCalled();
+    expect(
+      screen.queryByRole("alertdialog", { name: "Start new session?" }),
+    ).toBeNull();
   });
 
   it("shows the section badge when requested", () => {

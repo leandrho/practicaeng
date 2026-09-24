@@ -1,36 +1,160 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { init, next, prev, reveal } from "../../src/application/session";
 import type { Card } from "../../src/domain/card";
 import { CARD_TYPE_LABELS } from "../../src/domain/card";
 import { resolveHint } from "../../src/domain/hints";
 import { shouldIgnorePracticeShortcut } from "../../src/infrastructure/ui/keyboard";
 import { HintGallery } from "../../src/infrastructure/hints/gallery";
+import type {
+  PracticeRating,
+  PracticeSelection,
+} from "../../src/application/practice-session";
+import type { PracticeStorageBackend } from "../../src/infrastructure/ui/practice-storage";
 import { EmptyState } from "./EmptyState";
+import { useVocabularyPractice } from "./useVocabularyPractice";
 import { Button } from "./ui/Button";
 import { BookIcon } from "./ui/BookIcon";
 import { ContextBook } from "./ui/ContextBook";
 import { HintIcon } from "./ui/HintIcon";
 
 type FlashcardClientProps = {
+  /** Mazo filtrado en orden canónico (el hook limita a 10 y fija el orden). */
   cards: Card[];
   clearFiltersPath: string;
   accent?: string;
   showTypeBadge?: boolean;
+  /** Ruta de la sesión (una sesión independiente por ruta). Sin ruta: efímera. */
+  route?: string;
+  /** Mazo canónico completo para IDs estables (por defecto `cards`). */
+  allCards?: Card[];
+  selection?: PracticeSelection;
+  /** Cambia para forzar una sesión nueva (reshuffle desde el drawer). */
+  reshuffleCount?: number;
+  backend?: PracticeStorageBackend;
+  onProgressChange?: (hasProgress: boolean) => void;
 };
+
+type PracticeCardViewProps = {
+  card: Card;
+  showTypeBadge: boolean;
+  revealed: boolean;
+  currentRating: PracticeRating | undefined;
+  onReveal: () => void;
+  onRate: (rating: PracticeRating) => void;
+  onSkip: () => void;
+};
+
+function PracticeCardView({
+  card,
+  showTypeBadge,
+  revealed,
+  currentRating,
+  onReveal,
+  onRate,
+  onSkip,
+}: PracticeCardViewProps) {
+  // Estado local por tarjeta: la key del padre lo resetea al cambiar de
+  // tarjeta o de ronda, incluida la respuesta revelada.
+  const [showEs, setShowEs] = useState(false);
+  const [showHint, setShowHint] = useState(false);
+  const [showContext, setShowContext] = useState(false);
+  const hintId = resolveHint(card.expression, card.type, card.category);
+  const hasVisualHint = card.type !== "connector";
+
+  return (
+    <div className="flashcard__body">
+      {showTypeBadge ? (
+        <p className="flashcard__type-badge">{CARD_TYPE_LABELS[card.type]}</p>
+      ) : null}
+      <div className="flashcard__head">
+        <h2>{card.expression}</h2>
+        <div className="flashcard__hint-actions">
+          <Button
+            className="btn btn--ghost btn--hint"
+            disabled={!hasVisualHint}
+            aria-pressed={showHint}
+            aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
+            title={hasVisualHint ? "Ver pista" : "No hay pista visual para conectores"}
+            onClick={() => setShowHint((current) => !current)}
+          >
+            <HintIcon />
+          </Button>
+          <Button
+            className="btn btn--ghost btn--context"
+            aria-pressed={showContext}
+            aria-label={showContext ? "Hide context hint" : "Show context hint"}
+            title="Ver contexto"
+            onClick={() => setShowContext((current) => !current)}
+          >
+            <BookIcon />
+          </Button>
+        </div>
+      </div>
+      {showHint ? (
+        <div className="flashcard__hint-panel" aria-live="polite">
+          <HintGallery hintId={hintId} />
+        </div>
+      ) : null}
+      {showContext ? (
+        <div className="flashcard__context-panel">
+          <ContextBook
+            expression={card.expression}
+            contextEn={card.contextEn}
+            contextSource={card.contextSource}
+          />
+        </div>
+      ) : null}
+      {revealed ? (
+        <>
+          <FlashcardAnswer
+            card={card}
+            showEs={showEs}
+            onToggleEs={() => setShowEs((current) => !current)}
+          />
+          <div className="practice-ratings" role="group" aria-label="Rate this card">
+            {RATING_OPTIONS.map((option) => (
+              <Button
+                key={option.rating}
+                className={
+                  option.rating === "known"
+                    ? "btn btn--primary"
+                    : "btn btn--ghost"
+                }
+                aria-pressed={currentRating === option.rating}
+                onClick={() => onRate(option.rating)}
+              >
+                {option.label}
+              </Button>
+            ))}
+          </div>
+        </>
+      ) : (
+        <FlashcardFront onReveal={onReveal} onSkip={onSkip} />
+      )}
+    </div>
+  );
+}
 
 type FlashcardFrontProps = {
-  card: Card;
   onReveal: () => void;
+  onSkip: () => void;
 };
 
-function FlashcardFront({ card, onReveal }: FlashcardFrontProps) {
+function FlashcardFront({ onReveal, onSkip }: FlashcardFrontProps) {
   return (
-    <div key={`${card.expression}:frente`} className="flashcard__front flashcard__face">
-      <Button className="btn btn--primary" onClick={onReveal}>
-        Reveal
-      </Button>
+    <div className="flashcard__front flashcard__face">
+      <p className="flashcard__recall">
+        Ver · recordar · producir. Then reveal and compare.
+      </p>
+      <div className="flashcard__front-actions">
+        <Button className="btn btn--primary" onClick={onReveal}>
+          Reveal
+        </Button>
+        <Button className="btn btn--ghost" onClick={onSkip}>
+          Skip
+        </Button>
+      </div>
     </div>
   );
 }
@@ -99,31 +223,74 @@ function FlashcardAnswer({ card, showEs, onToggleEs }: FlashcardAnswerProps) {
   );
 }
 
-export default function FlashcardClient({ cards, clearFiltersPath, accent, showTypeBadge = false }: FlashcardClientProps) {
-  const [session, setSession] = useState(() => init(cards));
+const RATING_OPTIONS: { rating: PracticeRating; label: string }[] = [
+  { rating: "known", label: "I knew it" },
+  { rating: "almost", label: "Almost" },
+  { rating: "unknown", label: "I didn't know" },
+];
+
+export default function FlashcardClient({
+  cards,
+  clearFiltersPath,
+  accent,
+  showTypeBadge = false,
+  route,
+  allCards,
+  selection = { order: "ordered" },
+  reshuffleCount = 0,
+  backend,
+  onProgressChange,
+}: FlashcardClientProps) {
+  const practice = useVocabularyPractice({
+    route: route ?? "__ephemeral__",
+    allCards: allCards ?? cards,
+    filteredCards: cards,
+    selection,
+    reshuffleCount,
+    backend,
+    persist: route !== undefined,
+    onProgressChange,
+  });
+
   const [dir, setDir] = useState<1 | -1>(1);
-  const [showEs, setShowEs] = useState(false);
-  const [showHint, setShowHint] = useState(false);
-  const [showContext, setShowContext] = useState(false);
-  const card = session.current;
-  const total = session.cards.length;
-  const position = total === 0 ? 0 : session.index + 1;
+
+  const {
+    session,
+    roundCards,
+    roundKeys,
+    index,
+    revealed,
+    counts,
+    pendingCount,
+  } = practice;
+  const card = roundCards[index] ?? null;
+  const cardKey = roundKeys[index] ?? null;
+  const currentRating =
+    cardKey === null ? undefined : session?.roundRatings[cardKey];
+  const total = roundCards.length;
+  const position = total === 0 ? 0 : index + 1;
   const progress = total === 0 ? 0 : (position / total) * 100;
+  const isReview = session?.phase === "review";
+  const isSummary = session?.phase === "summary";
 
   function goPrev() {
     setDir(-1);
-    setShowEs(false);
-    setShowHint(false);
-    setShowContext(false);
-    setSession(prev);
+    practice.goPrev();
   }
 
   function goNext() {
     setDir(1);
-    setShowEs(false);
-    setShowHint(false);
-    setShowContext(false);
-    setSession(next);
+    practice.goNext();
+  }
+
+  function handleRate(rating: PracticeRating) {
+    setDir(1);
+    practice.rate(rating);
+  }
+
+  function handleSkip() {
+    setDir(1);
+    practice.skip();
   }
 
   useEffect(() => {
@@ -146,21 +313,61 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent, showT
           break;
         case " ":
           event.preventDefault();
-          setSession(reveal);
+          practice.reveal();
           break;
       }
     }
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  });
+
+  if (isSummary && session !== null) {
+    return (
+      <section
+        className="flashcard practice-summary"
+        aria-live="polite"
+        style={accent === undefined ? undefined : ({ "--card-accent": accent } as React.CSSProperties)}
+      >
+        <h2 className="practice-summary__title">Session summary</h2>
+        <ul className="practice-summary__counts">
+          <li>
+            <span>I knew it:</span> <strong>{counts.known}</strong>
+          </li>
+          <li>
+            <span>Almost:</span> <strong>{counts.almost}</strong>
+          </li>
+          <li>
+            <span>I didn&apos;t know:</span> <strong>{counts.unknown}</strong>
+          </li>
+          <li>
+            <span>Skipped:</span> <strong>{counts.skipped}</strong>
+          </li>
+        </ul>
+        {pendingCount > 0 ? (
+          <p className="practice-summary__pending">
+            {pendingCount} pending for review.
+          </p>
+        ) : (
+          <p className="practice-summary__pending">No pending cards. Nice work!</p>
+        )}
+        <div className="practice-summary__actions">
+          {pendingCount > 0 ? (
+            <Button className="btn btn--primary" onClick={practice.startReview}>
+              Review pending ({pendingCount})
+            </Button>
+          ) : null}
+          <Button className="btn btn--ghost" onClick={practice.startNewSession}>
+            Start new session
+          </Button>
+        </div>
+      </section>
+    );
+  }
 
   if (card === null) {
     return <EmptyState clearFiltersPath={clearFiltersPath} />;
   }
-
-  const hintId = resolveHint(card.expression, card.type, card.category);
-  const hasVisualHint = card.type !== "connector";
 
   return (
     <section
@@ -170,69 +377,27 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent, showT
     >
       <div className="flashcard__top">
         <p className="flashcard__progress" aria-live="polite">
-          Card {position} of {total}
+          {isReview ? `Review card ${position} of ${total}` : `Card ${position} of ${total}`}
         </p>
         <div className="flashcard__meter" aria-hidden="true">
           <span style={{ width: `${progress}%` }} />
         </div>
       </div>
-      <div key={card.expression} className="flashcard__body">
-        {showTypeBadge ? (
-          <p className="flashcard__type-badge">{CARD_TYPE_LABELS[card.type]}</p>
-        ) : null}
-        <div className="flashcard__head">
-          <h2>{card.expression}</h2>
-          <div className="flashcard__hint-actions">
-            <Button
-              className="btn btn--ghost btn--hint"
-              disabled={!hasVisualHint}
-              aria-pressed={showHint}
-              aria-label={showHint ? "Hide visual hint" : "Show visual hint"}
-              title={hasVisualHint ? "Ver pista" : "No hay pista visual para conectores"}
-              onClick={() => setShowHint((current) => !current)}
-            >
-              <HintIcon />
-            </Button>
-            <Button
-              className="btn btn--ghost btn--context"
-              aria-pressed={showContext}
-              aria-label={showContext ? "Hide context hint" : "Show context hint"}
-              title="Ver contexto"
-              onClick={() => setShowContext((current) => !current)}
-            >
-              <BookIcon />
-            </Button>
-          </div>
-        </div>
-        {showHint ? (
-          <div className="flashcard__hint-panel" aria-live="polite">
-            <HintGallery hintId={hintId} />
-          </div>
-        ) : null}
-        {showContext ? (
-          <div className="flashcard__context-panel">
-            <ContextBook
-              expression={card.expression}
-              contextEn={card.contextEn}
-              contextSource={card.contextSource}
-            />
-          </div>
-        ) : null}
-        {session.revealed ? (
-          <FlashcardAnswer
-            card={card}
-            showEs={showEs}
-            onToggleEs={() => setShowEs((current) => !current)}
-          />
-        ) : (
-          <FlashcardFront card={card} onReveal={() => setSession(reveal)} />
-        )}
-      </div>
+      <PracticeCardView
+        key={`${session?.phase ?? "initial"}:${cardKey ?? card.expression}`}
+        card={card}
+        showTypeBadge={showTypeBadge}
+        revealed={revealed}
+        currentRating={currentRating}
+        onReveal={practice.reveal}
+        onRate={handleRate}
+        onSkip={handleSkip}
+      />
       <nav className="flashcard__navigation flashcard__navigation--footer" aria-label="Card navigation">
-        <Button className="btn btn--ghost" disabled={session.atStart} onClick={goPrev}>
+        <Button className="btn btn--ghost" disabled={practice.atStart} onClick={goPrev}>
           Previous
         </Button>
-        <Button className="btn btn--primary" disabled={session.atEnd} onClick={goNext}>
+        <Button className="btn btn--primary" disabled={practice.atEnd} onClick={goNext}>
           Next
         </Button>
       </nav>

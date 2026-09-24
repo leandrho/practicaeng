@@ -10,6 +10,11 @@ export type FiltersContentProps = {
   onNavigate?: () => void;
   order?: OrderControls;
   hideFilters?: boolean;
+  onFilterNavigate?: (
+    href: string,
+    next: Filter,
+    event: React.MouseEvent,
+  ) => void;
 };
 
 export function createFilterHref(pathname: string, filter: Filter): string {
@@ -33,9 +38,21 @@ export function FiltersContent({
   onNavigate,
   order,
   hideFilters = false,
+  onFilterNavigate,
 }: FiltersContentProps) {
   const levels = [...new Set(cards.map((card) => card.level))];
   const categories = [...new Set(cards.map((card) => card.category))];
+
+  function handleFilterClick(
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+    next: Filter,
+  ) {
+    onFilterNavigate?.(href, next, event);
+    if (!event.defaultPrevented) {
+      onNavigate?.();
+    }
+  }
 
   function handleOrderSelect(next: OrderMode) {
     if (order === undefined) {
@@ -59,7 +76,13 @@ export function FiltersContent({
                 className="chip"
                 aria-current={filter.level === undefined ? "page" : undefined}
                 href={createFilterHref(pathname, { category: filter.category })}
-                onClick={onNavigate}
+                onClick={(event) =>
+                  handleFilterClick(
+                    event,
+                    createFilterHref(pathname, { category: filter.category }),
+                    { category: filter.category },
+                  )
+                }
               >
                 All
               </a>
@@ -69,7 +92,13 @@ export function FiltersContent({
                   aria-current={filter.level === level ? "page" : undefined}
                   href={createFilterHref(pathname, { ...filter, level })}
                   key={level}
-                  onClick={onNavigate}
+                  onClick={(event) =>
+                    handleFilterClick(
+                      event,
+                      createFilterHref(pathname, { ...filter, level }),
+                      { ...filter, level },
+                    )
+                  }
                 >
                   {level}
                 </a>
@@ -83,7 +112,13 @@ export function FiltersContent({
                 className="chip"
                 aria-current={filter.category === undefined ? "page" : undefined}
                 href={createFilterHref(pathname, { level: filter.level })}
-                onClick={onNavigate}
+                onClick={(event) =>
+                  handleFilterClick(
+                    event,
+                    createFilterHref(pathname, { level: filter.level }),
+                    { level: filter.level },
+                  )
+                }
               >
                 All
               </a>
@@ -93,14 +128,24 @@ export function FiltersContent({
                   aria-current={filter.category === category ? "page" : undefined}
                   href={createFilterHref(pathname, { ...filter, category })}
                   key={category}
-                  onClick={onNavigate}
+                  onClick={(event) =>
+                    handleFilterClick(
+                      event,
+                      createFilterHref(pathname, { ...filter, category }),
+                      { ...filter, category },
+                    )
+                  }
                 >
                   {category}
                 </a>
               ))}
             </div>
           </div>
-          <a className="btn btn--ghost filters__clear" href={pathname} onClick={onNavigate}>
+          <a
+            className="btn btn--ghost filters__clear"
+            href={pathname}
+            onClick={(event) => handleFilterClick(event, pathname, {})}
+          >
             Clear filters
           </a>
         </>

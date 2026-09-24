@@ -28,6 +28,16 @@ export type PracticeFilters = {
   pathname: string;
   order?: OrderControls;
   hideFilters?: boolean;
+  /**
+   * Intercepta la navegación de filtros (SPEC 30 paso 7). Se llama antes de
+   * navegar; si `event.preventDefault()` queda activo, el drawer no se cierra
+   * y la navegación no ocurre (p. ej. diálogo de confirmación pendiente).
+   */
+  onFilterNavigate?: (
+    href: string,
+    next: Filter,
+    event: React.MouseEvent,
+  ) => void;
 };
 
 type FilterDrawerContextValue = {
@@ -253,6 +263,7 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
               onNavigate={closeDrawer}
               order={config.order}
               hideFilters={config.hideFilters}
+              onFilterNavigate={config.onFilterNavigate}
             />
           </div>
         </>
@@ -286,11 +297,11 @@ export function HeaderFilterButton() {
 
 export function RegisterPracticeFilters(config: PracticeFilters) {
   const { register, updateFilters, unregister } = useFilterDrawerContext();
-  const { cards, filter, pathname, order, hideFilters } = config;
+  const { cards, filter, pathname, order, hideFilters, onFilterNavigate } = config;
 
   // Alta al montar la página y baja al salir (ahí sí se cierra el drawer).
   useEffect(() => {
-    register({ cards, filter, pathname, order, hideFilters });
+    register({ cards, filter, pathname, order, hideFilters, onFilterNavigate });
     return () => {
       unregister();
     };
@@ -300,8 +311,8 @@ export function RegisterPracticeFilters(config: PracticeFilters) {
 
   // Cambios de filtros u orden: actualiza el contenido sin cerrar el drawer.
   useEffect(() => {
-    updateFilters({ cards, filter, pathname, order, hideFilters });
-  }, [updateFilters, cards, filter, pathname, order, hideFilters]);
+    updateFilters({ cards, filter, pathname, order, hideFilters, onFilterNavigate });
+  }, [updateFilters, cards, filter, pathname, order, hideFilters, onFilterNavigate]);
 
   return null;
 }
