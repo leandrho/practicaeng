@@ -105,22 +105,22 @@ describe("verb-tenses catalog", () => {
     expect(new Set(files).size).toBe(files.length);
     expect(VERB_TENSE_SECTIONS[0]).toMatchObject({
       slug: "present",
-      title: "Presente",
+      title: "Present",
       file: "data/verb-tenses-present.md",
     });
     expect(VERB_TENSE_SECTIONS[1]).toMatchObject({
       slug: "past",
-      title: "Pasado",
+      title: "Past",
       file: "data/verb-tenses-past.md",
     });
     expect(VERB_TENSE_SECTIONS[2]).toMatchObject({
       slug: "future",
-      title: "Futuros",
+      title: "Future",
       file: "data/verb-tenses-future.md",
     });
     expect(VERB_TENSE_SECTIONS[3]).toMatchObject({
       slug: "conditionals",
-      title: "Condicionales",
+      title: "Conditionals",
       file: "data/verb-tenses-conditionals.md",
     });
   });
@@ -196,21 +196,21 @@ describe("verb-tenses catalog", () => {
 
     const section = VerbTenseSectionSchema.parse({
       slug: "present",
-      title: "Presente",
+      title: "Present",
       exercises,
     });
     expect(() => assertVerbTenseMinimums(section)).not.toThrow();
 
     const short = VerbTenseSectionSchema.parse({
       slug: "present",
-      title: "Presente",
+      title: "Present",
       exercises: exercises.slice(0, 49),
     });
     expect(() => assertVerbTenseMinimums(short)).toThrow(/50 o más/);
 
     const unbalanced = VerbTenseSectionSchema.parse({
       slug: "present",
-      title: "Presente",
+      title: "Present",
       exercises: [
         ...Array.from({ length: 14 }, (_, index) =>
           exerciseFor("Present Simple", index),
@@ -243,14 +243,14 @@ describe("verb-tenses catalog", () => {
     );
     const section = VerbTenseSectionSchema.parse({
       slug: "past",
-      title: "Pasado",
+      title: "Past",
       exercises,
     });
     expect(() => assertVerbTenseMinimums(section)).not.toThrow();
 
     const unbalancedPast = VerbTenseSectionSchema.parse({
       slug: "past",
-      title: "Pasado",
+      title: "Past",
       exercises: [
         ...Array.from({ length: 14 }, (_, index) =>
           exerciseFor("Past Simple", 2000 + index),
@@ -289,14 +289,14 @@ describe("verb-tenses catalog", () => {
     expect(exercises).toHaveLength(50);
     const section = VerbTenseSectionSchema.parse({
       slug: "future",
-      title: "Futuros",
+      title: "Future",
       exercises,
     });
     expect(() => assertVerbTenseMinimums(section)).not.toThrow();
 
     const shortMixed = VerbTenseSectionSchema.parse({
       slug: "future",
-      title: "Futuros",
+      title: "Future",
       exercises: [
         ...Array.from({ length: 7 }, (_, index) => exerciseFor("Will", 5000 + index)),
         ...Array.from({ length: 6 }, (_, index) =>
@@ -324,7 +324,7 @@ describe("verb-tenses catalog", () => {
 
     const unbalancedFuture = VerbTenseSectionSchema.parse({
       slug: "future",
-      title: "Futuros",
+      title: "Future",
       exercises: [
         ...Array.from({ length: 10 }, (_, index) => exerciseFor("Will", 7000 + index)),
         ...Array.from({ length: 5 }, (_, index) =>
@@ -364,14 +364,14 @@ describe("verb-tenses catalog", () => {
     );
     const section = VerbTenseSectionSchema.parse({
       slug: "conditionals",
-      title: "Condicionales",
+      title: "Conditionals",
       exercises,
     });
     expect(() => assertVerbTenseMinimums(section)).not.toThrow();
 
     const unbalancedConditionals = VerbTenseSectionSchema.parse({
       slug: "conditionals",
-      title: "Condicionales",
+      title: "Conditionals",
       exercises: [
         ...Array.from({ length: 14 }, (_, index) =>
           exerciseFor("Conditional Zero", 9000 + index),

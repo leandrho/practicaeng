@@ -7,12 +7,12 @@ import PresentPracticePage from "./page";
 afterEach(cleanup);
 
 describe("PresentPracticePage", () => {
-  it("presenta la práctica de Presente con el conteo real y sin pista visual", () => {
+  it("presenta la práctica de Present con el conteo real y sin pista visual", () => {
     const section = getVerbTenseSection("present");
     render(<PresentPracticePage />);
 
-    expect(screen.getByRole("heading", { name: "Presente" })).not.toBeNull();
-    expect(screen.getByText("Grammar practice · Presente")).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Present" })).not.toBeNull();
+    expect(screen.getByText("Grammar practice · Present")).not.toBeNull();
     expect(
       screen.getByRole("link", { name: /All sections/ }).getAttribute("href"),
     ).toBe("/");
@@ -25,7 +25,7 @@ describe("PresentPracticePage", () => {
     const section = getVerbTenseSection("present");
     const { container } = render(<PresentPracticePage />);
     const exercise = section.exercises[0];
-    if (!exercise) throw new Error("La sección Presente no tiene ejercicios");
+    if (!exercise) throw new Error("La sección Present no tiene ejercicios");
 
     expect(screen.getByText(exercise.promptEn)).not.toBeNull();
     expect(container.textContent).not.toContain(exercise.modelEn);

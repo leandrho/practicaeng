@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { parseVerbTenseSection } from "./verb-tenses-parser";
 
 const FILE = "data/verb-tenses-present.md";
-const EXPECTED = { slug: "present" as const, title: "Presente" };
+const EXPECTED = { slug: "present" as const, title: "Present" };
 
 function bullet(overrides: Partial<Record<string, string>> = {}): string {
   const fields: Record<string, string> = {
@@ -33,10 +33,10 @@ function expectParseError(markdown: string, match: RegExp | string) {
 
 describe("parseVerbTenseSection", () => {
   it("un fixture válido pasa y aplica la fuente por defecto", () => {
-    const withSource = ["## Presente", bullet()].join("\n");
+    const withSource = ["## Present", bullet()].join("\n");
     const parsed = parseVerbTenseSection(withSource, FILE, EXPECTED);
     expect(parsed.slug).toBe("present");
-    expect(parsed.title).toBe("Presente");
+    expect(parsed.title).toBe("Present");
     expect(parsed.exercises).toHaveLength(1);
     expect(parsed.exercises[0]).toMatchObject({
       form: "Present Simple",
@@ -45,7 +45,7 @@ describe("parseVerbTenseSection", () => {
     });
 
     const withoutSource = [
-      "## Presente",
+      "## Present",
       bullet()
         .replace(" --- **Context source:** Everyday conversation", "")
         .replace("Second model.", "Second model."),
@@ -56,7 +56,7 @@ describe("parseVerbTenseSection", () => {
 
   it("acepta varias respuestas separadas por /", () => {
     const markdown = [
-      "## Presente",
+      "## Present",
       bullet({
         "Form": "Present Progressive",
         "Prompt (EN)": "Describe what is happening now: she / work in the garden.",
@@ -74,40 +74,40 @@ describe("parseVerbTenseSection", () => {
 
   it("falla sin hueco único", () => {
     expectParseError(
-      ["## Presente", bullet({ "Sentence (EN)": "She walks to school." })].join("\n"),
+      ["## Present", bullet({ "Sentence (EN)": "She walks to school." })].join("\n"),
       /hueco/,
     );
     expectParseError(
-      ["## Presente", bullet({ "Sentence (EN)": "She ____ and ____ today." })].join("\n"),
+      ["## Present", bullet({ "Sentence (EN)": "She ____ and ____ today." })].join("\n"),
       /hueco/,
     );
   });
 
   it("falla sin respuestas o con duplicados", () => {
     expectParseError(
-      ["## Presente", bullet({ "Answers": "walks / WALKS" })].join("\n"),
+      ["## Present", bullet({ "Answers": "walks / WALKS" })].join("\n"),
       /duplicadas/,
     );
-    const missing = ["## Presente", bullet()].join("\n").replace(" --- **Answers:** walks", "");
+    const missing = ["## Present", bullet()].join("\n").replace(" --- **Answers:** walks", "");
     expectParseError(missing, /cantidad de campos|campo Answers/);
   });
 
   it("falla con forma inválida", () => {
     expectParseError(
-      ["## Presente", bullet({ "Form": "Future Simple" })].join("\n"),
+      ["## Present", bullet({ "Form": "Future Simple" })].join("\n"),
       /forma inválida/,
     );
   });
 
   it("rechaza formas del pasado en la sección presente", () => {
     expectParseError(
-      ["## Presente", bullet({ "Form": "Past Simple" })].join("\n"),
+      ["## Present", bullet({ "Form": "Past Simple" })].join("\n"),
       /forma inválida/,
     );
   });
 
   it("un fixture del pasado carga y una forma ajena falla", () => {
-    const pastExpected = { slug: "past" as const, title: "Pasado" };
+    const pastExpected = { slug: "past" as const, title: "Past" };
     const pastBullet = bullet({
       "Form": "Past Simple",
       "Prompt (EN)": "Complete the finished action: I / visit my grandmother yesterday.",
@@ -119,7 +119,7 @@ describe("parseVerbTenseSection", () => {
       "Context (EN)": '"Did you see your grandmother?" "Yes, I visited her yesterday afternoon."',
     });
     const parsed = parseVerbTenseSection(
-      ["## Pasado", pastBullet].join("\n"),
+      ["## Past", pastBullet].join("\n"),
       "data/verb-tenses-past.md",
       pastExpected,
     );
@@ -129,7 +129,7 @@ describe("parseVerbTenseSection", () => {
     let error: unknown;
     try {
       parseVerbTenseSection(
-        ["## Pasado", bullet({ "Form": "Present Simple" })].join("\n"),
+        ["## Past", bullet({ "Form": "Present Simple" })].join("\n"),
         "data/verb-tenses-past.md",
         pastExpected,
       );
@@ -145,7 +145,7 @@ describe("parseVerbTenseSection", () => {
   });
 
   it("un fixture del futuro carga y una forma ajena falla", () => {
-    const futureExpected = { slug: "future" as const, title: "Futuros" };
+    const futureExpected = { slug: "future" as const, title: "Future" };
     const futureBullet = bullet({
       "Form": "Be going to",
       "Prompt (EN)": "State your prior plan: I / make soup tonight.",
@@ -157,7 +157,7 @@ describe("parseVerbTenseSection", () => {
       "Context (EN)": '"What is for dinner?" "I bought vegetables, so the kitchen smells fresh already."',
     });
     const parsed = parseVerbTenseSection(
-      ["## Futuros", futureBullet].join("\n"),
+      ["## Future", futureBullet].join("\n"),
       "data/verb-tenses-future.md",
       futureExpected,
     );
@@ -167,7 +167,7 @@ describe("parseVerbTenseSection", () => {
     let error: unknown;
     try {
       parseVerbTenseSection(
-        ["## Futuros", bullet({ "Form": "Present Simple" })].join("\n"),
+        ["## Future", bullet({ "Form": "Present Simple" })].join("\n"),
         "data/verb-tenses-future.md",
         futureExpected,
       );
@@ -183,7 +183,7 @@ describe("parseVerbTenseSection", () => {
   });
 
   it("un fixture de condicionales carga y una forma ajena falla", () => {
-    const conditionalsExpected = { slug: "conditionals" as const, title: "Condicionales" };
+    const conditionalsExpected = { slug: "conditionals" as const, title: "Conditionals" };
     const conditionalsBullet = bullet({
       "Form": "Conditional Type 2",
       "Prompt (EN)": "Imagine the opposite of now: If I / be you, I would accept.",
@@ -195,7 +195,7 @@ describe("parseVerbTenseSection", () => {
       "Context (EN)": '"Should I accept the offer?" "If I were you, I would accept it today."',
     });
     const parsed = parseVerbTenseSection(
-      ["## Condicionales", conditionalsBullet].join("\n"),
+      ["## Conditionals", conditionalsBullet].join("\n"),
       "data/verb-tenses-conditionals.md",
       conditionalsExpected,
     );
@@ -205,7 +205,7 @@ describe("parseVerbTenseSection", () => {
     let error: unknown;
     try {
       parseVerbTenseSection(
-        ["## Condicionales", bullet({ "Form": "Present Simple" })].join("\n"),
+        ["## Conditionals", bullet({ "Form": "Present Simple" })].join("\n"),
         "data/verb-tenses-conditionals.md",
         conditionalsExpected,
       );
@@ -221,7 +221,7 @@ describe("parseVerbTenseSection", () => {
   });
 
   it("falla sin contexto", () => {
-    const missing = ["## Presente", bullet()]
+    const missing = ["## Present", bullet()]
       .join("\n")
       .replace(/ --- \*\*Context \(EN\):\*\*.*$/, "");
     expectParseError(missing, /cantidad de campos|campo Context/);
@@ -230,7 +230,7 @@ describe("parseVerbTenseSection", () => {
   it("falla si el prompt adelanta el modelo", () => {
     expectParseError(
       [
-        "## Presente",
+        "## Present",
         bullet({
           "Prompt (EN)": "Repeat: She walks to school every day.",
           "Model (EN)": "She walks to school every day.",
@@ -241,16 +241,16 @@ describe("parseVerbTenseSection", () => {
   });
 
   it("falla con modelos duplicados", () => {
-    expectParseError(["## Presente", bullet(), bullet()].join("\n"), /duplicado/);
+    expectParseError(["## Present", bullet(), bullet()].join("\n"), /duplicado/);
   });
 
   it("falla con título distinto del catálogo o sin encabezado", () => {
-    expectParseError(["## Pasado", bullet()].join("\n"), /catálogo/);
+    expectParseError(["## Past", bullet()].join("\n"), /catálogo/);
     expectParseError([bullet()].join("\n"), /encabezado/);
   });
 
   it("falla con formato de campos incorrecto identificando campo", () => {
-    const broken = ["## Presente", bullet().replace("**Answers:**", "**Respuesta:**")].join("\n");
+    const broken = ["## Present", bullet().replace("**Answers:**", "**Respuesta:**")].join("\n");
     expectParseError(broken, /campo Answers/);
   });
 });

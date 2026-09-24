@@ -7,12 +7,12 @@ import PastPracticePage from "./page";
 afterEach(cleanup);
 
 describe("PastPracticePage", () => {
-  it("presenta la práctica de Pasado con el conteo real y sin pista visual", () => {
+  it("presenta la práctica de Past con el conteo real y sin pista visual", () => {
     const section = getVerbTenseSection("past");
     render(<PastPracticePage />);
 
-    expect(screen.getByRole("heading", { name: "Pasado" })).not.toBeNull();
-    expect(screen.getByText("Grammar practice · Pasado")).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Past" })).not.toBeNull();
+    expect(screen.getByText("Grammar practice · Past")).not.toBeNull();
     expect(
       screen.getByRole("link", { name: /All sections/ }).getAttribute("href"),
     ).toBe("/");
@@ -25,7 +25,7 @@ describe("PastPracticePage", () => {
     const section = getVerbTenseSection("past");
     const { container } = render(<PastPracticePage />);
     const exercise = section.exercises[0];
-    if (!exercise) throw new Error("La sección Pasado no tiene ejercicios");
+    if (!exercise) throw new Error("La sección Past no tiene ejercicios");
 
     expect(screen.getByText(exercise.promptEn)).not.toBeNull();
     expect(container.textContent).not.toContain(exercise.modelEn);

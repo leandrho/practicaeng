@@ -20,8 +20,8 @@ export default function PresentPracticePage() {
           <Link href="/" className="grammar-index__back">
             <BackIcon /> All sections
           </Link>
-          <p>Grammar practice · Presente</p>
-          <h1>Presente</h1>
+          <p>Grammar practice · Present</p>
+          <h1>Present</h1>
           <p>
             Complete the gap with the right present form, then reveal the model
             answer and compare.

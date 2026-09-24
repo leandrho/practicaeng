@@ -20,8 +20,8 @@ export default function ConditionalsPracticePage() {
           <Link href="/" className="grammar-index__back">
             <BackIcon /> All sections
           </Link>
-          <p>Grammar practice · Condicionales</p>
-          <h1>Condicionales</h1>
+          <p>Grammar practice · Conditionals</p>
+          <h1>Conditionals</h1>
           <p>
             Complete the gap with the right conditional form, then reveal the
             model answer and compare.

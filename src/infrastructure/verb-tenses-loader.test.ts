@@ -64,14 +64,14 @@ function presentMarkdown(): string {
   const bullets = PRESENT_FORMS.flatMap((form) =>
     Array.from({ length: 10 }, (_, index) => presentBullet(form, index)),
   );
-  return ["## Presente", ...bullets].join("\n");
+  return ["## Present", ...bullets].join("\n");
 }
 
 function pastMarkdown(): string {
   const bullets = PAST_FORMS.flatMap((form) =>
     Array.from({ length: 10 }, (_, index) => pastBullet(form, index)),
   );
-  return ["## Pasado", ...bullets].join("\n");
+  return ["## Past", ...bullets].join("\n");
 }
 
 function futureMarkdown(): string {
@@ -81,7 +81,7 @@ function futureMarkdown(): string {
     ),
     ...Array.from({ length: 8 }, (_, index) => futureBullet("Mixed", 100 + index)),
   ];
-  return ["## Futuros", ...bullets].join("\n");
+  return ["## Future", ...bullets].join("\n");
 }
 
 function conditionalBullet(form: (typeof CONDITIONAL_FORMS)[number], index: number): string {
@@ -92,7 +92,7 @@ function conditionalMarkdown(): string {
   const bullets = CONDITIONAL_FORMS.flatMap((form) =>
     Array.from({ length: 10 }, (_, index) => conditionalBullet(form, index)),
   );
-  return ["## Condicionales", ...bullets].join("\n");
+  return ["## Conditionals", ...bullets].join("\n");
 }
 
 beforeAll(() => {
@@ -112,7 +112,7 @@ describe("getVerbTenseSection", () => {
   it("carga la sección real presente con 50 o más ejercicios y los mínimos por forma", () => {
     const section = getVerbTenseSection("present");
     expect(section.slug).toBe("present");
-    expect(section.title).toBe("Presente");
+    expect(section.title).toBe("Present");
     expect(section.exercises.length).toBeGreaterThanOrEqual(VERB_TENSE_MIN_TOTAL);
     const counts = getVerbTenseFormCounts(section.exercises);
     for (const form of PRESENT_FORMS) {
@@ -128,7 +128,7 @@ describe("getVerbTenseSection", () => {
   it("carga la sección real pasado con 50 o más ejercicios y los mínimos por forma", () => {
     const section = getVerbTenseSection("past");
     expect(section.slug).toBe("past");
-    expect(section.title).toBe("Pasado");
+    expect(section.title).toBe("Past");
     expect(section.exercises.length).toBeGreaterThanOrEqual(VERB_TENSE_MIN_TOTAL);
     const counts = getVerbTenseFormCounts(section.exercises);
     for (const form of PAST_FORMS) {
@@ -144,7 +144,7 @@ describe("getVerbTenseSection", () => {
   it("carga la sección real futuro con 50 o más ejercicios y los mínimos por forma", () => {
     const section = getVerbTenseSection("future");
     expect(section.slug).toBe("future");
-    expect(section.title).toBe("Futuros");
+    expect(section.title).toBe("Future");
     expect(section.exercises.length).toBeGreaterThanOrEqual(VERB_TENSE_MIN_TOTAL);
     const counts = getVerbTenseFormCounts(section.exercises);
     for (const form of FUTURE_FORMS) {
@@ -169,7 +169,7 @@ describe("getVerbTenseSection", () => {
   it("carga la sección real condicionales con 50 o más ejercicios y los mínimos por forma", () => {
     const section = getVerbTenseSection("conditionals");
     expect(section.slug).toBe("conditionals");
-    expect(section.title).toBe("Condicionales");
+    expect(section.title).toBe("Conditionals");
     expect(section.exercises.length).toBeGreaterThanOrEqual(VERB_TENSE_MIN_TOTAL);
     const counts = getVerbTenseFormCounts(section.exercises);
     for (const form of CONDITIONAL_FORMS) {
@@ -189,10 +189,10 @@ describe("getVerbTenseSection", () => {
     expect(sections[1]?.exercises).toHaveLength(50);
     expect(sections[2]?.exercises).toHaveLength(50);
     expect(sections[3]?.exercises).toHaveLength(50);
-    expect(getVerbTenseSection("present", fixtureDirectory).title).toBe("Presente");
-    expect(getVerbTenseSection("past", fixtureDirectory).title).toBe("Pasado");
-    expect(getVerbTenseSection("future", fixtureDirectory).title).toBe("Futuros");
-    expect(getVerbTenseSection("conditionals", fixtureDirectory).title).toBe("Condicionales");
+    expect(getVerbTenseSection("present", fixtureDirectory).title).toBe("Present");
+    expect(getVerbTenseSection("past", fixtureDirectory).title).toBe("Past");
+    expect(getVerbTenseSection("future", fixtureDirectory).title).toBe("Future");
+    expect(getVerbTenseSection("conditionals", fixtureDirectory).title).toBe("Conditionals");
   });
 
   it("rechaza slugs ajenos al catálogo", () => {
@@ -203,7 +203,7 @@ describe("getVerbTenseSection", () => {
 
   it("propaga errores del archivo con ubicación", () => {
     const file = join(fixtureDirectory, "data/verb-tenses-present.md");
-    writeFileSync(file, "## Presente\n- **Form:** Present Simple\n");
+    writeFileSync(file, "## Present\n- **Form:** Present Simple\n");
     try {
       expect(() => getVerbTenseSection("present", fixtureDirectory)).toThrow();
     } finally {
@@ -213,7 +213,7 @@ describe("getVerbTenseSection", () => {
 
   it("un ejercicio del pasado con forma ajena falla con archivo, línea y campo", () => {
     const file = join(fixtureDirectory, "data/verb-tenses-past.md");
-    writeFileSync(file, `## Pasado\n${pastBullet("Past Simple", 0).replace("Past Simple", "Present Simple")}`);
+    writeFileSync(file, `## Past\n${pastBullet("Past Simple", 0).replace("Past Simple", "Present Simple")}`);
     try {
       expect(() => getVerbTenseSection("past", fixtureDirectory)).toThrow();
     } finally {
@@ -223,7 +223,7 @@ describe("getVerbTenseSection", () => {
 
   it("un ejercicio del futuro con forma ajena falla con archivo, línea y campo", () => {
     const file = join(fixtureDirectory, "data/verb-tenses-future.md");
-    writeFileSync(file, `## Futuros\n${futureBullet("Will", 0).replace("Will", "Past Simple")}`);
+    writeFileSync(file, `## Future\n${futureBullet("Will", 0).replace("Will", "Past Simple")}`);
     try {
       expect(() => getVerbTenseSection("future", fixtureDirectory)).toThrow();
     } finally {
@@ -233,7 +233,7 @@ describe("getVerbTenseSection", () => {
 
   it("un ejercicio de condicionales con forma ajena falla con archivo, línea y campo", () => {
     const file = join(fixtureDirectory, "data/verb-tenses-conditionals.md");
-    writeFileSync(file, `## Condicionales\n${conditionalBullet("Conditional Type 1", 0).replace("Conditional Type 1", "Present Simple")}`);
+    writeFileSync(file, `## Conditionals\n${conditionalBullet("Conditional Type 1", 0).replace("Conditional Type 1", "Present Simple")}`);
     try {
       expect(() => getVerbTenseSection("conditionals", fixtureDirectory)).toThrow();
     } finally {

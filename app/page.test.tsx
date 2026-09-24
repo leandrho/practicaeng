@@ -47,10 +47,10 @@ describe("HomePage", () => {
       ["Connectors", contentRepository.getCards("connectors").length],
       ["Mixed Practice", mixedCount],
       ["Grammar B1+", 26],
-      ["Presente", getVerbTenseSection("present").exercises.length],
-      ["Pasado", getVerbTenseSection("past").exercises.length],
-      ["Futuros", getVerbTenseSection("future").exercises.length],
-      ["Condicionales", getVerbTenseSection("conditionals").exercises.length],
+      ["Present", getVerbTenseSection("present").exercises.length],
+      ["Past", getVerbTenseSection("past").exercises.length],
+      ["Future", getVerbTenseSection("future").exercises.length],
+      ["Conditionals", getVerbTenseSection("conditionals").exercises.length],
     ];
 
     const links = screen.getAllByRole("link");
@@ -78,19 +78,19 @@ describe("HomePage", () => {
     }
 
     expect(
-      screen.getByRole("link", { name: /^Practice Presente, \d+/ }).getAttribute("href"),
+      screen.getByRole("link", { name: /^Practice Present, \d+/ }).getAttribute("href"),
     ).toBe("/verb-tenses/present");
 
     expect(
-      screen.getByRole("link", { name: /^Practice Pasado, \d+/ }).getAttribute("href"),
+      screen.getByRole("link", { name: /^Practice Past, \d+/ }).getAttribute("href"),
     ).toBe("/verb-tenses/past");
 
     expect(
-      screen.getByRole("link", { name: /^Practice Futuros, \d+/ }).getAttribute("href"),
+      screen.getByRole("link", { name: /^Practice Future, \d+/ }).getAttribute("href"),
     ).toBe("/verb-tenses/future");
 
     expect(
-      screen.getByRole("link", { name: /^Practice Condicionales, \d+/ }).getAttribute("href"),
+      screen.getByRole("link", { name: /^Practice Conditionals, \d+/ }).getAttribute("href"),
     ).toBe("/verb-tenses/conditionals");
 
     expect(

@@ -127,7 +127,7 @@ export default function HomePage() {
   const grammarPracticeSections = [
     {
       href: "/verb-tenses/present",
-      name: "Presente",
+      name: "Present",
       detail: "Present tenses gap-fill + reveal",
       count: presentCount,
       unit: "exercises",
@@ -135,7 +135,7 @@ export default function HomePage() {
     },
     {
       href: "/verb-tenses/past",
-      name: "Pasado",
+      name: "Past",
       detail: "Past tenses gap-fill + reveal",
       count: pastCount,
       unit: "exercises",
@@ -143,7 +143,7 @@ export default function HomePage() {
     },
     {
       href: "/verb-tenses/future",
-      name: "Futuros",
+      name: "Future",
       detail: "Future forms gap-fill + reveal",
       count: futureCount,
       unit: "exercises",
@@ -151,7 +151,7 @@ export default function HomePage() {
     },
     {
       href: "/verb-tenses/conditionals",
-      name: "Condicionales",
+      name: "Conditionals",
       detail: "Conditional forms gap-fill + reveal",
       count: conditionalsCount,
       unit: "exercises",

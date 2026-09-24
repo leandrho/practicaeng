@@ -173,22 +173,22 @@ export function getVerbTenseFormsForSlug(
 export const VERB_TENSE_SECTIONS = [
   {
     slug: "present",
-    title: "Presente",
+    title: "Present",
     file: "data/verb-tenses-present.md",
   },
   {
     slug: "past",
-    title: "Pasado",
+    title: "Past",
     file: "data/verb-tenses-past.md",
   },
   {
     slug: "future",
-    title: "Futuros",
+    title: "Future",
     file: "data/verb-tenses-future.md",
   },
   {
     slug: "conditionals",
-    title: "Condicionales",
+    title: "Conditionals",
     file: "data/verb-tenses-conditionals.md",
   },
 ] as const satisfies ReadonlyArray<{

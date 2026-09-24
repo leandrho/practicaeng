@@ -20,8 +20,8 @@ export default function PastPracticePage() {
           <Link href="/" className="grammar-index__back">
             <BackIcon /> All sections
           </Link>
-          <p>Grammar practice · Pasado</p>
-          <h1>Pasado</h1>
+          <p>Grammar practice · Past</p>
+          <h1>Past</h1>
           <p>
             Complete the gap with the right past form, then reveal the model
             answer and compare.

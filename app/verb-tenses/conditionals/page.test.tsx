@@ -7,12 +7,12 @@ import ConditionalsPracticePage from "./page";
 afterEach(cleanup);
 
 describe("ConditionalsPracticePage", () => {
-  it("presenta la práctica de Condicionales con el conteo real y sin pista visual", () => {
+  it("presenta la práctica de Conditionals con el conteo real y sin pista visual", () => {
     const section = getVerbTenseSection("conditionals");
     render(<ConditionalsPracticePage />);
 
-    expect(screen.getByRole("heading", { name: "Condicionales" })).not.toBeNull();
-    expect(screen.getByText("Grammar practice · Condicionales")).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Conditionals" })).not.toBeNull();
+    expect(screen.getByText("Grammar practice · Conditionals")).not.toBeNull();
     expect(
       screen.getByRole("link", { name: /All sections/ }).getAttribute("href"),
     ).toBe("/");
@@ -25,7 +25,7 @@ describe("ConditionalsPracticePage", () => {
     const section = getVerbTenseSection("conditionals");
     const { container } = render(<ConditionalsPracticePage />);
     const exercise = section.exercises[0];
-    if (!exercise) throw new Error("La sección Condicionales no tiene ejercicios");
+    if (!exercise) throw new Error("La sección Conditionals no tiene ejercicios");
 
     expect(screen.getByText(exercise.promptEn)).not.toBeNull();
     expect(container.textContent).not.toContain(exercise.modelEn);

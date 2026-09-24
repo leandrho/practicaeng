@@ -20,8 +20,8 @@ export default function FuturePracticePage() {
           <Link href="/" className="grammar-index__back">
             <BackIcon /> All sections
           </Link>
-          <p>Grammar practice · Futuros</p>
-          <h1>Futuros</h1>
+          <p>Grammar practice · Future</p>
+          <h1>Future</h1>
           <p>
             Complete the gap with the right future form, then reveal the model
             answer and compare.

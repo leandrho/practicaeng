@@ -7,12 +7,12 @@ import FuturePracticePage from "./page";
 afterEach(cleanup);
 
 describe("FuturePracticePage", () => {
-  it("presenta la práctica de Futuros con el conteo real y sin pista visual", () => {
+  it("presenta la práctica de Future con el conteo real y sin pista visual", () => {
     const section = getVerbTenseSection("future");
     render(<FuturePracticePage />);
 
-    expect(screen.getByRole("heading", { name: "Futuros" })).not.toBeNull();
-    expect(screen.getByText("Grammar practice · Futuros")).not.toBeNull();
+    expect(screen.getByRole("heading", { name: "Future" })).not.toBeNull();
+    expect(screen.getByText("Grammar practice · Future")).not.toBeNull();
     expect(
       screen.getByRole("link", { name: /All sections/ }).getAttribute("href"),
     ).toBe("/");
@@ -25,7 +25,7 @@ describe("FuturePracticePage", () => {
     const section = getVerbTenseSection("future");
     const { container } = render(<FuturePracticePage />);
     const exercise = section.exercises[0];
-    if (!exercise) throw new Error("La sección Futuros no tiene ejercicios");
+    if (!exercise) throw new Error("La sección Future no tiene ejercicios");
 
     expect(screen.getByText(exercise.promptEn)).not.toBeNull();
     expect(container.textContent).not.toContain(exercise.modelEn);
