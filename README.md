@@ -132,6 +132,59 @@ Criterio editorial para redactar y revisar un ejercicio:
 - No cambies los encabezados ni los separadores de la tabla de Word Formation.
 - Verificá el cambio con `npm run build`; si el formato es inválido, el error indica el archivo y la línea que hay que corregir.
 
+### Auditoría editorial por archivo
+
+Antes de editar, registrá el conteo obtenido con los loaders (`createContentRepository`, `getWordFamilies`, `getGrammarTopics`) y comparalo después: una corrección editorial no agrega ni quita entradas. Leé **cada** tarjeta, familia o tema del archivo, no solo los resultados de una búsqueda. Marcá el archivo como revisado únicamente tras corregir los errores confirmados y pasar sus checks de parseo. La marca registra la revisión realizada, no garantiza que jamás aparezcan errores nuevos.
+
+En cada entrada comprobá:
+
+- Correspondencia entre expresión, acepción inglesa/española, ejemplo y contexto: ambos deben ilustrar el sentido enseñado. No cambies un matiz discutible sin evidencia.
+- Naturalidad y gramática del inglés, ortografía y puntuación en ambos idiomas, y traducción fiel al ejemplo (sin uniformar variantes regionales por gusto).
+- Categoría y tags adecuados al uso y patrón real; respuestas aceptadas y variantes de Word Formation compatibles con la familia **y** con la oración concreta.
+- En Grammar, contrastá regla, formación, definición, usos, ejemplos EN/ES, prompt, modelo, explicación y traducción dentro de cada tema. El prompt no debe revelar el modelo.
+- Si se modifica una cita o atribución, contrastala con `data/context-provenance.json` y sincronizá la procedencia. Ese JSON es metadato; la UI sigue leyendo contenido de Markdown.
+- Conservación de encabezados, separadores, orden, cantidad y campos parseables. Ejecutá los tests de loaders/parsers y contenido del archivo antes de marcarlo; al finalizar la auditoría, `npm run lint`, `npm run typecheck`, `npm run test` y `npm run build`.
+
+Conteos iniciales de SPEC 30 (validados con los tests de los loaders antes de la revisión; en Grammar se desglosa por archivo):
+
+| Archivo | Tarjetas / familias / temas | Ejercicios |
+| --- | ---: | ---: |
+| `phrasal-verbs-b1-b2-200.md` | 200 | — |
+| `collocations-b1-b2.md` | 56 | — |
+| `fixed-prepositions-b1-b2.md` | 52 | — |
+| `idioms-b1-b2.md` | 56 | — |
+| `irregular-verbs-b1-b2.md` | 100 | — |
+| `everyday-phrases-b1-b2-150.md` | 150 | — |
+| `connectors-b1-b2.md` | 74 | — |
+| `word-formation-b1-b2.md` | 76 | 76 |
+| `grammar-part-1.md` | 4 | 20 |
+| `grammar-part-2.md` | 3 | 15 |
+| `grammar-part-3.md` | 3 | 15 |
+| `grammar-part-4.md` | 5 | 25 |
+| `grammar-part-5.md` | 4 | 20 |
+| `grammar-part-6.md` | 2 | 10 |
+| `grammar-part-7.md` | 2 | 10 |
+| `grammar-part-8.md` | 3 | 15 |
+
+Checklist para futuras ediciones (una casilla por archivo, al completar la lectura y los checks):
+
+- [ ] `data/phrasal-verbs-b1-b2-200.md`
+- [ ] `data/collocations-b1-b2.md`
+- [ ] `data/fixed-prepositions-b1-b2.md`
+- [ ] `data/idioms-b1-b2.md`
+- [ ] `data/irregular-verbs-b1-b2.md`
+- [ ] `data/everyday-phrases-b1-b2-150.md`
+- [ ] `data/connectors-b1-b2.md`
+- [ ] `data/word-formation-b1-b2.md`
+- [ ] `data/grammar-part-1.md`
+- [ ] `data/grammar-part-2.md`
+- [ ] `data/grammar-part-3.md`
+- [ ] `data/grammar-part-4.md`
+- [ ] `data/grammar-part-5.md`
+- [ ] `data/grammar-part-6.md`
+- [ ] `data/grammar-part-7.md`
+- [ ] `data/grammar-part-8.md`
+
 ### Grammar B1+
 
 La tarjeta **Grammar B1+** del inicio abre `/grammar`, donde los 26 temas están agrupados en ocho partes. Cada tema muestra la teoría **en inglés por defecto**, con un botón `ES`/`EN` que alterna las cuatro secciones de prosa (Definition, Rule, When to use, Watch out for this) al español; los encabezados y el bloque Formation quedan siempre en inglés. Además hay ejemplos EN/ES siempre visibles y una práctica de producción guiada: pensá o decí una oración antes de pulsar **Reveal**. Los ejercicios aparecen en el orden del archivo y sus respuestas se ocultan al cambiar de tarjeta. Esta práctica no forma parte de Mixed Practice ni de los filtros de vocabulario.

@@ -33,6 +33,7 @@
 ### Formación
 - **Name (EN):** May / might --- **Pattern:** Subject + may/might + base verb.
 - **Name (EN):** Would (hypothetical condition) --- **Pattern:** Subject + would + base verb + condition.
+- **Name (EN):** Would (polite offer) --- **Pattern:** Would + subject + like + noun or to + base verb?
 - **Name (EN):** Past possibility --- **Pattern:** Subject + may/might have + past participle.
 ### Definición
 - **EN:** **May** and **might** say something is possible but uncertain: She may/might come does not claim she will. **Would** does a different job: it presents what would happen under an imagined condition (She would come if she had time), or makes a polite offer or invitation (Would you like tea?). It is not simply a stronger or weaker version of may. To speculate about a past event, use may/might have + past participle: She might have forgotten.
@@ -79,7 +80,7 @@
 - **Prompt (EN):** Someone says the museum is open, but you can see a sign saying it is closed today. Reject that conclusion with can't. --- **Model (EN):** The museum can't be open today. --- **Explanation (ES):** *Can't* expresa una deducción negativa basada en un indicio claro. --- **Translation (ES):** El museo no puede estar abierto hoy.
 - **Prompt (EN):** You find the cake plate empty, and your brother has crumbs on his shirt. Deduce what he did with must have. --- **Model (EN):** My brother must have eaten the cake. --- **Explanation (ES):** *Must have* más participio presenta una conclusión fuerte sobre un hecho pasado. --- **Translation (ES):** Mi hermano debe de haberse comido la torta.
 - **Prompt (EN):** Ana left town on Monday. Someone claims they saw her here on Tuesday, but you know she was abroad. Make a past deduction with can't have. --- **Model (EN):** Ana can't have been here on Tuesday. --- **Explanation (ES):** *Can't have* más participio descarta un hecho pasado incompatible con la evidencia. --- **Translation (ES):** Ana no puede haber estado acá el martes.
-- **Prompt (EN):** The meeting room is dark and the door is locked. Make a strong deduction about the meeting with must. --- **Model (EN):** The meeting must be over. --- **Explanation (ES):** *Must* más verbo base indica una conclusión muy probable a partir de las señales presentes. --- **Translation (ES):** La reunión debe de haber terminado.
+- **Prompt (EN):** The meeting room is dark and the door is locked. Make a strong deduction about the meeting with must. --- **Model (EN):** The meeting must be over. --- **Explanation (ES):** *Must* más verbo base indica una conclusión muy probable a partir de las señales presentes. --- **Translation (ES):** La reunión debe de estar terminada.
 
 ## Question tags
 ### Regla y forma
