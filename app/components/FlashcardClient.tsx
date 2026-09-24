@@ -5,6 +5,7 @@ import { init, next, prev, reveal } from "../../src/application/session";
 import type { Card } from "../../src/domain/card";
 import { CARD_TYPE_LABELS } from "../../src/domain/card";
 import { resolveHint } from "../../src/domain/hints";
+import { shouldIgnorePracticeShortcut } from "../../src/infrastructure/ui/keyboard";
 import { HintGallery } from "../../src/infrastructure/hints/gallery";
 import { EmptyState } from "./EmptyState";
 import { Button } from "./ui/Button";
@@ -128,6 +129,9 @@ export default function FlashcardClient({ cards, clearFiltersPath, accent, showT
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.altKey || event.ctrlKey || event.metaKey) {
+        return;
+      }
+      if (shouldIgnorePracticeShortcut(event)) {
         return;
       }
 

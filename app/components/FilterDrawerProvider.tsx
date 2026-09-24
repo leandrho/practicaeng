@@ -68,11 +68,39 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
   const panelId = useId();
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const closeRef = useRef<HTMLButtonElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+
+  const returnFocusToTrigger = useCallback(() => {
+    const trigger = triggerRef.current;
+    if (trigger !== null && trigger.isConnected) {
+      trigger.focus();
+      return;
+    }
+    if (typeof document === "undefined") {
+      return;
+    }
+    const candidates = [
+      document.querySelector("main h1"),
+      document.querySelector("h1"),
+      document.querySelector("header a"),
+      document.querySelector("header button"),
+      document.querySelector("main"),
+    ];
+    for (const candidate of candidates) {
+      if (candidate instanceof HTMLElement && candidate.isConnected) {
+        if (!candidate.hasAttribute("tabindex")) {
+          candidate.setAttribute("tabindex", "-1");
+        }
+        candidate.focus();
+        return;
+      }
+    }
+  }, []);
 
   const closeDrawer = useCallback(() => {
     setOpen(false);
-    triggerRef.current?.focus();
-  }, []);
+    returnFocusToTrigger();
+  }, [returnFocusToTrigger]);
 
   const openDrawer = useCallback(() => {
     setOpen(true);
@@ -100,16 +128,59 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
       return;
     }
     closeRef.current?.focus();
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
+    function getFocusable(): HTMLElement[] {
+      const panel = panelRef.current;
+      if (panel === null) {
+        return [];
+      }
+      const nodes = Array.from(
+        panel.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+      return nodes.filter(
+        (element) => element.getAttribute("aria-hidden") !== "true",
+      );
+    }
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        event.preventDefault();
         closeDrawer();
+        return;
+      }
+      if (event.key !== "Tab") {
+        return;
+      }
+      const focusable = getFocusable();
+      if (focusable.length === 0) {
+        event.preventDefault();
+        closeRef.current?.focus();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (first === undefined || last === undefined) {
+        return;
+      }
+      const active = document.activeElement as HTMLElement | null;
+      if (event.shiftKey) {
+        if (active === first || !panelRef.current?.contains(active)) {
+          event.preventDefault();
+          last.focus();
+        }
+      } else if (active === last) {
+        event.preventDefault();
+        first.focus();
       }
     };
     document.addEventListener("keydown", onKeyDown);
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
     };
   }, [open, closeDrawer]);
 
@@ -154,6 +225,7 @@ export function FilterDrawerProvider({ children }: { children: ReactNode }) {
           )}
           <div
             id={panelId}
+            ref={panelRef}
             className="filters-drawer__panel"
             role="dialog"
             aria-modal="true"
