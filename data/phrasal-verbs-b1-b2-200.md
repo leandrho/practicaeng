@@ -1196,8 +1196,8 @@ después revelá la respuesta.
 -   **Significado:** aparecer / presentarse
 -   **Ejemplo:** He didn't show up for the meeting.
 -   **Traducción (ES):** No se presentó a la reunión.
--   **Context (EN):** “Baloo has spoken, and he is our teacher for the young cubs. Who speaks besides Baloo?” A black shadow dropped down into the circle. It was Bagheera the Black Panther, inky black all over, but with the panther markings showing up in certain lights like the pattern of watered silk.
--   **Context source:** The Jungle Book — Rudyard Kipling
+-   **Context (EN):** We waited for Ben at the station, but he never showed up. His train was delayed. He called us when he got home.
+-   **Context source:** Everyday conversation
 
 ### 120. shut down
 - **Tags:** Transitive, Separable
@@ -1636,7 +1636,7 @@ después revelá la respuesta.
 -   **Significado:** abandonar un curso
 -   **Ejemplo:** He dropped out of college.
 -   **Traducción (ES):** Abandonó la universidad.
--   **Context (EN):** She dropped out of the race with a hurt foot. Her friends waited at the finish line. Next year she wants to try again.
+-   **Context (EN):** She dropped out of college last year to work full-time. Her tutor helped her apply again this spring. She hopes to finish her degree.
 -   **Context source:** Everyday conversation
 
 ### 164. face up to

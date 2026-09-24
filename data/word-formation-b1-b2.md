@@ -108,7 +108,7 @@ También podés generar ejercicios tipo:\
 - **amaze:** And then it came into my head that I would amaze our friends behind by lighting it. I was to discover the atrocious folly of this proceeding, but it came to my mind as an ingenious move for covering our retreat. “I don’t know if you have ever thought what a rare thing flame must be in the absence of man and in a temperate climate. — The Time Machine — H. G. Wells
 - **announce:** They will announce the results Friday. Everyone waits nervously. I hope I pass. — Everyday conversation
 - **appear:** If we let the current have its way we should come ashore beside the gigs, where the pirates might appear at any moment. “I cannot keep her head for the stockade, sir,” said I to the captain. — Treasure Island — Robert Louis Stevenson
-- **apply:** Yet such was I! Oh! such was I!" "But you were always a good man of business, Jacob," faltered Scrooge, who now began to apply this to himself. — A Christmas Carol — Charles Dickens
+- **apply:** She applied for a job at the library. They called her the next day. Her interview is on Monday. — Everyday conversation
 - **argue:** That look he gave me when he went out said everything he said or hinted last night over again. I wish he was like other men and would talk things out. A body could answer back then and argue him into reason. — Anne of Green Gables — Lucy Maud Montgomery
 - **arrange:** Lynde,” said Anne severely. “It spoils the effect because this is hundreds of years before Mrs. Lynde was born. Jane, you arrange this. — Anne of Green Gables — Lucy Maud Montgomery
 - **attend:** Time after time he was ordered below in disgrace. Sometimes he fell and cut himself; sometimes he lay all day long in his little bunk at one side of the companion; sometimes for a day or two he would be almost sober and attend to his work at least passably. — Treasure Island — Robert Louis Stevenson
@@ -127,14 +127,14 @@ También podés generar ejercicios tipo:\
 - **create:** Shall I create another like yourself, whose joint wickedness might desolate the world. Begone! I have answered you; you may torture me, but I will never consent.” — Frankenstein — Mary Shelley
 - **decide:** "Man," said the Ghost, "if man you be in heart, not adamant, forbear that wicked cant until you have discovered What the surplus is, and Where it is. Will you decide what men shall live, what men shall die? — A Christmas Carol — Charles Dickens
 - **describe:** Words fail me to describe that ice cream. Marilla, I assure you it was sublime.” That evening Marilla told the whole story to Matthew over her stocking basket. “I’m willing to own up that I made a mistake,” she concluded candidly, “but I’ve learned a lesson. — Anne of Green Gables — Lucy Maud Montgomery
-- **develop:** Wilson. “Never was such a fellow for photography. Snapping away with a camera when he ought to be improving his mind, and then diving down into the cellar like a rabbit into its hole to develop his pictures. — The Adventures of Sherlock Holmes — Arthur Conan Doyle
+- **develop:** The town plans to develop new housing near the station. Work begins next year. Many families hope to move there. — Everyday conversation
 - **differ:** Moffat said?” asked Meg bashfully. “Yes, my dear, I have a great many, all mothers do, but mine differ somewhat from Mrs. Moffat’s, I suspect. — Little Women — Louisa May Alcott
 - **educate:** If, therefore, I could seize him and educate him as my companion and friend, I should not be so desolate in this peopled earth. “Urged by this impulse, I seized on the boy as he passed and drew him towards me. — Frankenstein — Mary Shelley
 - **employ:** One was an old woman, whose name is not mentioned, and the other was William Crowder, a game-keeper in the employ of Mr. Turner. Both these witnesses depose that Mr. McCarthy was walking alone. — The Adventures of Sherlock Holmes — Arthur Conan Doyle
 - **encourage:** The four who had boarded made straight before them for the building, shouting as they ran, and the men among the trees shouted back to encourage them. Several shots were fired, but such was the hurry of the marksmen that not one appears to have taken effect. — Treasure Island — Robert Louis Stevenson
 - **enjoy:** “First of all we’ll try the book,” observed the doctor. The squire and I were both peering over his shoulder as he opened it, for Dr. Livesey had kindly motioned me to come round from the side-table, where I had been eating, to enjoy the sport of the search. — Treasure Island — Robert Louis Stevenson
 - **entertain:** Sid was sick and had to miss the fun; Mary remained at home to entertain him. The last thing Mrs. Thatcher said to Becky, was: “You’ll not get back till late. — Tom Sawyer — Mark Twain
-- **excite:** The news excited the kids. They jump and shout. What happy noise! — Everyday conversation
+- **excite:** The news excited the kids. They jumped and shouted. What a happy noise! — Everyday conversation
 - **exist:** “Nor, having only length, breadth, and thickness, can a cube have a real existence.” “There I object,” said Filby. “Of course a solid body may exist. — The Time Machine — H. G. Wells
 - **expect:** As for the ship, he had taken a downright fancy to her. “She’ll lie a point nearer the wind than a man has a right to expect of his own married wife, sir. — Treasure Island — Robert Louis Stevenson
 - **explain:** Quick, now!” And Alice was so much frightened that she ran off at once in the direction it pointed to, without trying to explain the mistake it had made. “He took me for his housemaid,” she said to herself as she ran. — Alice's Adventures in Wonderland — Lewis Carroll
@@ -151,12 +151,12 @@ También podés generar ejercicios tipo:\
 - **invite:** “Much obliged for that recommendation. I take it as a good omen for the future and invite you to my wedding on the spot,” answered Mr. Brooke, who felt at peace with all mankind, even his mischievous pupil. — Little Women — Louisa May Alcott
 - **know:** I know that shop. It sells cheap books. I go every week. — Everyday conversation
 - **manage:** Do you think you could manage it?) “And what an ignorant little girl she’ll think me for asking! No, it’ll never do to ask: perhaps I shall see it written up somewhere.” Down, down, down. — Alice's Adventures in Wonderland — Lewis Carroll
-- **mean:** Take me in straight or I’ll break your arm.” And he gave it, as he spoke, a wrench that made me cry out. “Sir,” said I, “it is for yourself I mean. — Treasure Island — Robert Louis Stevenson
+- **mean:** What does this phrase mean? I have seen it in two books. The teacher will explain it tomorrow. — Everyday conversation
 - **motivate:** Music motivates me to run. I play it loud. Five kilometers feel easy. — Everyday conversation
 - **organize:** Please tell me, Marilla.” “Well, Miss Stacy wants to organize a class among her advanced students who mean to study for the entrance examination into Queen’s. She intends to give them extra lessons for an hour after school. — Anne of Green Gables — Lucy Maud Montgomery
 - **perform:** There is no reason, therefore, to think that money troubles have been weighing upon his mind. “Last Monday Mr. Neville St. Clair went into town rather earlier than usual, remarking before he started that he had two important commissions to perform, and that he would bring his little boy home a box of bricks. — The Adventures of Sherlock Holmes — Arthur Conan Doyle
 - **permit:** But the Scarecrow told her about everything, and turning to the dignified little Mouse, he said: “Permit me to introduce to you her Majesty, the Queen.” Dorothy nodded gravely and the Queen made a curtsy, after which she became quite friendly with the little girl. The Scarecrow and the Woodman now began to fasten the mice to the truck, using the strings they had brought. — The Wonderful Wizard of Oz — L. Frank Baum
-- **please:** This is the driest thing I know. Silence all round, if you please! ‘William the Conqueror, whose cause was favoured by the pope, was soon submitted to by the English, who wanted leaders, and had been of late much accustomed to usurpation and conquest. — Alice's Adventures in Wonderland — Lewis Carroll
+- **please:** She tried to please her guests with a warm meal. They thanked her for the food. Everyone stayed late. — Everyday conversation
 - **pollute:** Cars pollute our street daily. We want more trees. The school started a garden. — Everyday conversation
 - **predict:** I predict rain for Sunday. Clouds look dark. Take an umbrella. — Everyday conversation
 - **prefer:** I prefer the plain, sensible ones.” “But I’d rather look ridiculous when everybody else does than plain and sensible all by myself,” persisted Anne mournfully. “Trust you for that! — Anne of Green Gables — Lucy Maud Montgomery
@@ -165,7 +165,7 @@ También podés generar ejercicios tipo:\
 - **produce:** Livesey cut in. “Stay a bit,” said he, “stay a bit. No use of such questions as that but to produce ill feeling. — Treasure Island — Robert Louis Stevenson
 - **protect:** In the other, the bulls and the young bulls snorted and stamped, but though they looked more imposing they were much less dangerous, for they had no calves to protect. No six men could have divided the herd so neatly. “What orders!” panted Akela. — The Jungle Book — Rudyard Kipling
 - **react:** He reacted fast and caught the ball. Everyone cheered loudly. We won the game. — Everyday conversation
-- **relate:** The incident however, was too trivial to relate and can have no possible bearing upon the case.” “Pray let us have it, for all that.” “Oh, it is childish. — The Adventures of Sherlock Holmes — Arthur Conan Doyle
+- **relate:** The two stories relate to the same event. Both witnesses saw the car. The officer wrote down their accounts. — Everyday conversation
 - **relax:** His jaws closed on the hand, nor did they relax till his senses were choked out of him once more. “Yep, has fits,” the man said, hiding his mangled hand from the baggageman, who had been attracted by the sounds of struggle. — The Call of the Wild — Jack London
 - **rely:** Now, we’ve only one man to rely on.” “And who is that?” asked the squire. “Silver, sir,” returned the captain; “he’s as anxious as you and I to smother things up. — Treasure Island — Robert Louis Stevenson
 - **respond:** Grandly, however, did Tootles respond. For that one moment he dropped his silliness and spoke with dignity. “I am just Tootles,” he said, “and nobody minds me. — Peter Pan — J. M. Barrie
@@ -188,7 +188,7 @@ También podés generar ejercicios tipo:\
 - **Base:** appear --- **Target:** adverb --- **Sentence (EN):** ____, the road was closed after the storm. --- **Answers:** apparently
 - **Base:** apply --- **Target:** noun --- **Sentence (EN):** She submitted her ____ for the job yesterday. --- **Answers:** application
 - **Base:** argue --- **Target:** noun --- **Sentence (EN):** They had a heated ____ about money. --- **Answers:** argument
-- **Base:** arrange --- **Target:** noun --- **Sentence (EN):** The travel ____ was handled by the agency. --- **Answers:** arrangement
+- **Base:** arrange --- **Target:** noun --- **Sentence (EN):** The seating ____ was handled by the agency. --- **Answers:** arrangement
 - **Base:** attend --- **Target:** adverb --- **Sentence (EN):** The students listened ____ during the lecture. --- **Answers:** attentively
 - **Base:** attract --- **Target:** adjective --- **Sentence (EN):** The new park is very ____ for families. --- **Answers:** attractive
 - **Base:** avoid --- **Target:** adjective --- **Sentence (EN):** The accident was ____ with better brakes. --- **Answers:** avoidable
@@ -242,14 +242,14 @@ También podés generar ejercicios tipo:\
 - **Base:** prevent --- **Target:** adjective --- **Sentence (EN):** Most accidents are ____. --- **Answers:** preventable
 - **Base:** produce --- **Target:** adjective --- **Sentence (EN):** We had a very ____ meeting. --- **Answers:** productive
 - **Base:** protect --- **Target:** noun --- **Sentence (EN):** Wear sunscreen for ____ against the sun. --- **Answers:** protection
-- **Base:** react --- **Target:** noun --- **Sentence (EN):** His ____ was surprise and joy. --- **Answers:** reaction
+- **Base:** react --- **Target:** noun --- **Sentence (EN):** His ____ to the news was one of surprise and joy. --- **Answers:** reaction
 - **Base:** relate --- **Target:** adverb --- **Sentence (EN):** The test was ____ easy. --- **Answers:** relatively
 - **Base:** relax --- **Target:** adjective --- **Sentence (EN):** I felt ____ after the bath. --- **Answers:** relaxed
 - **Base:** rely --- **Target:** noun --- **Sentence (EN):** The ____ of this watch is excellent. --- **Answers:** reliability
 - **Base:** respond --- **Target:** noun --- **Sentence (EN):** We are waiting for a ____ from the office. --- **Answers:** response
 - **Base:** satisfy --- **Target:** adverb --- **Sentence (EN):** He completed the task ____. --- **Answers:** satisfactorily
 - **Base:** solve --- **Target:** noun --- **Sentence (EN):** We finally found a ____ to the problem. --- **Answers:** solution
-- **Base:** succeed --- **Target:** adverb --- **Sentence (EN):** She passed the exam ____. --- **Answers:** successfully
+- **Base:** succeed --- **Target:** adverb --- **Sentence (EN):** She completed the project ____. --- **Answers:** successfully
 - **Base:** suggest --- **Target:** noun --- **Sentence (EN):** Thanks for your ____ about the hotel. --- **Answers:** suggestion
 - **Base:** surprise --- **Target:** adjective --- **Sentence (EN):** We were ____ by the news. --- **Answers:** surprised
 - **Base:** think --- **Target:** noun --- **Sentence (EN):** It was a kind ____ to invite them. --- **Answers:** thought

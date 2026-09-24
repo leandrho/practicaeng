@@ -73,7 +73,7 @@
 ### Ejemplos
 - **EN:** His office light is on; he must still be working. --- **ES:** La luz de su oficina está encendida; seguramente todavía está trabajando.
 - **EN:** This key can't be hers; she left hers at home. --- **ES:** Esta llave no puede ser de ella; dejó la suya en casa.
-- **EN:** The floor is wet; it must have rained overnight. --- **ES:** El piso está mojado; seguramente llovió durante la noche.
+- **EN:** The pavement is wet; it must have rained overnight. --- **ES:** La vereda está mojada; seguramente llovió durante la noche.
 ### Ejercicios
 - **Prompt (EN):** Your friend has been running for an hour and is out of breath. Make a strong deduction about how they feel with must. --- **Model (EN):** My friend must be tired. --- **Explanation (ES):** *Must* expresa una conclusión probable apoyada en la evidencia física. --- **Translation (ES):** Mi amigo debe de estar cansado.
 - **Prompt (EN):** Someone says the museum is open, but you can see a sign saying it is closed today. Reject that conclusion with can't. --- **Model (EN):** The museum can't be open today. --- **Explanation (ES):** *Can't* expresa una deducción negativa basada en un indicio claro. --- **Translation (ES):** El museo no puede estar abierto hoy.

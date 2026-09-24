@@ -132,6 +132,33 @@ Criterio editorial para redactar y revisar un ejercicio:
 - No cambies los encabezados ni los separadores de la tabla de Word Formation.
 - Verificá el cambio con `npm run build`; si el formato es inválido, el error indica el archivo y la línea que hay que corregir.
 
+### Checklist editorial por archivo
+
+Antes de cerrar una edición, recorré **cada entrada** del archivo modificado y comprobá:
+
+- [ ] La expresión, su acepción y el ejemplo dicen lo mismo; el inglés es natural y la traducción transmite ese uso concreto, sin omisiones ni contradicciones.
+- [ ] Ortografía, gramática, tiempos verbales y concordancia son correctos en inglés y español. Conservá la intención pedagógica y los regionalismos válidos: corregí solo errores comprobables, no preferencias de estilo.
+- [ ] La categoría y los tags describen el uso real de esa entrada; omití tags opcionales cuando no haya evidencia suficiente.
+- [ ] En Word Formation, las variantes de la tabla corresponden a su categoría y todas las respuestas aceptadas completan naturalmente la oración; en Grammar, regla, formación, ejemplos, modelo, explicación y traducción concuerdan entre sí.
+- [ ] El contexto enseña la acepción declarada. Si hay una cita, verificá el fragmento y la atribución con `data/context-provenance.json`; sincronizá esos metadatos si corregís la cita o su fuente. El JSON solo documenta procedencia: el contenido de la UI sale de Markdown.
+- [ ] La estructura sigue siendo parseable, sin tarjetas, familias ni temas añadidos o eliminados. Ejecutá los tests de loaders/parsers/contenido después de revisar cada archivo, compará el conteo con la base siguiente y, al finalizar la auditoría, ejecutá `npm run lint`, `npm run typecheck`, `npm run test` y `npm run build`.
+
+Conteos iniciales (loaders reales, comprobados por los tests de carga):
+
+| Archivo | Entradas |
+| --- | ---: |
+| `phrasal-verbs-b1-b2-200.md` | 200 tarjetas |
+| `collocations-b1-b2.md` | 56 tarjetas |
+| `fixed-prepositions-b1-b2.md` | 52 tarjetas |
+| `idioms-b1-b2.md` | 56 tarjetas |
+| `irregular-verbs-b1-b2.md` | 100 tarjetas |
+| `everyday-phrases-b1-b2-150.md` | 150 tarjetas |
+| `connectors-b1-b2.md` | 74 tarjetas |
+| `word-formation-b1-b2.md` | 76 familias (un ejercicio curado por familia) |
+| `grammar-part-1.md` a `grammar-part-8.md` | 4, 3, 3, 5, 4, 2, 2, 3 temas respectivamente (26 en total) |
+
+La lista de archivos ya auditados se registra en el **Review record de SPEC 35**: marcá cada uno solamente tras revisar todas sus entradas y verificar el parseo.
+
 ### Grammar B1+
 
 La tarjeta **Grammar B1+** del inicio abre `/grammar`, donde los 26 temas están agrupados en ocho partes. Cada tema muestra la teoría **en inglés por defecto**, con un botón `ES`/`EN` que alterna las cuatro secciones de prosa (Definition, Rule, When to use, Watch out for this) al español; los encabezados y el bloque Formation quedan siempre en inglés. Además hay ejemplos EN/ES siempre visibles y una práctica de producción guiada: pensá o decí una oración antes de pulsar **Reveal**. Los ejercicios aparecen en el orden del archivo y sus respuestas se ocultan al cambiar de tarjeta. Esta práctica no forma parte de Mixed Practice ni de los filtros de vocabulario.

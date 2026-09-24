@@ -438,9 +438,7 @@
   "chapter": "THE FLIGHT"
  },
  "show up": {
-  "kind": "quote",
-  "book": "The Jungle Book — Rudyard Kipling",
-  "chapter": "THE JUNGLE BOOK"
+  "kind": "dialogue"
  },
  "shut down": {
   "kind": "dialogue"
@@ -1184,19 +1182,13 @@
   "chapter": "CHAPTER I."
  },
  "become": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHORUS."
+  "kind": "dialogue"
  },
  "begin": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHORUS."
+  "kind": "dialogue"
  },
  "bend": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XXVI"
+  "kind": "dialogue"
  },
  "bite": {
   "kind": "quote",
@@ -1207,9 +1199,7 @@
   "kind": "dialogue"
  },
  "blow": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XXI"
+  "kind": "dialogue"
  },
  "break": {
   "kind": "quote",
@@ -1247,14 +1237,10 @@
   "chapter": "XXI"
  },
  "come": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER I."
+  "kind": "dialogue"
  },
  "cost": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XXVI"
+  "kind": "dialogue"
  },
  "cut": {
   "kind": "quote",
@@ -1267,24 +1253,16 @@
   "chapter": "XXVI"
  },
  "do": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER I."
+  "kind": "dialogue"
  },
  "draw": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "II"
+  "kind": "dialogue"
  },
  "drink": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "III"
+  "kind": "dialogue"
  },
  "drive": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER IX."
+  "kind": "dialogue"
  },
  "eat": {
   "kind": "quote",
@@ -1302,9 +1280,7 @@
   "chapter": "CHAPTER IX. Mrs. Rachel Lynde Is Properly Horrified"
  },
  "feel": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER III."
+  "kind": "dialogue"
  },
  "fight": {
   "kind": "quote",
@@ -1317,9 +1293,7 @@
   "chapter": "CHAPTER IV."
  },
  "fly": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XIX"
+  "kind": "dialogue"
  },
  "forget": {
   "kind": "quote",
@@ -1332,14 +1306,10 @@
   "chapter": "XXXIV"
  },
  "freeze": {
-  "kind": "quote",
-  "book": "Huckleberry Finn — Mark Twain",
-  "chapter": "CHAPTER XVI."
+  "kind": "dialogue"
  },
  "get": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER I."
+  "kind": "dialogue"
  },
  "give": {
   "kind": "quote",
@@ -1373,14 +1343,10 @@
   "chapter": "XII"
  },
  "hit": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XXXI"
+  "kind": "dialogue"
  },
  "hold": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER IX."
+  "kind": "dialogue"
  },
  "hurt": {
   "kind": "quote",
@@ -1432,14 +1398,10 @@
   "chapter": "CHAPTER III.   A Caucus-Race and a Long Tale"
  },
  "make": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER II."
+  "kind": "dialogue"
  },
  "mean": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "III"
+  "kind": "dialogue"
  },
  "meet": {
   "kind": "quote",
@@ -1500,14 +1462,10 @@
   "chapter": "XI"
  },
  "send": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XII"
+  "kind": "dialogue"
  },
  "set": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER X."
+  "kind": "dialogue"
  },
  "shake": {
   "kind": "quote",
@@ -1536,9 +1494,7 @@
   "kind": "dialogue"
  },
  "sink": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XIX"
+  "kind": "dialogue"
  },
  "sit": {
   "kind": "quote",
@@ -1564,14 +1520,10 @@
   "chapter": "CHAPTER XVI. Diana Is Invited to Tea with Tragic Results"
  },
  "split": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XXVIII"
+  "kind": "dialogue"
  },
  "stand": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER XI."
+  "kind": "dialogue"
  },
  "steal": {
   "kind": "quote",
@@ -1579,24 +1531,16 @@
   "chapter": "CHAPTER XIV. Anne’s Confession"
  },
  "stick": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "V"
+  "kind": "dialogue"
  },
  "strike": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XVIII"
+  "kind": "dialogue"
  },
  "swear": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "V"
+  "kind": "dialogue"
  },
  "sweep": {
-  "kind": "quote",
-  "book": "Anne of Green Gables — Lucy Maud Montgomery",
-  "chapter": "CHAPTER IX. Mrs. Rachel Lynde Is Properly Horrified"
+  "kind": "dialogue"
  },
  "swim": {
   "kind": "quote",
@@ -1609,9 +1553,7 @@
   "chapter": "CHAPTER IV."
  },
  "teach": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XXVIII"
+  "kind": "dialogue"
  },
  "tear": {
   "kind": "quote",
@@ -1639,9 +1581,7 @@
   "chapter": "CHAPTER VII."
  },
  "wake": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XII"
+  "kind": "dialogue"
  },
  "wear": {
   "kind": "quote",
@@ -1724,9 +1664,7 @@
   "kind": "dialogue"
  },
  "no worries": {
-  "kind": "quote",
-  "book": "Little Women — Louisa May Alcott",
-  "chapter": "PLAYING PILGRIMS"
+  "kind": "dialogue"
  },
  "that's a shame": {
   "kind": "dialogue"
@@ -2149,9 +2087,7 @@
   "chapter": "XXVII"
  },
  "apply": {
-  "kind": "quote",
-  "book": "A Christmas Carol — Charles Dickens",
-  "chapter": "STAVE I:  MARLEY'S GHOST"
+  "kind": "dialogue"
  },
  "argue": {
   "kind": "quote",
@@ -2237,9 +2173,7 @@
   "chapter": "CHAPTER XIV. Anne’s Confession"
  },
  "develop": {
-  "kind": "quote",
-  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
-  "chapter": "II. THE RED-HEADED LEAGUE"
+  "kind": "dialogue"
  },
  "differ": {
   "kind": "quote",
@@ -2366,9 +2300,7 @@
   "chapter": "Chapter IX"
  },
  "please": {
-  "kind": "quote",
-  "book": "Alice's Adventures in Wonderland — Lewis Carroll",
-  "chapter": "CHAPTER III."
+  "kind": "dialogue"
  },
  "pollute": {
   "kind": "dialogue"
@@ -2405,9 +2337,7 @@
   "kind": "dialogue"
  },
  "relate": {
-  "kind": "quote",
-  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
-  "chapter": "X. THE ADVENTURE OF THE NOBLE BACHELOR"
+  "kind": "dialogue"
  },
  "relax": {
   "kind": "quote",
@@ -2532,9 +2462,7 @@
   "chapter": "CHAPTER TWENTY-FOUR"
  },
  "in spite of": {
-  "kind": "quote",
-  "book": "The Wonderful Wizard of Oz — L. Frank Baum",
-  "chapter": "L. Frank Baum"
+  "kind": "dialogue"
  },
  "because": {
   "kind": "quote",
@@ -2567,9 +2495,7 @@
   "chapter": "L. Frank Baum"
  },
  "as": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "IX"
+  "kind": "dialogue"
  },
  "given that": {
   "kind": "dialogue"
@@ -2611,9 +2537,7 @@
   "kind": "dialogue"
  },
  "so that": {
-  "kind": "quote",
-  "book": "Peter Pan — J. M. Barrie",
-  "chapter": "DO YOU BELIEVE IN FAIRIES?"
+  "kind": "dialogue"
  },
  "in order to": {
   "kind": "quote",
@@ -2683,14 +2607,10 @@
   "chapter": "THE ISLAND COME TRUE"
  },
  "such as": {
-  "kind": "quote",
-  "book": "The Jungle Book — Rudyard Kipling",
-  "chapter": "Mowgli’s Brothers"
+  "kind": "dialogue"
  },
  "to illustrate": {
-  "kind": "quote",
-  "book": "A Christmas Carol — Charles Dickens",
-  "chapter": "STAVE I:  MARLEY'S GHOST"
+  "kind": "dialogue"
  },
  "in other words": {
   "kind": "quote",
@@ -2703,14 +2623,10 @@
   "chapter": "CHAPTER II"
  },
  "in particular": {
-  "kind": "quote",
-  "book": "Treasure Island — Robert Louis Stevenson",
-  "chapter": "XV"
+  "kind": "dialogue"
  },
  "that is": {
-  "kind": "quote",
-  "book": "The Adventures of Sherlock Holmes — Arthur Conan Doyle",
-  "chapter": "XII. THE ADVENTURE OF THE COPPER BEECHES"
+  "kind": "dialogue"
  },
  "in my opinion": {
   "kind": "quote",
